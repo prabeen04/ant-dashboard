@@ -1,7 +1,9 @@
+import React from 'react';
 import { Layout, Menu, Icon } from 'antd';
+import './navbar.css';
 const { Header, Sider, Content } = Layout;
 
-class SiderDemo extends React.Component {
+class Navbar extends React.Component {
   state = {
     collapsed: false,
   };
@@ -50,3 +52,5 @@ class SiderDemo extends React.Component {
     );
   }
 }
+
+export default Navbar;
