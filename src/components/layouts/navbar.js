@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import { Layout, Menu, Icon } from 'antd';
+import { Layout, Menu, Icon, Badge } from 'antd';
 import './navbar.css';
 import NavMenu from './navMenu';
 import Dashboard from '../../container/dashboard/dashboard';
@@ -57,8 +57,14 @@ class Navbar extends React.Component {
                             type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'}
                             onClick={this.toggle}
                         />
+                        <Badge count={5} style={{float: 'right'}}>
+                            <a href="#" className="head-example" />
+                        </Badge>
+                            <Badge count={1} >
+                            <a href="#" className="head-example" />
+                        </Badge>
                     </Header>
-                    <Content style={{ margin: '24px 16px', padding: 24, background: '#fff', minHeight: 280 }}>
+                    <Content>
                         <Switch>
                             <Route exact path='/' component={Dashboard}/>
                             <Route exact path='/calendar' component={Calendar}/>

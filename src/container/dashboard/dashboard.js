@@ -1,10 +1,16 @@
 import React, { Component } from 'react'
+import JumpStartBox from './jumpStart';
 
 class Dashboard extends Component {
   render() {
     return (
-      <div>
-        <h1>Dashboard Component</h1>
+      <div className='flex-container'>
+        <JumpStartBox/>
+        <JumpStartBox/>
+        <JumpStartBox/>
+        <JumpStartBox/>
+        <JumpStartBox/>
+        <JumpStartBox/>
       </div>
     )
   }
