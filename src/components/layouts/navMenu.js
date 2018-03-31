@@ -1,5 +1,6 @@
 import React from 'react';
 import { Menu, Icon, Button } from 'antd';
+import { Link } from 'react-router-dom';
 const SubMenu = Menu.SubMenu;
 
 class NavMenu extends React.Component {
@@ -14,27 +15,30 @@ class NavMenu extends React.Component {
     render() {
         return (
             <div style={{ width: 200 }}>
-                {/* <Button type="primary" onClick={this.props.toggleCollapsed} style={{ marginBottom: 16 }}>
-                    <Icon type={this.props.collapsed ? 'menu-unfold' : 'menu-fold'} />
-                </Button> */}
                 <Menu
                     defaultSelectedKeys={['1']}
                     defaultOpenKeys={['sub1']}
                     mode="inline"
                     theme="dark"
                     inlineCollapsed={this.props.collapsed}
-                  >
+                >
                     <Menu.Item key="1">
-                        <Icon type="pie-chart" />
-                        <span>Option 1</span>
+                        <Link to='/'>
+                            <Icon type="appstore" />
+                            <span>DashBoard</span>
+                        </Link>
                     </Menu.Item>
                     <Menu.Item key="2">
-                        <Icon type="desktop" />
-                        <span>Option 2</span>
+                        <Link to='/calendar'>
+                            <Icon type="calendar" />
+                            <span>Calendar</span>
+                        </Link>
                     </Menu.Item>
                     <Menu.Item key="3">
-                        <Icon type="inbox" />
-                        <span>Option 3</span>
+                        <Link to='/forms'>
+                            <Icon type="inbox" />
+                            <span>forms</span>
+                        </Link>
                     </Menu.Item>
                     <SubMenu key="sub1" title={<span><Icon type="mail" /><span>Navigation One</span></span>}>
                         <Menu.Item key="5">Option 5</Menu.Item>
@@ -42,7 +46,7 @@ class NavMenu extends React.Component {
                         <Menu.Item key="7">Option 7</Menu.Item>
                         <Menu.Item key="8">Option 8</Menu.Item>
                     </SubMenu>
-                    <SubMenu key="sub2" title={<span><Icon type="appstore" /><span>Navigation Two</span></span>}>
+                    <SubMenu key="sub2" title={<span><Icon type="pie-chart" /><span>Navigation Two</span></span>}>
                         <Menu.Item key="9">Option 9</Menu.Item>
                         <Menu.Item key="10">Option 10</Menu.Item>
                         <SubMenu key="sub3" title="Submenu">
