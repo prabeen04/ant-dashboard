@@ -1,7 +1,11 @@
 import React from 'react';
+import { Route, Switch } from 'react-router-dom';
 import { Layout, Menu, Icon } from 'antd';
 import './navbar.css';
 import NavMenu from './navMenu';
+import Dashboard from '../../container/dashboard/dashboard';
+import Calendar from '../../container/calendar/calendar';
+import NotFound from '../../container/notFound/notFound';
 const { Header, Sider, Content } = Layout;
 
 class Navbar extends React.Component {
@@ -55,7 +59,11 @@ class Navbar extends React.Component {
                         />
                     </Header>
                     <Content style={{ margin: '24px 16px', padding: 24, background: '#fff', minHeight: 280 }}>
-                        Content
+                        <Switch>
+                            <Route exact path='/' component={Dashboard}/>
+                            <Route exact path='/calendar' component={Calendar}/>
+                            <Route  path='**' component={NotFound}/>
+                        </Switch>
                     </Content>
                 </Layout>
             </Layout>
