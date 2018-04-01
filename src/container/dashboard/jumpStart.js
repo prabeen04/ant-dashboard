@@ -18,8 +18,8 @@ class JumpStartBox extends Component {
 
         return (
             <div>
-                <Card loading={this.state.isLoading} style={{height: '80px'}}>
-                    Whatever content
+                <Card style={{height: '100px', flexGrow: 1}}>
+                    <h2>Jumpstart Box</h2>
                 </Card>
             </div>
         )
