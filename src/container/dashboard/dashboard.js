@@ -1,9 +1,24 @@
 import React, { Component } from 'react'
-import { Card } from 'antd';
+import { Card, Spin, Icon } from 'antd';
 import JumpStartBox from './jumpStart';
 
 class Dashboard extends Component {
+  constructor(props){
+    super(props)
+
+    this.state ={
+      isLoading: true
+    }
+  }
+  componentDidMount(){
+    setTimeout(() => {
+      this.setState({
+        isLoading: false
+      })
+    }, 2000);
+  }
   render() {
+    const antIcon = <Icon type="loading" style={{ fontSize: 24 }} spin />;
     return (
       <div>
       <div className='flex-container'>
@@ -14,8 +29,8 @@ class Dashboard extends Component {
         <JumpStartBox/>
         <JumpStartBox/>
       </div>
-       <Card loading style={{height: '400px'}}>
-        <h2>Jumpstart Box</h2>
+       <Card loading={this.state.isLoading} style={{height: '400px'}}>
+        <h2>Jumpstart Box {antIcon}</h2>
       </Card>
       </div>
     )

@@ -11,11 +11,13 @@ class Calendar extends Component {
     return (
       <div style={{height: '520px'}}>
         <BigCalendar
-        events={eventList}
-        startAccessor='startDate'
-        endAccessor='endDate'
-        selectable={true}
-        onSelecting={(e)=>console.log(e)}/>
+          events={eventList}
+          defaultDate={new Date()}
+          startAccessor='startDate'
+          endAccessor='endDate'
+          selectable={true}
+          onSelecting={(range)=>console.log(range)}
+        />
       </div>
     )
   }
