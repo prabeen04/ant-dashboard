@@ -1,10 +1,13 @@
 import React, { Component } from 'react'
+import BigCalendar from 'react-big-calendar';
+import moment from 'moment';
+BigCalendar.setLocalizer(BigCalendar.momentLocalizer(moment))
 
 class Calendar extends Component {
   render() {
     return (
       <div>
-        <h1>Calendar Component</h1>
+        
       </div>
     )
   }
