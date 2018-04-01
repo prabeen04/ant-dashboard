@@ -18,7 +18,7 @@ class Dashboard extends Component {
     }, 2000);
   }
   render() {
-    const antIcon = <Icon type="loading" style={{ fontSize: 24 }} spin />;
+    const antIcon = <Icon type="loading" style={{ fontSize: 60 }} spin />;
     return (
       <div>
       <div className='flex-container'>
@@ -30,7 +30,7 @@ class Dashboard extends Component {
         <JumpStartBox/>
       </div>
        <Card loading={this.state.isLoading} style={{height: '400px'}}>
-        <h2>Jumpstart Box {antIcon}</h2>
+        <h2>{antIcon}Jumpstart Box </h2>
       </Card>
       </div>
     )
