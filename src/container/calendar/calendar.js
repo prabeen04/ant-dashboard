@@ -15,6 +15,10 @@ class Calendar extends Component {
       visible: false,
       confirmLoading: false,
     }
+
+    this.showModal = this.showModal.bind(this);
+    this.handleOk = this.handleOk.bind(this);
+    this.handleCancel = this.handleCancel.bind(this);
   }
   showModal = () => {
     this.setState({
@@ -22,8 +26,9 @@ class Calendar extends Component {
     });
   }
   handleOk = (slot) => {
+    this.showModal;
     this.setState({
-      ModalText: 'The modal will be closed after two seconds',
+      ModalText: slot.start,
       confirmLoading: true,
     });
     setTimeout(() => {
@@ -40,6 +45,7 @@ class Calendar extends Component {
     });
   }
   render() {
+    const { visible, confirmLoading, ModalText } = this.state;
     return (
       <div style={{height: '520px'}}>
       <Modal title="Title"
