@@ -16,16 +16,47 @@ class Calendar extends Component {
       confirmLoading: false,
     }
   }
+  showModal = () => {
+    this.setState({
+      visible: true,
+    });
+  }
+  handleOk = (slot) => {
+    this.setState({
+      ModalText: 'The modal will be closed after two seconds',
+      confirmLoading: true,
+    });
+    setTimeout(() => {
+      this.setState({
+        visible: false,
+        confirmLoading: false,
+      });
+    }, 2000);
+  }
+  handleCancel = () => {
+    console.log('Clicked cancel button');
+    this.setState({
+      visible: false,
+    });
+  }
   render() {
     return (
       <div style={{height: '520px'}}>
+      <Modal title="Title"
+          visible={visible}
+          onOk={this.handleOk}
+          confirmLoading={confirmLoading}
+          onCancel={this.handleCancel}
+        >
+          <p>{ModalText}</p>
+        </Modal>
         <BigCalendar
           events={eventList}
           defaultDate={new Date()}
           startAccessor='startDate'
           endAccessor='endDate'
           selectable={true}
-          onSelectSlot={(slot)=>console.log(slot)}
+          onSelectSlot={(slot)=>this.handleOk(slot)}
           onSelecting={(range)=>console.log(range)}
         />
       </div>
