@@ -10,14 +10,14 @@ import NotFound from '../../container/notFound/notFound';
 const { Header, Sider, Content } = Layout;
 
 class Navbar extends React.Component {
-    constructor(props){
+    constructor(props) {
         super(props)
-      this.toggle = this.toggle.bind(this);
-      this.state = {
-        collapsed: false,
-    };
+        this.toggle = this.toggle.bind(this);
+        this.state = {
+            collapsed: false,
+        };
     }
-    
+
     toggle = () => {
         this.setState({
             collapsed: !this.state.collapsed,
@@ -30,12 +30,12 @@ class Navbar extends React.Component {
                     trigger={null}
                     collapsible
                     collapsed={this.state.collapsed}
-                    style={{height: '100vh'}}
-                 >
+                    style={{ height: '100vh' }}
+                >
                     <div className="logo" />
-                    <NavMenu 
+                    <NavMenu
                         collapsed={this.state.collapsed}
-                        toggleCollapsed={this.toggle}/>
+                        toggleCollapsed={this.toggle} />
                     {/* <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
                         <Menu.Item key="1">
                             <Icon type="user" />
@@ -58,19 +58,23 @@ class Navbar extends React.Component {
                             type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'}
                             onClick={this.toggle}
                         />
-                        <Badge count={5} style={{float: 'right'}}>
-                            <a href="#" className="head-example" />
-                        </Badge>
+
+                        <div>
+                            <Badge count={5} style={{ float: 'right' }}>
+                                <a href="#" className="head-example" />
+                            </Badge>
                             <Badge count={1} >
-                            <a href="#" className="head-example" />
-                        </Badge>
+                                <a href="#" className="head-example" />
+                            </Badge>
+                        </div>
                     </Header>
+
                     <Content>
                         <Switch>
-                            <Route exact path='/' component={Dashboard}/>
-                            <Route exact path='/calendar' component={Calendar}/>
-                            <Route exact path='/forms' component={Forms}/>
-                            <Route  path='**' component={NotFound}/>
+                            <Route exact path='/' component={Dashboard} />
+                            <Route exact path='/calendar' component={Calendar} />
+                            <Route exact path='/forms' component={Forms} />
+                            <Route path='**' component={NotFound} />
                         </Switch>
                     </Content>
                 </Layout>

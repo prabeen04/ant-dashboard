@@ -18,7 +18,7 @@ class Dashboard extends Component {
     }, 2000);
   }
   render() {
-    const antIcon = <Icon type="loading" style={{ fontSize: 60 }} spin />;
+    const antIcon = <Icon type="loading" style={{ fontSize: 60, color: 'tomato' }} spin />;
     return (
       <div>
       <div className='flex-container'>
