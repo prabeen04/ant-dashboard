@@ -11,7 +11,8 @@ class Calendar extends Component {
   constructor(props){
     super(props)
     this.state = {
-      ModalText: '',
+      startDate: '',
+      endDate: '',
       visible: false,
       confirmLoading: false,
     }
@@ -26,9 +27,11 @@ class Calendar extends Component {
     });
   }
   handleOk = (slot) => {
-    this.showModal;
+    console.log(slot)
+    this.showModal();
     this.setState({
-      ModalText: slot.start,
+      startDate: JSON.stringify(slot.start),
+      endDate: JSON.stringify(slot.end),
       confirmLoading: true,
     });
     setTimeout(() => {
@@ -45,7 +48,7 @@ class Calendar extends Component {
     });
   }
   render() {
-    const { visible, confirmLoading, ModalText } = this.state;
+    const { visible, confirmLoading, startDate, endDate } = this.state;
     return (
       <div style={{height: '520px'}}>
       <Modal title="Title"
@@ -54,7 +57,8 @@ class Calendar extends Component {
           confirmLoading={confirmLoading}
           onCancel={this.handleCancel}
         >
-          <p>{ModalText}</p>
+          <p>{startDate}</p>
+          <p>{endDate}</p>
         </Modal>
         <BigCalendar
           events={eventList}
