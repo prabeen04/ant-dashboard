@@ -7,7 +7,7 @@ import { getEvents } from '../../actions/calendar_actions';
 import moment from 'moment';
 import eventList from './eventList';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
-import { Modal, Button } from 'antd';
+import { Modal, Button, Icon } from 'antd';
 
 BigCalendar.setLocalizer(BigCalendar.momentLocalizer(moment))
 
@@ -56,9 +56,13 @@ class Calendar extends Component {
   }
   render() {
     const { visible, confirmLoading, startDate, endDate } = this.state;
-    console.log(this.props)
     if (this.props.isLoading) {
-      return (<p>Loading...</p>)
+      return (<div className="flex-container" style={{ height: '80vh', justifyContent: 'center'}}>
+                <Icon type="loading" style={{ fontSize: 60, color: 'tomato' }} spin />
+            </div>)
+    }
+    if (this.props.isLoading) {
+      return (<p>Some Error occoured...</p>)
     }
     return (
       <div style={{ height: '520px' }}>
