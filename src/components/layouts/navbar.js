@@ -60,12 +60,12 @@ class Navbar extends React.Component {
                         />
 
                         <div>
-                            <Badge count={5} style={{ float: 'right' }}>
+                            {/* <Badge count={5} style={{ float: 'right' }}>
                                 <a href="#" className="head-example" />
                             </Badge>
                             <Badge count={1} >
                                 <a href="#" className="head-example" />
-                            </Badge>
+                            </Badge> */}
                         </div>
                     </Header>
 

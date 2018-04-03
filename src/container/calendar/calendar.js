@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import BigCalendar from 'react-big-calendar';
+import { connect } from 'react-redux';
+import { Field, reduxForm } from 'redux-form';
 import moment from 'moment';
 import eventList from './eventList';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
@@ -73,5 +75,18 @@ class Calendar extends Component {
     )
   }
 }
+const mapStateToProps = (state) => ({
+  // ...
+});
 
-export default Calendar;
+const mapDispatchToProps = (dispatch)  => ({
+  // ...
+});
+Calendar = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Calendar);
+
+export default reduxForm({
+  'form': 'loginForm'
+})(Calendar);
