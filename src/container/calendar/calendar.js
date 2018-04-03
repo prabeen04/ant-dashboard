@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import BigCalendar from 'react-big-calendar';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import { Field, reduxForm } from 'redux-form';
+import { getEvents } from '../../actions/calendar_actions';
 import moment from 'moment';
 import eventList from './eventList';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
@@ -10,7 +12,7 @@ import { Modal, Button } from 'antd';
 BigCalendar.setLocalizer(BigCalendar.momentLocalizer(moment))
 
 class Calendar extends Component {
-  constructor(props){
+  constructor(props) {
     super(props)
     this.state = {
       startDate: '',
@@ -49,11 +51,14 @@ class Calendar extends Component {
       visible: false,
     });
   }
+  componentDidMount(){
+    this.props.getEvents();
+  }
   render() {
     const { visible, confirmLoading, startDate, endDate } = this.state;
     return (
-      <div style={{height: '520px'}}>
-      <Modal title="Title"
+      <div style={{ height: '520px' }}>
+        <Modal title="Title"
           visible={visible}
           onOk={this.handleOk}
           confirmLoading={confirmLoading}
@@ -68,8 +73,8 @@ class Calendar extends Component {
           startAccessor='startDate'
           endAccessor='endDate'
           selectable={true}
-          onSelectSlot={(slot)=>this.handleOk(slot)}
-          onSelecting={(range)=>console.log(range)}
+          onSelectSlot={(slot) => this.handleOk(slot)}
+          onSelecting={(range) => console.log(range)}
         />
       </div>
     )
@@ -79,9 +84,12 @@ const mapStateToProps = (state) => ({
   // ...
 });
 
-const mapDispatchToProps = (dispatch)  => ({
-  // ...
-});
+const mapDispatchToProps = (dispatch) => {
+  return bindActionCreators({
+    getEvents: getEvents
+  }, dispatch);
+};
+
 Calendar = connect(
   mapStateToProps,
   mapDispatchToProps
