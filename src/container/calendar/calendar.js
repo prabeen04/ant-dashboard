@@ -51,14 +51,14 @@ class Calendar extends Component {
       visible: false,
     });
   }
-  componentDidMount(){
+  componentDidMount() {
     this.props.getEvents();
   }
   render() {
     const { visible, confirmLoading, startDate, endDate } = this.state;
     console.log(this.props)
-    if(this.props.isLoading){
-      return(<p>Loading...</p>)
+    if (this.props.isLoading) {
+      return (<p>Loading...</p>)
     }
     return (
       <div style={{ height: '520px' }}>
@@ -84,11 +84,14 @@ class Calendar extends Component {
     )
   }
 }
-const mapStateToProps = (state) => ({
-  isLoading: state.isLoading,
-  isError: state.isError,
-  events: state.events
-});
+const mapStateToProps = (state) => {
+  console.log(state)
+  return {
+    isLoading: state.calendarReducer.isLoading,
+    isError: state.calendarReducer.isError,
+    events: state.calendarReducer.events
+  }
+};
 
 const mapDispatchToProps = (dispatch) => {
   return bindActionCreators({
