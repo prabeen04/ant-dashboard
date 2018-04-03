@@ -56,6 +56,10 @@ class Calendar extends Component {
   }
   render() {
     const { visible, confirmLoading, startDate, endDate } = this.state;
+    console.log(this.props)
+    if(this.props.isLoading){
+      return(<p>Loading...</p>)
+    }
     return (
       <div style={{ height: '520px' }}>
         <Modal title="Title"
@@ -81,7 +85,9 @@ class Calendar extends Component {
   }
 }
 const mapStateToProps = (state) => ({
-  // ...
+  isLoading: state.isLoading,
+  isError: state.isError,
+  events: state.events
 });
 
 const mapDispatchToProps = (dispatch) => {
