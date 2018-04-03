@@ -61,7 +61,7 @@ class Calendar extends Component {
                 <Icon type="loading" style={{ fontSize: 60, color: 'tomato' }} spin />
             </div>)
     }
-    if (this.props.isLoading) {
+    if (this.props.isError) {
       return (<p>Some Error occoured...</p>)
     }
     return (
