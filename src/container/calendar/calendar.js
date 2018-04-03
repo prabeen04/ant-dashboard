@@ -65,7 +65,7 @@ class Calendar extends Component {
       return (<p>Some Error occoured...</p>)
     }
     return (
-      <div style={{ height: '520px' }}>
+      <div style={{ height: '520px', backgroundColor: '#fff' }}>
         <Modal title="Title"
           visible={visible}
           onOk={this.handleOk}

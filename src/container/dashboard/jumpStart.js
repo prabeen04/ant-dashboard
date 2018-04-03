@@ -18,7 +18,7 @@ class JumpStartBox extends Component {
 
         return (
             <div>
-                <Card style={{height: '100px', flexGrow: 1}}>
+                <Card>
                     <h2>Jumpstart Box</h2>
                 </Card>
             </div>

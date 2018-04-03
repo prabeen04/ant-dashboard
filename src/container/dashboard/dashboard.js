@@ -23,14 +23,11 @@ class Dashboard extends Component {
       <div>
       <div className='flex-container'>
         <JumpStartBox/>
-        <JumpStartBox/>
-        <JumpStartBox/>
-        <JumpStartBox/>
-        <JumpStartBox/>
-        <JumpStartBox/>
       </div>
        <Card loading={this.state.isLoading} style={{height: '400px'}}>
-        <h2>{antIcon}Jumpstart Box </h2>
+       <div className="flex-container" style={{ justifyContent: 'center'}}>
+                <Icon type="loading" style={{ fontSize: 60, color: 'tomato' }} spin />
+            </div>
       </Card>
       </div>
     )
