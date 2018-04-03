@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Bar } from 'react-chartjs-2';
+import { Bar, Line } from 'react-chartjs-2';
 import { Card } from 'antd';
 import chartData from './chartData';
 
@@ -21,11 +21,11 @@ class JumpStartBox extends Component {
 
         return (
             <div>
-                <Card>
-                    <Bar
+                <Card style={{margin: '1rem'}}>
+                    <Line
                         data={chartData}
-                        width={100}
-                        height={50}
+                        width={200}
+                        height={100}
                         options={{
                             maintainAspectRatio: false
                         }} />
