@@ -88,5 +88,5 @@ Calendar = connect(
 )(Calendar);
 
 export default reduxForm({
-  'form': 'loginForm'
+  form: 'calendarForm'
 })(Calendar);
