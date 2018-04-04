@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Field, reduxForm } from 'redux-form';
-import { Input } from 'antd';
+import { Input, DatePicker } from 'antd';
 
 class EventForm extends Component {
     constructor(props){
@@ -18,6 +18,16 @@ class EventForm extends Component {
             {touched && error && <span>{error}</span>}
         </div>
     )
+    renderDatepicker = ({ input, label, type, meta: { touched, error }, ...custom }) => (
+        <div>
+            <DatePicker 
+                placeholder={label}
+                {...input}
+                {...custom}
+            />
+            {touched && error && <span>{error}</span>}
+        </div>
+    )
   render() {
       console.log(this.props)
     return (
@@ -25,7 +35,12 @@ class EventForm extends Component {
         EventForm Component
         <Field 
         name="title"
-        conponent={this.renderInput}/>
+        label="Title"
+        component={this.renderInput}/>
+        <Field 
+        name="desc"
+        label="Description"
+        component={this.renderInput}/>
       </div>
     )
   }
