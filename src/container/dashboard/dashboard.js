@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Card, Spin, Icon } from 'antd';
 import JumpStartBox from './jumpStart';
+import CardGrid from './cardGrid';
 
 class Dashboard extends Component {
   constructor(props){
@@ -31,6 +32,9 @@ class Dashboard extends Component {
        <div className="flex-container" style={{ justifyContent: 'space-evenly'}}>
                 <Icon type="loading" style={{ fontSize: 60, color: 'tomato' }} spin />
             </div>
+      </Card>
+      <Card loading={this.state.isLoading} style={{height: '400px'}}>
+        <CardGrid/>
       </Card>
       </div>
     )
