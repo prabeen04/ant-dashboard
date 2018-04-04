@@ -6,6 +6,7 @@ import { Field, reduxForm } from 'redux-form';
 import { getEvents } from '../../actions/calendar_actions';
 import moment from 'moment';
 import eventList from './eventList';
+import EventForm from './eventForm';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 import { Modal, Button, Icon } from 'antd';
 
@@ -72,6 +73,7 @@ class Calendar extends Component {
           confirmLoading={confirmLoading}
           onCancel={this.handleCancel}
         >
+          <EventForm />
           <p>{startDate}</p>
           <p>{endDate}</p>
         </Modal>
