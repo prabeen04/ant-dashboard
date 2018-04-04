@@ -7,7 +7,11 @@ class EventForm extends Component {
         super(props)
     
         this.renderInput = this.renderInput.bind(this);
+        this.onDateChange = this.onDateChange.bind(this);
     }
+    onDateChange = (date, dateString) => {
+        console.log(date, dateString);
+      }
     renderInput = ({ input, label, type, meta: { touched, error }, ...custom }) => (
         <div>
             <Input
@@ -22,6 +26,7 @@ class EventForm extends Component {
         <div>
             <DatePicker 
                 placeholder={label}
+                onChange={this.onDateChange}
                 {...input}
                 {...custom}
             />
@@ -34,13 +39,21 @@ class EventForm extends Component {
       <div>
         EventForm Component
         <Field 
-        name="title"
-        label="Title"
-        component={this.renderInput}/>
+            name="title"
+            label="Title"
+            component={this.renderDatepicker}/>
         <Field 
-        name="desc"
-        label="Description"
-        component={this.renderInput}/>
+            name="desc"
+            label="Description"
+            component={this.renderDatepicker}/>
+        <Field 
+            name="desc"
+            label="Description"
+            component={this.renderInput}/>
+        <Field 
+            name="desc"
+            label="Description"
+            component={this.renderInput}/>
       </div>
     )
   }
