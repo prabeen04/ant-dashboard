@@ -49,7 +49,7 @@ class Calendar extends Component {
         visible: false,
         confirmLoading: false,
       });
-    }, 10000);
+    }, 20000);
   }
   handleCancel = () => {
     console.log('Clicked cancel button');
@@ -83,6 +83,7 @@ class Calendar extends Component {
             <EventForm />
             <p>{startDate}</p>
             <p>{endDate}</p>
+            <button type="submit">submit</button>
           </form>
         </Modal>
         <BigCalendar
@@ -109,7 +110,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return bindActionCreators({
-    getEvents: getEvents
+    getEvents: getEvents,
+    addEvent: addEvent
   }, dispatch);
 };
 
