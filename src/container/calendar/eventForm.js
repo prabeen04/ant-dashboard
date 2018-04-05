@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Field, reduxForm } from 'redux-form';
+import { Field } from 'redux-form';
 import { Input, DatePicker } from 'antd';
 
 class EventForm extends Component {
@@ -37,10 +37,10 @@ class EventForm extends Component {
         </div>
     )
     render() {
-        const { handleSubmit, pristine, reset, submitting } = this.props;
+       
         return (
             <div>
-                <form onSubmit={handleSubmit(this.onSubmit)}>
+               
                     <Field
                         name="startDate"
                         label="Start Date"
@@ -63,12 +63,9 @@ class EventForm extends Component {
                         name="desc"
                         label="Description"
                         component={this.renderInput} />
-                </form>
+               
             </div>
         )
     }
 }
-EventForm = reduxForm({
-    form: 'eventForm'
-})(EventForm)
 export default EventForm;
