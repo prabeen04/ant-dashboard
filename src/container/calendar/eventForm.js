@@ -42,25 +42,25 @@ class EventForm extends Component {
             <div>
                
                     <Field
-                        name="startDate"
+                        name="start"
                         label="Start Date"
                         format={(value, name) => {
                             return value === '' ? null : value
                         }}
                         component={this.renderDatepicker} />
                     <Field
-                        name="endDate"
+                        name="end"
                         label="End Date"
                         format={(value, name) => {
                             return value === '' ? null : value
                         }}
                         component={this.renderDatepicker} />
                     <Field
-                        name="desc"
-                        label="Description"
+                        name="title"
+                        label="Title"
                         component={this.renderInput} />
                     <Field
-                        name="desc"
+                        name="description"
                         label="Description"
                         component={this.renderInput} />
                
