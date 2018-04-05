@@ -13,6 +13,20 @@ export const calendarReducer = (state = initialState, action) => {
             return Object.assign({}, state, {isLoading: false})
         case GET_EVENTS_FAILURE:
             return Object.assign({}, state, {isLoading: false, isError: true})
+        // add event section
+        case ADD_EVENT:
+            return Object.assign({}, state, {
+                isLoading: true
+            })
+        case ADD_EVENT_SUCCESS:
+            return Object.assign({}, state, {
+                isLoading: false
+            })
+        case ADD_EVENT_FAILURE:
+            return Object.assign({}, state, {
+                isLoading: false,
+                isError: true
+            })    
         default:
             return state    
     }
