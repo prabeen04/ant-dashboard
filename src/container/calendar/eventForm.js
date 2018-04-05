@@ -35,10 +35,10 @@ class EventForm extends Component {
         </div>
     )
   render() {
-      console.log(this.props)
+    const { handleSubmit, pristine, reset, submitting } = this.props;
     return (
       <div>
-        EventForm Component
+    <form onSubmit={handleSubmit(this.onSubmit)}>
         <Field 
             name="startDate"
             label="Start Date"
@@ -61,6 +61,7 @@ class EventForm extends Component {
             name="desc"
             label="Description"
             component={this.renderInput}/>
+          </form>  
       </div>
     )
   }

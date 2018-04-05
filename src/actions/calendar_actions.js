@@ -31,10 +31,7 @@ export const addEvent = (event) => {
         return axios.post(`${baseURL}`,{event})
             .then(response => {
                 console.log(response)
-                dispatch({
-                    type: ADD_EVENT_SUCCESS,
-                    payload: response.data
-                })
+                dispatch(getEvents())
             })
             .catch(error => {
                 dispatch({
