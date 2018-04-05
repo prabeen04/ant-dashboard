@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { Field, reduxForm } from 'redux-form';
 import { Input, DatePicker } from 'antd';
-import { addEvent } from '../../actions/calendar_actions';
 
 class EventForm extends Component {
     constructor(props) {
@@ -9,12 +8,8 @@ class EventForm extends Component {
 
         this.renderInput = this.renderInput.bind(this);
         this.onDateChange = this.onDateChange.bind(this);
-        this.onSubmit = this.onSubmit.bind(this)
     }
-    onSubmit = (values) => {
-        console.log('values')
-        this.props.addEvent(values);
-    }
+   
 
     onDateChange = (date, dateString) => {
         console.log(date, dateString);

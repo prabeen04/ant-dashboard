@@ -3,7 +3,7 @@ import BigCalendar from 'react-big-calendar';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Field, reduxForm } from 'redux-form';
-import { getEvents } from '../../actions/calendar_actions';
+import { getEvents, addEvent } from '../../actions/calendar_actions';
 import moment from 'moment';
 import eventList from './eventList';
 import EventForm from './eventForm';
@@ -25,6 +25,11 @@ class Calendar extends Component {
     this.showModal = this.showModal.bind(this);
     this.handleOk = this.handleOk.bind(this);
     this.handleCancel = this.handleCancel.bind(this);
+    this.onSubmit = this.onSubmit.bind(this)
+  }
+  onSubmit = (values) => {
+    console.log('values')
+    this.props.addEvent(values);
   }
   showModal = () => {
     this.setState({
@@ -58,9 +63,9 @@ class Calendar extends Component {
   render() {
     const { visible, confirmLoading, startDate, endDate } = this.state;
     if (this.props.isLoading) {
-      return (<div className="flex-container" style={{ height: '80vh', justifyContent: 'center'}}>
-                <Icon type="loading" style={{ fontSize: 60, color: 'tomato' }} spin />
-            </div>)
+      return (<div className="flex-container" style={{ height: '80vh', justifyContent: 'center' }}>
+        <Icon type="loading" style={{ fontSize: 60, color: 'tomato' }} spin />
+      </div>)
     }
     if (this.props.isError) {
       return (<p>Some Error occoured...</p>)
