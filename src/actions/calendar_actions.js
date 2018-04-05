@@ -23,3 +23,23 @@ export const getEvents = () => {
             });
     }
 }
+export const addEvent = (event) => {
+    return (dispatch) => {
+        dispatch({
+            type: ADD_EVENT
+        })
+        return axios.post(`${baseURL}`,{event})
+            .then(response => {
+                console.log(response)
+                dispatch({
+                    type: ADD_EVENT_SUCCESS,
+                    payload: response.data
+                })
+            })
+            .catch(error => {
+                dispatch({
+                    type: ADD_EVENT_FAILURE
+                })
+            });
+    }
+}

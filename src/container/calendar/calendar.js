@@ -44,7 +44,7 @@ class Calendar extends Component {
         visible: false,
         confirmLoading: false,
       });
-    }, 2000);
+    }, 10000);
   }
   handleCancel = () => {
     console.log('Clicked cancel button');

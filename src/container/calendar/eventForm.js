@@ -27,6 +27,7 @@ class EventForm extends Component {
             <DatePicker 
                 placeholder={label}
                 onChange={this.onDateChange}
+                value = { Date.now() }
                 {...input}
                 {...custom}
             />
@@ -39,12 +40,18 @@ class EventForm extends Component {
       <div>
         EventForm Component
         <Field 
-            name="title"
-            label="Title"
+            name="startDate"
+            label="Start Date"
+            format={(value, name) => { 
+                return value === '' ? null : value
+            }}
             component={this.renderDatepicker}/>
         <Field 
-            name="desc"
-            label="Description"
+            name="endDate"
+            label="End Date"
+            format={(value, name) => { 
+                return value === '' ? null : value
+            }}
             component={this.renderDatepicker}/>
         <Field 
             name="desc"
