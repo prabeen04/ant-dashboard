@@ -25,13 +25,18 @@ class Calendar extends Component {
     this.showModal = this.showModal.bind(this);
     this.handleOk = this.handleOk.bind(this);
     this.handleCancel = this.handleCancel.bind(this);
-    this.onSubmit = this.onSubmit.bind(this)
+    this.onSubmit = this.onSubmit.bind(this);
+    this.success = this.success.bind(this);
   }
   
   onSubmit = (values) => {
     console.log(values)
+    this.success()
     // this.props.addEvent(values);
   }
+   success = () => {
+    message.success('This is a prompt message for success, and it will disappear in 10 seconds', 10);
+  };
   showModal = () => {
     this.setState({
       visible: true,
@@ -62,10 +67,6 @@ class Calendar extends Component {
     this.props.getEvents();
   }
   render() {
-    const success = () => {
-      message.success('This is a prompt message for success, and it will disappear in 10 seconds', 10);
-    };
-    
     const { visible, confirmLoading, startDate, endDate } = this.state;
     const { handleSubmit, pristine, reset, submitting } = this.props;
 
