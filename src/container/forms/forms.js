@@ -23,19 +23,7 @@ class Forms extends Component {
             <Input prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />} type="password" placeholder="Password" />
           )}
         </FormItem>
-        <FormItem>
-          {getFieldDecorator('remember', {
-            valuePropName: 'checked',
-            initialValue: true,
-          })(
-            <Checkbox>Remember me</Checkbox>
-          )}
-          <a className="login-form-forgot" href="">Forgot password</a>
-          <Button type="primary" htmlType="submit" className="login-form-button">
-            Log in
-          </Button>
-          Or <a href="">register now!</a>
-        </FormItem>
+     
       </Form>
         </Card>
       </div>
