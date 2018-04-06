@@ -29,7 +29,7 @@ class EventForm extends Component {
             <DatePicker
                 placeholder={label}
                 onChange={this.onDateChange}
-                // value={Date.now()}
+                 value={Date.now()}
                 {...input}
                 {...custom}
             />
@@ -44,18 +44,18 @@ class EventForm extends Component {
                     <Field
                         name="start"
                         label="Start Date"
-                        value={this.props.start}
-                        // format={(value, name) => {
-                        //     return value === '' ? null : value
-                        // }}
+                        // value={this.props.start}
+                        format={(value, name) => {
+                            return value === '' ? null : value
+                        }}
                         component={this.renderDatepicker} />
                     <Field
                         name="end"
                         label="End Date"
-                        value={this.props.end}
-                        // format={(value, name) => {
-                        //     return value === '' ? null : value
-                        // }}
+                        // value={this.props.end}
+                        format={(value, name) => {
+                            return value === '' ? null : value
+                        }}
                         component={this.renderDatepicker} />
                     <Field
                         name="title"
