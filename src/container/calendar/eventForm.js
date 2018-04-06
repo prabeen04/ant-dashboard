@@ -37,13 +37,14 @@ class EventForm extends Component {
         </div>
     )
     render() {
-       
+       console.log(this.props)
         return (
             <div>
                
                     <Field
                         name="start"
                         label="Start Date"
+                        value={this.props.start}
                         // format={(value, name) => {
                         //     return value === '' ? null : value
                         // }}
@@ -51,6 +52,7 @@ class EventForm extends Component {
                     <Field
                         name="end"
                         label="End Date"
+                        value={this.props.end}
                         // format={(value, name) => {
                         //     return value === '' ? null : value
                         // }}
