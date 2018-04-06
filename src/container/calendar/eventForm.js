@@ -60,6 +60,10 @@ class EventForm extends Component {
                         label="Title"
                         component={this.renderInput} />
                     <Field
+                        name="user"
+                        label="User"
+                        component={this.renderInput} />
+                    <Field
                         name="description"
                         label="Description"
                         component={this.renderInput} />
