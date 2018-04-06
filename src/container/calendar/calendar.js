@@ -86,7 +86,9 @@ class Calendar extends Component {
           confirmLoading={confirmLoading}
           onCancel={this.handleCancel}
         > <form onSubmit={handleSubmit(this.onSubmit)}>
-            <EventForm />
+            <EventForm 
+              start={startDate}
+              end={endDate}/>
             <p>{startDate}</p>
             <p>{endDate}</p>
             <button type="submit">submit</button>
