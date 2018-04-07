@@ -5,22 +5,29 @@ import { bindActionCreators } from 'redux';
 import { getProfiles, addProfile } from '../../actions/profile_actions';
 
 class ProfileList extends Component {
-  render() {
-    return (
-      <div>
-       ProfileList
-       <ProfileCard/>
-      </div>
-    )
-  }
+    componentDidMount() {
+        console.log(this.props)
+        this.props.getProfiles()
+    }
+    render() {
+        return (
+            <div>
+                ProfileList
+       <ProfileCard />
+            </div>
+        )
+    }
 }
-const mapStateToProps = (state) =>{
-    return{
-        users: state.users
+const mapStateToProps = (state) => {
+    console.log(state)
+    return {
+        isLoading: state.profileReducer.isLoading,
+        isError: state.profileReducer.isError,
+        profiles: state.profileReducer.profiles
     }
 }
 
-const mapDispatchToProps = (dispatch) =>{
+const mapDispatchToProps = (dispatch) => {
     return bindActionCreators({
         getProfiles,
         addProfile

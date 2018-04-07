@@ -9,9 +9,11 @@ export const profileReducer = (state = initialState, action) => {
         case GET_PROFILES:
             return Object.assign({}, state, {isLoading: true})
         case GET_PROFILES_SUCCESS:
-            return Object.assign({}, state, {isLoading: false})
+            return Object.assign({}, state, {isLoading: false,posts: action.payload})
         case GET_PROFILES_FAILURE:
             return Object.assign({}, state, {isLoading: false, isError: true})
+
+
         // add PROFILE section
         case ADD_PROFILE:
             return Object.assign({}, state, {
