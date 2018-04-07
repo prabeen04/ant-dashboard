@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 
-class Profile extends Component {
+class ProfileList extends Component {
   render() {
     return (
       <div>
-       
+       ProfileList
       </div>
     )
   }
 }
-export default Profile;
+export default ProfileList;
