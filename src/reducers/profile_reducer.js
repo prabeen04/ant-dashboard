@@ -1,20 +1,29 @@
-import { GET_PROFILES, GET_PROFILES_SUCCESS, GET_PROFILES_FAILURE, ADD_PROFILE, ADD_PROFILE_SUCCESS, ADD_PROFILE_FAILURE } from '../types/profile_actiontypes';
-const initialState ={
+import { 
+    GET_PROFILES, GET_PROFILES_SUCCESS, GET_PROFILES_FAILURE, 
+    GET_SINGLE_PROFILE, GET_SINGLE_PROFILE_SUCCESS, GET_SINGLE_PROFILE_FAILURE, 
+    ADD_PROFILE, ADD_PROFILE_SUCCESS, ADD_PROFILE_FAILURE } from '../types/profile_actiontypes';
+const initialState = {
     isLoading: false,
     isError: false,
-    profiles: []
+    profiles: [],
+    singleProfile: {}
 }
 export const profileReducer = (state = initialState, action) => {
-    switch(action.type){
+    switch (action.type) {
         case GET_PROFILES:
-            return Object.assign({}, state, {isLoading: true})
+            return Object.assign({}, state, { isLoading: true })
         case GET_PROFILES_SUCCESS:
-            return Object.assign({}, state, {isLoading: false,profiles: action.payload})
+            return Object.assign({}, state, { isLoading: false, profiles: action.payload })
         case GET_PROFILES_FAILURE:
-            return Object.assign({}, state, {isLoading: false, isError: true})
-
-
-        // add PROFILE section
+            return Object.assign({}, state, { isLoading: false, isError: true })
+// @get single Profile
+        case GET_PROFILES:
+            return Object.assign({}, state, { isLoading: true })
+        case GET_PROFILES_SUCCESS:
+            return Object.assign({}, state, { isLoading: false, singleProfile: action.payload })
+        case GET_PROFILES_FAILURE:
+            return Object.assign({}, state, { isLoading: false, isError: true })
+// add PROFILE section
         case ADD_PROFILE:
             return Object.assign({}, state, {
                 isLoading: true
@@ -27,9 +36,9 @@ export const profileReducer = (state = initialState, action) => {
             return Object.assign({}, state, {
                 isLoading: false,
                 isError: true
-            })    
+            })
         default:
-            return state    
+            return state
     }
     return state;
 }
