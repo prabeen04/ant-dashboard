@@ -35,9 +35,9 @@ class NavMenu extends React.Component {
                         </Link>
                     </Menu.Item>
                     <Menu.Item key="3">
-                        <Link to='/forms'>
+                        <Link to='/profile'>
                             <Icon type="inbox" />
-                            <span>forms</span>
+                            <span>Profile</span>
                         </Link>
                     </Menu.Item>
                     <SubMenu key="sub1" title={<span><Icon type="mail" /><span>Navigation One</span></span>}>
