@@ -21,7 +21,7 @@ const mapStateToProps = (state) =>{
 
 const mapDispatchToProps = (dispatch) =>{
     return bindActionCreators({
-        getProfile
+        getProfiles
     }, dispatch)
 }
 export default connect(mapStateToProps, mapDispatchToProps)(ProfileList);
