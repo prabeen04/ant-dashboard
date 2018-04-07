@@ -94,8 +94,9 @@ class Calendar extends Component {
             <button type="submit">submit</button>
           </form>
         </Modal>
+        {console.log(this.props.events)}
         <BigCalendar
-          events={eventList}
+          events={this.props.events}
           defaultDate={new Date()}
           startAccessor='startDate'
           endAccessor='endDate'
