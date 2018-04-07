@@ -12,7 +12,6 @@ class ProfileCard extends Component {
                     cover={<img alt="example" src="https:/lorempixel.com/200/160" />}>
                     <Meta
                         title="title"
-                        description="description"
                     />
                 </Card>
             </div>

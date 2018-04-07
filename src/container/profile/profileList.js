@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import ProfileCard from './profileCard'
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 
 class ProfileList extends Component {
   render() {
@@ -11,4 +13,15 @@ class ProfileList extends Component {
     )
   }
 }
-export default ProfileList;
+const mapStateToProps = (state) =>{
+    return{
+        users: state.users
+    }
+}
+
+const mapDispatchToProps = (dispatch) =>{
+    return bindActionCreators({
+        getProfile
+    }, dispatch)
+}
+export default connect(mapStateToProps, mapDispatchToProps)(ProfileList);
