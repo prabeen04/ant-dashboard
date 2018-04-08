@@ -26,25 +26,13 @@ export const getProfiles = () => {
             });
     }
 }
-export const getSingleProfile = (id) => {
-    console.log(id)
+export const getSingleProfile = (profile) => {
+    console.log(profile)
     return (dispatch) => {
         dispatch({
-            type: GET_SINGLE_PROFILE
+            type: GET_SINGLE_PROFILE,
+            payload: profile
         })
-        return axios.get(`${baseURL}/${id}`)
-            .then(response => {
-                console.log(response)
-                dispatch({
-                    type: GET_SINGLE_PROFILE_SUCCESS,
-                    payload: response.data
-                })
-            })
-            .catch(error => {
-                dispatch({
-                    type: GET_SINGLE_PROFILE_FAILURE
-                })
-            });
     }
 }
 export const addProfile = (profile) => {
