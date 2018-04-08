@@ -15,7 +15,7 @@ class ProfileCard extends Component {
                 <Card
                     hoverable
                     style={{ width: 150, height: 200 }}
-                    onClick={this.props.getSingleProfile(this.props._id)}
+                    onClick={() => this.props.getSingleProfile(this.props.id)}
                     cover={<img style={{ width: '100%', height: 150 }} alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}>
                     <Meta
                         title={this.props.name}

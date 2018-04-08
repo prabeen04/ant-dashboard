@@ -27,6 +27,7 @@ export const getProfiles = () => {
     }
 }
 export const getSingleProfile = (id) => {
+    console.log(id)
     return (dispatch) => {
         dispatch({
             type: GET_SINGLE_PROFILE
