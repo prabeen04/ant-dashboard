@@ -8,12 +8,15 @@ class ProfileView extends Component {
   render() {
     return (
       <div className="profile-view">
-        profile view
       {this.props.profile.name &&
           <Card
             style={{ width: 300 }}
             cover={<img alt="example" src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png" />}
-            actions={[<Icon type="setting" />, <Icon type="edit" />, <Icon type="ellipsis" />]}
+            actions={[
+              <Icon onClick={()=>console.log('settings clicked')} type="setting" />,
+              <Icon type="edit" />, 
+              <Icon type="ellipsis" />
+            ]}
           >
             <Meta
               avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
