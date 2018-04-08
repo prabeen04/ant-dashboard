@@ -18,11 +18,8 @@ export const profileReducer = (state = initialState, action) => {
             return Object.assign({}, state, { isLoading: false, isError: true })
 // @get single Profile
         case GET_SINGLE_PROFILE:
-            return Object.assign({}, state, { isLoading: true })
+            return Object.assign({}, state, { singleProfile: action.payload })
         case GET_SINGLE_PROFILE_SUCCESS:
-            return Object.assign({}, state, { isLoading: false, singleProfile: action.payload })
-        case GET_SINGLE_PROFILE_FAILURE:
-            return Object.assign({}, state, { isLoading: false, isError: true })
 // add PROFILE section
         case ADD_PROFILE:
             return Object.assign({}, state, {
