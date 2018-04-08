@@ -25,8 +25,7 @@ class ProfileList extends Component {
         let renderCard = this.props.profiles.map(profile =>{
             return <ProfileCard 
                 key={profile._id}
-                id={profile._id}
-                name={profile.name}
+                user={profile}
                 />
         })  
         console.log(this.props.profiles)

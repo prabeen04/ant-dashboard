@@ -6,14 +6,15 @@ class ProfileView extends Component {
   render() {
     return (
       <div className="profile-view">
-       ProfileView
+      profile view
+      {this.props.profile.name && <h1>{this.props.profile.name}</h1>}
       </div>
     )
   }
 }
 const mapStateToProps = (state) => {
   return {
-    profile: state.profileReducer.profile
+    profile: state.profileReducer.singleProfile
   }
 }
 const mapDispatchToProps = (dispatch) => {
