@@ -11,6 +11,7 @@ export const getProfiles = () => {
         dispatch({
             type: GET_PROFILES
         })
+        console.log('after get Profile Dispatch')
         return axios.get(`${baseURL}`)
             .then(response => {
                 console.log(response)
@@ -36,16 +37,19 @@ export const getSingleProfile = (profile) => {
     }
 }
 export const addProfile = (profile) => {
+    console.log(profile)
     return (dispatch) => {
         dispatch({
             type: ADD_PROFILE
         })
+        console.log('after Dispatch')
         return axios.post(`${baseURL}`,{profile})
             .then(response => {
                 console.log(response)
                 dispatch(getProfiles())
             })
             .catch(error => {
+                console.log(error)
                 dispatch({
                     type: ADD_PROFILE_FAILURE
                 })
