@@ -43,7 +43,7 @@ export const addProfile = (profile) => {
             type: ADD_PROFILE
         })
         console.log('after Dispatch')
-        return axios.post(`${baseURL}`,{profile})
+        return axios.post(`${baseURL}`,profile)
             .then(response => {
                 console.log(response)
                 dispatch(getProfiles())

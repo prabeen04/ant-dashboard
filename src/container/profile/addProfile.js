@@ -25,7 +25,7 @@ class AddProfile extends Component {
   }
   submitProfile = (values) =>{
     console.log(values)
-    addProfile(values)
+    this.props.addProfile(values)
   }
 
   render() {
