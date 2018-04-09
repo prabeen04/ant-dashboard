@@ -1,4 +1,10 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+import { Field, reduxForm } from 'redux-form'
+import { Input, Button, Icon } from 'antd'
+import './profile.css'
+import { addProfile } from '../../actions/profile_actions';
 
 class EditProfile extends Component {
   constructor(props) {
