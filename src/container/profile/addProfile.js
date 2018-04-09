@@ -1,4 +1,7 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+import { Field, reduxForm } from 'redux-form'
 
 class AddProfile extends Component {
   render() {
@@ -9,4 +12,8 @@ class AddProfile extends Component {
     )
   }
 }
-export default AddProfile;
+
+AddProfile = connect(mapStateToProps, mapDispatchToProps)(AddProfile)
+export default reduxForm({
+  form: addProfileForm
+})(AddProfile);

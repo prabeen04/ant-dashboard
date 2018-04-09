@@ -31,7 +31,10 @@ class ProfileList extends Component {
         console.log(this.props.profiles)
         return (
             <div className="flex-container" style={{justifyContent: 'flex-start'}}>
-            <div className="flex-container" style={{width: 150, height: 150, justifyContent: 'center'}}>
+            <div className="flex-container" 
+                 style={{width: 150, height: 200, justifyContent: 'center', backgroundColor: '#fff', cursor: 'pointer'}}
+                 onClick={()=>console.log('add Icon clicked')}
+                 >
                 <Icon type="plus" />
             </div>
             
