@@ -46,4 +46,18 @@ class EditProfile extends Component {
     )
   }
 }
-export default EditProfile;
+const mapStateToProps = (state) => {
+  return {
+
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return bindActionCreators({
+    addProfile
+  }, dispatch)
+}
+EditProfile = connect(mapStateToProps, mapDispatchToProps)(EditProfile)
+export default reduxForm({
+  form: 'editProfileForm'
+})(EditProfile);
