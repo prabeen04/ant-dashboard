@@ -13,7 +13,18 @@ class AddProfile extends Component {
   }
 }
 
+const mapStateToProps = (state) => {
+  return{
+
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return bindActionCreators({
+    // addProfile
+  }, dispatch)
+}
 AddProfile = connect(mapStateToProps, mapDispatchToProps)(AddProfile)
 export default reduxForm({
-  form: addProfileForm
+  form: 'addProfileForm'
 })(AddProfile);
