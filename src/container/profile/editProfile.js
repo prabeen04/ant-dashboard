@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { Field, reduxForm } from 'redux-form'
-import { Input, Button, Icon } from 'antd'
+import { Input, Button, Icon, Card } from 'antd'
 import './profile.css'
 import { addProfile } from '../../actions/profile_actions';
 
@@ -33,15 +33,17 @@ class EditProfile extends Component {
     console.log(submitting)
     return (
       <div className="add-profile">
+      <Card>
         <form onSubmit={handleSubmit(this.submitProfile)}>
           <Field component={this.renderInput} label={'Name'} name="name" />
           <Field component={this.renderInput} label={'Email'} name="email" />
           <Field component={this.renderInput} label={'Location'} name="location" />
           <Button htmlType="submit" type="primary" loading={submitting}>
-          Click me!
+          Update
         </Button>
        { console.log(submitting)}
         </form>
+        </Card>
       </div>
     )
   }
