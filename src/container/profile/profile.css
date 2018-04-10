@@ -1,7 +1,12 @@
 .profile-wrapper{
     display: flex;
 }
+.profile-list{
+    flex-basis: 70%;
+}
+.profile-action{
+    flex-basis: 30%;
+}
 .add-profile{
-    width: 30%;
 }
 
