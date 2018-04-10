@@ -36,6 +36,15 @@ export const getSingleProfile = (profile) => {
         })
     }
 }
+
+export const showAddProfile = () => {
+    return (dispatch) => {
+        dispatch({
+            type: SHOW_ADD_PROFILE
+        })
+    }
+}
+
 export const addProfile = (profile) => {
     console.log(profile)
     return (dispatch) => {
