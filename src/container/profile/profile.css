@@ -1,3 +1,7 @@
+.profile-wrapper{
+    display: flex;
+}
 .add-profile{
     width: 30%;
 }
+

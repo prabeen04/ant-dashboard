@@ -4,15 +4,21 @@ import ProfileList from './profileList'
 import AddProfile from './addProfile'
 import EditProfile from './editProfile'
 import ProfileView from './profileView'
+import './profile.css'
+
 class Profile extends Component {
   render() {
     return (
       <div className="profile-wrapper">
-        <ProfileList />
-        {this.props.showAddProfile && <AddProfile />}
+      <div className="profile-list">
+      <ProfileList />
+      </div>
+      <div className="profile-action">
+      {this.props.showAddProfile && <AddProfile />}
         {this.props.showEditProfile && <EditProfile />}
         {this.props.showViewProfile && <ProfileView />}
-      </div>
+      </div>    
+        </div>
     )
   }
 }
