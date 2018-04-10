@@ -8,16 +8,17 @@ class Profile extends Component {
   render() {
     return (
       <div className="profile-wrapper">
-        <ProfileList/>
-        <AddProfile/>
-        <EditProfile/>
-        <ProfileView/>
+        <ProfileList />
+        {this.props.showAddProfile && <AddProfile />}
+        {this.props.showEditProfile && <EditProfile />}
+        {this.props.showViewProfile && <ProfileView />}
       </div>
     )
   }
 }
 const mapStateToProps = (state) => {
-  return{
+  console.log(state.profileReducer)
+  return {
     showAddProfile: state.profileReducer.showAddProfile,
     showEditProfile: state.profileReducer.showEditProfile,
     showViewProfile: state.profileReducer.showViewProfile
