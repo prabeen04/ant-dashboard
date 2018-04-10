@@ -6,7 +6,10 @@ const initialState = {
     isLoading: false,
     isError: false,
     profiles: [],
-    singleProfile: {}
+    singleProfile: {},
+    showAddProfile: false,
+    showEditProfile: false,
+    showViewProfile: false,
 }
 export const profileReducer = (state = initialState, action) => {
     switch (action.type) {
