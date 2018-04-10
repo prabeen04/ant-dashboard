@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import ProfileList from './profileList'
 import AddProfile from './addProfile'
 import EditProfile from './editProfile'
@@ -15,4 +16,11 @@ class Profile extends Component {
     )
   }
 }
-export default Profile;
+const mapStateToProps = (state) => {
+  return{
+    showAddProfile: state.profileReducer.showAddProfile,
+    showEditProfile: state.profileReducer.showEditProfile,
+    showViewProfile: state.profileReducer.showViewProfile
+  }
+}
+export default connect(mapStateToProps)(Profile);
