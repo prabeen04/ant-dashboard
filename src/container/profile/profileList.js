@@ -3,7 +3,7 @@ import ProfileCard from './profileCard'
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Icon } from 'antd';
-import { getProfiles, addProfile } from '../../actions/profile_actions';
+import { getProfiles, addProfile, showAddProfile } from '../../actions/profile_actions';
 
 class ProfileList extends Component {
     componentDidMount() {
@@ -33,7 +33,7 @@ class ProfileList extends Component {
             <div className="flex-container" style={{justifyContent: 'flex-start'}}>
             <div className="flex-container" 
                  style={{width: 150, height: 200, justifyContent: 'center', backgroundColor: '#fff', cursor: 'pointer'}}
-                 onClick={()=>console.log('add Icon clicked')}
+                 onClick={()=>this.props.showAddProfile()}
                  >
                 <Icon type="plus" />
             </div>
@@ -55,7 +55,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return bindActionCreators({
         getProfiles,
-        addProfile
+        addProfile,
+        showAddProfile
     }, dispatch)
 }
 export default connect(mapStateToProps, mapDispatchToProps)(ProfileList);

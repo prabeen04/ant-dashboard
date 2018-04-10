@@ -38,6 +38,7 @@ export const getSingleProfile = (profile) => {
 }
 
 export const showAddProfile = () => {
+    console.log('show add profile fired')
     return (dispatch) => {
         dispatch({
             type: SHOW_ADD_PROFILE
