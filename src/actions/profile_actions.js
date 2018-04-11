@@ -1,8 +1,9 @@
-import { 
-        GET_PROFILES, GET_PROFILES_SUCCESS, GET_PROFILES_FAILURE, 
-        GET_SINGLE_PROFILE, GET_SINGLE_PROFILE_SUCCESS, GET_SINGLE_PROFILE_FAILURE, 
-        SHOW_ADD_PROFILE, ADD_PROFILE, ADD_PROFILE_SUCCESS, ADD_PROFILE_FAILURE,
-        OPEN_EDIT_PROFILE, EDIT_PROFILE, EDIT_PROFILE_SUCCESS, EDIT_PROFILE_FAILURE } from '../types/profile_actiontypes';
+import {
+    GET_PROFILES, GET_PROFILES_SUCCESS, GET_PROFILES_FAILURE,
+    GET_SINGLE_PROFILE, GET_SINGLE_PROFILE_SUCCESS, GET_SINGLE_PROFILE_FAILURE,
+    SHOW_ADD_PROFILE, ADD_PROFILE, ADD_PROFILE_SUCCESS, ADD_PROFILE_FAILURE,
+    OPEN_EDIT_PROFILE, EDIT_PROFILE, EDIT_PROFILE_SUCCESS, EDIT_PROFILE_FAILURE
+} from '../types/profile_actiontypes';
 
 import axios from 'axios';
 
@@ -55,7 +56,7 @@ export const addProfile = (profile) => {
             type: ADD_PROFILE
         })
         console.log('after Dispatch')
-        return axios.post(`${baseURL}`,profile)
+        return axios.post(`${baseURL}`, profile)
             .then(response => {
                 console.log(response)
                 dispatch(getProfiles())
@@ -83,7 +84,17 @@ export const updateProfile = (profile) => {
     return (dispatch) => {
         dispatch({
             type: EDIT_PROFILE,
-            payload: profile
         })
+        return axios.put(`${baseURL}/${profile._id}`, profile)
+            .then(response => {
+                console.log(response)
+                dispatch(getProfiles())
+            })
+            .catch(error => {
+                console.log(error)
+                dispatch({
+                    type: ADD_PROFILE_FAILURE
+                })
+            });
     }
 }
