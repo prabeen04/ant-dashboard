@@ -2,7 +2,7 @@ import {
     GET_PROFILES, GET_PROFILES_SUCCESS, GET_PROFILES_FAILURE,
     GET_SINGLE_PROFILE, GET_SINGLE_PROFILE_SUCCESS, GET_SINGLE_PROFILE_FAILURE,
     SHOW_ADD_PROFILE, ADD_PROFILE, ADD_PROFILE_SUCCESS, ADD_PROFILE_FAILURE,
-    EDIT_PROFILE
+    OPEN_EDIT_PROFILE
 } from '../types/profile_actiontypes';
 const initialState = {
     isLoading: false,
@@ -44,7 +44,7 @@ export const profileReducer = (state = initialState, action) => {
                 isError: true
             })
         // EDIT PROFILE section
-        case EDIT_PROFILE:
+        case OPEN_EDIT_PROFILE:
             return Object.assign({}, state, {
                 showViewProfile: false, showAddProfile: false, showEditProfile: true
             })
