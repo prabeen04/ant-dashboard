@@ -1,11 +1,13 @@
 .profile-wrapper{
-    display: flex;
+    width: 100%;
 }
 .profile-list{
-    flex-basis: 70%;
+    width: 70%;
+    display: flex;
+    flex-wrap: wrap;
 }
 .profile-action{
-    flex-basis: 30%;
+    width: 30%;
 }
 .add-profile{
 }
