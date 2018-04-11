@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { Card, Icon, Avatar } from 'antd';
+import { Card, Icon, Avatar } from 'antd'
+import { handleEdit } from '../../actions/profile_actions'
 const { Meta } = Card;
 
 class ProfileView extends Component {
@@ -14,7 +15,7 @@ class ProfileView extends Component {
             cover={<img alt="example" src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png" />}
             actions={[
               <Icon onClick={()=>console.log('settings clicked')} type="setting" />,
-              <Icon type="edit" />, 
+              <Icon type="edit" onClick={this.props.handleEdit}/>, 
               <Icon type="ellipsis" />
             ]}
           >
@@ -36,6 +37,8 @@ const mapStateToProps = (state) => {
   }
 }
 const mapDispatchToProps = (dispatch) => {
-  return bindActionCreators({}, dispatch)
+  return bindActionCreators({
+    handleEdit
+  }, dispatch)
 }
 export default connect(mapStateToProps, mapDispatchToProps)(ProfileView);

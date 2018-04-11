@@ -66,3 +66,24 @@ export const addProfile = (profile) => {
             });
     }
 }
+
+export const editProfile = (profile) => {
+    console.log(profile)
+    return (dispatch) => {
+        dispatch({
+            type: ADD_PROFILE
+        })
+        console.log('after Dispatch')
+        return axios.post(`${baseURL}`,profile)
+            .then(response => {
+                console.log(response)
+                dispatch(getProfiles())
+            })
+            .catch(error => {
+                console.log(error)
+                dispatch({
+                    type: ADD_PROFILE_FAILURE
+                })
+            });
+    }
+}
