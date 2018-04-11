@@ -78,7 +78,7 @@ export const openEditProfile = (profile) => {
         })
     }
 }
-export const editProfile = (profile) => {
+export const updateProfile = (profile) => {
     console.log(profile)
     return (dispatch) => {
         dispatch({

@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux'
 import { Field, reduxForm } from 'redux-form'
 import { Input, Button, Icon, Card } from 'antd'
 import './profile.css'
-import { editProfile } from '../../actions/profile_actions';
+import { updateProfile } from '../../actions/profile_actions';
 
 class EditProfile extends Component {
   constructor(props) {
@@ -25,7 +25,7 @@ class EditProfile extends Component {
   }
   submitProfile = (values) =>{
     console.log(values)
-    this.props.addProfile(values)
+    this.props.updateProfile(values)
   }
 
   render() {
@@ -62,7 +62,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return bindActionCreators({
-    editProfile
+    updateProfile
   }, dispatch)
 }
 
