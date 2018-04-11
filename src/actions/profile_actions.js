@@ -69,6 +69,15 @@ export const addProfile = (profile) => {
     }
 }
 
+export const openEditProfile = (profile) => {
+    console.log(profile)
+    return (dispatch) => {
+        dispatch({
+            type: OPEN_EDIT_PROFILE,
+            payload: profile
+        })
+    }
+}
 export const editProfile = (profile) => {
     console.log(profile)
     return (dispatch) => {

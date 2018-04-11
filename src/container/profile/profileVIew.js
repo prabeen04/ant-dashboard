@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { Card, Icon, Avatar } from 'antd'
-import { editProfile } from '../../actions/profile_actions'
+import { openEditProfile } from '../../actions/profile_actions'
 const { Meta } = Card;
 
 class ProfileView extends Component {
@@ -15,7 +15,7 @@ class ProfileView extends Component {
             cover={<img alt="example" src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png" />}
             actions={[
               <Icon onClick={()=>console.log('settings clicked')} type="setting" />,
-              <Icon type="edit" onClick={() => this.props.editProfile(this.props.profile)}/>, 
+              <Icon type="edit" onClick={() => this.props.openEditProfile(this.props.profile)}/>, 
               <Icon type="ellipsis" />
             ]}
           >
@@ -38,7 +38,7 @@ const mapStateToProps = (state) => {
 }
 const mapDispatchToProps = (dispatch) => {
   return bindActionCreators({
-    editProfile
+    openEditProfile
   }, dispatch)
 }
 export default connect(mapStateToProps, mapDispatchToProps)(ProfileView);
