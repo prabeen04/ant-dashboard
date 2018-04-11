@@ -15,7 +15,7 @@ class ProfileView extends Component {
             cover={<img alt="example" src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png" />}
             actions={[
               <Icon onClick={()=>console.log('settings clicked')} type="setting" />,
-              <Icon type="edit" onClick={this.props.editProfile(this.props.profile)}/>, 
+              <Icon type="edit" onClick={() => this.props.editProfile(this.props.profile)}/>, 
               <Icon type="ellipsis" />
             ]}
           >
