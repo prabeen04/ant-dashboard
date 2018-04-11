@@ -73,7 +73,8 @@ export const editProfile = (profile) => {
     console.log(profile)
     return (dispatch) => {
         dispatch({
-            type: OPEN_EDIT_PROFILE
+            type: OPEN_EDIT_PROFILE,
+            payload: profile
         })
     }
 }
