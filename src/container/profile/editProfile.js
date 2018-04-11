@@ -50,7 +50,7 @@ class EditProfile extends Component {
 }
 const mapStateToProps = (state) => {
   return {
-    singleProfile: state.profileReducer.singleProfile
+    initializeValue: state.profileReducer.singleProfile
   }
 }
 
@@ -62,6 +62,5 @@ const mapDispatchToProps = (dispatch) => {
 EditProfile = connect(mapStateToProps, mapDispatchToProps)(EditProfile)
 export default reduxForm({
   form: 'editProfileForm',
-  enableReinitialize: true,
-  initialValues: this.props.singleProfile
+  enableReinitialize: true
 })(EditProfile);
