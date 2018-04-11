@@ -30,7 +30,7 @@ class ProfileList extends Component {
         })  
         console.log(this.props.profiles)
         return (
-            <div className="flex-container" style={{justifyContent: 'flex-start', flexWrap: 'wrap'}}>
+            <div className="profile-list" style={{}}>
             <div className="flex-container" 
                  style={{width: 150, height: 200, justifyContent: 'center', backgroundColor: '#fff', cursor: 'pointer'}}
                  onClick={()=>this.props.showAddProfile()}

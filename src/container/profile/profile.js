@@ -10,15 +10,14 @@ class Profile extends Component {
   render() {
     return (
       <div className="profile-wrapper">
-      <div className="profile-list">
-      <ProfileList />
-      </div>
-      <div className="profile-action">
-      {this.props.showAddProfile && <AddProfile />}
-        {this.props.showEditProfile && <EditProfile />}
-        {this.props.showViewProfile && <ProfileView />}
-      </div>    
+
+        <ProfileList />
+        <div className="profile-action">
+          {this.props.showAddProfile && <AddProfile />}
+          {this.props.showEditProfile && <EditProfile />}
+          {this.props.showViewProfile && <ProfileView />}
         </div>
+      </div>
     )
   }
 }

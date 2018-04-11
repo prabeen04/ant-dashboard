@@ -61,5 +61,10 @@ const mapDispatchToProps = (dispatch) => {
 }
 EditProfile = connect(mapStateToProps, mapDispatchToProps)(EditProfile)
 export default reduxForm({
-  form: 'editProfileForm'
+  form: 'editProfileForm',
+  initialValues: {
+    name: 'jhdfjshdfj',
+    email: 'asdas@sgsdg.fs',
+    location: 'sdfdf'
+  }
 })(EditProfile);
