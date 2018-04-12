@@ -13,7 +13,14 @@ class ProfileList extends Component {
 
     render() {
 
-        
+        if (this.props.isLoading) {
+            return (<div className="flex-container" style={{ height: '80vh', justifyContent: 'center' }}>
+                <Icon type="loading" style={{ fontSize: 60, color: 'tomato' }} spin />
+            </div>)
+        }
+        if (this.props.isError) {
+            return (<p>Some Error occoured...</p>)
+        }
 
         let renderCard = this.props.profiles.map(profile =>{
             return <ProfileCard 
