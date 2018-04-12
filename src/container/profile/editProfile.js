@@ -28,6 +28,9 @@ class EditProfile extends Component {
     this.props.updateProfile(values)
   }
 
+  componentDidMount(){
+    this.props.initialize(this.props.initialValues);
+  }
   render() {
     const { handleSubmit, pristine, reset, submitting } = this.props
     console.log(submitting)
