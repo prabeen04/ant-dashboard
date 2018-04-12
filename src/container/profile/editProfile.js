@@ -28,7 +28,7 @@ class EditProfile extends Component {
     this.props.updateProfile(values)
   }
 
-  componentDidMount(){
+  componentDidUpdate(){
     this.props.initialize(this.props.initialValues);
   }
   render() {
