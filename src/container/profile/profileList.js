@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import ProfileCard from './profileCard'
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { Icon } from 'antd';
+import { Icon, Card } from 'antd';
 import { getProfiles, addProfile, showAddProfile } from '../../actions/profile_actions';
 
 class ProfileList extends Component {
@@ -14,8 +14,9 @@ class ProfileList extends Component {
     render() {
 
         if (this.props.isLoading) {
-            return (<div className="flex-container" style={{ height: '80vh', justifyContent: 'center' }}>
-                <Icon type="loading" style={{ fontSize: 60, color: 'tomato' }} spin />
+            return (<div className="flex-container" style={{height: '80vh', justifyContent: 'center' }}>
+                {/* <Icon type="loading" style={{ fontSize: 60, color: 'tomato' }} spin /> */}
+                <Card loading style={{ width: '500px'}}></Card>
             </div>)
         }
         if (this.props.isError) {
