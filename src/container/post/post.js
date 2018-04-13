@@ -1,13 +1,16 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import AddPost from "./addPost";
 import PostList from './postList';
+import { Button, Icon } from 'antd';
 import './post.css'
 
 class Post extends Component {
   render() {
     return (
       <div className="post-wrapper">
-        <h1>Post component</h1>
+        <div className="post-actions">
+        <Button type="primary" icon="plus" >Add Post</Button>
+        </div>
         <AddPost/>
         <PostList/>
       </div>
