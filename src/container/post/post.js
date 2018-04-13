@@ -13,14 +13,20 @@ class Post extends Component {
     this.setIsModalOpen = this.setIsModalOpen.bind(this);
   }
   setIsModalOpen = (bool) =>{
-    console.log(bool)
+    this.setState({
+      isModalOpen: false
+    })
   }
   render() {
     return (
       <div className="post-wrapper">
         <div className="post-actions">
         <Button type="primary" icon="filter" >Filter</Button>
-        <Button type="primary" icon="plus" >Add Post</Button>
+        <Button 
+              type="primary" 
+              icon="plus" 
+              onClick={()=>this.setState({isModalOpen: true})}>
+              Add Post</Button>
         </div>
         <Modal
         title="Vertically centered modal dialog"
