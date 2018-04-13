@@ -15,6 +15,7 @@ export const getPosts = (dispatch) => {
 
         return axios.get(`${baseURL}`)
             .then((res) => {
+                console.log(res.data)
                 dispatch({
                     type: GET_POSTS_SUCCESS,
                     payload: res.data

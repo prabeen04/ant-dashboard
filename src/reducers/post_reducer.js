@@ -17,6 +17,9 @@ export const postReducer = (state=initialState, action) => {
         case GET_POSTS_SUCCESS:
             return Object.assign({}, state, {isLoading: false, posts: action.payload})
         case GET_POSTS_FAILURE:
-            return Object.assign({}, state, {isLoading: false, isError: true})        
+            return Object.assign({}, state, {isLoading: false, isError: true})  
+        default:
+            return state          
     }
+    return state;
 }

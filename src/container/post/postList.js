@@ -7,6 +7,10 @@ class PostList extends Component {
   constructor(props){
     super(props)
   }
+  componentDidMount(){
+    console.log('hghgjh')
+    this.props.getPosts();
+  }
   render() {
     return (
       <div>
@@ -16,7 +20,9 @@ class PostList extends Component {
   }
 }
 const mapStateToProps = (state) =>{
-
+  return{
+    posts: state.postReducer.posts
+  }
 }
 const mapDispatchToProps = (dispatch) =>{
     return bindActionCreators({
