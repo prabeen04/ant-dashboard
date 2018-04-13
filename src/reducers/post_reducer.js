@@ -10,9 +10,13 @@ const initialState = {
     singlePost: {}
 }
 
-export const postReducer = (state=initialState, action){
+export const postReducer = (state=initialState, action) => {
     switch(action.type ){
         case GET_POSTS:
-            return 
+            return Object.assign({}, state,{ isLoading: true})
+        case GET_POSTS_SUCCESS:
+            return Object.assign({}, state, {isLoading: false, posts: action.payload})
+        case GET_POSTS_FAILURE:
+            return Object.assign({}, state, {isLoading: false, isError: true})        
     }
 }
