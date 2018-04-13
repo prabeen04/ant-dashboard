@@ -29,10 +29,12 @@ class Post extends Component {
               Add Post</Button>
         </div>
         <Modal
-        title="Vertically centered modal dialog"
+          title="Speak your mind"
+          maskClosable={true}
           wrapClassName="vertical-center-modal"
           visible={this.state.isModalOpen}
           onOk={() => this.setIsModalOpen(false)}
+          onCancel={() => this.setIsModalOpen(false)}
           >
         <AddPost/>
         </Modal>
