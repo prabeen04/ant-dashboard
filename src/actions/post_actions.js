@@ -1,6 +1,6 @@
 import {
-GET_POSTS, GET_POSTS_SUCCESS, GET_POSTS_FAILURE, ADD_POST, ADD_POST_SUCCESS, ADD_POST_FAILURE,
- VIEW_POST, VIEW_POST_SUCCESS, VIEW_POST_FAILURE
+    GET_POSTS, GET_POSTS_SUCCESS, GET_POSTS_FAILURE, ADD_POST, ADD_POST_SUCCESS, ADD_POST_FAILURE,
+    VIEW_POST, VIEW_POST_SUCCESS, VIEW_POST_FAILURE
 } from '../types/post_actiontypes';
 import axios from 'axios';
 
@@ -13,6 +13,17 @@ export const getPosts = (dispatch) => {
             type: GET_POSTS
         })
 
-    return axios.get(`${baseURL}`)    
+        return axios.get(`${baseURL}`)
+            .then((res) => {
+                dispatch({
+                    type: GET_POSTS_SUCCESS,
+                    payload: res.data
+                })
+            })
+            .catch((err) => {
+                dispatch({
+                    type: GET_POSTS_FAILURE,
+                })
+            })
     }
 }
