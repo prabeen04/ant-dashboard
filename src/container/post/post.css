@@ -1,8 +1,16 @@
 .post-wrapper{
-    width: 100%;
+    /* width: 100%;
     background: #fff;
     margin: 0.5rem;
     padding: 0.8rem;
     border-radius: 0.3rem;
-    box-shadow: 0 1px 6px 1px #aaa;
+    box-shadow: 0 1px 6px 1px #aaa; */
+}
+.post-actions{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    background: #f4f4f4;
+    padding: 1rem
 }
