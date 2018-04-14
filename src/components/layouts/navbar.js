@@ -7,6 +7,7 @@ import Dashboard from '../../container/dashboard/dashboard';
 import Calendar from '../../container/calendar/calendar';
 import Profile from '../../container/profile/profile';
 import Post from '../../container/post/post';
+import SinglePost from '../../container/post/singlePost';
 import NotFound from '../../container/notFound/notFound';
 const { Header, Sider, Content } = Layout;
 
@@ -76,6 +77,7 @@ class Navbar extends React.Component {
                             <Route exact path='/calendar' component={Calendar} />
                             <Route exact path='/profile' component={Profile} />
                             <Route exact path='/post' component={Post} />
+                            <Route exact path='/post/:id' component={SinglePost} />
                             <Route path='**' component={NotFound} />
                         </Switch>
                     </Content>

@@ -29,7 +29,7 @@ export const getPosts = (dispatch) => {
     }
 }
 
-export const getSiglePost = (post) =>{
+export const getSinglePost = (post) =>{
     return (dispatch) => {
         dispatch({
             type: GET_SINGLE_POST,

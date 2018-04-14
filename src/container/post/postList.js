@@ -1,24 +1,31 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
+import { withRouter } from 'react-router-dom'
 import { Icon } from 'antd'
-import { getPosts } from '../../actions/post_actions'
+import { getPosts, getSinglePost } from '../../actions/post_actions'
 import './post.css'
 import moment from 'moment'
 
 class PostList extends Component {
   constructor(props) {
     super(props)
+    console.log(props)
+    this.getSinglePost = this.getSinglePost.bind(this);
   }
   componentDidMount() {
     console.log('hghgjh')
     this.props.getPosts();
   }
 
-
+  getSinglePost = (post) => {
+    console.log(post)
+    this.props.getSinglePost(post);
+    this.props.history.push(`/post/${post._id}`)
+  }
   render() {
     let renderPost = this.props.posts.map(post => {
-      return <div key={post._id} className="post-row " >
+      return <div key={post._id} className="post-row " onClick={()=>this.getSinglePost(post)}>
         <div className="post-title">
           <Icon type="idcard" className="post-icon" /> &nbsp;&nbsp;&nbsp;{post.title}
         </div>
@@ -53,7 +60,8 @@ const mapStateToProps = (state) => {
 }
 const mapDispatchToProps = (dispatch) => {
   return bindActionCreators({
-    getPosts
+    getPosts,
+    getSinglePost
   }, dispatch)
 }
-export default connect(mapStateToProps, mapDispatchToProps)(PostList);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(PostList));
