@@ -4,6 +4,7 @@ import { bindActionCreators } from 'redux'
 import { Icon } from 'antd'
 import { getPosts } from '../../actions/post_actions'
 import './post.css'
+import moment from 'moment'
 
 class PostList extends Component {
   constructor(props) {
@@ -13,14 +14,20 @@ class PostList extends Component {
     console.log('hghgjh')
     this.props.getPosts();
   }
-   
+
 
   render() {
- let renderPost = this.props.posts.map(post => {
-      return <div key={post._id} className="post-row"> 
-        <div className="post-title"><Icon type="idcard"/> &nbsp;&nbsp;&nbsp;{post.title}</div>
-        <div className="post-title"><Icon type="user"/> &nbsp;&nbsp;&nbsp;{post.author}</div>
-        <div className="post-title"><Icon type="clock-circle-o"/> &nbsp;&nbsp;&nbsp;{post.date}</div>
+    let renderPost = this.props.posts.map(post => {
+      return <div key={post._id} className="post-row ">
+        <div className="post-title">
+          <Icon type="idcard" className="post-icon" /> &nbsp;&nbsp;&nbsp;{post.title}
+        </div>
+        <div className="post-title">
+          <Icon type="user" className="post-icon" /> &nbsp;&nbsp;&nbsp;{post.author}
+        </div>
+        <div className="post-title">
+          <Icon type="clock-circle-o" className="post-icon" /> &nbsp;&nbsp;&nbsp;{moment(post.date).fromNow()}
+        </div>
       </div>
     })
 

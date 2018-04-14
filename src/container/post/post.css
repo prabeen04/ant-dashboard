@@ -11,17 +11,20 @@
     justify-content: space-between;
     align-items: center;
     align-content: center;
-    background: #f4f4f4;
-    padding: 1rem
+    background: #eeeef1;
+    padding: 1rem;
+    margin-bottom: 0.5rem;
 }
 .post-row{
     display: flex;
     justify-content: space-between;
     align-items: center;
     align-content: center;
+    color: rgb(109, 107, 107);
     background: #ffffff;
-    padding: 1rem;
-    margin: 0.2rem 0.5rem;
+    font-weight: 500;
+    padding: 0.8rem 1rem;
+    margin: 0.1rem 0.5rem;
     border-radius: 0.3rem;
     box-shadow: 0 2px 6px 1px #ccc;
     transition: 0.3s all ease-in-out;
@@ -29,15 +32,39 @@
 }
 .post-row:hover{
     /* background: #e7eaf0; */
+    color: rgb(103, 107, 121);
     box-shadow: 0 2px 6px 1px rgb(138, 134, 134);
-    margin-bottom: 0.8rem;
+    margin-bottom: 0.4rem;
 }
 .post-title{
-    flex-basis: 60%;
+    flex-basis: 70%;
+    display: flex;
+    align-items: center;
 }
 .post-date{
-    flex-basis: 20%;
+    flex-basis: 15%;
+    display: flex;
+    align-items: center;
 }
 .post-date{
-    flex-basis: 20%;
+    flex-basis: 15%;
+    display: flex;
+    align-items: center;
 }
+.post-icon{
+    color: #4480c5;
+    font-size: 1.2rem;
+}
+/* Ripple effect */
+.ripple {
+    background-position: center;
+    transition: background 0.8s;
+  }
+  .ripple:hover {
+    background: #47a7f5 radial-gradient(circle, transparent 1%, #47a7f5 1%) center/15000%;
+  }
+  .ripple:active {
+    background-color: #6eb9f7;
+    background-size: 100%;
+    transition: background 0s;
+  }
