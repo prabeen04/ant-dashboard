@@ -1,6 +1,6 @@
 import {
     GET_POSTS, GET_POSTS_SUCCESS, GET_POSTS_FAILURE, ADD_POST, ADD_POST_SUCCESS, ADD_POST_FAILURE,
-    VIEW_POST, VIEW_POST_SUCCESS, VIEW_POST_FAILURE
+    VIEW_POST, VIEW_POST_SUCCESS, VIEW_POST_FAILURE, GET_SINGLE_POST
 } from '../types/post_actiontypes';
 import axios from 'axios';
 
@@ -26,5 +26,14 @@ export const getPosts = (dispatch) => {
                     type: GET_POSTS_FAILURE,
                 })
             })
+    }
+}
+
+export const getSiglePost = (post) =>{
+    return (dispatch) => {
+        dispatch({
+            type: GET_SINGLE_POST,
+            payload: post
+        })
     }
 }

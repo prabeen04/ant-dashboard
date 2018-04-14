@@ -18,7 +18,7 @@ class PostList extends Component {
 
   render() {
     let renderPost = this.props.posts.map(post => {
-      return <div key={post._id} className="post-row ">
+      return <div key={post._id} className="post-row " >
         <div className="post-title">
           <Icon type="idcard" className="post-icon" /> &nbsp;&nbsp;&nbsp;{post.title}
         </div>
