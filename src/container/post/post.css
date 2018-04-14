@@ -19,15 +19,25 @@
     justify-content: space-between;
     align-items: center;
     align-content: center;
-    background: #f4f4f4;
-    padding: 1rem
+    background: #ffffff;
+    padding: 1rem;
+    margin: 0.2rem 0.5rem;
+    border-radius: 0.3rem;
+    box-shadow: 0 2px 6px 1px #ccc;
+    transition: 0.3s all ease-in-out;
+    cursor: pointer;
+}
+.post-row:hover{
+    /* background: #e7eaf0; */
+    box-shadow: 0 2px 6px 1px rgb(138, 134, 134);
+    margin-bottom: 0.8rem;
 }
 .post-title{
-
+    flex-basis: 60%;
 }
 .post-date{
-
+    flex-basis: 20%;
 }
 .post-date{
-
+    flex-basis: 20%;
 }
