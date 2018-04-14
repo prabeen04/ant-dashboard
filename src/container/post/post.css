@@ -14,3 +14,20 @@
     background: #f4f4f4;
     padding: 1rem
 }
+.post-row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    background: #f4f4f4;
+    padding: 1rem
+}
+.post-title{
+
+}
+.post-date{
+
+}
+.post-date{
+
+}

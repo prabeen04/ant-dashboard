@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { getPosts } from '../../actions/post_actions'
+import './post.css'
 
 class PostList extends Component {
   constructor(props) {
@@ -15,8 +16,13 @@ class PostList extends Component {
 
   render() {
  let renderPost = this.props.posts.map(post => {
-      return <h1> my posts</h1>
+      return <div key={post._id} className="post-row"> 
+        <div className="post-title">{post.title}</div>
+        <div className="post-title">{post.author}</div>
+        <div className="post-title">{post.date}</div>
+      </div>
     })
+
     if (this.props.isLoading) {
       return <h4>Loading...</h4>
     }
@@ -25,7 +31,7 @@ class PostList extends Component {
     }
     return (
       <div>
-        <h1>PostList Component Created</h1>
+        <h1>PostList</h1>
         {renderPost}
       </div>
     )
