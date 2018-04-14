@@ -14,7 +14,7 @@ class NavMenu extends React.Component {
     // }
     render() {
         return (
-            <div style={{ width: 200 }}>
+            <div>
                 <Menu
                     defaultSelectedKeys={['1']}
                     defaultOpenKeys={['sub1']}

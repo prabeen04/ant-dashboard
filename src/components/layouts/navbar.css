@@ -15,3 +15,10 @@
     background: rgba(255,255,255,.2);
     margin: 16px;
   }
+
+  .collapsedMargin{
+    border: 4px solid red !important;
+  }
+  .unCollapsedMargin{
+    border: 4px solid teal !important;
+  }

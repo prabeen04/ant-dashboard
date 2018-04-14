@@ -10,7 +10,6 @@ import moment from 'moment'
 class PostList extends Component {
   constructor(props) {
     super(props)
-    console.log(props)
     this.getSinglePost = this.getSinglePost.bind(this);
   }
   componentDidMount() {
@@ -19,9 +18,11 @@ class PostList extends Component {
   }
 
   getSinglePost = (post) => {
-    console.log(post)
     this.props.getSinglePost(post);
-    this.props.history.push(`/post/${post._id}`)
+    this.props.history.push({
+      pathname: `/post/${post._id}`,
+      state: { post: post }
+    })
   }
   render() {
     let renderPost = this.props.posts.map(post => {

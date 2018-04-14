@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
+import { withRouter } from 'react-router-dom' 
 import { getSinglePost } from '../../actions/post_actions'
 
 class SinglePost extends Component {
     
   render() {
-    console.log(this.props.singlePost)
+    console.log(this.props)
     return (
       <div>
         <h3>{this.props.singlePost.title}</h3>
@@ -28,4 +29,4 @@ const mapDispatchToProps = (dispatch) =>{
         getSinglePost
     }, dispatch)
 }
-export default connect(mapStateToProps, mapDispatchToProps)(SinglePost);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(SinglePost));
