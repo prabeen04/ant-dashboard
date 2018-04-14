@@ -9,11 +9,11 @@ class SinglePost extends Component {
   render() {
     console.log(this.props)
     return (
-      <div>
-        <h3>{this.props.singlePost.title}</h3>
-        <h3>{this.props.singlePost.author}</h3>
-        <h3>{this.props.singlePost.date}</h3>
-        <h3>{this.props.singlePost.body}</h3>
+      <div className="single-post">
+        <h3>{this.props.singlePost.title || this.props.location.state.post.title}</h3>
+        <h3>{this.props.singlePost.author || this.props.location.state.post.author}</h3>
+        <h3>{this.props.singlePost.date || this.props.location.state.post.date}</h3>
+        <p>{this.props.singlePost.body || this.props.location.state.post.body}</p>
       </div>
     )
   }

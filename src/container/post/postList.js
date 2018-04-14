@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { withRouter } from 'react-router-dom'
-import { Icon } from 'antd'
+import { Icon, Card } from 'antd'
 import { getPosts, getSinglePost } from '../../actions/post_actions'
 import './post.css'
 import moment from 'moment'
@@ -40,7 +40,7 @@ class PostList extends Component {
     })
 
     if (this.props.isLoading) {
-      return <h4>Loading...</h4>
+      return <Card loading style={{height: '400px'}}></Card>
     }
     if (this.props.isError) {
       return <h4>Some Error Occoured...</h4>
