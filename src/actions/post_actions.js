@@ -37,3 +37,20 @@ export const getSinglePost = (post) =>{
         })
     }
 }
+
+export const addPost = (post) => {
+    return (dispatch) => {
+        dispatch({
+            type: ADD_POST
+        })
+    return axios.post(`${baseURL}`, post)
+        .then(response => {
+            dispatch(getPost)
+        })
+        .catch((error) => {
+            dispatch({
+                type: GET_POSTS_FAILURE
+            })
+        })    
+    }
+}
