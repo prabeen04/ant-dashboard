@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { Field, withForm } from 'redux-form';
+import { Field, reduxForm } from 'redux-form';
 import { addPost } from '../../actions/post_actions'
 import { Input, Icon, Card, Button } from 'antd'
+const { Textarea } = Input
 
 class AddPost extends Component {
   constructor(props) {
@@ -14,8 +15,6 @@ class AddPost extends Component {
     <div>
       <Input
         placeholder={label}
-        className="semantic-input"
-        fluid={true}
         {...input}
         {...custom}
       />
@@ -24,11 +23,9 @@ class AddPost extends Component {
   )
   renderTextarea = ({ input, label, type, meta: { touched, error }, ...custom }) => (
     <div>
-      <Form.Field
+      <Textarea
         placeholder={label}
-        className="semantic-input"
-        control={TextArea}
-        siz="large"
+        rows={8}
         {...input}
         {...custom}
       />
@@ -61,4 +58,7 @@ const mapDispatchToProps = (dispatch) => {
     addPost
   }, dispatch)
 }
-export default connect(mapStateToProps, mapDispatchToProps)(AddPost);
+AddPost = connect(mapStateToProps, mapDispatchToProps)(AddPost)
+export default reduxForm({
+  form: 'addPostForm'
+})(AddPost);
