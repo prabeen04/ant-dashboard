@@ -4,11 +4,14 @@ import { bindActionCreators } from 'redux'
 import { Field, reduxForm } from 'redux-form';
 import { addPost } from '../../actions/post_actions'
 import { Input, Icon, Card, Button } from 'antd'
-const { Textarea } = Input
+const { TextArea } = Input
 
 class AddPost extends Component {
   constructor(props) {
     super(props)
+
+    this.renderInput = this.renderInput.bind(this);
+    this.renderTextarea = this.renderTextarea.bind(this);
   }
 
   renderInput = ({ input, label, type, meta: { touched, error }, ...custom }) => (
@@ -23,9 +26,9 @@ class AddPost extends Component {
   )
   renderTextarea = ({ input, label, type, meta: { touched, error }, ...custom }) => (
     <div>
-      <Textarea
+      <TextArea
         placeholder={label}
-        rows={8}
+        rows={5}
         {...input}
         {...custom}
       />
@@ -42,6 +45,12 @@ class AddPost extends Component {
     return (
       <div>
         <h1>Add Post Component</h1>
+        <form>
+          <Field name="title" label="Enter Post Title" component={this.renderInput} />
+          <Field name="author" label="Who are you" component={this.renderInput} />
+          <Field name="body" label="Post your story" component={this.renderTextarea} />
+        </form>
+
       </div>
     )
   }
