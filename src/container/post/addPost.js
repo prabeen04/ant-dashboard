@@ -13,4 +13,14 @@ class AddPost extends Component {
   }
 }
 
-export default connect()(AddPost);
+const mapStateToProps = (state) => {
+  return {
+
+  }
+}
+const mapDispatchToProps = (dispatch) => {
+  return bindActionCreators({
+    addPost
+  }, dispatch)
+}
+export default connect(mapStateToProps, mapDispatchToProps)(AddPost);
