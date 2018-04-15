@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { Field, reduxForm } from 'redux-form';
 import { addPost } from '../../actions/post_actions'
-import { Input, Icon, Card, Button } from 'antd'
+import { Input, Icon, Card, Button, Modal } from 'antd'
 const { TextArea } = Input
 
 class AddPost extends Component {
@@ -12,8 +12,11 @@ class AddPost extends Component {
 
     this.renderInput = this.renderInput.bind(this);
     this.renderTextarea = this.renderTextarea.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
   }
-
+  onSubmit = (values) => {
+    console.log(values)
+  }
   renderInput = ({ input, label, type, meta: { touched, error }, ...custom }) => (
     <div>
       <Input
@@ -49,7 +52,7 @@ class AddPost extends Component {
           <Field name="title" label="Enter Post Title" component={this.renderInput} />
           <Field name="author" label="Who are you" component={this.renderInput} />
           <Field name="body" label="Post your story" component={this.renderTextarea} />
-          <Button onClick={handleSubmit(this.props.handlePostSubmit)}/>
+          <Button onClick={handleSubmit(this.onSubmit)} title="AddPost"/>
         </form>
 
       </div>
