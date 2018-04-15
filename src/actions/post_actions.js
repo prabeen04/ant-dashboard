@@ -45,7 +45,7 @@ export const addPost = (post) => {
         })
     return axios.post(`${baseURL}`, post)
         .then(response => {
-            dispatch(getPost)
+            dispatch(getPosts())
         })
         .catch((error) => {
             dispatch({
