@@ -49,6 +49,7 @@ class AddPost extends Component {
           <Field name="title" label="Enter Post Title" component={this.renderInput} />
           <Field name="author" label="Who are you" component={this.renderInput} />
           <Field name="body" label="Post your story" component={this.renderTextarea} />
+          <Button onClick={handleSubmit(this.props.handlePostSubmit)}/>
         </form>
 
       </div>
