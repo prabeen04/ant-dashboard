@@ -1,4 +1,7 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux' 
+import { Field, withForm } from 'redux-form';
 
 class AddPost extends Component {
   render() {
@@ -10,4 +13,4 @@ class AddPost extends Component {
   }
 }
 
-export default AddPost;
+export default connect()(AddPost);
