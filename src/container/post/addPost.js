@@ -16,6 +16,7 @@ class AddPost extends Component {
   }
   onSubmit = (values) => {
     console.log(values)
+    this.props.handlePostSubmit(values);
   }
   renderInput = ({ input, label, type, meta: { touched, error }, ...custom }) => (
     <div>

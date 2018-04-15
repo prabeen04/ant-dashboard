@@ -19,7 +19,7 @@ class Post extends Component {
 
   handlePostSubmit = (post) => {
     console.log(post)
-    // this.props.addPost(post);
+    this.props.addPost(post);
     this.setState({
       isModalOpen: false
     })
