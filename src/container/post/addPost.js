@@ -42,9 +42,9 @@ class AddPost extends Component {
     if (this.props.isError) {
       return <h4>Oops... Something went wrong!!!</h4>
     }
+    const { handleSubmit, pristine, reset, submitting } = this.props
     return (
       <div>
-        <h1>Add Post Component</h1>
         <form>
           <Field name="title" label="Enter Post Title" component={this.renderInput} />
           <Field name="author" label="Who are you" component={this.renderInput} />

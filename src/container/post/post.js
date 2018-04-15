@@ -11,6 +11,14 @@ class Post extends Component {
       isModalOpen: false
     }
     this.setIsModalOpen = this.setIsModalOpen.bind(this);
+    this.handlePostSubmit = this.handlePostSubmit.bind(this);
+  }
+
+  handlePostSubmit = (post) => {
+    this.props.addPost(post);
+    this.setState({
+      isModalOpen: false
+    })
   }
   setIsModalOpen = (bool) =>{
     this.setState({
@@ -36,7 +44,7 @@ class Post extends Component {
           onOk={() => this.setIsModalOpen(false)}
           onCancel={() => this.setIsModalOpen(false)}
           >
-        <AddPost/>
+        <AddPost handlePostSubmit={this.handlePostSubmit}/>
         </Modal>
         <PostList/>
       </div>
