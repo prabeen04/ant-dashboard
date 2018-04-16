@@ -79,7 +79,6 @@ class Navbar extends React.Component {
                             <Route exact path='/profile' component={Profile} />
                             <Route exact path='/post' component={Post} />
                             <Route exact path='/post/:id' component={SinglePost} />
-                            <Route exact path='/login' component={Login} />
                             <Route path='**' component={NotFound} />
                         </Switch>
                     </Content>
