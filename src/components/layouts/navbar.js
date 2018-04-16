@@ -8,6 +8,7 @@ import Calendar from '../../container/calendar/calendar';
 import Profile from '../../container/profile/profile';
 import Post from '../../container/post/post';
 import SinglePost from '../../container/post/singlePost';
+import Login from "../../container/login/login";
 import NotFound from '../../container/notFound/notFound';
 const { Header, Sider, Content } = Layout;
 
@@ -78,6 +79,7 @@ class Navbar extends React.Component {
                             <Route exact path='/profile' component={Profile} />
                             <Route exact path='/post' component={Post} />
                             <Route exact path='/post/:id' component={SinglePost} />
+                            <Route exact path='/login' component={Login} />
                             <Route path='**' component={NotFound} />
                         </Switch>
                     </Content>
