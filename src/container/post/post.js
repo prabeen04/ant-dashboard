@@ -33,7 +33,7 @@ class Post extends Component {
               Add Post</Button>
         </div>
         
-        <AddPost/>
+        <AddPost isModalOpen={this.state.isModalOpen} setIsModalOpen={this.setIsModalOpen}/>
         <PostList/>
       </div>
     )
