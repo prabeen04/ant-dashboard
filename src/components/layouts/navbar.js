@@ -62,13 +62,27 @@ class Navbar extends React.Component {
                             onClick={this.toggle}
                         />
 
-                        <div>
-                            {/* <Badge count={5} style={{ float: 'right' }}>
+                        <div style={{ float: 'right', marginRight: 10, border: '2px solid red' }}>
+                        <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['1']}>
+                        <Menu.Item key="1">
+                            <Icon type="user" />
+                            <span>nav 1</span>
+                        </Menu.Item>
+                        <Menu.Item key="2">
+                            <Icon type="video-camera" />
+                            <span>nav 2</span>
+                        </Menu.Item>
+                        <Menu.Item key="3">
+                            <Icon type="upload" />
+                            <span>nav 3</span>
+                        </Menu.Item>
+                    </Menu> 
+                            <Badge count={5}>
                                 <a href="#" className="head-example" />
                             </Badge>
                             <Badge count={1} >
                                 <a href="#" className="head-example" />
-                            </Badge> */}
+                            </Badge>
                         </div>
                     </Header>
 
