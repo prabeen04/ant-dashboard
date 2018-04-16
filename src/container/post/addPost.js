@@ -49,17 +49,25 @@ class AddPost extends Component {
     const { handleSubmit, pristine, reset, submitting } = this.props
     return (
       <div>
+        <Modal
+          title="Speak your mind"
+          maskClosable={true}
+          wrapClassName="vertical-center-modal"
+          visible={this.state.isModalOpen}
+          onOk={() => this.setIsModalOpen(false)}
+          onCancel={() => this.setIsModalOpen(false)}
+          >
         <form>
           <Field name="title" label="Enter Post Title" component={this.renderInput} />
           <Field name="author" label="Who are you" component={this.renderInput} />
           <Field name="body" label="Post your story" component={this.renderTextarea} />
           <Button 
             onClick={handleSubmit(this.onSubmit)}
-            primary={true}>
+            type="primary">
             Add Post
           </Button>
         </form>
-
+      </Modal>
       </div>
     )
   }

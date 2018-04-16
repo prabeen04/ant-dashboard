@@ -14,16 +14,8 @@ class Post extends Component {
       isModalOpen: false
     }
     this.setIsModalOpen = this.setIsModalOpen.bind(this);
-    this.handlePostSubmit = this.handlePostSubmit.bind(this);
   }
 
-  handlePostSubmit = (post) => {
-    console.log(post)
-    this.props.addPost(post);
-    this.setState({
-      isModalOpen: false
-    })
-  }
   setIsModalOpen = (bool) =>{
     this.setState({
       isModalOpen: false
@@ -40,16 +32,8 @@ class Post extends Component {
               onClick={()=>this.setState({isModalOpen: true})}>
               Add Post</Button>
         </div>
-        <Modal
-          title="Speak your mind"
-          maskClosable={true}
-          wrapClassName="vertical-center-modal"
-          visible={this.state.isModalOpen}
-          onOk={() => this.setIsModalOpen(false)}
-          onCancel={() => this.setIsModalOpen(false)}
-          >
-        <AddPost handlePostSubmit={this.handlePostSubmit}/>
-        </Modal>
+        
+        <AddPost/>
         <PostList/>
       </div>
     )
