@@ -1,3 +1,9 @@
 .event-form{
     flex-basis: 30%;
+    display: flex;
+    align-items: flex-start;
+    align-content: flex-start;
+    justify-content: center;
+    border: 1px solid #ccc;
+    flex-grow: 1;
 }
