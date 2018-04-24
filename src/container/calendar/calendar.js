@@ -7,6 +7,7 @@ import { getEvents, addEvent } from '../../actions/calendar_actions';
 import moment from 'moment';
 import eventList from './eventList';
 import EventForm from './eventForm';
+import './calendar.css';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 import { Modal, Button, Icon, message } from 'antd';
 
@@ -28,13 +29,13 @@ class Calendar extends Component {
     this.onSubmit = this.onSubmit.bind(this);
     this.success = this.success.bind(this);
   }
-  
+
   onSubmit = (values) => {
     console.log(values)
     this.success()
     // this.props.addEvent(values);
   }
-   success = () => {
+  success = () => {
     message.success('This is a prompt message for success, and it will disappear in 10 seconds', 10);
   };
   showModal = () => {
@@ -79,16 +80,16 @@ class Calendar extends Component {
       return (<p>Some Error occoured...</p>)
     }
     return (
-      <div style={{ height: '520px', backgroundColor: '#fff' }}>
+      <div className="flex-container" style={{ height: '520px', backgroundColor: '#fff' }}>
         <Modal title="Title"
           visible={visible}
           onOk={this.handleOk}
           confirmLoading={confirmLoading}
           onCancel={this.handleCancel}
         > <form onSubmit={handleSubmit(this.onSubmit)}>
-            <EventForm 
+            <EventForm
               start={startDate}
-              end={endDate}/>
+              end={endDate} />
             <p>{startDate}</p>
             <p>{endDate}</p>
             <button type="submit">submit</button>
@@ -96,6 +97,7 @@ class Calendar extends Component {
         </Modal>
         {console.log(this.props.events)}
         <BigCalendar
+          style={{ flexBasis: '70%' }}
           events={this.props.events}
           defaultDate={new Date()}
           startAccessor='startDate'
@@ -104,6 +106,16 @@ class Calendar extends Component {
           onSelectSlot={(slot) => this.handleOk(slot)}
           onSelecting={(range) => console.log(range)}
         />
+        <div className="event-form" >
+          <form onSubmit={handleSubmit(this.onSubmit)}>
+            <EventForm
+              start={startDate}
+              end={endDate} />
+            <p>{startDate}</p>
+            <p>{endDate}</p>
+            <button type="submit">submit</button>
+          </form>
+        </div>
       </div>
     )
   }
