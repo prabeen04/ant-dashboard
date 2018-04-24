@@ -14,7 +14,7 @@ class EventForm extends Component {
         this.renderInput = this.renderInput.bind(this);
         this.onDateChange = this.onDateChange.bind(this);
     }
-   
+
 
     onDateChange = (date, dateString) => {
         console.log(date, dateString);
@@ -33,9 +33,8 @@ class EventForm extends Component {
         <div>
             <DatePicker
                 placeholder={label}
-                defaultValue={moment('2015/01/01', dateFormat)} format={dateFormat} 
                 onChange={this.onDateChange}
-                 value={Date.now()}
+                value={moment('2015/01/01', dateFormat)}
                 {...input}
                 {...custom}
             />
@@ -43,37 +42,38 @@ class EventForm extends Component {
         </div>
     )
     render() {
-       console.log(this.props)
+        console.log(this.props)
         return (
             <div>
-               
-                    <Field
-                        name="start"
-                        label="Start Date"
-                        format={(value, name) => {
-                            return value === '' ? null : value
-                        }}
-                        component={this.renderDatepicker} />
-                    <Field
-                        name="end"
-                        label="End Date"
-                        format={(value, name) => {
-                            return value === '' ? null : value
-                        }}
-                        component={this.renderDatepicker} />
-                    <Field
-                        name="title"
-                        label="Title"
-                        component={this.renderInput} />
-                    <Field
-                        name="user"
-                        label="User"
-                        component={this.renderInput} />
-                    <Field
-                        name="description"
-                        label="Description"
-                        component={this.renderInput} />
-               
+                <Field
+                    name="start"
+                    label="Start Date"
+                    value={moment('2015/01/01', dateFormat)}
+                    format={(value, name) => {
+                        return value === '' ? null : value
+                    }}
+                    component={this.renderDatepicker} />
+                <Field
+                    name="end"
+                    label="End Date"
+                    value={moment('2015/01/01', dateFormat)}
+                    format={(value, name) => {
+                        return value === '' ? null : value
+                    }}
+                    component={this.renderDatepicker} />
+                <Field
+                    name="title"
+                    label="Title"
+                    component={this.renderInput} />
+                <Field
+                    name="user"
+                    label="User"
+                    component={this.renderInput} />
+                <Field
+                    name="description"
+                    label="Description"
+                    component={this.renderInput} />
+
             </div>
         )
     }

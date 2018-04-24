@@ -97,8 +97,7 @@ class Calendar extends Component {
             <EventForm
               start={startDate}
               end={endDate} />
-            <p>{startDate}</p>
-            <p>{endDate}</p>
+            <p>{startDate}------{endDate}</p>
             <button type="submit">submit</button>
           </form>
         </div>
