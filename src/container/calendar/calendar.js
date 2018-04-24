@@ -80,7 +80,7 @@ class Calendar extends Component {
       return (<p>Some Error occoured...</p>)
     }
     return (
-      <div className="flex-container" style={{ height: '520px', backgroundColor: '#fff' }}>
+      <div className="flex-container" style={{ height: '520px', backgroundColor: '#fff', margin: '1rem' }}>
         {console.log(this.props.events)}
         <BigCalendar
           style={{ flexBasis: '70%' }}

@@ -1,6 +1,11 @@
 import React, { Component } from 'react'
+import moment from 'moment';
 import { Field } from 'redux-form';
 import { Input, DatePicker } from 'antd';
+const { MonthPicker, RangePicker } = DatePicker;
+
+const dateFormat = 'YYYY/MM/DD';
+const monthFormat = 'YYYY/MM';
 
 class EventForm extends Component {
     constructor(props) {
@@ -28,6 +33,7 @@ class EventForm extends Component {
         <div>
             <DatePicker
                 placeholder={label}
+                defaultValue={moment('2015/01/01', dateFormat)} format={dateFormat} 
                 onChange={this.onDateChange}
                  value={Date.now()}
                 {...input}
@@ -44,6 +50,7 @@ class EventForm extends Component {
                     <Field
                         name="start"
                         label="Start Date"
+                        defaultValue={this.props.start}
                         // value={this.props.start}
                         format={(value, name) => {
                             return value === '' ? null : value
