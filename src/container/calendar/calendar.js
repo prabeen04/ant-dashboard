@@ -81,20 +81,6 @@ class Calendar extends Component {
     }
     return (
       <div className="flex-container" style={{ height: '520px', backgroundColor: '#fff' }}>
-        <Modal title="Title"
-          visible={visible}
-          onOk={this.handleOk}
-          confirmLoading={confirmLoading}
-          onCancel={this.handleCancel}
-        > <form onSubmit={handleSubmit(this.onSubmit)}>
-            <EventForm
-              start={startDate}
-              end={endDate} />
-            <p>{startDate}</p>
-            <p>{endDate}</p>
-            <button type="submit">submit</button>
-          </form>
-        </Modal>
         {console.log(this.props.events)}
         <BigCalendar
           style={{ flexBasis: '70%' }}
