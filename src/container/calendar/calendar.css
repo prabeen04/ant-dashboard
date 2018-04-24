@@ -7,4 +7,5 @@
     border: 1px solid #ccc;
     flex-grow: 1;
     align-self: flex-start;
+    padding: 1rem;
 }
