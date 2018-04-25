@@ -48,7 +48,7 @@ class EventForm extends Component {
             <DatePicker
                 placeholder={label}
                 onChange={this.onDateChange}
-                value={value}
+                // value={value}
                 {...input}
                 {...custom}
             />
@@ -62,13 +62,13 @@ class EventForm extends Component {
                 <Field
                     name="start"
                     label="Start Date"
-                    value={moment('2015/01/01', dateFormat)}
-                    component={this.renderStartDatepicker} />
+                    value={moment(this.props.start || null, dateFormat)}
+                    component={DatePicker} />
                 <Field
                     name="end"
                     label="End Date"
-                    value={moment('2015/01/01', dateFormat)}
-                    component={this.renderEndDatepicker} />
+                    value={moment(this.props.end || null, dateFormat)}
+                    component={DatePicker} />
                 <Field
                     name="title"
                     label="Title"
