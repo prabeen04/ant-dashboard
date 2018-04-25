@@ -35,7 +35,7 @@ class EventForm extends Component {
             <DatePicker
                 placeholder={label}
                 onChange={this.onDateChange}
-                defaultValue={moment("2018-04-18T18:30:00.000Z")}
+                value={moment(this.props.start || "2018-04-18T18:30:00.000Z")}
                 {...input}
                 {...custom}
             />
@@ -43,24 +43,18 @@ class EventForm extends Component {
         </div>
     )
     render() {
-        console.log(this.props)
+        console.log(this.props.start)
         return (
             <div>
                 <Field
                     name="start"
                     label="Start Date"
                     value={moment('2015/01/01', dateFormat)}
-                    format={(value, name) => {
-                        return value === '' ? null : value
-                    }}
                     component={this.renderDatepicker} />
                 <Field
                     name="end"
                     label="End Date"
                     value={moment('2015/01/01', dateFormat)}
-                    format={(value, name) => {
-                        return value === '' ? null : value
-                    }}
                     component={this.renderDatepicker} />
                 <Field
                     name="title"
