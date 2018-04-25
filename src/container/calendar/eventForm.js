@@ -38,12 +38,13 @@ class EventForm extends Component {
                 <Field
                     name="start"
                     label="Start Date"
-                    value={moment(this.props.start || null, dateFormat)}
-                    component={DatePicker} />
+                    value={moment(this.props.start)}
+                    component="input" 
+                    type="date"/>
                 <Field
                     name="end"
                     label="End Date"
-                    value={moment(this.props.end || null, dateFormat)}
+                    value={moment("2018-04-09T18:30:00.000Z")}
                     component={DatePicker} />
                 <Field
                     name="title"
