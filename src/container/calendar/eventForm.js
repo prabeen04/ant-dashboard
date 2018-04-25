@@ -30,6 +30,13 @@ class EventForm extends Component {
             {touched && error && <span>{error}</span>}
         </div>
     )
+     renderDatePicker = ({input, placeholder, defaultValue, meta: {touched, error} }) => (
+        <div>
+              <DatePicker {...input} dateForm="MM/DD/YYYY" selected={input.value ? moment(input.value) : null} />
+              {touched && error && <span>{error}</span>}
+        </div>
+      );
+      
     renderStartDatepicker = ({ input, label, type, meta: { touched, error }, ...custom }) => (
         <div>
             <DatePicker
@@ -47,7 +54,6 @@ class EventForm extends Component {
             <DatePicker
                 placeholder={label}
                 onChange={this.onDateChange}
-                value={moment(this.props.start || "2018-04-18T18:30:00.000Z", dateFormat)}
                 {...input}
                 {...custom}
             />
@@ -62,12 +68,12 @@ class EventForm extends Component {
                     name="start"
                     label="Start Date"
                     value={moment('2015/01/01', dateFormat)}
-                    component={this.renderDatepicker} />
+                    component={this.renderStartDatepicker} />
                 <Field
                     name="end"
                     label="End Date"
                     value={moment('2015/01/01', dateFormat)}
-                    component={this.renderDatepicker} />
+                    component={this.renderEndDatepicker} />
                 <Field
                     name="title"
                     label="Title"
