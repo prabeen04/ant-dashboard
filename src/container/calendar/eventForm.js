@@ -39,8 +39,7 @@ class EventForm extends Component {
                     name="start"
                     label="Start Date"
                     value={moment(this.props.start)}
-                    component="input" 
-                    type="date"/>
+                    component={DatePicker} />
                 <Field
                     name="end"
                     label="End Date"
