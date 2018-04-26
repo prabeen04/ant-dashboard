@@ -9,7 +9,7 @@ import eventList from './eventList';
 import EventForm from './eventForm';
 import './calendar.css';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
-import { Modal, Button, Icon, message } from 'antd';
+import { Button, Icon, message, DatePicker } from 'antd';
 
 BigCalendar.setLocalizer(BigCalendar.momentLocalizer(moment))
 
@@ -23,7 +23,6 @@ class Calendar extends Component {
       confirmLoading: false,
     }
 
-    this.showModal = this.showModal.bind(this);
     this.handleOk = this.handleOk.bind(this);
     this.handleCancel = this.handleCancel.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
@@ -38,14 +37,8 @@ class Calendar extends Component {
   success = () => {
     message.success('This is a prompt message for success, and it will disappear in 10 seconds', 10);
   };
-  showModal = () => {
-    this.setState({
-      visible: true,
-    });
-  }
   handleOk = (slot) => {
     console.log(slot)
-    this.showModal();
     this.setState({
       startDate: JSON.stringify(slot.start),
       endDate: JSON.stringify(slot.end),

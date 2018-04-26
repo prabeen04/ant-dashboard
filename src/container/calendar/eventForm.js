@@ -19,7 +19,9 @@ class EventForm extends Component {
     onDateChange = (date, dateString) => {
         console.log(date, dateString);
     }
-    renderInput = ({ input, label, type, meta: { touched, error }, ...custom }) => (
+    renderInput = ({ input, label, type, meta: { touched, error }, ...custom }) =>{ 
+        console.log(input)
+        return(
         <div>
             <Input
                 placeholder={label}
@@ -29,22 +31,32 @@ class EventForm extends Component {
             />
             {touched && error && <span>{error}</span>}
         </div>
+    )}
+    renderDateInput = ({ input, label, type, meta: { touched, error }, ...custom }) => (
+        <div>
+            <Input
+                placeholder={label}
+                type="date"
+                value={moment(this.props.start || null).toISOString()}
+                {...input}
+                {...custom}
+            />
+            {touched && error && <span>{error}</span>}
+        </div>
     )
-    
     render() {
-        console.log(this.props.start)
+        console.log(moment(this.props.start) || null)
+        console.log(this.renderInput)
         return (
             <div>
                 <Field
                     name="start"
                     label="Start Date"
-                    value={moment(this.props.start)}
-                    component={DatePicker} />
+                    component={this.renderDateInput} />
                 <Field
                     name="end"
                     label="End Date"
-                    value={moment("2018-04-09T18:30:00.000Z")}
-                    component={DatePicker} />
+                    component={this.renderDateInput} />
                 <Field
                     name="title"
                     label="Title"
