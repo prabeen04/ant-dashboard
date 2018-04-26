@@ -20,7 +20,6 @@ class EventForm extends Component {
         console.log(date, dateString);
     }
     renderInput = ({ input, label, type, meta: { touched, error }, ...custom }) =>{ 
-        console.log(input)
         return(
         <div>
             <Input
@@ -32,31 +31,10 @@ class EventForm extends Component {
             {touched && error && <span>{error}</span>}
         </div>
     )}
-    renderDateInput = ({ input, label, type, meta: { touched, error }, ...custom }) => (
-        <div>
-            <Input
-                placeholder={label}
-                type="date"
-                value={moment(this.props.start || null).toISOString()}
-                {...input}
-                {...custom}
-            />
-            {touched && error && <span>{error}</span>}
-        </div>
-    )
     render() {
-        console.log(moment(this.props.start) || null)
-        console.log(this.renderInput)
+        console.log(moment(this.props.start).toISOString())
         return (
             <div>
-                <Field
-                    name="start"
-                    label="Start Date"
-                    component={this.renderDateInput} />
-                <Field
-                    name="end"
-                    label="End Date"
-                    component={this.renderDateInput} />
                 <Field
                     name="title"
                     label="Title"
