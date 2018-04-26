@@ -9,9 +9,8 @@ import eventList from './eventList';
 import EventForm from './eventForm';
 import './calendar.css';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
-import { Button, Icon, message, DatePicker } from 'antd';
-const dateFormat = 'YYYY-MM-DDTHH:mm:ss.SSSSZ';
-
+import { Button, Icon, message } from 'antd';
+import DatePicker from 'react-datepicker';
 BigCalendar.setLocalizer(BigCalendar.momentLocalizer(moment))
 
 class Calendar extends Component {
@@ -36,9 +35,10 @@ class Calendar extends Component {
     // this.props.addEvent(values);
   }
   success = () => {
-    message.success('This is a prompt message for success, and it will disappear in 10 seconds', 10);
+    message.success('Event Added', 10);
   };
   handleOk = (slot) => {
+    console.log(moment.utc(slot.start))
     this.setState({
       startDate: JSON.stringify(slot.start),
       endDate: JSON.stringify(slot.end),
@@ -65,25 +65,32 @@ class Calendar extends Component {
     if (this.props.isError) {
       return (<p>Some Error occoured...</p>)
     }
+
     return (
       <div className="flex-container" style={{ height: '520px', backgroundColor: '#fff', margin: '1rem' }}>
-        {console.log(this.props.events)}
         <BigCalendar
           style={{ flexBasis: '70%' }}
           events={this.props.events}
           defaultDate={new Date()}
-          startAccessor='startDate'
-          endAccessor='endDate'
+          startAccessor={(event) => Date + 1}
+          endAccessor={(event) => Date + 1}
           selectable={true}
           onSelectSlot={(slot) => this.handleOk(slot)}
           onSelecting={(range) => console.log(range)}
         />
         <div className="event-form" >
           <form onSubmit={handleSubmit(this.onSubmit)}>
-            <DatePicker defaultValue={moment('2018-04-10T18:30:00.000Z')} format={dateFormat} />
-            <EventForm
+            <DatePicker selected={moment(this.state.startDate) && null}
+            onChange={this.handleChange}
+            showTimeSelect
+            timeFormat="HH:mm"
+            timeIntervals={15}
+            dateFormat="LLL"
+            timeCaption="time"
+        />
+            {/* <EventForm
               start={startDate}
-              end={endDate} />
+              end={endDate} /> */}
             <p>{startDate}------{endDate}</p>
             <button type="submit">submit</button>
           </form>
@@ -93,7 +100,6 @@ class Calendar extends Component {
   }
 }
 const mapStateToProps = (state) => {
-  console.log(state)
   return {
     isLoading: state.calendarReducer.isLoading,
     isError: state.calendarReducer.isError,

@@ -28,13 +28,8 @@ class EventForm extends Component {
         )
     }
     render() {
-        console.log(this.props.start)
         return (
             <div>
-                <DatePicker
-                    defaultValue={this.props.start
-                        ? moment(this.props.start, 'YYYY-MM-DD')
-                        : moment('2018-04-17T18:30:00.000Z', 'YYYY-MM-DD')} />
                 <Field
                     name="title"
                     label="Title"
