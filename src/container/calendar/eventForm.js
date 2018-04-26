@@ -12,33 +12,29 @@ class EventForm extends Component {
         super(props)
 
         this.renderInput = this.renderInput.bind(this);
-        this.onDateChange = this.onDateChange.bind(this);
     }
 
-
-    onDateChange = (date, dateString) => {
-        console.log(date, dateString);
+    renderInput = ({ input, label, type, meta: { touched, error }, ...custom }) => {
+        return (
+            <div>
+                <Input
+                    placeholder={label}
+                    value={this.props.start || null}
+                    {...input}
+                    {...custom}
+                />
+                {touched && error && <span>{error}</span>}
+            </div>
+        )
     }
-    renderInput = ({ input, label, type, meta: { touched, error }, ...custom }) =>{ 
-        return(
-        <div>
-            <Input
-                placeholder={label}
-                value={this.props.start || null}
-                {...input}
-                {...custom}
-            />
-            {touched && error && <span>{error}</span>}
-        </div>
-    )}
     render() {
         console.log(this.props.start)
         return (
             <div>
-                <DatePicker 
-                    defaultValue={this.props.start 
-                        ? moment(this.props.start, 'YYYY-MM-DD') 
-                        : moment('2018-04-17T18:30:00.000Z', 'YYYY-MM-DD')} />      
+                <DatePicker
+                    defaultValue={this.props.start
+                        ? moment(this.props.start, 'YYYY-MM-DD')
+                        : moment('2018-04-17T18:30:00.000Z', 'YYYY-MM-DD')} />
                 <Field
                     name="title"
                     label="Title"

@@ -10,9 +10,7 @@ import EventForm from './eventForm';
 import './calendar.css';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 import { Button, Icon, message, DatePicker } from 'antd';
-import 'moment/locale/zh-cn';
-moment.locale('en');
-const dateFormat = 'YYYY-MM-DD';
+const dateFormat = 'YYYY-MM-DDTHH:mm:ss.SSSSZ';
 
 BigCalendar.setLocalizer(BigCalendar.momentLocalizer(moment))
 
@@ -41,18 +39,11 @@ class Calendar extends Component {
     message.success('This is a prompt message for success, and it will disappear in 10 seconds', 10);
   };
   handleOk = (slot) => {
-    console.log(slot)
     this.setState({
-      startDate: JSON.stringify(moment(slot.start)),
-      endDate: JSON.stringify(moment(slot.end)),
+      startDate: JSON.stringify(slot.start),
+      endDate: JSON.stringify(slot.end),
       confirmLoading: true,
     });
-    setTimeout(() => {
-      this.setState({
-        visible: false,
-        confirmLoading: false,
-      });
-    }, 20000);
   }
   handleCancel = () => {
     console.log('Clicked cancel button');
@@ -66,8 +57,6 @@ class Calendar extends Component {
   render() {
     const { visible, confirmLoading, startDate, endDate } = this.state;
     const { handleSubmit, pristine, reset, submitting } = this.props;
-    console.log(moment(this.state.startDate, dateFormat))
-    console.log(moment('2018-04-10T18:30:00.000Z'))
     if (this.props.isLoading) {
       return (<div className="flex-container" style={{ height: '80vh', justifyContent: 'center' }}>
         <Icon type="loading" style={{ fontSize: 60, color: 'tomato' }} spin />
@@ -91,10 +80,7 @@ class Calendar extends Component {
         />
         <div className="event-form" >
           <form onSubmit={handleSubmit(this.onSubmit)}>
-        {  moment(this.state.startDate)?
-        <DatePicker defaultValue={moment(this.state.startDate)|| moment('2018-04-10T18:30:00.000Z')} format={dateFormat} />
-        : <p>kdnsndf.ns.</p>
-      }
+            <DatePicker defaultValue={moment('2018-04-10T18:30:00.000Z')} format={dateFormat} />
             <EventForm
               start={startDate}
               end={endDate} />
