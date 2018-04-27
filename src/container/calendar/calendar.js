@@ -15,7 +15,7 @@ const dateFormat = 'YYYY-MM-DD';
 BigCalendar.setLocalizer(BigCalendar.momentLocalizer(moment))
 let formats = {
   dayFormat: (date, culture, localizer) =>
-    localizer.format(date, 'ddd MM/dd', culture),
+    localizer.format(date, 'YYYY-MM-DDTHH:mm:ss.SSSSZ', culture),
 }
 class Calendar extends Component {
   constructor(props) {
@@ -42,9 +42,10 @@ class Calendar extends Component {
     message.success('Event Added', 10);
   };
   handleOk = (slot) => {
+    console.log(slot)
     this.setState({
-      startDate: JSON.stringify(slot.start),
-      endDate: JSON.stringify(slot.end),
+      startDate: '2018-04-13T18:30:00.000Z',
+      endDate: slot.end,
       confirmLoading: true,
     });
   }
@@ -58,6 +59,9 @@ class Calendar extends Component {
     this.props.getEvents();
   }
   render() {
+    console.log(moment(this.state.startDate, "YYYY-MM-DDTHH:mm:ss.SSSSZ"))
+    console.log('------------------------')
+    console.log(moment('2018-04-03T18:30:00.0000Z'))
     const { visible, confirmLoading, startDate, endDate } = this.state;
     const { handleSubmit, pristine, reset, submitting } = this.props;
     if (this.props.isLoading) {
@@ -68,7 +72,7 @@ class Calendar extends Component {
     if (this.props.isError) {
       return (<p>Some Error occoured...</p>)
     }
-    console.log(moment(this.state.startDate))
+    console.log(this.state.startDate)
     return (
       <div className="flex-container" style={{ height: '520px', backgroundColor: '#fff', margin: '1rem' }}>
         <BigCalendar
@@ -84,19 +88,13 @@ class Calendar extends Component {
         />
         <div className="event-form" >
           <form onSubmit={handleSubmit(this.onSubmit)}>
-          {
-           
-            (moment(this.state.startDate)._isValid === false)
-            ?  console.log('date is not valid')
-            : console.log('date is valid')
-            
-          }
-            <DatePicker defaultValue={moment()} />
+
+            <DatePicker defaultValue={moment(this.state.startDate)} />
             <DatePicker defaultValue={moment('2018-04-03T18:30:00.000Z')} />
             {/* <EventForm
               start={startDate}
               end={endDate} /> */}
-            <p>{startDate}------{endDate}</p>
+            {/* <p>{startDate}------{endDate}</p> */}
             <button type="submit">submit</button>
           </form>
         </div>
