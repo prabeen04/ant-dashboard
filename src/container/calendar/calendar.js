@@ -13,7 +13,10 @@ import { Button, Icon, message, DatePicker } from 'antd';
 const dateFormat = 'YYYY-MM-DD';
 
 BigCalendar.setLocalizer(BigCalendar.momentLocalizer(moment))
-
+let formats = {
+  dayFormat: (date, culture, localizer) =>
+    localizer.format(date, 'ddd MM/dd', culture),
+}
 class Calendar extends Component {
   constructor(props) {
     super(props)
@@ -73,15 +76,23 @@ class Calendar extends Component {
           events={this.props.events}
           defaultDate={new Date()}
           startAccessor={(event) => startDate}
-          endAccessor={(event) =>endDate}
+          endAccessor={(event) =>console.log(event)}
           selectable={true}
-          dateFormat={dateFormat}
+          formats={formats}
           onSelectSlot={(slot) => this.handleOk(slot)}
           onSelecting={(range) => console.log(range)}
         />
         <div className="event-form" >
           <form onSubmit={handleSubmit(this.onSubmit)}>
-            <DatePicker defaultValue={moment(this.state.startDate)} />
+          {
+           
+            (moment(this.state.startDate)._isValid === false)
+            ?  console.log('date is not valid')
+            : console.log('date is valid')
+            
+          }
+            <DatePicker defaultValue={moment()} />
+            <DatePicker defaultValue={moment('2018-04-03T18:30:00.000Z')} />
             {/* <EventForm
               start={startDate}
               end={endDate} /> */}
