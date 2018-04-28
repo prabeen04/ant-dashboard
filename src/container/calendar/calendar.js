@@ -5,8 +5,6 @@ import { bindActionCreators } from 'redux';
 import { Field, reduxForm } from 'redux-form';
 import { getEvents, addEvent } from '../../actions/calendar_actions';
 import moment from 'moment';
-import eventList from './eventList';
-import EventForm from './eventForm';
 import './calendar.css';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 import { Button, Icon, message, DatePicker } from 'antd';
@@ -44,7 +42,7 @@ class Calendar extends Component {
   handleOk = (slot) => {
     console.log(slot)
     this.setState({
-      startDate: '2018-04-13T18:30:00.000Z',
+      startDate: slot.start,
       endDate: slot.end,
       confirmLoading: true,
     });
@@ -59,9 +57,9 @@ class Calendar extends Component {
     this.props.getEvents();
   }
   render() {
-    console.log(moment(this.state.startDate, "YYYY-MM-DDTHH:mm:ss.SSSSZ"))
+    console.log(moment(this.state.startDate).toISOString())
     console.log('------------------------')
-    console.log(moment('2018-04-03T18:30:00.0000Z'))
+    console.log(moment('2018-04-03T18:30:00.0000Z').toISOString())
     const { visible, confirmLoading, startDate, endDate } = this.state;
     const { handleSubmit, pristine, reset, submitting } = this.props;
     if (this.props.isLoading) {
@@ -89,12 +87,8 @@ class Calendar extends Component {
         <div className="event-form" >
           <form onSubmit={handleSubmit(this.onSubmit)}>
 
-            <DatePicker defaultValue={moment(this.state.startDate)} />
+            <DatePicker defaultValue={moment(this.state.startDate, 'YYYY-MM-ddTHH:mm:ss.SSSZ')} />
             <DatePicker defaultValue={moment('2018-04-03T18:30:00.000Z')} />
-            {/* <EventForm
-              start={startDate}
-              end={endDate} /> */}
-            {/* <p>{startDate}------{endDate}</p> */}
             <button type="submit">submit</button>
           </form>
         </div>
