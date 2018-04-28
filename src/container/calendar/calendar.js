@@ -40,7 +40,7 @@ class Calendar extends Component {
     message.success('Event Added', 10);
   };
   handleOk = (slot) => {
-    console.log(slot)
+    // console.log(slot)
     this.setState({
       startDate: slot.start,
       endDate: slot.end,
@@ -57,9 +57,9 @@ class Calendar extends Component {
     this.props.getEvents();
   }
   render() {
-    console.log(moment(this.state.startDate, 'YYYY-MM-ddTHH:mm:ss.SSSZ').toISOString())
+    console.log(moment.utc(this.state.startDate))
     console.log('------------------------')
-    console.log(moment('2018-04-03T18:30:00.0000Z').toISOString())
+    console.log(moment.utc('2018-04-03T18:30:00.0000Z'))
     const { visible, confirmLoading, startDate, endDate } = this.state;
     const { handleSubmit, pristine, reset, submitting } = this.props;
     if (this.props.isLoading) {
@@ -70,7 +70,7 @@ class Calendar extends Component {
     if (this.props.isError) {
       return (<p>Some Error occoured...</p>)
     }
-    console.log(this.state.startDate)
+    // console.log(this.state.startDate)
     return (
       <div className="flex-container" style={{ height: '520px', backgroundColor: '#fff', margin: '1rem' }}>
         <BigCalendar
@@ -87,7 +87,7 @@ class Calendar extends Component {
         <div className="event-form" >
           <form onSubmit={handleSubmit(this.onSubmit)}>
 
-            <DatePicker defaultValue={moment(this.state.startDate).toISOString()===null ?moment('2018-06-03T18:30:00.000Z') :moment(this.state.startDate, 'YYYY-MM-ddTHH:mm:ss.SSSZ').toISOString()} />
+            <DatePicker defaultValue={moment(this.state.startDate).toISOString()===null ?moment('2018-06-03T18:30:00.000Z') :moment.utc(this.state.startDate)} />
             <DatePicker defaultValue={moment('2018-04-03T18:30:00.000Z')} />
             <button type="submit">submit</button>
           </form>
