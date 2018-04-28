@@ -57,7 +57,7 @@ class Calendar extends Component {
     this.props.getEvents();
   }
   render() {
-    console.log(moment() && moment(this.state.startDate).toISOString())
+    console.log(moment(this.state.startDate, 'YYYY-MM-ddTHH:mm:ss.SSSZ').toISOString())
     console.log('------------------------')
     console.log(moment('2018-04-03T18:30:00.0000Z').toISOString())
     const { visible, confirmLoading, startDate, endDate } = this.state;
@@ -87,7 +87,7 @@ class Calendar extends Component {
         <div className="event-form" >
           <form onSubmit={handleSubmit(this.onSubmit)}>
 
-            <DatePicker defaultValue={this.state.startDate ?moment('2018-06-03T18:30:00.000Z'): moment(this.state.startDate, 'YYYY-MM-ddTHH:mm:ss.SSSZ')} />
+            <DatePicker defaultValue={moment(this.state.startDate).toISOString()===null ?moment('2018-06-03T18:30:00.000Z') :moment(this.state.startDate, 'YYYY-MM-ddTHH:mm:ss.SSSZ').toISOString()} />
             <DatePicker defaultValue={moment('2018-04-03T18:30:00.000Z')} />
             <button type="submit">submit</button>
           </form>
