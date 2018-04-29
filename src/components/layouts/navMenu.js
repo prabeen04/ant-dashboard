@@ -50,10 +50,6 @@ class NavMenu extends React.Component {
                     <SubMenu key="sub2" title={<span><Icon type="pie-chart" /><span>Navigation Two</span></span>}>
                         <Menu.Item key="5">Option 9</Menu.Item>
                         <Menu.Item key="6">Option 10</Menu.Item>
-                        <SubMenu key="sub3" title="Submenu">
-                            <Menu.Item key="7">Option 11</Menu.Item>
-                            <Menu.Item key="8">Option 12</Menu.Item>
-                        </SubMenu>
                     </SubMenu>
                 </Menu>
             </div>
