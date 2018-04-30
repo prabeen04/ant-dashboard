@@ -41,11 +41,18 @@ class Calendar extends Component {
   };
   handleOk = (slot) => {
     // console.log(slot)
-    this.setState({
-      startDate: slot.start,
-      endDate: slot.end,
-      confirmLoading: true,
-    });
+    // this.setState({
+    //   startDate: slot.start,
+    //   endDate: slot.end,
+    //   confirmLoading: true,
+    // });
+
+    //akjfashdfsdg
+    this.setState((prevState) => {
+      // console.log(prevState)
+      // Important: read `prevState` instead of `this.state` when updating.
+       return {startDate: slot.start}
+    }); 
   }
   handleCancel = () => {
     console.log('Clicked cancel button');
@@ -87,8 +94,10 @@ class Calendar extends Component {
         <div className="event-form" >
           <form onSubmit={handleSubmit(this.onSubmit)}>
 
-            <DatePicker defaultValue={moment(this.state.startDate).toISOString()===null ?moment('2018-06-03T18:30:00.000Z') :moment.utc(this.state.startDate)} />
-            <DatePicker defaultValue={moment('2018-04-03T18:30:00.000Z')} />
+            <DatePicker value={moment(this.state.startDate).toISOString()===null 
+              ?''
+              :moment(this.state.startDate)} />
+            <DatePicker value={moment('2015-04-03T18:30:00.000Z')} />
             <button type="submit">submit</button>
           </form>
         </div>
