@@ -30,6 +30,12 @@ class EventForm extends Component {
     render() {
         return (
             <div>
+                <DatePicker value={moment(this.props.startDate).toISOString() === null
+                    ? ''
+                    : moment(this.props.startDate)} />
+                <DatePicker value={moment(this.props.endDate).toISOString() === null
+                    ? ''
+                    : moment(this.props.endDate)} />
                 <Field
                     name="title"
                     label="Title"
@@ -42,7 +48,6 @@ class EventForm extends Component {
                     name="description"
                     label="Description"
                     component={this.renderInput} />
-
             </div>
         )
     }

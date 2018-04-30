@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Field, reduxForm } from 'redux-form';
 import { getEvents, addEvent } from '../../actions/calendar_actions';
+import EventForm from './eventForm';
 import moment from 'moment';
 import './calendar.css';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
@@ -40,19 +41,12 @@ class Calendar extends Component {
     message.success('Event Added', 10);
   };
   handleOk = (slot) => {
-    // console.log(slot)
-    // this.setState({
-    //   startDate: slot.start,
-    //   endDate: slot.end,
-    //   confirmLoading: true,
-    // });
-
-    //akjfashdfsdg
-    this.setState((prevState) => {
-      // console.log(prevState)
-      // Important: read `prevState` instead of `this.state` when updating.
-       return {startDate: slot.start}
-    }); 
+    console.log(slot)
+    this.setState({
+      startDate: slot.start,
+      endDate: slot.end,
+      confirmLoading: true,
+    });
   }
   handleCancel = () => {
     console.log('Clicked cancel button');
@@ -93,11 +87,10 @@ class Calendar extends Component {
         />
         <div className="event-form" >
           <form onSubmit={handleSubmit(this.onSubmit)}>
-
-            <DatePicker value={moment(this.state.startDate).toISOString()===null 
-              ?''
-              :moment(this.state.startDate)} />
-            <DatePicker value={moment('2015-04-03T18:30:00.000Z')} />
+            <EventForm 
+              startDate={this.state.startDate}
+              endDate={this.state.endDate}
+              />
             <button type="submit">submit</button>
           </form>
         </div>
