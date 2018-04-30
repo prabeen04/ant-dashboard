@@ -34,6 +34,8 @@ class Calendar extends Component {
 
   onSubmit = (values) => {
     console.log(values)
+    let eventValues = Object.assign({}, values, {start: this.state.startDate, end: this.state.endDate})
+    console.log(eventValues)
     this.success()
     // this.props.addEvent(values);
   }
@@ -89,9 +91,9 @@ class Calendar extends Component {
           <form onSubmit={handleSubmit(this.onSubmit)}>
             <DatePicker value={moment(this.state.startDate).toISOString() === null
               ? ''
-              : moment(this.state.startDate)}
+              : moment(this.state.endDate)}
             />
-            <DatePicker value={moment(this.state.startDate).toISOString() === null
+            <DatePicker value={moment(this.state.endDate).toISOString() === null
               ? ''
               : moment(this.state.startDate)}
             />
