@@ -4,14 +4,12 @@ import { Field } from 'redux-form';
 import { Input, DatePicker } from 'antd';
 const { MonthPicker, RangePicker } = DatePicker;
 
-const dateFormat = 'YYYY/MM/DD';
-const monthFormat = 'YYYY/MM';
-
 class EventForm extends Component {
     constructor(props) {
         super(props)
-
         this.renderInput = this.renderInput.bind(this);
+        this.renderStartDate = this.renderStartDate.bind(this);
+        this.renderEndDate = this.renderEndDate.bind(this);
     }
 
     renderInput = ({ input, label, type, meta: { touched, error }, ...custom }) => {
@@ -27,15 +25,31 @@ class EventForm extends Component {
             </div>
         )
     }
+    renderStartDate = ({ input, label, type, meta: { touched, error }, ...custom }) => {
+        return (
+            <DatePicker value={moment(this.props.startDate).toISOString() === null
+                ? ''
+                : moment(this.props.startDate)} />
+        )
+    }
+    renderEndDate = ({ input, label, type, meta: { touched, error }, ...custom }) => {
+        return (
+            <DatePicker value={moment(this.props.startDate).toISOString() === null
+                ? ''
+                : moment(this.props.startDate)} />
+        )
+    }
     render() {
         return (
             <div>
-                <DatePicker value={moment(this.props.startDate).toISOString() === null
-                    ? ''
-                    : moment(this.props.startDate)} />
-                <DatePicker value={moment(this.props.endDate).toISOString() === null
-                    ? ''
-                    : moment(this.props.endDate)} />
+                <Field
+                    name="startDate"
+                    label="Start Date"
+                    component={this.renderStartDate} />
+                <Field
+                    name="endDate"
+                    label="End Date"
+                    component={this.renderEndDate} />
                 <Field
                     name="title"
                     label="Title"
