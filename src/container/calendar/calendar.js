@@ -62,7 +62,7 @@ class Calendar extends Component {
     // console.log('------------------------')
     // console.log(moment('2018-04-03T18:30:00.0000Z'))
     const { visible, confirmLoading, startDate, endDate } = this.state;
-    const { handleSubmit, pristine, reset, submitting } = this.props;
+    const { handleSubmit, pristine, reset, submitting, start, end} = this.props;
     if (this.props.isLoading) {
       return (<div className="flex-container" style={{ height: '80vh', justifyContent: 'center' }}>
         <Icon type="loading" style={{ fontSize: 60, color: 'tomato' }} spin />
@@ -78,8 +78,8 @@ class Calendar extends Component {
           style={{ flexBasis: '70%' }}
           events={this.props.events}
           defaultDate={new Date()}
-          startAccessor={(event) => startDate}
-          endAccessor={(event) =>console.log(event)}
+          startAccessor={start}
+          endAccessor={end}
           selectable={true}
           formats={formats}
           onSelectSlot={(slot) => this.handleOk(slot)}
