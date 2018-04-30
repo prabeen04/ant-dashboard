@@ -62,7 +62,7 @@ class Calendar extends Component {
     // console.log('------------------------')
     // console.log(moment('2018-04-03T18:30:00.0000Z'))
     const { visible, confirmLoading, startDate, endDate } = this.state;
-    const { handleSubmit, pristine, reset, submitting, start, end} = this.props;
+    const { handleSubmit, pristine, reset, submitting, start, end } = this.props;
     if (this.props.isLoading) {
       return (<div className="flex-container" style={{ height: '80vh', justifyContent: 'center' }}>
         <Icon type="loading" style={{ fontSize: 60, color: 'tomato' }} spin />
@@ -87,10 +87,19 @@ class Calendar extends Component {
         />
         <div className="event-form" >
           <form onSubmit={handleSubmit(this.onSubmit)}>
-            <EventForm 
+            <DatePicker value={moment(this.state.startDate).toISOString() === null
+              ? ''
+              : moment(this.state.startDate)}
+            />
+            <DatePicker value={moment(this.state.startDate).toISOString() === null
+              ? ''
+              : moment(this.state.startDate)}
+            />
+            <EventForm
               startDate={this.state.startDate}
               endDate={this.state.endDate}
-              />
+            />
+
             <button type="submit">submit</button>
           </form>
         </div>
