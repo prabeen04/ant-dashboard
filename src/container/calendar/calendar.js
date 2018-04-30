@@ -34,7 +34,7 @@ class Calendar extends Component {
 
   onSubmit = (values) => {
     console.log(values)
-    let eventValues = Object.assign({}, values, {start: this.state.startDate, end: this.state.endDate})
+    let eventValues = Object.assign({}, values, {start: JSON.stringify(this.state.startDate), end: JSON.stringify(this.state.endDate)})
     console.log(eventValues)
     this.success()
     // this.props.addEvent(values);
