@@ -58,9 +58,9 @@ class Calendar extends Component {
     this.props.getEvents();
   }
   render() {
-    console.log(moment(this.state.startDate).utc())
-    console.log('------------------------')
-    console.log(moment('2018-04-03T18:30:00.0000Z'))
+    // console.log(moment(this.state.startDate).toISOString())
+    // console.log('------------------------')
+    // console.log(moment('2018-04-03T18:30:00.0000Z'))
     const { visible, confirmLoading, startDate, endDate } = this.state;
     const { handleSubmit, pristine, reset, submitting } = this.props;
     if (this.props.isLoading) {

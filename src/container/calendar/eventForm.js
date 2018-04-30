@@ -6,7 +6,8 @@ const { MonthPicker, RangePicker } = DatePicker;
 
 class EventForm extends Component {
     constructor(props) {
-        super(props)
+        super(props)      
+
         this.renderInput = this.renderInput.bind(this);
         this.renderStartDate = this.renderStartDate.bind(this);
         this.renderEndDate = this.renderEndDate.bind(this);
@@ -29,17 +30,18 @@ class EventForm extends Component {
         return (
             <DatePicker value={moment(this.props.startDate).toISOString() === null
                 ? ''
-                : moment(this.props.startDate)} />
+                : moment(this.props.startDate)} 
+                {...input}
+                {...custom} />
         )
     }
     renderEndDate = ({ input, label, type, meta: { touched, error }, ...custom }) => {
         return (
-            <DatePicker value={moment(this.props.startDate).toISOString() === null
-                ? ''
-                : moment(this.props.startDate)} />
+            <DatePicker value={this.state.endDate ?moment(this.props.endDate) : moment()}/>
         )
     }
     render() {
+        console.log(this.props)
         return (
             <div>
                 <Field
