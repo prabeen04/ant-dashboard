@@ -8,7 +8,8 @@ import EventForm from './eventForm';
 import moment from 'moment';
 import './calendar.css';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
-import { Button, Icon, message, DatePicker, TimePicker } from 'antd';
+import { Button, Icon, message, DatePicker, TimePicker, Tabs } from 'antd';
+const TabPane = Tabs.TabPane;
 const dateFormat = 'YYYY-MM-DD';
 const timeFormat = 'HH:mm:ss';
 
@@ -35,7 +36,7 @@ class Calendar extends Component {
 
   onSubmit = (values) => {
     console.log(values)
-    let eventValues = Object.assign({}, values, {start: this.state.startDate, end: this.state.endDate})
+    let eventValues = Object.assign({}, values, { start: this.state.startDate, end: this.state.endDate })
     console.log(eventValues)
     this.success()
     this.props.addEvent(JSON.stringify(values));
@@ -90,6 +91,14 @@ class Calendar extends Component {
         />
         <div className="event-form" >
           <form onSubmit={handleSubmit(this.onSubmit)}>
+            <Tabs defaultActiveKey="2">
+              <TabPane tab={<span><Icon type="apple" />Tab 1</span>} key="1">
+                Tab 1
+              </TabPane>
+              <TabPane tab={<span><Icon type="android" />Tab 2</span>} key="2">
+                Tab 2
+              </TabPane>
+            </Tabs>
             <DatePicker value={moment(this.state.startDate).toISOString() === null
               ? ''
               : moment(this.state.StartDate)}
