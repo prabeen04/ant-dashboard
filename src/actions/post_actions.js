@@ -39,6 +39,7 @@ export const getSinglePost = (post) =>{
 }
 
 export const addPost = (post) => {
+    console.log(post)
     return (dispatch) => {
         dispatch({
             type: ADD_POST
