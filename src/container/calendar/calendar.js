@@ -36,7 +36,7 @@ class Calendar extends Component {
 
   onSubmit = (values) => {
     console.log(values)
-    let eventValues = Object.assign({}, values, { start: this.state.startDate, end: this.state.endDate })
+    let eventValues = Object.assign({}, values)
     console.log(eventValues)
     this.success()
     this.props.addEvent(JSON.stringify(values));
@@ -86,6 +86,10 @@ class Calendar extends Component {
             // formats={formats}
             onSelectSlot={(slot) => this.handleOk(slot)}
             onSelecting={(range) => console.log(range)}
+            onSelectEvent={(event, e) =>{
+              alert(event.description)
+              console.log(e)
+            } }
           />
           :
           <BigCalendar
@@ -170,7 +174,7 @@ const mapStateToProps = (state) => {
   return {
     isLoading: state.calendarReducer.isLoading,
     isError: state.calendarReducer.isError,
-    events: state.calendarReducer.posts
+    events: state.calendarReducer.events
   }
 };
 
