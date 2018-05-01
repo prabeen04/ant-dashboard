@@ -73,6 +73,7 @@ class Calendar extends Component {
     if (this.props.isError) {
       return (<p>Some Error occoured...</p>)
     }
+    console.log(moment(this.state.startDate).toDate())
     return (
       <div className="flex-container" style={{ height: '520px', backgroundColor: '#fff', margin: '1rem' }}>
         {this.state.activeTab === '1'
@@ -80,8 +81,8 @@ class Calendar extends Component {
             style={{ flexBasis: '70%' }}
             events={this.props.events ?this.props.events :[] }
             defaultDate={new Date()}
-            startAccessor={start}
-            endAccessor={end}
+            startAccessor={(event) => new Date(event.start)}
+            endAccessor={(event) => new Date(event.end)}
             selectable={true}
             // formats={formats}
             onSelectSlot={(slot) => this.handleOk(slot)}
@@ -97,8 +98,8 @@ class Calendar extends Component {
             events={this.props.events}
             defaultDate={new Date()}
             view={this.state.view}
-            startAccessor={start}
-            endAccessor={end}
+            startAccessor={(event) => new Date(event.start)}
+            endAccessor={(event) => new Date(event.end)}
             selectable={true}
             // formats={formats}
             onView={(view) => this.setState({
