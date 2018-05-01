@@ -5,6 +5,7 @@ import { bindActionCreators } from 'redux';
 import { Field, reduxForm } from 'redux-form';
 import { getEvents, addEvent } from '../../actions/calendar_actions';
 import EventForm from './eventForm';
+import EventList from './eventList';
 import moment from 'moment';
 import './calendar.css';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
@@ -14,10 +15,7 @@ const dateFormat = 'YYYY-MM-DD';
 const timeFormat = 'HH:mm:ss';
 
 BigCalendar.setLocalizer(BigCalendar.momentLocalizer(moment))
-let formats = {
-  dayFormat: (date, culture, localizer) =>
-    localizer.format(date, 'YYYY-MM-DDTHH:mm:ss.SSSSZ', culture),
-}
+
 class Calendar extends Component {
   constructor(props) {
     super(props)
@@ -34,10 +32,6 @@ class Calendar extends Component {
     this.handleCancel = this.handleCancel.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
     this.success = this.success.bind(this);
-    setTimeout(()=>{
-      console.log(Tabs.defaultActiveKey)
-    },2000)
-    
   }
 
   onSubmit = (values) => {
@@ -68,9 +62,7 @@ class Calendar extends Component {
     this.props.getEvents();
   }
   render() {
-    // console.log(moment(this.state.startDate).toISOString())
-    // console.log('------------------------')
-    // console.log(moment('2018-04-03T18:30:00.0000Z'))
+    console.log(this.props.events)
     const { visible, confirmLoading, startDate, endDate } = this.state;
     const { handleSubmit, pristine, reset, submitting, start, end } = this.props;
     if (this.props.isLoading) {
@@ -81,62 +73,61 @@ class Calendar extends Component {
     if (this.props.isError) {
       return (<p>Some Error occoured...</p>)
     }
-    // console.log(this.state.startDate)
     return (
       <div className="flex-container" style={{ height: '520px', backgroundColor: '#fff', margin: '1rem' }}>
-      {this.state.activeTab === '1'
-        ?<BigCalendar
-          style={{ flexBasis: '70%' }}
-          events={this.props.events}
-          defaultDate={new Date()}
-          startAccessor={start}
-          endAccessor={end}
-          selectable={true}
-          // formats={formats}
-          onSelectSlot={(slot) => this.handleOk(slot)}
-          onSelecting={(range) => console.log(range)}
-        />
-        :
+        {this.state.activeTab === '1'
+          ? <BigCalendar
+            style={{ flexBasis: '70%' }}
+            events={this.props.events ?this.props.events :[] }
+            defaultDate={new Date()}
+            startAccessor={start}
+            endAccessor={end}
+            selectable={true}
+            // formats={formats}
+            onSelectSlot={(slot) => this.handleOk(slot)}
+            onSelecting={(range) => console.log(range)}
+          />
+          :
           <BigCalendar
-          style={{ flexBasis: '70%',backgroundColor: '#f4f4f4' }}
-          events={this.props.events}
-          defaultDate={new Date()}
-          view={this.state.view}
-          startAccessor={start}
-          endAccessor={end}
-          selectable={true}
-          // formats={formats}
-          onView={(view)=>this.setState({
-            view: view
-          })}
-          onSelectSlot={(slot) => this.handleOk(slot)}
-          onSelecting={(range) => console.log(range)}
-        />
-      }
-        
+            style={{ flexBasis: '70%', backgroundColor: '#f4f4f4' }}
+            events={this.props.events}
+            defaultDate={new Date()}
+            view={this.state.view}
+            startAccessor={start}
+            endAccessor={end}
+            selectable={true}
+            // formats={formats}
+            onView={(view) => this.setState({
+              view: view
+            })}
+            onSelectSlot={(slot) => this.handleOk(slot)}
+            onSelecting={(range) => console.log(range)}
+          />
+        }
+
         <div className="event-form" >
-          <Tabs 
+          <Tabs
             defaultActiveKey={this.state.activeTab}
-            onChange={(activeKey)=>{
+            onChange={(activeKey) => {
               this.setState({
                 activeTab: activeKey.toString()
               })
             }}>
-            <TabPane tab={<span><Icon type="apple" />Tab 1</span>} key="1">
+            <TabPane tab={<span><Icon type="apple" />Apple</span>} key="1">
               <form onSubmit={handleSubmit(this.onSubmit)}>
 
                 <DatePicker value={moment(this.state.startDate).toISOString() === null
                   ? null
-                  : moment(this.state.StartDate)}
-                />
-                <DatePicker value={moment(this.state.endDate).toISOString() === null
-                  ? null
-                  : moment(this.state.endDate)}
+                  : moment(this.state.startDate)}
                 />
                 <TimePicker value={moment(this.state.startDate).toISOString() === null
                   ? null
                   : moment(this.state.startDate, timeFormat)}
                 />
+                <DatePicker value={moment(this.state.endDate).toISOString() === null
+                  ? null
+                  : moment(this.state.endDate)}
+                />                
                 <TimePicker value={moment(this.state.endDate).toISOString() === null
                   ? null
                   : moment(this.state.endDate, timeFormat)}
@@ -146,15 +137,15 @@ class Calendar extends Component {
                   endDate={this.state.endDate}
                 />
 
-                <button type="submit">submit</button>
+                <Button type="primary" htmlType="submit">submit</Button>
               </form>
             </TabPane>
-            <TabPane tab={<span><Icon type="android" />Tab 2</span>} key="2">
+            <TabPane tab={<span><Icon type="android" />Android</span>} key="2">
               <form onSubmit={handleSubmit(this.onSubmit)}>
 
                 <DatePicker value={moment(this.state.startDate).toISOString() === null
                   ? null
-                  : moment(this.state.StartDate)}
+                  : moment(this.state.startDate)}
                 />
                 <DatePicker value={moment(this.state.endDate).toISOString() === null
                   ? null
@@ -165,21 +156,21 @@ class Calendar extends Component {
                   endDate={this.state.endDate}
                 />
 
-                <button type="submit">submit</button>
+                <Button type="primary" htmlType="submit">submit</Button>
               </form>
             </TabPane>
           </Tabs>
-
         </div>
       </div>
     )
   }
 }
 const mapStateToProps = (state) => {
+  console.log(state)
   return {
     isLoading: state.calendarReducer.isLoading,
     isError: state.calendarReducer.isError,
-    events: state.calendarReducer.events
+    events: state.calendarReducer.posts
   }
 };
 
