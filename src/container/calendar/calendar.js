@@ -8,8 +8,9 @@ import EventForm from './eventForm';
 import moment from 'moment';
 import './calendar.css';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
-import { Button, Icon, message, DatePicker } from 'antd';
+import { Button, Icon, message, DatePicker, TimePicker } from 'antd';
 const dateFormat = 'YYYY-MM-DD';
+const timeFormat = 'HH:mm:ss';
 
 BigCalendar.setLocalizer(BigCalendar.momentLocalizer(moment))
 let formats = {
@@ -37,7 +38,7 @@ class Calendar extends Component {
     let eventValues = Object.assign({}, values, {start: this.state.startDate, end: this.state.endDate})
     console.log(eventValues)
     this.success()
-    // this.props.addEvent(values);
+    this.props.addEvent(JSON.stringify(values));
   }
   success = () => {
     message.success('Event Added', 10);
@@ -91,11 +92,19 @@ class Calendar extends Component {
           <form onSubmit={handleSubmit(this.onSubmit)}>
             <DatePicker value={moment(this.state.startDate).toISOString() === null
               ? ''
-              : moment(this.state.endDate)}
+              : moment(this.state.StartDate)}
             />
             <DatePicker value={moment(this.state.endDate).toISOString() === null
               ? ''
-              : moment(this.state.startDate)}
+              : moment(this.state.endDate)}
+            />
+            <TimePicker value={moment(this.state.startDate).toISOString() === null
+              ? ''
+              : moment(this.state.startDate, timeFormat)}
+            />
+            <TimePicker value={moment(this.state.endDate).toISOString() === null
+              ? ''
+              : moment(this.state.endDate, timeFormat)}
             />
             <EventForm
               startDate={this.state.startDate}
