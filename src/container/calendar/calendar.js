@@ -26,7 +26,8 @@ class Calendar extends Component {
       endDate: '',
       visible: false,
       confirmLoading: false,
-      activeTab: "1"
+      activeTab: "1",
+      view: 'week'
     }
 
     this.handleOk = this.handleOk.bind(this);
@@ -91,19 +92,23 @@ class Calendar extends Component {
           startAccessor={start}
           endAccessor={end}
           selectable={true}
-          formats={formats}
+          // formats={formats}
           onSelectSlot={(slot) => this.handleOk(slot)}
           onSelecting={(range) => console.log(range)}
         />
         :
           <BigCalendar
-          style={{ flexBasis: '70%',backgroundColor: 'red' }}
+          style={{ flexBasis: '70%',backgroundColor: '#f4f4f4' }}
           events={this.props.events}
           defaultDate={new Date()}
+          view={this.state.view}
           startAccessor={start}
           endAccessor={end}
           selectable={true}
-          formats={formats}
+          // formats={formats}
+          onView={(view)=>this.setState({
+            view: view
+          })}
           onSelectSlot={(slot) => this.handleOk(slot)}
           onSelecting={(range) => console.log(range)}
         />
@@ -121,19 +126,19 @@ class Calendar extends Component {
               <form onSubmit={handleSubmit(this.onSubmit)}>
 
                 <DatePicker value={moment(this.state.startDate).toISOString() === null
-                  ? ''
+                  ? null
                   : moment(this.state.StartDate)}
                 />
                 <DatePicker value={moment(this.state.endDate).toISOString() === null
-                  ? ''
+                  ? null
                   : moment(this.state.endDate)}
                 />
                 <TimePicker value={moment(this.state.startDate).toISOString() === null
-                  ? ''
+                  ? null
                   : moment(this.state.startDate, timeFormat)}
                 />
                 <TimePicker value={moment(this.state.endDate).toISOString() === null
-                  ? ''
+                  ? null
                   : moment(this.state.endDate, timeFormat)}
                 />
                 <EventForm
@@ -148,11 +153,11 @@ class Calendar extends Component {
               <form onSubmit={handleSubmit(this.onSubmit)}>
 
                 <DatePicker value={moment(this.state.startDate).toISOString() === null
-                  ? ''
+                  ? null
                   : moment(this.state.StartDate)}
                 />
                 <DatePicker value={moment(this.state.endDate).toISOString() === null
-                  ? ''
+                  ? null
                   : moment(this.state.endDate)}
                 />
                 <EventForm
