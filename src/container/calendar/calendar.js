@@ -24,7 +24,7 @@ class Calendar extends Component {
       endDate: '',
       visible: false,
       confirmLoading: false,
-      activeTab: "1",
+      activeTab: "2",
       view: 'week'
     }
 
@@ -119,9 +119,9 @@ class Calendar extends Component {
               })
             }}>
             <TabPane tab={<span><Icon type="apple" />Apple</span>} key="1">
-              <form onSubmit={handleSubmit(this.onSubmit)}>
+               <form onSubmit={handleSubmit(this.onSubmit)}>
 
-                <DatePicker value={moment(this.state.startDate).toISOString() === null
+              {/*  <DatePicker value={moment(this.state.startDate).toISOString() === null
                   ? null
                   : moment(this.state.startDate)}
                 />
@@ -140,7 +140,7 @@ class Calendar extends Component {
                 <EventForm
                   startDate={this.state.startDate}
                   endDate={this.state.endDate}
-                />
+                /> */}
 
                 <Button type="primary" htmlType="submit">submit</Button>
               </form>
@@ -148,14 +148,14 @@ class Calendar extends Component {
             <TabPane tab={<span><Icon type="android" />Android</span>} key="2">
               <form onSubmit={handleSubmit(this.onSubmit)}>
 
-                <DatePicker value={moment(this.state.startDate).toISOString() === null
+                {/* <DatePicker value={moment(this.state.startDate).toISOString() === null
                   ? null
                   : moment(this.state.startDate)}
                 />
                 <DatePicker value={moment(this.state.endDate).toISOString() === null
                   ? null
                   : moment(this.state.endDate)}
-                />
+                /> */}
                 <EventForm
                   startDate={this.state.startDate}
                   endDate={this.state.endDate}

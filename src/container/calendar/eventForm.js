@@ -49,6 +49,7 @@ class EventForm extends Component {
                 <Field
                     name="startDate"
                     label="Start Date"
+                    value={moment(this.props.startDate).toISOString() === null ?moment() :moment(this.props.startDate)}
                     component={this.renderStartDate} />
                 <Field
                     name="endDate"
