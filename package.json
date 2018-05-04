@@ -4,7 +4,7 @@
   "homepage": "https://prabeen04.github.io/ant-dashboard",
   "private": true,
   "dependencies": {
-    "antd": "^3.3.3",
+    "antd": "^3.5.0",
     "axios": "^0.18.0",
     "chart.js": "^2.7.2",
     "chartjs": "^0.3.24",
