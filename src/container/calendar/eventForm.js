@@ -29,22 +29,24 @@ class EventForm extends Component {
     renderStartDate = ({ input, label, type, meta: { touched, error }, ...custom }) => {
         return (
             <DatePicker value={moment(this.props.startDate).toISOString() === null
-                ? ''
-                : moment(this.props.startDate)} 
-                {...input}
-                {...custom} />
+                ? null
+                : moment(this.props.startDate)}
+              />
         )
     }
     renderEndDate = ({ input, label, value, type, meta: { touched, error }, ...custom }) => {
         return (
-            <DatePicker {...value}/>
+            <DatePicker value={moment(this.props.endDate).toISOString() === null
+                ? null
+                : moment(this.props.endDate)}
+              />
         )
     }
     render() {
         console.log(this.props)
         return (
             <div>
-                {/* <Field
+                <Field
                     name="startDate"
                     label="Start Date"
                     component={this.renderStartDate} />
@@ -52,7 +54,7 @@ class EventForm extends Component {
                     name="endDate"
                     label="End Date"
                     value={moment(this.props.endDate).toISOString() === null ?moment() :moment(this.props.endDate)}
-                    component={this.renderEndDate} /> */}
+                    component={this.renderEndDate} />
                 <Field
                     name="title"
                     label="Title"
