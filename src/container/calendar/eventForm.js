@@ -10,7 +10,7 @@ class EventForm extends Component {
 
         this.renderInput = this.renderInput.bind(this);
         this.renderStartDate = this.renderStartDate.bind(this);
-        this.renderEndDate = this.renderEndDate.bind(this);
+        // this.renderEndDate = this.renderEndDate.bind(this);
     }
 
     renderInput = ({ input, label, type, meta: { touched, error }, ...custom }) => {
@@ -26,7 +26,8 @@ class EventForm extends Component {
             </div>
         )
     }
-    renderStartDate = ({ input, label, type, meta: { touched, error }, ...custom }) => {
+    renderStartDate = ({ input, label, value, type, meta: { touched, error }, ...custom }) => {
+        console.log(value)
         return (
             <DatePicker value={moment(this.props.startDate).toISOString() === null
                 ? null
@@ -34,14 +35,14 @@ class EventForm extends Component {
               />
         )
     }
-    renderEndDate = ({ input, label, value, type, meta: { touched, error }, ...custom }) => {
-        return (
-            <DatePicker value={moment(this.props.endDate).toISOString() === null
-                ? null
-                : moment(this.props.endDate)}
-              />
-        )
-    }
+    // renderEndDate = ({ input, label, value, type, meta: { touched, error }, ...custom }) => {
+    //     return (
+    //         <DatePicker value={moment(this.props.endDate).toISOString() === null
+    //             ? null
+    //             : moment(this.props.endDate)}
+    //           />
+    //     )
+    // }
     render() {
         console.log(this.props)
         return (
@@ -55,7 +56,8 @@ class EventForm extends Component {
                     name="endDate"
                     label="End Date"
                     value={moment(this.props.endDate).toISOString() === null ?moment() :moment(this.props.endDate)}
-                    component={this.renderEndDate} />
+                    component={()=><input/> }
+                    />
                 <Field
                     name="title"
                     label="Title"
