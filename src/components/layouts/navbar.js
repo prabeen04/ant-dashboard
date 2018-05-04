@@ -62,10 +62,22 @@ class Navbar extends React.Component {
                             onClick={this.toggle}
                         />
 
-                        <div style={{ float: 'right', marginRight: 10, }}>
-                            <Badge count={1} >
-                            <Icon type="bell" />
-                            </Badge>
+                        <div style={{ float: 'right', marginRight: 50, marginBottom: 10}}>
+                            <a href="#" style={{margin: 15}}>
+                                <Badge count={1} >
+                                    <Icon type="bell" />
+                                </Badge>
+                            </a>
+                            <a href="#" style={{margin: 15}}>
+                                <Badge count={5} >
+                                    <Icon type="user" />
+                                </Badge>
+                            </a>
+                            <a href="#" style={{margin: 15}}>
+                                <Badge count={10} >
+                                    <Icon type="bell" />
+                                </Badge>
+                            </a>
                         </div>
                     </Header>
 
