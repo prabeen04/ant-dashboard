@@ -27,7 +27,7 @@ class EventForm extends Component {
         )
     }
     renderStartDate = ({ input, label, value, type, meta: { touched, error }, ...custom }) => {
-        console.log(value)
+        // console.log(value)
         return (
             <DatePicker value={moment(this.props.startDate).toISOString() === null
                 ? null
@@ -36,10 +36,9 @@ class EventForm extends Component {
         )
     }
     renderEndDate = ({ input, label, type, meta: { touched, error }, ...custom }) => {
+        
         return (
-            <DatePicker  {...input}
-            {...custom}
-              />
+            <DatePicker onChange={(e)=>console.log(moment(e).toISOString())}/>
         )
     }
     render() {
