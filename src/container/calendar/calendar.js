@@ -32,7 +32,6 @@ class Calendar extends Component {
     this.handleCancel = this.handleCancel.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
     this.success = this.success.bind(this);
-    this.renderEndDate = this.renderEndDate.bind(this)
   }
 
   onSubmit = (values) => {
@@ -46,6 +45,7 @@ class Calendar extends Component {
     message.success('Event Added', 10);
   };
   handleOk = (slot) => {
+    console.log(slot)
     this.setState({
       startDate: slot.start,
       endDate: slot.end,
@@ -53,6 +53,7 @@ class Calendar extends Component {
     });
   }
   handleCancel = () => {
+    console.log('Clicked cancel button');
     this.setState({
       visible: false,
     });
@@ -60,20 +61,10 @@ class Calendar extends Component {
   componentDidMount() {
     this.props.getEvents();
   }
-  renderEndDate = ({ input, label, type, meta: { touched, error }, ...custom }) => {
-    console.log(custom)
-    return (
-        <DatePicker
-             {...input}
-             {...custom}
-             value = {input.value !== ''? moment(this.state.startDate) : null}
-             onChange = {(event, value) => {console.log(value)}}
-            />
-    )
-}
   render() {
+    console.log(this.props.events)
     const { visible, confirmLoading, startDate, endDate } = this.state;
-    const { handleSubmit, pristine, reset, submitting} = this.props;
+    const { handleSubmit, pristine, reset, submitting, start, end } = this.props;
     if (this.props.isLoading) {
       return (<div className="flex-container" style={{ height: '80vh', justifyContent: 'center' }}>
         <Icon type="loading" style={{ fontSize: 60, color: 'tomato' }} spin />
@@ -82,6 +73,7 @@ class Calendar extends Component {
     if (this.props.isError) {
       return (<p>Some Error occoured...</p>)
     }
+    console.log(moment(this.state.startDate).toDate())
     return (
       <div className="flex-container" style={{ height: '520px', backgroundColor: '#fff', margin: '1rem' }}>
         {this.state.activeTab === '1'
@@ -155,16 +147,20 @@ class Calendar extends Component {
             </TabPane>
             <TabPane tab={<span><Icon type="android" />Android</span>} key="2">
               <form onSubmit={handleSubmit(this.onSubmit)}>
-                {/* <EventForm
+
+                {/* <DatePicker value={moment(this.state.startDate).toISOString() === null
+                  ? null
+                  : moment(this.state.startDate)}
+                />
+                <DatePicker value={moment(this.state.endDate).toISOString() === null
+                  ? null
+                  : moment(this.state.endDate)}
+                /> */}
+                <EventForm
                   startDate={this.state.startDate}
                   endDate={this.state.endDate}
-                /> */}
-                <Field
-                    name="endDate"
-                    label="End Date"
-                    format={(value, name) => console.log('value being passed:', value)}
-                    component={this.renderEndDate}
                 />
+
                 <Button type="primary" htmlType="submit">submit</Button>
               </form>
             </TabPane>
@@ -175,6 +171,7 @@ class Calendar extends Component {
   }
 }
 const mapStateToProps = (state) => {
+  console.log(state)
   return {
     isLoading: state.calendarReducer.isLoading,
     isError: state.calendarReducer.isError,
@@ -195,6 +192,5 @@ Calendar = connect(
 )(Calendar);
 
 export default reduxForm({
-  form: 'calendarForm',
-  enableReinitialize: true
+  form: 'calendarForm'
 })(Calendar);
