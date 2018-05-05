@@ -60,18 +60,20 @@ class Calendar extends Component {
   componentDidMount() {
     this.props.getEvents();
   }
-  renderEndDate = ({ input, label, value, type, meta: { touched, error }, ...custom }) => {
+  renderEndDate = ({ input, label, type, meta: { touched, error }, ...custom }) => {
     console.log(custom)
     return (
         <DatePicker
              {...input}
              {...custom}
+             value = {input.value !== ''? moment(this.state.startDate) : null}
+             onChange = {(event, value) => {console.log(value)}}
             />
     )
 }
   render() {
     const { visible, confirmLoading, startDate, endDate } = this.state;
-    const { handleSubmit, pristine, reset, submitting, start, end } = this.props;
+    const { handleSubmit, pristine, reset, submitting} = this.props;
     if (this.props.isLoading) {
       return (<div className="flex-container" style={{ height: '80vh', justifyContent: 'center' }}>
         <Icon type="loading" style={{ fontSize: 60, color: 'tomato' }} spin />
@@ -153,15 +155,6 @@ class Calendar extends Component {
             </TabPane>
             <TabPane tab={<span><Icon type="android" />Android</span>} key="2">
               <form onSubmit={handleSubmit(this.onSubmit)}>
-
-                {/* <DatePicker value={moment(this.state.startDate).toISOString() === null
-                  ? null
-                  : moment(this.state.startDate)}
-                />
-                <DatePicker value={moment(this.state.endDate).toISOString() === null
-                  ? null
-                  : moment(this.state.endDate)}
-                /> */}
                 {/* <EventForm
                   startDate={this.state.startDate}
                   endDate={this.state.endDate}
@@ -169,13 +162,8 @@ class Calendar extends Component {
                 <Field
                     name="endDate"
                     label="End Date"
-                    value={moment(this.state.startDate).toISOString() === null
-                    ? null
-                    : moment(this.state.startDate)}
+                    format={(value, name) => console.log('value being passed:', value)}
                     component={this.renderEndDate}
-                    onChange={(e)=>{{moment(this.state.startDate).toISOString() === null
-                      ? null
-                      : moment(this.state.startDate)}} }
                 />
                 <Button type="primary" htmlType="submit">submit</Button>
               </form>
