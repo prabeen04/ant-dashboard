@@ -10,7 +10,6 @@ export const getEvents = () => {
         })
         return axios.get(`${baseURL}`)
             .then(response => {
-                console.log(response)
                 dispatch({
                     type: GET_EVENTS_SUCCESS,
                     payload: response.data

@@ -45,7 +45,6 @@ class Calendar extends Component {
     message.success('Event Added', 10);
   };
   handleOk = (slot) => {
-    console.log(slot)
     this.setState({
       startDate: slot.start,
       endDate: slot.end,
@@ -53,7 +52,6 @@ class Calendar extends Component {
     });
   }
   handleCancel = () => {
-    console.log('Clicked cancel button');
     this.setState({
       visible: false,
     });
@@ -62,7 +60,6 @@ class Calendar extends Component {
     this.props.getEvents();
   }
   render() {
-    console.log(this.props.events)
     const { visible, confirmLoading, startDate, endDate } = this.state;
     const { handleSubmit, pristine, reset, submitting, start, end } = this.props;
     if (this.props.isLoading) {
@@ -73,7 +70,6 @@ class Calendar extends Component {
     if (this.props.isError) {
       return (<p>Some Error occoured...</p>)
     }
-    console.log(moment(this.state.startDate).toDate())
     return (
       <div className="flex-container" style={{ height: '520px', backgroundColor: '#fff', margin: '1rem' }}>
         {this.state.activeTab === '1'
@@ -171,7 +167,6 @@ class Calendar extends Component {
   }
 }
 const mapStateToProps = (state) => {
-  console.log(state)
   return {
     isLoading: state.calendarReducer.isLoading,
     isError: state.calendarReducer.isError,
