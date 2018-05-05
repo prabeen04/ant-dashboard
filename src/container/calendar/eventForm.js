@@ -6,7 +6,7 @@ const { MonthPicker, RangePicker } = DatePicker;
 
 class EventForm extends Component {
     constructor(props) {
-        super(props)
+        super(props)      
 
         this.renderInput = this.renderInput.bind(this);
         this.renderStartDate = this.renderStartDate.bind(this);
@@ -26,36 +26,36 @@ class EventForm extends Component {
             </div>
         )
     }
-    renderStartDate = ({ input, label, type, meta: { touched, error }, ...custom }) => {
+    renderStartDate = ({ input, label, value, type, meta: { touched, error }, ...custom }) => {
+        // console.log(value)
         return (
             <DatePicker value={moment(this.props.startDate).toISOString() === null
                 ? null
                 : moment(this.props.startDate)}
-            />
+              />
         )
     }
-    renderEndDate = ({ input, label, value, type, meta: { touched, error }, ...custom }) => {
-        console.log(input)
+    renderEndDate = ({ input, label, type, meta: { touched, error }, ...custom }) => {
+        
         return (
-            <DatePicker
-                 {...input}
-                 onChange={(e)=>{input.onChange()}}
-                />
+            <DatePicker onChange={(e)=>console.log(moment(e).toISOString())}/>
         )
     }
     render() {
+        console.log(this.props)
         return (
             <div>
-                <Field
+                {/* <Field
                     name="startDate"
                     label="Start Date"
-                    component={this.renderStartDate}
-                    />
+                    value={moment(this.props.startDate).toISOString() === null ?moment() :moment(this.props.startDate)}
+                    component={this.renderStartDate} />
                 <Field
                     name="endDate"
                     label="End Date"
+                    value={moment(this.props.startDate).toISOString() === null ?moment() :moment(this.props.startDate)}
                     component={this.renderEndDate}
-                />
+                     /> */}
                 <Field
                     name="title"
                     label="Title"

@@ -45,7 +45,6 @@ class Calendar extends Component {
     message.success('Event Added', 10);
   };
   handleOk = (slot) => {
-    console.log(slot)
     this.setState({
       startDate: slot.start,
       endDate: slot.end,
@@ -62,7 +61,6 @@ class Calendar extends Component {
     this.props.getEvents();
   }
   render() {
-    console.log(this.props.events)
     const { visible, confirmLoading, startDate, endDate } = this.state;
     const { handleSubmit, pristine, reset, submitting, start, end } = this.props;
     if (this.props.isLoading) {
@@ -121,7 +119,7 @@ class Calendar extends Component {
             <TabPane tab={<span><Icon type="apple" />Apple</span>} key="1">
                <form onSubmit={handleSubmit(this.onSubmit)}>
 
-              {/*  <DatePicker value={moment(this.state.startDate).toISOString() === null
+               <DatePicker value={moment(this.state.startDate).toISOString() === null
                   ? null
                   : moment(this.state.startDate)}
                 />
@@ -140,7 +138,7 @@ class Calendar extends Component {
                 <EventForm
                   startDate={this.state.startDate}
                   endDate={this.state.endDate}
-                /> */}
+                />
 
                 <Button type="primary" htmlType="submit">submit</Button>
               </form>
@@ -148,14 +146,14 @@ class Calendar extends Component {
             <TabPane tab={<span><Icon type="android" />Android</span>} key="2">
               <form onSubmit={handleSubmit(this.onSubmit)}>
 
-                {/* <DatePicker value={moment(this.state.startDate).toISOString() === null
+                <DatePicker value={moment(this.state.startDate).toISOString() === null
                   ? null
                   : moment(this.state.startDate)}
                 />
                 <DatePicker value={moment(this.state.endDate).toISOString() === null
                   ? null
                   : moment(this.state.endDate)}
-                /> */}
+                />
                 <EventForm
                   startDate={this.state.startDate}
                   endDate={this.state.endDate}
