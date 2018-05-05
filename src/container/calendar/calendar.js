@@ -25,13 +25,14 @@ class Calendar extends Component {
       visible: false,
       confirmLoading: false,
       activeTab: "2",
-      view: 'week'
+      view: 'month'
     }
 
     this.handleOk = this.handleOk.bind(this);
     this.handleCancel = this.handleCancel.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
     this.success = this.success.bind(this);
+    this.renderEndDate = this.renderEndDate.bind(this);
   }
 
   onSubmit = (values) => {
@@ -60,6 +61,12 @@ class Calendar extends Component {
   componentDidMount() {
     this.props.getEvents();
   }
+  renderEndDate = ({input, meta}) => {
+    console.log(input)
+    return <DatePicker 
+         {...input}
+        value={moment(this.state.startDate).toISOString() === null ?null :moment(this.state.startDate)}/>
+  }
   render() {
     const { visible, confirmLoading, startDate, endDate } = this.state;
     const { handleSubmit, pristine, reset, submitting, start, end } = this.props;
@@ -68,10 +75,9 @@ class Calendar extends Component {
         <Icon type="loading" style={{ fontSize: 60, color: 'tomato' }} spin />
       </div>)
     }
-    if (this.props.isError) {
-      return (<p>Some Error occoured...</p>)
-    }
-    console.log(moment(this.state.startDate).toDate())
+    // if (this.props.isError) {
+    //   return (<p>Some Error occoured...</p>)
+    // }
     return (
       <div className="flex-container" style={{ height: '520px', backgroundColor: '#fff', margin: '1rem' }}>
         {this.state.activeTab === '1'
@@ -117,7 +123,7 @@ class Calendar extends Component {
               })
             }}>
             <TabPane tab={<span><Icon type="apple" />Apple</span>} key="1">
-               <form onSubmit={handleSubmit(this.onSubmit)}>
+               {/* <form onSubmit={handleSubmit(this.onSubmit)}>
 
                <DatePicker value={moment(this.state.startDate).toISOString() === null
                   ? null
@@ -141,24 +147,26 @@ class Calendar extends Component {
                 />
 
                 <Button type="primary" htmlType="submit">submit</Button>
-              </form>
+              </form> */}
             </TabPane>
             <TabPane tab={<span><Icon type="android" />Android</span>} key="2">
               <form onSubmit={handleSubmit(this.onSubmit)}>
 
-                <DatePicker value={moment(this.state.startDate).toISOString() === null
+                {/* <DatePicker value={moment(this.state.startDate).toISOString() === null
                   ? null
                   : moment(this.state.startDate)}
                 />
                 <DatePicker value={moment(this.state.endDate).toISOString() === null
                   ? null
                   : moment(this.state.endDate)}
-                />
-                <EventForm
+                /> */}
+                {/* <EventForm
                   startDate={this.state.startDate}
                   endDate={this.state.endDate}
-                />
-
+                /> */}
+                <Field 
+                  name="startDate"
+                  component={this.renderEndDate}/>
                 <Button type="primary" htmlType="submit">submit</Button>
               </form>
             </TabPane>
@@ -169,7 +177,6 @@ class Calendar extends Component {
   }
 }
 const mapStateToProps = (state) => {
-  console.log(state)
   return {
     isLoading: state.calendarReducer.isLoading,
     isError: state.calendarReducer.isError,
