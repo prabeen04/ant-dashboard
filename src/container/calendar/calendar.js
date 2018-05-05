@@ -32,6 +32,7 @@ class Calendar extends Component {
     this.handleCancel = this.handleCancel.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
     this.success = this.success.bind(this);
+    this.renderEndDate = this.renderEndDate.bind(this)
   }
 
   onSubmit = (values) => {
@@ -59,6 +60,15 @@ class Calendar extends Component {
   componentDidMount() {
     this.props.getEvents();
   }
+  renderEndDate = ({ input, label, value, type, meta: { touched, error }, ...custom }) => {
+    console.log(custom)
+    return (
+        <DatePicker
+             {...input}
+             {...custom}
+            />
+    )
+}
   render() {
     const { visible, confirmLoading, startDate, endDate } = this.state;
     const { handleSubmit, pristine, reset, submitting, start, end } = this.props;
@@ -152,11 +162,21 @@ class Calendar extends Component {
                   ? null
                   : moment(this.state.endDate)}
                 /> */}
-                <EventForm
+                {/* <EventForm
                   startDate={this.state.startDate}
                   endDate={this.state.endDate}
+                /> */}
+                <Field
+                    name="endDate"
+                    label="End Date"
+                    value={moment(this.state.startDate).toISOString() === null
+                    ? null
+                    : moment(this.state.startDate)}
+                    component={this.renderEndDate}
+                    onChange={(e)=>{{moment(this.state.startDate).toISOString() === null
+                      ? null
+                      : moment(this.state.startDate)}} }
                 />
-
                 <Button type="primary" htmlType="submit">submit</Button>
               </form>
             </TabPane>
@@ -187,5 +207,6 @@ Calendar = connect(
 )(Calendar);
 
 export default reduxForm({
-  form: 'calendarForm'
+  form: 'calendarForm',
+  enableReinitialize: true
 })(Calendar);
