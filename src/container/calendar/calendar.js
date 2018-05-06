@@ -3,7 +3,7 @@ import BigCalendar from 'react-big-calendar';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Field, reduxForm } from 'redux-form';
-import { getEvents, addEvent } from '../../actions/calendar_actions';
+import { getEvents, addEvent, setDate } from '../../actions/calendar_actions';
 import EventForm from './eventForm';
 import EventList from './eventList';
 import moment from 'moment';
@@ -189,7 +189,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return bindActionCreators({
     getEvents: getEvents,
-    addEvent: addEvent
+    addEvent: addEvent,
+    setDate: setDate
   }, dispatch);
 };
 
