@@ -1,6 +1,6 @@
 import { GET_EVENTS, ADD_EVENT, ADD_EVENT_SUCCESS, ADD_EVENT_FAILURE, GET_EVENTS_SUCCESS, GET_EVENTS_FAILURE,
          SET_DATE    } from '../types/calendar_actiontypes';
-
+import moment from 'moment';
 const initialState ={
     isLoading: false,
     isError: false,
@@ -11,7 +11,7 @@ const initialState ={
 export const calendarReducer = (state = initialState, action) => {
     switch(action.type){
         case SET_DATE:
-            return Object.assign({}, state, {startDate: action.payload.start, endDate: action.payload.end})
+            return Object.assign({}, state, {startDate:moment( action.payload.start), endDate:moment( action.payload.end)})
         case GET_EVENTS:
             return Object.assign({}, state, {isLoading: true})
         case GET_EVENTS_SUCCESS:

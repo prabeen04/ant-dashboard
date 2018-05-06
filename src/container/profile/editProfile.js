@@ -70,4 +70,4 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 EditProfile = connect(mapStateToProps, mapDispatchToProps)(EditProfile);
-export default EditProfile
+export default EditProfile;
