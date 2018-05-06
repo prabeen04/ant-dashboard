@@ -66,7 +66,7 @@ class Calendar extends Component {
     console.log(meta)
     return <DatePicker 
          {...input}
-        value={moment(this.state.startDate).toISOString() === null ?null :moment(this.state.startDate)}/>
+        value={moment(this.props.startDate).toISOString() === null ?null :moment(this.props.startDate)}/>
   }
   render() {
     const { visible, confirmLoading, startDate, endDate } = this.state;
@@ -179,7 +179,14 @@ class Calendar extends Component {
     )
   }
 }
+
+Calendar = reduxForm({
+  form: 'calendarForm',
+  enableReinitialize: true
+})(Calendar);
+
 const mapStateToProps = (state) => {
+  console.log(state)
   return {
     isLoading: state.calendarReducer.isLoading,
     isError: state.calendarReducer.isError,
@@ -200,6 +207,4 @@ Calendar = connect(
   mapDispatchToProps
 )(Calendar);
 
-export default reduxForm({
-  form: 'calendarForm'
-})(Calendar);
+export default Calendar;
