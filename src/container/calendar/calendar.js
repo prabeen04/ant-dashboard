@@ -66,12 +66,19 @@ class Calendar extends Component {
     console.log(meta)
     return <DatePicker 
          {...input}
-         value={this.props.startDate || moment()}
+        
         />
   }
-  componentDidUpdate(){
-    this.props.initialize(this.props.initialValues);
-  }
+  // componentWillReceiveProps(nextProps) {
+  //   const { initialValues } = this.props
+  //   if (!Object.keys(initialValues).length && nextProps.initialValues) {
+  //     this.initializeGeoFields(nextProps.initialValues)
+  //   }
+  // }
+
+  // componentDidUpdate(){
+  //   this.props.initialize(this.props.initialValues);
+  // }
   render() {
     const { visible, confirmLoading, startDate, endDate } = this.state;
     const { handleSubmit, pristine, reset, submitting, start, end } = this.props;
@@ -192,7 +199,9 @@ Calendar = reduxForm({
 const mapStateToProps = (state) => {
   console.log(state)
   return {
-    initialValues: state.calendarReducer.startDate,
+    initialValues:{
+      startDate: state.calendarReducer.startDate
+    },
     isLoading: state.calendarReducer.isLoading,
     isError: state.calendarReducer.isError,
     events: state.calendarReducer.events
