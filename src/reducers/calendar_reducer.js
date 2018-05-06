@@ -1,4 +1,5 @@
-import { GET_EVENTS, ADD_EVENT, ADD_EVENT_SUCCESS, ADD_EVENT_FAILURE, GET_EVENTS_SUCCESS, GET_EVENTS_FAILURE } from '../types/calendar_actiontypes';
+import { GET_EVENTS, ADD_EVENT, ADD_EVENT_SUCCESS, ADD_EVENT_FAILURE, GET_EVENTS_SUCCESS, GET_EVENTS_FAILURE,
+         SET_DATE    } from '../types/calendar_actiontypes';
 
 const initialState ={
     isLoading: false,
@@ -9,6 +10,8 @@ const initialState ={
 }
 export const calendarReducer = (state = initialState, action) => {
     switch(action.type){
+        case SET_DATE:
+            return Object.assign({}, state, {startDate: action.payload.startDate, endDate: action.payload.endDate})
         case GET_EVENTS:
             return Object.assign({}, state, {isLoading: true})
         case GET_EVENTS_SUCCESS:
