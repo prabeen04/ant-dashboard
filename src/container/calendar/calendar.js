@@ -62,7 +62,7 @@ class Calendar extends Component {
     this.props.getEvents();
   }
   renderEndDate = ({input, meta}) => {
-    console.log(input)
+    console.log(meta)
     return <DatePicker 
          {...input}
         value={moment(this.state.startDate).toISOString() === null ?null :moment(this.state.startDate)}/>
@@ -166,7 +166,8 @@ class Calendar extends Component {
                 /> */}
                 <Field 
                   name="startDate"
-                  component={this.renderEndDate}/>
+                  component={this.renderEndDate}
+                  onChange={(e) => console.log(e)}/>
                 <Button type="primary" htmlType="submit">submit</Button>
               </form>
             </TabPane>
