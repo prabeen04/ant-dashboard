@@ -8,7 +8,7 @@ const { MonthPicker, RangePicker } = DatePicker;
 
 class EventForm extends Component {
     constructor(props) {
-        super(props)      
+        super(props)
 
         this.renderInput = this.renderInput.bind(this);
         this.renderStartDate = this.renderStartDate.bind(this);
@@ -23,7 +23,6 @@ class EventForm extends Component {
             <div>
                 <Input
                     placeholder={label}
-                    value={this.props.start || null}
                     {...input}
                     {...custom}
                 />
@@ -37,51 +36,57 @@ class EventForm extends Component {
         )
     }
     renderEndDate = ({ input, meta: { touched, error }, ...custom }) => {
-        
         return (
             <DatePicker {...input} />
         )
     }
     render() {
-      const  {handleSubmit, submitting } = this.props
-        console.log(this.props)
+        const { handleSubmit, submitting } = this.props
         return (
             <div>
-               <form onSubmit={handleSubmit(this.eventSubmit)}>
-                <Field
-                    name="startDate"
-                    label="Start Date"
-                    component={this.renderStartDate} />
-                <Field
-                    name="endDate"
-                    label="End Date"
-                    component={this.renderEndDate}
+                <form onSubmit={handleSubmit(this.eventSubmit)}>
+                    <Field
+                        name="startDate"
+                        label="Start Date"
+                        component={this.renderStartDate} />
+                    <Field
+                        name="endDate"
+                        label="End Date"
+                        component={this.renderEndDate}
                     />
-                <Field
-                    name="title"
-                    label="Title"
-                    component={this.renderInput} />
-                <Field
-                    name="user"
-                    label="User"
-                    component={this.renderInput} />
-                <Field
-                    name="description"
-                    label="Description"
-                    component={this.renderInput} />
-                <Button type="primary" htmlType="submit">Add Event</Button>    
-                </form> 
+                    <Field
+                        name="title"
+                        label="Title"
+                        component={this.renderInput} />
+                    <Field
+                        name="user"
+                        label="User"
+                        component={this.renderInput} />
+                    <Field
+                        name="description"
+                        label="Description"
+                        component={this.renderInput} />
+                    <Button type="primary" htmlType="submit">Add Event</Button>
+                </form>
             </div>
         )
     }
 }
+const validate = (values) => {
+    const errors = {}
+    if(!values.title){
+        errors.title = 'required'
+    }
+    return errors;
+}
 EventForm = reduxForm({
     form: 'calendarForm',
+    validate,
     enableReinitialize: true
 })(EventForm)
 const mapStateToProps = (state) => {
     console.log()
-    return{
+    return {
         initialValues: {
             startDate: state.calendarReducer.startDate,
             endDate: state.calendarReducer.endDate
@@ -89,7 +94,7 @@ const mapStateToProps = (state) => {
     }
 }
 
-const mapDispatchToProps = dispatch =>{
+const mapDispatchToProps = dispatch => {
     return bindActionCreators({
 
     })

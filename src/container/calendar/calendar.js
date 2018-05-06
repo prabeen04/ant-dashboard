@@ -25,7 +25,7 @@ class Calendar extends Component {
       visible: false,
       confirmLoading: false,
       activeTab: "2",
-      view: 'month'
+      view: 'week'
     }
 
     this.handleOk = this.handleOk.bind(this);
