@@ -32,7 +32,7 @@ class Calendar extends Component {
     this.handleCancel = this.handleCancel.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
     this.success = this.success.bind(this);
-    this.renderEndDate = this.renderEndDate.bind(this);
+    // this.renderEndDate = this.renderEndDate.bind(this);
   }
 
   onSubmit = (values) => {
@@ -63,13 +63,13 @@ class Calendar extends Component {
   componentDidMount() {
     this.props.getEvents();
   }
-  renderEndDate = ({input, meta}) => {
-    console.log(meta)
-    return <DatePicker 
-         {...input}
+  // renderEndDate = ({input, meta}) => {
+  //   console.log(meta)
+  //   return <DatePicker 
+  //        {...input}
         
-        />
-  }
+  //       />
+  // }
   // componentWillReceiveProps(nextProps) {
   //   const { initialValues } = this.props
   //   if (!Object.keys(initialValues).length && nextProps.initialValues) {
@@ -135,32 +135,8 @@ class Calendar extends Component {
                 activeTab: activeKey.toString()
               })
             }}>
-            <TabPane tab={<span><Icon type="apple" />Apple</span>} key="1">
-               {/* <form onSubmit={handleSubmit(this.onSubmit)}>
-
-               <DatePicker value={moment(this.state.startDate).toISOString() === null
-                  ? null
-                  : moment(this.state.startDate)}
-                />
-                <TimePicker value={moment(this.state.startDate).toISOString() === null
-                  ? null
-                  : moment(this.state.startDate, timeFormat)}
-                />
-                <DatePicker value={moment(this.state.endDate).toISOString() === null
-                  ? null
-                  : moment(this.state.endDate)}
-                />                
-                <TimePicker value={moment(this.state.endDate).toISOString() === null
-                  ? null
-                  : moment(this.state.endDate, timeFormat)}
-                />
-                <EventForm
-                  startDate={this.state.startDate}
-                  endDate={this.state.endDate}
-                />
-
-                <Button type="primary" htmlType="submit">submit</Button>
-              </form> */}
+            <TabPane tab={<span><Icon type="apple" />Apple</span>} key="1">             
+                <EventForm />
             </TabPane>
             <TabPane tab={<span><Icon type="android" />Android</span>} key="2">
               <form onSubmit={handleSubmit(this.onSubmit)}>
@@ -177,11 +153,11 @@ class Calendar extends Component {
                   startDate={this.state.startDate}
                   endDate={this.state.endDate}
                 /> */}
-                <Field 
+                {/* <Field 
                   name="startDate"
                   component={this.renderEndDate}
                   onChange={(e) => console.log(e)}
-                  formDirty={this.props.dirty}/>
+                  formDirty={this.props.dirty}/> */}
                 <Button type="primary" htmlType="submit">submit</Button>
               </form>
             </TabPane>
@@ -198,13 +174,10 @@ Calendar = reduxForm({
 })(Calendar);
 
 const mapStateToProps = (state) => {
-  console.log(state)
-  console.log('---------------')
-  console.log(state.calendarReducer.startDate)
   return {
-    initialValues:{
-      startDate: state.calendarReducer.startDate
-    },
+    // initialValues:{
+    //   startDate: state.calendarReducer.startDate
+    // },
     isLoading: state.calendarReducer.isLoading,
     isError: state.calendarReducer.isError,
     events: state.calendarReducer.events

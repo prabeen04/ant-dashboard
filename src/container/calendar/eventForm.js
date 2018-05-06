@@ -28,13 +28,12 @@ class EventForm extends Component {
             </div>
         )
     }
-    renderStartDate = ({ input, label, value, type, meta: { touched, error }, ...custom }) => {
-        // console.log(value)
+    renderStartDate = ({ input, meta: { touched, error }, ...custom }) => {
         return (
             <DatePicker {...input} />
         )
     }
-    renderEndDate = ({ input, label, type, meta: { touched, error }, ...custom }) => {
+    renderEndDate = ({ input, meta: { touched, error }, ...custom }) => {
         
         return (
             <DatePicker {...input} />
@@ -72,14 +71,15 @@ class EventForm extends Component {
     }
 }
 EventForm = reduxForm({
-    form: 'calendarEventForm',
+    form: 'calendarForm',
     enableReinitialize: true
-})
-const mapStateToProps = state =>{
+})(EventForm)
+const mapStateToProps = (state) => {
+    console.log()
     return{
         initialValues: {
-            startDate: state.calendarReducer.start,
-            endDate: state.calendarReducer.end
+            startDate: state.calendarReducer.startDate,
+            endDate: state.calendarReducer.endDate
         }
     }
 }
