@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import moment from 'moment';
-import { Field } from 'redux-form';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { Field, reduxForm } from 'redux-form';
 import { Input, DatePicker } from 'antd';
 const { MonthPicker, RangePicker } = DatePicker;
 
@@ -29,33 +31,29 @@ class EventForm extends Component {
     renderStartDate = ({ input, label, value, type, meta: { touched, error }, ...custom }) => {
         // console.log(value)
         return (
-            <DatePicker value={moment(this.props.startDate).toISOString() === null
-                ? null
-                : moment(this.props.startDate)}
-              />
+            <DatePicker {...input} />
         )
     }
     renderEndDate = ({ input, label, type, meta: { touched, error }, ...custom }) => {
         
         return (
-            <DatePicker onChange={(e)=>console.log(moment(e).toISOString())}/>
+            <DatePicker {...input} />
         )
     }
     render() {
         console.log(this.props)
         return (
             <div>
-                {/* <Field
+               <form >
+                <Field
                     name="startDate"
                     label="Start Date"
-                    value={moment(this.props.startDate).toISOString() === null ?moment() :moment(this.props.startDate)}
                     component={this.renderStartDate} />
                 <Field
                     name="endDate"
                     label="End Date"
-                    value={moment(this.props.startDate).toISOString() === null ?moment() :moment(this.props.startDate)}
                     component={this.renderEndDate}
-                     /> */}
+                    />
                 <Field
                     name="title"
                     label="Title"
@@ -68,8 +66,27 @@ class EventForm extends Component {
                     name="description"
                     label="Description"
                     component={this.renderInput} />
+                </form> 
             </div>
         )
     }
 }
-export default EventForm;
+EventForm = reduxForm({
+    form: 'calendarEventForm',
+    enableReinitialize: true
+})
+const mapStateToProps = state =>{
+    return{
+        initialValues: {
+            startDate: state.calendarReducer.start,
+            endDate: state.calendarReducer.end
+        }
+    }
+}
+
+const mapDispatchToProps = dispatch =>{
+    return bindActionCreators({
+
+    })
+}
+export default connect(mapStateToProps, mapDispatchToProps)(EventForm);

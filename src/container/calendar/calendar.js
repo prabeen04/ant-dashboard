@@ -36,6 +36,7 @@ class Calendar extends Component {
   }
 
   onSubmit = (values) => {
+    console.log(values)
     console.log(JSON.stringify(values))
     // let eventValues = Object.assign({}, values,{ start: moment(this.state.startDate), end:  moment(this.state.endDate)})
     // console.log(JSON.stringify(eventValues))
@@ -198,6 +199,8 @@ Calendar = reduxForm({
 
 const mapStateToProps = (state) => {
   console.log(state)
+  console.log('---------------')
+  console.log(state.calendarReducer.startDate)
   return {
     initialValues:{
       startDate: state.calendarReducer.startDate
