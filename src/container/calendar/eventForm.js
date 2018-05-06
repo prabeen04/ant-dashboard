@@ -32,12 +32,18 @@ class EventForm extends Component {
     }
     renderStartDate = ({ input, meta: { touched, error }, ...custom }) => {
         return (
-            <DatePicker {...input} />
+            <div>
+                <DatePicker {...input} />
+                {touched && error && <span>{error}</span>}
+            </div>
         )
     }
     renderEndDate = ({ input, meta: { touched, error }, ...custom }) => {
         return (
-            <DatePicker {...input} />
+            <div>
+                <DatePicker {...input} />
+                {touched && error && <span>{error}</span>}
+            </div>
         )
     }
     render() {
@@ -74,9 +80,22 @@ class EventForm extends Component {
 }
 const validate = (values) => {
     const errors = {}
-    if(!values.title){
+    if (!values.startDate) {
+        errors.startDate = 'required'
+    }
+    if (!values.endDate) {
+        errors.endDate = 'required'
+    }
+    if (!values.title) {
         errors.title = 'required'
     }
+    if (!values.user) {
+        errors.user = 'required'
+    }
+    if (!values.description) {
+        errors.description = 'required'
+    }
+
     return errors;
 }
 EventForm = reduxForm({
