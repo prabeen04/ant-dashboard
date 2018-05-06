@@ -3,7 +3,7 @@ import moment from 'moment';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Field, reduxForm } from 'redux-form';
-import { Input, DatePicker } from 'antd';
+import { Input, DatePicker, Button } from 'antd';
 const { MonthPicker, RangePicker } = DatePicker;
 
 class EventForm extends Component {
@@ -13,8 +13,11 @@ class EventForm extends Component {
         this.renderInput = this.renderInput.bind(this);
         this.renderStartDate = this.renderStartDate.bind(this);
         this.renderEndDate = this.renderEndDate.bind(this);
+        this.eventSubmit = this.eventSubmit.bind(this);
     }
-
+    eventSubmit = (values) => {
+        console.log(values)
+    }
     renderInput = ({ input, label, type, meta: { touched, error }, ...custom }) => {
         return (
             <div>
@@ -40,10 +43,11 @@ class EventForm extends Component {
         )
     }
     render() {
+      const  {handleSubmit, submitting } = this.props
         console.log(this.props)
         return (
             <div>
-               <form >
+               <form onSubmit={handleSubmit(this.eventSubmit)}>
                 <Field
                     name="startDate"
                     label="Start Date"
@@ -65,6 +69,7 @@ class EventForm extends Component {
                     name="description"
                     label="Description"
                     component={this.renderInput} />
+                <Button type="primary" htmlType="submit">Add Event</Button>    
                 </form> 
             </div>
         )
