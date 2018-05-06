@@ -167,7 +167,8 @@ class Calendar extends Component {
                 <Field 
                   name="startDate"
                   component={this.renderEndDate}
-                  onChange={(e) => console.log(e)}/>
+                  onChange={(e) => console.log(e)}
+                  formDirty={this.props.dirty}/>
                 <Button type="primary" htmlType="submit">submit</Button>
               </form>
             </TabPane>

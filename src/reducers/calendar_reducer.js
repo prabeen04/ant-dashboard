@@ -3,6 +3,8 @@ import { GET_EVENTS, ADD_EVENT, ADD_EVENT_SUCCESS, ADD_EVENT_FAILURE, GET_EVENTS
 const initialState ={
     isLoading: false,
     isError: false,
+    startDate: '',
+    endDate: '',
     events: []
 }
 export const calendarReducer = (state = initialState, action) => {
