@@ -46,6 +46,7 @@ class Calendar extends Component {
     message.success('Event Added', 10);
   };
   handleOk = (slot) => {
+    this.props.setDate(slot)
     this.setState({
       startDate: slot.start,
       endDate: slot.end,

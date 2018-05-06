@@ -11,7 +11,7 @@ const initialState ={
 export const calendarReducer = (state = initialState, action) => {
     switch(action.type){
         case SET_DATE:
-            return Object.assign({}, state, {startDate: action.payload.startDate, endDate: action.payload.endDate})
+            return Object.assign({}, state, {startDate: action.payload.start, endDate: action.payload.end})
         case GET_EVENTS:
             return Object.assign({}, state, {isLoading: true})
         case GET_EVENTS_SUCCESS:

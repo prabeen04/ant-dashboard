@@ -1,11 +1,19 @@
-import { GET_EVENTS, GET_EVENTS_SUCCESS, GET_EVENTS_FAILURE, ADD_EVENT, ADD_EVENT_SUCCESS, ADD_EVENT_FAILURE,
-        SET_DATE } from '../types/calendar_actiontypes';
+import {
+    GET_EVENTS, GET_EVENTS_SUCCESS, GET_EVENTS_FAILURE, ADD_EVENT, ADD_EVENT_SUCCESS, ADD_EVENT_FAILURE,
+    SET_DATE
+} from '../types/calendar_actiontypes';
 import axios from 'axios';
 
 const baseURL = 'https://prabeen-restapi.herokuapp.com/api/events';
 
-export const setDate = (dates) =>{
+export const setDate = (dates) => {
     console.log(dates)
+    return (dispatch) => {
+        dispatch({
+            type: SET_DATE,
+            payload: dates
+        })
+    }
 }
 
 export const getEvents = () => {
