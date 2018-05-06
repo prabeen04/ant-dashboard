@@ -11,8 +11,7 @@ class EventForm extends Component {
         super(props)
 
         this.renderInput = this.renderInput.bind(this);
-        this.renderStartDate = this.renderStartDate.bind(this);
-        this.renderEndDate = this.renderEndDate.bind(this);
+         this.renderDate = this.renderDate.bind(this);
         this.eventSubmit = this.eventSubmit.bind(this);
     }
     eventSubmit = (values) => {
@@ -26,23 +25,16 @@ class EventForm extends Component {
                     {...input}
                     {...custom}
                 />
-                {touched && error && <span>{error}</span>}
+                {touched && error && <span style={{ color: 'tomato'}}>{error}</span>}
             </div>
         )
     }
-    renderStartDate = ({ input, meta: { touched, error }, ...custom }) => {
+    renderDate = ({ input, meta: { touched, error }, ...custom }) => {
         return (
             <div>
-                <DatePicker {...input} />
-                {touched && error && <span>{error}</span>}
-            </div>
-        )
-    }
-    renderEndDate = ({ input, meta: { touched, error }, ...custom }) => {
-        return (
-            <div>
-                <DatePicker {...input} />
-                {touched && error && <span>{error}</span>}
+                <DatePicker {...input} disabled={true} 
+                />
+                {touched && error && <span style={{ color: 'tomato'}}>{error}</span>}
             </div>
         )
     }
@@ -54,11 +46,11 @@ class EventForm extends Component {
                     <Field
                         name="startDate"
                         label="Start Date"
-                        component={this.renderStartDate} />
+                        component={this.renderDate} />
                     <Field
                         name="endDate"
                         label="End Date"
-                        component={this.renderEndDate}
+                        component={this.renderDate}
                     />
                     <Field
                         name="title"
