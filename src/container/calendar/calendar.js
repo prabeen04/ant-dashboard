@@ -95,7 +95,7 @@ class Calendar extends Component {
       <div className="flex-container" style={{ height: '520px', backgroundColor: '#fff', margin: '1rem' }}>
         {this.state.activeTab === '1'
           ? <BigCalendar
-            className="red-background"
+            // className="red-background"
             style={{ flexBasis: '70%' }}
             events={this.props.events ?this.props.events :[] }
             defaultDate={new Date()}
@@ -109,12 +109,14 @@ class Calendar extends Component {
               alert(event.description)
               console.log(e)
             } }
-            eventPropGetter = {(
-              event: Object,
-              start: Date,
-              end: Date,
-              isSelected: boolean
-          ) => { className?: string, style?: Object }}
+            eventPropGetter={event => ({className: 'red-background'})}
+        //     eventPropGetter = {(
+        //       event,
+        //       start,
+        //       end,
+        //       isSelected
+        //   ) => {console.log(event)}
+        // }
           />
           :
           <BigCalendar
