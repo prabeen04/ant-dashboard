@@ -9,3 +9,7 @@
     align-self: flex-start;
     padding: 1rem;
 }
+.red-background{
+    background: red !important;
+    color: #fff;
+}
