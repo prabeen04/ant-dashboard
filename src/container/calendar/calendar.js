@@ -110,6 +110,7 @@ class Calendar extends Component {
               console.log(e)
             } }
             eventPropGetter={event => ({className: 'red-background'})}
+            slotPropGetter={event => ({style:{backgroundColor :'teal !important'}})}
         //     eventPropGetter = {(
         //       event,
         //       start,
