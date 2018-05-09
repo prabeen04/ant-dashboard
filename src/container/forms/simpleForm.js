@@ -1,9 +1,19 @@
 import React, { Component } from 'react'
 import { Form, Icon, Input, Button, Checkbox } from 'antd';
+import './form.css';
 const FormItem = Form.Item;
 
 class SimpleForm extends Component {
+    handleSubmit = (e) => {
+        e.preventDefault();
+        this.props.form.validateFields((err, values) => {
+          if (!err) {
+            console.log('Received values of form: ', values);
+          }
+        });
+      }
     render() {
+        const { getFieldDecorator } = this.props.form;
         return (
             <div>
                 <Form onSubmit={this.handleSubmit} className="login-form">
@@ -37,4 +47,4 @@ class SimpleForm extends Component {
         )
     }
 }
-export default SimpleForm;
+export default Form.create()(SimpleForm);
