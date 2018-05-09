@@ -47,9 +47,16 @@ ReduxForm = reduxForm({
     form: 'reduxForm'
 })(ReduxForm);
 
-const mapStateToProps = (state) => ({
-
-})
+const mapStateToProps = (state) => {
+    console.log(state.formReducer)
+return{
+    initialValues: {
+        firstName: state.formReducer.firstName,
+        lastName: state.formReducer.lastName,
+        location: state.formReducer.location,
+    }
+}
+}
 
 const mapDispatchToProps = {
 
