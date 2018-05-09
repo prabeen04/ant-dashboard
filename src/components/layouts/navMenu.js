@@ -47,6 +47,12 @@ class NavMenu extends React.Component {
                             <span>Post</span>
                         </Link>
                     </Menu.Item>
+                    <Menu.Item key="5">
+                        <Link to='/forms'>
+                            <Icon type="edit" />
+                            <span>Forms</span>
+                        </Link>
+                    </Menu.Item>
                 </Menu>
             </div>
         );
