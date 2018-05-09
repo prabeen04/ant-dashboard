@@ -1,15 +1,17 @@
-import React, { Component } from 'react'
-import { Card } from 'antd';
+import React, { Component } from 'react';
+import { Card, Divider } from 'antd';
+import SimpleForm from "./simpleForm";
 class Forms extends Component {
   render() {
     return (
       <div>
         <Card>
-          <h3>Form component</h3>
+         <Divider/>
+         <SimpleForm/>
+         <Divider/>
         </Card>
       </div>
     )
   }
 }
-// const WrappedNormalLoginForm = Form.create()(NormalLoginForm);
 export default Forms;
