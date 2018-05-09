@@ -102,6 +102,7 @@ class Calendar extends Component {
             startAccessor={(event) => new Date(event.start)}
             endAccessor={(event) => new Date(event.end)}
             selectable={true}
+            popup={true}
             // formats={formats}
             onSelectSlot={(slot) => this.handleOk(slot)}
             onSelecting={(range) => console.log(range)}
@@ -110,14 +111,7 @@ class Calendar extends Component {
               console.log(e)
             } }
             eventPropGetter={event => ({className: 'e-'+event.user.toLowerCase()})}
-            slotPropGetter={date => console.log(date)}
-        //     eventPropGetter = {(
-        //       event,
-        //       start,
-        //       end,
-        //       isSelected
-        //   ) => {console.log(event)}
-        // }
+            slotPropGetter={date =>({className: 'red-background'})}
           />
           :
           <BigCalendar
