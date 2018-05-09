@@ -15,7 +15,7 @@ class SimpleForm extends Component {
     render() {
         const { getFieldDecorator } = this.props.form;
         return (
-            <div>
+            <div style={{ width: 400}}>
                 <Form onSubmit={this.handleSubmit} className="login-form">
                     <FormItem>
                         {getFieldDecorator('userName', {
