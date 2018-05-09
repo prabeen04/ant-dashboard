@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Card, Divider } from 'antd';
 import SimpleForm from "./simpleForm";
+import ComplexForm from "./complexForm";
 class Forms extends Component {
   render() {
     return (
@@ -8,6 +9,8 @@ class Forms extends Component {
         <Card>
          <Divider/>
          <SimpleForm/>
+         <Divider/>
+         <ComplexForm/>
          <Divider/>
         </Card>
       </div>
