@@ -9,8 +9,11 @@ export class ReduxForm extends Component {
         super(props)
 
         this.renderInput = this.renderInput.bind(this);
+        this.onSubmit = this.onSubmit.bind(this);
     }
-
+    onSubmit = (values) => {
+        console.log(values);
+    } 
     renderInput = ({ label, input, meta }) => {
         return <div style={{margin: 2}}>
             <label>{label}</label>
@@ -21,7 +24,8 @@ export class ReduxForm extends Component {
         const { handleSubmit } = this.props;
         return (
             <div>
-                <form onSubmit={handleSubmit}>
+                <h3>Redux Form Component</h3>
+                <form onSubmit={handleSubmit(this.onSubmit)}>
                     <Field
                         name="firstName"
                         label="First Name"
@@ -37,6 +41,7 @@ export class ReduxForm extends Component {
                         label="Location"
                         component={this.renderInput}
                     />
+                    <Button htmlType="submit" type="primary">Submit</Button>
                 </form>
             </div>
         )
@@ -48,7 +53,6 @@ ReduxForm = reduxForm({
 })(ReduxForm);
 
 const mapStateToProps = (state) => {
-    console.log(state.formReducer)
 return{
     initialValues: {
         firstName: state.formReducer.firstName,
