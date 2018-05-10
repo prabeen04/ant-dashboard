@@ -19,14 +19,14 @@ class SimpleForm extends Component {
                 <h3>Simple Login Form</h3>
                 <Form onSubmit={this.handleSubmit} className="login-form">
                     <FormItem>
-                        {getFieldDecorator('userName', {
+                        {getFieldDecorator('userName2', {
                             rules: [{ required: true, message: 'Please input your username!' }],
                         })(
                             <Input prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="Username" />
                         )}
                     </FormItem>
                     <FormItem>
-                        {getFieldDecorator('password', {
+                        {getFieldDecorator('password2', {
                             rules: [{ required: true, message: 'Please input your Password!' }],
                         })(
                             <Input prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />} type="password" placeholder="Password" />

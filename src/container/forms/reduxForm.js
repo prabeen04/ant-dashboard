@@ -3,25 +3,34 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Field, reduxForm } from 'redux-form';
 import { Form, Input, Icon, Select, Checkbox, Button, label } from 'antd';
+const Option = Select.Option;
 
 export class ReduxForm extends Component {
     constructor(props) {
         super(props)
 
         this.renderInput = this.renderInput.bind(this);
+        this.renderSelect = this.renderSelect.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
     }
     onSubmit = (values) => {
         console.log(values);
-    } 
+    }
     renderInput = ({ label, input, meta }) => {
-        return <div style={{margin: 2}}>
+        return <div style={{ margin: 2 }}>
             <label>{label}</label>
             <Input {...input} placeholder={label} />
         </div>
     }
+    renderSelect = ({ label, input, meta }) => {
+        return <div style={{ margin: 2 }}>
+            {/* <Select {...input}>
+                {props.children}
+            </Select> */}
+        </div>
+    }
     render() {
-        const { handleSubmit } = this.props;
+        const { handleSubmit, submitting } = this.props;
         return (
             <div>
                 <h3>Redux Form Component</h3>
@@ -41,7 +50,15 @@ export class ReduxForm extends Component {
                         label="Location"
                         component={this.renderInput}
                     />
-                    <Button htmlType="submit" type="primary">Submit</Button>
+                    <Field
+                        name="location"
+                        label="Location"
+                        component={this.renderSelect}
+                    >
+                        <Option value="jack">Jack</Option>
+                        <Option value="lucy">Lucy</Option>
+                    </Field>
+                    <Button htmlType="submit" type="primary" icon="poweroff" loading={submitting}>Submit</Button>
                 </form>
             </div>
         )
@@ -53,13 +70,13 @@ ReduxForm = reduxForm({
 })(ReduxForm);
 
 const mapStateToProps = (state) => {
-return{
-    initialValues: {
-        firstName: state.formReducer.firstName,
-        lastName: state.formReducer.lastName,
-        location: state.formReducer.location,
+    return {
+        initialValues: {
+            firstName: state.formReducer.firstName,
+            lastName: state.formReducer.lastName,
+            location: state.formReducer.location,
+        }
     }
-}
 }
 
 const mapDispatchToProps = {
