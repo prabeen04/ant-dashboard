@@ -24,9 +24,7 @@ export class ReduxForm extends Component {
     }
     renderSelect = ({ label, input, meta }) => {
         return <div style={{ margin: 2 }}>
-            <Select {...input}>
-                {this.props.children}
-            </Select>
+            <Select {...input}/>
         </div>
     }
     render() {
@@ -57,7 +55,7 @@ export class ReduxForm extends Component {
                     />
                     <Field
                         name="city"
-                        component="select">
+                        component={this.renderSelect}>
                         <option value="jack">Jack</option>
                         <option value="lucy">Lucy</option>
                     </Field>
