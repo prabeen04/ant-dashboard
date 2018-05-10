@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Field, reduxForm } from 'redux-form';
 import { Form, Input, Icon, Select, Checkbox, Button, label } from 'antd';
+import { setSelectValue } from "../../actions/testFormAction";
 const Option = Select.Option;
 
 export class ReduxForm extends Component {

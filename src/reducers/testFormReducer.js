@@ -1,3 +1,5 @@
+import { SET_SELECT_VALUE } from '../types/testFormActionTypes';
+
 const initialState = {
     firstName: 'Paul',
     lastName: 'Pogba',
@@ -7,7 +9,11 @@ const initialState = {
 }
 
 export const formReducer = (state=initialState, action) => {
-    // case "GET_STATE":
-    //     return Object.assign({}, state, {location: 'London'})
+  switch(action.type){
+    case SET_SELECT_VALUE:
+        return Object.assign({}, state, {city: action.payload});
+    default:
+        return state;
+  }
     return state
 }
