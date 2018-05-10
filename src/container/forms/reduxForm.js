@@ -9,7 +9,9 @@ const Option = Select.Option;
 export class ReduxForm extends Component {
     constructor(props) {
         super(props)
-
+        this.state={
+            city: ''
+        }
         this.renderInput = this.renderInput.bind(this);
         this.renderSelect = this.renderSelect.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
@@ -25,9 +27,14 @@ export class ReduxForm extends Component {
     }
     renderSelect = ({ label, input, meta }) => {
         return <div style={{ margin: 2 }}>
-            <Select {...input}
-            //  value={this.props.city}
-            //  onSelect={(value)=>this.props.setSelectValue(value)}
+            <Select 
+                {...input}
+                 value={this.state.city}
+                 onChange={(value)=>this.setState({
+                     city: value
+                 })}  
+                //  onSelect={(value)=>this.props.setSelectValue(value)}  
+                //  onBlur={(value)=>this.props.setSelectValue(value)}  
             >
                 <Option value="jack">Jack</Option>
                 <Option value="lucy">Lucy</Option>
@@ -62,12 +69,8 @@ export class ReduxForm extends Component {
                     />
                     <Field
                         name="city"
-                    >
-                        <Select>
-                            <Option value="jack">Jack</Option>
-                            <Option value="lucy">Lucy</Option>
-                        </Select>
-                    </Field>
+                        component={this.renderSelect} 
+                    />
                     <Button htmlType="submit" type="primary" icon="poweroff" loading={submitting}>Submit</Button>
                 </form>
             </div>
@@ -87,11 +90,11 @@ const mapStateToProps = (state) => {
             location: state.formReducer.location,
             city: state.formReducer.city,
         },
-        city: state.formReducer.city
+      city: state.formReducer.city  
     }
 }
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = dispatch =>{
     return bindActionCreators({
         setSelectValue: setSelectValue
     }, dispatch)
