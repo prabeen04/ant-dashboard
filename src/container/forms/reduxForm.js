@@ -24,7 +24,9 @@ export class ReduxForm extends Component {
     }
     renderSelect = ({ label, input, meta }) => {
         return <div style={{ margin: 2 }}>
-            <Select {...input}>
+            <Select {...input}
+                 onChange={(value)=>this.props.setSelectValue(value)}
+            >
                 <Option value="jack">Jack</Option>
                 <Option value="lucy">Lucy</Option>
             </Select>
@@ -58,7 +60,8 @@ export class ReduxForm extends Component {
                     />
                     <Field
                         name="city"
-                        component={this.renderSelect} />
+                        component={this.renderSelect} 
+                    />
                     <Button htmlType="submit" type="primary" icon="poweroff" loading={submitting}>Submit</Button>
                 </form>
             </div>
@@ -80,8 +83,10 @@ const mapStateToProps = (state) => {
     }
 }
 
-const mapDispatchToProps = {
-
+const mapDispatchToProps = dispatch =>{
+    return bindActionCreators({
+        setSelectValue: setSelectValue
+    })
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(ReduxForm)
