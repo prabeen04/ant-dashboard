@@ -9,9 +9,7 @@ const Option = Select.Option;
 export class ReduxForm extends Component {
     constructor(props) {
         super(props)
-        this.state={
-            city: ''
-        }
+
         this.renderInput = this.renderInput.bind(this);
         this.renderSelect = this.renderSelect.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
@@ -29,10 +27,8 @@ export class ReduxForm extends Component {
         return <div style={{ margin: 2 }}>
             <Select 
                 {...input}
-                 value={this.state.city}
-                 onChange={(value)=>this.setState({
-                     city: value
-                 })}  
+                value={this.props.city}
+                 onChange={(value)=>this.props.setSelectValue(value)}  
                 //  onSelect={(value)=>this.props.setSelectValue(value)}  
                 //  onBlur={(value)=>this.props.setSelectValue(value)}  
             >
