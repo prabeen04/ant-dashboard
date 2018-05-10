@@ -24,7 +24,10 @@ export class ReduxForm extends Component {
     }
     renderSelect = ({ label, input, meta }) => {
         return <div style={{ margin: 2 }}>
-            <Select {...input}/>
+            <Select {...input}>
+                <Option value="jack">Jack</Option>
+                <Option value="lucy">Lucy</Option>
+            </Select>
         </div>
     }
     render() {
@@ -48,17 +51,14 @@ export class ReduxForm extends Component {
                         label="Location"
                         component={this.renderInput}
                     />
-                     <Field
+                    <Field
                         name="street"
                         label="Street"
                         component={this.renderInput}
                     />
                     <Field
                         name="city"
-                        component={this.renderSelect}>
-                        <option value="jack">Jack</option>
-                        <option value="lucy">Lucy</option>
-                    </Field>
+                        component={this.renderSelect} />
                     <Button htmlType="submit" type="primary" icon="poweroff" loading={submitting}>Submit</Button>
                 </form>
             </div>
@@ -75,7 +75,7 @@ const mapStateToProps = (state) => {
         initialValues: {
             firstName: state.formReducer.firstName,
             lastName: state.formReducer.lastName,
-            location: state.formReducer.location,
+            location: state.formReducer.location
         }
     }
 }
