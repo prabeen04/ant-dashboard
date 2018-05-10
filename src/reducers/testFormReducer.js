@@ -5,7 +5,7 @@ const initialState = {
     lastName: 'Pogba',
     location: 'Bhubaneswar',
     street: '',
-    city: 'lucy',
+    city: '',
 }
 
 export const formReducer = (state=initialState, action) => {

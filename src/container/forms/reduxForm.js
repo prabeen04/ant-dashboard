@@ -26,7 +26,8 @@ export class ReduxForm extends Component {
     renderSelect = ({ label, input, meta }) => {
         return <div style={{ margin: 2 }}>
             <Select {...input}
-                 onChange={(value)=>this.props.setSelectValue(value)}
+            //  value={this.props.city}
+            //  onSelect={(value)=>this.props.setSelectValue(value)}
             >
                 <Option value="jack">Jack</Option>
                 <Option value="lucy">Lucy</Option>
@@ -61,8 +62,12 @@ export class ReduxForm extends Component {
                     />
                     <Field
                         name="city"
-                        component={this.renderSelect} 
-                    />
+                    >
+                        <Select>
+                            <Option value="jack">Jack</Option>
+                            <Option value="lucy">Lucy</Option>
+                        </Select>
+                    </Field>
                     <Button htmlType="submit" type="primary" icon="poweroff" loading={submitting}>Submit</Button>
                 </form>
             </div>
@@ -79,15 +84,17 @@ const mapStateToProps = (state) => {
         initialValues: {
             firstName: state.formReducer.firstName,
             lastName: state.formReducer.lastName,
-            location: state.formReducer.location
-        }
+            location: state.formReducer.location,
+            city: state.formReducer.city,
+        },
+        city: state.formReducer.city
     }
 }
 
-const mapDispatchToProps = dispatch =>{
+const mapDispatchToProps = dispatch => {
     return bindActionCreators({
         setSelectValue: setSelectValue
-    })
+    }, dispatch)
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(ReduxForm)
