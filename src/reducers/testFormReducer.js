@@ -1,12 +1,12 @@
 import { SET_SELECT_VALUE, SET_DATE } from '../types/testFormActionTypes';
-
+import moment from 'moment';
 const initialState = {
     firstName: 'Paul',
     lastName: 'Pogba',
     location: 'Bhubaneswar',
     street: '',
     city: '',
-    date: ''
+    date: null
 }
 
 export const formReducer = (state = initialState, action) => {
@@ -14,7 +14,7 @@ export const formReducer = (state = initialState, action) => {
         case SET_SELECT_VALUE:
             return Object.assign({}, state, { city: action.payload });
         case SET_DATE:
-            return Object.assign({}, state, { date: action.payload });
+            return Object.assign({}, state, { date: moment(action.payload) });
         default:
             return state;
     }

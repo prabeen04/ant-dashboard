@@ -56,13 +56,15 @@ export class ReduxForm extends Component {
         return <div>
             <DatePicker 
                 {...input} 
-                value={moment(this.props.date)}
+                 value={moment(this.props.date).toISOString()===null ? moment(this.props.date) :new Date}
                 onChange={(date)=>{
+                    console.log(date)
                     this.props.setDate(date)
                 }}/>
         </div>
     }
     render() {
+        console.log(moment(this.props.date).toISOString())
         const { handleSubmit, submitting } = this.props;
         return (
             <div>
@@ -113,9 +115,9 @@ const mapStateToProps = (state) => {
             firstName: state.formReducer.firstName,
             lastName: state.formReducer.lastName,
             location: state.formReducer.location,
-            city: state.formReducer.city,
-            date: state.formReducer.date
-        }
+            city: state.formReducer.city
+        },
+        date: state.formReducer.date
     }
 }
 
