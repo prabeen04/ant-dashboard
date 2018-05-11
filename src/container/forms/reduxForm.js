@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Field, reduxForm } from 'redux-form';
 import { Form, Input, Icon, Select, Checkbox, Button, label, DatePicker } from 'antd';
-import { setSelectValue } from "../../actions/testFormAction";
+import { setSelectValue, setDate } from "../../actions/testFormAction";
 import moment from 'moment';
 const Option = Select.Option;
 
@@ -56,8 +56,10 @@ export class ReduxForm extends Component {
         return <div>
             <DatePicker 
                 {...input} 
-                value={moment()}
-                defaultValue={moment()}/>
+                value={moment(this.props.date)}
+                onChange={(date)=>{
+                    this.props.setDate(date)
+                }}/>
         </div>
     }
     render() {
@@ -112,14 +114,15 @@ const mapStateToProps = (state) => {
             lastName: state.formReducer.lastName,
             location: state.formReducer.location,
             city: state.formReducer.city,
-        },
-      city: state.formReducer.city  
+            date: state.formReducer.date
+        }
     }
 }
 
 const mapDispatchToProps = dispatch =>{
     return bindActionCreators({
-        setSelectValue: setSelectValue
+        setSelectValue: setSelectValue,
+        setDate: setDate
     }, dispatch)
 }
 
