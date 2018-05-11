@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Field, reduxForm } from 'redux-form';
-import { Form, Input, Icon, Select, Checkbox, Button, label } from 'antd';
+import { Form, Input, Icon, Select, Checkbox, Button, label, DatePicker } from 'antd';
 import { setSelectValue } from "../../actions/testFormAction";
 const Option = Select.Option;
 
@@ -11,8 +11,9 @@ export class ReduxForm extends Component {
         super(props)
 
         this.renderInput = this.renderInput.bind(this);
-        this.renderSelect = this.renderSelect.bind(this);
+        // this.renderSelect = this.renderSelect.bind(this);
         this.renderNativeSelect = this.renderNativeSelect.bind(this);
+        this.renderDatePicker = this.renderDatePicker.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
     }
     onSubmit = (values) => {
@@ -40,8 +41,7 @@ export class ReduxForm extends Component {
     //     </div>
     // }
     renderNativeSelect = ({ label, input, meta }) => {
-        console.log(input)
-        return <div style={{ margin: 2 }}>
+        return <div style={{ margin: 2, marginTop: 10 }}>
             <select 
                 {...input}
                 style={{border: '1px solid #ccc', width: 200,height: 30, borderRadius: 4 }}
@@ -49,6 +49,11 @@ export class ReduxForm extends Component {
                 <option value="jack">Jack</option>
                 <option value="lucy">Lucy</option>
             </select>
+        </div>
+    }
+    renderDatePicker = ({ label, input, meta }) =>{
+        return <div>
+            <DatePicker {...input}/>
         </div>
     }
     render() {
@@ -80,6 +85,10 @@ export class ReduxForm extends Component {
                     <Field
                         name="city"
                         component={this.renderNativeSelect} 
+                    />
+                    <Field
+                        name="date"
+                        component={this.renderDatePicker} 
                     />
                     <Button htmlType="submit" type="primary" icon="poweroff" loading={submitting}>Submit</Button>
                 </form>
