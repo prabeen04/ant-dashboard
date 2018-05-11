@@ -4,6 +4,7 @@ import { bindActionCreators } from 'redux';
 import { Field, reduxForm } from 'redux-form';
 import { Form, Input, Icon, Select, Checkbox, Button, label, DatePicker } from 'antd';
 import { setSelectValue } from "../../actions/testFormAction";
+import moment from 'moment';
 const Option = Select.Option;
 
 export class ReduxForm extends Component {
@@ -53,7 +54,10 @@ export class ReduxForm extends Component {
     }
     renderDatePicker = ({ label, input, meta }) =>{
         return <div>
-            <DatePicker {...input}/>
+            <DatePicker 
+                {...input} 
+                value={moment()}
+                defaultValue={moment()}/>
         </div>
     }
     render() {
