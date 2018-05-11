@@ -24,26 +24,27 @@ export class ReduxForm extends Component {
             <Input {...input} placeholder={label} />
         </div>
     }
-    renderSelect = ({ label, input, meta }) => {
-        console.log(input)
-        return <div style={{ margin: 2 }}>
-            <Select 
-                {...input}
-                value={this.props.city}
-                 onChange={(value)=>this.props.setSelectValue(value)}  
-                //  onSelect={(value)=>this.props.setSelectValue(value)}  
-                //  onBlur={(value)=>this.props.setSelectValue(value)}  
-            >
-                <Option value="jack">Jack</Option>
-                <Option value="lucy">Lucy</Option>
-            </Select>
-        </div>
-    }
+    // renderSelect = ({ label, input, meta }) => {
+    //     console.log(input)
+    //     return <div style={{ margin: 2 }}>
+    //         <Select 
+    //             {...input}
+    //             value={this.props.city}
+    //              onChange={(value)=>this.props.setSelectValue(value)}  
+    //             //  onSelect={(value)=>this.props.setSelectValue(value)}  
+    //             //  onBlur={(value)=>this.props.setSelectValue(value)}  
+    //         >
+    //             <Option value="jack">Jack</Option>
+    //             <Option value="lucy">Lucy</Option>
+    //         </Select>
+    //     </div>
+    // }
     renderNativeSelect = ({ label, input, meta }) => {
         console.log(input)
         return <div style={{ margin: 2 }}>
             <select 
                 {...input}
+                style={{border: '1px solid #ccc', width: 200,height: 30, borderRadius: 4 }}
             >
                 <option value="jack">Jack</option>
                 <option value="lucy">Lucy</option>
