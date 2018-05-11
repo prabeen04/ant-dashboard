@@ -12,6 +12,7 @@ export class ReduxForm extends Component {
 
         this.renderInput = this.renderInput.bind(this);
         this.renderSelect = this.renderSelect.bind(this);
+        this.renderNativeSelect = this.renderNativeSelect.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
     }
     onSubmit = (values) => {
@@ -24,6 +25,7 @@ export class ReduxForm extends Component {
         </div>
     }
     renderSelect = ({ label, input, meta }) => {
+        console.log(input)
         return <div style={{ margin: 2 }}>
             <Select 
                 {...input}
@@ -35,6 +37,17 @@ export class ReduxForm extends Component {
                 <Option value="jack">Jack</Option>
                 <Option value="lucy">Lucy</Option>
             </Select>
+        </div>
+    }
+    renderNativeSelect = ({ label, input, meta }) => {
+        console.log(input)
+        return <div style={{ margin: 2 }}>
+            <select 
+                {...input}
+            >
+                <option value="jack">Jack</option>
+                <option value="lucy">Lucy</option>
+            </select>
         </div>
     }
     render() {
@@ -65,7 +78,7 @@ export class ReduxForm extends Component {
                     />
                     <Field
                         name="city"
-                        component={this.renderSelect} 
+                        component={this.renderNativeSelect} 
                     />
                     <Button htmlType="submit" type="primary" icon="poweroff" loading={submitting}>Submit</Button>
                 </form>
