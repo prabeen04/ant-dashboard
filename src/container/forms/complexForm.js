@@ -60,18 +60,9 @@ class ComplexForm extends Component {
         }
         callback();
     }
-    handleWebsiteChange = (value) => {
-        let autoCompleteResult;
-        if (!value) {
-            autoCompleteResult = [];
-        } else {
-            autoCompleteResult = ['.com', '.org', '.net'].map(domain => `${value}${domain}`);
-        }
-        this.setState({ autoCompleteResult });
-    }
+
     render() {
         const { getFieldDecorator } = this.props.form;
-        const { autoCompleteResult } = this.state;
 
         const formItemLayout = {
             labelCol: {
@@ -103,10 +94,6 @@ class ComplexForm extends Component {
                 <Option value="87">+87</Option>
             </Select>
         );
-
-        const websiteOptions = autoCompleteResult.map(website => (
-            <AutoCompleteOption key={website}>{website}</AutoCompleteOption>
-        ));
 
         return (
             <Form onSubmit={this.handleSubmit}>
@@ -188,22 +175,6 @@ class ComplexForm extends Component {
                         rules: [{ required: true, message: 'Please input your phone number!' }],
                     })(
                         <Input addonBefore={prefixSelector} style={{ width: '100%' }} />
-                    )}
-                </FormItem>
-                <FormItem
-                    {...formItemLayout}
-                    label="Website"
-                >
-                    {getFieldDecorator('website', {
-                        rules: [{ required: true, message: 'Please input website!' }],
-                    })(
-                        <AutoComplete
-                            dataSource={websiteOptions}
-                            onChange={this.handleWebsiteChange}
-                            placeholder="website"
-                        >
-                            <Input />
-                        </AutoComplete>
                     )}
                 </FormItem>
                 <FormItem
