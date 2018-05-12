@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import { Form, Icon, Input, Button, Checkbox, Select } from 'antd';
 import './form.css';
 const FormItem = Form.Item;
@@ -32,16 +32,13 @@ class SimpleForm extends Component {
                             <Input prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />} type="password" placeholder="Password" />
                         )}
                     </FormItem>
-                    <FormItem
-                        label="Select"
-                        hasFeedback
-                    >
-                        {getFieldDecorator('select', {
+                    <FormItem>
+                        {getFieldDecorator('sekhjkhlect', {
                             rules: [
                                 { required: true, message: 'Please select your country!' },
                             ],
-                        })(
-                            <Select placeholder="Please select a country">
+                            valuePropName: 'select',
+                        })(<Select placeholder="Please select a country">
                                 <Option value="china">China</Option>
                                 <Option value="use">U.S.A</Option>
                             </Select>
@@ -63,4 +60,5 @@ class SimpleForm extends Component {
         )
     }
 }
-export default Form.create()(SimpleForm);
+SimpleForm = Form.create()(SimpleForm);
+export default SimpleForm;
