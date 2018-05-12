@@ -1,17 +1,17 @@
 import React, { Component } from 'react'
-import { Form, Icon, Input, Button, Checkbox } from 'antd';
+import { Form, Icon, Input, Button, Checkbox, Select } from 'antd';
 import './form.css';
 const FormItem = Form.Item;
-
+const Option = Select.Option;
 class SimpleForm extends Component {
     handleSubmit = (e) => {
         e.preventDefault();
         this.props.form.validateFields((err, values) => {
-          if (!err) {
-            console.log('Received values of form: ', values);
-          }
+            if (!err) {
+                console.log('Received values of form: ', values);
+            }
         });
-      }
+    }
     render() {
         const { getFieldDecorator } = this.props.form;
         return (
@@ -30,6 +30,21 @@ class SimpleForm extends Component {
                             rules: [{ required: true, message: 'Please input your Password!' }],
                         })(
                             <Input prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />} type="password" placeholder="Password" />
+                        )}
+                    </FormItem>
+                    <FormItem
+                        label="Select"
+                        hasFeedback
+                    >
+                        {getFieldDecorator('select', {
+                            rules: [
+                                { required: true, message: 'Please select your country!' },
+                            ],
+                        })(
+                            <Select placeholder="Please select a country">
+                                <Option value="china">China</Option>
+                                <Option value="use">U.S.A</Option>
+                            </Select>
                         )}
                     </FormItem>
                     <FormItem>
