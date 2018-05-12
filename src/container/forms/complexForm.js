@@ -135,6 +135,7 @@ class ComplexForm extends Component {
                 >
                     {getFieldDecorator('team', {
                         rules: [{ required: true, message: 'Please select something' }],
+                        valuePropName: 'select',
                     })(
 
                         <Select 
