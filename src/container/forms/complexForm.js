@@ -32,7 +32,7 @@ const residences = [{
 }];
 
 class ComplexForm extends Component {
-    constructor(props){
+    constructor(props) {
         super(props)
         this.handleSelectChange = this.handleSelectChange.bind(this);
     }
@@ -50,12 +50,12 @@ class ComplexForm extends Component {
         this.props.form.setFieldsValue({
             team: value
         });
-      }
+    }
     componentDidMount() {
         console.log('component did mount')
         this.props.getProfiles()
     }
-    componentWillReceiveProps(nextProps){
+    componentWillReceiveProps(nextProps) {
         console.log(nextProps)
     }
 
@@ -84,14 +84,6 @@ class ComplexForm extends Component {
                 },
             },
         };
-        const prefixSelector = getFieldDecorator('prefix', {
-            initialValue: '86',
-        })(
-            <Select style={{ width: 70 }}>
-                <Option value="86">+86</Option>
-                <Option value="87">+87</Option>
-            </Select>
-        );
 
         return (
             <Form onSubmit={this.handleSubmit}>
@@ -119,7 +111,7 @@ class ComplexForm extends Component {
                             </Tooltip>
                         </span>
                     )}
-                   
+
                 >
                     {getFieldDecorator('nickname', {
                         rules: [{ required: true, message: 'Please input your nickname!', whitespace: true }],
@@ -132,23 +124,26 @@ class ComplexForm extends Component {
                     {...formItemLayout}
                     label="Select Something"
                     hasFeedback
+                    validateStatus="validating"
+                    help="The information is being validated..."
                 >
                     {getFieldDecorator('team', {
                         rules: [{ required: true, message: 'Please select something' }],
-                        valuePropName: 'select',
+                        valuePropName: 'hjg',
                     })(
 
-                        <Select 
+                        <Select
                             placeholder="please selcect an option"
                             onChange={this.handleSelectChange}
-                        >   
-                            <Option value='test'>Test</Option>                       
+                            id="validating" 
+                        >
+                            <Option value='test'>Test</Option>
                             {this.props.profiles
-                            ?this.props.profiles.map(profile => {
-                                return <Option key={profile._id} value={profile.name}>{profile.name}</Option>
-                            })
-            
-                         : <Option value="mancity">Manchester City</Option>
+                                ? this.props.profiles.map(profile => {
+                                    return <Option key={profile._id} value={profile.name}>{profile.name}</Option>
+                                })
+
+                                : <Option value="mancity">Manchester City</Option>
                             }
                         </Select>
                     )}
@@ -159,11 +154,12 @@ class ComplexForm extends Component {
                 >
                     {getFieldDecorator('other', {
                         rules: [{ required: true, message: 'Please select something' }],
+                        valuePropName: 'value1',
                     })(
 
-                        <Select placeholder="please selcect an option">   
-                            <Option value='test'>Test</Option>                       
-                            <Option value='afsdf'>Tdgsdkgjhest</Option>                       
+                        <Select placeholder="please selcect an option">
+                            <Option value='test'>Test</Option>
+                            <Option value='afsdf'>Tdgsdkgjhest</Option>
                             <Option value="mancity">Manchester City</Option>
                         </Select>
                     )}
