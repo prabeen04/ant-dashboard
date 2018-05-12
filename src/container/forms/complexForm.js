@@ -1,4 +1,6 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { connect } from 'react-redux';  
+import { bindActionCreators } from 'redux';
 import { Form, Input, Tooltip, Icon, Cascader, Select, Row, Col, Checkbox, Button, AutoComplete } from 'antd';
 import './form.css';
 const FormItem = Form.Item;
@@ -106,6 +108,20 @@ class ComplexForm extends Component {
                         <Input />
                     )}
                 </FormItem>
+                <FormItem
+                    {...formItemLayout}
+                    label="Select Something"
+                >
+                    {getFieldDecorator('team', {
+                        rules: [{ required: true, message: 'Please select something'}],
+                    })(
+                        <Select>
+                            <Option value="manutd">Manchester United</Option>
+                            <Option value="mancity">Manchester City</Option>
+                            <Option value="arsenal">Arsenal</Option>
+                        </Select>
+                    )}
+                </FormItem>
                 <FormItem {...tailFormItemLayout}>
                     {getFieldDecorator('agreement', {
                         valuePropName: 'checked',
@@ -121,4 +137,18 @@ class ComplexForm extends Component {
     }
 }
 
-export default Form.create()(ComplexForm);
+ComplexForm = Form.create()(ComplexForm);
+
+const mapStateToProps = state => {
+    console.log(state.profileReducer)
+    return{
+        options: state.profileReducer.profiles
+    }
+}
+
+const mapDispatchToProps = dispatch =>{
+    return bindActionCreators({
+        // setSelectValue: setSelectValue
+    }, dispatch)
+}
+export default connect(mapStateToProps, mapDispatchToProps)(ComplexForm);
