@@ -106,34 +106,6 @@ class ComplexForm extends Component {
                         <Input />
                     )}
                 </FormItem>
-                <FormItem
-                    {...formItemLayout}
-                    label="Phone Number"
-                >
-                    {getFieldDecorator('phone', {
-                        rules: [{ required: true, message: 'Please input your phone number!' }],
-                    })(
-                        <Input addonBefore={prefixSelector} style={{ width: '100%' }} />
-                    )}
-                </FormItem>
-                <FormItem
-                    {...formItemLayout}
-                    label="Captcha"
-                    extra="We must make sure that your are a human."
-                >
-                    <Row gutter={8}>
-                        <Col span={12}>
-                            {getFieldDecorator('captcha', {
-                                rules: [{ required: true, message: 'Please input the captcha you got!' }],
-                            })(
-                                <Input />
-                            )}
-                        </Col>
-                        <Col span={12}>
-                            <Button>Get captcha</Button>
-                        </Col>
-                    </Row>
-                </FormItem>
                 <FormItem {...tailFormItemLayout}>
                     {getFieldDecorator('agreement', {
                         valuePropName: 'checked',
