@@ -158,17 +158,6 @@ class ComplexForm extends Component {
                 </FormItem>
                 <FormItem
                     {...formItemLayout}
-                    label="Habitual Residence"
-                >
-                    {getFieldDecorator('residence', {
-                        initialValue: ['zhejiang', 'hangzhou', 'xihu'],
-                        rules: [{ type: 'array', required: true, message: 'Please select your habitual residence!' }],
-                    })(
-                        <Cascader options={residences} />
-                    )}
-                </FormItem>
-                <FormItem
-                    {...formItemLayout}
                     label="Phone Number"
                 >
                     {getFieldDecorator('phone', {
