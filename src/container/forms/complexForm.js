@@ -120,11 +120,11 @@ class ComplexForm extends Component {
                         rules: [{ required: true, message: 'Please select something' }],
                     })(
 
-                        <Select>
+                        <Select placeholder="please selcect an option">
                             {this.props.profiles
-                            ?<Option value="manutd">Manchester United</Option>
-                            <Option value="manutd">Manchester United</Option>
-                            <Option value="manutd">Manchester United</Option>
+                            ?this.props.profiles.map(profile => {
+                                return <Option key={profile._id} value={profile.name}>{profile.name}</Option>
+                            })
             
                          : <Option value="mancity">Manchester City</Option>
                             }
