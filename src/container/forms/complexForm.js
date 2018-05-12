@@ -32,6 +32,10 @@ const residences = [{
 }];
 
 class ComplexForm extends Component {
+    constructor(props){
+        super(props)
+        this.handleSelectChange = this.handleSelectChange.bind(this);
+    }
 
     handleSubmit = (e) => {
         e.preventDefault();
@@ -41,9 +45,18 @@ class ComplexForm extends Component {
             }
         });
     }
+    handleSelectChange = (value) => {
+        console.log(value);
+        this.props.form.setFieldsValue({
+            team: value
+        });
+      }
     componentDidMount() {
         console.log('component did mount')
         this.props.getProfiles()
+    }
+    componentWillReceiveProps(nextProps){
+        console.log(nextProps)
     }
     render() {
         const { getFieldDecorator } = this.props.form;
@@ -115,12 +128,17 @@ class ComplexForm extends Component {
                 <FormItem
                     {...formItemLayout}
                     label="Select Something"
+                    hasFeedback
                 >
                     {getFieldDecorator('team', {
                         rules: [{ required: true, message: 'Please select something' }],
                     })(
 
-                        <Select placeholder="please selcect an option">
+                        <Select 
+                            placeholder="please selcect an option"
+                            onChange={this.handleSelectChange}
+                        >   
+                            <Option value='test'>Test</Option>                       
                             {this.props.profiles
                             ?this.props.profiles.map(profile => {
                                 return <Option key={profile._id} value={profile.name}>{profile.name}</Option>
