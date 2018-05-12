@@ -58,6 +58,7 @@ class ComplexForm extends Component {
     componentWillReceiveProps(nextProps){
         console.log(nextProps)
     }
+
     render() {
         const { getFieldDecorator } = this.props.form;
 
@@ -118,9 +119,11 @@ class ComplexForm extends Component {
                             </Tooltip>
                         </span>
                     )}
+                   
                 >
                     {getFieldDecorator('nickname', {
                         rules: [{ required: true, message: 'Please input your nickname!', whitespace: true }],
+                        initialValue: this.props.nickname || 'sdgsdhf'
                     })(
                         <Input />
                     )}
@@ -149,6 +152,21 @@ class ComplexForm extends Component {
                         </Select>
                     )}
                 </FormItem>
+                <FormItem
+                    {...formItemLayout}
+                    label="Select other thing"
+                >
+                    {getFieldDecorator('other', {
+                        rules: [{ required: true, message: 'Please select something' }],
+                    })(
+
+                        <Select placeholder="please selcect an option">   
+                            <Option value='test'>Test</Option>                       
+                            <Option value='afsdf'>Tdgsdkgjhest</Option>                       
+                            <Option value="mancity">Manchester City</Option>
+                        </Select>
+                    )}
+                </FormItem>
                 <FormItem {...tailFormItemLayout}>
                     {getFieldDecorator('agreement', {
                         valuePropName: 'checked',
@@ -169,7 +187,8 @@ ComplexForm = Form.create()(ComplexForm);
 const mapStateToProps = state => {
     console.log(state.profileReducer)
     return {
-        profiles: state.profileReducer.profiles
+        profiles: state.profileReducer.profiles,
+        nickname: 'asasg'
     }
 }
 
