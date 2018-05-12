@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';  
+import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import { getProfiles } from '../../actions/profile_actions';
 import { Form, Input, Tooltip, Icon, Cascader, Select, Row, Col, Checkbox, Button, AutoComplete } from 'antd';
 import './form.css';
 const FormItem = Form.Item;
@@ -10,26 +11,26 @@ const residences = [{
     value: 'zhejiang',
     label: 'Zhejiang',
     children: [{
-      value: 'hangzhou',
-      label: 'Hangzhou',
-      children: [{
-        value: 'xihu',
-        label: 'West Lake',
-      }],
+        value: 'hangzhou',
+        label: 'Hangzhou',
+        children: [{
+            value: 'xihu',
+            label: 'West Lake',
+        }],
     }],
-  }, {
+}, {
     value: 'jiangsu',
     label: 'Jiangsu',
     children: [{
-      value: 'nanjing',
-      label: 'Nanjing',
-      children: [{
-        value: 'zhonghuamen',
-        label: 'Zhong Hua Men',
-      }],
+        value: 'nanjing',
+        label: 'Nanjing',
+        children: [{
+            value: 'zhonghuamen',
+            label: 'Zhong Hua Men',
+        }],
     }],
-  }];
-  
+}];
+
 class ComplexForm extends Component {
 
     handleSubmit = (e) => {
@@ -40,7 +41,10 @@ class ComplexForm extends Component {
             }
         });
     }
- 
+    componentDidMount() {
+        console.log('component did mount')
+        this.props.getProfiles()
+    }
     render() {
         const { getFieldDecorator } = this.props.form;
 
@@ -113,12 +117,17 @@ class ComplexForm extends Component {
                     label="Select Something"
                 >
                     {getFieldDecorator('team', {
-                        rules: [{ required: true, message: 'Please select something'}],
+                        rules: [{ required: true, message: 'Please select something' }],
                     })(
+
                         <Select>
+                            {this.props.profiles
+                            ?<Option value="manutd">Manchester United</Option>
                             <Option value="manutd">Manchester United</Option>
-                            <Option value="mancity">Manchester City</Option>
-                            <Option value="arsenal">Arsenal</Option>
+                            <Option value="manutd">Manchester United</Option>
+            
+                         : <Option value="mancity">Manchester City</Option>
+                            }
                         </Select>
                     )}
                 </FormItem>
@@ -141,13 +150,14 @@ ComplexForm = Form.create()(ComplexForm);
 
 const mapStateToProps = state => {
     console.log(state.profileReducer)
-    return{
-        options: state.profileReducer.profiles
+    return {
+        profiles: state.profileReducer.profiles
     }
 }
 
-const mapDispatchToProps = dispatch =>{
+const mapDispatchToProps = dispatch => {
     return bindActionCreators({
+        getProfiles: getProfiles
         // setSelectValue: setSelectValue
     }, dispatch)
 }
