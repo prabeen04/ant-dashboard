@@ -59,7 +59,7 @@ export class ReduxForm extends Component {
                 defaultValue={moment(this.props.date).toISOString()===null ?null : moment(this.props.date) }
                 value={moment(this.props.date).toISOString()===null ?null  :moment(this.props.date)}
                 onChange={(date)=>{
-                console.log(date)
+                console.log(moment(date))
                 this.props.setDate(date)
                 }}
             />
@@ -108,7 +108,8 @@ export class ReduxForm extends Component {
 }
 
 ReduxForm = reduxForm({
-    form: 'reduxForm'
+    form: 'reduxForm',
+    enableReinitialize: true
 })(ReduxForm);
 
 const mapStateToProps = (state) => {
