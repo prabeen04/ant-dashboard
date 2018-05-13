@@ -51,54 +51,70 @@ class FormArray extends Component {
 
         const formItemLayout = {
             labelCol: {
-              xs: { span: 24 },
-              sm: { span: 4 },
+                xs: { span: 24 },
+                sm: { span: 4 },
             },
             wrapperCol: {
-              xs: { span: 24 },
-              sm: { span: 20 },
+                xs: { span: 24 },
+                sm: { span: 20 },
             },
-          };
-          const formItemLayoutWithOutLabel = {
+        };
+        const formItemLayoutWithOutLabel = {
             wrapperCol: {
-              xs: { span: 24, offset: 0 },
-              sm: { span: 20, offset: 4 },
+                xs: { span: 24, offset: 0 },
+                sm: { span: 20, offset: 4 },
             },
-          };
-          getFieldDecorator('keys', { initialValue: [] });
-          const keys = getFieldValue('keys');
-          const formItems = keys.map((k, index) => {
+        };
+        getFieldDecorator('keys', { initialValue: [] });
+        const keys = getFieldValue('keys');
+        const formItems = keys.map((k, index) => {
             return (
-              <FormItem
-                {...(index === 0 ? formItemLayout : formItemLayoutWithOutLabel)}
-                label={index === 0 ? 'Passengers' : ''}
-                required={false}
-                key={k}
-              >
-                {getFieldDecorator(`names[${k}]`, {
-                  validateTrigger: ['onChange', 'onBlur'],
-                  rules: [{
-                    required: true,
-                    whitespace: true,
-                    message: "Please input passenger's name or delete this field.",
-                  }],
-                })(
-                  <Input placeholder="passenger name" style={{ width: '60%', marginRight: 8 }} />
-                )}
-                {keys.length > 1 ? (
-                  <Icon
-                    className="dynamic-delete-button"
-                    type="minus-circle-o"
-                    disabled={keys.length === 1}
-                    onClick={() => this.remove(k)}
-                  />
-                ) : null}
-              </FormItem>
+                <FormItem
+                    {...(index === 0 ? formItemLayout : formItemLayoutWithOutLabel)}
+                    label={index === 0 ? 'Passengers' : ''}
+                    required={false}
+                    key={k}
+                >
+                    {getFieldDecorator(`names[${k}]`, {
+                        validateTrigger: ['onChange', 'onBlur'],
+                        rules: [{
+                            required: true,
+                            whitespace: true,
+                            message: "Please input passenger's name or delete this field.",
+                        }],
+                    })(
+                        <Input placeholder="passenger name" style={{ width: '60%', marginRight: 8 }} />
+                    )}
+                    {getFieldDecorator(`names1[${k}]`, {
+                        validateTrigger: ['onChange', 'onBlur'],
+                        rules: [{
+                            required: true,
+                            whitespace: true,
+                            message: "Please input passenger's name or delete this field.",
+                        }],
+                    })(
+                        <Input placeholder="passenger name" style={{ width: '60%', marginRight: 8 }} />
+                    )}
+                    {keys.length > 1 ? (
+                        <Icon
+                            className="dynamic-delete-button"
+                            type="minus-circle-o"
+                            disabled={keys.length === 1}
+                            onClick={() => this.remove(k)}
+                        />
+                    ) : null}
+                </FormItem>
             );
-          });
+        });
         return (
             <div>
                 <Form onSubmit={this.handleSubmit}>
+                    {formItems}
+                    <FormItem {...formItemLayoutWithOutLabel}>
+                        <Button type="dashed" onClick={this.add} style={{ width: '60%' }}>
+                            <Icon type="plus" /> Add field
+                        </Button>
+                    </FormItem>
                     <FormItem>
                         {getFieldDecorator('test', {
 
