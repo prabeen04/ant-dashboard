@@ -3,18 +3,20 @@ import { Card, Divider } from 'antd';
 import SimpleForm from "./simpleForm";
 import ComplexForm from "./complexForm";
 import ReduxForm from './reduxForm';
-
+import FormArray from './formArray';
 class Forms extends Component {
   render() {
     return (
       <div>
         <Card>
           <Divider />
-            <SimpleForm />
+          {/* <SimpleForm /> 
           <Divider />
-            <ComplexForm />
+          <ComplexForm />
           <Divider />
-            <ReduxForm />
+          <ReduxForm />
+          <Divider />*/}
+          <FormArray />
           <Divider />
         </Card>
       </div>
