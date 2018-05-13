@@ -1,31 +1,31 @@
 import React, { Component } from 'react';
-import { Form, Input, Icon, Button  } from 'antd';
+import { Form, Input, Icon, Button } from 'antd';
 const FormItem = Form.Item;
 let uuid = 0;
 class FormArray extends Component {
-    constructor(props){
+    constructor(props) {
         super(props)
         this.handleSubmit = this.handleSubmit.bind(this);
         this.add = this.add.bind(this);
-        this.remove = this.remove.bind(this);       
+        this.remove = this.remove.bind(this);
     }
-  
+
     remove = (k) => {
         const { form } = this.props;
         // can use data-binding to get
         const keys = form.getFieldValue('keys');
         // We need at least one passenger
         if (keys.length === 1) {
-          return;
+            return;
         }
-    
+
         // can use data-binding to set
         form.setFieldsValue({
-          keys: keys.filter(key => key !== k),
+            keys: keys.filter(key => key !== k),
         });
-      }
-    
-      add = () => {
+    }
+
+    add = () => {
         const { form } = this.props;
         // can use data-binding to get
         const keys = form.getFieldValue('keys');
@@ -34,37 +34,85 @@ class FormArray extends Component {
         // can use data-binding to set
         // important! notify form to detect changes
         form.setFieldsValue({
-          keys: nextKeys,
+            keys: nextKeys,
         });
-      }
-    
-      handleSubmit = (e) => {
+    }
+
+    handleSubmit = (e) => {
         e.preventDefault();
         this.props.form.validateFields((err, values) => {
-          if (!err) {
-            console.log('Received values of form: ', values);
-          }
+            if (!err) {
+                console.log('Received values of form: ', values);
+            }
         });
-      } 
-  render() {
-    const { getFieldDecorator } = this.props.form ;  
-    return (
-      <div>
-        <Form onSubmit={this.handleSubmit}>
-            <FormItem>
-                {getFieldDecorator('test',{
+    }
+    render() {
+        const { getFieldDecorator, getFieldValue } = this.props.form;
 
+        const formItemLayout = {
+            labelCol: {
+              xs: { span: 24 },
+              sm: { span: 4 },
+            },
+            wrapperCol: {
+              xs: { span: 24 },
+              sm: { span: 20 },
+            },
+          };
+          const formItemLayoutWithOutLabel = {
+            wrapperCol: {
+              xs: { span: 24, offset: 0 },
+              sm: { span: 20, offset: 4 },
+            },
+          };
+          getFieldDecorator('keys', { initialValue: [] });
+          const keys = getFieldValue('keys');
+          const formItems = keys.map((k, index) => {
+            return (
+              <FormItem
+                {...(index === 0 ? formItemLayout : formItemLayoutWithOutLabel)}
+                label={index === 0 ? 'Passengers' : ''}
+                required={false}
+                key={k}
+              >
+                {getFieldDecorator(`names[${k}]`, {
+                  validateTrigger: ['onChange', 'onBlur'],
+                  rules: [{
+                    required: true,
+                    whitespace: true,
+                    message: "Please input passenger's name or delete this field.",
+                  }],
                 })(
-                    <Input/>
+                  <Input placeholder="passenger name" style={{ width: '60%', marginRight: 8 }} />
                 )}
-            </FormItem>
-            <FormItem>
-                <Button type="primary" htmlType="submit">Submit</Button>
-            </FormItem>
-        </Form>    
-      </div>
-    )
-  }
+                {keys.length > 1 ? (
+                  <Icon
+                    className="dynamic-delete-button"
+                    type="minus-circle-o"
+                    disabled={keys.length === 1}
+                    onClick={() => this.remove(k)}
+                  />
+                ) : null}
+              </FormItem>
+            );
+          });
+        return (
+            <div>
+                <Form onSubmit={this.handleSubmit}>
+                    <FormItem>
+                        {getFieldDecorator('test', {
+
+                        })(
+                            <Input />
+                        )}
+                    </FormItem>
+                    <FormItem>
+                        <Button type="primary" htmlType="submit">Submit</Button>
+                    </FormItem>
+                </Form>
+            </div>
+        )
+    }
 }
 
 FormArray = Form.create()(FormArray)
