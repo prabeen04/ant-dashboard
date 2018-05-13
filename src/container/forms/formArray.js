@@ -69,41 +69,54 @@ class FormArray extends Component {
         const keys = getFieldValue('keys');
         const formItems = keys.map((k, index) => {
             return (
-                <FormItem
-                    {...(index === 0 ? formItemLayout : formItemLayoutWithOutLabel)}
-                    label={index === 0 ? 'Passengers' : ''}
-                    required={false}
-                    key={k}
-                >
-                    {getFieldDecorator(`names[${k}]`, {
-                        validateTrigger: ['onChange', 'onBlur'],
-                        rules: [{
-                            required: true,
-                            whitespace: true,
-                            message: "Please input passenger's name or delete this field.",
-                        }],
-                    })(
-                        <Input placeholder="passenger name" style={{ width: '60%', marginRight: 8 }} />
-                    )}
-                    {getFieldDecorator(`names1[${k}]`, {
-                        validateTrigger: ['onChange', 'onBlur'],
-                        rules: [{
-                            required: true,
-                            whitespace: true,
-                            message: "Please input passenger's name or delete this field.",
-                        }],
-                    })(
-                        <Input placeholder="passenger name" style={{ width: '60%', marginRight: 8 }} />
-                    )}
-                    {keys.length > 1 ? (
-                        <Icon
-                            className="dynamic-delete-button"
-                            type="minus-circle-o"
-                            disabled={keys.length === 1}
-                            onClick={() => this.remove(k)}
-                        />
-                    ) : null}
-                </FormItem>
+                <div key={k}>
+                <div>
+
+                    <FormItem
+                        {...(index === 0 ? formItemLayout : formItemLayoutWithOutLabel)}
+                        label={index === 0 ? 'Passengers' : ''}
+                        required={false}
+                        key={k}
+                    >
+                        {getFieldDecorator(`names[${k}]`, {
+                            validateTrigger: ['onChange', 'onBlur'],
+                            rules: [{
+                                required: true,
+                                whitespace: true,
+                                message: "Please input passenger's name or delete this field.",
+                            }],
+                        })(
+                            <Input placeholder="passenger name" style={{ width: '60%', marginRight: 8 }} />
+                        )}
+                    </FormItem>
+                    <FormItem
+                        {...(index === 0 ? formItemLayout : formItemLayoutWithOutLabel)}
+                        label={index === 0 ? 'Passengers' : ''}
+                        required={false}
+                        key={k}
+                    >
+                        {getFieldDecorator(`ngfames[${k}]`, {
+                            validateTrigger: ['onChange', 'onBlur'],
+                            rules: [{
+                                required: true,
+                                whitespace: true,
+                                message: "Please input passenger's name or delete this field.",
+                            }],
+                        })(
+                            <Input placeholder="passenger name" style={{ width: '60%', marginRight: 8 }} />
+                        )}
+                    </FormItem>
+                </div>
+                
+                {keys.length > 1 ? (
+                    <Icon
+                        className="dynamic-delete-button"
+                        type="minus-circle-o"
+                        disabled={keys.length === 1}
+                        onClick={() => this.remove(k)}
+                    />
+                ) : null}
+                </div>
             );
         });
         return (
