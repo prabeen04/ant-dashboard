@@ -19,7 +19,10 @@ class ReduxFormArray extends Component {
         this.onSubmit = this.onSubmit.bind(this);
     }
     onSubmit = values => {
-        console.log(values)
+        console.log(Object.assign({}, values, {
+            date: moment(date)
+        }))
+
     }
     renderInput = ({ input, label, type, meta: { touched, error }, ...custom }) => (
         <div>
