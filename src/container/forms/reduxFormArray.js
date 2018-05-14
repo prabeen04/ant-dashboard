@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Field, FieldArray, reduxForm } from 'redux-form';
-import { Input } from 'antd'
-
+import { Input, Select } from 'antd'
+const Option = Select.Option;
 
 class ReduxFormArray extends Component {
     constructor(props) {
@@ -27,11 +27,27 @@ class ReduxFormArray extends Component {
             {touched && error && <span>{error}</span>}
         </div>
     )
-     renderMembers = ({ fields, meta: { error, submitFailed } }) => (
+    renderSelect = ({ input, label, type, meta: { touched, error }, ...custom }) => (
+        <div>
+            <Select
+                placeholder={label}
+                {...input}
+                {...custom}
+            >
+                <Option value="cellphone">cellphone</Option>
+                <Option value="travell">travell</Option>
+                <Option value="hotel">hotel</Option>
+                <Option value="food">food</Option>
+                <Option value="others">others</Option>
+            </Select>
+            {touched && error && <span>{error}</span>}
+        </div>
+    )
+    renderMembers = ({ fields, meta: { error, submitFailed } }) => (
         <div className="">
 
             {fields.map((member, index) => (
-                <div className="flex-container form-row-height" key={index}>
+                <div key={index} style={{ display: 'flex' }}>
                     {/* <h4>Member #{index + 1}</h4> */}
                     <div className="expense-flex">
                         <Field
@@ -71,28 +87,28 @@ class ReduxFormArray extends Component {
                         <Field name={`${member}.description`} type="text" component={this.renderInput} label="Description" />
                     </div>
                     <div className="expense-flex">
-                        <Field name={`${member}.expense_amount`} type="text" component={this.renderInput} label="Expense Amout" />
+                        <Field name={`${member}.field1`} type="text" component={this.renderInput} label="field1" />
                     </div>
                     <div className="expense-flex">
-                        <Field name={`${member}.expense_currency`} type="text" component={this.renderInput} label="Expense Currency" />
+                        <Field name={`${member}.field2`} type="text" component={this.renderInput} label="field2" />
                     </div>
                     <div className="expense-flex">
-                        <Field name={`${member}.adjusted_amout`} type="text" component={this.renderInput} label="Adjusted Amout" />
+                        <Field name={`${member}.field3`} type="text" component={this.renderInput} label="field3" />
                     </div>
                     <div className="expense-flex">
-                        <Field name={`${member}.reciept`} type="text" component={this.renderInput} label="Receipt" />
+                        <Field name={`${member}.field4`} type="text" component={this.renderInput} label="field4" />
                     </div>
 
                     <button
-                     onClick={() => fields.remove(index)} >
-                     delete
+                        onClick={() => fields.remove(index)} >
+                        delete
                     </button>
                 </div>
             ))}
             <div className="">
                 <button
                     onClick={() => fields.push({})}
-                  >add
+                >add
                 </button>
                 {submitFailed && error && <span>{error}</span>}
             </div>
@@ -103,7 +119,7 @@ class ReduxFormArray extends Component {
         return (
             <div>
                 <form onSubmit={handleSubmit(this.onSubmit)}>
-                <FieldArray name="members" component={this.renderMembers} />
+                    <FieldArray name="members" component={this.renderMembers} />
                     <button>submit</button>
                 </form>
             </div>
