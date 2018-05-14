@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Field, FieldArray, reduxForm } from 'redux-form';
-import { Input, Select } from 'antd'
+import { Input, Select, DatePicker } from 'antd'
 const Option = Select.Option;
 
 class ReduxFormArray extends Component {
@@ -11,6 +11,8 @@ class ReduxFormArray extends Component {
         super(props)
 
         this.renderInput = this.renderInput.bind(this);
+        this.renderSelect = this.renderSelect.bind(this);
+        this.renderDatePcker = this.renderDatePcker.bind(this);
         this.renderMembers = this.renderMembers.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
     }
@@ -43,6 +45,16 @@ class ReduxFormArray extends Component {
             {touched && error && <span>{error}</span>}
         </div>
     )
+    renderDatePcker = ({ input, label, type, meta: { touched, error }, ...custom }) => (
+        <div>
+            <DatePicker
+                placeholder={label}
+                {...input}
+                {...custom}
+            />
+            {touched && error && <span>{error}</span>}
+        </div>
+    )
     renderMembers = ({ fields, meta: { error, submitFailed } }) => (
         <div className="">
 
@@ -52,36 +64,20 @@ class ReduxFormArray extends Component {
                     <div className="expense-flex">
                         <Field
                             name={`${member}.expense_types`}
-                            component="select"
-                            label="Clients"
-                            className="form-control">
-                            <option value="cellphone">cellphone</option>
-                            <option value="travell">travell</option>
-                            <option value="hotel">hotel</option>
-                            <option value="food">food</option>
-                            <option value="others">others</option>
-                        </Field>
+                            component={this.renderSelect}
+                           />
                     </div>
                     <div className="expense-flex">
                         <Field
                             name={`${member}.expense_date`}
-                            component="input"
-                            type="date"
-                            className="form-control"
+                            component={this.renderDatePcker}
                         />
                     </div>
                     <div className="expense-flex">
                         <Field
                             name={`${member}.client_types`}
-                            component="select"
-                            label="Clients"
-                            className="form-control">
-                            <option value="Lindelof">Lindelof</option>
-                            <option value="baily">baily</option>
-                            <option value="jones">jones</option>
-                            <option value="rojo">rojo</option>
-                            <option value="sanchez">sanchez</option>
-                        </Field>
+                            component={this.renderSelect}
+                           />
                     </div>
                     <div className="expense-flex">
                         <Field name={`${member}.description`} type="text" component={this.renderInput} label="Description" />
