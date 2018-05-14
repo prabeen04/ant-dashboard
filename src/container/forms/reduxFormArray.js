@@ -7,7 +7,7 @@ import { Field, FieldArray, reduxForm } from 'redux-form';
 import { Input, Select, DatePicker } from 'antd'
 import './form.css';
 const Option = Select.Option;
-const required = value => (value ? undefined : 'Required')
+
 class ReduxFormArray extends Component {
     constructor(props) {
         super(props)
@@ -77,7 +77,6 @@ class ReduxFormArray extends Component {
                         <Field
                             name={`${member}.date`}
                             component={this.renderDatePcker}
-                            validate={[required]}
                         />
                     </div>
                     <div className="array-field">
@@ -132,6 +131,28 @@ class ReduxFormArray extends Component {
 
 const validate = values => {
     let errors = {};
+
+    if (!values.members || !values.members.length) {
+        errors.members = { _error: 'At least one member must be entered' };
+      } else {
+        const membersArrayErrors = [];
+        values.members.forEach((member, memberIndex) => {
+          const memberErrors = {};
+          if (!member || !member.select1) {
+            memberErrors.select1 = 'Required';
+            membersArrayErrors[memberIndex] = memberErrors;
+          }
+          if (!member || !member.date) {
+            memberErrors.date = 'Required';
+            membersArrayErrors[memberIndex] = memberErrors;
+          }
+        });
+        if (membersArrayErrors.length) {
+          errors.members = membersArrayErrors;
+        }
+      }
+
+
     if(!values.select1){
         console.log('please select select1')
         errors.select1 = "select1 is required"
@@ -160,7 +181,7 @@ const validate = values => {
 }
 ReduxFormArray = reduxForm({
     form: 'formArray',
-    validate: validate
+    validate
 })(ReduxFormArray)
 
 const mapStateToProps = (state) => ({
