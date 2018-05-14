@@ -132,8 +132,29 @@ class ReduxFormArray extends Component {
 
 const validate = values => {
     let errors = {};
-    if(values.select1 === null || undefined || ''){
+    if(!values.select1){
         console.log('please select select1')
+        errors.select1 = "select1 is required"
+    }
+    if(!values.date){
+        console.log('please select date')
+        errors.date = "date is required"
+    }
+    if(!values.date){
+        console.log('please select date')
+        errors.date = "date is required"
+    }
+    if(!values.description){
+        console.log('please select description')
+        errors.description = "description is required"
+    }
+    if(!values.field1){
+        console.log('please select field1')
+        errors.field1 = "field1 is required"
+    }
+    if(!values.field2){
+        console.log('please select field2')
+        errors.field2 = "field2 is required"
     }
     return errors;
 }
