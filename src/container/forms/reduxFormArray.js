@@ -3,13 +3,116 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Field, FieldArray, reduxForm } from 'redux-form';
+import { Input } from 'antd'
+
 
 class ReduxFormArray extends Component {
+    constructor(props) {
+        super(props)
 
+        this.renderInput = this.renderInput.bind(this);
+        this.renderMembers = this.renderMembers.bind(this);
+    }
+    renderInput = ({ input, label, type, meta: { touched, error }, ...custom }) => (
+        <div>
+            <Input
+                placeholder={label}
+                {...input}
+                {...custom}
+            />
+            {touched && error && <span>{error}</span>}
+        </div>
+    )
+     renderMembers = ({ fields, meta: { error, submitFailed } }) => (
+        <div className="">
+
+            {fields.map((member, index) => (
+                <div className="flex-container form-row-height" key={index}>
+                    {/* <h4>Member #{index + 1}</h4> */}
+                    <div className="expense-flex">
+                        <Field
+                            name={`${member}.expense_types`}
+                            component="select"
+                            label="Clients"
+                            className="form-control">
+                            <option value="cellphone">cellphone</option>
+                            <option value="travell">travell</option>
+                            <option value="hotel">hotel</option>
+                            <option value="food">food</option>
+                            <option value="others">others</option>
+                        </Field>
+                    </div>
+                    <div className="expense-flex">
+                        <Field
+                            name={`${member}.expense_date`}
+                            component="input"
+                            type="date"
+                            className="form-control"
+                        />
+                    </div>
+                    <div className="expense-flex">
+                        <Field
+                            name={`${member}.client_types`}
+                            component="select"
+                            label="Clients"
+                            className="form-control">
+                            <option value="Lindelof">Lindelof</option>
+                            <option value="baily">baily</option>
+                            <option value="jones">jones</option>
+                            <option value="rojo">rojo</option>
+                            <option value="sanchez">sanchez</option>
+                        </Field>
+                    </div>
+                    <div className="expense-flex">
+                        <Field name={`${member}.description`} type="text" component={this.renderInput} label="Description" />
+                    </div>
+                    <div className="expense-flex">
+                        <Field name={`${member}.expense_amount`} type="text" component={this.renderInput} label="Expense Amout" />
+                    </div>
+                    <div className="expense-flex">
+                        <Field name={`${member}.expense_currency`} type="text" component={this.renderInput} label="Expense Currency" />
+                    </div>
+                    <div className="expense-flex">
+                        <Field name={`${member}.adjusted_amout`} type="text" component={this.renderInput} label="Adjusted Amout" />
+                    </div>
+                    <div className="expense-flex">
+                        <Field name={`${member}.reciept`} type="text" component={this.renderInput} label="Receipt" />
+                    </div>
+
+                    <IconButton
+                        iconStyle={styles.smallIcon}
+                        style={styles.small}
+                        onClick={() => fields.remove(index)}
+                        tooltip="Remove Fields">
+                        <Delete />
+                    </IconButton>
+                </div>
+            ))}
+            <div className="">
+                <IconButton
+                    iconStyle={styles.largeIcon}
+                    style={styles.large}
+                    onClick={() => fields.push({})}
+                    tooltip="Add Fields">
+                    <AddCircle />
+                </IconButton>
+                {submitFailed && error && <span>{error}</span>}
+            </div>
+        </div>
+    )
     render() {
+        const { handleSubmit } = this.props;
         return (
             <div>
-                <h3>ReduxFormArray Component</h3>
+                <form onSubmit={handleSubmit}>
+                <FieldArray name="members" component={this.renderMembers} />
+                    <Field
+                        name="textInput1"
+                        component={this.renderInput} />
+                    <Field
+                        name="textInput2"
+                        component={this.renderInput} />
+                </form>
             </div>
         )
     }
