@@ -79,23 +79,17 @@ class ReduxFormArray extends Component {
                         <Field name={`${member}.reciept`} type="text" component={this.renderInput} label="Receipt" />
                     </div>
 
-                    <IconButton
-                        iconStyle={styles.smallIcon}
-                        style={styles.small}
-                        onClick={() => fields.remove(index)}
-                        tooltip="Remove Fields">
-                        <Delete />
-                    </IconButton>
+                    <button
+                     onClick={() => fields.remove(index)} >
+                     delete
+                    </button>
                 </div>
             ))}
             <div className="">
-                <IconButton
-                    iconStyle={styles.largeIcon}
-                    style={styles.large}
+                <button
                     onClick={() => fields.push({})}
-                    tooltip="Add Fields">
-                    <AddCircle />
-                </IconButton>
+                  >add
+                </button>
                 {submitFailed && error && <span>{error}</span>}
             </div>
         </div>
