@@ -70,8 +70,7 @@ class FormArray extends Component {
         const formItems = keys.map((k, index) => {
             return (
                 <div key={k}>
-                    <div      
->
+                    <div>
 
                         <FormItem
                             // {...(index === 0 ? formItemLayout : formItemLayoutWithOutLabel)}
@@ -102,23 +101,6 @@ class FormArray extends Component {
                                     required: true,
                                     whitespace: true,
                                     message: "Please input passenger's name or delete this field.",
-                                }],
-                            })(
-                                <Input placeholder="passenger name" style={{ width: '20%', marginRight: 8 }} />
-                            )}
-                        </FormItem>
-                        <FormItem
-                            // {...(index === 0 ? formItemLayout : formItemLayoutWithOutLabel)}
-                            // label={index === 0 ? 'Passengers' : ''}
-                            required={false}
-                        // key={k}
-                        >
-                            {getFieldDecorator(`sdgsdg[${k}]`, {
-                                validateTrigger: ['onChange', 'onBlur'],
-                                rules: [{
-                                    required: true,
-                                    whitespace: true,
-                                    message: "Please input ",
                                 }],
                             })(
                                 <Input placeholder="passenger name" style={{ width: '20%', marginRight: 8 }} />
