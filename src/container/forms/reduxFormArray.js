@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import moment from 'moment';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Field, FieldArray, reduxForm } from 'redux-form';
 import { Input, Select, DatePicker } from 'antd'
+import './form.css';
 const Option = Select.Option;
-
+const required = value => (value ? undefined : 'Required')
 class ReduxFormArray extends Component {
     constructor(props) {
         super(props)
@@ -48,9 +50,12 @@ class ReduxFormArray extends Component {
     renderDatePcker = ({ input, label, type, meta: { touched, error }, ...custom }) => (
         <div>
             <DatePicker
+                defaultValue={null}
                 placeholder={label}
+                // format="yyyy/mm/dd"
                 {...input}
                 {...custom}
+                value= {input.value != '' ? moment(moment(input.value).format('DD MMM YYYY')) : null}
             />
             {touched && error && <span>{error}</span>}
         </div>
@@ -61,38 +66,39 @@ class ReduxFormArray extends Component {
             {fields.map((member, index) => (
                 <div key={index} style={{ display: 'flex' }}>
                     {/* <h4>Member #{index + 1}</h4> */}
-                    <div className="expense-flex">
+                    <div className="array-field">
                         <Field
-                            name={`${member}.expense_types`}
+                            name={`${member}.select1`}
                             component={this.renderSelect}
                            />
                     </div>
-                    <div className="expense-flex">
+                    <div className="array-field">
                         <Field
-                            name={`${member}.expense_date`}
+                            name={`${member}.date`}
                             component={this.renderDatePcker}
+                            validate={[required]}
                         />
                     </div>
-                    <div className="expense-flex">
+                    <div className="array-field">
                         <Field
-                            name={`${member}.client_types`}
+                            name={`${member}.select2`}
                             component={this.renderSelect}
                            />
                     </div>
-                    <div className="expense-flex">
-                        <Field name={`${member}.description`} type="text" component={this.renderInput} label="Description" />
+                    <div className="array-field">
+                        <Field name={`${member}.description`} component={this.renderInput} label="Description" />
                     </div>
-                    <div className="expense-flex">
-                        <Field name={`${member}.field1`} type="text" component={this.renderInput} label="field1" />
+                    <div className="array-field">
+                        <Field name={`${member}.field1`} component={this.renderInput} label="field1" />
                     </div>
-                    <div className="expense-flex">
-                        <Field name={`${member}.field2`} type="text" component={this.renderInput} label="field2" />
+                    <div className="array-field">
+                        <Field name={`${member}.field2`} component={this.renderInput} label="field2" />
                     </div>
-                    <div className="expense-flex">
-                        <Field name={`${member}.field3`} type="text" component={this.renderInput} label="field3" />
+                    <div className="array-field">
+                        <Field name={`${member}.field3`} component={this.renderInput} label="field3" />
                     </div>
-                    <div className="expense-flex">
-                        <Field name={`${member}.field4`} type="text" component={this.renderInput} label="field4" />
+                    <div className="array-field">
+                        <Field name={`${member}.field4`} component={this.renderInput} label="field4" />
                     </div>
 
                     <button
