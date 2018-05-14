@@ -19,9 +19,7 @@ class ReduxFormArray extends Component {
         this.onSubmit = this.onSubmit.bind(this);
     }
     onSubmit = values => {
-        console.log(Object.assign({}, values, {
-            date: moment(date)
-        }))
+        console.log(JSON.stringify(values))
 
     }
     renderInput = ({ input, label, type, meta: { touched, error }, ...custom }) => (
@@ -58,7 +56,7 @@ class ReduxFormArray extends Component {
                 // format="yyyy/mm/dd"
                 {...input}
                 {...custom}
-                value= {input.value != '' ? moment(moment(input.value).format('DD MMM YYYY')) : null}
+                value={input.value != '' ? moment(moment(input.value).format('DD MMM YYYY')) : null}
             />
             {touched && error && <span>{error}</span>}
         </div>
@@ -73,7 +71,7 @@ class ReduxFormArray extends Component {
                         <Field
                             name={`${member}.select1`}
                             component={this.renderSelect}
-                           />
+                        />
                     </div>
                     <div className="array-field">
                         <Field
@@ -86,7 +84,7 @@ class ReduxFormArray extends Component {
                         <Field
                             name={`${member}.select2`}
                             component={this.renderSelect}
-                           />
+                        />
                     </div>
                     <div className="array-field">
                         <Field name={`${member}.description`} component={this.renderInput} label="Description" />
@@ -132,8 +130,16 @@ class ReduxFormArray extends Component {
     }
 }
 
+const validate = values => {
+    let errors = {};
+    if(values.select1 === null || undefined || ''){
+        console.log('please select select1')
+    }
+    return errors;
+}
 ReduxFormArray = reduxForm({
-    form: 'formArray'
+    form: 'formArray',
+    validate: validate
 })(ReduxFormArray)
 
 const mapStateToProps = (state) => ({
