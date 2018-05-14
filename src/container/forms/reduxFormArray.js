@@ -146,6 +146,22 @@ const validate = values => {
             memberErrors.date = 'Required';
             membersArrayErrors[memberIndex] = memberErrors;
           }
+          if (!member || !member.select2) {
+            memberErrors.select2 = 'Required';
+            membersArrayErrors[memberIndex] = memberErrors;
+          }
+          if (!member || !member.description) {
+            memberErrors.description = 'Required';
+            membersArrayErrors[memberIndex] = memberErrors;
+          }
+          if (!member || !member.field1) {
+            memberErrors.field1 = 'Required';
+            membersArrayErrors[memberIndex] = memberErrors;
+          }
+          if (!member || !member.field2) {
+            memberErrors.field2 = 'Required';
+            membersArrayErrors[memberIndex] = memberErrors;
+          }
         });
         if (membersArrayErrors.length) {
           errors.members = membersArrayErrors;
