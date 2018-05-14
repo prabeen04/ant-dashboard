@@ -12,6 +12,10 @@ class ReduxFormArray extends Component {
 
         this.renderInput = this.renderInput.bind(this);
         this.renderMembers = this.renderMembers.bind(this);
+        this.onSubmit = this.onSubmit.bind(this);
+    }
+    onSubmit = values => {
+        console.log(values)
     }
     renderInput = ({ input, label, type, meta: { touched, error }, ...custom }) => (
         <div>
@@ -98,14 +102,9 @@ class ReduxFormArray extends Component {
         const { handleSubmit } = this.props;
         return (
             <div>
-                <form onSubmit={handleSubmit}>
+                <form onSubmit={handleSubmit(this.onSubmit)}>
                 <FieldArray name="members" component={this.renderMembers} />
-                    <Field
-                        name="textInput1"
-                        component={this.renderInput} />
-                    <Field
-                        name="textInput2"
-                        component={this.renderInput} />
+                    <button>submit</button>
                 </form>
             </div>
         )
