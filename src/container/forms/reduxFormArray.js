@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Field, FieldArray, reduxForm } from 'redux-form';
 import { Input, Select, DatePicker } from 'antd'
-import {validate} from './validate';
+// import {validate} from './validate';
 import './form.css';
 const Option = Select.Option;
 
@@ -73,6 +73,7 @@ class ReduxFormArray extends Component {
                         <Field
                             name={`${member}.select1`}
                             component={this.renderSelect}
+                            validate={required}
                         />
                     </div>
                     <div className="array-field">
@@ -131,10 +132,10 @@ class ReduxFormArray extends Component {
     }
 }
 
+const required = value => (value ? undefined : 'Required')
 
 ReduxFormArray = reduxForm({
     form: 'formArray',
-    validate,
     initialValues: {
       "members": [
         {}
