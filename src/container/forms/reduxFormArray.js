@@ -58,7 +58,7 @@ class ReduxFormArray extends Component {
                 {...custom}
                 value={input.value != '' ? moment(moment(input.value).format('DD MMM YYYY')) : null}
             />
-            {touched && error && <span>{error}</span>}
+            {touched && error && <span>{`${error}`}</span>}
         </div>
     )
     renderMembers = ({ fields, meta: { error, submitFailed } }) => (
@@ -171,7 +171,12 @@ const validate = values => {
 }
 ReduxFormArray = reduxForm({
     form: 'formArray',
-    validate
+    validate,
+    initialValues: {
+      "members": [
+        {}
+      ]
+    }
 })(ReduxFormArray)
 
 const mapStateToProps = (state) => ({
