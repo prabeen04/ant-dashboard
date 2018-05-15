@@ -5,7 +5,6 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Field, FieldArray, reduxForm } from 'redux-form';
 import { Input, Select, DatePicker } from 'antd'
-import MySelect from '../../components/common/forms/select'
 // import {validate} from './validate';
 import './form.css';
 const Option = Select.Option;
@@ -65,16 +64,6 @@ class ReduxFormArray extends Component {
             {touched && error && <span>{`${error}`}</span>}
         </div>
     )
-    renderMySelect = ({ input, label, type, meta: { touched, error }, ...custom }) => (
-        <MySelect 
-            {...input}>
-            <option value="cellphone">cellphone</option>
-            <option value="travell">travell</option>
-            <option value="hotel">hotel</option>
-            <option value="food">food</option>
-            <option value="others">others</option>
-        </MySelect>
-    )
     renderMembers = ({ fields, meta: { error, submitFailed } }) => (
         <div>
 
@@ -84,7 +73,7 @@ class ReduxFormArray extends Component {
                     <div className="array-field">
                         <Field
                             name={`${member}.select1`}
-                            component={this.renderMySelect}
+                            component={this.renderSelect}
                             validate={required}
                         />
                     </div>
