@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Field, FieldArray, reduxForm } from 'redux-form';
 import { Input, Select, DatePicker } from 'antd'
+import {validate} from './validate';
 import './form.css';
 const Option = Select.Option;
 
@@ -130,46 +131,7 @@ class ReduxFormArray extends Component {
     }
 }
 
-const validate = values => {
-    let errors = {};
 
-    if (!values.members || !values.members.length) {
-        errors.members = { _error: 'At least one member must be entered' };
-      } else {
-        const membersArrayErrors = [];
-        values.members.forEach((member, memberIndex) => {
-          const memberErrors = {};
-          if (!member || !member.select1) {
-            memberErrors.select1 = 'Required';
-            membersArrayErrors[memberIndex] = memberErrors;
-          }
-          if (!member || !member.date) {
-            memberErrors.date = 'Required';
-            membersArrayErrors[memberIndex] = memberErrors;
-          }
-          if (!member || !member.select2) {
-            memberErrors.select2 = 'Required';
-            membersArrayErrors[memberIndex] = memberErrors;
-          }
-          if (!member || !member.description) {
-            memberErrors.description = 'Required';
-            membersArrayErrors[memberIndex] = memberErrors;
-          }
-          if (!member || !member.field1) {
-            memberErrors.field1 = 'Required';
-            membersArrayErrors[memberIndex] = memberErrors;
-          }
-          if (!member || !member.field2) {
-            memberErrors.field2 = 'Required';
-            membersArrayErrors[memberIndex] = memberErrors;
-          }
-        });
-        if (membersArrayErrors.length) {
-          errors.members = membersArrayErrors;
-        }
-      }
-    return errors;
-}
 ReduxFormArray = reduxForm({
     form: 'formArray',
     validate,
