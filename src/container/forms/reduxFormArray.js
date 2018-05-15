@@ -35,6 +35,7 @@ class ReduxFormArray extends Component {
     renderSelect = ({ input, label, type, meta: { touched, error }, ...custom }) => (
         <div>
             <Select
+                defaultValue={null}
                 placeholder={label}
                 {...input}
                 {...custom}
