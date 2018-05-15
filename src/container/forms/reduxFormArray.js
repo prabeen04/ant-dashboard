@@ -38,9 +38,9 @@ class ReduxFormArray extends Component {
         <div>
             <Select
                 placeholder={label}
+                value={input.value || 'cellphone'}
                 {...input}
                 {...custom}
-                value={input.value || ''}
             >
                 <Option value="cellphone">cellphone</Option>
                 <Option value="travell">travell</Option>
@@ -154,11 +154,14 @@ const required = value => (value ? undefined : 'Required')
 
 ReduxFormArray = reduxForm({
     form: 'formArray',
-    initialValues: {
-        "members": [
-            {}
-        ]
-    }
+    // initialValues: {
+    //     "members": [
+    //         {
+    //             select1: 'cellphone'
+    //         }
+    //     ]
+    // },
+    enableReinitialize: true
 })(ReduxFormArray)
 
 const mapStateToProps = (state) => ({
