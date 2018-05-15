@@ -36,10 +36,10 @@ class ReduxFormArray extends Component {
     renderSelect = ({ input, label, type, meta: { touched, error }, ...custom }) => (
         <div>
             <Select
-                defaultValue={null}
                 placeholder={label}
                 {...input}
                 {...custom}
+                defaultValue="food"
             >
                 <Option value="cellphone">cellphone</Option>
                 <Option value="travell">travell</Option>
@@ -64,7 +64,7 @@ class ReduxFormArray extends Component {
         </div>
     )
     renderMembers = ({ fields, meta: { error, submitFailed } }) => (
-        <div className="">
+        <div style={{backgroundColor: 'tomato'}}>
 
             {fields.map((member, index) => (
                 <div key={index} style={{ display: 'flex' }}>
@@ -80,6 +80,7 @@ class ReduxFormArray extends Component {
                         <Field
                             name={`${member}.date`}
                             component={this.renderDatePcker}
+                            validate={required}
                         />
                     </div>
                     <div className="array-field">
