@@ -40,7 +40,7 @@ class ReduxFormArray extends Component {
                 placeholder={label}
                 {...input}
                 {...custom}
-                value={input.value || null}
+                value={input.value || ''}
             >
                 <Option value="cellphone">cellphone</Option>
                 <Option value="travell">travell</Option>
@@ -51,23 +51,21 @@ class ReduxFormArray extends Component {
             {touched && error && <span>{error}</span>}
         </div>
     )
-    renderSelect2 = ({ input, label, type, meta: { touched, error }, ...custom }) => (
-        <div>
+    renderSelect2 = ({ input, label, type, meta: { touched, error }, ...custom }) => {
+        console.log(input.value)
+       return <div>
             <Select
                 placeholder={label}
                 {...input}
                 {...custom}
-                value={input.value || null}
             >
-                <Option value="cellphone">cellphone</Option>
-                <Option value="travell">travell</Option>
-                <Option value="hotel">hotel</Option>
                 <Option value="food">food</Option>
                 <Option value="others">others</Option>
             </Select>
             {touched && error && <span>{error}</span>}
         </div>
-    )
+    }
+        
     renderDatePcker = ({ input, label, type, meta: { touched, error }, ...custom }) => (
         <div>
             <DatePicker
