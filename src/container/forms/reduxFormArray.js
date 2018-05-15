@@ -15,7 +15,6 @@ class ReduxFormArray extends Component {
 
         this.renderInput = this.renderInput.bind(this);
         this.renderSelect = this.renderSelect.bind(this);
-        this.renderMySelect = this.renderMySelect.bind(this);
         this.renderDatePcker = this.renderDatePcker.bind(this);
         this.renderMembers = this.renderMembers.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
@@ -40,7 +39,7 @@ class ReduxFormArray extends Component {
                 placeholder={label}
                 {...input}
                 {...custom}
-                defaultValue="food"
+                value={input.value || null}
             >
                 <Option value="cellphone">cellphone</Option>
                 <Option value="travell">travell</Option>
@@ -70,13 +69,7 @@ class ReduxFormArray extends Component {
             {fields.map((member, index) => (
                 <div key={index} style={{ display: 'flex' }}>
                     {/* <h4>Member #{index + 1}</h4> */}
-                    <div className="array-field">
-                        <Field
-                            name={`${member}.select1`}
-                            component={this.renderSelect}
-                            validate={required}
-                        />
-                    </div>
+
                     <div className="array-field">
                         <Field
                             name={`${member}.date`}
@@ -86,10 +79,17 @@ class ReduxFormArray extends Component {
                     </div>
                     <div className="array-field">
                         <Field
+                            name={`${member}.select1`}
+                            component={this.renderSelect}
+                            validate={required}
+                        />
+                    </div>
+                    {/* <div className="array-field">
+                        <Field
                             name={`${member}.select2`}
                             component={this.renderSelect}
                         />
-                    </div>
+                    </div> */}
                     <div className="array-field">
                         <Field name={`${member}.description`} component={this.renderInput} label="Description" />
                     </div>
