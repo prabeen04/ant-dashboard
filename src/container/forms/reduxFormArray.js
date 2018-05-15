@@ -66,16 +66,17 @@ class ReduxFormArray extends Component {
         </div>
     )
     renderMySelect = ({ input, label, type, meta: { touched, error }, ...custom }) => (
-        <MySelect>
-            <Option value="cellphone">cellphone</Option>
-            <Option value="travell">travell</Option>
-            <Option value="hotel">hotel</Option>
-            <Option value="food">food</Option>
-            <Option value="others">others</Option>
+        <MySelect 
+            {...input}>
+            <option value="cellphone">cellphone</option>
+            <option value="travell">travell</option>
+            <option value="hotel">hotel</option>
+            <option value="food">food</option>
+            <option value="others">others</option>
         </MySelect>
     )
     renderMembers = ({ fields, meta: { error, submitFailed } }) => (
-        <div style={{ backgroundColor: 'tomato' }}>
+        <div>
 
             {fields.map((member, index) => (
                 <div key={index} style={{ display: 'flex' }}>
@@ -83,7 +84,7 @@ class ReduxFormArray extends Component {
                     <div className="array-field">
                         <Field
                             name={`${member}.select1`}
-                            component={this.renderSelect}
+                            component={this.renderMySelect}
                             validate={required}
                         />
                     </div>
