@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Field, FieldArray, reduxForm } from 'redux-form';
 import { Input, Select, DatePicker } from 'antd'
+import MySelect from '../../components/common/forms/select'
 // import {validate} from './validate';
 import './form.css';
 const Option = Select.Option;
@@ -15,6 +16,7 @@ class ReduxFormArray extends Component {
 
         this.renderInput = this.renderInput.bind(this);
         this.renderSelect = this.renderSelect.bind(this);
+        this.renderMySelect = this.renderMySelect.bind(this);
         this.renderDatePcker = this.renderDatePcker.bind(this);
         this.renderMembers = this.renderMembers.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
@@ -63,8 +65,17 @@ class ReduxFormArray extends Component {
             {touched && error && <span>{`${error}`}</span>}
         </div>
     )
+    renderMySelect = ({ input, label, type, meta: { touched, error }, ...custom }) => (
+        <MySelect>
+            <Option value="cellphone">cellphone</Option>
+            <Option value="travell">travell</Option>
+            <Option value="hotel">hotel</Option>
+            <Option value="food">food</Option>
+            <Option value="others">others</Option>
+        </MySelect>
+    )
     renderMembers = ({ fields, meta: { error, submitFailed } }) => (
-        <div style={{backgroundColor: 'tomato'}}>
+        <div style={{ backgroundColor: 'tomato' }}>
 
             {fields.map((member, index) => (
                 <div key={index} style={{ display: 'flex' }}>
@@ -138,9 +149,9 @@ const required = value => (value ? undefined : 'Required')
 ReduxFormArray = reduxForm({
     form: 'formArray',
     initialValues: {
-      "members": [
-        {}
-      ]
+        "members": [
+            {}
+        ]
     }
 })(ReduxFormArray)
 
