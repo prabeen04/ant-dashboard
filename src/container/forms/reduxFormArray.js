@@ -15,6 +15,7 @@ class ReduxFormArray extends Component {
 
         this.renderInput = this.renderInput.bind(this);
         this.renderSelect = this.renderSelect.bind(this);
+        this.renderSelect2 = this.renderSelect2.bind(this);
         this.renderDatePcker = this.renderDatePcker.bind(this);
         this.renderMembers = this.renderMembers.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
@@ -101,12 +102,12 @@ class ReduxFormArray extends Component {
                             validate={required}
                         />
                     </div>
-                    {/* <div className="array-field">
+                    <div className="array-field">
                         <Field
                             name={`${member}.select2`}
-                            component={this.renderSelect}
+                            component={this.renderSelect2}
                         />
-                    </div> */}
+                    </div>
                     <div className="array-field">
                         <Field name={`${member}.description`} component={this.renderInput} label="Description" />
                     </div>
