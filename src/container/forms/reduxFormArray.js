@@ -18,6 +18,7 @@ class ReduxFormArray extends Component {
         this.renderSelect2 = this.renderSelect2.bind(this);
         this.renderDatePcker = this.renderDatePcker.bind(this);
         this.renderUpload = this.renderUpload.bind(this);
+        this.renderFileUpload = this.renderFileUpload.bind(this);
         this.renderMembers = this.renderMembers.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
     }
@@ -160,12 +161,18 @@ class ReduxFormArray extends Component {
                         <Field name={`${member}.field2`} component={this.renderInput} label="field2" />
                     </div>
                     <div className="array-field">
-                        <Field name={`${member}.field3`} component={this.renderUpload} label="field3" />
+                        <Field name={`${member}.field3`} component={this.renderInput} label="field3" />
                     </div>
                     <div className="array-field">
                         <Field name={`${member}.field4`} component={this.renderInput} label="field4" />
                     </div>
-
+                    <div>
+                        <Upload>
+                            <Button>
+                                <Icon type="upload" /> Click to Upload
+                            </Button>
+                        </Upload>
+                    </div>
                     <button
                         type="button"
                         onClick={() => fields.remove(index)} >
