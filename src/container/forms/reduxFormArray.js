@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Field, FieldArray, reduxForm } from 'redux-form';
 import { Input, Select, DatePicker } from 'antd'
-// import {validate} from './validate';
+import {validate} from './validate';
 import './form.css';
 const Option = Select.Option;
 
@@ -24,17 +24,17 @@ class ReduxFormArray extends Component {
         console.log(JSON.stringify(values))
 
     }
-    renderInput = ({ input, label, type, meta: { touched, error }, ...custom }) => (
+    renderInput = ({ input, label, type, meta: { touched, error, active }, ...custom }) => (
         <div>
             <Input
                 placeholder={label}
                 {...input}
                 {...custom}
             />
-            {touched && error && <span>{error}</span>}
+            {active && touched && error && <span>{error}</span>}
         </div>
     )
-    renderSelect = ({ input, label, type, meta: { touched, error }, ...custom }) => (
+    renderSelect = ({ input, label, type, meta: { touched, error, active }, ...custom }) => (
         <div>
             <Select
                 placeholder={label}
@@ -48,10 +48,10 @@ class ReduxFormArray extends Component {
                 <Option value="food">food</Option>
                 <Option value="others">others</Option>
             </Select>
-            {touched && error && <span>{error}</span>}
+            {active && touched && error && <span>{error}</span>}
         </div>
     )
-    renderSelect2 = ({ input, label, type, meta: { touched, error }, ...custom }) => {
+    renderSelect2 = ({ input, label, type, meta: { touched, error, active }, ...custom }) => {
         console.log(input.value)
        return <div>
             <Select
@@ -62,11 +62,11 @@ class ReduxFormArray extends Component {
                 <Option value="food">food</Option>
                 <Option value="others">others</Option>
             </Select>
-            {touched && error && <span>{error}</span>}
+            {active && touched && error && <span>{error}</span>}
         </div>
     }
         
-    renderDatePcker = ({ input, label, type, meta: { touched, error }, ...custom }) => (
+    renderDatePcker = ({ input, label, type, meta: { touched, error, active }, ...custom }) => (
         <div>
             <DatePicker
                 defaultValue={null}
@@ -76,7 +76,7 @@ class ReduxFormArray extends Component {
                 {...custom}
                 value={input.value != '' ? moment(moment(input.value).format('DD MMM YYYY')) : null}
             />
-            {touched && error && <span>{`${error}`}</span>}
+            {active && touched && error && <span>{`${error}`}</span>}
         </div>
     )
     renderMembers = ({ fields, meta: { error, submitFailed } }) => (
@@ -90,14 +90,12 @@ class ReduxFormArray extends Component {
                         <Field
                             name={`${member}.date`}
                             component={this.renderDatePcker}
-                            validate={required}
                         />
                     </div>
                     <div className="array-field">
                         <Field
                             name={`${member}.select1`}
                             component={this.renderSelect}
-                            validate={required}
                         />
                     </div>
                     <div className="array-field">
@@ -154,6 +152,7 @@ const required = value => (value ? undefined : 'Required')
 
 ReduxFormArray = reduxForm({
     form: 'formArray',
+    validate,
     // initialValues: {
     //     "members": [
     //         {
