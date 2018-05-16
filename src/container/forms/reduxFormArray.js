@@ -98,7 +98,23 @@ class ReduxFormArray extends Component {
         <div>
             <label>{label}</label>
             <div>
-                <Upload
+                <Upload {...input}>
+                    <Button>
+                        <Icon type="upload" /> Click to Upload
+                    </Button>
+                </Upload>
+
+                {touched && error && <span>{`${error}`}</span>}
+            </div>
+
+        </div>
+    )
+    renderFileUpload = ({ input, label, type, meta: { touched, error }, ...custom }) => (
+        <div>
+            <label>{label}</label>
+            <div>
+                <input
+                    type="file"
                     {...input}
                 />
                 {touched && error && <span>{`${error}`}</span>}
@@ -144,7 +160,7 @@ class ReduxFormArray extends Component {
                         <Field name={`${member}.field2`} component={this.renderInput} label="field2" />
                     </div>
                     <div className="array-field">
-                        <Field name={`${member}.field3`} component={Upload} label="field3" />
+                        <Field name={`${member}.field3`} component={this.renderUpload} label="field3" />
                     </div>
                     <div className="array-field">
                         <Field name={`${member}.field4`} component={this.renderInput} label="field4" />
