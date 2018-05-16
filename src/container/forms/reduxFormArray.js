@@ -13,6 +13,10 @@ class ReduxFormArray extends Component {
     constructor(props) {
         super(props)
 
+        this.state = {
+            currency: 'dollar',
+            amount: 0
+        }
         this.renderInput = this.renderInput.bind(this);
         this.renderSelect = this.renderSelect.bind(this);
         this.renderSelect2 = this.renderSelect2.bind(this);
@@ -155,7 +159,7 @@ class ReduxFormArray extends Component {
                         <Field name={`${member}.description`} component={this.renderInput} label="Description" />
                     </div>
                     <div className="array-field">
-                        <Field name={`${member}.field1`} component={this.renderInput} label="field1" />
+                        <Field name={`${member}.field1`} component={this.renderSelect} label="field1" initialvalue={90}/>
                     </div>
                     <div className="array-field">
                         <Field name={`${member}.field2`} component={this.renderInput} label="field2" />
