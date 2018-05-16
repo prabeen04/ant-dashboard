@@ -26,16 +26,22 @@ class ReduxFormArray extends Component {
     }
     renderInput = ({ input, label, type, meta: { touched, error }, ...custom }) => (
         <div>
+            <label>{label}</label>
+            <div>
             <Input
                 placeholder={label}
                 {...input}
                 {...custom}
             />
             {touched && error && <span>{error}</span>}
+            </div>
+            
         </div>
     )
     renderSelect = ({ input, label, type, meta: { touched, error }, ...custom }) => (
         <div>
+            <label>{label}</label>
+            <div>
             <Select
                 placeholder={label}
                 {...input}
@@ -48,11 +54,15 @@ class ReduxFormArray extends Component {
                 <Option value="others">others</Option>
             </Select>
             {touched && error && <span>{error}</span>}
+            </div>
+            
         </div>
     )
     renderSelect2 = ({ input, label, type, meta: { touched, error }, ...custom }) => {
        return <div>
-            <Select
+           <label>{label}</label>
+           <div>
+           <Select
                 placeholder={label}
                 {...input}
                 {...custom}
@@ -61,11 +71,15 @@ class ReduxFormArray extends Component {
                 <Option value="others">others</Option>
             </Select>
             {touched && error && <span>{error}</span>}
+           </div>
+            
         </div>
     }
         
     renderDatePcker = ({ input, label, type, meta: { touched, error }, ...custom }) => (
         <div>
+            <label>{label}</label>
+            <div>
             <DatePicker
                 defaultValue={null}
                 placeholder={label}
@@ -75,6 +89,8 @@ class ReduxFormArray extends Component {
                 value={input.value != '' ? moment(moment(input.value).format('DD MMM YYYY')) : null}
             />
             {touched && error && <span>{`${error}`}</span>}
+            </div>
+            
         </div>
     )
     renderMembers = ({ fields, meta: { error, submitFailed } }) => (
@@ -88,18 +104,21 @@ class ReduxFormArray extends Component {
                         <Field
                             name={`${member}.date`}
                             component={this.renderDatePcker}
+                            label="date"
                         />
                     </div>
                     <div className="array-field">
                         <Field
                             name={`${member}.select1`}
                             component={this.renderSelect}
+                            label="select1"
                         />
                     </div>
                     <div className="array-field">
                         <Field
                             name={`${member}.select2`}
                             component={this.renderSelect2}
+                            label="select2"
                         />
                     </div>
                     <div className="array-field">
