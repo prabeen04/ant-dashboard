@@ -38,15 +38,15 @@ class NewFormArray extends Component {
         </div>
       )
        renderMembers = ({ fields, meta: { error, submitFailed } }) => (
-        <ul>
-          <li>
+        <div>
+          <div>
             <button type="button" onClick={() => fields.push({})}>
               Add Member
             </button>
             {submitFailed && error && <span>{error}</span>}
-          </li>
+          </div>
           {fields.map((member, index) => (
-            <li key={index}>
+            <div key={index}>
               <button
                 type="button"
                 title="Remove Member"
@@ -65,9 +65,9 @@ class NewFormArray extends Component {
                 component={this.renderInput}
                 label="field2"
               />
-            </li>
+            </div>
           ))}
-        </ul>
+        </div>
       )
        
     render() {

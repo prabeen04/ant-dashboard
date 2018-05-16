@@ -138,6 +138,7 @@ class ReduxFormArray extends Component {
                     </div>
 
                     <button
+                         type="button"
                         onClick={() => fields.remove(index)} >
                         delete
                     </button>
@@ -145,6 +146,7 @@ class ReduxFormArray extends Component {
             ))}
             <div className="">
                 <button
+                    type="button"
                     onClick={() => fields.push({})}
                 >add
                 </button>
