@@ -5,6 +5,7 @@ import ComplexForm from "./complexForm";
 import ReduxForm from './reduxForm';
 import FormArray from './formArray';
 import ReduxFormArray from './reduxFormArray';
+import NewFormArray from './newFormArray';
 class Forms extends Component {
   render() {
     return (
@@ -18,8 +19,9 @@ class Forms extends Component {
           <ReduxForm />
           <Divider />
           <FormArray />
-          <Divider />*/}
-          <ReduxFormArray />
+          <Divider />
+          <ReduxFormArray />*/}
+          <NewFormArray/>
         </Card>
       </div>
     )

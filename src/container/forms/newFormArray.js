@@ -5,14 +5,14 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Field, FieldArray, reduxForm } from 'redux-form';
 import { Input, Select, DatePicker } from 'antd'
-import {validate} from './validate';
+// import {validate} from './validate';
 
-class ReduxFormArray extends Component {
+class NewFormArray extends Component {
     constructor(props) {
         super(props)
 
         this.renderField = this.renderField.bind(this);
-        this.renderMember = this.renderMember.bind(this);
+        this.renderMembers = this.renderMembers.bind(this);
     }
     onSubmit = values => {
         console.log(JSON.stringify(values))
@@ -44,16 +44,16 @@ class ReduxFormArray extends Component {
               />
               <h4>Member #{index + 1}</h4>
               <Field
-                name={`${member}.firstName`}
+                name={`${member}.field1`}
                 type="text"
                 component={this.renderField}
-                label="First Name"
+                label="field1"
               />
               <Field
-                name={`${member}.lastName`}
+                name={`${member}.field2`}
                 type="text"
                 component={this.renderField}
-                label="Last Name"
+                label="field2"
               />
             </li>
           ))}
@@ -72,12 +72,34 @@ class ReduxFormArray extends Component {
         )
     }
 }
+const validate = (values) => {
+    const errors = {};
+    if (!values.members || !values.members.length) {
+        errors.members = { _error: 'At least one member must be entered' };
+      } else {
+        const membersArrayErrors = [];
+        values.members.forEach((member, memberIndex) => {
+          const memberErrors = {};
+          if (!member || !member.field1) {
+            memberErrors.select1 = 'Required';
+            membersArrayErrors[memberIndex] = memberErrors;
+          }
+          if (!member || !member.field2) {
+            memberErrors.date = 'Required';
+            membersArrayErrors[memberIndex] = memberErrors;
+          }
+        });
+        if (membersArrayErrors.length) {
+          errors.members = membersArrayErrors;
+        }
+      }
+    return errors;
+}
 
-
-ReduxFormArray = reduxForm({
+NewFormArray = reduxForm({
     form: 'newFormArray',
     validate
-})(ReduxFormArray)
+})(NewFormArray)
 
 const mapStateToProps = (state) => ({
 
@@ -89,4 +111,4 @@ const mapDispatchToProps = dispatch => {
     }, dispatch)
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(ReduxFormArray)
+export default connect(mapStateToProps, mapDispatchToProps)(NewFormArray)
