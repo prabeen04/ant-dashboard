@@ -4,8 +4,8 @@ import moment from 'moment';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Field, FieldArray, reduxForm } from 'redux-form';
-import { Input, Select, DatePicker } from 'antd'
-import {validate} from './validate';
+import { Input, Select, DatePicker, Upload, Button, Icon } from 'antd'
+import { validate } from './validate';
 import './form.css';
 const Option = Select.Option;
 
@@ -17,6 +17,7 @@ class ReduxFormArray extends Component {
         this.renderSelect = this.renderSelect.bind(this);
         this.renderSelect2 = this.renderSelect2.bind(this);
         this.renderDatePcker = this.renderDatePcker.bind(this);
+        this.renderUpload = this.renderUpload.bind(this);
         this.renderMembers = this.renderMembers.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
     }
@@ -28,69 +29,81 @@ class ReduxFormArray extends Component {
         <div>
             <label>{label}</label>
             <div>
-            <Input
-                placeholder={label}
-                {...input}
-                {...custom}
-            />
-            {touched && error && <span>{error}</span>}
+                <Input
+                    placeholder={label}
+                    {...input}
+                    {...custom}
+                />
+                {touched && error && <span>{error}</span>}
             </div>
-            
+
         </div>
     )
     renderSelect = ({ input, label, type, meta: { touched, error }, ...custom }) => (
         <div>
             <label>{label}</label>
             <div>
-            <Select
-                placeholder={label}
-                {...input}
-                {...custom}
-            >
-                <Option value="cellphone">cellphone</Option>
-                <Option value="travell">travell</Option>
-                <Option value="hotel">hotel</Option>
-                <Option value="food">food</Option>
-                <Option value="others">others</Option>
-            </Select>
-            {touched && error && <span>{error}</span>}
+                <Select
+                    placeholder={label}
+                    {...input}
+                    {...custom}
+                >
+                    <Option value="cellphone">cellphone</Option>
+                    <Option value="travell">travell</Option>
+                    <Option value="hotel">hotel</Option>
+                    <Option value="food">food</Option>
+                    <Option value="others">others</Option>
+                </Select>
+                {touched && error && <span>{error}</span>}
             </div>
-            
+
         </div>
     )
     renderSelect2 = ({ input, label, type, meta: { touched, error }, ...custom }) => {
-       return <div>
-           <label>{label}</label>
-           <div>
-           <Select
-                placeholder={label}
-                {...input}
-                {...custom}
-            >
-                <Option value="food">food</Option>
-                <Option value="others">others</Option>
-            </Select>
-            {touched && error && <span>{error}</span>}
-           </div>
-            
+        return <div>
+            <label>{label}</label>
+            <div>
+                <Select
+                    placeholder={label}
+                    {...input}
+                    {...custom}
+                >
+                    <Option value="food">food</Option>
+                    <Option value="others">others</Option>
+                </Select>
+                {touched && error && <span>{error}</span>}
+            </div>
+
         </div>
     }
-        
+
     renderDatePcker = ({ input, label, type, meta: { touched, error }, ...custom }) => (
         <div>
             <label>{label}</label>
             <div>
-            <DatePicker
-                defaultValue={null}
-                placeholder={label}
-                // format="yyyy/mm/dd"
-                {...input}
-                {...custom}
-                value={input.value != '' ? moment(moment(input.value).format('DD MMM YYYY')) : null}
-            />
-            {touched && error && <span>{`${error}`}</span>}
+                <DatePicker
+                    defaultValue={null}
+                    placeholder={label}
+                    // format="yyyy/mm/dd"
+                    {...input}
+                    {...custom}
+                    value={input.value != '' ? moment(moment(input.value).format('DD MMM YYYY')) : null}
+                />
+                {touched && error && <span>{`${error}`}</span>}
             </div>
-            
+
+        </div>
+    )
+    renderUpload = ({ input, label, type, meta: { touched, error }, ...custom }) => (
+        <div>
+            <label>{label}</label>
+            <div>
+                <Upload
+                    {...input}
+                />
+                {touched && error && <span>{`${error}`}</span>}
+            </div>
+
         </div>
     )
     renderMembers = ({ fields, meta: { error, submitFailed } }) => (
@@ -131,14 +144,14 @@ class ReduxFormArray extends Component {
                         <Field name={`${member}.field2`} component={this.renderInput} label="field2" />
                     </div>
                     <div className="array-field">
-                        <Field name={`${member}.field3`} component={this.renderInput} label="field3" />
+                        <Field name={`${member}.field3`} component={Upload} label="field3" />
                     </div>
                     <div className="array-field">
                         <Field name={`${member}.field4`} component={this.renderInput} label="field4" />
                     </div>
 
                     <button
-                         type="button"
+                        type="button"
                         onClick={() => fields.remove(index)} >
                         delete
                     </button>
@@ -155,7 +168,7 @@ class ReduxFormArray extends Component {
         </div>
     )
     render() {
-        const { handleSubmit, pristine, reset, submitting  } = this.props;
+        const { handleSubmit, pristine, reset, submitting } = this.props;
         return (
             <div>
                 <form onSubmit={handleSubmit(this.onSubmit)}>
