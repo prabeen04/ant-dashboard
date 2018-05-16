@@ -134,7 +134,7 @@ class ReduxFormArray extends Component {
         </div>
     )
     render() {
-        const { handleSubmit } = this.props;
+        const { handleSubmit, pristine, reset, submitting  } = this.props;
         return (
             <div>
                 <form onSubmit={handleSubmit(this.onSubmit)}>
