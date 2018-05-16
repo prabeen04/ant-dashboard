@@ -173,11 +173,6 @@ class ReduxFormArray extends Component {
                             </Button>
                         </Upload>
                     </div>
-                    <div>
-                        <input
-                            type="file"
-                        />
-                    </div>
                     <button
                         type="button"
                         onClick={() => fields.remove(index)} >
