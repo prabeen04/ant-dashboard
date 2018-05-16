@@ -12,6 +12,7 @@ class NewFormArray extends Component {
         super(props)
 
         this.renderField = this.renderField.bind(this);
+        this.renderInput = this.renderInput.bind(this);
         this.renderMembers = this.renderMembers.bind(this);
     }
     onSubmit = values => {
@@ -23,7 +24,16 @@ class NewFormArray extends Component {
           <label>{label}</label>
           <div>
             <input {...input} type={type} placeholder={label} />
-            {touched && error && <span>{error}</span>}
+            {touched && error && <span>{error}kgkhg</span>}
+          </div>
+        </div>
+      )
+      renderInput = ({ input, label, type, meta: { touched, error } }) => (
+        <div>
+          <label>{label}</label>
+          <div>
+            <Input {...input} type={type} placeholder={label} />
+            {touched && error && <span>{error}kgkhg</span>}
           </div>
         </div>
       )
@@ -52,7 +62,7 @@ class NewFormArray extends Component {
               <Field
                 name={`${member}.field2`}
                 type="text"
-                component={this.renderField}
+                component={this.renderInput}
                 label="field2"
               />
             </li>
@@ -66,13 +76,14 @@ class NewFormArray extends Component {
             <div>
                 <form onSubmit={handleSubmit(this.onSubmit)}>
                 <FieldArray name="members" component={this.renderMembers} />
-                    <button>submit</button>
+                    <button type="submit">submit</button>
                 </form>
             </div>
         )
     }
 }
 const validate = (values) => {
+    console.log(values)
     const errors = {};
     if (!values.members || !values.members.length) {
         errors.members = { _error: 'At least one member must be entered' };
@@ -81,11 +92,11 @@ const validate = (values) => {
         values.members.forEach((member, memberIndex) => {
           const memberErrors = {};
           if (!member || !member.field1) {
-            memberErrors.select1 = 'Required';
+            memberErrors.field1 = 'Required';
             membersArrayErrors[memberIndex] = memberErrors;
           }
           if (!member || !member.field2) {
-            memberErrors.date = 'Required';
+            memberErrors.field2 = 'Required';
             membersArrayErrors[memberIndex] = memberErrors;
           }
         });
