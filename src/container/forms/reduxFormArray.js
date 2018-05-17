@@ -99,9 +99,9 @@ class ReduxFormArray extends Component {
                     placeholder={label}
                     {...input}
                     {...custom}
-                    defaultValue={this.props.currency !== null ?this.props.currency : 'euro'}
+                   // defaultValue={this.props.currency !== null ?this.props.currency : 'euro'}
                     // value={this.props.currency !== null ?this.props.currency : 'euro'}
-                     onChange={(val)=>this.props.setCurrency(val)}
+                    // onChange={(val)=>this.props.setCurrency(val)}
                 >
                     <Option value="dollar" key="dollar">Dollar</Option>
                     <Option value="rupees" key="rupees">Rupees</Option>
@@ -211,9 +211,10 @@ class ReduxFormArray extends Component {
                         <Field name={`${member}.description`} component={this.renderInput} label="Description" />
                     </div>
                     <div className="array-field">
-                        <Field name={`${member}.field1`} component={this.renderSelect3} label="field1"
+                        <Field name={`${member}.field1`} component={this.renderSelect2} label="field1"
                         value={this.props.currency || 'euro'}
-                        onChange={(val)=>this.props.setCurrency(val.target.value)}/>
+                        // defaultValue={'euro'}
+                        onChange={(val)=>this.props.setCurrency(val)}/>
                     </div>
                     <div className="array-field">
                         <Field name={`${member}.field2`} component={this.renderInputNumber} label="Amount" />
@@ -266,14 +267,14 @@ const required = value => (value ? undefined : 'Required')
 ReduxFormArray = reduxForm({
     form: 'formArray',
     validate,
-    enableReinitialize: true
+    //  enableReinitialize: true
 })(ReduxFormArray)
 
 const mapStateToProps = (state) => {
     return {
         initialValues: {
             "members": [{
-                //  field1:  state.formArrayReducer.currency
+                  field1:  state.formArrayReducer.currency
             }]
         },
          currency: state.formArrayReducer.currency
