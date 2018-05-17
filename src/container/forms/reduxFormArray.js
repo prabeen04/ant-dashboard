@@ -99,8 +99,8 @@ class ReduxFormArray extends Component {
                     {...input}
                     {...custom}
                     defaultValue={this.props.currency !== null ?this.props.currency : 'euro'}
-                    value={this.props.currency !== null ?this.props.currency : 'euro'}
-                    // onChange={(val)=>this.props.setCurrency(val)}
+                    // value={this.props.currency !== null ?this.props.currency : 'euro'}
+                     onChange={(val)=>this.props.setCurrency(val)}
                 >
                     <Option value="dollar" key="dollar">Dollar</Option>
                     <Option value="rupees" key="rupees">Rupees</Option>
@@ -243,17 +243,17 @@ const required = value => (value ? undefined : 'Required')
 ReduxFormArray = reduxForm({
     form: 'formArray',
     validate,
-    // enableReinitialize: true
+    enableReinitialize: true
 })(ReduxFormArray)
 
 const mapStateToProps = (state) => {
     return {
-        initialValues: {
-            "members": [{
-                field1:  state.formArrayReducer.currency
-            }]
-        },
-        currency: state.formArrayReducer.currency
+        // initialValues: {
+        //     "members": [{
+        //         // field1:  state.formArrayReducer.currency
+        //     }]
+        // },
+         currency: state.formArrayReducer.currency
     }
 }
 
