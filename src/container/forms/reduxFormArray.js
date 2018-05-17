@@ -25,10 +25,19 @@ class ReduxFormArray extends Component {
         this.renderFileUpload = this.renderFileUpload.bind(this);
         this.renderMembers = this.renderMembers.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
+        this.handleCurrencyChange = this.handleCurrencyChange.bind(this);
     }
     onSubmit = values => {
         console.log(JSON.stringify(values))
 
+    }
+    handleCurrencyChange = (currency)=>{
+       if(currency !== this.state.currency){
+           console.log('different currency')
+           this.setState({
+               currency
+           })
+       }
     }
     renderInput = ({ input, label, type, meta: { touched, error }, ...custom }) => (
         <div>
@@ -73,6 +82,7 @@ class ReduxFormArray extends Component {
                     {...input}
                     {...custom}
                     value={this.state.currency}
+                    onChange={this.handleCurrencyChange}
                 >
                     <Option value="dollar">Dollar</Option>
                     <Option value="rupees">Rupees</Option>
