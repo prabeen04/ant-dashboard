@@ -40,6 +40,9 @@ class ReduxFormArray extends Component {
            })
        }
     }
+    handleCurrencyCalculation = (amount)=>{
+        console.log(amount)
+     }
     renderInput = ({ input, label, type, meta: { touched, error }, ...custom }) => (
         <div>
             <label>{label}</label>
@@ -62,6 +65,8 @@ class ReduxFormArray extends Component {
                     placeholder={label}
                     {...input}
                     {...custom}
+                    value={this.state.amount}
+                    onChange={this.handleCurrencyCalculation}
                 />
                 {touched && error && <span>{error}</span>}
             </div>
@@ -190,7 +195,7 @@ class ReduxFormArray extends Component {
                         <Field name={`${member}.field1`} component={this.renderSelect2} label="field1"/>
                     </div>
                     <div className="array-field">
-                        <Field name={`${member}.field2`} component={this.renderInputNumber} label="field2" />
+                        <Field name={`${member}.field2`} component={this.renderInputNumber} label="Amount" />
                     </div>
                     <div className="array-field">
                         <Field name={`${member}.field3`} component={this.renderInput} label="field3" />
