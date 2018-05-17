@@ -6,6 +6,7 @@ import { bindActionCreators } from 'redux';
 import { Field, FieldArray, reduxForm } from 'redux-form';
 import { Input, InputNumber, Select, DatePicker, Upload, Button, Icon } from 'antd'
 import { validate } from './validate';
+import { setCurrency } from '../../actions/formArrayAction';
 import './form.css';
 const Option = Select.Option;
 
@@ -13,10 +14,6 @@ class ReduxFormArray extends Component {
     constructor(props) {
         super(props)
 
-        this.state = {
-            currency: 'dollar',
-            amount: 10
-        }
         this.renderInput = this.renderInput.bind(this);
         this.renderSelect = this.renderSelect.bind(this);
         this.renderSelect2 = this.renderSelect2.bind(this);
@@ -34,15 +31,8 @@ class ReduxFormArray extends Component {
     }
     handleCurrencyChange = (currency) => {
         console.log('inside currency change', typeof currency)
-        // if (currency !== this.state.currency) {
-        //     console.log('different currency')
-        //     this.setState({
-        //         currency: currency
-        //     })
-        // }
-        this.setState({
-            currency: currency
-        })
+        this.props.setCurrency(currency)
+       
     }
     handleCurrencyCalculation = (amount) => {
         this.setState({
@@ -74,8 +64,8 @@ class ReduxFormArray extends Component {
                     min={0}
                     max={100}
                     // type="number"
-                    defaultValue={this.state.amount}
-                    onChange={this.handleCurrencyCalculation}
+                    // defaultValue={this.state.amount}
+                    // onChange={this.handleCurrencyCalculation}
                 />
                 {touched && error && <span>{error}</span>}
             </div>
@@ -269,7 +259,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = dispatch => {
     return bindActionCreators({
-
+        setCurrency: setCurrency
     }, dispatch)
 }
 
