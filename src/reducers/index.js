@@ -5,6 +5,7 @@ import { profileReducer } from '../reducers/profile_reducer';
 import { postReducer } from '../reducers/post_reducer';
 import { authReducer } from '../reducers/auth_reducer';
 import { formReducer } from "../reducers/testFormReducer";
+import { formArrayReducer } from "../reducers/formArrayReducer";
 
 export const rootReducer = combineReducers({
     form: FormReducer,
@@ -12,7 +13,8 @@ export const rootReducer = combineReducers({
     profileReducer,
     postReducer,
     authReducer,
-    formReducer
+    formReducer,
+    formArrayReducer
 })
 
 export default rootReducer;
