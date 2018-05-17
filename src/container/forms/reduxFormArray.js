@@ -113,7 +113,7 @@ class ReduxFormArray extends Component {
 
         </div>
     }
-    renderSelect3 = ({ input, label, type, meta: { touched, error }, ...custom }) => {
+    renderSelect3 = ({ input, label, amount, type, meta: { touched, error }, ...custom }) => {
         return <div>
             <label>{label}</label>
             <div>
@@ -121,9 +121,8 @@ class ReduxFormArray extends Component {
                     placeholder={label}
                     {...input}
                     {...custom}
-                    defaultValue={this.props.currency !== null ?this.props.currency : 'euro'}
-                    // value={this.props.currency !== null ?this.props.currency : 'euro'}
-                     onChange={(val)=>this.props.setCurrency(val)}
+                    // defaultValue={this.props.currency !== null ?this.props.currency : 'euro'}
+                    
                 >
                     <option value="dollar">Dollar</option>
                     <option value="rupees">Rupees</option>
@@ -212,7 +211,9 @@ class ReduxFormArray extends Component {
                         <Field name={`${member}.description`} component={this.renderInput} label="Description" />
                     </div>
                     <div className="array-field">
-                        <Field name={`${member}.field1`} component={this.renderSelect2} label="field1"/>
+                        <Field name={`${member}.field1`} component={this.renderSelect3} label="field1"
+                        value={this.props.currency || 'euro'}
+                        onChange={(val)=>this.props.setCurrency(val.target.value)}/>
                     </div>
                     <div className="array-field">
                         <Field name={`${member}.field2`} component={this.renderInputNumber} label="Amount" />
@@ -270,11 +271,11 @@ ReduxFormArray = reduxForm({
 
 const mapStateToProps = (state) => {
     return {
-        // initialValues: {
-        //     "members": [{
-        //         // field1:  state.formArrayReducer.currency
-        //     }]
-        // },
+        initialValues: {
+            "members": [{
+                //  field1:  state.formArrayReducer.currency
+            }]
+        },
          currency: state.formArrayReducer.currency
     }
 }
