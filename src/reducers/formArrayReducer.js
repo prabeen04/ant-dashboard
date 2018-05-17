@@ -1,7 +1,7 @@
 import { SET_CURRENCY, SET_AMOUNT, SET_AMOUNT_IN_CURRENCY } from '../types/formArrayActionTypes';
 
 const initialState = {
-    currency: 'euro'
+    currency: 'rupees'
 }
 
 export const formArrayReducer = (state = initialState, action) => {

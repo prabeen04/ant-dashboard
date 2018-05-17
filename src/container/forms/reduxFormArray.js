@@ -32,7 +32,7 @@ class ReduxFormArray extends Component {
     handleCurrencyChange = (currency) => {
         console.log('inside currency change', typeof currency)
         this.props.setCurrency(currency)
-       
+
     }
     handleCurrencyCalculation = (amount) => {
         this.setState({
@@ -63,9 +63,9 @@ class ReduxFormArray extends Component {
                     {...custom}
                     min={0}
                     max={100}
-                    // type="number"
-                    // defaultValue={this.state.amount}
-                    // onChange={this.handleCurrencyCalculation}
+                // type="number"
+                // defaultValue={this.state.amount}
+                // onChange={this.handleCurrencyCalculation}
                 />
                 {touched && error && <span>{error}</span>}
             </div>
@@ -100,6 +100,8 @@ class ReduxFormArray extends Component {
                     placeholder={label}
                     {...input}
                     {...custom}
+                    defaultValue={this.props.currency}
+                    value={this.props.currency}
                     onChange={this.handleCurrencyChange}
                 >
                     <Option value="dollar" key="dollar">Dollar</Option>
@@ -243,19 +245,19 @@ const required = value => (value ? undefined : 'Required')
 ReduxFormArray = reduxForm({
     form: 'formArray',
     validate,
-    initialValues: {
-        "members": [
-            {
-                field1: 'rupees'
-            }
-        ]
-    },
     enableReinitialize: true
 })(ReduxFormArray)
 
-const mapStateToProps = (state) => ({
-
-})
+const mapStateToProps = (state) => {
+    return {
+        initialValues: {
+            "members": [{
+                field1:  state.formArrayReducer.currency
+            }]
+        },
+        currency: state.formArrayReducer.currency
+    }
+}
 
 const mapDispatchToProps = dispatch => {
     return bindActionCreators({
