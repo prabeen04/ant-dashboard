@@ -33,12 +33,16 @@ class ReduxFormArray extends Component {
 
     }
     handleCurrencyChange = (currency) => {
-        if (currency !== this.state.currency) {
-            console.log('different currency')
-            this.setState({
-                currency
-            })
-        }
+        console.log('inside currency change', typeof currency)
+        // if (currency !== this.state.currency) {
+        //     console.log('different currency')
+        //     this.setState({
+        //         currency: currency
+        //     })
+        // }
+        this.setState({
+            currency: currency
+        })
     }
     handleCurrencyCalculation = (amount) => {
         this.setState({
@@ -106,13 +110,14 @@ class ReduxFormArray extends Component {
                     placeholder={label}
                     {...input}
                     {...custom}
+                    defaultValue={this.state.currency}
                     value={this.state.currency}
                     onChange={this.handleCurrencyChange}
                 >
-                    <Option value="dollar">Dollar</Option>
-                    <Option value="rupees">Rupees</Option>
-                    <Option value="euro">Euro</Option>
-                    <Option value="pound">Pound</Option>
+                    <Option value="dollar" key="dollar">Dollar</Option>
+                    <Option value="rupees" key="rupees">Rupees</Option>
+                    <Option value="euro" key="euro">Euro</Option>
+                    <Option value="pound" key="pound">Pound</Option>
                 </Select>
                 {touched && error && <span>{error}</span>}
             </div>
@@ -208,13 +213,13 @@ class ReduxFormArray extends Component {
                     <div className="array-field">
                         <Field name={`${member}.field4`} component={this.renderInput} label="field4" />
                     </div>
-                    <div>
+                    {/* <div>
                         <Upload>
                             <Button>
                                 <Icon type="upload" /> Click to Upload
                             </Button>
                         </Upload>
-                    </div>
+                    </div> */}
                     <button
                         type="button"
                         onClick={() => fields.remove(index)} >
@@ -250,13 +255,12 @@ const required = value => (value ? undefined : 'Required')
 ReduxFormArray = reduxForm({
     form: 'formArray',
     validate,
-    // initialValues: {
-    //     "members": [
-    //         {
-    //             select1: 'cellphone'
-    //         }
-    //     ]
-    // },
+    initialValues: {
+        "members": [
+            {
+            }
+        ]
+    },
     enableReinitialize: true
 })(ReduxFormArray)
 
