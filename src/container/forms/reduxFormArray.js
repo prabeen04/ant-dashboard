@@ -17,6 +17,7 @@ class ReduxFormArray extends Component {
         this.renderInput = this.renderInput.bind(this);
         this.renderSelect = this.renderSelect.bind(this);
         this.renderSelect2 = this.renderSelect2.bind(this);
+        this.renderSelect3 = this.renderSelect3.bind(this);
         this.renderDatePcker = this.renderDatePcker.bind(this);
         this.renderUpload = this.renderUpload.bind(this);
         this.renderFileUpload = this.renderFileUpload.bind(this);
@@ -112,7 +113,28 @@ class ReduxFormArray extends Component {
 
         </div>
     }
+    renderSelect3 = ({ input, label, type, meta: { touched, error }, ...custom }) => {
+        return <div>
+            <label>{label}</label>
+            <div>
+                <select
+                    placeholder={label}
+                    {...input}
+                    {...custom}
+                    defaultValue={this.props.currency !== null ?this.props.currency : 'euro'}
+                    // value={this.props.currency !== null ?this.props.currency : 'euro'}
+                     onChange={(val)=>this.props.setCurrency(val)}
+                >
+                    <option value="dollar">Dollar</option>
+                    <option value="rupees">Rupees</option>
+                    <option value="euro">Euro</option>
+                    <option value="pound">Pound</option>
+                </select>
+                {touched && error && <span>{error}</span>}
+            </div>
 
+        </div>
+    }
     renderDatePcker = ({ input, label, type, meta: { touched, error }, ...custom }) => (
         <div>
             <label>{label}</label>
