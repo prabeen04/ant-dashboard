@@ -72,9 +72,12 @@ class ReduxFormArray extends Component {
                     placeholder={label}
                     {...input}
                     {...custom}
+                    value={this.state.currency}
                 >
-                    <Option value="food">food</Option>
-                    <Option value="others">others</Option>
+                    <Option value="dollar">Dollar</Option>
+                    <Option value="rupees">Rupees</Option>
+                    <Option value="euro">Euro</Option>
+                    <Option value="pound">Pound</Option>
                 </Select>
                 {touched && error && <span>{error}</span>}
             </div>
@@ -151,7 +154,7 @@ class ReduxFormArray extends Component {
                     <div className="array-field">
                         <Field
                             name={`${member}.select2`}
-                            component={this.renderSelect2}
+                            component={this.renderSelect}
                             label="select2"
                         />
                     </div>
@@ -159,7 +162,7 @@ class ReduxFormArray extends Component {
                         <Field name={`${member}.description`} component={this.renderInput} label="Description" />
                     </div>
                     <div className="array-field">
-                        <Field name={`${member}.field1`} component={this.renderSelect} label="field1" initialvalue={90}/>
+                        <Field name={`${member}.field1`} component={this.renderSelect2} label="field1"/>
                     </div>
                     <div className="array-field">
                         <Field name={`${member}.field2`} component={this.renderInput} label="field2" />
