@@ -110,8 +110,6 @@ class ReduxFormArray extends Component {
                     placeholder={label}
                     {...input}
                     {...custom}
-                    defaultValue={this.state.currency}
-                    value={this.state.currency}
                     onChange={this.handleCurrencyChange}
                 >
                     <Option value="dollar" key="dollar">Dollar</Option>
@@ -258,6 +256,7 @@ ReduxFormArray = reduxForm({
     initialValues: {
         "members": [
             {
+                field1: 'rupees'
             }
         ]
     },
