@@ -15,7 +15,7 @@ class ReduxFormArray extends Component {
 
         this.state = {
             currency: 'dollar',
-            amount: 0
+            amount: 10
         }
         this.renderInput = this.renderInput.bind(this);
         this.renderSelect = this.renderSelect.bind(this);
@@ -32,17 +32,19 @@ class ReduxFormArray extends Component {
         console.log(JSON.stringify(values))
 
     }
-    handleCurrencyChange = (currency)=>{
-       if(currency !== this.state.currency){
-           console.log('different currency')
-           this.setState({
-               currency
-           })
-       }
+    handleCurrencyChange = (currency) => {
+        if (currency !== this.state.currency) {
+            console.log('different currency')
+            this.setState({
+                currency
+            })
+        }
     }
-    handleCurrencyCalculation = (amount)=>{
-        console.log(amount)
-     }
+    handleCurrencyCalculation = (amount) => {
+        this.setState({
+            amount
+        })
+    }
     renderInput = ({ input, label, type, meta: { touched, error }, ...custom }) => (
         <div>
             <label>{label}</label>
@@ -65,7 +67,10 @@ class ReduxFormArray extends Component {
                     placeholder={label}
                     {...input}
                     {...custom}
-                    value={this.state.amount}
+                    min={0}
+                    max={100}
+                    // type="number"
+                    defaultValue={this.state.amount}
                     onChange={this.handleCurrencyCalculation}
                 />
                 {touched && error && <span>{error}</span>}
@@ -192,7 +197,7 @@ class ReduxFormArray extends Component {
                         <Field name={`${member}.description`} component={this.renderInput} label="Description" />
                     </div>
                     <div className="array-field">
-                        <Field name={`${member}.field1`} component={this.renderSelect2} label="field1"/>
+                        <Field name={`${member}.field1`} component={this.renderSelect2} label="field1" />
                     </div>
                     <div className="array-field">
                         <Field name={`${member}.field2`} component={this.renderInputNumber} label="Amount" />
