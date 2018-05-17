@@ -4,7 +4,7 @@ import moment from 'moment';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Field, FieldArray, reduxForm } from 'redux-form';
-import { Input, Select, DatePicker, Upload, Button, Icon } from 'antd'
+import { Input, InputNumber, Select, DatePicker, Upload, Button, Icon } from 'antd'
 import { validate } from './validate';
 import './form.css';
 const Option = Select.Option;
@@ -26,6 +26,7 @@ class ReduxFormArray extends Component {
         this.renderMembers = this.renderMembers.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
         this.handleCurrencyChange = this.handleCurrencyChange.bind(this);
+        this.handleCurrencyCalculation = this.handleCurrencyCalculation.bind(this);
     }
     onSubmit = values => {
         console.log(JSON.stringify(values))
@@ -44,6 +45,20 @@ class ReduxFormArray extends Component {
             <label>{label}</label>
             <div>
                 <Input
+                    placeholder={label}
+                    {...input}
+                    {...custom}
+                />
+                {touched && error && <span>{error}</span>}
+            </div>
+
+        </div>
+    )
+    renderInputNumber = ({ input, label, type, meta: { touched, error }, ...custom }) => (
+        <div>
+            <label>{label}</label>
+            <div>
+                <InputNumber
                     placeholder={label}
                     {...input}
                     {...custom}
@@ -175,7 +190,7 @@ class ReduxFormArray extends Component {
                         <Field name={`${member}.field1`} component={this.renderSelect2} label="field1"/>
                     </div>
                     <div className="array-field">
-                        <Field name={`${member}.field2`} component={this.renderInput} label="field2" />
+                        <Field name={`${member}.field2`} component={this.renderInputNumber} label="field2" />
                     </div>
                     <div className="array-field">
                         <Field name={`${member}.field3`} component={this.renderInput} label="field3" />
