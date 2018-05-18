@@ -34,9 +34,9 @@ class ReduxFormArray extends Component {
         this.props.setCurrency(currency);
     }
     handleCurrencyCalculation = (amount) => {
-        this.setState({
-            amount
-        })
+        // this.setState({
+        //     amount
+        // })
     }
     renderInput = ({ input, label, type, meta: { touched, error }, ...custom }) => (
         <div>
@@ -92,16 +92,18 @@ class ReduxFormArray extends Component {
         </div>
     )
     renderSelect2 = ({ input, label, type, meta: { touched, error }, ...custom }) => {
+        console.log(input)
         return <div>
             <label>{label}</label>
             <div>
                 <Select
                     placeholder={label}
+                    defaultValue={this.props.currency || 'euro'}
                     {...input}
                     {...custom}
-                   // defaultValue={this.props.currency !== null ?this.props.currency : 'euro'}
-                    // value={this.props.currency !== null ?this.props.currency : 'euro'}
-                    // onChange={(val)=>this.props.setCurrency(val)}
+                // defaultValue='euro'
+                //  value={this.props.currency !== null ?this.props.currency : 'euro'}
+                // onChange={(val)=>this.props.setCurrency(val)}
                 >
                     <Option value="dollar" key="dollar">Dollar</Option>
                     <Option value="rupees" key="rupees">Rupees</Option>
@@ -121,8 +123,8 @@ class ReduxFormArray extends Component {
                     placeholder={label}
                     {...input}
                     {...custom}
-                    // defaultValue={this.props.currency !== null ?this.props.currency : 'euro'}
-                    
+                // defaultValue={this.props.currency !== null ?this.props.currency : 'euro'}
+
                 >
                     <option value="dollar">Dollar</option>
                     <option value="rupees">Rupees</option>
@@ -211,10 +213,9 @@ class ReduxFormArray extends Component {
                         <Field name={`${member}.description`} component={this.renderInput} label="Description" />
                     </div>
                     <div className="array-field">
-                        <Field name={`${member}.field1`} component={this.renderSelect2} label="field1"
-                        value={this.props.currency || 'euro'}
-                        // defaultValue={'euro'}
-                        onChange={(val)=>this.props.setCurrency(val)}/>
+                        <Field name={`${member}.field1`} component={this.renderSelect3} label="field1"
+                            value={this.props.currency}
+                            onChange={(val, value) =>this.props.setCurrency(value)} />
                     </div>
                     <div className="array-field">
                         <Field name={`${member}.field2`} component={this.renderInputNumber} label="Amount" />
@@ -248,7 +249,10 @@ class ReduxFormArray extends Component {
                 {submitFailed && error && <span>{error}</span>}
             </div>
         </div>
-    )
+    );
+    // shouldComponentUpdate(a){
+    //     return false;
+    // }
     render() {
         const { handleSubmit, pristine, reset, submitting } = this.props;
         return (
@@ -267,17 +271,17 @@ const required = value => (value ? undefined : 'Required')
 ReduxFormArray = reduxForm({
     form: 'formArray',
     validate,
-    //  enableReinitialize: true
+    // enableReinitialize: true
 })(ReduxFormArray)
 
 const mapStateToProps = (state) => {
     return {
         initialValues: {
             "members": [{
-                  field1:  state.formArrayReducer.currency
+                field1: state.formArrayReducer.currency
             }]
         },
-         currency: state.formArrayReducer.currency
+        currency: state.formArrayReducer.currency
     }
 }
 
