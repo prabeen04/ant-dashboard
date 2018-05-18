@@ -216,10 +216,10 @@ class ReduxFormArray extends Component {
                             onChange={(val, value) =>this.props.setCurrency(value)} />
                     </div>
                     <div className="array-field">
-                        <Field name={`${member}.field2`} component={this.renderInput} label="Amount"
+                        <Field name={`${member}.field2`} component={this.renderInputNumber} label="Amount"
                         onChange={(e, value)=>{
                             console.log(`${member}.field2`)
-                            // change(`${member}.field3`, '21212')
+                            change(`${member}.field3`, '21212')
                         }} />
                     </div>
                     <div className="array-field">
@@ -258,6 +258,7 @@ class ReduxFormArray extends Component {
     render() {
         console.log(this.props.currency)
         const { handleSubmit, pristine, reset, submitting, change } = this.props;
+        console.log(change)
         return (
             <div>
                 <form onSubmit={handleSubmit(this.onSubmit)}>
@@ -281,6 +282,8 @@ const mapStateToProps = (state) => {
     return {
         initialValues: {
             "members": [{
+                field1: state.formArrayReducer.currency
+            },{
                 field1: state.formArrayReducer.currency
             }]
         },
