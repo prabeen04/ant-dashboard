@@ -33,10 +33,8 @@ class ReduxFormArray extends Component {
     handleCurrencyChange = (currency) => {
         this.props.setCurrency(currency);
     }
-    handleCurrencyCalculation = (amount) => {
-        // this.setState({
-        //     amount
-        // })
+    handleCurrencyCalculation = (e, value) => {
+        console.log(value)
     }
     renderInput = ({ input, label, type, meta: { touched, error }, ...custom }) => (
         <div>
@@ -218,7 +216,8 @@ class ReduxFormArray extends Component {
                             onChange={(val, value) =>this.props.setCurrency(value)} />
                     </div>
                     <div className="array-field">
-                        <Field name={`${member}.field2`} component={this.renderInputNumber} label="Amount" />
+                        <Field name={`${member}.field2`} component={this.renderInputNumber} label="Amount"
+                        onChange={(e, value)=>this.handleCurrencyCalculation} />
                     </div>
                     <div className="array-field">
                         <Field name={`${member}.field3`} component={this.renderInput} label="field3" />
@@ -254,6 +253,7 @@ class ReduxFormArray extends Component {
     //     return false;
     // }
     render() {
+        console.log(this.props.currency)
         const { handleSubmit, pristine, reset, submitting } = this.props;
         return (
             <div>
