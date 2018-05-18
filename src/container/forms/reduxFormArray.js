@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import moment from 'moment';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { Field, FieldArray, reduxForm } from 'redux-form';
+import { Field, FieldArray, reduxForm, change } from 'redux-form';
 import { Input, InputNumber, Select, DatePicker, Upload, Button, Icon } from 'antd'
 import { validate } from './validate';
 import { setCurrency } from '../../actions/formArrayAction';
@@ -33,8 +33,8 @@ class ReduxFormArray extends Component {
     handleCurrencyChange = (currency) => {
         this.props.setCurrency(currency);
     }
-    handleCurrencyCalculation = (e, value) => {
-        console.log(value)
+    handleCurrencyCalculation = (value) => {
+        console.log(value, this.props.currency)
     }
     renderInput = ({ input, label, type, meta: { touched, error }, ...custom }) => (
         <div>
@@ -217,7 +217,9 @@ class ReduxFormArray extends Component {
                     </div>
                     <div className="array-field">
                         <Field name={`${member}.field2`} component={this.renderInputNumber} label="Amount"
-                        onChange={(e, value)=>this.handleCurrencyCalculation} />
+                        onChange={(e, value)=>{
+                            change(`${member}.field3`, 'Math.round(newValue / EUR_TO_DOLLAR_RATE * 1e2) / 1e2')
+                        }} />
                     </div>
                     <div className="array-field">
                         <Field name={`${member}.field3`} component={this.renderInput} label="field3" />
@@ -254,7 +256,7 @@ class ReduxFormArray extends Component {
     // }
     render() {
         console.log(this.props.currency)
-        const { handleSubmit, pristine, reset, submitting } = this.props;
+        const { handleSubmit, pristine, reset, submitting, change } = this.props;
         return (
             <div>
                 <form onSubmit={handleSubmit(this.onSubmit)}>
