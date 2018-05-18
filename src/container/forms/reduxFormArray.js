@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment';
 import { connect } from 'react-redux';
+import store from '../../store';
 import { bindActionCreators } from 'redux';
 import { Field, FieldArray, reduxForm, change } from 'redux-form';
 import { Input, InputNumber, Select, DatePicker, Upload, Button, Icon } from 'antd'
@@ -219,7 +220,8 @@ class ReduxFormArray extends Component {
                         <Field name={`${member}.field2`} component={this.renderInputNumber} label="Amount"
                         onChange={(e, value)=>{
                             console.log(`${member}.field2`)
-                            change(`${member}.field3`, '21212')
+                            // change('formArray',`${member}.field3`, '21212')
+                            store.dispatch(change('formArray', `${member}.field3`, 'bufferValue'));
                         }} />
                     </div>
                     <div className="array-field">
