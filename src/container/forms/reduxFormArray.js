@@ -216,16 +216,23 @@ class ReduxFormArray extends Component {
                             onChange={(val, value) =>this.props.setCurrency(value)} />
                     </div>
                     <div className="array-field">
-                        <Field name={`${member}.field2`} component={this.renderInputNumber} label="Amount"
+                        <Field name={`${member}.field2`} component={this.renderInput} label="Amount"
                         onChange={(e, value)=>{
-                            change(`${member}.field3`, 'Math.round(newValue / EUR_TO_DOLLAR_RATE * 1e2) / 1e2')
+                            console.log(`${member}.field2`)
+                            // change(`${member}.field3`, '21212')
                         }} />
                     </div>
                     <div className="array-field">
-                        <Field name={`${member}.field3`} component={this.renderInput} label="field3" />
+                        <Field name={`${member}.field3`} component={this.renderInput} label="field3"
+                        onChange={(e, value)=>{
+                            change(`${member}.field4`, '21212')
+                        }}  />
                     </div>
                     <div className="array-field">
-                        <Field name={`${member}.field4`} component={this.renderInput} label="field4" />
+                        <Field name={`${member}.field4`} component={this.renderInput} label="field4" 
+                        onChange={(e, value)=>{
+                            change(`${member}.field3`, '21212')
+                        }} />
                     </div>
                     {/* <div>
                         <Upload>
