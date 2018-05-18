@@ -221,7 +221,7 @@ class ReduxFormArray extends Component {
                         onChange={(e, value)=>{
                             console.log(`${member}.field2`)
                             // change('formArray',`${member}.field3`, '21212')
-                            store.dispatch(change('formArray', `${member}.field3`, 'bufferValue'));
+                            store.dispatch(change('formArray', `${member}.field3`,`${moment().toISOString()}wdgns,md`));
                         }} />
                     </div>
                     <div className="array-field">
