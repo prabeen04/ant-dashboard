@@ -180,7 +180,7 @@ class ReduxFormArray extends Component {
 
         </div>
     )
-    renderMembers = ({ fields, meta: { error, submitFailed } }) => (
+    renderMembers = ({change, fields, meta: { error, submitFailed } }) => (
         <div>
 
             {fields.map((member, index) => (
@@ -220,8 +220,8 @@ class ReduxFormArray extends Component {
                         <Field name={`${member}.field2`} component={this.renderInputNumber} label="Amount"
                         onChange={(e, value)=>{
                             console.log(`${member}.field2`)
-                            // change('formArray',`${member}.field3`, '21212')
-                            store.dispatch(change('formArray', `${member}.field3`, `${this.props.currency}`));
+                            change('formArray',`${member}.field3`, '21212')
+                            // store.dispatch(change('formArray', `${member}.field3`, `${this.props.currency}`));
                         }} />
                     </div>
                     <div className="array-field">
@@ -264,7 +264,7 @@ class ReduxFormArray extends Component {
         return (
             <div>
                 <form onSubmit={handleSubmit(this.onSubmit)}>
-                    <FieldArray name="members" component={this.renderMembers} />
+                    <FieldArray name="members" component={this.renderMembers} change={change}/>
                     <button>submit</button>
                 </form>
             </div>
