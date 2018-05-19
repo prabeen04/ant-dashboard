@@ -97,7 +97,7 @@ class ReduxFormArray extends Component {
             <div>
                 <Select
                     placeholder={label}
-                    defaultValue={this.props.currency || 'euro'}
+                    defaultValue={this.props.currency && 'euro'}
                     {...input}
                     {...custom}
                 // defaultValue='euro'
@@ -122,7 +122,7 @@ class ReduxFormArray extends Component {
                     placeholder={label}
                     {...input}
                     {...custom}
-                // defaultValue={this.props.currency !== null ?this.props.currency : 'euro'}
+                //  value={'euro' && this.props.currency}
 
                 >
                     <option value="dollar">Dollar</option>
@@ -213,14 +213,14 @@ class ReduxFormArray extends Component {
                     </div>
                     <div className="array-field">
                         <Field name={`${member}.field1`} component={this.renderSelect3} label="field1"
-                            value={this.props.currency}
-                            onChange={(val, value) =>this.props.setCurrency(value)} />
+                            value={this.props.currency && 'euro'}
+                            onChange={(e, value) =>this.props.setCurrency(value)} />
                     </div>
                     <div className="array-field">
                         <Field name={`${member}.field2`} component={this.renderInputNumber} label="Amount"
                         onChange={(e, value)=>{
                             console.log(`${member}.field2`)
-                            change(`${member}.field3`, '21212')
+                            change(`${member}.field3`, `${this.props.currency}`)
                             // store.dispatch(change('formArray', `${member}.field3`, `${this.props.currency}`));
                         }} />
                     </div>
@@ -260,7 +260,6 @@ class ReduxFormArray extends Component {
     render() {
         console.log(this.props.currency)
         const { handleSubmit, pristine, reset, submitting, change } = this.props;
-        console.log(change)
         return (
             <div>
                 <form onSubmit={handleSubmit(this.onSubmit)}>
