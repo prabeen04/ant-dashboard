@@ -1,12 +1,13 @@
 import React from 'react'
 
-export default (props) => {
+const ExampleForm =  (props) => {
   return (
     <div>
       <h3>ExampleComponent</h3>
       {props.data.map((int, index) =>{
-        return <p key={index}>{int}</p>
+        return <p key={index}>{int*2}</p>
       })}
     </div>
   )
 }
+export default ExampleForm;
