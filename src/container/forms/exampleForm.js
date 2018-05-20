@@ -1,17 +1,9 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-class ExampleForm extends Component {
-    constructor(props){
-        super(props)
-    }
-  
-  render() {
-    return (
-      <div>
-        <h2>ExampleForm Component</h2>
-      </div>
-    )
-  }
+export default () => {
+  return (
+    <div>
+      <h3>ExampleComponent</h3>
+    </div>
+  )
 }
-
-export default ExampleForm;
