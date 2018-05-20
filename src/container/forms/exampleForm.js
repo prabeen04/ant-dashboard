@@ -7,13 +7,8 @@ class ExampleForm extends Component {
            fields: [1, 2],
 
        } 
-       this.handleClick = this.handleClick.bind(this)
     }
   
-  handleClick = (e) =>{
-      console.log(e)
-      this.state.fields.push('one')
-  } 
   render() {
     console.log(this.state)
     return (
