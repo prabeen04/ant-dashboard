@@ -180,7 +180,7 @@ class ReduxFormArray extends Component {
 
         </div>
     )
-    renderMembers = ({change, fields, meta: { error, submitFailed } }) => (
+    renderMembers = ({ change, fields, meta: { error, submitFailed } }) => (
         <div>
             {fields.map((member, index) => (
                 <div key={index} style={{ display: 'flex' }}>
@@ -211,14 +211,17 @@ class ReduxFormArray extends Component {
                     <div className="array-field">
                         <Field name={`${member}.field1`} component={this.renderSelect3} label="field1"
                             value={this.props.currency && 'euro'}
-                            onChange={(e, value) =>this.props.setCurrency(value)} />
+                            onChange={(e, value) =>{ 
+                                this.props.setCurrency(value)
+                                change(`${member}.field3`, `${value + this.props.currency || 0}`)
+                                }} />
                     </div>
                     <div className="array-field">
                         <Field name={`${member}.field2`} component={this.renderInputNumber} label="Amount"
-                        onChange={(e, value)=>{
-                            console.log(`${member}.field2`)
-                            change(`${member}.field3`,value + this.state.calculatedValue)
-                        }} />
+                            onChange={(e, value) => {
+                                console.log(`${member}.field2`)
+                                change(`${member}.field3`, `${value + this.props.currency || 0}`)
+                            }} />
                     </div>
                     <div className="array-field">
                         <Field name={`${member}.field3`} component={this.renderInput} label="field3" />
@@ -243,7 +246,7 @@ class ReduxFormArray extends Component {
             <div className="">
                 <button
                     type="button"
-                    onClick={() => fields.push({field1: this.props.currency ||'rupees'})}
+                    onClick={() => fields.push({ field1: this.props.currency || 'rupees' })}
                 >add
                 </button>
                 {submitFailed && error && <span>{error}</span>}
@@ -258,7 +261,7 @@ class ReduxFormArray extends Component {
         return (
             <div>
                 <form onSubmit={handleSubmit(this.onSubmit)}>
-                    <FieldArray name="members" component={this.renderMembers} change={change}/>
+                    <FieldArray name="members" component={this.renderMembers} change={change} />
                     <button>submit</button>
                 </form>
             </div>
