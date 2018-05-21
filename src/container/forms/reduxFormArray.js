@@ -45,6 +45,7 @@ class ReduxFormArray extends Component {
                     type="hidden"
                     {...input}
                     {...custom}
+                    value='prabeen'
                 />
     )
     renderInput = ({ input, label, type, meta: { touched, error }, ...custom }) => (
@@ -232,8 +233,8 @@ class ReduxFormArray extends Component {
                     <div className="array-field">
                         <Field name={`${member}.field3`} component={this.renderInput} label="field3" />
                     </div>
-                    <Field name={`${member}.hidden`} component={this.renderHiddenInput} label="Amount"
-                            value={this.props.currency || 'prabeen'} />
+                    <Field name={`${member}.hidden`} component={this.renderHiddenInput}
+                          />
                     <div className="array-field">
                         <Field name={`${member}.field4`} component={this.renderInput} label="field4" />
                     </div>
@@ -289,7 +290,8 @@ const mapStateToProps = (state) => {
     return {
         initialValues: {
             "members": [{
-                field1: state.formArrayReducer.currency
+                field1: state.formArrayReducer.currency,
+                hidden: 'prrardf'
             }]
         },
         currency: state.formArrayReducer.currency
