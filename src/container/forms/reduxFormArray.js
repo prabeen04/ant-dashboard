@@ -290,8 +290,7 @@ const mapStateToProps = (state) => {
     return {
         initialValues: {
             "members": [{
-                field1: state.formArrayReducer.currency,
-                hidden: 'prrardf'
+                field1: state.formArrayReducer.currency
             }]
         },
         currency: state.formArrayReducer.currency
