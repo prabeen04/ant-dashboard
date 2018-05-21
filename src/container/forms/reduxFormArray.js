@@ -14,7 +14,9 @@ const Option = Select.Option;
 class ReduxFormArray extends Component {
     constructor(props) {
         super(props)
-
+        this.state = {
+            calculatedValue: 65
+        }
         this.renderInput = this.renderInput.bind(this);
         this.renderSelect = this.renderSelect.bind(this);
         this.renderSelect2 = this.renderSelect2.bind(this);
@@ -218,7 +220,7 @@ class ReduxFormArray extends Component {
                         <Field name={`${member}.field2`} component={this.renderInputNumber} label="Amount"
                         onChange={(e, value)=>{
                             console.log(`${member}.field2`)
-                            change(`${member}.field3`, `${this.props.currency}`)
+                            change(`${member}.field3`,value + this.state.calculatedValue)
                             // store.dispatch(change('formArray', `${member}.field3`, `${this.props.currency}`));
                         }} />
                     </div>
