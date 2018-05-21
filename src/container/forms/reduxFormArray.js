@@ -122,8 +122,6 @@ class ReduxFormArray extends Component {
                     placeholder={label}
                     {...input}
                     {...custom}
-                //  value={'euro' && this.props.currency}
-
                 >
                     <option value="dollar">Dollar</option>
                     <option value="rupees">Rupees</option>
@@ -182,7 +180,7 @@ class ReduxFormArray extends Component {
     )
     renderMembers = ({change, fields, meta: { error, submitFailed } }) => (
         <div>
-
+            {console.log(fields)}
             {fields.map((member, index) => (
                 <div key={index} style={{ display: 'flex' }}>
                     {/* <h4>Member #{index + 1}</h4> */}
@@ -247,7 +245,7 @@ class ReduxFormArray extends Component {
             <div className="">
                 <button
                     type="button"
-                    onClick={() => fields.push({})}
+                    onClick={() => fields.push({field1: this.props.currency ||'rupees'})}
                 >add
                 </button>
                 {submitFailed && error && <span>{error}</span>}
