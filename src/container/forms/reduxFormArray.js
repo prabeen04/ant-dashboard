@@ -211,10 +211,7 @@ class ReduxFormArray extends Component {
                     <div className="array-field">
                         <Field name={`${member}.field1`} component={this.renderSelect3} label="field1"
                             value={this.props.currency && 'euro'}
-                            onChange={(e, value) =>{ 
-                                this.props.setCurrency(value)
-                                change(`${member}.field3`, `${value + this.props.currency || 0}`)
-                                }} />
+                            onChange={(e, value) => this.props.setCurrency(value)} />
                     </div>
                     <div className="array-field">
                         <Field name={`${member}.field2`} component={this.renderInputNumber} label="Amount"
