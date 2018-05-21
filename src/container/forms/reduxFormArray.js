@@ -182,11 +182,8 @@ class ReduxFormArray extends Component {
     )
     renderMembers = ({change, fields, meta: { error, submitFailed } }) => (
         <div>
-            {console.log(fields)}
             {fields.map((member, index) => (
                 <div key={index} style={{ display: 'flex' }}>
-                    {/* <h4>Member #{index + 1}</h4> */}
-
                     <div className="array-field">
                         <Field
                             name={`${member}.date`}
@@ -221,7 +218,6 @@ class ReduxFormArray extends Component {
                         onChange={(e, value)=>{
                             console.log(`${member}.field2`)
                             change(`${member}.field3`,value + this.state.calculatedValue)
-                            // store.dispatch(change('formArray', `${member}.field3`, `${this.props.currency}`));
                         }} />
                     </div>
                     <div className="array-field">
@@ -258,7 +254,6 @@ class ReduxFormArray extends Component {
     //     return false;
     // }
     render() {
-        console.log(this.props.currency)
         const { handleSubmit, pristine, reset, submitting, change } = this.props;
         return (
             <div>
@@ -276,7 +271,7 @@ const required = value => (value ? undefined : 'Required')
 ReduxFormArray = reduxForm({
     form: 'formArray',
     validate,
-    // enableReinitialize: true
+    // enableReinitialize: true,
 })(ReduxFormArray)
 
 const mapStateToProps = (state) => {
