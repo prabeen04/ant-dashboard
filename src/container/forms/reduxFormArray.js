@@ -17,6 +17,7 @@ class ReduxFormArray extends Component {
         this.state = {
             calculatedValue: 65
         }
+        this.renderHiddenInput = this.renderHiddenInput.bind(this);
         this.renderInput = this.renderInput.bind(this);
         this.renderSelect = this.renderSelect.bind(this);
         this.renderSelect2 = this.renderSelect2.bind(this);
@@ -39,6 +40,20 @@ class ReduxFormArray extends Component {
     handleCurrencyCalculation = (value) => {
         console.log(value, this.props.currency)
     }
+    renderHiddenInput = ({ input, label, type, meta: { touched, error }, ...custom }) => (
+        <div>
+            <label>{label}</label>
+            <div>
+                <Input
+                    placeholder={label}
+                    {...input}
+                    {...custom}
+                />
+                {touched && error && <span>{error}</span>}
+            </div>
+
+        </div>
+    )
     renderInput = ({ input, label, type, meta: { touched, error }, ...custom }) => (
         <div>
             <label>{label}</label>
@@ -221,7 +236,9 @@ class ReduxFormArray extends Component {
                             }} />
                     </div>
                     <div className="array-field">
-                        <Field name={`${member}.hidden`} component={hidden} label="Amount"
+                        <Field name={`${member}.hidden`} component={()=>{
+                            return <input type="hidden" />
+                        }} label="Amount"
                             value={this.props.currency || 'prabeen'} />
                     </div>
                     <div className="array-field">
