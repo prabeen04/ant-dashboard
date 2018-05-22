@@ -38,13 +38,13 @@ class ReduxFormArray extends Component {
         this.props.setCurrency(currency);
     }
     handleCurrencyCalculation = (value) => {
-        if (typeof value == String) {
+        if (typeof value === 'string') {
             return 'ajhjahfsa'
         }
-       else if (typeof value == Number) {
+       else if (typeof value === 'number') {
             return 'sdjgskd'
         }
-
+        return ''
     }
     renderHiddenInput = ({ input, label, type, meta: { touched, error }, ...custom }) => (
         <input
