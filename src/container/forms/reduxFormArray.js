@@ -38,15 +38,21 @@ class ReduxFormArray extends Component {
         this.props.setCurrency(currency);
     }
     handleCurrencyCalculation = (value) => {
-        return'ajhjahfsa'
+        if (typeof value == String) {
+            return 'ajhjahfsa'
+        }
+       else if (typeof value == Number) {
+            return 'sdjgskd'
+        }
+
     }
     renderHiddenInput = ({ input, label, type, meta: { touched, error }, ...custom }) => (
-                <input
-                    type='hidden'
-                    {...input}
-                    {...custom}
-                    value='prabeen'
-                />
+        <input
+            type='hidden'
+            {...input}
+            {...custom}
+            value='prabeen'
+        />
     )
     renderInput = ({ input, label, type, meta: { touched, error }, ...custom }) => (
         <div>
@@ -220,24 +226,24 @@ class ReduxFormArray extends Component {
                     <div className="array-field">
                         <Field name={`${member}.field1`} component={this.renderSelect3} label="field1"
                             value={this.props.currency && 'euro'}
-                            onChange={(e, value) =>{
+                            onChange={(e, value) => {
                                 console.log(value)
-                                 this.props.setCurrency(value)
-                                 change(`${member}.field3`, this.handleCurrencyCalculation(value))
-                                 }} />
+                                this.props.setCurrency(value)
+                                change(`${member}.field3`, this.handleCurrencyCalculation(value))
+                            }} />
                     </div>
                     <div className="array-field">
                         <Field name={`${member}.field2`} component={this.renderInputNumber} label="Amount"
                             onChange={(e, value) => {
-                                change(`${member}.field3`, this.handleCurrencyCalculation('sdgsdg'))
+                                change(`${member}.field3`, this.handleCurrencyCalculation(value))
                             }} />
                     </div>
-                       
+
                     <div className="array-field">
                         <Field name={`${member}.field3`} component={this.renderInput} label="field3" />
                     </div>
                     <Field name={`${member}.hidden`} component={this.renderHiddenInput} type='hidden'
-                          />
+                    />
                     <div className="array-field">
                         <Field name={`${member}.field4`} component={this.renderInput} label="field4" />
                     </div>
