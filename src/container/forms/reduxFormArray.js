@@ -10,7 +10,7 @@ import { validate } from './validate';
 import { setCurrency } from '../../actions/formArrayAction';
 import './form.css';
 const Option = Select.Option;
-const selector = formValueSelector('myFormName')
+const selector = formValueSelector('formArray')
 console.log(selector)
 class ReduxFormArray extends Component {
     constructor(props) {
@@ -237,6 +237,7 @@ class ReduxFormArray extends Component {
                     <div className="array-field">
                         <Field name={`${member}.field2`} component={this.renderInputNumber} label="Amount"
                             onChange={(e, value) => {
+                            //    console.log(selector(state, `${member}.field2`))
                                 change(`${member}.field3`, this.handleCurrencyCalculation(value))
                             }} />
                     </div>
@@ -276,7 +277,9 @@ class ReduxFormArray extends Component {
     // shouldComponentUpdate(a){
     //     return false;
     // }
+   
     render() {
+        console.log(this.props.firstValue)
         const { handleSubmit, pristine, reset, submitting, change } = this.props;
         return (
             <div>
@@ -304,7 +307,8 @@ const mapStateToProps = (state) => {
                 field1: state.formArrayReducer.currency
             }]
         },
-        currency: state.formArrayReducer.currency
+        currency: state.formArrayReducer.currency,
+        // firstValue: selector(state, 'field4')
     }
 }
 
