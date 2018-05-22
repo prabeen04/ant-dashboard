@@ -11,7 +11,6 @@ import { setCurrency } from '../../actions/formArrayAction';
 import './form.css';
 const Option = Select.Option;
 const selector = formValueSelector('formArray')
-console.log(selector)
 class ReduxFormArray extends Component {
     constructor(props) {
         super(props)
@@ -38,7 +37,8 @@ class ReduxFormArray extends Component {
     handleCurrencyChange = (currency) => {
         this.props.setCurrency(currency);
     }
-    handleCurrencyCalculation = (value) => {
+    handleCurrencyCalculation = (value, member) => {
+        console.log(member)
         if (typeof value === 'string') {
             return 'ajhjahfsa'
         }
@@ -227,18 +227,22 @@ class ReduxFormArray extends Component {
                     <div className="array-field">
                         <Field name={`${member}.field1`} component={this.renderSelect3} label="field1"
                             value={this.props.currency && 'euro'}
+                            
                             onChange={(e, value) => {
-                                console.log(value)
-                               console.log( fields.get(member))
+                                // console.log(value)
+                            //    console.log( fields.getAll())
                                 this.props.setCurrency(value)
                                 change(`${member}.field3`, this.handleCurrencyCalculation(value))
-                            }} />
+                            }} 
+                            normalize = { (value, previousValue, allValues, previousAllValues) => {
+                                console.log(value)
+                            }}/>
                     </div>
                     <div className="array-field">
                         <Field name={`${member}.field2`} component={this.renderInputNumber} label="Amount"
                             onChange={(e, value) => {
-                            //    console.log(selector(state, `${member}.field2`))
-                                change(`${member}.field3`, this.handleCurrencyCalculation(value))
+                               //console.log(selector(this.props.state, `${member}.field2`))
+                                change(`${member}.field3`, this.handleCurrencyCalculation(value, member))
                             }} />
                     </div>
 
@@ -274,12 +278,7 @@ class ReduxFormArray extends Component {
             </div>
         </div>
     );
-    // shouldComponentUpdate(a){
-    //     return false;
-    // }
-   
     render() {
-        console.log(this.props.firstValue)
         const { handleSubmit, pristine, reset, submitting, change } = this.props;
         return (
             <div>
