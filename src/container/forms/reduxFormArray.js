@@ -4,13 +4,14 @@ import moment from 'moment';
 import { connect } from 'react-redux';
 import store from '../../store';
 import { bindActionCreators } from 'redux';
-import { Field, FieldArray, reduxForm, change } from 'redux-form';
+import { Field, FieldArray, reduxForm, change, formValueSelector } from 'redux-form';
 import { Input, InputNumber, Select, DatePicker, Upload, Button, Icon } from 'antd'
 import { validate } from './validate';
 import { setCurrency } from '../../actions/formArrayAction';
 import './form.css';
 const Option = Select.Option;
-
+const selector = formValueSelector('myFormName')
+console.log(selector)
 class ReduxFormArray extends Component {
     constructor(props) {
         super(props)
@@ -228,6 +229,7 @@ class ReduxFormArray extends Component {
                             value={this.props.currency && 'euro'}
                             onChange={(e, value) => {
                                 console.log(value)
+                               console.log( fields.get(member))
                                 this.props.setCurrency(value)
                                 change(`${member}.field3`, this.handleCurrencyCalculation(value))
                             }} />
