@@ -49,7 +49,8 @@ class ReduxFormArray extends Component {
     }
     renderHiddenInput = ({ input, label, type, meta: { touched, error }, ...custom }) => (
         <input
-            type='hidden'
+            type='text'
+            // style={{display: 'none'}}
             {...input}
             {...custom}
             value='prabeen'
@@ -249,7 +250,7 @@ class ReduxFormArray extends Component {
                     <div className="array-field">
                         <Field name={`${member}.field3`} component={this.renderInput} label="field3" />
                     </div>
-                    <Field name={`${member}.hidden`} component={this.renderHiddenInput} type='hidden'
+                    <Field name={`${member}.hidden`} component={this.renderHiddenInput} 
                     />
                     <div className="array-field">
                         <Field name={`${member}.field4`} component={this.renderInput} label="field4" />

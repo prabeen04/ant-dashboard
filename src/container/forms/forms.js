@@ -21,8 +21,8 @@ class Forms extends Component {
           <Divider />
           <FormArray />
           <Divider />
-          <NewFormArray/> 
-        <ExampleForm data={[1,2,3,4,5]}/>*/}
+          <NewFormArray/> */}
+        <ExampleForm/>
         <ReduxFormArray />
         </Card>
       </div>
