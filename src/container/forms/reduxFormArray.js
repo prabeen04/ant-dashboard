@@ -56,20 +56,27 @@ class ReduxFormArray extends Component {
             }
         }
         if(typeof value === 'string'){
+            console.log(fieldValues)
+            console.log('--------------')
+            console.log(fieldValues.field1)
             if (fieldValues.field1 === undefined) {
                 return 0
             }
             if (fieldValues.field1 === 'euro') {
-                return fieldValues.field2*2
+                console.log('euro selected')
+                return 'sd10'
             }
             if (fieldValues.field1 === 'dollar') {
-                return fieldValues.field2*3
+                console.log('dollar selected')
+                return '2sd0'
             }
             if (fieldValues.field1 === 'rupees') {
-                return fieldValues.field2*4
+                console.log('rupees selected')
+                return 'sd30'
             }
             if (fieldValues.field1 === 'pound') {
-                return fieldValues.field2*5
+                console.log('pound selected')
+                return '4ds0'
             }
             return 100
         }
@@ -261,8 +268,8 @@ class ReduxFormArray extends Component {
                             onChange={(e, value) => {
                                 // console.log(value)
                             //  console.log( fields.get(index).description)
+                            change(`${member}.field3`, this.handleCurrencyCalculation(value,  fields.get(index)))
                                 this.props.setCurrency(value)
-                                change(`${member}.field3`, this.handleCurrencyCalculation(value,  fields.get(index)))
                             }} 
                             />
                     </div>
