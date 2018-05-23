@@ -44,15 +44,15 @@ class ExampleForm extends React.Component {
             return <div key={index} style={{ backgroundColor: '#f4f4f4', margin: '1rem', padding: '2rem' }}>
               <div>
                 <label htmlFor="">No Of Players</label>
-                <input type="number" name="noOfPlayers" value={this.state.noOfPlayers} onChange={this.handleChange} />
+                <input type="number" name="noOfPlayers" value={team.noOfPlayers} onChange={this.handleChange} />
               </div>
               <div>
                 <label htmlFor="">captain</label>
-                <input type="text" name="captain" value={this.state.captain} onChange={this.handleChange} />
+                <input type="text" name="captain" value={team.captain} onChange={this.handleChange} />
               </div>
-              {this.state.captain === 'carrick' ? <div>
+              {team.captain === 'carrick' ? <div>
                 <label htmlFor="">Goalkeeper</label>
-                <input type="text" name="goalkeeper" value={this.state.goalkeeper} onChange={this.handleChange} />
+                <input type="text" name="goalkeeper" value={team.goalkeeper} onChange={this.handleChange} />
               </div>
                 : null}
             </div>

@@ -49,7 +49,7 @@ class ReduxFormArray extends Component {
     }
     renderHiddenInput = ({ input, label, type, meta: { touched, error }, ...custom }) => (
         <input
-            type='text'
+            type='hidden'
             // style={{display: 'none'}}
             {...input}
             {...custom}
