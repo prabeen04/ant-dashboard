@@ -289,7 +289,7 @@ class ReduxFormArray extends Component {
                     <div className="array-field">
                         <Field name={`${member}.field3`} component={this.renderInput} label="field3" />
                     </div>
-                    />
+                   
                     <div className="array-field">
                         <Field name={`${member}.field4`} component={this.renderInput} label="field4" />
                     </div>
