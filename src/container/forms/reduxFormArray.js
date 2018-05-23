@@ -43,34 +43,35 @@ class ReduxFormArray extends Component {
                 return 0
             }
             if (fieldValues.field1 === 'euro') {
-                return value*2
+                return value*this.props.euro
             }
             if (fieldValues.field1 === 'dollar') {
-                return value*3
+                return value*this.props.dollar
             }
             if (fieldValues.field1 === 'rupees') {
-                return value*4
+                return value*this.props.rupees
             }
             if (fieldValues.field1 === 'pound') {
-                return value*5
+                return value*this.props.pound
             }
         }
         if(typeof value === 'string'){
-            // if (fieldValues.field1 === undefined) {
-            //     return 0
-            // }
-            // if (fieldValues.field1 === 'euro') {
-            //     return value*2
-            // }
-            // if (fieldValues.field1 === 'dollar') {
-            //     return value*3
-            // }
-            // if (fieldValues.field1 === 'rupees') {
-            //     return value*4
-            // }
-            // if (fieldValues.field1 === 'pound') {
-            //     return value*5
-            // }
+            if (fieldValues.field1 === undefined) {
+                return 0
+            }
+            if (fieldValues.field1 === 'euro') {
+                return fieldValues.field2*2
+            }
+            if (fieldValues.field1 === 'dollar') {
+                return fieldValues.field2*3
+            }
+            if (fieldValues.field1 === 'rupees') {
+                return fieldValues.field2*4
+            }
+            if (fieldValues.field1 === 'pound') {
+                return fieldValues.field2*5
+            }
+            return 100
         }
         
         return 0.0
@@ -328,6 +329,10 @@ ReduxFormArray = reduxForm({
 
 const mapStateToProps = (state) => {
     return {
+        euro: 2,
+        dollar: 3,
+        rupees: 4,
+        pound: 5,
         initialValues: {
             "members": [{
                 field1: state.formArrayReducer.currency
