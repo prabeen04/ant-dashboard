@@ -38,21 +38,39 @@ class ReduxFormArray extends Component {
         this.props.setCurrency(currency);
     }
     handleCurrencyCalculation = (value, fieldValues) => {
-        console.log(fieldValues)
-        if (fieldValues.field1 === undefined) {
-            return 0
+        if(typeof value === 'number'){
+            if (fieldValues.field1 === undefined) {
+                return 0
+            }
+            if (fieldValues.field1 === 'euro') {
+                return value*2
+            }
+            if (fieldValues.field1 === 'dollar') {
+                return value*3
+            }
+            if (fieldValues.field1 === 'rupees') {
+                return value*4
+            }
+            if (fieldValues.field1 === 'pound') {
+                return value*5
+            }
         }
-        if (fieldValues.field1 === 'euro') {
-            return value*2
-        }
-        if (fieldValues.field1 === 'dollar') {
-            return value*3
-        }
-        if (fieldValues.field1 === 'rupees') {
-            return value*4
-        }
-        if (fieldValues.field1 === 'pound') {
-            return value*5
+        if(typeof value === 'string'){
+            // if (fieldValues.field1 === undefined) {
+            //     return 0
+            // }
+            // if (fieldValues.field1 === 'euro') {
+            //     return value*2
+            // }
+            // if (fieldValues.field1 === 'dollar') {
+            //     return value*3
+            // }
+            // if (fieldValues.field1 === 'rupees') {
+            //     return value*4
+            // }
+            // if (fieldValues.field1 === 'pound') {
+            //     return value*5
+            // }
         }
         
         return 0.0
