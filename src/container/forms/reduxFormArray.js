@@ -17,7 +17,6 @@ class ReduxFormArray extends Component {
         this.state = {
             calculatedValue: 65
         }
-        this.renderHiddenInput = this.renderHiddenInput.bind(this);
         this.renderInput = this.renderInput.bind(this);
         this.renderSelect = this.renderSelect.bind(this);
         this.renderSelect2 = this.renderSelect2.bind(this);
@@ -59,36 +58,27 @@ class ReduxFormArray extends Component {
             if (value === undefined) {
                 return 0
             }
+            if (fieldValues.field2 === undefined) {
+                return 0.10
+            }
             if (value === 'euro') {
-                console.log('euro selected')
-                return fieldValues.field2*2
+                return fieldValues.field2*this.props.euro
             }
             if (value === 'dollar') {
-                console.log('dollar selected')
-                return fieldValues.field2*3
+                return fieldValues.field2*this.props.dollar
             }
             if (value === 'rupees') {
-                console.log('rupees selected')
-                return fieldValues.field2*4
+                return fieldValues.field2*this.props.rupees
             }
             if (value === 'pound') {
-                console.log('pound selected')
-                return fieldValues.field2*5
+                return fieldValues.field2*this.props.pound
             }
-            return 100
+            return 0.0
         }
         
         return 0.0
     }
-    renderHiddenInput = ({ input, label, type, meta: { touched, error }, ...custom }) => (
-        <input
-            type='hidden'
-            // style={{display: 'none'}}
-            {...input}
-            {...custom}
-            value='prabeen'
-        />
-    )
+
     renderInput = ({ input, label, type, meta: { touched, error }, ...custom }) => (
         <div>
             <label>{label}</label>
@@ -281,18 +271,17 @@ class ReduxFormArray extends Component {
                     <div className="array-field">
                         <Field name={`${member}.field3`} component={this.renderInput} label="field3" />
                     </div>
-                    <Field name={`${member}.hidden`} component={this.renderHiddenInput} 
                     />
                     <div className="array-field">
                         <Field name={`${member}.field4`} component={this.renderInput} label="field4" />
                     </div>
-                    {/* <div>
+                    <div>
                         <Upload>
                             <Button>
                                 <Icon type="upload" /> Click to Upload
                             </Button>
                         </Upload>
-                    </div> */}
+                    </div>
                     <button
                         type="button"
                         onClick={() => fields.remove(index)} >
