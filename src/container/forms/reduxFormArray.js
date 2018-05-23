@@ -56,27 +56,24 @@ class ReduxFormArray extends Component {
             }
         }
         if(typeof value === 'string'){
-            console.log(fieldValues)
-            console.log('--------------')
-            console.log(fieldValues.field1)
-            if (fieldValues.field1 === undefined) {
+            if (value === undefined) {
                 return 0
             }
-            if (fieldValues.field1 === 'euro') {
+            if (value === 'euro') {
                 console.log('euro selected')
-                return 'sd10'
+                return fieldValues.field2*2
             }
-            if (fieldValues.field1 === 'dollar') {
+            if (value === 'dollar') {
                 console.log('dollar selected')
-                return '2sd0'
+                return fieldValues.field2*3
             }
-            if (fieldValues.field1 === 'rupees') {
+            if (value === 'rupees') {
                 console.log('rupees selected')
-                return 'sd30'
+                return fieldValues.field2*4
             }
-            if (fieldValues.field1 === 'pound') {
+            if (value === 'pound') {
                 console.log('pound selected')
-                return '4ds0'
+                return fieldValues.field2*5
             }
             return 100
         }
@@ -263,13 +260,13 @@ class ReduxFormArray extends Component {
                     </div>
                     <div className="array-field">
                         <Field name={`${member}.field1`} component={this.renderSelect3} label="field1"
-                            value={this.props.currency && 'euro'}
+                             value={this.props.currency && 'euro'}
                             
                             onChange={(e, value) => {
-                                // console.log(value)
+                                console.log(value)
                             //  console.log( fields.get(index).description)
-                            change(`${member}.field3`, this.handleCurrencyCalculation(value,  fields.get(index)))
-                                this.props.setCurrency(value)
+                                 this.props.setCurrency(value)
+                                change(`${member}.field3`, this.handleCurrencyCalculation(value,  fields.get(index)))
                             }} 
                             />
                     </div>
