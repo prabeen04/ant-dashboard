@@ -39,6 +39,9 @@ class ReduxFormArray extends Component {
     }
     handleCurrencyCalculation = (value, fieldValues) => {
         console.log(fieldValues)
+        if (fieldValues.field1 === undefined) {
+            return 0
+        }
         if (fieldValues.field1 === 'euro') {
             return value*2
         }
@@ -51,9 +54,7 @@ class ReduxFormArray extends Component {
         if (fieldValues.field1 === 'pound') {
             return value*5
         }
-        if (fieldValues.field1 === undefined) {
-            return 0
-        }
+        
         return 0.0
     }
     renderHiddenInput = ({ input, label, type, meta: { touched, error }, ...custom }) => (
@@ -242,11 +243,9 @@ class ReduxFormArray extends Component {
                                 // console.log(value)
                             //  console.log( fields.get(index).description)
                                 this.props.setCurrency(value)
-                                change(`${member}.field3`, this.handleCurrencyCalculation(value))
+                                change(`${member}.field3`, this.handleCurrencyCalculation(value,  fields.get(index)))
                             }} 
-                            normalize = { (value, previousValue, allValues, previousAllValues) => {
-                                console.log(value)
-                            }}/>
+                            />
                     </div>
                     <div className="array-field">
                         <Field name={`${member}.field2`} component={this.renderInputNumber} label="Amount"
