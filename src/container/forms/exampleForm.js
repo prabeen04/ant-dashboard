@@ -4,14 +4,20 @@ class ExampleForm extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      team: '',
-      noOfPlayers: '',
-      captain: '',
-      goalkeeper: ''
+      team: [{
+        noOfPlayers: '',
+        captain: '',
+        goalkeeper: ''
+      }]
     }
 
+    this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleAddButtonClick = this.handleAddButtonClick.bind(this);
+  }
+  handleSubmit = (e) =>{
+    e.preventDefault();
+    console.log(this.state)
   }
   handleChange = (e) => {
     console.log(e.target.name)
@@ -19,19 +25,19 @@ class ExampleForm extends React.Component {
       [e.target.name]: e.target.value
     })
   }
-  handleAddButtonClick = ()=>{
+  handleAddButtonClick = () => {
     console.log('add fields')
   }
   render() {
     return (
       <div>
         <h3>Premier League Form</h3>
-        <form action="">
+        <form onSubmit={this.handleSubmit}>
           <div style={{ backgroundColor: '#f4f4f4', margin: '1rem', padding: '2rem' }}>
-            <div>
+            {/* <div>
               <label htmlFor="">team</label>
               <input type="text" name="team" value={this.state.team} onChange={this.handleChange} />
-            </div>
+            </div> */}
             <div>
               <label htmlFor="">No Of Players</label>
               <input type="number" name="noOfPlayers" value={this.state.noOfPlayers} onChange={this.handleChange} />
@@ -46,8 +52,9 @@ class ExampleForm extends React.Component {
             </div>
               : null}
           </div>
+          <button>Submit</button>
         </form>
-          <button onClick={this.handleAddButtonClick}>ADD</button>
+        <button onClick={this.handleAddButtonClick}>ADD</button>
 
       </div>
     )
