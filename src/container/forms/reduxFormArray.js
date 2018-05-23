@@ -39,13 +39,22 @@ class ReduxFormArray extends Component {
     }
     handleCurrencyCalculation = (value, fieldValues) => {
         console.log(fieldValues)
-        if (typeof value === 'string') {
-            return 'ajhjahfsa'
+        if (fieldValues.field1 === 'euro') {
+            return value*2
         }
-       else if (typeof value === 'number') {
-            return 'sdjgskd'
+        if (fieldValues.field1 === 'dollar') {
+            return value*3
         }
-        return ''
+        if (fieldValues.field1 === 'rupees') {
+            return value*4
+        }
+        if (fieldValues.field1 === 'pound') {
+            return value*5
+        }
+        if (fieldValues.field1 === undefined) {
+            return 0
+        }
+        return 0.0
     }
     renderHiddenInput = ({ input, label, type, meta: { touched, error }, ...custom }) => (
         <input
