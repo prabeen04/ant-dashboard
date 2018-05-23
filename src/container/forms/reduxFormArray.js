@@ -5,11 +5,29 @@ import { connect } from 'react-redux';
 import store from '../../store';
 import { bindActionCreators } from 'redux';
 import { Field, FieldArray, reduxForm, change, formValueSelector } from 'redux-form';
-import { Input, InputNumber, Select, DatePicker, Upload, Button, Icon } from 'antd'
+import { Input, InputNumber, Select, DatePicker, Upload, Button, Icon, message } from 'antd'
 import { validate } from './validate';
 import { setCurrency } from '../../actions/formArrayAction';
 import './form.css';
 const Option = Select.Option;
+const uploadProps = {
+    name: 'file',
+    action: '//jsonplaceholder.typicode.com/posts/',
+    headers: {
+      authorization: 'authorization-text',
+    },
+    onChange(info) {
+      if (info.file.status !== 'uploading') {
+        console.log(info.file, info.fileList);
+      }
+      if (info.file.status === 'done') {
+        message.success(`${info.file.name} file uploaded successfully`);
+      } else if (info.file.status === 'error') {
+        message.error(`${info.file.name} file upload failed.`);
+      }
+    },
+  };
+  
 const selector = formValueSelector('formArray')
 class ReduxFormArray extends Component {
     constructor(props) {
@@ -276,7 +294,7 @@ class ReduxFormArray extends Component {
                         <Field name={`${member}.field4`} component={this.renderInput} label="field4" />
                     </div>
                     <div>
-                        <Upload>
+                        <Upload {...uploadProps}>
                             <Button>
                                 <Icon type="upload" /> Click to Upload
                             </Button>
