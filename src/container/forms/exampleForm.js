@@ -8,26 +8,7 @@ class ExampleForm extends React.Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleAddButtonClick = this.handleAddButtonClick.bind(this);
   }
-  handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(this.state)
-  }
-  handleChange = (e) => {
-    console.log(e.target.name)
-    this.setState({
-      [e.target.name]: e.target.value
-    })
-  }
-  handleAddButtonClick = () => {
-    console.log('add fields')
-    this.setState({
-      teams: this.state.teams.concat([{
-        noOfPlayers: '',
-        captain: '',
-        goalkeeper: ''
-      }]),
-    });
-  }
+  
   render() {
     return (
       <div>
