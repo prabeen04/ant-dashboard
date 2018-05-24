@@ -3,13 +3,6 @@ import React from 'react'
 class ExampleForm extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {
-      teams: [{
-        noOfPlayers: '',
-        captain: '',
-        goalkeeper: ''
-      }]
-    }
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
