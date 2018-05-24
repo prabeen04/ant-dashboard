@@ -317,10 +317,7 @@ class ReduxFormArray extends Component {
             </div>
         </div>
     );
-    componentWillReceiveProps(nextProps, other){
-        console.log(nextProps)
-        console.log(other)
-    }
+
     render() {
         const { handleSubmit, pristine, reset, submitting, change } = this.props;
         return (
