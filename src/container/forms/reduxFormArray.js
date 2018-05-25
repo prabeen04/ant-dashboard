@@ -14,20 +14,20 @@ const uploadProps = {
     name: 'file',
     action: '//jsonplaceholder.typicode.com/posts/',
     headers: {
-      authorization: 'authorization-text',
+        authorization: 'authorization-text',
     },
     onChange(info) {
-      if (info.file.status !== 'uploading') {
-        console.log(info.file, info.fileList);
-      }
-      if (info.file.status === 'done') {
-        message.success(`${info.file.name} file uploaded successfully`);
-      } else if (info.file.status === 'error') {
-        message.error(`${info.file.name} file upload failed.`);
-      }
+        if (info.file.status !== 'uploading') {
+            console.log(info.file, info.fileList);
+        }
+        if (info.file.status === 'done') {
+            message.success(`${info.file.name} file uploaded successfully`);
+        } else if (info.file.status === 'error') {
+            message.error(`${info.file.name} file upload failed.`);
+        }
     },
-  };
-  
+};
+
 const selector = formValueSelector('formArray')
 class ReduxFormArray extends Component {
     constructor(props) {
@@ -55,24 +55,24 @@ class ReduxFormArray extends Component {
         this.props.setCurrency(currency);
     }
     handleCurrencyCalculation = (value, fieldValues) => {
-        if(typeof value === 'number'){
+        if (typeof value === 'number') {
             if (fieldValues.field1 === undefined) {
                 return 0
             }
             if (fieldValues.field1 === 'euro') {
-                return value*this.props.euro
+                return value * this.props.euro
             }
             if (fieldValues.field1 === 'dollar') {
-                return value*this.props.dollar
+                return value * this.props.dollar
             }
             if (fieldValues.field1 === 'rupees') {
-                return value*this.props.rupees
+                return value * this.props.rupees
             }
             if (fieldValues.field1 === 'pound') {
-                return value*this.props.pound
+                return value * this.props.pound
             }
         }
-        if(typeof value === 'string'){
+        if (typeof value === 'string') {
             if (value === undefined) {
                 return 0
             }
@@ -80,20 +80,20 @@ class ReduxFormArray extends Component {
                 return 0.10
             }
             if (value === 'euro') {
-                return fieldValues.field2*this.props.euro
+                return fieldValues.field2 * this.props.euro
             }
             if (value === 'dollar') {
-                return fieldValues.field2*this.props.dollar
+                return fieldValues.field2 * this.props.dollar
             }
             if (value === 'rupees') {
-                return fieldValues.field2*this.props.rupees
+                return fieldValues.field2 * this.props.rupees
             }
             if (value === 'pound') {
-                return fieldValues.field2*this.props.pound
+                return fieldValues.field2 * this.props.pound
             }
             return 0.0
         }
-        
+
         return 0.0
     }
 
@@ -138,6 +138,9 @@ class ReduxFormArray extends Component {
                     placeholder={label}
                     {...input}
                     {...custom}
+                    value={input.value}
+                    onChange={(value) => input.onChange(value)}
+                    onBlur={() => input.onBlur(input.value)}
                 >
                     <Option value="cellphone">cellphone</Option>
                     <Option value="travell">travell</Option>
@@ -268,20 +271,20 @@ class ReduxFormArray extends Component {
                     </div>
                     <div className="array-field">
                         <Field name={`${member}.field1`} component={this.renderSelect3} label="field1"
-                             value={this.props.currency && 'euro'}
-                            
+                            value={this.props.currency && 'euro'}
+
                             onChange={(e, value) => {
                                 console.log(value)
-                            //  console.log( fields.get(index).description)
-                                 this.props.setCurrency(value)
-                                change(`${member}.field3`, this.handleCurrencyCalculation(value,  fields.get(index)))
-                            }} 
-                            />
+                                //  console.log( fields.get(index).description)
+                                this.props.setCurrency(value)
+                                change(`${member}.field3`, this.handleCurrencyCalculation(value, fields.get(index)))
+                            }}
+                        />
                     </div>
                     <div className="array-field">
                         <Field name={`${member}.field2`} component={this.renderInputNumber} label="Amount"
                             onChange={(e, value) => {
-                               //console.log(selector(this.props.state, `${member}.field2`))
+                                //console.log(selector(this.props.state, `${member}.field2`))
                                 change(`${member}.field3`, this.handleCurrencyCalculation(value, fields.get(index)))
                             }} />
                     </div>
@@ -289,17 +292,17 @@ class ReduxFormArray extends Component {
                     <div className="array-field">
                         <Field name={`${member}.field3`} component={this.renderInput} label="field3" />
                     </div>
-                   
+
                     <div className="array-field">
                         <Field name={`${member}.field4`} component={this.renderInput} label="field4" />
                     </div>
-                    <div>
+                    {/* <div>
                         <Upload {...uploadProps}>
                             <Button>
                                 <Icon type="upload" /> Click to Upload
                             </Button>
                         </Upload>
-                    </div>
+                    </div> */}
                     <button
                         type="button"
                         onClick={() => fields.remove(index)} >
@@ -351,7 +354,7 @@ const mapStateToProps = (state) => {
             }]
         },
         currency: state.formArrayReducer.currency,
-        // firstValue: selector(state, 'field4')
+        firstValue: selector(state, 'field4')
     }
 }
 
