@@ -5,9 +5,10 @@ import { connect } from 'react-redux';
 import store from '../../store';
 import { bindActionCreators } from 'redux';
 import { Field, FieldArray, reduxForm, change, formValueSelector } from 'redux-form';
-import { Input, InputNumber, Select, DatePicker, Upload, Button, Icon, message } from 'antd'
+import { Input, InputNumber, DatePicker, Upload, Button, Icon, message } from 'antd'
 import { validate } from './validate';
 import { setCurrency } from '../../actions/formArrayAction';
+import Select  from 'react-select';
 import './form.css';
 const Option = Select.Option;
 const uploadProps = {
