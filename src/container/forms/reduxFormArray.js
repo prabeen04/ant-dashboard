@@ -138,11 +138,11 @@ class ReduxFormArray extends Component {
                     placeholder={label}
                     {...input}
                     {...custom}
-                    value={input.value}
                     onChange={(value) => input.onChange(value)}
-                    onBlur={(e) =>{ 
+                    onBlur={() =>{ 
                         input.onBlur(input.value)
                     }}
+                    value={input.value}
                 >
                     <Option value="cellphone">cellphone</Option>
                     <Option value="travell">travell</Option>
@@ -259,7 +259,6 @@ class ReduxFormArray extends Component {
                             name={`${member}.select1`}
                             component={this.renderSelect}
                             label="select1"
-                            normalize={(v) => !!v}
                         />
                     </div>
                     <div className="array-field">
