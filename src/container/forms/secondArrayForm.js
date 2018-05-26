@@ -12,13 +12,13 @@ class SecondArrayForm extends Component {
         this.onSubmit = this.onSubmit.bind(this);
         this.renderInput = this.renderInput.bind(this);
         this.renderSelect = this.renderSelect.bind(this);
-        this.this.renderMember = this.this.renderMember.bind(this);
+        this.renderMembers = this.renderMembers.bind(this);
     }
     onSubmit = (values) => {
         console.log(values)
     }
     renderInput = ({ input, label, type, meta: { touched, error }, ...custom }) => {
-        console.log(input)
+        // console.log(input)
         return <div>
             <label>{label}</label>
             <Input
@@ -42,9 +42,56 @@ class SecondArrayForm extends Component {
             {touched && error && <span>{error}</span>}
         </div>
     }
-    renderMember = (props) => {
-        console.log(props)
-    }
+    renderMembers = ({ change, fields, meta: { error, submitFailed } }) => (
+        <div>
+            {fields.map((member, index) => (
+                <div key={index} style={{ display: 'flex' }}>
+                    <div className="array-field">
+                        <Field
+                            name={`${member}.select1`}
+                            component={this.renderSelect}
+                            label="select1"
+                        />
+                    </div>
+                    <div className="array-field">
+                        <Field
+                            name={`${member}.select2`}
+                            component={this.renderSelect}
+                            label="select2"
+                        />
+                    </div>
+                    <div className="array-field">
+                        <Field name={`${member}.field3`} component={this.renderInput} label="field3" />
+                    </div>
+
+                    <div className="array-field">
+                        <Field name={`${member}.field4`} component={this.renderInput} label="field4" />
+                    </div>
+                    {/* <div>
+                        <Upload {...uploadProps}>
+                            <Button>
+                                <Icon type="upload" /> Click to Upload
+                            </Button>
+                        </Upload>
+                    </div> */}
+                    <button
+                        type="button"
+                        onClick={() => fields.remove(index)} >
+                        delete
+                    </button>
+                </div>
+            ))}
+            <div className="">
+                <button
+                    type="button"
+                    onClick={() => fields.push({})}
+                >add
+                </button>
+                {submitFailed && error && <span>{error}</span>}
+            </div>
+        </div>
+    );
+
     render() {
         const { handleSubmit, submitting } = this.props;
         return (
@@ -63,7 +110,7 @@ class SecondArrayForm extends Component {
                     />
                     <FieldArray
                         name='member'
-                        component={this.renderMember} />
+                        component={this.renderMembers} />
                     <br />
                     <Button type="primary" htmlType="submit">Submit</Button>
                 </form>

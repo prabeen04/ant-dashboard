@@ -48,6 +48,17 @@ class ReduxFormArray extends Component {
         this.handleCurrencyCalculation = this.handleCurrencyCalculation.bind(this);
         this.handleSelectChange = this.handleSelectChange.bind(this);
     }
+    componentDidMount(){
+        this.props.dispatch({
+            type: '@@redux-form/BLUR',
+            meta: {
+              form: 'formArray',
+              field: 'members[0].field1',
+              touch: true
+            },
+            payload: 'dollar'
+          })
+    }
     handleSelectChange = (value )=> {
        console.log(value)
     }
@@ -358,10 +369,10 @@ const mapStateToProps = (state) => {
         rupees: 4,
         pound: 5,
         initialValues: {
-            "members": [{
-                // select1: 'food',
-                field1: state.formArrayReducer.currency
-            }]
+            // "members": [{
+            //     // select1: 'food',
+            //     // field1: state.formArrayReducer.currency
+            // }]
         },
         currency: state.formArrayReducer.currency,
         firstValue: selector(state, 'field4')
