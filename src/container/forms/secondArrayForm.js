@@ -26,7 +26,24 @@ class SecondArrayForm extends Component {
     }
     fillData = (member, value) => {
         console.log(member, value)
+ 
+        this.props.teams.forEach((team ) => {
+            if(team.value === 'manutd'){
+                this.props.change(`${member}field2`,team.team)
+                this.props.change(`${member}field3`, '464356')
+                this.props.change(`${member}field4`, 'sgsdgd')
+            }
+        })
+
+        // this.props.teams.map((team, index )=>{
+        //     if(team.value === 'manutd'){
+        //         this.props.change(`${member}field2`, 'alaja')
+        //         this.props.change(`${member}field3`, '464356')
+        //         this.props.change(`${member}field4`, 'sgsdgd')
+        //     }
+        // })
     }
+
     renderInput = ({ input, label, type, meta: { touched, error }, ...custom }) => {
         // console.log(input)
         return <div>
