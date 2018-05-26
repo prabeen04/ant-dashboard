@@ -1,11 +1,9 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import { connect } from 'react-redux'
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { Field, reduxForm, FieldArray } from 'redux-form';
 
-SecondArrayForm extends Component {
-  static propTypes = {
-    prop: PropTypes
-  }
+class SecondArrayForm extends Component {
 
   render() {
     return (
@@ -15,12 +13,19 @@ SecondArrayForm extends Component {
     )
   }
 }
+SecondArrayForm = reduxForm({
+    form: 'secondReduxForm',
+    // validate
+})(SecondArrayForm)
+
 const mapStateToProps = (state) => ({
   
 })
 
-const mapDispatchToProps = {
-  
+const mapDispatchToProps = dispatch => {
+  return bindActionCreators({
+
+  }, dispatch)
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(SecondArrayForm)

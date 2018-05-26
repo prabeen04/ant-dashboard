@@ -8,6 +8,8 @@ import ReduxFormArray from './reduxFormArray';
 import NewFormArray from './newFormArray';
 import ExampleForm from './exampleForm';
 import FieldArraysForm from './test';
+import SecondArrayForm from './secondArrayForm';
+
 class Forms extends Component {
   render() {
     return (
@@ -24,8 +26,9 @@ class Forms extends Component {
           <Divider />
           <NewFormArray/> 
         <ExampleForm/>
-        <FieldArraysForm/>*/}
-        <ReduxFormArray />
+        <FieldArraysForm/>
+        <ReduxFormArray />*/}
+        <SecondArrayForm />
         </Card>
       </div>
     )
