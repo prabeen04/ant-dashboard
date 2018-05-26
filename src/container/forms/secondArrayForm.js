@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Field, reduxForm, FieldArray } from 'redux-form';
-import { Select, Input, Button, Icon, } from 'antd';
+import { validateSecondArray } from './validation/secondArrayValidate';
+import { Select, Input, InputNumber, Button, Icon, } from 'antd';
 const Option = Select.Option;
 
 class SecondArrayForm extends Component {
@@ -15,6 +16,7 @@ class SecondArrayForm extends Component {
         this.renderMembers = this.renderMembers.bind(this);
         this.renderOptions = this.renderOptions.bind(this);
         this.fillData = this.fillData.bind(this);
+        this.renderInputNumber = this.renderInputNumber.bind(this);
     }
     onSubmit = (values) => {
         console.log(values)
@@ -44,7 +46,25 @@ class SecondArrayForm extends Component {
         //     }
         // })
     }
+    renderInputNumber = ({ input, label, type, meta: { touched, error }, ...custom }) => (
+        <div>
+            <label>{label}</label>
+            <div>
+                <InputNumber
+                    placeholder={label}
+                    {...input}
+                    {...custom}
+                    min={0}
+                    max={100}
+                // type="number"
+                // defaultValue={this.state.amount}
+                // onChange={this.handleCurrencyCalculation}
+                />
+                {touched && error && <span>{error}</span>}
+            </div>
 
+        </div>
+    )
     renderInput = ({ input, label, type, meta: { touched, error }, ...custom }) => {
         // console.log(input)
         return <div>
@@ -98,10 +118,14 @@ class SecondArrayForm extends Component {
                     </div>
 
                     <div className="array-field">
-                        <Field name={`${member}.field4`} component={this.renderInput} label="field4"disabled />
+                        <Field name={`${member}.field4`} component={this.renderInputNumber} label="field4"disabled />
                     </div>
                     <div className="array-field">
-                        <Field name={`${member}.field5`} component={this.renderInput} label="field5" />
+                        <Field name={`${member}.field5`} component={this.renderInputNumber} label="field5" 
+                        onChange={(e, value) => {
+                            console.log(e);
+                            console.log(value);
+                        }}/>
                     </div>
 
                     <div className="array-field">
@@ -162,7 +186,7 @@ class SecondArrayForm extends Component {
 }
 SecondArrayForm = reduxForm({
     form: 'secondReduxForm',
-    // validate
+    validate: validateSecondArray
 })(SecondArrayForm)
 
 const mapStateToProps = (state) => ({

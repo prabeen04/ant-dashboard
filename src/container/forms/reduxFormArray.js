@@ -6,7 +6,7 @@ import store from '../../store';
 import { bindActionCreators } from 'redux';
 import { Field, FieldArray, reduxForm, change, formValueSelector } from 'redux-form';
 import { Input, InputNumber, Select, DatePicker, Upload, Button, Icon, message } from 'antd'
-import { validate } from './validate';
+import { validate } from './validation/validate';
 import { setCurrency } from '../../actions/formArrayAction';
 import './form.css';
 const Option = Select.Option;
