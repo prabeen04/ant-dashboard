@@ -49,14 +49,16 @@ class ReduxFormArray extends Component {
         this.handleSelectChange = this.handleSelectChange.bind(this);
     }
     componentDidMount(){
+        console.log('ComponentDidMount')
         this.props.dispatch({
-            type: '@@redux-form/BLUR',
+            type: '@@redux-form/ARRAY_PUSH',
             meta: {
               form: 'formArray',
-              field: 'members[0].field1',
-              touch: true
+              field: 'members'
             },
-            payload: 'dollar'
+            payload: {
+              field1: 'euro'
+            }
           })
     }
     handleSelectChange = (value )=> {

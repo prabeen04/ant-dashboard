@@ -8,7 +8,7 @@ const Option = Select.Option;
 class SecondArrayForm extends Component {
     constructor(props) {
         super(props)
-
+        console.log(this.props)
         this.onSubmit = this.onSubmit.bind(this);
         this.renderInput = this.renderInput.bind(this);
         this.renderSelect = this.renderSelect.bind(this);
@@ -28,12 +28,13 @@ class SecondArrayForm extends Component {
             {touched && error && <span>{error}</span>}
         </div>
     }
-    renderSelect = ({ input, label, type, meta: { touched, error }, ...custom }) => {
+    renderSelect = ({ input, label, type,change,  meta: { touched, error }, ...custom }) => {
         return <div>
             <label>{label}</label>
             <Select
                 {...input}
                 {...custom}
+               
             >
                 <Option value="manutd">Manutd</Option>
                 <Option value="arsenal">Arsenal</Option>
@@ -51,22 +52,32 @@ class SecondArrayForm extends Component {
                             name={`${member}.select1`}
                             component={this.renderSelect}
                             label="select1"
+                            onChange = {(value) =>{
+                                change(`${member}.field2`, 'kjgk');
+                                change(`${member}.field3`, 'this.handleCurrencyCalculation(value, fields.get(index))');
+                                 change(`${member}.field4`, 'd');
+                            }}
                         />
                     </div>
                     <div className="array-field">
-                        <Field
-                            name={`${member}.select2`}
-                            component={this.renderSelect}
-                            label="select2"
-                        />
-                    </div>
-                    <div className="array-field">
-                        <Field name={`${member}.field3`} component={this.renderInput} label="field3" />
+                        <Field name={`${member}.field2`} component={this.renderInput} label="field2"disabled style={{backgroundColor: '#eee', color: '#444'}}/>
                     </div>
 
                     <div className="array-field">
-                        <Field name={`${member}.field4`} component={this.renderInput} label="field4" />
+                        <Field name={`${member}.field3`} component={this.renderInput} label="field3" disabled/>
                     </div>
+
+                    <div className="array-field">
+                        <Field name={`${member}.field4`} component={this.renderInput} label="field4"disabled />
+                    </div>
+                    <div className="array-field">
+                        <Field name={`${member}.field5`} component={this.renderInput} label="field5" />
+                    </div>
+
+                    <div className="array-field">
+                        <Field name={`${member}.field6`} component={this.renderInput} label="field6" />
+                    </div>
+
                     {/* <div>
                         <Upload {...uploadProps}>
                             <Button>
@@ -93,7 +104,7 @@ class SecondArrayForm extends Component {
     );
 
     render() {
-        const { handleSubmit, submitting } = this.props;
+        const { handleSubmit, submitting, change } = this.props;
         return (
             <div>
                 <h1>SecondArrayForm</h1>
@@ -110,7 +121,8 @@ class SecondArrayForm extends Component {
                     />
                     <FieldArray
                         name='member'
-                        component={this.renderMembers} />
+                        component={this.renderMembers} 
+                        change = {change}/>
                     <br />
                     <Button type="primary" htmlType="submit">Submit</Button>
                 </form>
