@@ -6,30 +6,51 @@ import { Select, Input, Button, Icon, } from 'antd';
 const Option = Select.Option;
 
 class SecondArrayForm extends Component {
-    constructor(props){
+    constructor(props) {
         super(props)
-      
+
+        this.onSubmit = this.onSubmit.bind(this);
         this.renderInput = this.renderInput.bind(this);
         this.renderSelect = this.renderSelect.bind(this);
     }
-
-    renderInput = ({input, label, type, meta: {touched, error}, ...custom}) => {
+    onSubmit = (values) => {
+        console.log(values)
+    }
+    renderInput = ({ input, label, type, meta: { touched, error }, ...custom }) => {
         return <div>
-            <label><label>
-            <Input 
-            {...input} 
-            {...custom} 
-            />   
-            {touched && error && <span>{error}</span>} 
+            <label>{label}</label>
+            <Input
+                {...input}
+                {...custom}
+            />
+            {touched && error && <span>{error}</span>}
         </div>
     }
-  render() {
-    return (
-      <div>
-        <h1>SecondArrayForm</h1>
-      </div>
-    )
-  }
+    renderSelect = ({ input, label, type, meta: { touched, error }, ...custom }) => {
+        return <div>
+            <label>{label}</label>
+            <Select
+             {...input}
+                {...custom}
+            >
+              <Option value="manutd">Manutd</Option> 
+              <Option value="arsenal">Arsenal</Option> 
+              <Option value="chelsea">Chelsea</Option> 
+            </Select>
+            {touched && error && <span>{error}</span>}
+        </div>
+    }
+    render() {
+        const { handleSubmit, submitting } = this.props;
+        return (
+            <div>
+                <h1>SecondArrayForm</h1>
+                <form onSubmit={handleSubmit(this.onSubmit)}>
+
+                </form>    
+            </div>
+        )
+    }
 }
 SecondArrayForm = reduxForm({
     form: 'secondReduxForm',
@@ -37,13 +58,13 @@ SecondArrayForm = reduxForm({
 })(SecondArrayForm)
 
 const mapStateToProps = (state) => ({
-  
+
 })
 
 const mapDispatchToProps = dispatch => {
-  return bindActionCreators({
+    return bindActionCreators({
 
-  }, dispatch)
+    }, dispatch)
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(SecondArrayForm)
