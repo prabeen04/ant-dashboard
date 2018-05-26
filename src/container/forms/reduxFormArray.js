@@ -48,8 +48,8 @@ class ReduxFormArray extends Component {
         this.handleCurrencyCalculation = this.handleCurrencyCalculation.bind(this);
         this.handleSelectChange = this.handleSelectChange.bind(this);
     }
-    handleSelectChange = value => {
-        console.log(value)
+    handleSelectChange = (value )=> {
+       console.log(value)
     }
     onSubmit = values => {
         console.log(JSON.stringify(values))
@@ -144,7 +144,7 @@ class ReduxFormArray extends Component {
                     {...custom}
                     // defaultValue={'food'}
                     value={input.value}
-                    onChange={this.handleSelectChange}
+                    onChange={(value)=>input.onChange(value)}
                     onBlur={() =>{ 
                         input.onBlur(input.value)
                     }}
