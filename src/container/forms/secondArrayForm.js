@@ -14,6 +14,7 @@ class SecondArrayForm extends Component {
         this.renderSelect = this.renderSelect.bind(this);
         this.renderMembers = this.renderMembers.bind(this);
         this.renderOptions = this.renderOptions.bind(this);
+        this.fillData = this.fillData.bind(this);
     }
     onSubmit = (values) => {
         console.log(values)
@@ -22,6 +23,9 @@ class SecondArrayForm extends Component {
         return this.props.teams.map(( team, index) => {
             return <Option key={index} value={team.team}>{team.team}</Option>
         })
+    }
+    fillData = (member, value) => {
+        console.log(member, value)
     }
     renderInput = ({ input, label, type, meta: { touched, error }, ...custom }) => {
         // console.log(input)
@@ -59,10 +63,11 @@ class SecondArrayForm extends Component {
                             name={`${member}.select1`}
                             component={this.renderSelect}
                             label="select1"
-                            onChange = {(value) =>{
-                                change(`${member}.field2`, 'kjgk');
-                                change(`${member}.field3`, 'this.handleCurrencyCalculation(value, fields.get(index))');
-                                 change(`${member}.field4`, 'd');
+                            onChange = {(e, value) =>{
+                                this.fillData(member, value)
+                                // change(`${member}.field2`, 'kjgk');
+                                // change(`${member}.field3`, 'this.handleCurrencyCalculation(value, fields.get(index))');
+                                //  change(`${member}.field4`, 'd');
                             }}
                         />
                     </div>
