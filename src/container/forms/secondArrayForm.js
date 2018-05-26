@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { Field, reduxForm, FieldArray } from 'redux-form';
+import { Field, reduxForm, FieldArray, formValueSelector } from 'redux-form';
 import { validateSecondArray } from './validation/secondArrayValidate';
 import { Select, Input, InputNumber, Button, Icon, } from 'antd';
 const Option = Select.Option;
@@ -26,12 +26,9 @@ class SecondArrayForm extends Component {
             return <Option key={index} value={team.team}>{team.team}</Option>
         })
     }
-    fillData = (member, value) => {
-        console.log(member, value)
- 
+    fillData = (member, value) => { 
         this.props.teams.forEach((team, index ) => {
             if(team.team === value){
-                console.log('team matched', index)
                 this.props.change(`${member}field2`,team.team)
                 this.props.change(`${member}field3`, team.captain)
                 this.props.change(`${member}field4`, team.trophy)
@@ -123,8 +120,8 @@ class SecondArrayForm extends Component {
                     <div className="array-field">
                         <Field name={`${member}.field5`} component={this.renderInputNumber} label="field5" 
                         onChange={(e, value) => {
-                            console.log(e);
-                            console.log(value);
+                            // console.log(e);
+                            console.log(typeof value);
                         }}/>
                     </div>
 
@@ -156,7 +153,10 @@ class SecondArrayForm extends Component {
             </div>
         </div>
     );
-
+    componentWillReceiveProps(nextProps, x){
+        console.log(nextProps)
+        console.log(x)
+    }
     render() {
         const { handleSubmit, submitting, change } = this.props;
         return (
@@ -184,6 +184,8 @@ class SecondArrayForm extends Component {
         )
     }
 }
+const selector = formValueSelector('secondReduxForm');
+
 SecondArrayForm = reduxForm({
     form: 'secondReduxForm',
     validate: validateSecondArray
