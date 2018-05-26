@@ -27,11 +27,12 @@ class SecondArrayForm extends Component {
     fillData = (member, value) => {
         console.log(member, value)
  
-        this.props.teams.forEach((team ) => {
-            if(team.value === 'manutd'){
+        this.props.teams.forEach((team, index ) => {
+            if(team.team === value){
+                console.log('team matched', index)
                 this.props.change(`${member}field2`,team.team)
-                this.props.change(`${member}field3`, '464356')
-                this.props.change(`${member}field4`, 'sgsdgd')
+                this.props.change(`${member}field3`, team.captain)
+                this.props.change(`${member}field4`, team.trophy)
             }
         })
 
