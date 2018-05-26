@@ -12,11 +12,13 @@ class SecondArrayForm extends Component {
         this.onSubmit = this.onSubmit.bind(this);
         this.renderInput = this.renderInput.bind(this);
         this.renderSelect = this.renderSelect.bind(this);
+        this.this.renderMember = this.this.renderMember.bind(this);
     }
     onSubmit = (values) => {
         console.log(values)
     }
     renderInput = ({ input, label, type, meta: { touched, error }, ...custom }) => {
+        console.log(input)
         return <div>
             <label>{label}</label>
             <Input
@@ -30,15 +32,18 @@ class SecondArrayForm extends Component {
         return <div>
             <label>{label}</label>
             <Select
-             {...input}
+                {...input}
                 {...custom}
             >
-              <Option value="manutd">Manutd</Option> 
-              <Option value="arsenal">Arsenal</Option> 
-              <Option value="chelsea">Chelsea</Option> 
+                <Option value="manutd">Manutd</Option>
+                <Option value="arsenal">Arsenal</Option>
+                <Option value="chelsea">Chelsea</Option>
             </Select>
             {touched && error && <span>{error}</span>}
         </div>
+    }
+    renderMember = (props) => {
+        console.log(props)
     }
     render() {
         const { handleSubmit, submitting } = this.props;
@@ -46,8 +51,22 @@ class SecondArrayForm extends Component {
             <div>
                 <h1>SecondArrayForm</h1>
                 <form onSubmit={handleSubmit(this.onSubmit)}>
-
-                </form>    
+                    <Field
+                        name='team'
+                        label='Team'
+                        component={this.renderInput}
+                    />
+                    <Field
+                        name='league'
+                        label='League'
+                        component={this.renderSelect}
+                    />
+                    <FieldArray
+                        name='member'
+                        component={this.renderMember} />
+                    <br />
+                    <Button type="primary" htmlType="submit">Submit</Button>
+                </form>
             </div>
         )
     }
