@@ -138,11 +138,13 @@ class ReduxFormArray extends Component {
                     placeholder={label}
                     {...input}
                     {...custom}
-                    onChange={(value) => input.onChange(value)}
-                    onBlur={() =>{ 
-                        input.onBlur(input.value)
-                    }}
+                    // defaultValue={'food'}
                     value={input.value}
+                    onChange={(value) => {input.onChange(value);()=>input.onBlur(input.value)}}
+                    // onBlur={() =>{ 
+                    //     input.onBlur(input.value)
+                    // }}
+                    //  onSelect = {(value) => input.onChange(value)}
                 >
                     <Option value="cellphone">cellphone</Option>
                     <Option value="travell">travell</Option>
@@ -341,7 +343,8 @@ const required = value => (value ? undefined : 'Required')
 ReduxFormArray = reduxForm({
     form: 'formArray',
     validate,
-    // enableReinitialize: true,
+    // touchOnChange: truece
+    //enableReinitialize: true,
 })(ReduxFormArray)
 
 const mapStateToProps = (state) => {
@@ -352,6 +355,7 @@ const mapStateToProps = (state) => {
         pound: 5,
         initialValues: {
             "members": [{
+                // select1: 'food',
                 field1: state.formArrayReducer.currency
             }]
         },
