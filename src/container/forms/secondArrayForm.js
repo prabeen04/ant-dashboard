@@ -13,9 +13,15 @@ class SecondArrayForm extends Component {
         this.renderInput = this.renderInput.bind(this);
         this.renderSelect = this.renderSelect.bind(this);
         this.renderMembers = this.renderMembers.bind(this);
+        this.renderOptions = this.renderOptions.bind(this);
     }
     onSubmit = (values) => {
         console.log(values)
+    }
+    renderOptions = () => {
+        return this.props.teams.map(( team, index) => {
+            return <Option key={index} value={team.team}>{team.team}</Option>
+        })
     }
     renderInput = ({ input, label, type, meta: { touched, error }, ...custom }) => {
         // console.log(input)
@@ -36,9 +42,10 @@ class SecondArrayForm extends Component {
                 {...custom}
                
             >
-                <Option value="manutd">Manutd</Option>
+            {this.renderOptions()}
+                {/* <Option value="manutd">Manutd</Option>
                 <Option value="arsenal">Arsenal</Option>
-                <Option value="chelsea">Chelsea</Option>
+                <Option value="chelsea">Chelsea</Option> */}
             </Select>
             {touched && error && <span>{error}</span>}
         </div>
@@ -136,7 +143,7 @@ SecondArrayForm = reduxForm({
 })(SecondArrayForm)
 
 const mapStateToProps = (state) => ({
-
+    teams: state.secondArrayReducer
 })
 
 const mapDispatchToProps = dispatch => {
