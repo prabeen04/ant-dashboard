@@ -20,9 +20,9 @@ const initialState = {
 export const secondArrayReducer = (state = initialState, action) => {
     switch (action.types) {
         case GET_PRODUCTS:
-            return [...state]
+            return state
         default:
-            return [...state]
+            return state
     }
 
     return state;

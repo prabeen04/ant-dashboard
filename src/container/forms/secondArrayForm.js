@@ -154,11 +154,9 @@ class SecondArrayForm extends Component {
         </div>
     );
     componentWillReceiveProps(nextProps, x){
-        console.log(nextProps)
-        console.log(x)
+        console.log(nextProps.testValue)
     }
     render() {
-        console.log(this.props.testValue)
         const { handleSubmit, submitting, change } = this.props;
         return (
             <div>
@@ -174,11 +172,18 @@ class SecondArrayForm extends Component {
                         label='League'
                         component={this.renderSelect}
                     />
+                    <Field name='calcVal'
+                        label='Calculated Value'
+                        type=''
+                        component='input'
+                        value={this.props.calculatedValue}
+                        />
                     <FieldArray
                         name='member'
                         component={this.renderMembers} 
                         change = {change}/>
                     <br />
+                    
                     <Button type="primary" htmlType="submit">Submit</Button>
                 </form>
             </div>
