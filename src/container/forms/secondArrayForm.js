@@ -34,14 +34,6 @@ class SecondArrayForm extends Component {
                 this.props.change(`${member}field4`, team.trophy)
             }
         })
-
-        // this.props.teams.map((team, index )=>{
-        //     if(team.value === 'manutd'){
-        //         this.props.change(`${member}field2`, 'alaja')
-        //         this.props.change(`${member}field3`, '464356')
-        //         this.props.change(`${member}field4`, 'sgsdgd')
-        //     }
-        // })
     }
     renderInputNumber = ({ input, label, type, meta: { touched, error }, ...custom }) => (
         <div>
@@ -53,9 +45,6 @@ class SecondArrayForm extends Component {
                     {...custom}
                     min={0}
                     max={100}
-                // type="number"
-                // defaultValue={this.state.amount}
-                // onChange={this.handleCurrencyCalculation}
                 />
                 {touched && error && <span>{error}</span>}
             </div>
@@ -78,13 +67,9 @@ class SecondArrayForm extends Component {
             <label>{label}</label>
             <Select
                 {...input}
-                {...custom}
-               
+                {...custom}               
             >
             {this.renderOptions()}
-                {/* <Option value="manutd">Manutd</Option>
-                <Option value="arsenal">Arsenal</Option>
-                <Option value="chelsea">Chelsea</Option> */}
             </Select>
             {touched && error && <span>{error}</span>}
         </div>
@@ -100,9 +85,6 @@ class SecondArrayForm extends Component {
                             label="select1"
                             onChange = {(e, value) =>{
                                 this.fillData(member, value)
-                                // change(`${member}.field2`, 'kjgk');
-                                // change(`${member}.field3`, 'this.handleCurrencyCalculation(value, fields.get(index))');
-                                //  change(`${member}.field4`, 'd');
                             }}
                         />
                     </div>
@@ -120,7 +102,6 @@ class SecondArrayForm extends Component {
                     <div className="array-field">
                         <Field name={`${member}.field5`} component={this.renderInputNumber} label="field5" 
                         onChange={(e, value) => {
-                            // console.log(e);
                             console.log(typeof value);
                         }}/>
                     </div>
@@ -128,14 +109,6 @@ class SecondArrayForm extends Component {
                     <div className="array-field">
                         <Field name={`${member}.field6`} component={this.renderInput} label="field6" />
                     </div>
-
-                    {/* <div>
-                        <Upload {...uploadProps}>
-                            <Button>
-                                <Icon type="upload" /> Click to Upload
-                            </Button>
-                        </Upload>
-                    </div> */}
                     <button
                         type="button"
                         onClick={() => fields.remove(index)} >
