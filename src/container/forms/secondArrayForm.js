@@ -21,7 +21,7 @@ class SecondArrayForm extends Component {
         console.log(values)
     }
     renderOptions = () => {
-        console.log(this.props.teams)
+        console.log(this.props.calculatedValue)
         return this.props.teams.map(( team, index) => {
             return <Option key={index} value={team.team}>{team.team}</Option>
         })
