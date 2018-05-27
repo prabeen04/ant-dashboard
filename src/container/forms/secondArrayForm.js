@@ -137,20 +137,9 @@ class SecondArrayForm extends Component {
             <div>
                 <h1>SecondArrayForm</h1>
                 <form onSubmit={handleSubmit(this.onSubmit)}>
-                    <Field
-                        name='team'
-                        label='Team'
-                        component={this.renderInput}
-                    />
-                    <Field
-                        name='league'
-                        label='League'
-                        component={this.renderSelect}
-                    />
                     <Field name='calcVal'
                         label='Calculated Value'
-                        type='number'
-                        component='input'
+                        component={this.renderInputNumber}
                         value={this.props.calculatedValue}
                         />
                     <FieldArray
