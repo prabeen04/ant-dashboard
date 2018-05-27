@@ -21,7 +21,6 @@ class SecondArrayForm extends Component {
         console.log(values)
     }
     renderOptions = () => {
-        console.log(this.props.calculatedValue)
         return this.props.teams.map(( team, index) => {
             return <Option key={index} value={team.team}>{team.team}</Option>
         })
@@ -62,7 +61,7 @@ class SecondArrayForm extends Component {
             {touched && error && <span>{error}</span>}
         </div>
     }
-    renderSelect = ({ input, label, type,change,  meta: { touched, error }, ...custom }) => {
+    renderSelect = ({ input, label, type, meta: { touched, error }, ...custom }) => {
         return <div>
             <label>{label}</label>
             <Select
@@ -102,8 +101,11 @@ class SecondArrayForm extends Component {
                     <div className="array-field">
                         <Field name={`${member}.field5`} component={this.renderInputNumber} label="field5" 
                         onChange={(e, value) => {
-                            console.log(typeof value);
-                        }}/>
+                            console.log(typeof value)
+                        }}
+                        normalize={(value) => +value} 
+                        validate={(value) => isNaN(+value) ? "Please enter a number" : undefined}
+                        />
                     </div>
 
                     <div className="array-field">
@@ -127,10 +129,10 @@ class SecondArrayForm extends Component {
         </div>
     );
     componentWillReceiveProps(nextProps, x){
-        console.log(nextProps.testValue)
+        // console.log(nextProps.testValue)
     }
     render() {
-        const { handleSubmit, submitting, change } = this.props;
+        const { handleSubmit, submitting } = this.props;
         return (
             <div>
                 <h1>SecondArrayForm</h1>
@@ -145,16 +147,16 @@ class SecondArrayForm extends Component {
                         label='League'
                         component={this.renderSelect}
                     />
-                    {/* <Field name='calcVal'
+                    <Field name='calcVal'
                         label='Calculated Value'
-                        type=''
+                        type='number'
                         component='input'
                         value={this.props.calculatedValue}
-                        /> */}
+                        />
                     <FieldArray
                         name='member'
                         component={this.renderMembers} 
-                        change = {change}/>
+                    />
                     <br />
                     
                     <Button type="primary" htmlType="submit">Submit</Button>
@@ -172,7 +174,7 @@ SecondArrayForm = reduxForm({
 
 const mapStateToProps = (state) => ({
     teams: state.secondArrayReducer.teams,
-    testValue: selector(state, 'member'),
+    // testValue: selector(state, 'member'),
     calculatedValue: state.secondArrayReducer.calculatedValue
 })
 
