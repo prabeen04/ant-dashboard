@@ -49,7 +49,6 @@ class ReduxFormArray extends Component {
         this.handleSelectChange = this.handleSelectChange.bind(this);
     }
     componentDidMount(){
-        console.log('ComponentDidMount')
         this.props.dispatch({
             type: '@@redux-form/ARRAY_PUSH',
             meta: {

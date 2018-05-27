@@ -9,7 +9,6 @@ const Option = Select.Option;
 class SecondArrayForm extends Component {
     constructor(props) {
         super(props)
-        console.log(this.props)
         this.onSubmit = this.onSubmit.bind(this);
         this.renderInput = this.renderInput.bind(this);
         this.renderSelect = this.renderSelect.bind(this);
@@ -22,6 +21,7 @@ class SecondArrayForm extends Component {
         console.log(values)
     }
     renderOptions = () => {
+        console.log(this.props.teams)
         return this.props.teams.map(( team, index) => {
             return <Option key={index} value={team.team}>{team.team}</Option>
         })
@@ -172,12 +172,12 @@ class SecondArrayForm extends Component {
                         label='League'
                         component={this.renderSelect}
                     />
-                    <Field name='calcVal'
+                    {/* <Field name='calcVal'
                         label='Calculated Value'
                         type=''
                         component='input'
                         value={this.props.calculatedValue}
-                        />
+                        /> */}
                     <FieldArray
                         name='member'
                         component={this.renderMembers} 
