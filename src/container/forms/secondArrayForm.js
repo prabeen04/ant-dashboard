@@ -158,6 +158,7 @@ class SecondArrayForm extends Component {
         console.log(x)
     }
     render() {
+        console.log(this.props.testValue)
         const { handleSubmit, submitting, change } = this.props;
         return (
             <div>
@@ -192,7 +193,9 @@ SecondArrayForm = reduxForm({
 })(SecondArrayForm)
 
 const mapStateToProps = (state) => ({
-    teams: state.secondArrayReducer
+    teams: state.secondArrayReducer.teams,
+    testValue: selector(state, 'member'),
+    calculatedValue: state.secondArrayReducer.calculatedValue
 })
 
 const mapDispatchToProps = dispatch => {
