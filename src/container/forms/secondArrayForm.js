@@ -39,10 +39,11 @@ class SecondArrayForm extends Component {
         <div>
             <label>{label}</label>
             <div>
-                <InputNumber
+                <input
                     placeholder={label}
                     {...input}
                     {...custom}
+                    type="number"
                     min={0}
                     value={this.props.calculatedValue}
                 />
@@ -55,7 +56,7 @@ class SecondArrayForm extends Component {
         <div>
             <label>{label}</label>
             <div>
-                <InputNumber
+                <input
                     placeholder={label}
                     {...input}
                     {...custom}
