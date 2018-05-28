@@ -104,7 +104,7 @@ class SecondArrayForm extends Component {
                             console.log(typeof value)
                         }}
                         normalize={(value) => +value} 
-                        validate={(value) => isNaN(+value) ? "Please enter a number" : undefined}
+                        // validate={(value) => isNaN(+value) ? "Please enter a number" : undefined}
                         />
                     </div>
 
@@ -135,7 +135,6 @@ class SecondArrayForm extends Component {
         const { handleSubmit, submitting } = this.props;
         return (
             <div>
-                <h1>SecondArrayForm</h1>
                 <form onSubmit={handleSubmit(this.onSubmit)}>
                     <Field
                         name='team'
