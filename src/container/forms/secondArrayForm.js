@@ -7,7 +7,6 @@ import { Select, Input, InputNumber, Button, Icon, } from 'antd';
 const Option = Select.Option;
 
 const selector = formValueSelector('secondReduxForm');
-
 class SecondArrayForm extends Component {
     constructor(props) {
         super(props)
@@ -150,7 +149,12 @@ class SecondArrayForm extends Component {
         </div>
     );
     componentWillReceiveProps(nextProps, x){
-        // console.log(nextProps.testValue)
+        if(nextProps.testValue){
+           nextProps.testValue.forEach(val => {
+             console.log(val.field5 * val.field4)
+         }) 
+        }
+         
     }
     render() {
         const { handleSubmit, submitting } = this.props;
@@ -192,7 +196,7 @@ SecondArrayForm = reduxForm({
 
 const mapStateToProps = (state) => ({
     teams: state.secondArrayReducer.teams,
-    // testValue: selector(state, 'member'),
+     testValue: selector(state, 'member'),
     calculatedValue: state.secondArrayReducer.calculatedValue
 })
 
