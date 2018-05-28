@@ -137,7 +137,7 @@ class ReduxFormArray extends Component {
                     {...custom}
                     min={0}
                     max={100}
-                // type="number"
+                    type="number"
                 // defaultValue={this.state.amount}
                 // onChange={this.handleCurrencyCalculation}
                 />

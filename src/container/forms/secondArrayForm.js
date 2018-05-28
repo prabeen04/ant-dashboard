@@ -44,6 +44,7 @@ class SecondArrayForm extends Component {
                     {...custom}
                     min={0}
                     max={100}
+                    type="number"
                 />
                 {touched && error && <span>{error}</span>}
             </div>
