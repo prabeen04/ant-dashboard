@@ -46,6 +46,7 @@ class SecondArrayForm extends Component {
                     {...custom}
                     type="number"
                     min={0}
+                    style={{border: '1px solid #ccc', width: 200,height: 32, borderRadius: 4 }}
                     value={this.props.calculatedValue}
                 />
                 {touched && error && <span>{error}</span>}
@@ -64,6 +65,7 @@ class SecondArrayForm extends Component {
                     min={0}
                     max={100}
                     type="number"
+                    style={{border: '1px solid #ccc', width: 200,height: 32, borderRadius: 4 }}
                 />
                 {touched && error && <span>{error}</span>}
             </div>
@@ -87,7 +89,7 @@ class SecondArrayForm extends Component {
             <select
                 {...input}
                 {...custom}
-                style={{border: '1px solid #ccc', width: 200,height: 30, borderRadius: 4 }}
+                style={{border: '1px solid #ccc', width: 200,height: 32, borderRadius: 4 }}
             >
                 {this.renderOptions()}
             </select>
