@@ -4,6 +4,7 @@ import { bindActionCreators } from 'redux';
 import { Field, reduxForm, FieldArray, formValueSelector } from 'redux-form';
 import { validateSecondArray } from './validation/secondArrayValidate';
 import { Select, Input, InputNumber, Button, Icon, } from 'antd';
+import './form.css';
 const Option = Select.Option;
 
 class SecondArrayForm extends Component {
@@ -86,6 +87,7 @@ class SecondArrayForm extends Component {
             <select
                 {...input}
                 {...custom}
+                style={{border: '1px solid #ccc', width: 200,height: 30, borderRadius: 4 }}
             >
                 {this.renderOptions()}
             </select>
