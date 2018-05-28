@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { Field, reduxForm, FieldArray, formValueSelector } from 'redux-form';
+import { Field, reduxForm, FieldArray, formValueSelector, getFormValues } from 'redux-form';
 import { validateSecondArray } from './validation/secondArrayValidate';
 import { Select, Input, InputNumber, Button, Icon, } from 'antd';
 const Option = Select.Option;
@@ -149,11 +149,11 @@ class SecondArrayForm extends Component {
     );
     componentWillReceiveProps(nextProps, x) {
         console.log(nextProps.testValue)
-        if (nextProps.testValue) {
-            nextProps.testValue.forEach(val => {
-                console.log(val.field5 * val.field4)
-            })
-        }
+        // if (nextProps.testValue) {
+        //     nextProps.testValue.forEach(val => {
+        //         console.log(val.field5 * val.field4)
+        //     })
+        // }
 
     }
     render() {
@@ -193,11 +193,10 @@ SecondArrayForm = reduxForm({
     form: 'secondReduxForm',
     validate: validateSecondArray
 })(SecondArrayForm)
-const selector = formValueSelector('secondReduxForm');
+// const selector = formValueSelector('secondReduxForm');
 
-const mapStateToProps = (state, ownProps) => {
-    const testValue = selector(state, 'member')
-
+const mapStateToProps = (state, props) => {
+     const testValue = getFormValues(state.form.secondReduxForm)
     return {
         teams: state.secondArrayReducer.teams,
         calculatedValue: state.secondArrayReducer.calculatedValue,
