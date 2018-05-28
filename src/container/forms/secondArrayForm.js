@@ -6,6 +6,8 @@ import { validateSecondArray } from './validation/secondArrayValidate';
 import { Select, Input, InputNumber, Button, Icon, } from 'antd';
 const Option = Select.Option;
 
+const selector = formValueSelector('secondReduxForm');
+
 class SecondArrayForm extends Component {
     constructor(props) {
         super(props)
@@ -182,7 +184,6 @@ class SecondArrayForm extends Component {
         )
     }
 }
-const selector = formValueSelector('secondReduxForm');
 
 SecondArrayForm = reduxForm({
     form: 'secondReduxForm',
