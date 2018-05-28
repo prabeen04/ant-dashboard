@@ -16,6 +16,7 @@ class SecondArrayForm extends Component {
         this.renderOptions = this.renderOptions.bind(this);
         this.fillData = this.fillData.bind(this);
         this.renderInputNumber = this.renderInputNumber.bind(this);
+        this.renderCalculatedValue = this.renderCalculatedValue.bind(this);
     }
     onSubmit = (values) => {
         console.log(values)
@@ -34,6 +35,23 @@ class SecondArrayForm extends Component {
             }
         })
     }
+    renderCalculatedValue = ({ input, label, type, meta: { touched, error }, ...custom }) => (
+        <div>
+            <label>{label}</label>
+            <div>
+                <InputNumber
+                    placeholder={label}
+                    {...input}
+                    {...custom}
+                    min={0}
+                    type="number"
+                    value={this.props.calculatedValue}
+                />
+                {touched && error && <span>{error}</span>}
+            </div>
+
+        </div>
+    )
     renderInputNumber = ({ input, label, type, meta: { touched, error }, ...custom }) => (
         <div>
             <label>{label}</label>
@@ -137,7 +155,7 @@ class SecondArrayForm extends Component {
         return (
             <div>
                 <form onSubmit={handleSubmit(this.onSubmit)}>
-                    <Field
+                    {/* <Field
                         name='team'
                         label='Team'
                         component={this.renderInput}
@@ -146,12 +164,11 @@ class SecondArrayForm extends Component {
                         name='league'
                         label='League'
                         component={this.renderSelect}
-                    />
+                    /> */}
                     <Field name='calcVal'
                         label='Calculated Value'
                         type='number'
-                        component='input'
-                        value={this.props.calculatedValue}
+                        component={this.renderCalculatedValue}
                         />
                     <FieldArray
                         name='member'

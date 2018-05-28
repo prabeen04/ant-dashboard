@@ -23,11 +23,6 @@ export const validateSecondArray = (values, x) => {
             memberErrors.field4 = 'Required';
             memberArrayErrors[memberIndex] = memberErrors;
           }
-        //   if(typeof member.field5 !== 'number'){
-        //     console.log('typeof member.field5')
-        //     memberErrors.field5 = `you must enter a number`;
-        //     memberArrayErrors[memberIndex] = memberErrors;
-        //   }
           if (!member || !member.field5) {
             memberErrors.field5 = 'Required';
             memberArrayErrors[memberIndex] = memberErrors;
