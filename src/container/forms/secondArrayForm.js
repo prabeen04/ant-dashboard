@@ -23,14 +23,14 @@ class SecondArrayForm extends Component {
         console.log(values)
     }
     renderOptions = () => {
-        return this.props.teams.map(( team, index) => {
+        return this.props.teams.map((team, index) => {
             return <Option key={index} value={team.team}>{team.team}</Option>
         })
     }
-    fillData = (member, value) => { 
-        this.props.teams.forEach((team, index ) => {
-            if(team.team === value){
-                this.props.change(`${member}field2`,team.team)
+    fillData = (member, value) => {
+        this.props.teams.forEach((team, index) => {
+            if (team.team === value) {
+                this.props.change(`${member}field2`, team.team)
                 this.props.change(`${member}field3`, team.captain)
                 this.props.change(`${member}field4`, team.trophy)
             }
@@ -86,9 +86,9 @@ class SecondArrayForm extends Component {
             <label>{label}</label>
             <Select
                 {...input}
-                {...custom}               
+                {...custom}
             >
-            {this.renderOptions()}
+                {this.renderOptions()}
             </Select>
             {touched && error && <span>{error}</span>}
         </div>
@@ -102,28 +102,28 @@ class SecondArrayForm extends Component {
                             name={`${member}.select1`}
                             component={this.renderSelect}
                             label="select1"
-                            onChange = {(e, value) =>{
+                            onChange={(e, value) => {
                                 this.fillData(member, value)
                             }}
                         />
                     </div>
                     <div className="array-field">
-                        <Field name={`${member}.field2`} component={this.renderInput} label="field2"disabled style={{backgroundColor: '#eee', color: '#444'}}/>
+                        <Field name={`${member}.field2`} component={this.renderInput} label="field2" disabled style={{ backgroundColor: '#eee', color: '#444' }} />
                     </div>
 
                     <div className="array-field">
-                        <Field name={`${member}.field3`} component={this.renderInput} label="field3" disabled/>
+                        <Field name={`${member}.field3`} component={this.renderInput} label="field3" disabled />
                     </div>
 
                     <div className="array-field">
-                        <Field name={`${member}.field4`} component={this.renderInputNumber} label="field4"disabled />
+                        <Field name={`${member}.field4`} component={this.renderInputNumber} label="field4" disabled />
                     </div>
                     <div className="array-field">
-                        <Field name={`${member}.field5`} component={this.renderInputNumber} label="field5" 
-                        onChange={(e, value) => {
-                            console.log(typeof value)
-                        }}
-                        normalize={(value) => +value} 
+                        <Field name={`${member}.field5`} component={this.renderInputNumber} label="field5"
+                            onChange={(e, value) => {
+                                console.log(typeof value)
+                            }}
+                            normalize={(value) => +value}
                         // validate={(value) => isNaN(+value) ? "Please enter a number" : undefined}
                         />
                     </div>
@@ -148,13 +148,14 @@ class SecondArrayForm extends Component {
             </div>
         </div>
     );
-    componentWillReceiveProps(nextProps, x){
-        if(nextProps.testValue){
-           nextProps.testValue.forEach(val => {
-             console.log(val.field5 * val.field4)
-         }) 
+    componentWillReceiveProps(nextProps, x) {
+        console.log(nextProps)
+        if (nextProps.testValue) {
+            nextProps.testValue.forEach(val => {
+                console.log(val.field5 * val.field4)
+            })
         }
-         
+
     }
     render() {
         const { handleSubmit, submitting } = this.props;
@@ -175,13 +176,13 @@ class SecondArrayForm extends Component {
                         label='Calculated Value'
                         type='number'
                         component={this.renderCalculatedValue}
-                        />
+                    />
                     <FieldArray
                         name='member'
-                        component={this.renderMembers} 
+                        component={this.renderMembers}
                     />
                     <br />
-                    
+
                     <Button type="primary" htmlType="submit">Submit</Button>
                 </form>
             </div>
@@ -194,11 +195,19 @@ SecondArrayForm = reduxForm({
     validate: validateSecondArray
 })(SecondArrayForm)
 
-const mapStateToProps = (state) => ({
-    teams: state.secondArrayReducer.teams,
-     testValue: selector(state, 'member'),
-    calculatedValue: state.secondArrayReducer.calculatedValue
-})
+const mapStateToProps = (state) => {
+    return {
+        teams: state.secondArrayReducer.teams,
+        calculatedValue: state.secondArrayReducer.calculatedValue,
+        initialValues: {
+            // "members": [{
+            //     // select1: 'food',
+            //     // field1: state.formArrayReducer.currency
+            // }]
+        },
+        testValue: selector(state, 'member')
+    }
+}
 
 const mapDispatchToProps = dispatch => {
     return bindActionCreators({
