@@ -23,7 +23,7 @@ class SecondArrayForm extends Component {
     }
     renderOptions = () => {
         return this.props.teams.map((team, index) => {
-            return <Option key={index} value={team.team}>{team.team}</Option>
+            return <option key={index} value={team.team}>{team.team}</option>
         })
     }
     fillData = (member, value) => {
@@ -83,12 +83,12 @@ class SecondArrayForm extends Component {
     renderSelect = ({ input, label, type, meta: { touched, error }, ...custom }) => {
         return <div>
             <label>{label}</label>
-            <Select
+            <select
                 {...input}
                 {...custom}
             >
                 {this.renderOptions()}
-            </Select>
+            </select>
             {touched && error && <span>{error}</span>}
         </div>
     }
