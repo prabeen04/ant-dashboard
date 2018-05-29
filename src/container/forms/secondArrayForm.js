@@ -132,7 +132,7 @@ class SecondArrayForm extends Component {
                     </div>
 
                     <div className="array-field">
-                        <Field name={`${member}.field6`} component={this.renderInput} label="field6" />
+                        <Field name={`${member}.field6`} component={this.renderInputNumber} label="field6" />
                     </div>
                     <button
                         type="button"

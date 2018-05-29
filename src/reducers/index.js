@@ -7,6 +7,7 @@ import { authReducer } from '../reducers/auth_reducer';
 import { formReducer } from "../reducers/testFormReducer";
 import { formArrayReducer } from "../reducers/formArrayReducer";
 import { secondArrayReducer } from '../reducers/secondArrayReducer';
+import { thirdArrayReducer } from '../reducers/thirdArrayReducer';
 
 export const rootReducer = combineReducers({
     form: FormReducer,
@@ -16,7 +17,8 @@ export const rootReducer = combineReducers({
     authReducer,
     formReducer,
     formArrayReducer,
-    secondArrayReducer
+    secondArrayReducer,
+    thirdArrayReducer
 })
 
 export default rootReducer;
