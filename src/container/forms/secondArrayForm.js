@@ -46,12 +46,9 @@ class SecondArrayForm extends Component {
                 if (!fieldValues.field6 && !fieldValues.field7) {
                     return 0
                 }
-                 let discountAmount = (fieldValues.field4 * ((100-value)/100))
-                 let taxableAmount = (discountAmount * ((100+fieldValues.field6)/100))
-                console.log(discountAmount)
-                console.log(taxableAmount)
-                // console.log( fieldValues.field4 * ((100-value)/100)  )
-                 return ((parseFloat(taxableAmount )) * fieldValues.field7).toFixed(2)
+                let discountAmount = (fieldValues.field4 * ((100 - value) / 100))
+                let taxableAmount = (discountAmount * ((100 + fieldValues.field6) / 100))
+                return ((parseFloat(taxableAmount)) * fieldValues.field7).toFixed(2)
             }
         }
         if (field === 'field6') {
@@ -62,7 +59,10 @@ class SecondArrayForm extends Component {
                 if (!fieldValues.field5 && !fieldValues.field7) {
                     return 0
                 }
-                return (value + fieldValues.field4 + fieldValues.field5) * fieldValues.field7
+                let discountAmount = (fieldValues.field4 * ((100 - fieldValues.field5) / 100))
+                let taxableAmount = (discountAmount * ((100 + value) / 100))
+                return ((parseFloat(taxableAmount)) * fieldValues.field7).toFixed(2)
+                // return (value + fieldValues.field4 + fieldValues.field5) * fieldValues.field7
             }
         }
         if (field === 'field7') {
@@ -73,7 +73,10 @@ class SecondArrayForm extends Component {
                 if (!fieldValues.field5 && !fieldValues.field6) {
                     return 0
                 }
-                return value * (fieldValues.field4 + fieldValues.field5 + fieldValues.field6)
+                let discountAmount = (fieldValues.field4 * ((100 - fieldValues.field5) / 100))
+                let taxableAmount = (discountAmount * ((100 + fieldValues.field6) / 100))
+                return ((parseFloat(taxableAmount)) * value).toFixed(2)
+                // return value * (fieldValues.field4 + fieldValues.field5 + fieldValues.field6)
             }
         }
 
@@ -232,7 +235,7 @@ class SecondArrayForm extends Component {
                 // console.log(val.field8)
             })
             nextProps.testValue.map((value) => {
-                 console.log (value.field8)
+                console.log(value.field8)
             })
             // nextProps.testValue.reduce((a, b) => {
             //     console.log(a)
