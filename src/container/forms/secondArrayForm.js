@@ -46,7 +46,7 @@ class SecondArrayForm extends Component {
                 if (!fieldValues.field6 && !fieldValues.field7) {
                     return 0
                 }
-                return (value + fieldValues.field4 + fieldValues.field6 )* fieldValues.field7
+                return ((((100-value)/100) * fieldValues.field4) + ((100 +fieldValues.field6/100)) )* fieldValues.field7
             }
         }
         if (field === 'field6') {
@@ -223,12 +223,11 @@ class SecondArrayForm extends Component {
     componentWillReceiveProps(nextProps, x) {
         // console.log(nextProps.testValue)
         if (nextProps.testValue) {
-            // nextProps.testValue.forEach(val => {
-            //     const total = (val.field5 * val.field4)
-            //     console.log(total)
-            // })
+            nextProps.testValue.forEach(val => {
+                // console.log(val.field8)
+            })
             nextProps.testValue.map((value) => {
-                // console.log [value.field4]
+                 console.log (value.field8)
             })
             // nextProps.testValue.reduce((a, b) => {
             //     console.log(a)
