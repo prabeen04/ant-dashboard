@@ -49,20 +49,20 @@ class ReduxFormArray extends Component {
         this.handleCurrencyCalculation = this.handleCurrencyCalculation.bind(this);
         this.handleSelectChange = this.handleSelectChange.bind(this);
     }
-    componentDidMount(){
+    componentDidMount() {
         this.props.dispatch({
             type: '@@redux-form/ARRAY_PUSH',
             meta: {
-              form: 'formArray',
-              field: 'members'
+                form: 'formArray',
+                field: 'members'
             },
             payload: {
-              field1: 'euro'
+                field1: 'euro'
             }
-          })
+        })
     }
-    handleSelectChange = (value )=> {
-       console.log(value)
+    handleSelectChange = (value) => {
+        console.log(value)
     }
     onSubmit = values => {
         console.log(JSON.stringify(values))
@@ -133,13 +133,14 @@ class ReduxFormArray extends Component {
         <div>
             <label>{label}</label>
             <div>
-                <InputNumber
+                <input
                     placeholder={label}
                     {...input}
                     {...custom}
                     min={0}
                     max={100}
-                 type="number"
+                    type="number"
+                    style={{ border: '1px solid #ccc', width: 150, height: 32, borderRadius: 4 }}
                 // defaultValue={this.state.amount}
                 // onChange={this.handleCurrencyCalculation}
                 />
@@ -158,11 +159,11 @@ class ReduxFormArray extends Component {
                     {...custom}
                     // defaultValue={'food'}
                     value={input.value}
-                    onChange={(value)=>input.onChange(value)}
-                    onBlur={() =>{ 
+                    onChange={(value) => input.onChange(value)}
+                    onBlur={() => {
                         input.onBlur(input.value)
                     }}
-                    //  onSelect = {(value) => input.onChange(value)}
+                //  onSelect = {(value) => input.onChange(value)}
                 >
                     <Option value="cellphone">cellphone</Option>
                     <Option value="travell">travell</Option>
@@ -308,7 +309,8 @@ class ReduxFormArray extends Component {
                             onChange={(e, value) => {
                                 //console.log(selector(this.props.state, `${member}.field2`))
                                 change(`${member}.field3`, this.handleCurrencyCalculation(value, fields.get(index)))
-                            }} />
+                            }} 
+                            normalize={(value) => +value}/>
                     </div>
 
                     <div className="array-field">
