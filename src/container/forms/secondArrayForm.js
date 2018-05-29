@@ -18,6 +18,7 @@ class SecondArrayForm extends Component {
         this.fillData = this.fillData.bind(this);
         this.renderInputNumber = this.renderInputNumber.bind(this);
         this.renderCalculatedValue = this.renderCalculatedValue.bind(this);
+        this.handleTotalCalculation = this.handleTotalCalculation.bind(this);
     }
     onSubmit = (values) => {
         console.log(values)
@@ -35,6 +36,10 @@ class SecondArrayForm extends Component {
                 this.props.change(`${member}field4`, team.trophy)
             }
         })
+    }
+    handleTotalCalculation = (a, b) => {
+        console.log(a)
+        console.log(b)
     }
     renderCalculatedValue = ({ input, label, type, meta: { touched, error }, ...custom }) => (
         <div>
@@ -65,7 +70,7 @@ class SecondArrayForm extends Component {
                     min={0}
                     max={100}
                     type="number"
-                    style={{border: '1px solid #ccc', width: 200,height: 32, borderRadius: 4 }}
+                    style={{border: '1px solid #ccc', width: 150,height: 32, borderRadius: 4 }}
                 />
                 {touched && error && <span>{error}</span>}
             </div>
@@ -89,7 +94,7 @@ class SecondArrayForm extends Component {
             <select
                 {...input}
                 {...custom}
-                style={{border: '1px solid #ccc', width: 200,height: 32, borderRadius: 4 }}
+                style={{border: '1px solid #ccc', width: 180,height: 32, borderRadius: 4 }}
             >
                 {this.renderOptions()}
             </select>
@@ -123,16 +128,21 @@ class SecondArrayForm extends Component {
                     </div>
                     <div className="array-field">
                         <Field name={`${member}.field5`} component={this.renderInputNumber} label="field5"
-                            onChange={(e, value) => {
-                                console.log(typeof value)
-                            }}
-                            normalize={(value) => +value}
+                           onChange={(e, value) => {
+                            console.log(value)
+                            console.log(fields.get(index))
+                            this.props.change(`${member}.field3`, this.handleTotalCalculation(value, fields.get(index)))
+                        }}
+                          //  normalize={(value) => +value}
                         // validate={(value) => isNaN(+value) ? "Please enter a number" : undefined}
                         />
                     </div>
 
                     <div className="array-field">
                         <Field name={`${member}.field6`} component={this.renderInputNumber} label="field6" />
+                    </div>
+                    <div className="array-field">
+                        <Field name={`${member}.field6`} component={this.renderInputNumber} label="field7" />
                     </div>
                     <button
                         type="button"
@@ -152,14 +162,14 @@ class SecondArrayForm extends Component {
         </div>
     );
     componentWillReceiveProps(nextProps, x) {
-        console.log(nextProps.testValue)
+        // console.log(nextProps.testValue)
         if (nextProps.testValue) {
             // nextProps.testValue.forEach(val => {
             //     const total = (val.field5 * val.field4)
             //     console.log(total)
             // })
             nextProps.testValue.map((value) => {
-                console.log [value.field4]
+                // console.log [value.field4]
             })
             // nextProps.testValue.reduce((a, b) => {
             //     console.log(a)
