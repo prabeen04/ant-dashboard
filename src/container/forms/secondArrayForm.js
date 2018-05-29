@@ -42,16 +42,33 @@ class SecondArrayForm extends Component {
             if (fieldValues.field4 === undefined) {
                 return 0.0
             }
-            if (fieldValues.field4 &&  fieldValues.field6) {
-                return value + fieldValues.field4 + fieldValues.field6 
+            if (fieldValues.field4) {
+                if (!fieldValues.field6 && !fieldValues.field7) {
+                    return 0
+                }
+                return (value + fieldValues.field4 + fieldValues.field6 )* fieldValues.field7
             }
         }
         if (field === 'field6') {
             if (fieldValues.field4 === undefined) {
                 return 0.0
             }
-            if (fieldValues.field4 &&  fieldValues.field6 ) {
-                return value + fieldValues.field4 + fieldValues.field5 
+            if (fieldValues.field4) {
+                if (!fieldValues.field5 && !fieldValues.field7) {
+                    return 0
+                }
+                return (value + fieldValues.field4 + fieldValues.field5) * fieldValues.field7
+            }
+        }
+        if (field === 'field7') {
+            if (fieldValues.field4 === undefined) {
+                return 0.0
+            }
+            if (fieldValues.field4) {
+                if (!fieldValues.field5 && !fieldValues.field6) {
+                    return 0
+                }
+                return value * (fieldValues.field4 + fieldValues.field5 + fieldValues.field6)
             }
         }
 
@@ -144,12 +161,14 @@ class SecondArrayForm extends Component {
                             </div>
 
                             <div className="array-field">
-                                <Field name={`${member}.field4`} component={this.renderInputNumber} label="field4" disabled />
+                                <Field name={`${member}.field4`} component={this.renderInputNumber} label="field4" disabled
+                                    normalize={(value) => +value}
+                                />
                             </div>
                             <div className="array-field">
                                 <Field name={`${member}.field5`} component={this.renderInputNumber} label="field5"
                                     onChange={(e, value) => {
-                                        change(`${member}.field7`, this.handleTotalCalculation(value, 'field5', fields.get(index)))
+                                        change(`${member}.field8`, this.handleTotalCalculation(value, 'field5', fields.get(index)))
                                     }}
                                     normalize={(value) => +value}
                                 // validate={(value) => isNaN(+value) ? "Please enter a number" : undefined}
@@ -159,13 +178,21 @@ class SecondArrayForm extends Component {
                             <div className="array-field">
                                 <Field name={`${member}.field6`} component={this.renderInputNumber} label="field6"
                                     onChange={(e, value) => {
-                                        change(`${member}.field7`, this.handleTotalCalculation(value, 'field6', fields.get(index)))
+                                        change(`${member}.field8`, this.handleTotalCalculation(value, 'field6', fields.get(index)))
                                     }}
                                     normalize={(value) => +value}
                                 />
                             </div>
                             <div className="array-field">
                                 <Field name={`${member}.field7`} component={this.renderInputNumber} label="field7"
+                                    onChange={(e, value) => {
+                                        change(`${member}.field8`, this.handleTotalCalculation(value, 'field7', fields.get(index)))
+                                    }}
+                                    normalize={(value) => +value}
+                                />
+                            </div>
+                            <div className="array-field">
+                                <Field name={`${member}.field8`} component={this.renderInputNumber} label="field8"
                                     // onChange={(e, value) => {
                                     //     change(`${member}.field7`, this.handleTotalCalculation(value, 'field7', fields.get(index)))
                                     // }}
