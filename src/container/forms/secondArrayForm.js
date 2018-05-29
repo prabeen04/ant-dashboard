@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { Field, reduxForm, FieldArray, formValueSelector } from 'redux-form';
+import { Field, reduxForm, FieldArray, change, formValueSelector } from 'redux-form';
 import { validateSecondArray } from './validation/secondArrayValidate';
 import { Select, Input, InputNumber, Button, Icon, } from 'antd';
 import './form.css';
@@ -51,7 +51,7 @@ class SecondArrayForm extends Component {
                     {...custom}
                     type="number"
                     min={0}
-                    style={{border: '1px solid #ccc', width: 200,height: 32, borderRadius: 4 }}
+                    style={{ border: '1px solid #ccc', width: 200, height: 32, borderRadius: 4 }}
                     value={this.props.calculatedValue}
                 />
                 {touched && error && <span>{error}</span>}
@@ -63,14 +63,14 @@ class SecondArrayForm extends Component {
         <div>
             <label>{label}</label>
             <div>
-                <input
+                <InputNumber
                     placeholder={label}
                     {...input}
                     {...custom}
                     min={0}
                     max={100}
                     type="number"
-                    style={{border: '1px solid #ccc', width: 150,height: 32, borderRadius: 4 }}
+                    style={{ border: '1px solid #ccc', width: 150, height: 32, borderRadius: 4 }}
                 />
                 {touched && error && <span>{error}</span>}
             </div>
@@ -94,7 +94,7 @@ class SecondArrayForm extends Component {
             <select
                 {...input}
                 {...custom}
-                style={{border: '1px solid #ccc', width: 180,height: 32, borderRadius: 4 }}
+                style={{ border: '1px solid #ccc', width: 180, height: 32, borderRadius: 4 }}
             >
                 {this.renderOptions()}
             </select>
@@ -128,33 +128,33 @@ class SecondArrayForm extends Component {
                     </div>
                     <div className="array-field">
                         <Field name={`${member}.field5`} component={this.renderInputNumber} label="field5"
-                           onChange={(e, value) => {
-                            console.log(value)
-                            console.log(fields.get(index))
-                            this.props.change(`${member}.field7`, this.handleTotalCalculation(value, fields.get(index)))
-                        }}
-                          normalize={(value) => +value}
+                            onChange={(e, value) => {
+                                console.log(value)
+                                console.log(fields.get(index))
+                                change(`${member}.field7`, this.handleTotalCalculation(value, fields.get(index)))
+                            }}
+                            normalize={(value) => +value}
                         // validate={(value) => isNaN(+value) ? "Please enter a number" : undefined}
                         />
                     </div>
 
                     <div className="array-field">
-                        <Field name={`${member}.field6`} component={this.renderInputNumber} label="field6" 
-                        onChange={(e, value) => {
-                            console.log(value)
-                            console.log(fields.get(index))
-                            this.props.change(`${member}.field7`, this.handleTotalCalculation(value, fields.get(index)))
-                        }}
-                        normalize={(value) => +value}/>
+                        <Field name={`${member}.field6`} component={this.renderInputNumber} label="field6"
+                            onChange={(e, value) => {
+                                console.log(value)
+                                console.log(fields.get(index))
+                                change(`${member}.field7`, this.handleTotalCalculation(value, fields.get(index)))
+                            }}
+                            normalize={(value) => +value} />
                     </div>
                     <div className="array-field">
-                        <Field name={`${member}.field6`} component={this.renderInputNumber} label="field7" 
-                        onChange={(e, value) => {
-                            console.log(value)
-                            console.log(fields.get(index))
-                            this.props.change(`${member}.field7`, this.handleTotalCalculation(value, fields.get(index)))
-                        }}
-                        normalize={(value) => +value}/>
+                        <Field name={`${member}.field6`} component={this.renderInputNumber} label="field7"
+                            onChange={(e, value) => {
+                                console.log(value)
+                                console.log(fields.get(index))
+                                change(`${member}.field7`, this.handleTotalCalculation(value, fields.get(index)))
+                            }}
+                            normalize={(value) => +value} />
                     </div>
                     <button
                         type="button"
@@ -213,6 +213,7 @@ class SecondArrayForm extends Component {
                     <FieldArray
                         name='member'
                         component={this.renderMembers}
+                        change={change} 
                     />
                     <br />
 

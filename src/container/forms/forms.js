@@ -28,10 +28,10 @@ class Forms extends Component {
           <NewFormArray/> 
         <ExampleForm/>
         <FieldArraysForm/>
-        <ReduxFormArray />
         <Divider />
         <Divider />
       <ThirdArrayForm />*/}
+      <ReduxFormArray />
       <SecondArrayForm />
         </Card>
       </div>
