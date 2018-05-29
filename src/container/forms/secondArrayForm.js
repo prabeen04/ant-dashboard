@@ -17,8 +17,6 @@ class SecondArrayForm extends Component {
         this.renderOptions = this.renderOptions.bind(this);
         this.fillData = this.fillData.bind(this);
         this.renderInputNumber = this.renderInputNumber.bind(this);
-        this.renderInputNumber2 = this.renderInputNumber2.bind(this);
-        this.renderInputNumber3 = this.renderInputNumber3.bind(this);
         this.renderCalculatedValue = this.renderCalculatedValue.bind(this);
         this.handleTotalCalculation = this.handleTotalCalculation.bind(this);
     }
@@ -83,42 +81,7 @@ class SecondArrayForm extends Component {
 
         </div>
     )
-    renderInputNumber2 = ({ input, label, type, meta: { touched, error }, ...custom }) => (
-        <div>
-            <label>{label}</label>
-            <div>
-                <input
-                    placeholder={label}
-                    {...input}
-                    {...custom}
-                    min={0}
-                    max={100}
-                    type="number"
-                    style={{ border: '1px solid #ccc', width: 150, height: 32, borderRadius: 4 }}
-                />
-                {touched && error && <span>{error}</span>}
-            </div>
-
-        </div>
-    )
-    renderInputNumber3 = ({ input, label, type, meta: { touched, error }, ...custom }) => (
-        <div>
-            <label>{label}</label>
-            <div>
-                <input
-                    placeholder={label}
-                    {...input}
-                    {...custom}
-                    min={0}
-                    max={100}
-                    type="number"
-                    style={{ border: '1px solid #ccc', width: 150, height: 32, borderRadius: 4 }}
-                />
-                {touched && error && <span>{error}</span>}
-            </div>
-
-        </div>
-    )
+   
     renderInput = ({ input, label, type, meta: { touched, error }, ...custom }) => {
         // console.log(input)
         return <div>
@@ -187,7 +150,7 @@ class SecondArrayForm extends Component {
                             // onChange={(e, value) => {
                             //     change(`${member}.field6`, this.handleTotalCalculation(value, fields.get(index)))
                             // }}
-                            // normalize={(value) => +value}
+                             normalize={(value) => +value}
                              />
                     </div>
                     {/* <div className="array-field">

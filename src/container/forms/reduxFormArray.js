@@ -36,6 +36,7 @@ class ReduxFormArray extends Component {
             calculatedValue: 65
         }
         this.renderInput = this.renderInput.bind(this);
+        this.renderInputNumber = this.renderInputNumber.bind(this);
         this.renderSelect = this.renderSelect.bind(this);
         this.renderSelect2 = this.renderSelect2.bind(this);
         this.renderSelect3 = this.renderSelect3.bind(this);
