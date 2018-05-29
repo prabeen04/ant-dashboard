@@ -17,6 +17,7 @@ class SecondArrayForm extends Component {
         this.renderOptions = this.renderOptions.bind(this);
         this.fillData = this.fillData.bind(this);
         this.renderInputNumber = this.renderInputNumber.bind(this);
+        this.renderInputNumber2 = this.renderInputNumber2.bind(this);
         this.renderCalculatedValue = this.renderCalculatedValue.bind(this);
         this.handleTotalCalculation = this.handleTotalCalculation.bind(this);
     }
@@ -40,7 +41,7 @@ class SecondArrayForm extends Component {
     handleTotalCalculation = (value, fieldValues) => {
         console.log(value)
         console.log(fieldValues)
-        if(fieldValues.field5){
+        if (fieldValues.field5) {
             console.log('inside If statement')
             return value + fieldValues.field4
         }
@@ -67,7 +68,25 @@ class SecondArrayForm extends Component {
         <div>
             <label>{label}</label>
             <div>
-                <InputNumber
+                <input
+                    placeholder={label}
+                    {...input}
+                    {...custom}
+                    min={0}
+                    max={100}
+                    type="number"
+                    style={{ border: '1px solid #ccc', width: 150, height: 32, borderRadius: 4 }}
+                />
+                {touched && error && <span>{error}</span>}
+            </div>
+
+        </div>
+    )
+    renderInputNumber2 = ({ input, label, type, meta: { touched, error }, ...custom }) => (
+        <div>
+            <label>{label}</label>
+            <div>
+                <input
                     placeholder={label}
                     {...input}
                     {...custom}
@@ -105,10 +124,14 @@ class SecondArrayForm extends Component {
             {touched && error && <span>{error}</span>}
         </div>
     }
-    renderMembers = ({ change, fields, meta: { error, submitFailed } }) => (
-        <div>
-            {fields.map((member, index) => (
-                <div key={index} style={{ display: 'flex' }}>
+    renderMembers = ({ change, fields, meta: { error, submitFailed } }) => {
+        return (
+            <div>
+                {fields.map((member, index) => {
+                    // console.log(fields.get(index))
+                    return (
+                        < div key = { index } style = {{ display: 'flex' }
+                }>
                     <div className="array-field">
                         <Field
                             name={`${member}.select1`}
@@ -133,9 +156,7 @@ class SecondArrayForm extends Component {
                     <div className="array-field">
                         <Field name={`${member}.field5`} component={this.renderInputNumber} label="field5"
                             onChange={(e, value) => {
-                                // console.log(value)
-                                // console.log(fields.get(index))
-                                change(`${member}.field7`, this.handleTotalCalculation(value, fields.get(index)))
+                                change(`${member}.field6`, this.handleTotalCalculation(value, fields.get(index)))
                             }}
                             normalize={(value) => +value}
                         // validate={(value) => isNaN(+value) ? "Please enter a number" : undefined}
@@ -145,38 +166,39 @@ class SecondArrayForm extends Component {
                     <div className="array-field">
                         <Field name={`${member}.field6`} component={this.renderInputNumber} label="field6"
                             onChange={(e, value) => {
-                                console.log(value)
-                                console.log(fields.get(index))
-                                change(`${member}.field7`, this.handleTotalCalculation(value, fields.get(index)))
+                                change(`${member}.field6`, this.handleTotalCalculation(value, fields.get(index)))
                             }}
                             normalize={(value) => +value} />
                     </div>
                     <div className="array-field">
                         <Field name={`${member}.field7`} component={this.renderInputNumber} label="field7"
-                            onChange={(e, value) => {
-                                console.log(value)
-                                console.log(fields.get(index))
-                                change(`${member}.field7`, this.handleTotalCalculation(value, fields.get(index)))
-                            }}
-                            normalize={(value) => +value} />
+                        // onChange={(e, value) => {
+                        //     console.log(value)
+                        //     console.log(fields.get(index))
+                        //     change(`${member}.field7`, this.handleTotalCalculation(value, fields.get(index)))
+                        // }}
+                        // normalize={(value) => +value} 
+                        />
                     </div>
                     <button
                         type="button"
                         onClick={() => fields.remove(index)} >
                         delete
                     </button>
-                </div>
-            ))}
-            <div className="">
-                <button
-                    type="button"
-                    onClick={() => fields.push({})}
-                >add
-                </button>
-                {submitFailed && error && <span>{error}</span>}
             </div>
-        </div>
-    );
+            )})
+        }
+                <div className="">
+                    <button
+                        type="button"
+                        onClick={() => fields.push({})}
+                    >add
+                </button>
+                    {submitFailed && error && <span>{error}</span>}
+                </div>
+            </div >
+        )
+    };
     componentWillReceiveProps(nextProps, x) {
         // console.log(nextProps.testValue)
         if (nextProps.testValue) {
@@ -195,7 +217,7 @@ class SecondArrayForm extends Component {
 
     }
     render() {
-        const { handleSubmit, submitting } = this.props;
+        const { handleSubmit, pristine, reset, submitting, change } = this.props;
         return (
             <div>
                 <form onSubmit={handleSubmit(this.onSubmit)}>
@@ -217,7 +239,7 @@ class SecondArrayForm extends Component {
                     <FieldArray
                         name='member'
                         component={this.renderMembers}
-                        change={change} 
+                        change={change}
                     />
                     <br />
 
