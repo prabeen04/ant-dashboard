@@ -131,18 +131,30 @@ class SecondArrayForm extends Component {
                            onChange={(e, value) => {
                             console.log(value)
                             console.log(fields.get(index))
-                            this.props.change(`${member}.field3`, this.handleTotalCalculation(value, fields.get(index)))
+                            this.props.change(`${member}.field7`, this.handleTotalCalculation(value, fields.get(index)))
                         }}
-                          //  normalize={(value) => +value}
+                          normalize={(value) => +value}
                         // validate={(value) => isNaN(+value) ? "Please enter a number" : undefined}
                         />
                     </div>
 
                     <div className="array-field">
-                        <Field name={`${member}.field6`} component={this.renderInputNumber} label="field6" />
+                        <Field name={`${member}.field6`} component={this.renderInputNumber} label="field6" 
+                        onChange={(e, value) => {
+                            console.log(value)
+                            console.log(fields.get(index))
+                            this.props.change(`${member}.field7`, this.handleTotalCalculation(value, fields.get(index)))
+                        }}
+                        normalize={(value) => +value}/>
                     </div>
                     <div className="array-field">
-                        <Field name={`${member}.field6`} component={this.renderInputNumber} label="field7" />
+                        <Field name={`${member}.field6`} component={this.renderInputNumber} label="field7" 
+                        onChange={(e, value) => {
+                            console.log(value)
+                            console.log(fields.get(index))
+                            this.props.change(`${member}.field7`, this.handleTotalCalculation(value, fields.get(index)))
+                        }}
+                        normalize={(value) => +value}/>
                     </div>
                     <button
                         type="button"
