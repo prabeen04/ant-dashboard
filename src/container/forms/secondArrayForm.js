@@ -37,9 +37,13 @@ class SecondArrayForm extends Component {
             }
         })
     }
-    handleTotalCalculation = (a, b) => {
-        console.log(a)
-        console.log(b)
+    handleTotalCalculation = (value, fieldValues) => {
+        console.log(value)
+        console.log(fieldValues)
+        if(fieldValues.field5){
+            console.log('inside If statement')
+            return value + fieldValues.field4
+        }
     }
     renderCalculatedValue = ({ input, label, type, meta: { touched, error }, ...custom }) => (
         <div>
@@ -129,8 +133,8 @@ class SecondArrayForm extends Component {
                     <div className="array-field">
                         <Field name={`${member}.field5`} component={this.renderInputNumber} label="field5"
                             onChange={(e, value) => {
-                                console.log(value)
-                                console.log(fields.get(index))
+                                // console.log(value)
+                                // console.log(fields.get(index))
                                 change(`${member}.field7`, this.handleTotalCalculation(value, fields.get(index)))
                             }}
                             normalize={(value) => +value}
@@ -148,7 +152,7 @@ class SecondArrayForm extends Component {
                             normalize={(value) => +value} />
                     </div>
                     <div className="array-field">
-                        <Field name={`${member}.field6`} component={this.renderInputNumber} label="field7"
+                        <Field name={`${member}.field7`} component={this.renderInputNumber} label="field7"
                             onChange={(e, value) => {
                                 console.log(value)
                                 console.log(fields.get(index))

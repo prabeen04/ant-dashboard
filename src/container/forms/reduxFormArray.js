@@ -71,6 +71,7 @@ class ReduxFormArray extends Component {
         this.props.setCurrency(currency);
     }
     handleCurrencyCalculation = (value, fieldValues) => {
+        console.log(fieldValues)
         if (typeof value === 'number') {
             if (fieldValues.field1 === undefined) {
                 return 0
