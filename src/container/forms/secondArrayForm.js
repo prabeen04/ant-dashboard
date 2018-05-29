@@ -79,6 +79,20 @@ class SecondArrayForm extends Component {
                 // return value * (fieldValues.field4 + fieldValues.field5 + fieldValues.field6)
             }
         }
+        if (field === 'select1') {
+            if (fieldValues.field4 === undefined) {
+                return 0.0
+            }
+            if (fieldValues.field4) {
+                if (!fieldValues.field5 && !fieldValues.field6) {
+                    return 0
+                }
+                let discountAmount = (value * ((100 - fieldValues.field5) / 100))
+                let taxableAmount = (discountAmount * ((100 + fieldValues.field6) / 100))
+                return ((parseFloat(taxableAmount)) * fieldValues.field7).toFixed(2)
+                // return value * (fieldValues.field4 + fieldValues.field5 + fieldValues.field6)
+            }
+        }
 
     }
     renderCalculatedValue = ({ input, label, type, meta: { touched, error }, ...custom }) => (
@@ -157,6 +171,7 @@ class SecondArrayForm extends Component {
                                     label="select1"
                                     onChange={(e, value) => {
                                         this.fillData(member, value)
+                                        change(`${member}.field8`, this.handleTotalCalculation(value, 'select1', fields.get(index)))
                                     }}
                                 />
                             </div>
