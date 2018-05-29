@@ -154,11 +154,17 @@ class SecondArrayForm extends Component {
     componentWillReceiveProps(nextProps, x) {
         console.log(nextProps.testValue)
         if (nextProps.testValue) {
-           
-            nextProps.testValue.forEach(val => {
-                let total = (val.field5 * val.field4)
-                console.log(total)
+            // nextProps.testValue.forEach(val => {
+            //     const total = (val.field5 * val.field4)
+            //     console.log(total)
+            // })
+            nextProps.testValue.map((value) => {
+                console.log [value.field4]
             })
+            // nextProps.testValue.reduce((a, b) => {
+            //     console.log(a)
+            //     console.log(b)
+            // })
         }
 
     }
