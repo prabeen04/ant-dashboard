@@ -37,13 +37,24 @@ class SecondArrayForm extends Component {
             }
         })
     }
-    handleTotalCalculation = (value, fieldValues) => {
-        console.log(value)
-        console.log(fieldValues)
-        return value + fieldValues.field4
-        // if (fieldValues.field5) {
-        //     console.log('inside If statement')
-        // }
+    handleTotalCalculation = (value, field, fieldValues) => {
+        if (field === 'field5') {
+            if (fieldValues.field4 === undefined) {
+                return 0.0
+            }
+            if (fieldValues.field4 &&  fieldValues.field6) {
+                return value + fieldValues.field4 + fieldValues.field6 
+            }
+        }
+        if (field === 'field6') {
+            if (fieldValues.field4 === undefined) {
+                return 0.0
+            }
+            if (fieldValues.field4 &&  fieldValues.field6 ) {
+                return value + fieldValues.field4 + fieldValues.field5 
+            }
+        }
+
     }
     renderCalculatedValue = ({ input, label, type, meta: { touched, error }, ...custom }) => (
         <div>
@@ -81,7 +92,7 @@ class SecondArrayForm extends Component {
 
         </div>
     )
-   
+
     renderInput = ({ input, label, type, meta: { touched, error }, ...custom }) => {
         // console.log(input)
         return <div>
@@ -112,65 +123,65 @@ class SecondArrayForm extends Component {
                 {fields.map((member, index) => {
                     // console.log(fields.get(index))
                     return (
-                        < div key = { index } style = {{ display: 'flex' }
-                }>
-                    <div className="array-field">
-                        <Field
-                            name={`${member}.select1`}
-                            component={this.renderSelect}
-                            label="select1"
-                            onChange={(e, value) => {
-                                this.fillData(member, value)
-                            }}
-                        />
-                    </div>
-                    <div className="array-field">
-                        <Field name={`${member}.field2`} component={this.renderInput} label="field2" disabled style={{ backgroundColor: '#eee', color: '#444' }} />
-                    </div>
+                        < div key={index} style={{ display: 'flex' }
+                        }>
+                            <div className="array-field">
+                                <Field
+                                    name={`${member}.select1`}
+                                    component={this.renderSelect}
+                                    label="select1"
+                                    onChange={(e, value) => {
+                                        this.fillData(member, value)
+                                    }}
+                                />
+                            </div>
+                            <div className="array-field">
+                                <Field name={`${member}.field2`} component={this.renderInput} label="field2" disabled style={{ backgroundColor: '#eee', color: '#444' }} />
+                            </div>
 
-                    <div className="array-field">
-                        <Field name={`${member}.field3`} component={this.renderInput} label="field3" disabled />
-                    </div>
+                            <div className="array-field">
+                                <Field name={`${member}.field3`} component={this.renderInput} label="field3" disabled />
+                            </div>
 
-                    <div className="array-field">
-                        <Field name={`${member}.field4`} component={this.renderInputNumber} label="field4" disabled />
-                    </div>
-                    <div className="array-field">
-                        <Field name={`${member}.field5`} component={this.renderInputNumber} label="field5"
-                            onChange={(e, value) => {
-                                change(`${member}.field6`, this.handleTotalCalculation(value, fields.get(index)))
-                            }}
-                            normalize={(value) => +value}
-                        // validate={(value) => isNaN(+value) ? "Please enter a number" : undefined}
-                        />
-                    </div>
+                            <div className="array-field">
+                                <Field name={`${member}.field4`} component={this.renderInputNumber} label="field4" disabled />
+                            </div>
+                            <div className="array-field">
+                                <Field name={`${member}.field5`} component={this.renderInputNumber} label="field5"
+                                    onChange={(e, value) => {
+                                        change(`${member}.field7`, this.handleTotalCalculation(value, 'field5', fields.get(index)))
+                                    }}
+                                    normalize={(value) => +value}
+                                // validate={(value) => isNaN(+value) ? "Please enter a number" : undefined}
+                                />
+                            </div>
 
-                    <div className="array-field">
-                        <Field name={`${member}.field6`} component={this.renderInputNumber} label="field6"
-                            // onChange={(e, value) => {
-                            //     change(`${member}.field6`, this.handleTotalCalculation(value, fields.get(index)))
-                            // }}
-                             normalize={(value) => +value}
-                             />
-                    </div>
-                    {/* <div className="array-field">
-                        <Field name={`${member}.field7`} component={this.renderInputNumber} label="field7"
-                        // onChange={(e, value) => {
-                        //     console.log(value)
-                        //     console.log(fields.get(index))
-                        //     change(`${member}.field7`, this.handleTotalCalculation(value, fields.get(index)))
-                        // }}
-                        // normalize={(value) => +value} 
-                        /> 
-                    </div>*/}
-                    <button
-                        type="button"
-                        onClick={() => fields.remove(index)} >
-                        delete
+                            <div className="array-field">
+                                <Field name={`${member}.field6`} component={this.renderInputNumber} label="field6"
+                                    onChange={(e, value) => {
+                                        change(`${member}.field7`, this.handleTotalCalculation(value, 'field6', fields.get(index)))
+                                    }}
+                                    normalize={(value) => +value}
+                                />
+                            </div>
+                            <div className="array-field">
+                                <Field name={`${member}.field7`} component={this.renderInputNumber} label="field7"
+                                    // onChange={(e, value) => {
+                                    //     change(`${member}.field7`, this.handleTotalCalculation(value, 'field7', fields.get(index)))
+                                    // }}
+                                    normalize={(value) => +value}
+                                    disabled
+                                />
+                            </div>
+                            <button
+                                type="button"
+                                onClick={() => fields.remove(index)} >
+                                delete
                     </button>
-            </div>
-            )})
-        }
+                        </div>
+                    )
+                })
+                }
                 <div className="">
                     <button
                         type="button"
