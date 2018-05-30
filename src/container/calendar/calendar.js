@@ -110,8 +110,8 @@ class Calendar extends Component {
               alert(event.description)
               console.log(e)
             } }
-            eventPropGetter={event => ({className: 'e-'+event.user.toLowerCase()})}
-            slotPropGetter={date =>({className: 'red-background'})}
+            // eventPropGetter={event => ({className: 'e-'+event.user.toLowerCase()})}
+            // slotPropGetter={date =>({className: 'red-background'})}
           />
           :
           <BigCalendar
