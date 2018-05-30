@@ -28,12 +28,14 @@ class SecondArrayForm extends Component {
             return <option key={index} value={team.team}>{team.team}</option>
         })
     }
-    fillData = (member, value) => {
+    fillData = (member, value, resolve) => {
         this.props.teams.forEach((team, index) => {
             if (team.team === value) {
                 this.props.change(`${member}field2`, team.team)
                 this.props.change(`${member}field3`, team.captain)
                 this.props.change(`${member}field4`, team.trophy)
+                console.log('fill data')
+                resolve()
             }
         })
     }
@@ -84,7 +86,7 @@ class SecondArrayForm extends Component {
             //     return 0.0
             // }
             if (fieldValues.field5 && fieldValues.field6 && fieldValues.field7) {
-                console.log(fieldValues.field4)
+                // console.log(fieldValues.field4)
                 if (!fieldValues.field4) {
                     return 0
                 }
@@ -171,7 +173,8 @@ class SecondArrayForm extends Component {
                                     component={this.renderSelect}
                                     label="select1"
                                     onChange={(e, value) => {
-                                        const sleep = () => new Promise(resolve => this.fillData(member, value))
+                                        const sleep = () => new Promise(resolve => this.fillData(member, value, resolve))
+                                        console.log('before sleep')
                                         sleep().then(()=>{
                                             console.log('promise resolved')
                                             change(`${member}.field8`, this.handleTotalCalculation(value, 'select1', fields.get(index)))                                            
