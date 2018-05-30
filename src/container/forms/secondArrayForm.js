@@ -80,14 +80,15 @@ class SecondArrayForm extends Component {
             }
         }
         if (field === 'select1') {
-            if (fieldValues.field4 === undefined) {
-                return 0.0
-            }
-            if (fieldValues.field4) {
-                if (!fieldValues.field5 && !fieldValues.field6) {
+            // if (value === undefined) {
+            //     return 0.0
+            // }
+            if (fieldValues.field5 && fieldValues.field6 && fieldValues.field7) {
+                console.log(fieldValues.field4)
+                if (!fieldValues.field4) {
                     return 0
                 }
-                let discountAmount = (value * ((100 - fieldValues.field5) / 100))
+                let discountAmount = (fieldValues.field4 * ((100 - fieldValues.field5) / 100))
                 let taxableAmount = (discountAmount * ((100 + fieldValues.field6) / 100))
                 return ((parseFloat(taxableAmount)) * fieldValues.field7).toFixed(2)
                 // return value * (fieldValues.field4 + fieldValues.field5 + fieldValues.field6)
@@ -170,8 +171,15 @@ class SecondArrayForm extends Component {
                                     component={this.renderSelect}
                                     label="select1"
                                     onChange={(e, value) => {
-                                        this.fillData(member, value)
-                                        change(`${member}.field8`, this.handleTotalCalculation(value, 'select1', fields.get(index)))
+                                        const sleep = () => new Promise(resolve => this.fillData(member, value))
+                                        sleep().then(()=>{
+                                            console.log('promise resolved')
+                                            change(`${member}.field8`, this.handleTotalCalculation(value, 'select1', fields.get(index)))                                            
+                                        })
+                                        // this.fillData(member, value)
+                                        // setTimeout(()=>{
+                                        //     change(`${member}.field8`, this.handleTotalCalculation(value, 'select1', fields.get(index)))
+                                        // },1000)
                                     }}
                                 />
                             </div>
