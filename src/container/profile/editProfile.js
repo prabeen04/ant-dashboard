@@ -29,7 +29,7 @@ class EditProfile extends Component {
   }
 
   componentDidUpdate(){
-    this.props.initialize(this.props.initialValues);
+    // this.props.initialize(this.props.initialValues);
   }
   render() {
     const { handleSubmit, pristine, reset, submitting } = this.props
@@ -54,7 +54,9 @@ class EditProfile extends Component {
 
 EditProfile = reduxForm({
   form: 'editProfileForm',
-  enableReinitialize: true
+  enableReinitialize: true,
+  keepDirtyOnReinitialize: true,
+  destroyOnUnmount: false
 })(EditProfile);
 
 const mapStateToProps = (state) => {
