@@ -28,11 +28,10 @@ class SettingPopover extends Component {
                         content={
                             <div>
                                 <AddProfile/>
-                                <a onClick={this.hide}>Close</a>
                             </div>
 
                     }
-                        title="Title"
+                        title={<a onClick={this.hide}>Close</a>}
                         trigger="click"
                         placement="bottomRight"
                         visible={this.state.visible}
