@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Icon, Popover, Tooltip, Card, Button } from 'antd';
+import AddProfile from '../../container/profile/addProfile';
 
 class SettingPopover extends Component {
     constructor(props) {
@@ -24,9 +25,16 @@ class SettingPopover extends Component {
             <div>
                 <Tooltip title="Settings">
                     <Popover
-                        content={<a onClick={this.hide}>Close</a>}
+                        content={
+                            <div>
+                                <AddProfile/>
+                                <a onClick={this.hide}>Close</a>
+                            </div>
+
+                    }
                         title="Title"
                         trigger="click"
+                        placement="bottomRight"
                         visible={this.state.visible}
                         onVisibleChange={this.handleVisibleChange}
                     >
