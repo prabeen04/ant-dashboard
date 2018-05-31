@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Icon, Popover,Tooltip, Card, Button } from 'antd';
+import { Icon, Popover, Tooltip, Card, Button } from 'antd';
 
 class SettingPopover extends Component {
     constructor(props) {
@@ -16,17 +16,26 @@ class SettingPopover extends Component {
         });
     }
     handleVisibleChange = (visible) => {
+        console.log('handle Visible Change clicked')
         this.setState({ visible });
     }
     render() {
         return (
             <div>
                 <Tooltip title="Settings">
-                    <Icon
-                        style={{ fontSize: 25, cursor: 'pointer' }}
-                        type="setting"
-                        onClick={() => console.log('settings view clicked')}
-                    />
+                    <Popover
+                        content={<a onClick={this.hide}>Close</a>}
+                        title="Title"
+                        trigger="click"
+                        visible={this.state.visible}
+                        onVisibleChange={this.handleVisibleChange}
+                    >
+                        <Icon
+                            style={{ fontSize: 25, cursor: 'pointer' }}
+                            type="setting"
+                            onClick={() => this.handleVisibleChange()}
+                        />
+                    </Popover>
                 </Tooltip>
             </div>
         )
