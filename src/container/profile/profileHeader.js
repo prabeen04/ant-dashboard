@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './profile.css';
 import { Icon, Tooltip } from 'antd';
+import SettingPopover from '../../components/popover/settingPopover';
 
 class ProfileHeader extends Component {
     render() {
@@ -23,13 +24,7 @@ class ProfileHeader extends Component {
                     </Tooltip>
                 </div>
                 <div className="setting-icons">
-                    <Tooltip title="Settings">
-                        <Icon
-                            style={{ fontSize: 25, cursor: 'pointer' }}
-                            type="setting"
-                            onClick={()=>console.log('settings view clicked')}
-                        />
-                    </Tooltip>
+                    <SettingPopover/>
                 </div>
             </div>
         )
