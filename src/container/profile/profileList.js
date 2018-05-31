@@ -14,9 +14,8 @@ class ProfileList extends Component {
     render() {
 
         if (this.props.isLoading) {
-            return (<div className="flex-container" style={{height: '80vh', justifyContent: 'center' }}>
-                {/* <Icon type="loading" style={{ fontSize: 60, color: 'tomato' }} spin /> */}
-                <Card loading style={{ width: '500px'}}></Card>
+            return (<div className="flex-container profile-list" style={{ alignItems: 'flex-start' }}>
+                <Card loading style={{ width: '100%'}}></Card>
             </div>)
         }
         if (this.props.isError) {

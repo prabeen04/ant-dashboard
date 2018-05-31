@@ -26,6 +26,7 @@ class EditProfile extends Component {
   submitProfile = (values) =>{
     console.log(values)
     this.props.updateProfile(values)
+    this.props.reset();
   }
 
   componentDidUpdate(){
