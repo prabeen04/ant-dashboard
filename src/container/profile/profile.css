@@ -22,7 +22,15 @@
     align-items: center;
     align-content: center;
 }
-
+.panel-header{
+    background: #fff;
+    margin:  0.2rem  0.5rem;
+     padding: 0.3rem;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     align-content: center;
+}
 .view-icons{
     padding-left: 1rem;
 }

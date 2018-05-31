@@ -33,6 +33,9 @@ class AddProfile extends Component {
     console.log(submitting)
     return (
       <div className="add-profile">
+      <div className="panel-header">
+      <h3>Add Profiles</h3>
+      </div>
         <Card>
         <form onSubmit={handleSubmit(this.submitProfile)}>
           <Field component={this.renderInput} label={'Name'} name="name" />
