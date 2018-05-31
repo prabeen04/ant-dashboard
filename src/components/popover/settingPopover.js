@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Icon, Popover, Tooltip, Card, Button } from 'antd';
-import AddProfile from '../../container/profile/addProfile';
+// import AddProfile from '../../container/profile/addProfile';
+import SettingTab from '../tabs/settingTab';
 
 class SettingPopover extends Component {
     constructor(props) {
@@ -27,11 +28,11 @@ class SettingPopover extends Component {
                     <Popover
                         content={
                             <div>
-                                <AddProfile/>
+                                <SettingTab/>
                             </div>
 
                     }
-                        title={<a onClick={this.hide}>Close</a>}
+                        // title={<a onClick={this.hide}>Close</a>}
                         trigger="click"
                         placement="bottomRight"
                         visible={this.state.visible}
