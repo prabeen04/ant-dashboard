@@ -1,6 +1,7 @@
 .profile-wrapper{
     width: 100%;
     display: flex;
+    margin: 0.2rem  0.5rem;
 }
 .profile-list{
     flex-basis: 70%;
@@ -13,7 +14,7 @@
 /* Profile Heade Section */
 .profile-header{
     background: #fff;
-    margin: 0.2rem;
+   margin:  0.2rem  0.5rem;
     padding: 0.3rem;
     display: flex;
     justify-content: space-between;
