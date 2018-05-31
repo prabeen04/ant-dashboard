@@ -11,6 +11,7 @@ class SettingPopover extends Component {
             visible: false
         }
         this.handleVisibleChange = this.handleVisibleChange.bind(this);
+        this.hide = this.hide.bind(this)
     }
     hide = () => {
         this.setState({
@@ -28,7 +29,7 @@ class SettingPopover extends Component {
                     <Popover
                         content={
                             <div>
-                                <SettingTab/>
+                                <SettingTab hide={this.hide}/>
                             </div>
 
                     }
