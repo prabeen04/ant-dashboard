@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Tabs, Icon, Button, List, Checkbox  } from 'antd';
+import { Tabs, Icon, Button, List, Checkbox } from 'antd';
 const TabPane = Tabs.TabPane;
 const data = [
     <Checkbox>Manchester United</Checkbox>,
@@ -9,6 +9,20 @@ const data = [
     <Checkbox>Liverpool</Checkbox>,
     <Checkbox>Tottenham</Checkbox>
 ];
+const data2 = [
+    <Checkbox>Premier League</Checkbox>,
+    <Checkbox>Champions League</Checkbox>,
+    <Checkbox>FA Cup</Checkbox>,
+    <Checkbox>Capital One Cup</Checkbox>,
+];
+const data3 = [
+    <Checkbox>Points</Checkbox>,
+    <Checkbox>Most Wins</Checkbox>,
+    <Checkbox>Most Goal</Checkbox>,
+    <Checkbox>Most Chances Created</Checkbox>,
+    <Checkbox>Most fouls</Checkbox>,
+    <Checkbox>Most Tackles</Checkbox>,
+];
 class SettingTab extends Component {
     constructor(props) {
         super(props)
@@ -17,11 +31,12 @@ class SettingTab extends Component {
         return (
             <div>
                 <Tabs defaultActiveKey="1">
-                    <TabPane tab={<span><Icon type="apple" />Tab 1</span>} key="1">
+                    <TabPane tab={<span><Icon type="team" />Team</span>} key="1">
                         <List
                             size="small"
-                            header={<div>Header</div>}
-                            footer={<div style={{textAlign: 'right'}}> <Button
+                            bordered
+                            header={<div><h4>Choose Your Team</h4></div>}
+                            footer={<div style={{ textAlign: 'right' }}> <Button
                                 type="primary"
                                 onClick={this.props.hide}>Close</Button></div>}
                             dataSource={data}
@@ -29,11 +44,29 @@ class SettingTab extends Component {
                         />
 
                     </TabPane>
-                    <TabPane tab={<span><Icon type="android" />Tab 2</span>} key="2">
-                        Tab 2
+                    <TabPane tab={<span><Icon type="trophy" />Trophy</span>} key="2">
+                        <List
+                            size="small"
+                            bordered
+                            header={<div><h4>Choose Your Team</h4></div>}
+                            footer={<div style={{ textAlign: 'right' }}> <Button
+                                type="primary"
+                                onClick={this.props.hide}>Close</Button></div>}
+                            dataSource={data2}
+                            renderItem={item => (<List.Item>{item}</List.Item>)}
+                        />
                     </TabPane>
-                    <TabPane tab={<span><Icon type="android" />Tab 3</span>} key="3">
-                        Tab 3
+                    <TabPane tab={<span><Icon type="line-chart" />Ranking</span>} key="3">
+                        <List
+                            size="small"
+                            bordered
+                            header={<div><h4>Choose Your Team</h4></div>}
+                            footer={<div style={{ textAlign: 'right' }}> <Button
+                                type="primary"
+                                onClick={this.props.hide}>Close</Button></div>}
+                            dataSource={data3}
+                            renderItem={item => (<List.Item>{item}</List.Item>)}
+                        />
                     </TabPane>
                 </Tabs>
             </div>
