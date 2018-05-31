@@ -1,18 +1,18 @@
 .profile-wrapper{
     width: 100%;
     display: flex;
-    border: 1px solid red;
 }
 .profile-list{
     flex-basis: 70%;
     display: flex;
     flex-wrap: wrap;
-    border: 1px solid rgb(0, 174, 255);
 }
 .profile-action{
     flex-basis: 30%;
-    border: 1px solid rgb(98, 0, 255);
 }
-.add-profile{
+.profile-header{
+    background: #fff;
+    margin: 0.2rem;
+    padding: 0.3rem;
 }
 
