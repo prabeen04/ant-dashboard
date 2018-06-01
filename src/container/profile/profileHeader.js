@@ -22,14 +22,14 @@ class ProfileHeader extends Component {
                         <Icon
                             style={{ fontSize: 25, marginLeft: '0.5rem', cursor: 'pointer' }}
                             type="profile"
-                            onClick={() => console.log('list view clicked')}
+                            onClick={() => this.props.setFilterText('e')}
                         />
                     </Tooltip>
                 </div>
                 <div className="setting-icons">
                     <Search
                         placeholder="Search Profile"
-                        onSearch={value => console.log(value)}
+                        onSearch={value => this.props.setFilterText(value)}
                         style={{ width: 200, marginRight: '1rem' }}
                     />
                     <SettingPopover />
