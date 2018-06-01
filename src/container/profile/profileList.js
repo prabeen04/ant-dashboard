@@ -45,11 +45,11 @@ class ProfileList extends Component {
     }
 }
 const mapStateToProps = (state) => {
-    console.log(state)
+    console.log( state.profileReducer.filterText)
     return {
         isLoading: state.profileReducer.isLoading,
         isError: state.profileReducer.isError,
-        profiles: getProfilesState(state)
+        profiles: getProfilesState(state, state.profileReducer.filterText)
     }
 }
 

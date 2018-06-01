@@ -1,11 +1,13 @@
 import { createSelector } from 'reselect'
 
 const getProfiles = (state) => state.profileReducer.profiles
+const filterText = (state) => state.profileReducer.filterText
 
 export const getProfilesState = createSelector(
-    [getProfiles],
-    (profile) => {
+    [getProfiles, filterText],
+    (profile, filterText) => {
         console.log('inside demoSelector')
-        return profile.filter((profile) => profile.name.startsWith('m'))
+        console.log(filterText)
+        return profile.filter((profile) => (profile.name).toLowerCase().includes(filterText))
     }
 )

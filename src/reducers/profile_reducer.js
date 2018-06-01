@@ -12,7 +12,8 @@ const initialState = {
     showAddProfile: false,
     showEditProfile: false,
     showViewProfile: false,
-    visibilityFilter: 'ALL'
+    visibilityFilter: 'ALL',
+    filterText: 'm'
 }
 export const profileReducer = (state = initialState, action) => {
     switch (action.type) {
