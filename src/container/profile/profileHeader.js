@@ -26,14 +26,14 @@ class ProfileHeader extends Component {
 
                         />
                     </Tooltip>
-                    <Tooltip title="Add Profile">
+                   {this.props.viewType === 'LIST' && <Tooltip title="Add Profile">
                         <Button
                             type="primary"
                             icon="plus"
                             // onClick={() =>return}
                             >
                             Add Profile</Button>
-                    </Tooltip>
+                    </Tooltip>}
 
                 </div>
                 <div className="setting-icons">
@@ -55,7 +55,7 @@ class ProfileHeader extends Component {
 }
 const mapStateToProps = state => {
     return {
-
+        viewType: state.profileReducer.viewType
     }
 }
 const mapDispatchProps = dispatch => {
