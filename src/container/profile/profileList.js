@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Icon, Card } from 'antd';
 import { getProfiles, addProfile, showAddProfile } from '../../actions/profile_actions';
+import { getProfilesState } from '../../selectors/demoSelector';
 
 class ProfileList extends Component {
     componentDidMount() {
@@ -48,7 +49,7 @@ const mapStateToProps = (state) => {
     return {
         isLoading: state.profileReducer.isLoading,
         isError: state.profileReducer.isError,
-        profiles: state.profileReducer.profiles
+        profiles: getProfilesState(state)
     }
 }
 

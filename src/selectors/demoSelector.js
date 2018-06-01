@@ -1,9 +1,8 @@
 import { createSelector } from 'reselect'
 
-const getVisibilityFilter = (state) => state.visibilityFilter
-const getTodos = (state) => state.todos
+const getProfiles = (state) => state.profileReducer.profiles
 
-export const getVisibleProfiles = createSelector(
-  [profiles ],
+export const getProfilesState = createSelector(
+  [getProfiles ],
   (profile) => profile
 )
