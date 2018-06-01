@@ -1,5 +1,6 @@
-import React, { Component } from 'react'
-import ProfileCard from './profileCard'
+import React, { Component } from 'react';
+import ProfileCard from './profileCard';
+import ProfileListView from './profileListView';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Icon, Card, Button } from 'antd';
@@ -15,7 +16,7 @@ class ProfileList extends Component {
     render() {
 
         if (this.props.isLoading) {
-            return (<div className="flex-container profile-list" style={{ alignItems: 'flex-start' }}>
+            return (<div className="flex-container profile-list-view" style={{ alignItems: 'flex-start' }}>
                 <Card loading style={{ width: '100%' }}></Card>
             </div>)
         }
@@ -31,14 +32,14 @@ class ProfileList extends Component {
                 />
             }
             if (this.props.viewType === 'LIST') {
-                return <p key={profile._id}>{profile.name}</p>
+                return <ProfileListView key={profile._id} user={profile}/>
             }
 
 
         })
         console.log(this.props.profiles)
         return (
-            <div className="profile-list" style={{}}>
+            <div className={this.props.viewType === 'GRID'? 'profile-grid-view' :'profile-list-view'} >
                {this.props.viewType === 'GRID' && <div className="flex-container"
                     style={{ width: 155, height: 200, margin: '0.5rem', justifyContent: 'center', backgroundColor: '#fff', cursor: 'pointer' }}
                     onClick={() => this.props.showAddProfile()}

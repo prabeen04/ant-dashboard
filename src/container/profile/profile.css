@@ -3,11 +3,18 @@
     display: flex;
     margin: 0.2rem  0.5rem;
 }
-.profile-list{
+.profile-grid-view{
     flex-basis: 70%;
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
+}
+.profile-list-view{
+    flex-basis: 70%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    flex-direction: column;
 }
 .profile-action{
     flex-basis: 30%;

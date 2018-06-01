@@ -3,10 +3,10 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { getSingleProfile } from '../../actions/profile_actions'
 import '../post/post.css';
-import { Card } from 'antd';
+import { Card, Icon } from 'antd';
 const { Meta } = Card;
 
-class ProfileCard extends Component {
+class ProfileListView extends Component {
     constructor(props) {
         super(props)
     }
@@ -23,18 +23,6 @@ class ProfileCard extends Component {
                     <Icon type="clock-circle-o" className="post-icon" /> &nbsp;&nbsp;&nbsp;{this.props.user.location}
                 </div>
             </div>
-            // <div>
-            //     <Card
-            //         hoverable
-            //         style={{ width: 155, height: 200, margin: '0.5rem' }}
-            //         onClick={() => this.props.getSingleProfile(this.props.user)}
-            //         cover={<img style={{ width: '100%', height: 150 }} alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}>
-            //         <Meta
-            //             title={this.props.user.name}
-            //             style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '25px' }}
-            //         />
-            //     </Card>
-            // </div>
         )
     }
 }
@@ -49,4 +37,4 @@ const mapDispatchToProps = (dispatch) => {
         getSingleProfile
     }, dispatch)
 }
-export default connect(mapStateToProps, mapDispatchToProps)(ProfileCard);
+export default connect(mapStateToProps, mapDispatchToProps)(ProfileListView);

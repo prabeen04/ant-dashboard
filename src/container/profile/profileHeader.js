@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import './profile.css';
 import { Icon, Tooltip, Input, Button } from 'antd';
-import { setFilterText, setViewType } from '../../actions/profile_actions';
+import { setFilterText, setViewType, showAddProfile } from '../../actions/profile_actions';
 import SettingPopover from '../../components/popover/settingPopover';
 const Search = Input.Search;
 class ProfileHeader extends Component {
@@ -30,7 +30,7 @@ class ProfileHeader extends Component {
                         <Button
                             type="primary"
                             icon="plus"
-                            // onClick={() =>return}
+                            onClick={() =>this.props.showAddProfile()}
                             >
                             Add Profile</Button>
                     </Tooltip>}
@@ -61,7 +61,8 @@ const mapStateToProps = state => {
 const mapDispatchProps = dispatch => {
     return bindActionCreators({
         setFilterText,
-        setViewType
+        setViewType,
+        showAddProfile
     }, dispatch)
 }
 export default connect(mapStateToProps, mapDispatchProps)(ProfileHeader);
