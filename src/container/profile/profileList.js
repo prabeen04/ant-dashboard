@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import ProfileCard from './profileCard'
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { Icon, Card } from 'antd';
+import { Icon, Card, Button } from 'antd';
 import { getProfiles, addProfile, showAddProfile } from '../../actions/profile_actions';
 import { getProfilesState } from '../../selectors/demoSelector';
 
@@ -45,7 +45,6 @@ class ProfileList extends Component {
                 >
                     <Icon type="user-add" style={{ fontSize: '10rem', color: '#444' }} />
                 </div>
-
                 {renderCard}
             </div>
         )
