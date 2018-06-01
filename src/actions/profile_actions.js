@@ -107,7 +107,7 @@ export const setFilterText = (filterText) => {
         })
     }
 }
-export const setFilterText = (viewType) => {
+export const setViewType = (viewType) => {
     return (dispatch) => {
         dispatch({
             type: SET_VIEW_TYPE,

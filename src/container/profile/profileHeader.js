@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import './profile.css';
 import { Icon, Tooltip, Input } from 'antd';
-import { setFilterText } from '../../actions/profile_actions';
+import { setFilterText, setViewType } from '../../actions/profile_actions';
 import SettingPopover from '../../components/popover/settingPopover';
 const Search = Input.Search;
 class ProfileHeader extends Component {
@@ -15,14 +15,14 @@ class ProfileHeader extends Component {
                         <Icon
                             style={{ fontSize: 25, cursor: 'pointer' }}
                             type="appstore-o"
-                            onClick={() => console.log('grid view clicked')}
+                            onClick={() => this.props.setViewType('GRID')}
                         />
                     </Tooltip>
                     <Tooltip title="List View">
                         <Icon
                             style={{ fontSize: 25, marginLeft: '0.5rem', cursor: 'pointer' }}
                             type="profile"
-                            onClick={() => this.props.setFilterText('e')}
+                            onClick={() => this.props.setViewType('LIST')}
                           
                         />
                     </Tooltip>
@@ -51,7 +51,8 @@ const mapStateToProps = state => {
 }
 const mapDispatchProps = dispatch => {
     return bindActionCreators({
-        setFilterText
+        setFilterText,
+        setViewType
     }, dispatch)
 }
 export default connect(mapStateToProps, mapDispatchProps )(ProfileHeader);
