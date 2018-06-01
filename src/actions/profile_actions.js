@@ -2,7 +2,8 @@ import {
     GET_PROFILES, GET_PROFILES_SUCCESS, GET_PROFILES_FAILURE,
     GET_SINGLE_PROFILE, GET_SINGLE_PROFILE_SUCCESS, GET_SINGLE_PROFILE_FAILURE,
     SHOW_ADD_PROFILE, ADD_PROFILE, ADD_PROFILE_SUCCESS, ADD_PROFILE_FAILURE,
-    OPEN_EDIT_PROFILE, EDIT_PROFILE, EDIT_PROFILE_SUCCESS, EDIT_PROFILE_FAILURE
+    OPEN_EDIT_PROFILE, EDIT_PROFILE, EDIT_PROFILE_SUCCESS, EDIT_PROFILE_FAILURE,
+    SET_FILTER_TEXT
 } from '../types/profile_actiontypes';
 
 import axios from 'axios';
@@ -79,22 +80,11 @@ export const openEditProfile = (profile) => {
         })
     }
 }
-export const updateProfile = (profile) => {
-    console.log(profile)
+export const setFilterText = (filterText) => {
     return (dispatch) => {
         dispatch({
-            type: EDIT_PROFILE,
+            type: SET_FILTER_TEXT,
+            payload: filterText
         })
-        return axios.put(`${baseURL}/${profile._id}`, profile)
-            .then(response => {
-                console.log(response)
-                dispatch(getProfiles())
-            })
-            .catch(error => {
-                console.log(error)
-                dispatch({
-                    type: ADD_PROFILE_FAILURE
-                })
-            });
     }
 }
