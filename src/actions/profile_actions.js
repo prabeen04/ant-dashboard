@@ -3,7 +3,7 @@ import {
     GET_SINGLE_PROFILE, GET_SINGLE_PROFILE_SUCCESS, GET_SINGLE_PROFILE_FAILURE,
     SHOW_ADD_PROFILE, ADD_PROFILE, ADD_PROFILE_SUCCESS, ADD_PROFILE_FAILURE,
     OPEN_EDIT_PROFILE, EDIT_PROFILE, EDIT_PROFILE_SUCCESS, EDIT_PROFILE_FAILURE,
-    SET_FILTER_TEXT
+    SET_FILTER_TEXT,SET_VIEW_TYPE
 } from '../types/profile_actiontypes';
 
 import axios from 'axios';
@@ -104,6 +104,14 @@ export const setFilterText = (filterText) => {
         dispatch({
             type: SET_FILTER_TEXT,
             payload: filterText
+        })
+    }
+}
+export const setFilterText = (viewType) => {
+    return (dispatch) => {
+        dispatch({
+            type: SET_VIEW_TYPE,
+            payload: viewType
         })
     }
 }

@@ -33,10 +33,10 @@ class ProfileList extends Component {
         return (
             <div className="profile-list" style={{}}>
             <div className="flex-container" 
-                 style={{width: 150, height: 200, justifyContent: 'center', backgroundColor: '#fff', cursor: 'pointer'}}
+                 style={{width: 155, height: 200, margin: '0.5rem', justifyContent: 'center', backgroundColor: '#fff', cursor: 'pointer'}}
                  onClick={()=>this.props.showAddProfile()}
                  >
-                <Icon type="plus" />
+                <Icon type="user-add" style={{fontSize: '10rem', color: '#444'}}/>
             </div>
             
                 {renderCard}

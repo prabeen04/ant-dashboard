@@ -31,6 +31,7 @@ class ProfileHeader extends Component {
                     <Search
                         placeholder="Search Profile"
                         onSearch={value => this.props.setFilterText(value)}
+                        style={{marginRight: '1rem'}}
                         className="filter-text-input"
                         onChange={(e) => {
                             console.log(e.target.value)

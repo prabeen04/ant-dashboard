@@ -14,11 +14,12 @@ class ProfileCard extends Component {
             <div>
                 <Card
                     hoverable
-                    style={{ width: 150, height: 200 }}
+                    style={{ width: 155, height: 200, margin: '0.5rem' }}
                     onClick={() => this.props.getSingleProfile(this.props.user)}
                     cover={<img style={{ width: '100%', height: 150 }} alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}>
                     <Meta
                         title={this.props.user.name}
+                        style={{display: 'flex', justifyContent:'center', alignItems:'center', height: '25px'}}
                     />
                 </Card>
             </div>
@@ -26,7 +27,6 @@ class ProfileCard extends Component {
     }
 }
 const mapStateToProps = (state) => {
-    console.log(state)
     return {
         profile: state.profileReducer.profile
     }

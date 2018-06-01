@@ -3,7 +3,7 @@ import {
     GET_SINGLE_PROFILE, GET_SINGLE_PROFILE_SUCCESS, GET_SINGLE_PROFILE_FAILURE,
     SHOW_ADD_PROFILE, ADD_PROFILE, ADD_PROFILE_SUCCESS, ADD_PROFILE_FAILURE,
     OPEN_EDIT_PROFILE, EDIT_PROFILE, EDIT_PROFILE_SUCCESS, EDIT_PROFILE_FAILURE,
-    SET_FILTER_TEXT
+    SET_FILTER_TEXT, SET_VIEW_TYPE
 } from '../types/profile_actiontypes';
 const initialState = {
     isLoading: false,
@@ -13,6 +13,7 @@ const initialState = {
     showAddProfile: false,
     showEditProfile: false,
     showViewProfile: false,
+    viewType: 'GRID',
     visibilityFilter: 'ALL',
     filterText: ''
 }
@@ -65,7 +66,9 @@ export const profileReducer = (state = initialState, action) => {
                 isError: true
             })
         case SET_FILTER_TEXT:
-            return Object.assign({}, state, {filterText: action.payload})
+            return Object.assign({}, state, { filterText: action.payload })
+        case SET_VIEW_TYPE:
+            return Object.assign({}, state, { viewType: action.payload })
         default:
             return state
     }
