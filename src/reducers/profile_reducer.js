@@ -2,7 +2,8 @@ import {
     GET_PROFILES, GET_PROFILES_SUCCESS, GET_PROFILES_FAILURE,
     GET_SINGLE_PROFILE, GET_SINGLE_PROFILE_SUCCESS, GET_SINGLE_PROFILE_FAILURE,
     SHOW_ADD_PROFILE, ADD_PROFILE, ADD_PROFILE_SUCCESS, ADD_PROFILE_FAILURE,
-    OPEN_EDIT_PROFILE, EDIT_PROFILE, EDIT_PROFILE_SUCCESS, EDIT_PROFILE_FAILURE
+    OPEN_EDIT_PROFILE, EDIT_PROFILE, EDIT_PROFILE_SUCCESS, EDIT_PROFILE_FAILURE,
+    SET_FILTER_TEXT
 } from '../types/profile_actiontypes';
 const initialState = {
     isLoading: false,
@@ -63,6 +64,8 @@ export const profileReducer = (state = initialState, action) => {
                 isLoading: false,
                 isError: true
             })
+        case SET_FILTER_TEXT:
+            return Object.assign({}, state, {filterText: action.payload})
         default:
             return state
     }
