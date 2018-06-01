@@ -80,6 +80,25 @@ export const openEditProfile = (profile) => {
         })
     }
 }
+export const updateProfile = (profile) => {
+    console.log(profile)
+    return (dispatch) => {
+        dispatch({
+            type: EDIT_PROFILE,
+        })
+        return axios.put(`${baseURL}/${profile._id}`, profile)
+            .then(response => {
+                console.log(response)
+                dispatch(getProfiles())
+            })
+            .catch(error => {
+                console.log(error)
+                dispatch({
+                    type: ADD_PROFILE_FAILURE
+                })
+            });
+    }
+}
 export const setFilterText = (filterText) => {
     return (dispatch) => {
         dispatch({

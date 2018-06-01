@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import './profile.css';
 import { Icon, Tooltip, Input } from 'antd';
+import { setFilterText } from '../../actions/profile_actions';
 import SettingPopover from '../../components/popover/settingPopover';
 const Search = Input.Search;
 class ProfileHeader extends Component {
@@ -35,4 +38,14 @@ class ProfileHeader extends Component {
         )
     }
 }
-export default ProfileHeader;
+const mapStateToProps = state => {
+    return{
+
+    }
+}
+const mapDispatchProps = dispatch => {
+    return bindActionCreators({
+        setFilterText
+    }, dispatch)
+}
+export default connect(mapStateToProps, mapDispatchProps )(ProfileHeader);
