@@ -23,6 +23,11 @@ class ProfileHeader extends Component {
                             style={{ fontSize: 25, marginLeft: '0.5rem', cursor: 'pointer' }}
                             type="profile"
                             onClick={() => this.props.setFilterText('e')}
+                            onChange={(a, b, c) => {
+                                console.log(a)
+                                console.log(b)
+                                console.log(c)
+                            }}
                         />
                     </Tooltip>
                 </div>

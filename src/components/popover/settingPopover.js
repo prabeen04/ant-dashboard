@@ -19,7 +19,6 @@ class SettingPopover extends Component {
         });
     }
     handleVisibleChange = (visible) => {
-        console.log('handle Visible Change clicked')
         this.setState({ visible });
     }
     render() {
