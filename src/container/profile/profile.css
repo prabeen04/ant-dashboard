@@ -41,3 +41,14 @@
     display: flex;
     align-items: center;
 }
+.filter-text-input{
+    width: 200px;
+    transition: 0.4s all ease-in-out;
+    color: red;
+}
+.filter-text-input:focus{
+    /* width: 250px; */
+    transform:translateX(-10%);
+    /* padding-left: 2rem; */
+    box-shadow: 0 1px 4px 1px rgb(211, 208, 208);
+}

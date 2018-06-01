@@ -8,6 +8,6 @@ export const getProfilesState = createSelector(
     (profile, filterText) => {
         console.log('inside demoSelector')
         console.log(filterText)
-        return profile.filter((profile) => (profile.name).toLowerCase().includes(filterText))
+        return profile.filter((profile) => (profile.name).toLowerCase().includes(filterText.toLowerCase()))
     }
 )

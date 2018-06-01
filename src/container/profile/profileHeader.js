@@ -23,11 +23,7 @@ class ProfileHeader extends Component {
                             style={{ fontSize: 25, marginLeft: '0.5rem', cursor: 'pointer' }}
                             type="profile"
                             onClick={() => this.props.setFilterText('e')}
-                            onChange={(a, b, c) => {
-                                console.log(a)
-                                console.log(b)
-                                console.log(c)
-                            }}
+                          
                         />
                     </Tooltip>
                 </div>
@@ -35,7 +31,11 @@ class ProfileHeader extends Component {
                     <Search
                         placeholder="Search Profile"
                         onSearch={value => this.props.setFilterText(value)}
-                        style={{ width: 200, marginRight: '1rem' }}
+                        className="filter-text-input"
+                        onChange={(e) => {
+                            console.log(e.target.value)
+                            this.props.setFilterText(e.target.value)
+                        }}
                     />
                     <SettingPopover />
                 </div>
