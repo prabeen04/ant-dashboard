@@ -27,7 +27,6 @@ class Profile extends Component {
   }
 }
 const mapStateToProps = (state) => {
-  console.log(state.profileReducer)
   return {
     isLoading: state.profileReducer.isLoading,
     isError: state.profileReducer.isError,

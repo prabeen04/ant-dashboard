@@ -3,13 +3,12 @@ import ProfileCard from './profileCard';
 import ProfileListView from './profileListView';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { Icon, Card, Button } from 'antd';
+import { Icon, Card, Button, Pagination  } from 'antd';
 import { getProfiles, addProfile, showAddProfile } from '../../actions/profile_actions';
 import { getProfilesState } from '../../selectors/demoSelector';
 
 class ProfileList extends Component {
     componentDidMount() {
-        console.log(this.props)
         this.props.getProfiles()
     }
 
@@ -37,7 +36,6 @@ class ProfileList extends Component {
 
 
         })
-        console.log(this.props.profiles)
         return (
             <div className={this.props.viewType === 'GRID'? 'profile-grid-view' :'profile-list-view'} >
                {this.props.viewType === 'GRID' && <div className="flex-container"
@@ -47,12 +45,12 @@ class ProfileList extends Component {
                     <Icon type="user-add" style={{ fontSize: '10rem', color: '#444' }} />
                 </div>}
                 {renderCard}
+                <Pagination defaultCurrent={1} total={50} /> 
             </div>
         )
     }
 }
 const mapStateToProps = (state) => {
-    console.log(state.profileReducer.filterText)
     return {
         isLoading: state.profileReducer.isLoading,
         isError: state.profileReducer.isError,

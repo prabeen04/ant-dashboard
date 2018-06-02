@@ -18,6 +18,7 @@
 }
 .profile-action{
     flex-basis: 30%;
+    flex-grow: 1;
 }
 /* Profile Heade Section */
 .profile-header{

@@ -15,7 +15,6 @@ export const getProfiles = () => {
         dispatch({
             type: GET_PROFILES
         })
-        console.log('after get Profile Dispatch')
         return axios.get(`${baseURL}`)
             .then(response => {
                 console.log(response)
