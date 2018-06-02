@@ -8,6 +8,7 @@ import {
 const initialState = {
     isLoading: false,
     isError: false,
+    isSubmitting: false,
     profiles: [],
     singleProfile: {},
     showAddProfile: false,
@@ -20,7 +21,7 @@ const initialState = {
 export const profileReducer = (state = initialState, action) => {
     switch (action.type) {
         case GET_PROFILES:
-            return Object.assign({}, state, { isLoading: true })
+            return Object.assign({}, state, { isLoading: true,showViewProfile: false, showAddProfile: false, showEditProfile: false })
         case GET_PROFILES_SUCCESS:
             return Object.assign({}, state, { isLoading: false, profiles: action.payload })
         case GET_PROFILES_FAILURE:
@@ -54,16 +55,18 @@ export const profileReducer = (state = initialState, action) => {
             })
         case EDIT_PROFILE:
             return Object.assign({}, state, {
-                isLoading: true
+                isLoading: true,  isSubmitting: true
             })
         case EDIT_PROFILE_SUCCESS:
             return Object.assign({}, state, {
-                isLoading: false
+                isLoading: false,showEditProfile: false, isSubmitting: false,
             })
         case EDIT_PROFILE_FAILURE:
             return Object.assign({}, state, {
+                showEditProfile: false,
                 isLoading: false,
-                isError: true
+                isError: true,
+                isSubmitting: false,
             })
         case SET_FILTER_TEXT:
             return Object.assign({}, state, { filterText: action.payload })

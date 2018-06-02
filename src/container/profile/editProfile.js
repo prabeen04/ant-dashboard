@@ -33,8 +33,7 @@ class EditProfile extends Component {
     // this.props.initialize(this.props.initialValues);
   }
   render() {
-    const { handleSubmit, pristine, reset, submitting } = this.props
-    console.log(submitting)
+    const { handleSubmit, pristine, reset } = this.props
     return (
       <div className="add-profile">
       <Card>
@@ -42,10 +41,9 @@ class EditProfile extends Component {
           <Field component={this.renderInput} label={'Name'} name="name" />
           <Field component={this.renderInput} label={'Email'} name="email" />
           <Field component={this.renderInput} label={'Location'} name="location" />
-          <Button htmlType="submit" type="primary" loading={submitting}>
+          <Button htmlType="submit" type="primary" loading={this.props.isSubmitting}>
           Update
         </Button>
-       { console.log(submitting)}
         </form>
         </Card>
       </div>
@@ -62,7 +60,8 @@ EditProfile = reduxForm({
 
 const mapStateToProps = (state) => {
   return {
-    initialValues: state.profileReducer.singleProfile
+    initialValues: state.profileReducer.singleProfile,
+    isSubmitting: state.profileReducer.isSubmitting
   }
 }
 
@@ -72,5 +71,4 @@ const mapDispatchToProps = (dispatch) => {
   }, dispatch)
 }
 
-EditProfile = connect(mapStateToProps, mapDispatchToProps)(EditProfile);
-export default EditProfile;
+export default connect(mapStateToProps, mapDispatchToProps)(EditProfile);
