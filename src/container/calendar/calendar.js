@@ -68,7 +68,7 @@ class Calendar extends Component {
   //   console.log(meta)
   //   return <DatePicker 
   //        {...input}
-        
+
   //       />
   // }
   // componentWillReceiveProps(nextProps) {
@@ -94,28 +94,10 @@ class Calendar extends Component {
     // }
     return (
       <div className="flex-container" style={{ height: '520px', backgroundColor: '#fff', margin: '1rem' }}>
-      <CalendarInstance
-      events={this.props.events}/>
-        {/* {this.state.activeTab === '1'
-          ? <BigCalendar
-            // className="red-background"
-            style={{ flexBasis: '70%' }}
-            events={this.props.events ?this.props.events :[] }
-            defaultDate={new Date()}
-            startAccessor={(event) => new Date(event.start)}
-            endAccessor={(event) => new Date(event.end)}
-            selectable={true}
-            popup={true}
-            // formats={formats}
-            onSelectSlot={(slot) => this.handleOk(slot)}
-            onSelecting={(range) => console.log(range)}
-            onSelectEvent={(event, e) =>{
-              alert(event.description)
-              console.log(e)
-            } }
-            // eventPropGetter={event => ({className: 'e-'+event.user.toLowerCase()})}
-            slotPropGetter={date =>({className: 'red-background'})}
-          />
+
+        {this.state.activeTab === '1'
+          ? <CalendarInstance
+            events={this.props.events} />
           :
           <BigCalendar
             style={{ flexBasis: '70%', backgroundColor: '#f4f4f4' }}
@@ -132,7 +114,7 @@ class Calendar extends Component {
             onSelectSlot={(slot) => this.handleOk(slot)}
             onSelecting={(range) => console.log(range)}
           />
-        } */}
+        }
 
         <div className="event-form" >
           <Tabs
@@ -142,8 +124,8 @@ class Calendar extends Component {
                 activeTab: activeKey.toString()
               })
             }}>
-            <TabPane tab={<span><Icon type="apple" />Apple</span>} key="1">             
-                <EventForm />
+            <TabPane tab={<span><Icon type="apple" />Apple</span>} key="1">
+              <EventForm />
             </TabPane>
             <TabPane tab={<span><Icon type="android" />Android</span>} key="2">
               <form onSubmit={handleSubmit(this.onSubmit)}>
