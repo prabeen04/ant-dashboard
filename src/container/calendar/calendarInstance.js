@@ -13,7 +13,7 @@ class CalendarInstance extends Component {
         <BigCalendar
             style={{ flexBasis: '70%' }}
             events={this.props.events ?this.props.events :[] }
-            defaultDate={new Date()}
+            defaultDate={this.props.defaultDate}
             startAccessor={(event) => new Date(event.start)}
             endAccessor={(event) => new Date(event.end)}
             selectable={true}

@@ -97,9 +97,11 @@ class Calendar extends Component {
 
         {this.state.activeTab === '1'
           ? <CalendarInstance
-            events={this.props.events} />
-          :<CalendarInstance
-          events={this.props.events} />
+            events={this.props.events}
+            defaultData={new Date()} />
+          : <CalendarInstance
+            events={this.props.events}
+            defaultData={new Date()} />
         }
 
         <div className="event-form" >
