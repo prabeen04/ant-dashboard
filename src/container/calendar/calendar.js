@@ -3,6 +3,7 @@ import BigCalendar from 'react-big-calendar';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Field, reduxForm } from 'redux-form';
+import CalendarInstance from './calendarInstance';
 import { getEvents, addEvent, setDate } from '../../actions/calendar_actions';
 import EventForm from './eventForm';
 import EventList from './eventList';
@@ -93,7 +94,8 @@ class Calendar extends Component {
     // }
     return (
       <div className="flex-container" style={{ height: '520px', backgroundColor: '#fff', margin: '1rem' }}>
-        {this.state.activeTab === '1'
+      <CalendarInstance/>
+        {/* {this.state.activeTab === '1'
           ? <BigCalendar
             // className="red-background"
             style={{ flexBasis: '70%' }}
@@ -129,7 +131,7 @@ class Calendar extends Component {
             onSelectSlot={(slot) => this.handleOk(slot)}
             onSelecting={(range) => console.log(range)}
           />
-        }
+        } */}
 
         <div className="event-form" >
           <Tabs

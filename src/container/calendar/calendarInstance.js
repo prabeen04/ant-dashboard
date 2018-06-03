@@ -1,15 +1,16 @@
 import React, { Component } from 'react'
 import BigCalendar from 'react-big-calendar';
 import moment from 'moment';
+import 'react-big-calendar/lib/css/react-big-calendar.css';
 
 class CalendarInstance extends Component {
   render() {
     return (
-      <div>
+      <div style={{ flexBasis: '70%', height: 500 }}>
         <BigCalendar
             // className="red-background"
             style={{ flexBasis: '70%' }}
-            // events={this.props.events ?this.props.events :[] }
+            events={this.props.events ?this.props.events :[] }
             defaultDate={new Date()}
             startAccessor={(event) => new Date(event.start)}
             endAccessor={(event) => new Date(event.end)}
