@@ -81,7 +81,6 @@ class Calendar extends Component {
   // }
   render() {
     const { visible, confirmLoading, startDate, endDate } = this.state;
-    const { handleSubmit, pristine, reset, submitting, start, end } = this.props;
     if (this.props.isLoading) {
       return (<div className="flex-container" style={{ height: '80vh', justifyContent: 'center' }}>
         <Icon type="loading" style={{ fontSize: 60, color: 'tomato' }} spin />
@@ -128,27 +127,7 @@ class Calendar extends Component {
               <EventForm />
             </TabPane>
             <TabPane tab={<span><Icon type="android" />Android</span>} key="2">
-              <form onSubmit={handleSubmit(this.onSubmit)}>
-
-                {/* <DatePicker value={moment(this.state.startDate).toISOString() === null
-                  ? null
-                  : moment(this.state.startDate)}
-                />
-                <DatePicker value={moment(this.state.endDate).toISOString() === null
-                  ? null
-                  : moment(this.state.endDate)}
-                /> */}
-                {/* <EventForm
-                  startDate={this.state.startDate}
-                  endDate={this.state.endDate}
-                /> */}
-                {/* <Field 
-                  name="startDate"
-                  component={this.renderEndDate}
-                  onChange={(e) => console.log(e)}
-                  formDirty={this.props.dirty}/> */}
-                <Button type="primary" htmlType="submit">submit</Button>
-              </form>
+                <Button type="primary">submit</Button>
             </TabPane>
           </Tabs>
         </div>
