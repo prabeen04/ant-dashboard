@@ -94,7 +94,8 @@ class Calendar extends Component {
     // }
     return (
       <div className="flex-container" style={{ height: '520px', backgroundColor: '#fff', margin: '1rem' }}>
-      <CalendarInstance/>
+      <CalendarInstance
+      events={this.props.events}/>
         {/* {this.state.activeTab === '1'
           ? <BigCalendar
             // className="red-background"
