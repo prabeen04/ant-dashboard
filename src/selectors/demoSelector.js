@@ -1,4 +1,4 @@
-import { createSelector } from 'reselect'
+import { createSelector } from 'reselect';
 
 const getProfiles = (state) => state.profileReducer.profiles
 const filterText = (state) => state.profileReducer.filterText

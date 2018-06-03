@@ -51,7 +51,7 @@ export const profileReducer = (state = initialState, action) => {
         // EDIT PROFILE section
         case OPEN_EDIT_PROFILE:
             return Object.assign({}, state, {
-                singleProfile: action.payload, showViewProfile: false, showAddProfile: false, showEditProfile: true,isSubmitting: false,
+                singleProfile: action.payload, showViewProfile: false, showAddProfile: false, showEditProfile: true,isSubmitting: false,                                                                                       
             })
         case EDIT_PROFILE:
             return Object.assign({}, state, {
