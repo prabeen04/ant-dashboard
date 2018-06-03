@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { Field, reduxForm } from 'redux-form';
 import CalendarInstance from './calendarInstance';
 import { getEvents, addEvent, setDate } from '../../actions/calendar_actions';
 import EventForm from './eventForm';
@@ -13,7 +12,6 @@ const TabPane = Tabs.TabPane;
 const dateFormat = 'YYYY-MM-DD';
 const timeFormat = 'HH:mm:ss';
 
-BigCalendar.setLocalizer(BigCalendar.momentLocalizer(moment))
 
 class Calendar extends Component {
   constructor(props) {
@@ -136,16 +134,8 @@ class Calendar extends Component {
   }
 }
 
-Calendar = reduxForm({
-  form: 'calendarForm',
-  enableReinitialize: true
-})(Calendar);
-
 const mapStateToProps = (state) => {
   return {
-    // initialValues:{
-    //   startDate: state.calendarReducer.startDate
-    // },
     isLoading: state.calendarReducer.isLoading,
     isError: state.calendarReducer.isError,
     events: state.calendarReducer.events
