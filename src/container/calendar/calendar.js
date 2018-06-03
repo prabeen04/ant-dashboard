@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import BigCalendar from 'react-big-calendar';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Field, reduxForm } from 'redux-form';
@@ -9,7 +8,6 @@ import EventForm from './eventForm';
 import EventList from './eventList';
 import moment from 'moment';
 import './calendar.css';
-import 'react-big-calendar/lib/css/react-big-calendar.css';
 import { Button, Icon, message, DatePicker, TimePicker, Tabs } from 'antd';
 const TabPane = Tabs.TabPane;
 const dateFormat = 'YYYY-MM-DD';
