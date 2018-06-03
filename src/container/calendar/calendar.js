@@ -98,22 +98,8 @@ class Calendar extends Component {
         {this.state.activeTab === '1'
           ? <CalendarInstance
             events={this.props.events} />
-          :
-          <BigCalendar
-            style={{ flexBasis: '70%', backgroundColor: '#f4f4f4' }}
-            events={this.props.events}
-            defaultDate={new Date()}
-            view={this.state.view}
-            startAccessor={(event) => new Date(event.start)}
-            endAccessor={(event) => new Date(event.end)}
-            selectable={true}
-            // formats={formats}
-            onView={(view) => this.setState({
-              view: view
-            })}
-            onSelectSlot={(slot) => this.handleOk(slot)}
-            onSelecting={(range) => console.log(range)}
-          />
+          :<CalendarInstance
+          events={this.props.events} />
         }
 
         <div className="event-form" >
