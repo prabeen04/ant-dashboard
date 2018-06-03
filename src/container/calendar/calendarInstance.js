@@ -16,8 +16,8 @@ class CalendarInstance extends Component {
             defaultDate={this.props.defaultDate}
             startAccessor={(event) => new Date(event.start)}
             endAccessor={(event) => new Date(event.end)}
-            selectable={true}
-            popup={true}
+            selectable={this.props.selectable}
+            popup={this.props.popup}
             onSelecting={(range) => console.log(range)}
             onSelectEvent={(event, e) =>{
               alert(event.description)

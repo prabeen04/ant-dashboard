@@ -98,10 +98,14 @@ class Calendar extends Component {
         {this.state.activeTab === '1'
           ? <CalendarInstance
             events={this.props.events}
-            defaultData={new Date()} />
+            defaultData={new Date()} 
+            selectable={true}
+            popup={true}/>
           : <CalendarInstance
             events={this.props.events}
-            defaultData={new Date()} />
+            defaultData={new Date()}
+            selectable={true}
+            popup={true} />
         }
 
         <div className="event-form" >
