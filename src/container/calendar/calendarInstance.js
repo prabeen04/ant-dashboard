@@ -20,11 +20,6 @@ class CalendarInstance extends Component {
             popup={this.props.popup}
             onSelecting={(range) => console.log(range)}
             onSelectEvent={this.props.handleSelectEvent}
-              
-            //   (event, e) =>{
-            //   alert(event.description)
-            //   console.log(e)
-            // } }
             slotPropGetter={date =>({className: 'red-background'})}
           />
       </div>
