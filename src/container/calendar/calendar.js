@@ -100,17 +100,10 @@ class Calendar extends Component {
               alert(event.description)
               console.log(e)
             }}
+            onSelectSlot={this.handleOk}
           />
-          : <CalendarInstance
-            events={this.props.events}
-            defaultDate={new Date()}
-            selectable={true}
-            popup={true}
-            onSelectEvent={(event, e) => {
-              alert(event.description)
-              console.log(e)
-            }}
-          />
+          : <p>Second tab Content</p>
+          
         }
 
         <div className="event-form" >
