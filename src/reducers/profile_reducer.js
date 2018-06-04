@@ -69,7 +69,7 @@ export const profileReducer = (state = initialState, action) => {
                 isSubmitting: false,
             })
         case SET_FILTER_TEXT:
-            return Object.assign({}, state, { filterText: action.payload })
+            return Object.assign({}, state, { filterText: action.payload, showViewProfile: false, showAddProfile: false, showEditProfile: false })
         case SET_VIEW_TYPE:
             return Object.assign({}, state, { viewType: action.payload })
         default:
