@@ -7,7 +7,6 @@ import axios from 'axios';
 const baseURL = 'https://prabeen-restapi.herokuapp.com/api/events';
 
 export const setDate = (dates) => {
-    console.log(dates)
     return (dispatch) => {
         dispatch({
             type: SET_DATE,

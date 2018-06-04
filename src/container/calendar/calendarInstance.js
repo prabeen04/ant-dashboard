@@ -28,7 +28,13 @@ class CalendarInstance extends Component {
               // console.log(end);
             }}
             onSelectEvent={this.props.handleSelectEvent}
-            // slotPropGetter={date =>({className: 'red-background'})}
+            slotPropGetter={(date, a, b) =>{
+              return{className: 'red-background'}
+              console.log(date);
+              console.log(a);
+              console.log(b);
+            }}
+            eventPropGetter={()=>{}}
           />
       </div>
     )
