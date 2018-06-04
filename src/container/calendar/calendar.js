@@ -93,7 +93,7 @@ class Calendar extends Component {
         {this.state.activeTab === '1'
           ? <CalendarInstance
             events={this.props.events}
-            defaultData={new Date()}
+            defaultDate={new Date()}
             selectable={true}
             popup={true}
             onSelectEvent={(event, e) => {
@@ -103,7 +103,7 @@ class Calendar extends Component {
           />
           : <CalendarInstance
             events={this.props.events}
-            defaultData={new Date()}
+            defaultDate={new Date()}
             selectable={true}
             popup={true}
             onSelectEvent={(event, e) => {
