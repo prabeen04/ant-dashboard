@@ -21,7 +21,7 @@ class Calendar extends Component {
       endDate: '',
       visible: false,
       confirmLoading: false,
-      activeTab: "2",
+      activeTab: "1",
       view: 'week'
     }
 
@@ -60,23 +60,7 @@ class Calendar extends Component {
   componentDidMount() {
     this.props.getEvents();
   }
-  // renderEndDate = ({input, meta}) => {
-  //   console.log(meta)
-  //   return <DatePicker 
-  //        {...input}
 
-  //       />
-  // }
-  // componentWillReceiveProps(nextProps) {
-  //   const { initialValues } = this.props
-  //   if (!Object.keys(initialValues).length && nextProps.initialValues) {
-  //     this.initializeGeoFields(nextProps.initialValues)
-  //   }
-  // }
-
-  // componentDidUpdate(){
-  //   this.props.initialize(this.props.initialValues);
-  // }
   render() {
     const { visible, confirmLoading, startDate, endDate } = this.state;
     if (this.props.isLoading) {
@@ -102,7 +86,7 @@ class Calendar extends Component {
             }}
             onSelectSlot={this.handleOk}
           />
-          : <p>Second tab Content</p>
+          : <p style={{flexBasis: '70%'}}>Second tab Content</p>
           
         }
 
