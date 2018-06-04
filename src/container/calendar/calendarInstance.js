@@ -23,8 +23,9 @@ class CalendarInstance extends Component {
             onSelecting={(range) => console.log(range)}
             onSelectSlot={(range: { start: Date, end: Date }) =>{
               console.log(range);
-              console.log(start);
-              console.log(end);
+              this.props.onSelectSlot(range.start, range.end)
+              // console.log(start);
+              // console.log(end);
             }}
             onSelectEvent={this.props.handleSelectEvent}
             // slotPropGetter={date =>({className: 'red-background'})}
