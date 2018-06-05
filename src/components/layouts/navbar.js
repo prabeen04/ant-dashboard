@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import { Layout, Menu, Icon, Badge } from 'antd';
+import { Layout, Menu, Icon, Badge, Table } from 'antd';
 import './navbar.css';
 import NavMenu from './navMenu';
 import Dashboard from '../../container/dashboard/dashboard';
@@ -11,6 +11,7 @@ import SinglePost from '../../container/post/singlePost';
 import Login from "../../container/login/login";
 import NotFound from '../../container/notFound/notFound';
 import Forms from '../../container/forms/forms';
+import Tables from '../../container/Tables/tables';
 const { Header, Sider, Content } = Layout;
 
 class Navbar extends React.Component {
@@ -90,6 +91,7 @@ class Navbar extends React.Component {
                             <Route exact path='/post' component={Post} />
                             <Route exact path='/post/:id' component={SinglePost} />
                             <Route exact path='/forms' component={Forms} />
+                            <Route exact path='/tables' component={Table} />
                             <Route path='**' component={NotFound} />
                         </Switch>
                     </Content>

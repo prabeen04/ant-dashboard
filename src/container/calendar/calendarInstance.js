@@ -21,20 +21,20 @@ class CalendarInstance extends Component {
             selectable={this.props.selectable}
             popup={this.props.popup}
             onSelecting={(range) => console.log(range)}
-            onSelectSlot={(range: { start: Date, end: Date }) =>{
+            onSelectSlot={(range) =>{
               this.props.onSelectSlot(range)
             }}
             onSelectEvent={this.props.handleSelectEvent}
             slotPropGetter={(date) =>{
               console.log(date)
             }}
-            eventPropGetter={(a,b,c,d)=>{
-              console.log(a)
-              console.log(b)
-              console.log(c)
-              console.log(d)
-              // ({className: 'red-background'})
-            }}
+            // eventPropGetter={(a,b,c,d)=>{
+            //   console.log(a)
+            //   console.log(b)
+            //   console.log(c)
+            //   console.log(d)
+            //   // ({className: 'red-background'})
+            // }}
           />
       </div>
     )
