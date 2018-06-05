@@ -14,7 +14,9 @@ class Profile extends Component {
       <div>
         <ProfileHeader />
         <div className="profile-wrapper">
-          <ProfileList />
+          <div className="profile-list-view">
+            <ProfileList />
+          </div>
           <div className="profile-action">
             {this.props.showAddProfile && <AddProfile />}
             {this.props.showEditProfile && <EditProfile />}
