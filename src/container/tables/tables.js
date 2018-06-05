@@ -53,6 +53,13 @@ class Tables extends Component {
                 <ReactTable
                     data={data}
                     columns={columns}
+                    // loading
+                    showPagination={true}
+                    showPaginationTop={false}
+                    showPaginationBottom={true}
+                    showPageSizeOptions={true}
+                    pageSizeOptions={[5, 10, 20, 25, 50, 100]}
+                    defaultPageSize={5}
                 />
             </div>
         )
