@@ -12,7 +12,7 @@
 .profile-list-view{
     flex-basis: 70%;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: flex-start;
     flex-direction: column;
 }
@@ -64,4 +64,7 @@
 .add-profile{
     border: 1px solid tomato;
     flex-basis: 30%;
+}
+.post-row {
+    height: 65px;
 }
