@@ -16,6 +16,7 @@ class EditProfile extends Component {
 
   renderInput = ({ input, label, type, meta: { touched, error }, ...custom }) => {
     return <div className="text-input">
+
       <Input
         placeholder={label}
         {...input}
@@ -36,6 +37,9 @@ class EditProfile extends Component {
     const { handleSubmit, pristine, reset } = this.props
     return (
       <div className="add-profile">
+      <div className="panel-header">
+            <h3>{this.props.singleProfile.name}</h3>
+          </div>
       <Card>
         <form onSubmit={handleSubmit(this.submitProfile)}>
           <Field component={this.renderInput} label={'Name'} name="name" />
