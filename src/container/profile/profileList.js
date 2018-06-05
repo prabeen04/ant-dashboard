@@ -15,14 +15,10 @@ class ProfileList extends Component {
     render() {
 
         if (this.props.isLoading) {
-            return (<div className="flex-container profile-list-view" style={{ alignItems: 'flex-start' }}>
-                <Card loading style={{ width: '100%' }}></Card>
-            </div>)
+             return   <Card loading style={{ width: '100%' }}></Card>
         }
         if (this.props.isError) {
-            return (<div className="flex-container profile-list-view" style={{ alignItems: 'flex-start' }}>
-                <h2>Some Error Occoured</h2>
-        </div>)
+            return (<h2>Some Error Occoured</h2>)
         }
 
         let renderCard = this.props.profiles.map(profile => {
