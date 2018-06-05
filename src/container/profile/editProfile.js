@@ -38,7 +38,7 @@ class EditProfile extends Component {
     return (
       <div className="add-profile">
       <div className="panel-header">
-            <h3>{this.props.singleProfile.name}</h3>
+            <h3>{this.props.initialValues.name ?this.props.initialValues.name :'EDIT'}</h3>
           </div>
       <Card>
         <form onSubmit={handleSubmit(this.submitProfile)}>
