@@ -20,7 +20,9 @@ class ProfileList extends Component {
             </div>)
         }
         if (this.props.isError) {
-            return (<p>Some Error occoured...</p>)
+            return (<div className="flex-container profile-list-view" style={{ alignItems: 'flex-start' }}>
+                <h2>Some Error Occoured</h2>
+        </div>)
         }
 
         let renderCard = this.props.profiles.map(profile => {
