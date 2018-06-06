@@ -32,8 +32,21 @@ class AddProfile extends Component {
     };
     this.renderInput = this.renderInput.bind(this);
     this.submitProfile = this.submitProfile.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
-
+  handleChange = (info) => {
+    if (info.file.status === 'uploading') {
+      this.setState({ loading: true });
+      return;
+    }
+    if (info.file.status === 'done') {
+      // Get this url from response in real world.
+      getBase64(info.file.originFileObj, imageUrl => this.setState({
+        imageUrl,
+        loading: false,
+      }));
+    }
+  }
   renderInput = ({ input, label, type, meta: { touched, error }, ...custom }) => {
     return <div className="text-input">
       <Input
@@ -49,6 +62,13 @@ class AddProfile extends Component {
   }
 
   render() {
+    const uploadButton = (
+      <div>
+        <Icon type={this.state.loading ? 'loading' : 'plus'} />
+        <div className="ant-upload-text">Upload</div>
+      </div>
+    );
+    const imageUrl = this.state.imageUrl;
     const { handleSubmit, pristine, reset, submitting } = this.props
     console.log(submitting)
     return (
