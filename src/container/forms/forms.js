@@ -31,8 +31,9 @@ class Forms extends Component {
         <Divider />
         <Divider />
       <ReduxFormArray />
-      <ThirdArrayForm />*/}
       <SecondArrayForm />
+    */}
+    <ThirdArrayForm />
         </Card>
       </div>
     )
