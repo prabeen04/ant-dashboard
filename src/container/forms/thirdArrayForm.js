@@ -78,31 +78,24 @@ class ThirdArrayForm extends Component {
                             name={`${member}.select1`}
                             component={this.renderSelect}
                             label="select1"
-                            onChange={(e, value) => {
-                                this.fillData(member, value)
-                            }}
                         />
                     </div>
                     <div className="array-field">
-                        <Field name={`${member}.field2`} component={this.renderInput} label="field2" disabled style={{ backgroundColor: '#eee', color: '#444' }} />
+                        <Field name={`${member}.field2`} component={this.renderInput} label="field2" />
                     </div>
 
                     <div className="array-field">
-                        <Field name={`${member}.field3`} component={this.renderInput} label="field3" disabled />
+                        <Field name={`${member}.field3`} component={this.renderInput} label="field3"  />
                     </div>
 
                     <div className="array-field">
-                        <Field name={`${member}.field4`} component={this.renderInputNumber} label="field4" disabled />
+                        <Field name={`${member}.field4`} component={this.renderInputNumber} label="field4"  />
                     </div>
                     <div className="array-field">
                     <FieldArray
-                        name='childMember'
+                        name={`${member}.childMember`}
                         component={this.renderChildMembers}
                     />
-                    </div>
-
-                    <div className="array-field">
-                        <Field name={`${member}.field6`} component={this.renderInputNumber} label="field6" />
                     </div>
                     <button
                         type="button"
