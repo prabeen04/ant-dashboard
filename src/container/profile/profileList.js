@@ -3,7 +3,7 @@ import ProfileCard from './profileCard';
 import ProfileListView from './profileListView';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { Icon, Card, Button, Pagination  } from 'antd';
+import { Icon, Card, Button  } from 'antd';
 import { getProfiles, addProfile, showAddProfile } from '../../actions/profile_actions';
 import { getProfilesState } from '../../selectors/demoSelector';
 
@@ -43,7 +43,6 @@ class ProfileList extends Component {
                     <Icon type="user-add" style={{ fontSize: '10rem', color: '#444' }} />
                 </div>}
                 {renderCard}
-                <Pagination defaultCurrent={1} total={50} /> 
             </div>
         )
     }
