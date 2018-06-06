@@ -129,38 +129,11 @@ class ThirdArrayForm extends Component {
             {fields.map((member, index) => (
                 <div key={index} style={{ display: 'flex' }}>
                     <div className="array-field">
-                        <Field
-                            name={`${member}.select1`}
-                            component={this.renderSelect}
-                            label="select1"
-                            onChange={(e, value) => {
-                                this.fillData(member, value)
-                            }}
-                        />
-                    </div>
-                    <div className="array-field">
                         <Field name={`${member}.field2`} component={this.renderInput} label="field2" disabled style={{ backgroundColor: '#eee', color: '#444' }} />
                     </div>
 
                     <div className="array-field">
                         <Field name={`${member}.field3`} component={this.renderInput} label="field3" disabled />
-                    </div>
-
-                    <div className="array-field">
-                        <Field name={`${member}.field4`} component={this.renderInputNumber} label="field4" disabled />
-                    </div>
-                    <div className="array-field">
-                        <Field name={`${member}.field5`} component={this.renderInputNumber} label="field5"
-                            onChange={(e, value) => {
-                                console.log(typeof value)
-                            }}
-                            normalize={(value) => +value}
-                        // validate={(value) => isNaN(+value) ? "Please enter a number" : undefined}
-                        />
-                    </div>
-
-                    <div className="array-field">
-                        <Field name={`${member}.field6`} component={this.renderInputNumber} label="field6" />
                     </div>
                     <button
                         type="button"
