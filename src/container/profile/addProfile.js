@@ -27,7 +27,9 @@ function beforeUpload(file) {
 class AddProfile extends Component {
   constructor(props) {
     super(props)
-
+    this.state = {
+      loading: false,
+    };
     this.renderInput = this.renderInput.bind(this);
     this.submitProfile = this.submitProfile.bind(this);
   }
@@ -41,7 +43,7 @@ class AddProfile extends Component {
       />
     </div>
   }
-  submitProfile = (values) =>{
+  submitProfile = (values) => {
     console.log(values)
     this.props.addProfile(values)
   }
@@ -51,20 +53,30 @@ class AddProfile extends Component {
     console.log(submitting)
     return (
       <div className="add-profile">
-      <div className="panel-header">
-      <h3>Add Profiles</h3>
-      </div>
+        <div className="panel-header">
+          <h3>Add Profiles</h3>
+        </div>
         <Card>
-
-        <form onSubmit={handleSubmit(this.submitProfile)}>
-          <Field component={this.renderInput} label={'Name'} name="name" />
-          <Field component={this.renderInput} label={'Email'} name="email" />
-          <Field component={this.renderInput} label={'Location'} name="location" />
-          <Button htmlType="submit" type="primary" loading={submitting}>
-          Click me!
+          <Upload
+            name="avatar"
+            listType="picture-card"
+            className="avatar-uploader"
+            showUploadList={false}
+            action="//jsonplaceholder.typicode.com/posts/"
+            beforeUpload={beforeUpload}
+            onChange={this.handleChange}
+          >
+            {imageUrl ? <img src={imageUrl} alt="avatar" /> : uploadButton}
+          </Upload>
+          <form onSubmit={handleSubmit(this.submitProfile)}>
+            <Field component={this.renderInput} label={'Name'} name="name" />
+            <Field component={this.renderInput} label={'Email'} name="email" />
+            <Field component={this.renderInput} label={'Location'} name="location" />
+            <Button htmlType="submit" type="primary" loading={submitting}>
+              Click me!
         </Button>
-       { console.log(submitting)}
-        </form>
+            {console.log(submitting)}
+          </form>
         </Card>
       </div>
     )
