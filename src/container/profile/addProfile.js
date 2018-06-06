@@ -2,9 +2,27 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { Field, reduxForm } from 'redux-form'
-import { Input, Button, Icon, Card } from 'antd'
+import { Input, Button, Icon, Card, Upload, message } from 'antd'
 import './profile.css'
 import { addProfile } from '../../actions/profile_actions';
+
+function getBase64(img, callback) {
+  const reader = new FileReader();
+  reader.addEventListener('load', () => callback(reader.result));
+  reader.readAsDataURL(img);
+}
+
+function beforeUpload(file) {
+  const isJPG = file.type === 'image/jpeg';
+  if (!isJPG) {
+    message.error('You can only upload JPG file!');
+  }
+  const isLt2M = file.size / 1024 / 1024 < 2;
+  if (!isLt2M) {
+    message.error('Image must smaller than 2MB!');
+  }
+  return isJPG && isLt2M;
+}
 
 class AddProfile extends Component {
   constructor(props) {
@@ -37,7 +55,7 @@ class AddProfile extends Component {
       <h3>Add Profiles</h3>
       </div>
         <Card>
-          
+
         <form onSubmit={handleSubmit(this.submitProfile)}>
           <Field component={this.renderInput} label={'Name'} name="name" />
           <Field component={this.renderInput} label={'Email'} name="email" />
