@@ -11,7 +11,7 @@ class Profile extends Component {
   render() {
 
     return (
-      <div>
+      <div className="pr">
         <ProfileHeader />
         <div className="profile-wrapper">
           <div className="profile-list-view">

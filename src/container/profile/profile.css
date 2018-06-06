@@ -1,5 +1,5 @@
 .profile-wrapper{
-    width: 100%;
+    /* width: 100%; */
     display: flex;
     margin: 0.2rem  0.5rem;
 }
@@ -40,6 +40,9 @@
      align-items: center;
      align-content: center;
 }
+.panel-header h3{
+    color: #fff;
+}
 .view-icons{
     padding-left: 1rem;
     display: flex;
@@ -63,7 +66,6 @@
 }
 /* Add Profile Section */
 .add-profile{
-    border: 1px solid tomato;
     flex-basis: 30%;
 }
 .post-row {

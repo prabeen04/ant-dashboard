@@ -16,7 +16,7 @@ class ProfileView extends Component {
               <h3>{this.props.profile.name}</h3>
             </div>
             <Card
-              style={{ width: 300 }}
+              style={{ width: '100%' }}
               cover={<img alt="example" src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png" />}
               actions={[
                 <Icon onClick={() => console.log('settings clicked')} type="setting" />,
