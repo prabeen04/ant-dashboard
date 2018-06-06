@@ -95,13 +95,10 @@ class ThirdArrayForm extends Component {
                         <Field name={`${member}.field4`} component={this.renderInputNumber} label="field4" disabled />
                     </div>
                     <div className="array-field">
-                        <Field name={`${member}.field5`} component={this.renderInputNumber} label="field5"
-                            onChange={(e, value) => {
-                                console.log(typeof value)
-                            }}
-                            normalize={(value) => +value}
-                        // validate={(value) => isNaN(+value) ? "Please enter a number" : undefined}
-                        />
+                    <FieldArray
+                        name='childMember'
+                        component={this.renderChildMembers}
+                    />
                     </div>
 
                     <div className="array-field">
