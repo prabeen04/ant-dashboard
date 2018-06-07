@@ -15,10 +15,10 @@ class Profile extends Component {
       <div className="pr">
         <ProfileHeader />
         <div className="profile-wrapper">
-          <div className="profile-list-view">
+          <div className="profile-view">
             <ProfileList />          
-          </div>
           <PaginationComponent/>
+          </div>
           <div className="profile-action">
             {this.props.showAddProfile && <AddProfile />}
             {this.props.showEditProfile && <EditProfile />}

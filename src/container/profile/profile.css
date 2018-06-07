@@ -3,6 +3,9 @@
     display: flex;
     margin: 0.2rem  0.5rem;
 }
+.profile-view{
+   width: 100%; 
+}
 .profile-grid-view{
     flex-basis: 70%;
     display: flex;
