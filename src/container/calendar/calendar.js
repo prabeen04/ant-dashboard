@@ -17,8 +17,6 @@ class Calendar extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      startDate: '',
-      endDate: '',
       visible: false,
       confirmLoading: false,
       activeTab: "1",
@@ -62,7 +60,6 @@ class Calendar extends Component {
   }
 
   render() {
-    const { visible, confirmLoading, startDate, endDate } = this.state;
     if (this.props.isLoading) {
       return (<div className="flex-container" style={{ height: '80vh', justifyContent: 'center' }}>
         <Icon type="loading" style={{ fontSize: 60, color: 'tomato' }} spin />
