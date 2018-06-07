@@ -128,7 +128,7 @@ class ThirdArrayForm extends Component {
                     <button
                         type="button"
                         onClick={() => fields.remove(index)} >
-                        delete
+                        X
                     </button>
                 </div>
             ))}
