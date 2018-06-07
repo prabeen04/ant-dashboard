@@ -1,13 +1,14 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { Pagination } from 'antd';
 
-class Pagination extends Component {
+class PaginationComponent extends Component {
   render() {
     return (
       <div>
-        <h4>Pagination Component</h4>
+         <Pagination defaultCurrent={1} total={50} /> 
       </div>
     )
   }
 }
 
-export default Pagination;
+export default PaginationComponent;

@@ -5,7 +5,7 @@ import AddProfile from './addProfile';
 import EditProfile from './editProfile';
 import ProfileView from './profileView';
 import ProfileHeader from './profileHeader';
-import { Pagination } from 'antd';
+import PaginationComponent  from '../../components/common/pagination/pagination';
 import './profile.css';
 
 class Profile extends Component {
@@ -16,9 +16,9 @@ class Profile extends Component {
         <ProfileHeader />
         <div className="profile-wrapper">
           <div className="profile-list-view">
-            <ProfileList />
-            <Pagination defaultCurrent={1} total={50} /> 
+            <ProfileList />          
           </div>
+          <PaginationComponent/>
           <div className="profile-action">
             {this.props.showAddProfile && <AddProfile />}
             {this.props.showEditProfile && <EditProfile />}
