@@ -8,7 +8,7 @@
     background: #fff;
     padding: 0.7rem;
     margin: 0.2rem 0.4rem 0.5rem  0;
-    border-radius: 2px;
+    border-radius: 3px;
     box-shadow: 0 2px 12px 1px rgb(155, 153, 153);
 }
 .profile-grid-view{
@@ -26,6 +26,9 @@
 }
 .profile-action{
     flex-basis: 30%;
+    margin: 0.2rem 0.4rem 0.5rem  0;
+    /* border-radius: 3px;
+    box-shadow: 0 2px 12px 1px rgb(155, 153, 153); */
 }
 /* Profile Heade Section */
 .profile-header{
