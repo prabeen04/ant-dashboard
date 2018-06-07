@@ -17,8 +17,6 @@ class Calendar extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      visible: false,
-      confirmLoading: false,
       activeTab: "1",
       view: 'week'
     }
@@ -43,17 +41,9 @@ class Calendar extends Component {
   };
   handleOk = (slot) => {
     this.props.setDate(slot)
-    this.setState({
-      startDate: slot.start,
-      endDate: slot.end,
-      confirmLoading: true,
-    });
   }
   handleCancel = () => {
     console.log('Clicked cancel button');
-    this.setState({
-      visible: false,
-    });
   }
   componentDidMount() {
     this.props.getEvents();
