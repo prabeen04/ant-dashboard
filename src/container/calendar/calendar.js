@@ -22,7 +22,6 @@ class Calendar extends Component {
     }
 
     this.handleOk = this.handleOk.bind(this);
-    this.handleCancel = this.handleCancel.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
     this.success = this.success.bind(this);
     // this.renderEndDate = this.renderEndDate.bind(this);
@@ -41,9 +40,6 @@ class Calendar extends Component {
   };
   handleOk = (slot) => {
     this.props.setDate(slot)
-  }
-  handleCancel = () => {
-    console.log('Clicked cancel button');
   }
   componentDidMount() {
     this.props.getEvents();
