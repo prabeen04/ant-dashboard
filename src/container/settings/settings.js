@@ -1,7 +1,8 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import { connect } from 'react-redux'
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import { Tabs, Icon } from 'antd';
+import ChartSettings from './chartSettings';
 import './settings.css';
 const TabPane = Tabs.TabPane;
 
@@ -13,7 +14,7 @@ class Settings extends Component {
             <div className="setting-wrapper">
                 <Tabs defaultActiveKey="1">
                     <TabPane tab={<span><Icon type="area-chart" />Charts</span>} key="1">
-                        Tab 1
+                       <ChartSettings/>
                     </TabPane>
                     <TabPane tab={<span><Icon type="unlock" />Profile</span>} key="2">
                         Tab 2
