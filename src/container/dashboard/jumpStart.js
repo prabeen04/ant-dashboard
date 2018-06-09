@@ -24,8 +24,8 @@ class JumpStartBox extends Component {
                 <Card style={{margin: '1rem'}}>
                     <Line
                         data={chartData}
-                        width={200}
-                        height={100}
+                        width={600}
+                        height={400}
                         options={{
                             maintainAspectRatio: false
                         }} />
