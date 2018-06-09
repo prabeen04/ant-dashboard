@@ -1,5 +1,4 @@
-export default {
-    data: [
+export const jumpStartData = [
         {
             visible: false,
             id: 1,
@@ -30,5 +29,4 @@ export default {
             title: ' Title 5',
             value: 1100
         },
-    ]
-};
+    ];
