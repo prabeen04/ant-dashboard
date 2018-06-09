@@ -12,6 +12,7 @@ import Login from "../../container/login/login";
 import NotFound from '../../container/notFound/notFound';
 import Forms from '../../container/forms/forms';
 import Tables from '../../container/tables/tables';
+import Settings from '../../container/settings/settings';
 const { Header, Sider, Content } = Layout;
 
 class Navbar extends React.Component {
@@ -92,6 +93,7 @@ class Navbar extends React.Component {
                             <Route exact path='/post/:id' component={SinglePost} />
                             <Route exact path='/forms' component={Forms} />
                             <Route exact path='/tables' component={Tables} />
+                            <Route exact path='/settings' component={Settings} />
                             <Route path='**' component={NotFound} />
                         </Switch>
                     </Content>

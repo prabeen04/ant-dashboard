@@ -59,6 +59,12 @@ class NavMenu extends React.Component {
                             <span>Tables</span>
                         </Link>
                     </Menu.Item>
+                    <Menu.Item key="7">
+                        <Link to='/settings'>
+                            <Icon type="setting" />
+                            <span>Settings</span>
+                        </Link>
+                    </Menu.Item>
                 </Menu>
             </div>
         );
