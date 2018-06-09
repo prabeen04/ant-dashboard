@@ -1,35 +1,28 @@
 import React, { Component } from 'react'
 import { Bar, Line } from 'react-chartjs-2';
 import { Card } from 'antd';
-import chartData from './chartData';
+import jumpStartData from './jumpStartData';
 
 class JumpStartBox extends Component {
     constructor(props) {
         super(props)
-        this.state = {
-            isLoading: true
-        }
+        this.renderJumpStartBoxes = this.renderJumpStartBoxes;
+    }
+    renderJumpStartBoxes = () => {
+
     }
     componentDidMount() {
-        setTimeout(() => {
-            this.setState({
-                isLoading: false
-            })
-        }, 2000);
     }
     render() {
 
         return (
             <div>
-                <Card style={{margin: '1rem'}}>
-                    <Line
-                        data={chartData}
-                        width={200}
-                        height={100}
-                        options={{
-                            maintainAspectRatio: false
-                        }} />
-                </Card>
+
+                {jumpStartData.data.map((data) => {
+                    console.log(data.title)
+                    return <Card key={data.id} style={{ margin: '1rem' }} title={data.title}><div>{data.title}</div>      </Card>
+                })}
+
             </div>
         )
     }
