@@ -24,11 +24,6 @@ class Dashboard extends Component {
       <div>
       <div className='flex-container'>
         <JumpStartBox/>
-        <JumpStartBox/>
-        <JumpStartBox/>
-        <JumpStartBox/>
-        <JumpStartBox/>
-        <JumpStartBox/>
       </div>
        <Card loading={this.state.isLoading} style={{height: '400px'}}>
        <div className="flex-container" style={{ justifyContent: 'space-evenly'}}>
