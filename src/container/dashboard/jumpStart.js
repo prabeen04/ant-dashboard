@@ -10,7 +10,7 @@ class JumpStartBox extends Component {
     componentDidMount() {
     }
     render() {
-        let renderJumpStartBoxes = jumpStartData.map((data) => <Card key={data.id} style={{ margin: '1rem' }}>
+        let renderJumpStartBoxes = jumpStartData.map((data) => <Card key={data.id} style={{ margin: '1rem', justifyContent: 'space-evenly', minWidth: 200 }}>
             <div>
                 <h3>{data.title}</h3>
                 <h2>{data.value}</h2>
@@ -18,7 +18,7 @@ class JumpStartBox extends Component {
         </Card>)
 
         return (
-            <div className="flex-container" style={{ flexGrow: 1, flexBasis: '100%' }}>
+            <div className="flex-container" style={{ flexGrow: 1}}>
                 {renderJumpStartBoxes}
             </div>
         )
