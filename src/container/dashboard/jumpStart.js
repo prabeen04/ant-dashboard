@@ -10,7 +10,8 @@ class JumpStartBox extends Component {
     componentDidMount() {
     }
     render() {
-        let renderJumpStartBoxes = jumpStartData.map((data) => <Card key={data.id} style={{ margin: '1rem', justifyContent: 'space-evenly', minWidth: 200 }}>
+        let renderJumpStartBoxes = jumpStartData.filter((data) => data.visible)
+            .map((data) => <Card key={data.id} style={{ margin: '1rem', justifyContent: 'space-evenly', minWidth: 200 }}>
             <div>
                 <h3>{data.title}</h3>
                 <h2>{data.value}</h2>
