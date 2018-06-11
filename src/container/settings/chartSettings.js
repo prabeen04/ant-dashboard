@@ -8,7 +8,7 @@ import { List, Button, Checkbox } from 'antd';
 class ChartSettings extends Component {
 
   render() {
-    let JumpstartData = this.props.jumpStartData.map(data => {
+    let jumpStartData = this.props.jumpStartData.map(data => {
       return <Checkbox key={data.id} value={data.id}>{data.title}</Checkbox>
     })
     return (

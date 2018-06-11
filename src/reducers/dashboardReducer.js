@@ -1,6 +1,6 @@
 import { GET_JUMPSTART_LIST } from '../types/dashboardActionTypes';
 const initialState = {
-    jumpstartData: [
+    jumpStartData: [
         {
             visible: false,
             id: 1,
