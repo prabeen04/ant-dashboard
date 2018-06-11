@@ -8,9 +8,11 @@ import { formReducer } from "../reducers/testFormReducer";
 import { formArrayReducer } from "../reducers/formArrayReducer";
 import { secondArrayReducer } from '../reducers/secondArrayReducer';
 import { thirdArrayReducer } from '../reducers/thirdArrayReducer';
+import { dashboardReducer } from '../reducers/dashboardReducer';
 
 export const rootReducer = combineReducers({
     form: FormReducer,
+    dashboardReducer,
     calendarReducer,
     profileReducer,
     postReducer,
