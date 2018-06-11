@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { List, Button, Checkbox } from 'antd';
 import { jumpStartData } from '../dashboard/jumpStartData';
 const data2 = jumpStartData.map(data => {
-  return <p key={data.id}>{data.title}</p>
+  return <Checkbox key={data.id} value={data.id}>{data.title}</Checkbox>
 })
 const data = [
   <Checkbox>Manchester United</Checkbox>,
