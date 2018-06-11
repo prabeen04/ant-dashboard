@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { List, Button, Checkbox } from 'antd';
+import { jumpStartData } from '../dashboard/jumpStartData';
+const data2 = jumpStartData.map(data => {
+  return <p key={data.id}>{data.title}</p>
+})
 const data = [
   <Checkbox>Manchester United</Checkbox>,
   <Checkbox>Arsenal</Checkbox>,
@@ -15,6 +19,7 @@ class ChartSettings extends Component {
   render() {
     return (
       <div>
+        {data2}
         <List
           size="small"
           bordered
