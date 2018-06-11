@@ -1,8 +1,15 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { List, Button } from 'antd';
-
+import { List, Button, Checkbox } from 'antd';
+const data = [
+  <Checkbox>Manchester United</Checkbox>,
+  <Checkbox>Arsenal</Checkbox>,
+  <Checkbox>Chelsea</Checkbox>,
+  <Checkbox>Manchester City</Checkbox>,
+  <Checkbox>Liverpool</Checkbox>,
+  <Checkbox>Tottenham</Checkbox>
+];
 class ChartSettings extends Component {
 
   render() {
