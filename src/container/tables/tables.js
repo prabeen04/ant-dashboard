@@ -27,7 +27,6 @@ class Tables extends Component {
                 <ReactTable
                     data={data}
                     columns={columns}
-                    filterable={true}
                     showPagination={true}
                     showPaginationTop={false}
                     showPaginationBottom={true}
