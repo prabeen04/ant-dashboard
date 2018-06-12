@@ -23,10 +23,6 @@ class Tables extends Component {
         let keys = Object.keys(data[0]);
         console.log(keys)
 
-        const customColumn = keys.map(key => {
-            return {Header: key.toUpperCase(), accessor: key}
-        })
-        console.log( ...customColumn)
         return (
             <div className="table-container">
                 <h3>Tables Component</h3>
