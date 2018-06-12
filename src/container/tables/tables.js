@@ -26,13 +26,13 @@ class Tables extends Component {
         const customColumn = keys.map(key => {
             return {Header: key.toUpperCase(), accessor: key}
         })
-        console.log(customColumn)
+        console.log( ...customColumn)
         return (
             <div className="table-container">
                 <h3>Tables Component</h3>
                 <ReactTable
                     data={data}
-                    columns={columns}
+                    columns={ columns}
                     showPagination={true}
                     showPaginationTop={false}
                     showPaginationBottom={true}
