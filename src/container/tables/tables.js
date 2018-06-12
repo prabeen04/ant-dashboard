@@ -22,6 +22,11 @@ class Tables extends Component {
         console.log(custom)
         const keys = Object.keys(data[0]);
         console.log(keys)
+
+        const customColumn = keys.map(key => {
+            return {Header: key.name, accessor: key.age}
+        })
+        console.log(customColumn)
         return (
             <div className="table-container">
                 <h3>Tables Component</h3>
