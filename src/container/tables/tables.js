@@ -20,6 +20,8 @@ class Tables extends Component {
                 return {Header: data.name, accessor: data.age}
         })
         console.log(custom)
+        const keys = Object.keys(data[0]);
+        console.log(keys)
         return (
             <div className="table-container">
                 <h3>Tables Component</h3>
