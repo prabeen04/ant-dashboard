@@ -13,15 +13,6 @@ class Tables extends Component {
             Header: 'Age',
             accessor: 'age',
         }]
-        console.log(columns)
-        console.log('--------------------------------')
-  
-        const custom = data.map((data) => {
-                return {Header: data.name, accessor: data.age}
-        })
-        console.log(custom)
-        let keys = Object.keys(data[0]);
-        console.log(keys)
 
         return (
             <div className="table-container">
