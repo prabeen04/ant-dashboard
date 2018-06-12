@@ -13,6 +13,13 @@ class Tables extends Component {
             Header: 'Age',
             accessor: 'age',
         }]
+        console.log(columns)
+        console.log('--------------------------------')
+  
+        const custom = data.map((data) => {
+                return {...data}
+        })
+        console.log(custom)
         return (
             <div className="table-container">
                 <h3>Tables Component</h3>
