@@ -17,7 +17,7 @@ class Tables extends Component {
         console.log('--------------------------------')
   
         const custom = data.map((data) => {
-                return {...data}
+                return {Header: data.name, accessor: data.age}
         })
         console.log(custom)
         return (
