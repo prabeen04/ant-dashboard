@@ -20,11 +20,11 @@ class Tables extends Component {
                 return {Header: data.name, accessor: data.age}
         })
         console.log(custom)
-        const keys = Object.keys(data[0]);
+        let keys = Object.keys(data[0]);
         console.log(keys)
 
         const customColumn = keys.map(key => {
-            return {Header: key.name, accessor: key.age}
+            return {Header: key.toUpperCase(), accessor: key}
         })
         console.log(customColumn)
         return (
