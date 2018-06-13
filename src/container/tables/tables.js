@@ -7,11 +7,13 @@ import './tables.css';
 
 class Tables extends Component {
     render() {
-        const columns = [{
-            Header: 'Name',
-            accessor: 'name',
-            show: true
-            }, {
+        const columns = [
+            {
+                Header: 'Name',
+                accessor: 'name',
+                show: true
+            },
+            {
                 Header: 'Age',
                 accessor: 'age',
                 show: true
@@ -25,7 +27,8 @@ class Tables extends Component {
                 Header: 'Location',
                 accessor: 'location',
                 show: true
-            }]
+            }
+        ]
 
         return (
             <div className="table-container">
@@ -45,13 +48,13 @@ class Tables extends Component {
     }
 }
 const mapStateToProps = state => {
-    return{
+    return {
         tableData: state.tableReducer
     }
 }
 const mapDispatchToProps = dispatch => {
     return bindActionCreators({
-        
+
     }, dispatch)
 }
 export default connect(mapStateToProps, mapDispatchToProps)(Tables);

@@ -1,9 +1,10 @@
 import { GET_TABLE_DATA } from '../types/tableActionTypes';
-const initialState = [{
-    name: 'Ander Hererra',
-    age: 26,
-    profession: 'React Developer',
-    location: 'Miami'
+const initialState = {
+    data: [{
+        name: 'Ander Hererra',
+        age: 26,
+        profession: 'React Developer',
+        location: 'Miami'
     },
     {
         name: 'Antonio valencia',
@@ -40,7 +41,31 @@ const initialState = [{
         age: 16,
         profession: 'React Developer',
         location: 'Miami'
-    }]
+    }],
+    columns: [
+        {
+            Header: 'Name',
+            accessor: 'name',
+            show: true
+        },
+        {
+            Header: 'Age',
+            accessor: 'age',
+            show: true
+        },
+        {
+            Header: 'Profession',
+            accessor: 'profession',
+            show: true
+        },
+        {
+            Header: 'Location',
+            accessor: 'location',
+            show: true
+        }
+    ]
+
+}
 
 export const tableReducer = (state = initialState, action) => {
     switch (action.type) {
