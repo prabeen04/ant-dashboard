@@ -7,29 +7,6 @@ import './tables.css';
 
 class Tables extends Component {
     render() {
-        const columns = [
-            {
-                Header: 'Name',
-                accessor: 'name',
-                show: true
-            },
-            {
-                Header: 'Age',
-                accessor: 'age',
-                show: true
-            },
-            {
-                Header: 'Profession',
-                accessor: 'profession',
-                show: true
-            },
-            {
-                Header: 'Location',
-                accessor: 'location',
-                show: true
-            }
-        ]
-
         return (
             <div className="table-container">
                 <h3>Tables Component</h3>
