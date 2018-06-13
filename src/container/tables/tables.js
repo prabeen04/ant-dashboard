@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import ReactTable from "react-table";
-import { data } from './tableData';
 import 'react-table/react-table.css';
 import './tables.css';
 
