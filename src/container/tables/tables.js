@@ -8,18 +8,22 @@ class Tables extends Component {
     render() {
         const columns = [{
             Header: 'Name',
-            accessor: 'name' // String-based value accessors!
+            accessor: 'name',
+            show: true
         }, {
             Header: 'Age',
             accessor: 'age',
+            show: true
         },
         {
             Header: 'Profession',
-            accessor: 'profession' // String-based value accessors!
+            accessor: 'profession',
+            show: true
         },
         {
             Header: 'Location',
             accessor: 'location',
+            show: false
         }]
 
         return (
