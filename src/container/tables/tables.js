@@ -12,7 +12,7 @@ class Tables extends Component {
                 <h3>Tables Component</h3>
                 <ReactTable
                     data={this.props.tableData}
-                    columns={columns}
+                    columns={this.props.columns}
                     showPagination={true}
                     showPaginationTop={false}
                     showPaginationBottom={true}
@@ -26,7 +26,8 @@ class Tables extends Component {
 }
 const mapStateToProps = state => {
     return {
-        tableData: state.tableReducer
+        tableData: state.tableReducer.data,
+        columns: state.tableReducer.columns
     }
 }
 const mapDispatchToProps = dispatch => {
