@@ -32,7 +32,7 @@ class Tables extends Component {
             <div className="table-container">
                 <h3>Tables Component</h3>
                 <ReactTable
-                    data={data}
+                    data={this.props.tableData}
                     columns={columns}
                     showPagination={true}
                     showPaginationTop={false}
