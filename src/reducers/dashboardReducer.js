@@ -20,7 +20,7 @@ const initialState = {
             value: 90
         },
         {
-            visible: false,
+            visible: true,
             id: 4,
             title: 'Title 4',
             value: 45
