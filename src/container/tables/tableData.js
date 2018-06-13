@@ -1,40 +1,40 @@
 import React from 'react';
 
 export const data = [{
-    name: 'Tanner Linsley',
+    name: 'Ander Hererra,
     age: 26,
     pofession: 'React Developer',
     location: 'Miami'
 },
 {
-    name: 'asfasf iu',
-    age: 36,
-    pofession: 'React Developer',
-    location: 'Miami'
+    name: 'Antonio valencia',
+    age: 21,
+    pofession: 'Java Developer',
+    location: 'California'
 },
 {
-    name: 'Tanner Linsley',
-    age: 36,
-    pofession: 'React Developer',
-    location: 'Miami'
+    name: 'Paul Pogba',
+    age: 45,
+    pofession: 'FrontEnd Developer',
+    location: 'Gurgaon'
 },
 {
-    name: 'asfasf Linsley',
-    age: 36,
-    pofession: 'React Developer',
-    location: 'Miami'
+    name: 'David De Gea',
+    age: 22,
+    pofession: 'Python Developer',
+    location: 'Bangalore'
 },
 {
-    name: 'Tanner Linsley',
-    age: 26,
-    pofession: 'React Developer',
-    location: 'Miami'
+    name: 'Marcus RashFord',
+    age: 56,
+    pofession: 'Android Developer',
+    location: 'Amsterdam'
 },
 {
-    name: 'asfasf Linsley',
+    name: 'Romelu Lukaku',
     age: 36,
-    pofession: 'React Developer',
-    location: 'Miami'
+    pofession: 'Javascript Developer',
+    location: 'Bhubaneswar'
 },
 {
     name: 'Tannetyrtuer Linsley',
