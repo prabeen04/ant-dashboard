@@ -10,21 +10,21 @@ class Tables extends Component {
             Header: 'Name',
             accessor: 'name',
             show: true
-        }, {
-            Header: 'Age',
-            accessor: 'age',
-            show: true
-        },
-        {
-            Header: 'Profession',
-            accessor: 'profession',
-            show: true
-        },
-        {
-            Header: 'Location',
-            accessor: 'location',
-            show: false
-        }]
+            }, {
+                Header: 'Age',
+                accessor: 'age',
+                show: true
+            },
+            {
+                Header: 'Profession',
+                accessor: 'profession',
+                show: true
+            },
+            {
+                Header: 'Location',
+                accessor: 'location',
+                show: true
+            }]
 
         return (
             <div className="table-container">
