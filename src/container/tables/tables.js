@@ -12,6 +12,14 @@ class Tables extends Component {
         }, {
             Header: 'Age',
             accessor: 'age',
+        },
+        {
+            Header: 'Profession',
+            accessor: 'profession' // String-based value accessors!
+        },
+        {
+            Header: 'Location',
+            accessor: 'location',
         }]
 
         return (
@@ -19,7 +27,7 @@ class Tables extends Component {
                 <h3>Tables Component</h3>
                 <ReactTable
                     data={data}
-                    columns={ columns}
+                    columns={columns}
                     showPagination={true}
                     showPaginationTop={false}
                     showPaginationBottom={true}
