@@ -71,13 +71,10 @@ export const tableReducer = (state = initialState, action) => {
     switch (action.type) {
         case GET_TABLE_DATA:
             return {
-                ...state, columns: getColumns(state.columns)                 
+                ...state             
             }
         default:
             return state;
     }
     return state;
-}
-getColumns = (columns) =>{
- return columns.filter((column) => column.show === true)
 }
