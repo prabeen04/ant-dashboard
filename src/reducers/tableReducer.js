@@ -70,7 +70,15 @@ const initialState = {
 export const tableReducer = (state = initialState, action) => {
     switch (action.type) {
         case GET_TABLE_DATA:
+            console.log(state)
             return state;
     }
+    console.log({...state,columns:[...state.columns, 
+        {
+            Header: 'Location',
+            accessor: 'location',
+            show: false
+        }
+    ]})
     return state;
 }
