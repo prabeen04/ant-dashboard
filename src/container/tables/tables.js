@@ -2,10 +2,16 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import ReactTable from "react-table";
+import { getTableData } from '../../actions/tableAction';
 import 'react-table/react-table.css';
 import './tables.css';
 
 class Tables extends Component {
+    componentDidMount(){
+        setTimeout(() =>{
+            this.props.getTableData()
+        },2000)
+    }
     render() {
         return (
             <div className="table-container">
@@ -32,7 +38,7 @@ const mapStateToProps = state => {
 }
 const mapDispatchToProps = dispatch => {
     return bindActionCreators({
-
+        getTableData
     }, dispatch)
 }
 export default connect(mapStateToProps, mapDispatchToProps)(Tables);
