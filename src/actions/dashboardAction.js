@@ -1,6 +1,6 @@
 import { GET_JUMPSTART_LIST } from '../types/dashboardActionTypes';
 
-export const getjumpstartList = () => dispatch => {
+export const getJumpstartList = () => dispatch => {
     return dispatch({
         type: GET_JUMPSTART_LIST
     })

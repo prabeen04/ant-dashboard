@@ -3,12 +3,16 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { Bar, Line } from 'react-chartjs-2';
 import { Card } from 'antd';
+import { getJumpstartList } from '../../actions/dashboardAction';
 class JumpStartBox extends Component {
     constructor(props) {
         super(props)
     }
 
     componentDidMount() {
+        setTimeout(() => {
+            this.props.getJumpstartList()
+        },2000)
     }
     render() {
         let renderJumpStartBoxes = this.props.jumpStartData.filter((data) => data.visible)
@@ -33,7 +37,7 @@ const mapStateToProps = (state) => {
 }
 const mapDispatchToProps = dispatch => {
     return bindActionCreators({
-
+        getJumpstartList
     }, dispatch)
 }
 export default connect(mapStateToProps, mapDispatchToProps)(JumpStartBox);
