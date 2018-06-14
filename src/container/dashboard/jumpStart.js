@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { Bar, Line } from 'react-chartjs-2';
 import { Card } from 'antd';
@@ -30,4 +31,9 @@ const mapStateToProps = (state) => {
         jumpStartData: state.dashboardReducer.jumpStartData
     }
 }
-export default connect(mapStateToProps)(JumpStartBox);
+const mapDispatchToProps = dispatch => {
+    return bindActionCreators({
+
+    }, dispatch)
+}
+export default connect(mapStateToProps, mapDispatchToProps)(JumpStartBox);
