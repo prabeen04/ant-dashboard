@@ -61,7 +61,7 @@ const initialState = {
         {
             Header: 'Location',
             accessor: 'location',
-            show: true
+            show: false
         }
     ]
 
@@ -73,12 +73,8 @@ export const tableReducer = (state = initialState, action) => {
             console.log(state)
             return state;
     }
-    console.log({...state,columns:[...state.columns, 
-        {
-            Header: 'Location',
-            accessor: 'location',
-            show: false
-        }
-    ]})
+    console.log({...state,columns:
+        state.columns.filter((column) => column.show === true )
+    })
     return state;
 }
