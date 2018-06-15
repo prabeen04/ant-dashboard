@@ -16,8 +16,9 @@ class EventForm extends Component {
         this.eventSubmit = this.eventSubmit.bind(this);
     }
     eventSubmit = (values) => {
-        console.log(values)
-        this.props.addEvent(values)
+        let event = Object.assign({}, values, {startDate: moment(this.props.startDate).format(),endDate: moment(this.props.endDate).format()})
+        console.log(event)
+        this.props.addEvent(event)
     }
     renderInput = ({ input, label, type, meta: { touched, error }, ...custom }) => {
         return (
