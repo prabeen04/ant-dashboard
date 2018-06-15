@@ -22,9 +22,8 @@ class Calendar extends Component {
     }
 
     this.handleOk = this.handleOk.bind(this);
-    this.onSubmit = this.onSubmit.bind(this);
     this.success = this.success.bind(this);
-    // this.renderEndDate = this.renderEndDate.bind(this);
+    this.eventSelect = this.eventSelect.bind(this);
   }
 
   success = () => {
@@ -32,6 +31,9 @@ class Calendar extends Component {
   };
   handleOk = (slot) => {
     this.props.setDate(slot)
+  }
+  eventSelect = (event) => {
+    console.log(event)
   }
   componentDidMount() {
     this.props.getEvents();
@@ -55,10 +57,7 @@ class Calendar extends Component {
             defaultDate={new Date()}
             selectable={true}
             popup={true}
-            onSelectEvent={(event, e) => {
-              alert(event.description)
-              console.log(e)
-            }}
+            onSelectEvent={this.eventSelect}
             onSelectSlot={this.handleOk}
           />
           : <p style={{flexBasis: '70%'}}>Second tab Content</p>
@@ -97,7 +96,6 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return bindActionCreators({
     getEvents: getEvents,
-    addEvent: addEvent,
     setDate: setDate
   }, dispatch);
 };
