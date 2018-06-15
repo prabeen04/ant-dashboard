@@ -27,14 +27,6 @@ class Calendar extends Component {
     // this.renderEndDate = this.renderEndDate.bind(this);
   }
 
-  onSubmit = (values) => {
-    console.log(values)
-    console.log(JSON.stringify(values))
-    // let eventValues = Object.assign({}, values,{ start: moment(this.state.startDate), end:  moment(this.state.endDate)})
-    // console.log(JSON.stringify(eventValues))
-    this.success()
-    // this.props.addEvent(eventValues);
-  }
   success = () => {
     message.success('Event Added', 10);
   };
