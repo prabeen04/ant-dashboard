@@ -16,9 +16,9 @@ class EventForm extends Component {
         this.eventSubmit = this.eventSubmit.bind(this);
     }
     eventSubmit = (values) => {
-        let event = Object.assign({}, values, {startDate: moment(this.props.startDate).format(),endDate: moment(this.props.endDate).format()})
+        let event = Object.assign({}, values, {start: moment(this.props.startDate).format(),end: moment(this.props.endDate).format()})
         console.log(event)
-        this.props.addEvent(event)
+        this.props.addEvent(values)
     }
     renderInput = ({ input, label, type, meta: { touched, error }, ...custom }) => {
         return (
@@ -47,11 +47,11 @@ class EventForm extends Component {
             <div>
                 <form onSubmit={handleSubmit(this.eventSubmit)}>
                     <Field
-                        name="startDate"
+                        name="start"
                         label="Start Date"
                         component={this.renderDate} />
                     <Field
-                        name="endDate"
+                        name="end"
                         label="End Date"
                         component={this.renderDate}
                     />
@@ -75,10 +75,10 @@ class EventForm extends Component {
 }
 const validate = (values) => {
     const errors = {}
-    if (!values.startDate) {
+    if (!values.start) {
         errors.startDate = 'required'
     }
-    if (!values.endDate) {
+    if (!values.end) {
         errors.endDate = 'required'
     }
     if (!values.title) {
@@ -102,8 +102,8 @@ const mapStateToProps = (state) => {
     console.log()
     return {
         initialValues: {
-            startDate: state.calendarReducer.startDate,
-            endDate: state.calendarReducer.endDate
+            start: state.calendarReducer.startDate,
+            end: state.calendarReducer.endDate
         }
     }
 }
