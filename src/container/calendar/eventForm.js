@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Field, reduxForm } from 'redux-form';
 import { Input, DatePicker, Button } from 'antd';
+import { addEvent } from '../../actions/calendar_actions';
 const { MonthPicker, RangePicker } = DatePicker;
 
 class EventForm extends Component {
@@ -16,6 +17,7 @@ class EventForm extends Component {
     }
     eventSubmit = (values) => {
         console.log(values)
+        this.props.addEvent(values)
     }
     renderInput = ({ input, label, type, meta: { touched, error }, ...custom }) => {
         return (
@@ -107,7 +109,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = dispatch => {
     return bindActionCreators({
-
-    })
+        addEvent
+    }, dispatch)
 }
 export default connect(mapStateToProps, mapDispatchToProps)(EventForm);

@@ -24,7 +24,7 @@ class CalendarInstance extends Component {
             onSelectSlot={(range) =>{
               this.props.onSelectSlot(range)
             }}
-            onSelectEvent={this.props.onSelectEvent}
+            onSelectEvent={this.props.onSelectEvent()}
             slotPropGetter={(date) =>{
               console.log(date)
             }}
