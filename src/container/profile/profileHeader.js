@@ -29,27 +29,19 @@ class ProfileHeader extends Component {
 
                     {this.props.sortKey === 'DESC'
                         ? <Tooltip title="Sort by Ascending">
-                            {/* <i class="fas fa-sort-alpha-down"
-                            style={{ fontSize: 25, marginLeft: '0.5rem', marginRight: '1rem', cursor: 'pointer' }}
-                            onClick={() => this.props.setSortKey('ASC')}
-                        ></i> */}
-                            <Icon
-                                style={{ fontSize: 25, cursor: 'pointer' }}
-                                type="arrow-up"
-                                onClick={() => this.props.setSortKey('ASC')}
-                            />
+                            <div onClick={() => this.props.setSortKey('ASC')}>
+                                <i class="fas fa-sort-alpha-down"
+                                    style={{ fontSize: 25, marginLeft: '0.5rem', marginRight: '1rem', cursor: 'pointer' }}
+
+                                ></i>
+                            </div>
                         </Tooltip>
                         : <Tooltip title="Sort by Descending">
-                            {/* <i class="fas fa-sort-alpha-up"
-                            style={{ fontSize: 25, marginLeft: '0.5rem', marginRight: '1rem', cursor: 'pointer' }}
-                            onClick={() => this.props.setSortKey('DESC')}
-                        ></i> */}
-                            <Icon
-                                style={{ fontSize: 25, cursor: 'pointer' }}
-                                type="arrow-down"
-                                onClick={() => this.props.setSortKey('DESC')}
-
-                            />
+                            <div onClick={() => this.props.setSortKey('DESC')}>
+                                <i class="fas fa-sort-alpha-up"
+                                    style={{ fontSize: 25, marginLeft: '0.5rem', marginRight: '1rem', cursor: 'pointer' }}
+                                ></i>
+                            </div>
                         </Tooltip>}
                     {this.props.viewType === 'LIST' && <Tooltip title="Add Profile">
                         <Button
