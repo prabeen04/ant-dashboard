@@ -21,7 +21,13 @@ class ProfileList extends Component {
             return (<h2>Some Error Occoured</h2>)
         }
 
-        let renderCard = this.props.profiles.map(profile => {
+        let renderCard = this.props.profiles
+            .sort((a, b) =>{ 
+                this.props.sortKey === 'ASC'
+                ? return a.name > b.name
+                : return a.name < b.name
+            })
+            .map(profile => {
             if (this.props.viewType === 'GRID') {
                 return <ProfileCard
                     key={profile._id}
