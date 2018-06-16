@@ -12,9 +12,9 @@ const initialState = {
 export const formReducer = (state = initialState, action) => {
     switch (action.type) {
         case SET_SELECT_VALUE:
-            return Object.assign({}, state, { city: action.payload });
+            return { ...state, city: action.payload };
         case SET_DATE:
-            return Object.assign({}, state, { date: moment(action.payload) });
+            return { ...state, date: moment(action.payload) };
         default:
             return state;
     }
