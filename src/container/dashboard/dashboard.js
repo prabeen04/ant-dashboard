@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { Card, Spin, Icon } from 'antd';
 import JumpStartBox from './jumpStart';
-import CardGrid from './cardGrid';
 
 class Dashboard extends Component {
   constructor(props){
