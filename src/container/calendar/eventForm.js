@@ -10,7 +10,6 @@ const { MonthPicker, RangePicker } = DatePicker;
 class EventForm extends Component {
     constructor(props) {
         super(props)
-
         this.renderInput = this.renderInput.bind(this);
         this.renderDate = this.renderDate.bind(this);
         this.eventSubmit = this.eventSubmit.bind(this);
@@ -98,7 +97,6 @@ EventForm = reduxForm({
     enableReinitialize: true
 })(EventForm)
 const mapStateToProps = (state) => {
-    console.log()
     return {
         initialValues: {
             start: state.calendarReducer.startDate,

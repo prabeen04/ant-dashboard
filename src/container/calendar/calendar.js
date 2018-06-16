@@ -60,8 +60,8 @@ class Calendar extends Component {
             onSelectEvent={this.eventSelect}
             onSelectSlot={this.handleOk}
           />
-          : <p style={{flexBasis: '70%'}}>Second tab Content</p>
-          
+          : <p style={{ flexBasis: '70%' }}>Second tab Content</p>
+
         }
 
         <div className="event-form" >
@@ -76,7 +76,7 @@ class Calendar extends Component {
               <EventForm />
             </TabPane>
             <TabPane tab={<span><Icon type="android" />Android</span>} key="2">
-                <Button type="primary">submit</Button>
+              <Button type="primary">submit</Button>
             </TabPane>
           </Tabs>
         </div>
