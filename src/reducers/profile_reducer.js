@@ -23,73 +23,39 @@ export const profileReducer = (state = initialState, action) => {
 
         // @get All Profile
         case GET_PROFILES:
-            // return Object.assign({}, state, { isLoading: true, showViewProfile: false, showAddProfile: false, showEditProfile: false })
-            return {...state, isLoading: true, showViewProfile: false, showAddProfile: false, showEditProfile: false}
+            return { ...state, isLoading: true, showViewProfile: false, showAddProfile: false, showEditProfile: false }
         case GET_PROFILES_SUCCESS:
-            //return Object.assign({}, state, { isLoading: false, profiles: action.payload })
-            return {...state,isLoading: false, profiles: action.payload }
+            return { ...state, isLoading: false, profiles: action.payload }
         case GET_PROFILES_FAILURE:
-            // return Object.assign({}, state, { isLoading: false, isError: true })
-            return {...state, isLoading: false, isError: true }
+            return { ...state, isLoading: false, isError: true }
 
         // @get single Profile
         case GET_SINGLE_PROFILE:
-            // return Object.assign({}, state, { singleProfile: action.payload, showViewProfile: true, showAddProfile: false, showEditProfile: false })
-            return {...state, singleProfile: action.payload, showViewProfile: true, showAddProfile: false, showEditProfile: false}
+            return { ...state, singleProfile: action.payload, showViewProfile: true, showAddProfile: false, showEditProfile: false }
         case SHOW_ADD_PROFILE:
-            // return Object.assign({}, state, {
-            //     showViewProfile: false, showAddProfile: true, showEditProfile: false
-            // })
-            return {...state, showViewProfile: false, showAddProfile: true, showEditProfile: false }
+            return { ...state, showViewProfile: false, showAddProfile: true, showEditProfile: false }
 
         // add PROFILE section
         case ADD_PROFILE:
-            // return Object.assign({}, state, {
-            //     isLoading: true
-            // })
-            return {...state, isLoading: true}
+            return { ...state, isLoading: true }
         case ADD_PROFILE_SUCCESS:
-            // return Object.assign({}, state, {
-            //     isLoading: false
-            // })
-            return {...state, isLoading: false}
+            return { ...state, isLoading: false }
         case ADD_PROFILE_FAILURE:
-            // return Object.assign({}, state, {
-            //     isLoading: false,
-            //     isError: true
-            // })
-            return {...state, isLoading: false,  isError: true}
+            return { ...state, isLoading: false, isError: true }
 
         // EDIT PROFILE section
         case OPEN_EDIT_PROFILE:
-            // return Object.assign({}, state, {
-            //     singleProfile: action.payload, showViewProfile: false, showAddProfile: false, showEditProfile: true, isSubmitting: false,
-            // })
-            return {...state, singleProfile: action.payload, showViewProfile: false, showAddProfile: false, showEditProfile: true, isSubmitting: false}
+            return { ...state, singleProfile: action.payload, showViewProfile: false, showAddProfile: false, showEditProfile: true, isSubmitting: false }
         case EDIT_PROFILE:
-            // return Object.assign({}, state, {
-            //     isLoading: true, isSubmitting: true
-            // })
-            return {...state, isLoading: true, isSubmitting: true}
+            return { ...state, isLoading: true, isSubmitting: true }
         case EDIT_PROFILE_SUCCESS:
-            // return Object.assign({}, state, {
-            //     isLoading: false, showEditProfile: false, isSubmitting: false,
-            // })
-            return {...state,  isLoading: false, showEditProfile: false, isSubmitting: false }
+            return { ...state, isLoading: false, showEditProfile: false, isSubmitting: false }
         case EDIT_PROFILE_FAILURE:
-            // return Object.assign({}, state, {
-            //     showEditProfile: false,
-            //     isLoading: false,
-            //     isError: true,
-            //     isSubmitting: false,
-            // })
-            return {...state, showEditProfile: false, isLoading: false, isError: true, isSubmitting: false,}
+            return { ...state, showEditProfile: false, isLoading: false, isError: true, isSubmitting: false, }
         case SET_FILTER_TEXT:
-            // return Object.assign({}, state, { filterText: action.payload, showViewProfile: false, showAddProfile: false, showEditProfile: false })
-            return {...state, filterText: action.payload, showViewProfile: false, showAddProfile: false, showEditProfile: false}
+            return { ...state, filterText: action.payload, showViewProfile: false, showAddProfile: false, showEditProfile: false }
         case SET_VIEW_TYPE:
-            // return Object.assign({}, state, { viewType: action.payload })
-            return {...state, viewType: action.payload}
+            return { ...state, viewType: action.payload }
         default:
             return state
     }
