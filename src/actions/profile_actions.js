@@ -3,7 +3,7 @@ import {
     GET_SINGLE_PROFILE, GET_SINGLE_PROFILE_SUCCESS, GET_SINGLE_PROFILE_FAILURE,
     SHOW_ADD_PROFILE, ADD_PROFILE, ADD_PROFILE_SUCCESS, ADD_PROFILE_FAILURE,
     OPEN_EDIT_PROFILE, EDIT_PROFILE, EDIT_PROFILE_SUCCESS, EDIT_PROFILE_FAILURE,
-    SET_FILTER_TEXT,SET_VIEW_TYPE
+    SET_FILTER_TEXT,SET_VIEW_TYPE, SET_SORT_KEY
 } from '../types/profile_actiontypes';
 
 import axios from 'axios';
@@ -111,6 +111,14 @@ export const setViewType = (viewType) => {
         dispatch({
             type: SET_VIEW_TYPE,
             payload: viewType
+        })
+    }
+}
+export const setSortKey = (key) => {
+    return (dispatch) => {
+        dispatch({
+            type: SET_SORT_KEY,
+            payload: key
         })
     }
 }

@@ -3,7 +3,7 @@ import {
     GET_SINGLE_PROFILE, GET_SINGLE_PROFILE_SUCCESS, GET_SINGLE_PROFILE_FAILURE,
     SHOW_ADD_PROFILE, ADD_PROFILE, ADD_PROFILE_SUCCESS, ADD_PROFILE_FAILURE,
     OPEN_EDIT_PROFILE, EDIT_PROFILE, EDIT_PROFILE_SUCCESS, EDIT_PROFILE_FAILURE,
-    SET_FILTER_TEXT, SET_VIEW_TYPE
+    SET_FILTER_TEXT, SET_VIEW_TYPE, SET_SORT_KEY
 } from '../types/profile_actiontypes';
 const initialState = {
     isLoading: false,
@@ -16,7 +16,8 @@ const initialState = {
     showViewProfile: false,
     viewType: 'GRID',
     visibilityFilter: 'ALL',
-    filterText: ''
+    filterText: '',
+    sortKey: 'ASC'
 }
 export const profileReducer = (state = initialState, action) => {
     switch (action.type) {
@@ -56,6 +57,8 @@ export const profileReducer = (state = initialState, action) => {
             return { ...state, filterText: action.payload, showViewProfile: false, showAddProfile: false, showEditProfile: false }
         case SET_VIEW_TYPE:
             return { ...state, viewType: action.payload }
+        case SET_SORT_KEY:
+            return { ...state, sortKey: action.payload }
         default:
             return state
     }

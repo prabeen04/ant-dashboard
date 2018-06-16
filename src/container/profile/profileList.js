@@ -23,9 +23,9 @@ class ProfileList extends Component {
 
         let renderCard = this.props.profiles
             .sort((a, b) =>{ 
-                this.props.sortKey === 'ASC'
-                ? return a.name > b.name
-                : return a.name < b.name
+             return   this.props.sortKey === 'ASC'
+                ?  a.name > b.name
+                :  a.name < b.name
             })
             .map(profile => {
             if (this.props.viewType === 'GRID') {
@@ -58,6 +58,7 @@ const mapStateToProps = (state) => {
         isLoading: state.profileReducer.isLoading,
         isError: state.profileReducer.isError,
         viewType: state.profileReducer.viewType,
+        sortKey: state.profileReducer.sortKey,
         profiles: getProfilesState(state, state.profileReducer.filterText)
     }
 }
