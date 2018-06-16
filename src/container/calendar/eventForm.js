@@ -101,8 +101,8 @@ const mapStateToProps = (state) => {
     console.log()
     return {
         initialValues: {
-            start: state.calendarReducer.startDate || moment(),
-            end: state.calendarReducer.endDate || moment()
+            start: state.calendarReducer.startDate,
+            end: state.calendarReducer.endDate
         }
     }
 }
