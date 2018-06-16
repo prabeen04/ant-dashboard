@@ -5,29 +5,25 @@ import { bindActionCreators } from 'redux';
 import { List, Button, Checkbox } from 'antd';
 
 
-class ChartSettings extends Component {
-
-  render() {
-    let jumpStartData = this.props.jumpStartData.map(data => {
-      return <Checkbox key={data.id} value={data.id}>{data.title}</Checkbox>
-    })
-    return (
-      <div>
-        <List
-          size="small"
-          bordered
-          header={<div><h4> Team</h4></div>}
-          footer={<div style={{ textAlign: 'right' }}> <Button
-            type="primary"
-            onClick={this.props.hide}>Close</Button></div>}
-          dataSource={jumpStartData}
-          renderItem={item => (<List.Item>{item}</List.Item>)}
-        />
-      </div>
-    )
-  }
+const ChartSettings = (props) => {
+  let jumpStartData = props.jumpStartData.map(data => {
+    return <Checkbox key={data.id} value={data.id}>{data.title}</Checkbox>
+  })
+  return (
+    <div>
+      <List
+        size="small"
+        bordered
+        header={<div><h4> Team</h4></div>}
+        footer={<div style={{ textAlign: 'right' }}> <Button
+          type="primary"
+          onClick={props.hide}>Close</Button></div>}
+        dataSource={jumpStartData}
+        renderItem={item => (<List.Item>{item}</List.Item>)}
+      />
+    </div>
+  )
 }
-
 const mapStateToProps = (state) => ({
   jumpStartData: state.dashboardReducer.jumpStartData
 })
