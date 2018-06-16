@@ -30,9 +30,6 @@ class Dashboard extends Component {
                 <Icon type="loading" style={{ fontSize: 60, color: 'tomato' }} spin />
             </div>
       </Card>
-      <Card loading={this.state.isLoading} style={{height: '400px'}}>
-        <CardGrid/>
-      </Card>
       </div>
     )
   }
