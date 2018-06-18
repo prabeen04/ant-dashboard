@@ -6,6 +6,7 @@ import { bindActionCreators } from 'redux';
 import { Icon, Card, Button  } from 'antd';
 import { getProfiles, addProfile, showAddProfile } from '../../actions/profile_actions';
 import { getProfilesState } from '../../selectors/demoSelector';
+import './profile.css';
 
 class ProfileList extends Component {
     componentDidMount() {
@@ -30,6 +31,7 @@ class ProfileList extends Component {
             .map(profile => {
             if (this.props.viewType === 'GRID') {
                 return <ProfileCard
+                    classes={'activated-profile'}
                     key={profile._id}
                     user={profile}
                 />
