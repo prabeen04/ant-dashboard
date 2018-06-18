@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import './profile.css';
 import { Icon, Tooltip, Input, Button } from 'antd';
 import { setFilterText, setViewType, showAddProfile, setSortKey } from '../../actions/profile_actions';
 import SettingPopover from '../../components/popover/settingPopover';
+import './profile.css';
 const Search = Input.Search;
 class ProfileHeader extends Component {
     render() {
@@ -30,7 +30,7 @@ class ProfileHeader extends Component {
                     {this.props.sortKey === 'DESC'
                         ? <Tooltip title="Sort by Ascending">
                             <div onClick={() => this.props.setSortKey('ASC')}>
-                                <i class="fas fa-sort-alpha-down"
+                                <i className="fas fa-sort-alpha-up"
                                     style={{ fontSize: 25, marginLeft: '0.5rem', marginRight: '1rem', cursor: 'pointer' }}
 
                                 ></i>
@@ -38,7 +38,7 @@ class ProfileHeader extends Component {
                         </Tooltip>
                         : <Tooltip title="Sort by Descending">
                             <div onClick={() => this.props.setSortKey('DESC')}>
-                                <i class="fas fa-sort-alpha-up"
+                                <i className="fas fa-sort-alpha-down"
                                     style={{ fontSize: 25, marginLeft: '0.5rem', marginRight: '1rem', cursor: 'pointer' }}
                                 ></i>
                             </div>
