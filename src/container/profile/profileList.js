@@ -31,7 +31,6 @@ class ProfileList extends Component {
             .map(profile => {
             if (this.props.viewType === 'GRID') {
                 return <ProfileCard
-                    classes={this.props.activatedProfile.name ===undefined ? 'activated-profile': ''}
                     key={profile._id}
                     user={profile}
                 />
@@ -61,7 +60,6 @@ const mapStateToProps = (state) => {
         isError: state.profileReducer.isError,
         viewType: state.profileReducer.viewType,
         sortKey: state.profileReducer.sortKey,
-        activatedProfile: state.profileReducer.singleProfile,
         profiles: getProfilesState(state, state.profileReducer.filterText)
     }
 }
