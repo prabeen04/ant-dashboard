@@ -28,7 +28,8 @@ class ProfileListView extends Component {
 }
 const mapStateToProps = (state) => {
     return {
-        profile: state.profileReducer.profile
+        profile: state.profileReducer.profile,
+        activatedProfile: state.profileReducer.singleProfile
     }
 }
 

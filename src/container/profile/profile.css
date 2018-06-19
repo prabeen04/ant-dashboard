@@ -85,3 +85,6 @@
 .activated-profile{
     border-top: 5px solid#1890ff;
 }
+.activated-profile-listview{
+    border-left: 5px solid#1890ff;
+}
