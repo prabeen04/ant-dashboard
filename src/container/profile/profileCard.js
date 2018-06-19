@@ -12,7 +12,7 @@ class ProfileCard extends Component {
     }
     render() {
         return (
-            <div className={this.props.classes}> 
+            <div className={this.props.activatedProfile.name ? 'activated-profile': ''}> 
                 <Card
                     hoverable
                     style={{ width: 155, height: 200, margin: '0.5rem' }}
