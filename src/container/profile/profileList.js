@@ -31,7 +31,7 @@ class ProfileList extends Component {
             .map(profile => {
             if (this.props.viewType === 'GRID') {
                 return <ProfileCard
-                    classes={'activated-profile'}
+                    classes={profile ? 'activated-profile': ''}
                     key={profile._id}
                     user={profile}
                 />
