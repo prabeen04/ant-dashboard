@@ -14,7 +14,7 @@ class ProfileCard extends Component {
             <div>
                 <Card
                     hoverable
-                    className={this.props.classes}
+                    className={this.props.user.name ?'activated-profile': '' }
                     style={{ width: 155, height: 200, margin: '0.5rem' }}
                     onClick={() => this.props.getSingleProfile(this.props.user)}
                     cover={<img style={{ width: '100%', height: 150 }} alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}>
