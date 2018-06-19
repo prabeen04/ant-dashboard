@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { getSingleProfile } from '../../actions/profile_actions'
-import classnames from 'classnames';
+import classNames from 'classnames';
 import '../post/post.css';
 import { Card, Icon } from 'antd';
 const { Meta } = Card;
@@ -13,12 +13,11 @@ class ProfileListView extends Component {
     }
     render() {
         const listClasses = classNames({
-            // btn: true,
-            // 'btn-pressed': this.state.isPressed,
-            // 'btn-over': !this.state.isPressed && this.state.isHovered
-          });
+            'post-row': true,
+            'activated-profile-listview': this.props.user.name === this.props.activatedProfile.name,
+        });
         return (
-            <div className="post-row " onClick={() => this.props.getSingleProfile(this.props.user)}>
+            <div className={listClasses} onClick={() => this.props.getSingleProfile(this.props.user)}>
                 <div className="post-title">
                     <Icon type="idcard" className="post-icon" /> &nbsp;&nbsp;&nbsp;{this.props.user.name}
                 </div>
