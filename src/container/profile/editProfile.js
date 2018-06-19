@@ -36,7 +36,7 @@ class EditProfile extends Component {
   render() {
     const { handleSubmit, pristine, reset } = this.props
     return (
-      <div className="add-profile">
+      <div className="add-profile profile-view">
       <div className="panel-header">
             <h3>{this.props.initialValues.name ?this.props.initialValues.name :'EDIT'}</h3>
           </div>

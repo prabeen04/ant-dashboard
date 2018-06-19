@@ -72,7 +72,7 @@ class AddProfile extends Component {
     const { handleSubmit, pristine, reset, submitting } = this.props
     console.log(submitting)
     return (
-      <div className="add-profile">
+      <div className="add-profile profile-view">
         <div className="panel-header">
           <h3>Add Profiles</h3>
         </div>
