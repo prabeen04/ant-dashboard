@@ -34,7 +34,7 @@ export const profileReducer = (state = initialState, action) => {
         case GET_SINGLE_PROFILE:
             return { ...state, singleProfile: action.payload, showViewProfile: true, showAddProfile: false, showEditProfile: false }
         case SHOW_ADD_PROFILE:
-            return { ...state, showViewProfile: false, showAddProfile: true, showEditProfile: false }
+            return { ...state, showViewProfile: false, singleProfile:{}, showAddProfile: true, showEditProfile: false }
 
         // add PROFILE section
         case ADD_PROFILE:
