@@ -34,8 +34,8 @@
     /* background: #e7eaf0; */
     color: rgb(14, 22, 53);
     box-shadow: 0 2px 8px 1px rgb(189, 185, 185);
-    margin: 0.1rem;
-    transform: scaleY(1.02);
+    /* margin: 0.1rem;
+    transform: scaleY(1.02); */
 }
 .post-title{
     flex-basis: 70%;
