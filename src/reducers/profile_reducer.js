@@ -54,11 +54,11 @@ export const profileReducer = (state = initialState, action) => {
         case EDIT_PROFILE_FAILURE:
             return { ...state, showEditProfile: false, isLoading: false, isError: true, isSubmitting: false, }
         case SET_FILTER_TEXT:
-            return { ...state, filterText: action.payload, showViewProfile: false, showAddProfile: false, showEditProfile: false }
+            return { ...state, filterText: action.payload, singleProfile:{}, showViewProfile: false, showAddProfile: false, showEditProfile: false }
         case SET_VIEW_TYPE:
             return { ...state, viewType: action.payload }
         case SET_SORT_KEY:
-            return { ...state, sortKey: action.payload }
+            return { ...state, sortKey: action.payload}
         default:
             return state
     }
