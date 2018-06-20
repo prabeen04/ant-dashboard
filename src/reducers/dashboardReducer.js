@@ -1,4 +1,4 @@
-import { GET_JUMPSTART_LIST } from '../types/dashboardActionTypes';
+import { GET_JUMPSTART_LIST, SET_JUMPSTART_LIST  } from '../types/dashboardActionTypes';
 const initialState = {
     jumpStartData: [
         {
