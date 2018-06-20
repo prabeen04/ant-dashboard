@@ -11,6 +11,11 @@ const ChartSettings = (props) => {
       key={data.id}
       value={data.id}
       checked={data.visible === true}
+      onChange={(a, b, c)=>{
+        console.log(a)
+        console.log(b)
+        console.log(c)
+      }}
     >{data.title}</Checkbox>
   })
   return (
