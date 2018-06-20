@@ -9,11 +9,6 @@ class JumpStartBox extends Component {
         super(props)
     }
 
-    componentDidMount() {
-        setTimeout(() => {
-            this.props.getJumpstartList()
-        },2000)
-    }
     render() {
         let renderJumpStartBoxes = this.props.jumpStartData.filter((data) => data.visible)
             .map((data) => <Card key={data.id} style={{ margin: '1rem', justifyContent: 'space-evenly', minWidth: 200 }}>
@@ -37,7 +32,6 @@ const mapStateToProps = (state) => {
 }
 const mapDispatchToProps = dispatch => {
     return bindActionCreators({
-        getJumpstartList
     }, dispatch)
 }
 export default connect(mapStateToProps, mapDispatchToProps)(JumpStartBox);
