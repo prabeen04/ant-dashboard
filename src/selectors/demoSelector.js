@@ -9,6 +9,7 @@ export const getProfilesState = createSelector(
         return profile.filter((profile) => {
            return (profile.name).toLowerCase().includes(filterText.toLowerCase())
             || (profile.location).toLowerCase().includes(filterText.toLowerCase())
+            || (profile.email).toLowerCase().includes(filterText.toLowerCase())
         })
     }
 )
