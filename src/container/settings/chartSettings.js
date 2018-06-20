@@ -13,7 +13,7 @@ const ChartSettings = (props) => {
       checked={data.visible === true}
       onChange={e=>{
         console.log(e)
-        // this.props.setJumpstartList(e.target.value)
+        props.setJumpstartList(e.target.value, e.target.checked)
       }}
     >{data.title}</Checkbox>
   })

@@ -4,8 +4,8 @@ export const getJumpstartList = () => dispatch => {
         type: GET_JUMPSTART_LIST
     })
 }
-export const setJumpstartList = (data) => dispatch => {
-    console.log(data)
+export const setJumpstartList = (value, checked) => dispatch => {
+    console.log(value, checked)
     // return dispatch({
     //     type: SET_JUMPSTART_LIST,
     //     payload: data
