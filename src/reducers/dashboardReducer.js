@@ -49,9 +49,7 @@ export const dashboardReducer = (state = initialState, action) => {
             return {
                 ...state, jumpStartData: [...state.jumpStartData, {
                     visible: !action.payload.checked,
-                    id: action.payload.value,
-                    title: 'Title 1',
-                    value: 100
+                    id: action.payload.value
                 }] };
         default:
             return state;
