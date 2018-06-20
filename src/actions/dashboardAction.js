@@ -4,8 +4,9 @@ export const getJumpstartList = () => dispatch => {
         type: GET_JUMPSTART_LIST
     })
 }
-export const setJumpstartList = () => dispatch => {
+export const setJumpstartList = (data) => dispatch => {
     return dispatch({
-        type: SET_JUMPSTART_LIST
+        type: SET_JUMPSTART_LIST,
+        payload: data
     })
 }

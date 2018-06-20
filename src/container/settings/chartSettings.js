@@ -3,11 +3,15 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { List, Button, Checkbox } from 'antd';
-
+import { setJumpstartList } from '../../actions/dashboardAction';
 
 const ChartSettings = (props) => {
   let jumpStartData = props.jumpStartData.map(data => {
-    return <Checkbox key={data.id} value={data.id}>{data.title}</Checkbox>
+    return <Checkbox
+      key={data.id}
+      value={data.id}
+      checked={data.visible === true}
+    >{data.title}</Checkbox>
   })
   return (
     <div>
@@ -30,7 +34,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = dispatch => {
   return bindActionCreators({
-
+    setJumpstartList
   }, dispatch)
 }
 
