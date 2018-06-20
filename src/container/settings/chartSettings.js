@@ -11,10 +11,9 @@ const ChartSettings = (props) => {
       key={data.id}
       value={data.id}
       checked={data.visible === true}
-      onChange={(a, b, c)=>{
-        console.log(a)
-        console.log(b)
-        console.log(c)
+      onChange={e=>{
+        console.log(e)
+        // this.props.setJumpstartList(e.target.value)
       }}
     >{data.title}</Checkbox>
   })

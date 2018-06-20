@@ -5,8 +5,9 @@ export const getJumpstartList = () => dispatch => {
     })
 }
 export const setJumpstartList = (data) => dispatch => {
-    return dispatch({
-        type: SET_JUMPSTART_LIST,
-        payload: data
-    })
+    console.log(data)
+    // return dispatch({
+    //     type: SET_JUMPSTART_LIST,
+    //     payload: data
+    // })
 }
