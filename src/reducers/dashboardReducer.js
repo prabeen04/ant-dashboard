@@ -47,10 +47,7 @@ export const dashboardReducer = (state = initialState, action) => {
             };
         case SET_JUMPSTART_LIST:
             return {
-                ...state, jumpStartData: [...state.jumpStartData, {
-                    visible: !action.payload.checked,
-                    id: action.payload.value
-                }] };
+                ...state, jumpStartData: [action.payload] };
         default:
             return state;
     }
