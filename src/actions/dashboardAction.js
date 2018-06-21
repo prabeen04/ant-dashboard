@@ -8,7 +8,7 @@ export const setJumpstartList = (data) => dispatch => {
     console.log(data)
     return dispatch({
         type: SET_JUMPSTART_LIST,
-        payload: {visible: true, id: 1, title: "Title 1", value: 10340}
+        payload: data
 
     })
 }
