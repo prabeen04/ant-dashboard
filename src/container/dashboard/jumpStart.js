@@ -27,7 +27,7 @@ class JumpStartBox extends Component {
 }
 const mapStateToProps = (state) => {
     return {
-        jumpStartData: state.dashboardReducer.jumpStartData
+        jumpStartData: state.dashboardReducer
     }
 }
 const mapDispatchToProps = dispatch => {
