@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import PlacesAutocomplete, { geocodeByAddress, getLatLng } from 'react-places-autocomplete';
+import { setGoogleAddress } from '../../actions/googleAction';
+
 import './google.css';
 class GooglePlace extends Component {
     constructor(props) {
@@ -13,6 +17,7 @@ class GooglePlace extends Component {
 
     handleSelect = (address) => {
         this.setState({ address })
+        this.props.setGoogleAddress(address)
         geocodeByAddress(address)
             .then(results => getLatLng(results[0]))
             .then(latLng => console.log('Success', latLng))
@@ -60,4 +65,15 @@ class GooglePlace extends Component {
     }
 }
 
-export default GooglePlace;
+const mapStateToProps = state => {
+    return{
+
+    }
+}
+
+const mapDispatchToProps = dispatch => {
+    return bindActionCreators({
+        setGoogleAddress
+    }, dispatch)
+}
+export default connect(mapStateToProps, mapDispatchToProps)(GooglePlace);
