@@ -9,7 +9,8 @@ import { formArrayReducer } from "../reducers/formArrayReducer";
 import { secondArrayReducer } from '../reducers/secondArrayReducer';
 import { thirdArrayReducer } from '../reducers/thirdArrayReducer';
 import { dashboardReducer } from '../reducers/dashboardReducer';
-import { tableReducer } from '../reducers/tableReducer'
+import { tableReducer } from '../reducers/tableReducer';
+import { googleReducer } from '../reducers/googleReducer';
 
 export const rootReducer = combineReducers({
     form: FormReducer,
@@ -22,7 +23,8 @@ export const rootReducer = combineReducers({
     formArrayReducer,
     secondArrayReducer,
     thirdArrayReducer,
-    tableReducer
+    tableReducer,
+    googleReducer
 })
 
 export default rootReducer;
