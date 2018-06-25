@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
-import PlacesAutocomplete, { geocodeByAddress, getLatLng } from 'react-places-autocomplete'
-
+import React, { Component } from 'react';
+import PlacesAutocomplete, { geocodeByAddress, getLatLng } from 'react-places-autocomplete';
+import './google.css';
 class GooglePlace extends Component {
     constructor(props) {
         super(props);
@@ -20,7 +20,7 @@ class GooglePlace extends Component {
     }
     render() {
         return (
-            <div>
+            <div style={{width: 400}}>
                 <h1>GooglePlace Component</h1>
                 <h1>{this.state.address}</h1>
                 <PlacesAutocomplete
