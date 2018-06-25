@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Card, Spin, Icon } from 'antd';
 import JumpStartBox from './jumpStart';
-
+import GooglePlace from '../../components/google/googlePlace';
 class Dashboard extends Component {
   constructor(props){
     super(props)
