@@ -27,7 +27,7 @@ class GooglePlace extends Component {
         return (
             <div style={{width: 400}}>
                 <h1>GooglePlace Component</h1>
-                <h3>{this.state.address}</h3>
+                <h3>{this.props.address}</h3>
 
                 <PlacesAutocomplete
                     value={this.state.address}
@@ -67,7 +67,7 @@ class GooglePlace extends Component {
 
 const mapStateToProps = state => {
     return{
-
+        address: state.googleReducer.address
     }
 }
 

@@ -5,6 +5,9 @@ const initialState = {
 }
 
 export const googleReducer = (state=initialState, action) =>{
-
+    switch(action.type){
+        case SET_GOOGLE_ADDRESS:
+            return {...state, address: action.payload}
+    }
     return state
 }
