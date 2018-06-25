@@ -21,6 +21,7 @@ class GooglePlace extends Component {
         return (
             <div>
                 <h1>GooglePlace Component</h1>
+                <h1>{this.state.address}</h1>
                 <PlacesAutocomplete
                     value={this.state.address}
                     onChange={this.handleChange}
