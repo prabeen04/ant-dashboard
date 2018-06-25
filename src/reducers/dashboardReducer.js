@@ -1,7 +1,5 @@
 import { GET_JUMPSTART_LIST, SET_JUMPSTART_LIST } from '../types/dashboardActionTypes';
-const initialState = {
-    test: 'test',
-    jumpStartData: [
+const initialState =  [
         {
             visible: false,
             id: 1,
@@ -33,8 +31,6 @@ const initialState = {
             value: 1100
         },
     ]
-
-}
 export const dashboardReducer = (state = initialState, action) => {
     switch (action.type) {
         case GET_JUMPSTART_LIST:
@@ -47,8 +43,12 @@ export const dashboardReducer = (state = initialState, action) => {
                 }]
             };
         case SET_JUMPSTART_LIST:
-        console.log(...state,{ jumpstartData: state.jumpStartData.map(data => data.id === action.payload.id ? action.payload : data)})
-         return { ...state,{ jumpstartData: state.jumpStartData.map(data => data.id === action.payload.id ? action.payload : data)}}
+        console.log({ 
+            ...state, jumpstartData: state.jumpStartData.map(data => data.id === action.payload.id ? action.payload : data)
+           })
+         return { 
+             ...state, jumpstartData: state.jumpStartData.map(data => data.id === action.payload.id ? action.payload : data)
+            };
   
         default:
             return state;
