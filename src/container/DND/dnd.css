@@ -1,0 +1,31 @@
+.dnd-wrapper{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    background: #fff;
+    min-height: 500px;
+    margin: 0.5rem;
+    padding: 1rem;
+    border-radius: 0.3rem;
+}
+.dnd-items{
+    flex-basis: 45;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background: #fff;
+    min-height: 500px;
+    margin: 0.5rem;
+    padding: 1rem;
+    border-radius: 0.3rem;
+}
+.dnd-target{
+    flex-basis: 45;
+    display: flex;
+    width: 100%;
+    background: #fff;
+    min-height: 500px;
+    margin: 0.5rem;
+    padding: 1rem;
+    border-radius: 0.3rem;
+}

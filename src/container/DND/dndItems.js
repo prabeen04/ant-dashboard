@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
+import './dnd.css';
 
-class DndItem extends Component {
+class DndItems extends Component {
   render() {
     return (
-      <div>
-        <h2>DndItem Component</h2>
+      <div className="dnd-items">
+        <h2>DndItems Component</h2>
       </div>
     )
   }
 }
-export default DndItem
+export default DndItems
