@@ -16,7 +16,6 @@ class GooglePlace extends Component {
     }
 
     handleSelect = (address) => {
-        this.setState({ address })
         this.props.setGoogleAddress(address)
         geocodeByAddress(address)
             .then(results => getLatLng(results[0]))
@@ -26,9 +25,7 @@ class GooglePlace extends Component {
     render() {
         return (
             <div style={{width: 400}}>
-                <h1>GooglePlace Component</h1>
                 <h3>{this.props.address}</h3>
-
                 <PlacesAutocomplete
                     value={this.state.address}
                     onChange={this.handleChange}
