@@ -13,6 +13,8 @@ import NotFound from '../../container/notFound/notFound';
 import Forms from '../../container/forms/forms';
 import Tables from '../../container/tables/tables';
 import Settings from '../../container/settings/settings';
+import DND from '../../container/DND/DND';
+import GooglePlace from '../google/googlePlace' 
 const { Header, Sider, Content } = Layout;
 
 class Navbar extends React.Component {
@@ -64,7 +66,6 @@ class Navbar extends React.Component {
                             type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'}
                             onClick={this.toggle}
                         />
-
                         <div style={{ float: 'right', marginRight: 50, marginBottom: 10}}>
                             <a href="#" style={{margin: 15}}>
                                 <Badge count={1} >
@@ -94,6 +95,7 @@ class Navbar extends React.Component {
                             <Route exact path='/forms' component={Forms} />
                             <Route exact path='/tables' component={Tables} />
                             <Route exact path='/settings' component={Settings} />
+                            <Route exact path='/dnd' component={DND} />
                             <Route path='**' component={NotFound} />
                         </Switch>
                     </Content>
