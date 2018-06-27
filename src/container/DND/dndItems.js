@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import Item from './item';
 import './dnd.css';
 
 class DndItems extends Component {
@@ -10,7 +11,7 @@ class DndItems extends Component {
     return (
       <div className="dnd-items">
         <h2>DndItems Component</h2>
-        {this.props.items.map(item => <p key={item.id}>{item.value}</p>)}
+        {this.props.items.map(item => <Item item={item} key={item.id}/>)}
       </div>
     )
   }

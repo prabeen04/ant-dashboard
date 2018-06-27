@@ -1,9 +1,10 @@
 import React from 'react'
 
-export default Item = (props) => {
+const Item = (props) => {
   return (
     <div className="item">
-      <p>{props.value}</p>
+      <p>{props.item.value}</p>
     </div>
   )
 }
+export default Item;
