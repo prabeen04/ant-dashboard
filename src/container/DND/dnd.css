@@ -31,3 +31,17 @@
     border-radius: 0.3rem;
     box-shadow: 0 8px 6px -6px #aaa;
 }
+.item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(10, 17, 37, 0.726);
+    padding: 0.5rem;
+    margin: 0.2rem;
+    border-radius: 0.2rem;
+    color: #fff;
+}
+.item>p{
+    margin: 0;
+    font-size: 1.15rem; 
+}
