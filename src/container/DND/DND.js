@@ -24,7 +24,7 @@ class DND extends Component {
   render() {
     return (
       <div className="dnd-wrapper">
-        <DndItems />
+        <DndItems items={this.state.items}/>
         <DndTarget />
       </div>
     )
