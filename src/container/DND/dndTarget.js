@@ -8,9 +8,7 @@ const Types = {
 
 const spec = {
   canDrop(props, monitor) {
-    // You can disallow drop based on props or item
     const item = monitor.getItem();
-    // return canMakeChessMove(item.fromPosition, props.position);
     return;
   },
 
@@ -25,12 +23,7 @@ const spec = {
     if (monitor.didDrop()) {
       return;
     }
-
-    // Obtain the dragged item
     const item = monitor.getItem();
-
-    // You can do something with it
-    // ChessActions.movePiece(item.fromPosition, props.position);
     return { moved: true };
   }
 };
