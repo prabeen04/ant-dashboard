@@ -2,27 +2,33 @@ import React from 'react'
 import { DragSource } from 'react-dnd'
 const Types = {
     ITEM: 'toy'
-   }
-   const itemSource = {
+}
+const itemSource = {
     beginDrag(props) {
-    /* code here */
+        /* code here */
     },
     endDrag(props) {
-    /* code here */
+        /* code here */
     }
-   }
-   function collect(connect, monitor) {
+}
+ collect(connect, monitor) {
     return {
-    connectDragSource: connect.dragSource(),
-    isDragging: monitor.isDragging()
+        connectDragSource: connect.dragSource(),
+        isDragging: monitor.isDragging()
     }
-   }
+}
 
-const Item = (props) => {
-  return (
-    <div className="item">
-      <p>{props.item.value}</p>
-    </div>
-  )
+class Item extends React.Component {
+    constructor(props){
+        super(props)
+    }
+    render() {
+        return connectDragSource(
+            <div className="item">
+                <p>{this.props.item.value}</p>
+            </div>
+        )
+    }
+
 }
 export default DragSource(Types.ITEM, itemSource, collect)(Item)
