@@ -1,7 +1,7 @@
 import React from 'react'
 import { DragSource } from 'react-dnd'
 const Types = {
-    ITEM: 'toy'
+    ITEM: 'item'
 }
 const itemSource = {
     beginDrag(props) {
