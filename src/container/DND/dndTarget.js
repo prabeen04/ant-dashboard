@@ -1,15 +1,17 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { findDOMNode } from 'react-dom';
 import { DropTarget } from 'react-dnd';
 import './dnd.css';
 const Types = {
-  CHESSPIECE: 'item'
+  Item: 'item'
 };
 
 const spec = {
   canDrop(props, monitor) {
     // You can disallow drop based on props or item
     const item = monitor.getItem();
-    return canMakeChessMove(item.fromPosition, props.position);
+    // return canMakeChessMove(item.fromPosition, props.position);
+    return;
   },
 
   hover(props, monitor, component) {
@@ -28,7 +30,7 @@ const spec = {
     const item = monitor.getItem();
 
     // You can do something with it
-    ChessActions.movePiece(item.fromPosition, props.position);
+    // ChessActions.movePiece(item.fromPosition, props.position);
     return { moved: true };
   }
 };
@@ -45,11 +47,12 @@ function collect(connect, monitor) {
 
 class DndTarget extends Component {
   render() {
-    return (
+    const { isOver, canDrop, connectDropTarget } = this.props;
+    return connectDropTarget(
       <div className="dnd-target">
         <h2>DndTarget Component</h2>
       </div>
     )
   }
 }
-export default DropTarget(types, spec, collect)(DndTarget);
+export default DropTarget(Types.Item, spec, collect)(DndTarget);
