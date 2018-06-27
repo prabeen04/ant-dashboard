@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { DropTarget } from 'react-dnd';
+
 import './dnd.css';
 
 class DndTarget extends Component {
@@ -10,4 +12,4 @@ class DndTarget extends Component {
     )
   }
 }
-export default DndTarget
+export default DropTarget(types, spec, collect)(DndTarget);
