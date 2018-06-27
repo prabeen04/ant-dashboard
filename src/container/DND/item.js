@@ -1,4 +1,22 @@
 import React from 'react'
+import { DragSource } from 'react-dnd'
+const Types = {
+    ITEM: 'toy'
+   }
+   const itemSource = {
+    beginDrag(props) {
+    /* code here */
+    },
+    endDrag(props) {
+    /* code here */
+    }
+   }
+   function collect(connect, monitor) {
+    return {
+    connectDragSource: connect.dragSource(),
+    isDragging: monitor.isDragging()
+    }
+   }
 
 const Item = (props) => {
   return (
@@ -7,4 +25,4 @@ const Item = (props) => {
     </div>
   )
 }
-export default Item;
+export default DragSource(Types.ITEM, itemSource, collect)(Item)
