@@ -5,22 +5,24 @@ const Types = {
 }
 const itemSource = {
     beginDrag(props) {
-        const item = { id: props.id };
-        return item;
+        // const item = { id: props.id };
+        return props.item;
     },
     endDrag(props) {
         /* code here */
+        return
     }
 }
 function collect(connect, monitor) {
     return {
         connectDragSource: connect.dragSource(),
+        connectDragPreview: connect.dragPreview(),
         isDragging: monitor.isDragging()
     }
 }
 
 class Item extends React.Component {
-    constructor(props){
+    constructor(props) {
         super(props)
     }
     render() {
