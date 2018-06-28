@@ -3,44 +3,26 @@ import { DragSource } from 'react-dnd'
 const Types = {
     ITEM: 'item'
 }
-const itemSource = {
-    canDrag(props) {
-        // You can disallow drag based on props
-        return props.isReady;
-      },
-    
+const itemSource = {    
       isDragging(props, monitor) {
-        // If your component gets unmounted while dragged
-        // (like a card in Kanban board dragged between lists)
-        // you can implement something like this to keep its
-        // appearance dragged:
+          console.log('-------isDraging-----------')
         return monitor.getItem().id === props.id;
       },
     
       beginDrag(props, monitor, component) {
+        console.log('-------beginDrag-----------')
         // Return the data describing the dragged item
         const item = { id: props.id };
         return item;
       },
     
       endDrag(props, monitor, component) {
+        console.log('-------endDrag-----------')
         if (!monitor.didDrop()) {
-          // You can check whether the drop was successful
-          // or if the drag ended but nobody handled the drop
           return;
         }
-    
-        // When dropped on a compatible target, do something.
-        // Read the original dragged item from getItem():
         const item = monitor.getItem();
-    
-        // You may also read the drop result from the drop target
-        // that handled the drop, if it returned an object from
-        // its drop() method.
         const dropResult = monitor.getDropResult();
-    
-        // This is a good place to call some Flux action
-        CardActions.moveCardToList(item.id, dropResult.listId);
       }
 }
 function collect(connect, monitor) {
