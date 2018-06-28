@@ -37,9 +37,10 @@ class Item extends React.Component {
         super(props)
     }
     render() {
-        const { isDragging, connectDragSource, src } = this.props
+        const { isDragging, connectDragSource, src } = this.props;
+        const opacity = isDragging ? 0 : 1
         return connectDragSource(
-            <div className="item">
+            <div className="item" style={{opacity}}>
                 <p>{this.props.item.value}</p>
             </div>
         )
