@@ -13,10 +13,10 @@ const itemSource = {
     },
 
     endDrag(props, monitor, component) {
-        return props.handleDrag(props.item.id)
         if (!monitor.didDrop()) {
             return;
         }
+        return props.handleDrag(props.item.id)
         const item = monitor.getItem();
         const dropResult = monitor.getDropResult();
         console.log(dropResult)

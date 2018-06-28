@@ -41,11 +41,12 @@ function collect(connect, monitor) {
 class DndTarget extends Component {
   render() {
     const { isOver, canDrop, connectDropTarget } = this.props;
+    const background = isOver ?'#ddd': '#fff'
     return connectDropTarget(
-      <div className="dnd-target">
+      <div className="dnd-target" style={{background}}>
         <h2>DndTarget Component</h2>
       </div>
     )
   }
 }
-export default DropTarget('item', spec, collect)(DndTarget);
+export default DropTarget('item', {}, collect)(DndTarget);
