@@ -1,8 +1,6 @@
 import React from 'react'
 import { DragSource } from 'react-dnd'
-const Types = {
-    Item: 'item'
-}
+
 const itemSource = {    
       isDragging(props, monitor) {
           console.log('-------isDraging-----------')
@@ -47,4 +45,4 @@ class Item extends React.Component {
     }
 
 }
-export default DragSource(Types.Item, itemSource, collect)(Item)
+export default DragSource('item', itemSource, collect)(Item)

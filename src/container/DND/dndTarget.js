@@ -2,9 +2,6 @@ import React, { Component } from 'react';
 import { findDOMNode } from 'react-dom';
 import { DropTarget } from 'react-dnd';
 import './dnd.css';
-const Types = {
-  Item: 'item'
-};
 
 const spec = {
   canDrop(props, monitor) {
@@ -48,4 +45,4 @@ class DndTarget extends Component {
     )
   }
 }
-export default DropTarget(Types.Item, spec, collect)(DndTarget);
+export default DropTarget('item', spec, collect)(DndTarget);
