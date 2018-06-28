@@ -9,6 +9,7 @@ import './dnd.css';
 class DND extends Component {
   constructor(props) {
     super(props)
+    this.handleDrag = this.handleDrag.bind(this);
 
     this.state = {
       items: [
@@ -21,10 +22,14 @@ class DND extends Component {
       ]
     }
   }
+  handleDrag = (id) => {
+    console.log(id)
+    alert(id)
+  }
   render() {
     return (
       <div className="dnd-wrapper">
-        <DndItems items={this.state.items}/>
+        <DndItems items={this.state.items} handleDrag={this.handleDrag}/>
         <DndTarget />
       </div>
     )

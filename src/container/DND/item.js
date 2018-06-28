@@ -1,5 +1,6 @@
 import React from 'react'
 import { DragSource } from 'react-dnd'
+import ColumnGroup from 'antd/lib/table/ColumnGroup';
 
 const itemSource = {    
       isDragging(props, monitor) {
