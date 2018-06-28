@@ -21,7 +21,7 @@ const spec = {
   drop(props, monitor, component) {
     console.log('-----drop-------')
     if (monitor.didDrop()) {
-      return;
+      return{ moved: true };
     }
     const item = monitor.getItem();
     return { moved: true };

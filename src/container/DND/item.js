@@ -21,6 +21,7 @@ const itemSource = {
         }
         const item = monitor.getItem();
         const dropResult = monitor.getDropResult();
+        console.log(dropResult)
       }
 }
 function collect(connect, monitor) {
