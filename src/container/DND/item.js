@@ -3,19 +3,19 @@ import { DragSource } from 'react-dnd'
 
 const itemSource = {    
       isDragging(props, monitor) {
-          console.log('-------isDraging-----------')
+          //console.log('-------isDraging-----------')
         return monitor.getItem().id === props.id;
       },
     
       beginDrag(props, monitor, component) {
-        console.log('-------beginDrag-----------')
+        //console.log('-------beginDrag-----------')
         // Return the data describing the dragged item
         const item = { id: props.id };
         return item;
       },
     
       endDrag(props, monitor, component) {
-        console.log('-------endDrag-----------')
+        //console.log('-------endDrag-----------')
         if (!monitor.didDrop()) {
           return;
         }

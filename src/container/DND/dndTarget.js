@@ -5,11 +5,13 @@ import './dnd.css';
 
 const spec = {
   canDrop(props, monitor) {
+    console.log('-----canDrop-------')
     const item = monitor.getItem();
     return;
   },
 
   hover(props, monitor, component) {
+    console.log('-----hover-------')
     const clientOffset = monitor.getClientOffset();
     const componentRect = findDOMNode(component).getBoundingClientRect();
     const isJustOverThisOne = monitor.isOver({ shallow: true });
@@ -17,6 +19,7 @@ const spec = {
   },
 
   drop(props, monitor, component) {
+    console.log('-----drop-------')
     if (monitor.didDrop()) {
       return;
     }
