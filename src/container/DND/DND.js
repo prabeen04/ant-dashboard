@@ -29,7 +29,7 @@ class DND extends Component {
   render() {
     return (
       <div className="dnd-wrapper">
-        <DndItems items={this.state.items} handleDrag={this.handleDrag}/>
+        <DndItems items={this.state.items} handleDrag={(id) => this.handleDrag(id)}/>
         <DndTarget />
       </div>
     )
