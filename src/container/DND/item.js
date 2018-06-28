@@ -2,29 +2,25 @@ import React from 'react'
 import { DragSource } from 'react-dnd'
 import ColumnGroup from 'antd/lib/table/ColumnGroup';
 
-const itemSource = {    
-      isDragging(props, monitor) {
-          //console.log('-------isDraging-----------')
+const itemSource = {
+    isDragging(props, monitor) {
         return monitor.getItem().id === props.id;
-      },
-    
-      beginDrag(props, monitor, component) {
-        //console.log('-------beginDrag-----------')
-        // Return the data describing the dragged item
+    },
+
+    beginDrag(props, monitor, component) {
         const item = { id: props.id };
         return item;
-      },
-    
-      endDrag(props, monitor, component) {
-          return props.handleDrag(props.item.id)
-        //console.log('-------endDrag-----------')
+    },
+
+    endDrag(props, monitor, component) {
+        return props.handleDrag(props.item.id)
         if (!monitor.didDrop()) {
-          return;
+            return;
         }
         const item = monitor.getItem();
         const dropResult = monitor.getDropResult();
         console.log(dropResult)
-      }
+    }
 }
 function collect(connect, monitor) {
     return {
@@ -42,7 +38,7 @@ class Item extends React.Component {
         const { isDragging, connectDragSource, src } = this.props;
         const opacity = isDragging ? 0 : 1
         return connectDragSource(
-            <div className="item" style={{opacity}}>
+            <div className="item" style={{ opacity }}>
                 <p>{this.props.item.value}</p>
             </div>
         )

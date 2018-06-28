@@ -24,12 +24,11 @@ class DND extends Component {
   }
   handleDrag = (id) => {
     console.log(id)
-    alert(id)
   }
   render() {
     return (
       <div className="dnd-wrapper">
-        <DndItems items={this.state.items} handleDrag={(id) => this.handleDrag(id)}/>
+        <DndItems items={this.state.items} handleDrag={this.handleDrag}/>
         <DndTarget />
       </div>
     )
