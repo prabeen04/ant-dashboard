@@ -24,6 +24,14 @@ class DND extends Component {
   }
   handleDrag = (id) => {
     console.log(id)
+    this.setState(prevState =>{
+      const items = prevState.items;
+      const index = items.findIndex(item => item.id === id)
+
+      items.splice(index, 1)
+
+      return { items }
+    });
   }
   render() {
     return (
