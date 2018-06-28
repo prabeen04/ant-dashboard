@@ -16,6 +16,7 @@ const itemSource = {
       },
     
       endDrag(props, monitor, component) {
+          return props.handleDrag(props.item.id)
         //console.log('-------endDrag-----------')
         if (!monitor.didDrop()) {
           return;
