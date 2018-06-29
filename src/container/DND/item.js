@@ -3,10 +3,6 @@ import { DragSource } from 'react-dnd'
 import ColumnGroup from 'antd/lib/table/ColumnGroup';
 
 const itemSource = {
-    isDragging(props, monitor) {
-        return monitor.getItem().id === props.id;
-    },
-
     beginDrag(props, monitor, component) {
         const item = { id: props.id };
         return item;
