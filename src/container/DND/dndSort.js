@@ -79,9 +79,10 @@ function collect(connect, monitor) {
 
 class DndSort extends Component {
     render() {
-        const { connectDragSource, connectDropTarget } = this.props;
+        const { connectDragSource, connectDropTarget, isDragging } = this.props;
+        const opacity = isDragging ?0 :1;
         return connectDragSource(
-            connectDropTarget(<div className="item">
+            connectDropTarget(<div className="item" style={{opacity}}>
                 <h2>{this.props.item.value}</h2>
             </div>)
         )
