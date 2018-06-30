@@ -14,8 +14,6 @@ const itemSource = {
         }
         const item = monitor.getItem();
         const dropResult = monitor.getDropResult();
-        console.log(dropResult)
-        console.log(item)
         return props.handleDrag(props.item.id)
     }
 }
