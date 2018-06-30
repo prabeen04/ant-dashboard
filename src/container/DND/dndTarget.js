@@ -4,12 +4,7 @@ import { DropTarget } from 'react-dnd';
 import './dnd.css';
 
 const spec = {
-  canDrop(props, monitor) {
-    // console.log('-----canDrop-------')
-    const item = monitor.getItem();
-    return;
-  },
-
+ 
   // hover(props, monitor, component) {
   //   // console.log('-----hover-------')
   //   const clientOffset = monitor.getClientOffset();
