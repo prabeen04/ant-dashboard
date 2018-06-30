@@ -6,6 +6,7 @@ import DndTarget from './dndTarget';
 import DndSort from './dndSort';
 import './dnd.css';
 
+const update = require('immutability-helper')
 
 class DND extends Component {
   constructor(props) {
@@ -39,8 +40,9 @@ class DND extends Component {
 
   //sort Items 
   sortItem(dragIndex, hoverIndex) {
+    console.log('inside sortItem')
     const { items } = this.state
-    const dragCard = cards[dragIndex]
+    const dragCard = items[dragIndex]
 
     this.setState(
       update(this.state, {
@@ -60,8 +62,8 @@ class DND extends Component {
         </div>
         <div className="dnd-items">
           {
-            this.state.items.map(item => {
-              return <DndSort key={item.id} item={item} />
+            this.state.items.map((item, index )=> {
+              return <DndSort key={item.id} index={index} item={item} moveItem={this.sortItem}/>
             })
           }
         </div>
