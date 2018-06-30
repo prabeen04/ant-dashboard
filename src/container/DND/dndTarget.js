@@ -4,15 +4,6 @@ import { DropTarget } from 'react-dnd';
 import './dnd.css';
 
 const spec = {
- 
-  // hover(props, monitor, component) {
-  //   // console.log('-----hover-------')
-  //   const clientOffset = monitor.getClientOffset();
-  //   // const componentRect = findDOMNode(component).getBoundingClientRect();
-  //   // const isJustOverThisOne = monitor.isOver({ shallow: true });
-  //   const canDrop = monitor.canDrop();
-  // },
-
   drop(props, monitor, component) {
     console.log('-----drop-------')
     if (monitor.didDrop()) {
