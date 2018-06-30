@@ -40,7 +40,7 @@
     margin: 0.2rem;
     border-radius: 0.2rem;
     color: #fff;
-    cursor: pointer;
+    cursor: move;
 }
 .item>p{
     margin: 0;

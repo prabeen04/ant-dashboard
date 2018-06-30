@@ -31,11 +31,11 @@ class Item extends React.Component {
         super(props)
     }
     render() {
-        const { isDragging, connectDragSource, src } = this.props;
-        const opacity = isDragging ? 0 : 1
+        const { isDragging, connectDragSource, item } = this.props;
+        const opacity = isDragging ? 0.3 : 1
         return (
             connectDragSource &&
-            connectDragSource(<div className="item" style={{opacity}}><p>{this.props.item.value}</p></div>)
+            connectDragSource(<div className="item" style={{opacity }}><p>{item.value}</p></div>)
         )
     }
 
