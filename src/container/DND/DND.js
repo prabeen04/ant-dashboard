@@ -1,8 +1,9 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import { DragDropContext } from 'react-dnd';
 import HTML5Backend from 'react-dnd-html5-backend';
 import DndItems from './dndItems';
 import DndTarget from './dndTarget';
+import DndSort from './dndSort';
 import './dnd.css';
 
 
@@ -24,7 +25,7 @@ class DND extends Component {
   }
   handleDrag = (id) => {
     console.log(id)
-    this.setState(prevState =>{
+    this.setState(prevState => {
       const items = prevState.items;
       const index = items.findIndex(item => item.id === id)
 
@@ -35,9 +36,14 @@ class DND extends Component {
   }
   render() {
     return (
-      <div className="dnd-wrapper">
-        <DndItems items={this.state.items} handleDrag={this.handleDrag}/>
-        <DndTarget />
+      <div>
+        <div className="dnd-wrapper">
+          <DndItems items={this.state.items} handleDrag={this.handleDrag} />
+          <DndTarget />
+        </div>
+        <div className="dnd-items">
+          <DndSort />
+        </div>
       </div>
     )
   }
