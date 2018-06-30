@@ -4,8 +4,7 @@ import ColumnGroup from 'antd/lib/table/ColumnGroup';
 
 const itemSource = {
     beginDrag(props, monitor, component) {
-        const item = { id: props.id };
-        return { id: props.id};
+        return props.item;
     },
 
     endDrag(props, monitor, component) {
