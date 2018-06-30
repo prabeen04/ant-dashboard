@@ -5,26 +5,28 @@ import './dnd.css';
 
 const spec = {
   canDrop(props, monitor) {
-    console.log('-----canDrop-------')
+    // console.log('-----canDrop-------')
     const item = monitor.getItem();
     return;
   },
 
-  hover(props, monitor, component) {
-    console.log('-----hover-------')
-    const clientOffset = monitor.getClientOffset();
-    const componentRect = findDOMNode(component).getBoundingClientRect();
-    const isJustOverThisOne = monitor.isOver({ shallow: true });
-    const canDrop = monitor.canDrop();
-  },
+  // hover(props, monitor, component) {
+  //   // console.log('-----hover-------')
+  //   const clientOffset = monitor.getClientOffset();
+  //   // const componentRect = findDOMNode(component).getBoundingClientRect();
+  //   // const isJustOverThisOne = monitor.isOver({ shallow: true });
+  //   const canDrop = monitor.canDrop();
+  // },
 
   drop(props, monitor, component) {
     console.log('-----drop-------')
     if (monitor.didDrop()) {
+      console.log('it did drop in target')
       return;
     }
-    const item = monitor.getItem();
-    return { moved: true };
+    // console.log(props)
+    // const item = monitor.getItem();
+    return {item: 'asfasfsa'};
   }
 };
 
@@ -49,4 +51,4 @@ class DndTarget extends Component {
     )
   }
 }
-export default DropTarget('item', {}, collect)(DndTarget);
+export default DropTarget('item', spec, collect)(DndTarget);

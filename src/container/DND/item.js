@@ -5,17 +5,19 @@ import ColumnGroup from 'antd/lib/table/ColumnGroup';
 const itemSource = {
     beginDrag(props, monitor, component) {
         const item = { id: props.id };
-        return item;
+        return { id: props.id};
     },
 
     endDrag(props, monitor, component) {
         if (!monitor.didDrop()) {
+            console.log('item didn\'t drop in target')
             return;
         }
-        return props.handleDrag(props.item.id)
         const item = monitor.getItem();
         const dropResult = monitor.getDropResult();
         console.log(dropResult)
+        console.log(item)
+        return props.handleDrag(props.item.id)
     }
 }
 function collect(connect, monitor) {
