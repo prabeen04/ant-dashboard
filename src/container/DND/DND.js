@@ -42,7 +42,11 @@ class DND extends Component {
           <DndTarget />
         </div>
         <div className="dnd-items">
-          <DndSort />
+          {
+            this.state.items.map(item => {
+              return <DndSort key={item.id} item={item} />
+            })
+          }
         </div>
       </div>
     )

@@ -26,8 +26,8 @@ function collect(connect, monitor) {
 class DndSort extends Component {
     render() {
         return (
-            <div>
-                <h2>DndSort Component</h2>
+            <div className="item">
+                <h2>{this.props.item.value}</h2>
             </div>
         )
     }
