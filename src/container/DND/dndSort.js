@@ -4,8 +4,12 @@ import { flow } from 'lodash';
 
 const cardSource = {
     beginDrag(props) {
-        return { id: 1 }
-    }
+        console.log('dragging begin')
+        return {
+            id: props.id,
+            index: props.index,
+        }
+    },
 }
 
 const cardTarget = {
@@ -25,10 +29,11 @@ function collect(connect, monitor) {
 
 class DndSort extends Component {
     render() {
-        return (
-            <div className="item">
+        const { connectDragSource, connectDropTarget } = this.props;
+        return connectDragSource(
+            connectDropTarget(<div className="item">
                 <h2>{this.props.item.value}</h2>
-            </div>
+            </div>)
         )
     }
 }

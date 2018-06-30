@@ -11,6 +11,7 @@ class DND extends Component {
   constructor(props) {
     super(props)
     this.handleDrag = this.handleDrag.bind(this);
+    this.sortItem = this.sortItem.bind(this);
 
     this.state = {
       items: [
@@ -23,6 +24,7 @@ class DND extends Component {
       ]
     }
   }
+  // delete on drag drop 
   handleDrag = (id) => {
     console.log(id)
     this.setState(prevState => {
@@ -34,6 +36,21 @@ class DND extends Component {
       return { items }
     });
   }
+
+  //sort Items 
+  sortItem(dragIndex, hoverIndex) {
+    const { items } = this.state
+    const dragCard = cards[dragIndex]
+
+    this.setState(
+      update(this.state, {
+        items: {
+          $splice: [[dragIndex, 1], [hoverIndex, 0, dragCard]],
+        },
+      }),
+    )
+  }
+
   render() {
     return (
       <div>
