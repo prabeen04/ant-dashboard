@@ -5,14 +5,12 @@ import './dnd.css';
 
 const spec = {
   drop(props, monitor, component) {
-    console.log('-----drop-------')
     if (monitor.didDrop()) {
       console.log('it did drop in target')
       return;
     }
-    // console.log(props)
-    // const item = monitor.getItem();
-    return {item: 'asfasfsa'};
+    const item = monitor.getItem();
+    return item;
   }
 };
 
