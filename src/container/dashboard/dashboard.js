@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Card, Spin, Icon } from 'antd';
 import JumpStartBox from './jumpStart';
 import GooglePlace from '../../components/google/googlePlace';
+import LoginWithGoogle from '../../components/google/googleLogin';
 class Dashboard extends Component {
   constructor(props){
     super(props)
@@ -24,6 +25,7 @@ class Dashboard extends Component {
       <div className='flex-container'>
         <JumpStartBox/>
       </div>
+      <LoginWithGoogle/>
       {/* <GooglePlace/> */}
        <Card loading={this.state.isLoading} style={{height: '400px'}}>
        <div className="flex-container" style={{ justifyContent: 'space-evenly'}}>
