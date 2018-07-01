@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-import { findDOMNode } from 'react-dom'
+import { findDOMNode } from 'react-dom';
 import { DragSource, DropTarget } from 'react-dnd';
 import { flow } from 'lodash';
 
 const cardSource = {
     beginDrag(props) {
-        console.log('dragging begin')
         console.log(props.index)
         return {
             id: props.id,
@@ -29,9 +28,7 @@ const cardTarget = {
         }
 
         // Determine rectangle on screen
-        const hoverBoundingRect = (findDOMNode(
-            component,
-        )).getBoundingClientRect()
+        const hoverBoundingRect = (findDOMNode(component)).getBoundingClientRect()
 
         // Get vertical middle
         const hoverMiddleY = (hoverBoundingRect.bottom - hoverBoundingRect.top) / 2
@@ -80,7 +77,7 @@ function collect(connect, monitor) {
 class DndSort extends Component {
     render() {
         const { connectDragSource, connectDropTarget, isDragging } = this.props;
-        const opacity = isDragging ?0 :1;
+        const opacity = isDragging ?0.3 :1;
         return connectDragSource(
             connectDropTarget(<div className="item" style={{opacity}}>
                 <h2>{this.props.item.value}</h2>

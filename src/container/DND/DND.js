@@ -16,12 +16,12 @@ class DND extends Component {
 
     this.state = {
       items: [
-        { id: 1, value: 'manutd' },
-        { id: 2, value: 'chelsea' },
-        { id: 3, value: 'mancity' },
-        { id: 4, value: 'arsenel' },
-        { id: 5, value: 'liverpool' },
-        { id: 6, value: 'tottenham' }
+        { id: 1, value: 'Manutd' },
+        { id: 2, value: 'Chelsea' },
+        { id: 3, value: 'Mancity' },
+        { id: 4, value: 'Arsenal' },
+        { id: 5, value: 'Liverpool' },
+        { id: 6, value: 'Tottenham' }
       ]
     }
   }
