@@ -29,8 +29,8 @@ class Dashboard extends Component {
         <JumpStartBox/>
       </div>
       <GoogleLogin
-        clientId="658977310896-knrl3gka66fldh83dao2rhgbblmd4un9.apps.googleusercontent.com"
-        buttonText="Login"
+        clientId="553440503285-rgciog1jtcen74j5hq1ojul6o4b93erh.apps.googleusercontent.com"
+        buttonText=" Login with Google "
         onSuccess={this.responseGoogle}
         onFailure={this.responseGoogle}
       />
