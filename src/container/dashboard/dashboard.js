@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { Card, Spin, Icon } from 'antd';
 import JumpStartBox from './jumpStart';
 import GooglePlace from '../../components/google/googlePlace';
+import { GoogleLogin } from 'react-google-login';
+
 class Dashboard extends Component {
   constructor(props){
     super(props)
@@ -9,7 +11,9 @@ class Dashboard extends Component {
     this.state ={
       isLoading: true
     }
+    this.responseGoogle = this.responseGoogle.bind(this);
   }
+  responseGoogle = (res) => console.log(res)
   componentDidMount(){
     setTimeout(() => {
       this.setState({
