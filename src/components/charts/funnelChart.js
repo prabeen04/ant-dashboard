@@ -15,15 +15,12 @@ class FunnelChart extends Component {
         }
     }
     componentDidMount(){
-        // const options = {
-        //     block: {
-        //         dynamicHeight: true,
-        //         minHeight: 15,
-        //     },
-        // };
-    
-        // const chart = new D3Funnel('#funnel');
-        // chart.draw(data, options);
+        const options = {
+            block: {
+                dynamicHeight: true,
+                minHeight: 15,
+            },
+        };
     }
     render() {
         return (
