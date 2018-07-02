@@ -3,7 +3,7 @@ import { Card, Spin, Icon } from 'antd';
 import JumpStartBox from './jumpStart';
 import GooglePlace from '../../components/google/googlePlace';
 import LoginWithGoogle from '../../components/google/googleLogin';
-import FunnelChart from '../../components/chart/funnelChart';
+import FunnelChart from '../../components/charts/funnelChart';
 
 class Dashboard extends Component {
   constructor(props){
