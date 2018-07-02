@@ -3,6 +3,8 @@ import { Card, Spin, Icon } from 'antd';
 import JumpStartBox from './jumpStart';
 import GooglePlace from '../../components/google/googlePlace';
 import LoginWithGoogle from '../../components/google/googleLogin';
+import FunnelChart from '../../components/chart/funnelChart';
+
 class Dashboard extends Component {
   constructor(props){
     super(props)
@@ -25,6 +27,7 @@ class Dashboard extends Component {
       <div className='flex-container'>
         <JumpStartBox/>
       </div>
+      <FunnelChart/>
       <LoginWithGoogle/>
       {/* <GooglePlace/> */}
        <Card loading={this.state.isLoading} style={{height: '400px'}}>

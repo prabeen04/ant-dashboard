@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import D3Funnel from 'd3-funnel';
 
 class FunnelChart extends Component {
   render() {
