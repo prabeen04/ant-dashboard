@@ -11,8 +11,19 @@ class FunnelChart extends Component {
                 { label: 'Applicants', value: 2500 },
                 { label: 'Admits', value: 500 },
                 { label: 'Deposits', value: 200 },
-            ];
+            ]
         }
+    }
+    componentDidMount(){
+        // const options = {
+        //     block: {
+        //         dynamicHeight: true,
+        //         minHeight: 15,
+        //     },
+        // };
+    
+        // const chart = new D3Funnel('#funnel');
+        // chart.draw(data, options);
     }
     render() {
         return (
