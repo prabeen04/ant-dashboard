@@ -22,6 +22,7 @@ class LoginWithGoogle extends Component {
     render() {
         return (
             <div>
+                {this.state.googleUser && <h3>{this.state.googleUser.name}</h3>}
                {!this.state.isLoggedIn && <GoogleLogin
                     clientId="553440503285-rgciog1jtcen74j5hq1ojul6o4b93erh.apps.googleusercontent.com"
                     buttonText=" Login with Google "
