@@ -14,7 +14,8 @@ class LoginWithGoogle extends Component {
         console.log(res)
         if(res.accessToken){
             this.setState({
-                isLoggedIn: true
+                isLoggedIn: true,
+                googleUser: res.profileObj
             })
         }
     }
@@ -31,7 +32,8 @@ class LoginWithGoogle extends Component {
                     buttonText="Logout"
                     onLogoutSuccess={(res)=>{
                         this.setState({
-                            isLoggedIn: false
+                            isLoggedIn: false,
+                            googleUser: {}
                         })
                     }}
                 >
