@@ -5,7 +5,8 @@ class LoginWithGoogle extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            isLoggedIn: false
+            isLoggedIn: false,
+            googleUser: {}
         }
         this.responseGoogle = this.responseGoogle.bind(this);
     }
