@@ -14,19 +14,13 @@ class FunnelChart extends Component {
             ]
         }
     }
-    componentDidMount() {
+    componentDidMount(){
         const options = {
             block: {
                 dynamicHeight: true,
                 minHeight: 15,
             },
         };
-        setTimeout(() => {
-            const chart = new D3Funnel(this.myRef);
-            chart.draw(this.state.data, options);
-        }, 3000)
-
-        console.log(this.myRef)
     }
     render() {
         return (
