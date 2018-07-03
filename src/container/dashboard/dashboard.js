@@ -27,7 +27,7 @@ class Dashboard extends Component {
       <div className='flex-container'>
         <JumpStartBox/>
       </div>
-      <FunnelChart/>
+      {/* <FunnelChart/> */}
       <LoginWithGoogle/>
       {/* <GooglePlace/> */}
        <Card loading={this.state.isLoading} style={{height: '400px'}}>
