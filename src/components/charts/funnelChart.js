@@ -21,6 +21,9 @@ class FunnelChart extends Component {
                 minHeight: 15,
             },
         };
+        const chart = new D3Funnel(this.myRef);
+       chart.draw(this.state.data, options);
+        console.log(this.myRef)
     }
     render() {
         return (
