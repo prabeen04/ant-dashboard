@@ -20,7 +20,9 @@ class TransitionComponent extends Component{
 
     render(){
         return(
+            <Transition in={false} timeout={5000}>
             <div>this is TransitionComponent</div>
+            </Transition>
         )
     }
 }
