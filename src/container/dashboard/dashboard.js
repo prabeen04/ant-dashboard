@@ -40,16 +40,6 @@ class Dashboard extends Component {
         <div className='flex-container'>
           <JumpStartBox />
         </div>
-        <Transition timeout={duration}>
-          {(state) => (
-            <div style={{
-              ...defaultStyle,
-              ...transitionStyles[state]
-            }}>
-              I'm a fade Transition!
-      </div>
-          )}
-        </Transition>
         {/* <FunnelChart/> */}
         <LoginWithGoogle />
         {/* <GooglePlace/> */}
