@@ -13,8 +13,8 @@ const transitionStyles = {
   entered:  { opacity: 1 },
 };
 
-const Fade = ({ in: inProp }) => (
-  <Transition in={inProp} timeout={duration}>
+const TransitionComponent = (props) => (
+  <Transition timeout={duration}>
     {(state) => (
       <div style={{
         ...defaultStyle,
@@ -25,3 +25,5 @@ const Fade = ({ in: inProp }) => (
     )}
   </Transition>
 );
+
+export default TransitionComponent
