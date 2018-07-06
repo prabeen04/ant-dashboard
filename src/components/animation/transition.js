@@ -16,11 +16,22 @@ const transitionStyles = {
 class TransitionComponent extends Component{
     constructor(props){
         super(props)
+
+        this.state = {
+            inn: false
+        }
     }
 
+componentDidMount(){
+    setTimeout(()=>{
+        this.setState({
+            inn: true
+        })
+    },2000)
+}
     render(){
         return(
-            <Transition in={false} timeout={5000}>
+            <Transition in={this.state.inn} timeout={5000}>
             <div>this is TransitionComponent</div>
             </Transition>
         )
