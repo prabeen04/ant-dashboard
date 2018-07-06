@@ -15,18 +15,18 @@ const defaultStyle = {
 
 const transitionStyles = {
   entering: { opacity: 0 },
-  entered:  { opacity: 1 },
+  entered: { opacity: 1 },
 };
 
 class Dashboard extends Component {
-  constructor(props){
+  constructor(props) {
     super(props)
 
-    this.state ={
+    this.state = {
       isLoading: true
     }
   }
-  componentDidMount(){
+  componentDidMount() {
     setTimeout(() => {
       this.setState({
         isLoading: false
@@ -37,17 +37,27 @@ class Dashboard extends Component {
     const antIcon = <Icon type="loading" style={{ fontSize: 60, color: 'tomato' }} spin />;
     return (
       <div>
-      <div className='flex-container'>
-        <JumpStartBox/>
+        <div className='flex-container'>
+          <JumpStartBox />
+        </div>
+        <Transition timeout={duration}>
+          {(state) => (
+            <div style={{
+              ...defaultStyle,
+              ...transitionStyles[state]
+            }}>
+              I'm a fade Transition!
       </div>
-      {/* <FunnelChart/> */}
-      <LoginWithGoogle/>
-      {/* <GooglePlace/> */}
-       <Card loading={this.state.isLoading} style={{height: '400px'}}>
-       <div className="flex-container" style={{ justifyContent: 'space-evenly'}}>
-                <Icon type="loading" style={{ fontSize: 60, color: 'tomato' }} spin />
-            </div>
-      </Card>
+          )}
+        </Transition>
+        {/* <FunnelChart/> */}
+        <LoginWithGoogle />
+        {/* <GooglePlace/> */}
+        <Card loading={this.state.isLoading} style={{ height: '400px' }}>
+          <div className="flex-container" style={{ justifyContent: 'space-evenly' }}>
+            <Icon type="loading" style={{ fontSize: 60, color: 'tomato' }} spin />
+          </div>
+        </Card>
       </div>
     )
   }
