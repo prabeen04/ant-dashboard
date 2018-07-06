@@ -13,17 +13,15 @@ const transitionStyles = {
   entered:  { opacity: 1 },
 };
 
-const TransitionComponent = (props) => (
-  <Transition timeout={duration}>
-    {(state) => (
-      <div style={{
-        ...defaultStyle,
-        ...transitionStyles[state]
-      }}>
-        I'm a fade Transition!
-      </div>
-    )}
-  </Transition>
-);
+class TransitionComponent extends Component{
+    constructor(props){
+        super(props)
+    }
 
+    render(){
+        return(
+            <div>this is TransitionComponent</div>
+        )
+    }
+}
 export default TransitionComponent
