@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { Tabs } from 'antd';
 import GooglePlace from '../../components/google/googlePlace'
+import LineChart1 from './lineChart';
+
 const TabPane = Tabs.TabPane;
 
 class Charts extends Component {
@@ -8,8 +10,8 @@ class Charts extends Component {
     super(props);
     this.newTabIndex = 0;
     const panes = [
-      { title: 'Tab 1', content: <GooglePlace/>, key: '1' },
-      { title: 'Tab 2', content: 'Content of Tab 2', key: '2' },
+      { title: 'Tab 1', content: <LineChart1/>, key: '1' },
+      { title: 'Tab 2', content: <GooglePlace/>, key: '2' },
       { title: 'Tab 3', content: 'Content of Tab 3', key: '3', closable: false },
     ];
     this.state = {
