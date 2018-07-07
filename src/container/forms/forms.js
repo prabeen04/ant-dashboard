@@ -17,7 +17,7 @@ class Forms extends Component {
       <div>
         <Card>
           <Divider />
-          {/* <SimpleForm /> 
+          <SimpleForm />
           <Divider />
           <ComplexForm />
           <Divider />
@@ -25,15 +25,14 @@ class Forms extends Component {
           <Divider />
           <FormArray />
           <Divider />
-          <NewFormArray/> 
-        <ExampleForm/>
-        <FieldArraysForm/>
-        <Divider />
-        <Divider />
-      <ReduxFormArray />
-      <SecondArrayForm />
-    */}
-    <ThirdArrayForm />
+          <NewFormArray />
+          {/* <ExampleForm /> */}
+          {/* <FieldArraysForm /> */}
+          <Divider />
+          {/* <ReduxFormArray /> */}
+          {/* <SecondArrayForm /> */}
+
+          <ThirdArrayForm />
         </Card>
       </div>
     )

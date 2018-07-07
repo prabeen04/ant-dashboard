@@ -4,6 +4,7 @@ import { bindActionCreators } from 'redux';
 import { Field, reduxForm, FieldArray, formValueSelector } from 'redux-form';
 // import { validateSecondArray } from './validation/secondArrayValidate';
 import { Select, Input, InputNumber, Button, Icon, } from 'antd';
+import TextInput from '../../components/common/forms/textInput'
 import './form.css';
 const Option = Select.Option;
 
@@ -49,7 +50,7 @@ class ThirdArrayForm extends Component {
         // console.log(input)
         return <div>
             <label>{label}</label>
-            <Input
+            <TextInput
                 {...input}
                 {...custom}
             />
