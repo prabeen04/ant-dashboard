@@ -71,6 +71,12 @@ class NavMenu extends React.Component {
                             <span>DND</span>
                         </Link>
                     </Menu.Item>
+                    <Menu.Item key="9">
+                        <Link to='/charts'>
+                            <Icon type="select" />
+                            <span>Charts</span>
+                        </Link>
+                    </Menu.Item>
                 </Menu>
             </div>
         );
