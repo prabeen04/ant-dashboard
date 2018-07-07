@@ -53,6 +53,7 @@ class ThirdArrayForm extends Component {
             <TextInput
                 {...input}
                 {...custom}
+                placeholder={label}
             />
             {touched && error && <span>{error}</span>}
         </div>
