@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 
-export default class Input extends Component {
+class TextInput extends Component {
+    constructor(props){
+        super(props)
+    }
   render() {
     return (
       <div>
@@ -9,3 +12,4 @@ export default class Input extends Component {
     )
   }
 }
+export default TextInput;
