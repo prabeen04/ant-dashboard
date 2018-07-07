@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Tabs } from 'antd';
 import GooglePlace from '../../components/google/googlePlace'
 import LineChart1 from './lineChart';
-
+import PieChart1 from './pieChart'
 const TabPane = Tabs.TabPane;
 
 class Charts extends Component {
@@ -12,7 +12,7 @@ class Charts extends Component {
         const panes = [
             { title: 'Tab 1', content: <LineChart1 />, key: '1' },
             { title: 'Tab 2', content: <GooglePlace />, key: '2' },
-            { title: 'Tab 3', content: 'Content of Tab 3', key: '3', closable: false },
+            { title: 'Tab 3', content: <PieChart1/>, key: '3', closable: false },
         ];
         this.state = {
             activeKey: panes[0].key,
