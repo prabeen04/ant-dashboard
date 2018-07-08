@@ -11,14 +11,14 @@ class BarChart1 extends Component {
     render() {
         return (
             <div>
-                <BarChart width={730} height={250} data={data}>
-                    <CartesianGrid strokeDasharray="3 3" />
+                <BarChart width={730} height={450} data={data}>
+                    <CartesianGrid strokeDasharray="3 3"/>
                     <XAxis dataKey="name" />
-                    <YAxis />
+                    <YAxis/>
                     <Tooltip />
                     <Legend />
-                    <Bar dataKey="pv" fill="#8884d8" />
-                    <Bar dataKey="uv" fill="#82ca9d" />
+                    <Bar dataKey="pv" fill="#8884d8" barSize={20}/>
+                    <Bar dataKey="uv" fill="#82ca9d" barSize={20}/>
                 </BarChart>
             </div>
         )
