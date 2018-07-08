@@ -5,16 +5,24 @@ const data = [
     { name: 'cosmetic', uv: 3300, pv: 2000, amt: 6500, time: 2, uvError: 120, pvError: 50 },
     { name: 'storage', uv: 3200, pv: 1398, amt: 5000, time: 3, uvError: [120, 80], pvError: [200, 100] },
     { name: 'digital', uv: 2800, pv: 2800, amt: 4000, time: 4, uvError: 100, pvError: 30 },
-  ];
-  
+];
+
 class BarChart1 extends Component {
-  render() {
-    return (
-      <div>
-          <h2>BarChart1 Component</h2>
-      </div>
-    )
-  }
+    render() {
+        return (
+            <div>
+                <BarChart width={730} height={250} data={data}>
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <XAxis dataKey="name" />
+                    <YAxis />
+                    <Tooltip />
+                    <Legend />
+                    <Bar dataKey="pv" fill="#8884d8" />
+                    <Bar dataKey="uv" fill="#82ca9d" />
+                </BarChart>
+            </div>
+        )
+    }
 }
 
 export default BarChart1
