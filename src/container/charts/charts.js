@@ -3,6 +3,7 @@ import { Tabs } from 'antd';
 import GooglePlace from '../../components/google/googlePlace'
 import LineChart1 from './lineChart';
 import PieChart1 from './pieChart'
+import BarChart1 from './barChart'
 const TabPane = Tabs.TabPane;
 
 class Charts extends Component {
@@ -11,7 +12,7 @@ class Charts extends Component {
         this.newTabIndex = 0;
         const panes = [
             { title: 'Line Chart', content: <LineChart1 />, key: '1' },
-            { title: 'Bar Chart', content: <GooglePlace />, key: '2' },
+            { title: 'Bar Chart', content: <BarChart1 />, key: '2' },
             { title: 'Pie Chart', content: <PieChart1/>, key: '3', closable: false },
         ];
         this.state = {
