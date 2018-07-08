@@ -10,9 +10,9 @@ class Charts extends Component {
         super(props);
         this.newTabIndex = 0;
         const panes = [
-            { title: 'Tab 1', content: <LineChart1 />, key: '1' },
-            { title: 'Tab 2', content: <GooglePlace />, key: '2' },
-            { title: 'Tab 3', content: <PieChart1/>, key: '3', closable: false },
+            { title: 'Line Chart', content: <LineChart1 />, key: '1' },
+            { title: 'Bar Chart', content: <GooglePlace />, key: '2' },
+            { title: 'Pie Chart', content: <PieChart1/>, key: '3', closable: false },
         ];
         this.state = {
             activeKey: panes[0].key,
