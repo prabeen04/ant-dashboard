@@ -4,6 +4,7 @@ import GooglePlace from '../../components/google/googlePlace'
 import LineChart1 from './lineChart';
 import PieChart1 from './pieChart'
 import BarChart1 from './barChart'
+import AreaChart1 from './areaChart'
 const TabPane = Tabs.TabPane;
 
 class Charts extends Component {
@@ -13,7 +14,8 @@ class Charts extends Component {
         const panes = [
             { title: 'Line Chart', content: <LineChart1 />, key: '1' },
             { title: 'Bar Chart', content: <BarChart1 />, key: '2' },
-            { title: 'Pie Chart', content: <PieChart1/>, key: '3', closable: false },
+            { title: 'Pie Chart', content: <PieChart1/>, key: '3' },
+            { title: 'Area Chart', content: <AreaChart1/>, key: '4' },
         ];
         this.state = {
             activeKey: panes[0].key,
