@@ -1,18 +1,22 @@
 import React, { Component } from 'react'
 import { PieChart, Pie, Legend, Cell, Tooltip, ResponsiveContainer, Sector, Label, LabelList } from 'recharts';
-const data = [
-  { name: 'Page A', uv: 1000, pv: 2400, amt: 2400, uvError: [75, 20] },
-  { name: 'Page B', uv: 300, pv: 4567, amt: 2400, uvError: [90, 40] },
-  { name: 'Page C', uv: 280, pv: 1398, amt: 2400, uvError: 40 },
-  { name: 'Page D', uv: 200, pv: 9800, amt: 2400, uvError: 20 },
-  { name: 'Page E', uv: 278, pv: null, amt: 2400, uvError: 28 },
-  { name: 'Page F', uv: 189, pv: 4800, amt: 2400, uvError: [90, 20] },
-  { name: 'Page G', uv: 189, pv: 4800, amt: 2400, uvError: [28, 40] },
-  { name: 'Page H', uv: 189, pv: 4800, amt: 2400, uvError: 28 },
-  { name: 'Page I', uv: 189, pv: 4800, amt: 2400, uvError: 28 },
-  { name: 'Page J', uv: 189, pv: 4800, amt: 2400, uvError: [15, 60] },
+const data01 = [
+  { name: 'Group A', value: 400, v: 89 },
+  { name: 'Group B', value: 300, v: 100 },
+  { name: 'Group C', value: 200, v: 200 },
+  { name: 'Group D', value: 200, v: 20 },
+  { name: 'Group E', value: 278, v: 40 },
+  { name: 'Group F', value: 189, v: 60 },
 ];
 
+const data02 = [
+  { name: 'Group A', value: 2400 },
+  { name: 'Group B', value: 4567 },
+  { name: 'Group C', value: 1398 },
+  { name: 'Group D', value: 9800 },
+  { name: 'Group E', value: 3908 },
+  { name: 'Group F', value: 4800 },
+];
 class PieChart1 extends Component {
   render() {
     return (
