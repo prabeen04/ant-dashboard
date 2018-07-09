@@ -10,11 +10,11 @@ class MyChart extends Component {
     }
   render() {
     return (
-      <div className="flex-container">
-        <LineChart1 height={this.props.height} width={this.props.height}/>
-        <BarChart1 height={this.props.height} width={this.props.height}/>
-        <AreaChart1 height={this.props.height} width={this.props.height}/>
-        <PieChart1 height={this.props.height} width={this.props.height}/>
+      <div className="flex-container" style={{flexWrap: 'wrap'}}>
+        <LineChart1 height={this.props.height} width={this.props.width}/>
+        <BarChart1 height={this.props.height} width={this.props.width}/>
+        <AreaChart1 height={this.props.height} width={this.props.width}/>
+        <PieChart1 height={this.props.height} width={this.props.width}/>
       </div>
     )
   }
