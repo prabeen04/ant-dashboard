@@ -27,7 +27,7 @@ class LineChart1 extends Component {
                     <XAxis dataKey="name" />
                     <YAxis />
                     <Tooltip />
-                    <Legend layout="vertical" verticalAlign="middle" align="right"  margin={{ top: 100, left: 0, right: 0, bottom: 100 }}/>
+                    {/* <Legend layout="vertical" verticalAlign="middle" align="right"  margin={{ top: 100, left: 0, right: 0, bottom: 100 }}/> */}
                 </LineChart>
             </div>
         )
