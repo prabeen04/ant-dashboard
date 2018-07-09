@@ -8,9 +8,13 @@ class DashboardHeader extends Component {
         return (
             <div className="dashboard-header">
                 <ButtonGroup>
-                    <Button>L</Button>
-                    <Button>M</Button>
-                    <Button>R</Button>
+                    <Button>1W</Button>
+                    <Button>4W</Button>
+                    <Button>1Y</Button>
+                    <Button>Mtd</Button>
+                    <Button>Qtd</Button>
+                    <Button>Ytd</Button>
+                    <Button>All</Button>
                 </ButtonGroup>
             </div>
         )
