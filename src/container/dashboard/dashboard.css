@@ -1,0 +1,11 @@
+.dashboard-header{
+    background: #fff;
+    margin:  0.2rem  0.5rem;
+     padding: 0.3rem;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     align-content: center;
+     border-radius: 0.2rem;
+     box-shadow: 0 1px 4px 1px rgb(211, 208, 208);
+}

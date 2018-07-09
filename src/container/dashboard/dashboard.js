@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Card, Spin, Icon } from 'antd';
 import JumpStartBox from './jumpStart';
 import Settings from '../settings/settings'; 
-import ProfileHeader from '../profile/profileHeader';
+import DashboardHeader from './dashboardHeader';
 import Charts from '../charts/charts';
 import GooglePlace from '../../components/google/googlePlace';
 import LoginWithGoogle from '../../components/google/googleLogin';
@@ -27,7 +27,7 @@ class Dashboard extends Component {
     const antIcon = <Icon type="loading" style={{ fontSize: 60, color: 'tomato' }} spin />;
     return (
       <div>
-          <ProfileHeader />
+          <DashboardHeader />
         <div className='flex-container'>
           <JumpStartBox />
         </div>
