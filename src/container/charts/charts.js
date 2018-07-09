@@ -5,18 +5,19 @@ import LineChart1 from './lineChart';
 import PieChart1 from './pieChart'
 import BarChart1 from './barChart'
 import AreaChart1 from './areaChart'
+import MyChart from './myChart'
 const TabPane = Tabs.TabPane;
-
+const abc = <LineChart1 />
 class Charts extends Component {
     constructor(props) {
         super(props);
         this.newTabIndex = 0;
         const panes = [
-            { title: 'Line Chart', content: <LineChart1 />, key: '1' },
-            { title: 'Bar Chart', content: <BarChart1 />, key: '2' },
+            { title: 'Line Chart', content: abc, key: '1' },
+            { title: 'Bar Chart', content: <BarChart1 height={200} width={400}/>, key: '2' },
             { title: 'Pie Chart', content: <PieChart1/>, key: '3' },
             { title: 'Area Chart', content: <AreaChart1/>, key: '4' },
-            { title: 'My Chart', content: <AreaChart1/>, key: '5' },
+            { title: 'My Chart', content: <MyChart/>, key: '5' },
         ];
         this.state = {
             activeKey: panes[0].key,

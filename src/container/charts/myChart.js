@@ -4,7 +4,7 @@ class MyChart extends Component {
   render() {
     return (
       <div>
-        <h1>Mychart component created</h1>
+        <h1>Mychart componentS</h1>
       </div>
     )
   }

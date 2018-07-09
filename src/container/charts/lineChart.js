@@ -17,7 +17,7 @@ class LineChart1 extends Component {
     render() {
         return (
             <div>
-                <LineChart width={800} height={300} data={data} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
+                <LineChart width={this.props.width} height={this.props.height} data={data} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
                     <Line type="monotone" dataKey="uv" stroke="#8884d8" />
                     <Line type="monotone" dataKey="pv" stroke="#8884d8" />
                     <CartesianGrid stroke="#ccc" />
