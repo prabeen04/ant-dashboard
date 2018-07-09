@@ -61,7 +61,7 @@ class Navbar extends React.Component {
                     </Menu> */}
                 </Sider>
                 <Layout>
-                    <Header style={{ background: '#fff', padding: 0 }}>
+                    <Header className="flex-container" style={{ background: '#fff', padding: 0, height: 45 }}>
                         <Icon
                             className="trigger"
                             type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'}

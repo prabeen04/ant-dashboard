@@ -11,7 +11,7 @@ class JumpStartBox extends Component {
 
     render() {
         let renderJumpStartBoxes = this.props.jumpStartData.filter((data) => data.visible)
-            .map((data) => <Card key={data.id} style={{ margin: '1rem', justifyContent: 'space-evenly', minWidth: 200 }}>
+            .map((data) => <Card key={data.id} style={{ margin: '0.3rem', justifyContent: 'space-evenly', minWidth: 180, height: 100 }}>
                 <div>
                     <h3>{data.title}</h3>
                     <h2>{data.value}</h2>

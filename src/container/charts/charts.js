@@ -16,6 +16,7 @@ class Charts extends Component {
             { title: 'Bar Chart', content: <BarChart1 />, key: '2' },
             { title: 'Pie Chart', content: <PieChart1/>, key: '3' },
             { title: 'Area Chart', content: <AreaChart1/>, key: '4' },
+            { title: 'My Chart', content: <AreaChart1/>, key: '5' },
         ];
         this.state = {
             activeKey: panes[0].key,

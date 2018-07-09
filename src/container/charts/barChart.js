@@ -11,7 +11,7 @@ class BarChart1 extends Component {
     render() {
         return (
             <div>
-                <BarChart width={730} height={450} data={data}>
+                <BarChart width={730} height={350} data={data}>
                     <CartesianGrid strokeDasharray="3 3"/>
                     <XAxis dataKey="name" />
                     <YAxis/>

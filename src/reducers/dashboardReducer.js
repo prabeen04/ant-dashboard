@@ -1,7 +1,7 @@
 import { GET_JUMPSTART_LIST, SET_JUMPSTART_LIST } from '../types/dashboardActionTypes';
 const initialState = [
     {
-        visible: false,
+        visible: true,
         id: 1,
         title: 'Title 1',
         value: 100
@@ -30,6 +30,12 @@ const initialState = [
         title: ' Title 5',
         value: 1100
     },
+    {
+        visible: true,
+        id: 6,
+        title: ' Title 6',
+        value: 7700
+    }
 ]
 export const dashboardReducer = (state = initialState, action) => {
     switch (action.type) {
