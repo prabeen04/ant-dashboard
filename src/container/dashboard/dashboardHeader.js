@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Button, Icon } from 'antd';
+import SettingPopover from '../../components/popover/settingPopover';
 import './dashboard.css';
 const ButtonGroup = Button.Group;
 
@@ -16,6 +17,7 @@ class DashboardHeader extends Component {
                     <Button>Ytd</Button>
                     <Button>All</Button>
                 </ButtonGroup>
+                <SettingPopover/>
             </div>
         )
     }
