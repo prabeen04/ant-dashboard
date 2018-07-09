@@ -13,11 +13,11 @@ class Charts extends Component {
         super(props);
         this.newTabIndex = 0;
         const panes = [
-            { title: 'Line Chart', content: <MyChart height={200} width={400}/>, key: '1' },
-            { title: 'Bar Chart', content: <BarChart1 height={200} width={400}/>, key: '2' },
-            { title: 'Pie Chart', content: <PieChart1 height={200} width={400}/>, key: '3' },
-            { title: 'Area Chart', content: <AreaChart1 height={200} width={400}/>, key: '4' },
-            { title: 'My Chart', content: <LineChart1 height={200} width={500}/>, key: '5' },
+            { title: 'Line Chart', content: <MyChart height={200} width={500}/>, key: '1' },
+            { title: 'Bar Chart', content: <BarChart1 height={300} width={600}/>, key: '2' },
+            { title: 'Pie Chart', content: <PieChart1 height={300} width={600}/>, key: '3' },
+            { title: 'Area Chart', content: <AreaChart1 height={300} width={600}/>, key: '4' },
+            { title: 'My Chart', content: <LineChart1 height={300} width={600}/>, key: '5' },
         ];
         this.state = {
             activeKey: panes[0].key,
