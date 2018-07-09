@@ -18,6 +18,9 @@ const data02 = [
   { name: 'Group F', value: 4800 },
 ];
 class PieChart1 extends Component {
+  constructor(props){
+    super(props)
+}
   render() {
     return (
       <div>

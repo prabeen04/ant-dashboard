@@ -15,6 +15,9 @@ const data = [
     { name: 'Page G', uv: 2300, pv: 4300, amt: 2100, time: 18 },
 ];
 class AreaChart1 extends Component {
+    constructor(props){
+        super(props)
+    }
     render() {
         return (
             <div>
