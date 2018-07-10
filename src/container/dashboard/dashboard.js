@@ -1,5 +1,6 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import { Card, Spin, Icon } from 'antd';
+import classNames from 'classnames';
 import JumpStartBox from './jumpStart';
 import Settings from '../settings/settings'; 
 import DashboardHeader from './dashboardHeader';
@@ -13,7 +14,8 @@ class Dashboard extends Component {
     super(props)
 
     this.state = {
-      isLoading: true
+      isLoading: true,
+      isFetching: false
     }
   }
   componentDidMount() {
@@ -25,8 +27,11 @@ class Dashboard extends Component {
   }
   render() {
     const antIcon = <Icon type="loading" style={{ fontSize: 60, color: 'tomato' }} spin />;
+    const blurClass = classNames({
+      'blur-wrapper': this.state.isFetching
+  });
     return (
-      <div>
+      <div className={blurClass}>
           <DashboardHeader />
         <div className='flex-container'>
           <JumpStartBox />
