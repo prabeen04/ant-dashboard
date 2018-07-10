@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { Button, Icon } from 'antd';
 import SettingPopover from '../../components/popover/settingPopover';
 import './dashboard.css';
@@ -25,5 +26,7 @@ class DashboardHeader extends Component {
         )
     }
 }
-
-export default DashboardHeader;
+const mapStateToProps = (state) => ({
+    dateRangeList: state.dashboardReducer.dateRangeList
+  })
+export default connect(mapStateToProps)(DashboardHeader);
