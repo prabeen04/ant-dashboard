@@ -9,7 +9,7 @@ class DashboardHeader extends Component {
         return (
             <div className="dashboard-header">
                 <ButtonGroup>
-                    <Button>1W</Button>
+                    <Button onClick={()=>this.props.fetchChartData}>1W</Button>
                     <Button>4W</Button>
                     <Button>1Y</Button>
                     <Button>Mtd</Button>

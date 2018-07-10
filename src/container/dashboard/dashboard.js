@@ -15,15 +15,28 @@ class Dashboard extends Component {
 
     this.state = {
       isLoading: true,
-      isFetching: false
+      isFetching: true
     }
+    this.fetchChartData = this.fetchChartData.bind(this);
   }
   componentDidMount() {
     setTimeout(() => {
       this.setState({
-        isLoading: false
+        isLoading: false,
+        isFetching: false
       })
     }, 2000);
+  }
+  fetchChartData(){
+    console.log('inside fetch chart data')
+    this.setState({
+      isFetching: true
+    })
+    setTimeout(() =>{
+      this.setState({
+        isFetching: false
+      })
+    },1500)
   }
   render() {
     const antIcon = <Icon type="loading" style={{ fontSize: 60, color: 'tomato' }} spin />;
@@ -32,7 +45,7 @@ class Dashboard extends Component {
   });
     return (
       <div className={blurClass}>
-          <DashboardHeader />
+          <DashboardHeader fetchChartData={this.fetchChartData} />
         <div className='flex-container'>
           <JumpStartBox />
         </div>
