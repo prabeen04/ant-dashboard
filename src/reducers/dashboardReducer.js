@@ -8,7 +8,7 @@ const initialState = {
         { id: 1,value: 'QTD'},
         { id: 1,value: 'YTD'},
         { id: 1,value: 'ALL'},
-    ]
+    ],
     jumpStartList: [
         {
             visible: true,
