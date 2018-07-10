@@ -2,8 +2,10 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { Bar, Line } from 'react-chartjs-2';
+import { classNames } from 'classnames';
 import { Card } from 'antd';
 import { getJumpstartList } from '../../actions/dashboardAction';
+import '../../App.css';
 import './dashboard.css';
 class JumpStartBox extends Component {
     constructor(props) {
@@ -11,8 +13,12 @@ class JumpStartBox extends Component {
     }
 
     render() {
+        const jumpstart = classNames({
+            jumpstart-box: true,
+            'clickable': true
+          });
         let renderJumpStartBoxes = this.props.jumpStartData.filter((data) => data.visible)
-            .map((data) => <Card key={data.id} className="jumpstart-box">
+            .map((data) => <Card key={data.id} className={jumpstart}>
                 <div>
                     <h3>{data.title}</h3>
                     <h2>{data.value}</h2>

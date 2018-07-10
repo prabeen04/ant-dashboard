@@ -2,12 +2,12 @@ import { GET_JUMPSTART_LIST, SET_JUMPSTART_LIST } from '../types/dashboardAction
 const initialState = {
     dateRangeList: [
         { id: 1,value: '1W'},
-        { id: 1,value: '4W'},
-        { id: 1,value: '1Y'},
-        { id: 1,value: 'MTD'},
-        { id: 1,value: 'QTD'},
-        { id: 1,value: 'YTD'},
-        { id: 1,value: 'ALL'},
+        { id: 2,value: '4W'},
+        { id: 3,value: '1Y'},
+        { id: 4,value: 'MTD'},
+        { id: 5,value: 'QTD'},
+        { id: 6,value: 'YTD'},
+        { id: 7,value: 'ALL'},
     ],
     jumpStartList: [
         {

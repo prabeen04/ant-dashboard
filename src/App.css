@@ -42,6 +42,17 @@
   background: rgba(255,255,255,.2);
   margin: 16px;
 }
+.clickable{
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+/* media queries */
 @media screen and (max-width: 990px) {
   .flex-container{
     display: flex;
