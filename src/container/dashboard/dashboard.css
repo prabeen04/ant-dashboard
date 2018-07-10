@@ -15,10 +15,19 @@
 .jumpstart-box{
     margin: '0.3rem';
     justify-content: 'space-between';
-    background: #001529;
+    background: #8884d8;
     color: #fff !important;
+    -webkit-box-shadow: 0 8px 6px -6px rgb(46, 44, 44);
+    -moz-box-shadow: 0 8px 6px -6px rgb(46, 44, 44);
+    box-shadow: 0 8px 6px -6px rgb(46, 44, 44);
     min-width: 180;
     flex-grow: 1;
     max-width: 480px;
     height: 100px; 
+    transition: 0.3s all;
 }
+/* .jumpstart-box :hover{
+    -webkit-box-shadow: 0 12px 6px -6px rgb(46, 44, 44);
+    -moz-box-shadow: 0 12px 6px -6px rgb(46, 44, 44);
+    box-shadow: 0 12px 6px -6px rgb(46, 44, 44);
+} */

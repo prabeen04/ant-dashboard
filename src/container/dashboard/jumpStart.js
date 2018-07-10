@@ -24,7 +24,7 @@ class JumpStartBox extends Component {
                     className={'jumpstart-box'}
                     onClick={() => console.log(data.id)}>
                     <div>
-                        <h3 style={{color: '#fff'}}>{data.title}</h3>
+                        <h3 style={{color: '#f4f4f4'}}>{data.title}</h3>
                         <h2 style={{color: '#fff'}}>{data.value}</h2>
                     </div>
                 </Card>
