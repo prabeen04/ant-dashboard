@@ -12,3 +12,11 @@
 .blur-wrapper{
     filter: blur(6px)
 }
+.jumpstart-box{
+    margin: '0.3rem';
+    justify-content: 'space-between';
+    min-width: 180;
+    flex-grow: 1;
+    max-width: 480px;
+    height: 100px; 
+}

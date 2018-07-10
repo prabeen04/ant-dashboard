@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { Bar, Line } from 'react-chartjs-2';
 import { Card } from 'antd';
 import { getJumpstartList } from '../../actions/dashboardAction';
+import './dashboard.css';
 class JumpStartBox extends Component {
     constructor(props) {
         super(props)
@@ -11,7 +12,7 @@ class JumpStartBox extends Component {
 
     render() {
         let renderJumpStartBoxes = this.props.jumpStartData.filter((data) => data.visible)
-            .map((data) => <Card key={data.id} style={{ margin: '0.3rem', justifyContent: 'space-between', minWidth: 180, flexGrow: 1, maxWidth: 480, height: 100 }}>
+            .map((data) => <Card key={data.id} className="jumpstart-box">
                 <div>
                     <h3>{data.title}</h3>
                     <h2>{data.value}</h2>
