@@ -25,10 +25,9 @@ class Dashboard extends Component {
         isLoading: false,
         isFetching: false
       })
-    }, 2000);
+    }, 1000);
   }
   fetchChartData(){
-    console.log('inside fetch chart data')
     this.setState({
       isFetching: true
     })
@@ -36,7 +35,7 @@ class Dashboard extends Component {
       this.setState({
         isFetching: false
       })
-    },1500)
+    },500)
   }
   render() {
     const antIcon = <Icon type="loading" style={{ fontSize: 60, color: 'tomato' }} spin />;

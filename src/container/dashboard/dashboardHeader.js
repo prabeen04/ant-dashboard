@@ -5,17 +5,20 @@ import './dashboard.css';
 const ButtonGroup = Button.Group;
 
 class DashboardHeader extends Component {
+    constructor(props){
+        super(props)
+    }
     render() {
         return (
             <div className="dashboard-header">
                 <ButtonGroup>
-                    <Button onClick={()=>this.props.fetchChartData}>1W</Button>
-                    <Button>4W</Button>
-                    <Button>1Y</Button>
-                    <Button>Mtd</Button>
-                    <Button>Qtd</Button>
-                    <Button>Ytd</Button>
-                    <Button>All</Button>
+                    <Button onClick={()=>this.props.fetchChartData()}>1W</Button>
+                    <Button onClick={()=>this.props.fetchChartData()}>4W</Button>
+                    <Button onClick={()=>this.props.fetchChartData()}>1Y</Button>
+                    <Button onClick={()=>this.props.fetchChartData()}>Mtd</Button>
+                    <Button onClick={()=>this.props.fetchChartData()}>Qtd</Button>
+                    <Button onClick={()=>this.props.fetchChartData()}>Ytd</Button>
+                    <Button onClick={()=>this.props.fetchChartData()}>All</Button>
                 </ButtonGroup>
                 <SettingPopover/>
             </div>
