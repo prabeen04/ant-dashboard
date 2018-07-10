@@ -13,17 +13,22 @@ class JumpStartBox extends Component {
     }
 
     render() {
-        const jumpstart = classNames({
-            jumpstart-box: true,
-            'clickable': true
-          });
+
         let renderJumpStartBoxes = this.props.jumpStartData.filter((data) => data.visible)
-            .map((data) => <Card key={data.id} className={jumpstart}>
-                <div>
-                    <h3>{data.title}</h3>
-                    <h2>{data.value}</h2>
-                </div>
-            </Card>)
+            .map((data) => {
+                // const jumpstart = classNames({
+                //     'jumpstart-box': true,
+                //     'clickable': true
+                //   });
+                return <Card key={data.id}
+                    className={'jumpstart-box'}
+                    onClick={() => console.log(data.id)}>
+                    <div>
+                        <h3>{data.title}</h3>
+                        <h2>{data.value}</h2>
+                    </div>
+                </Card>
+            })
 
         return (
             <div className="flex-container" style={{ flexGrow: 1, justifyContent: 'flex-start' }}>
