@@ -40,14 +40,8 @@ const initialState = [
 export const dashboardReducer = (state = initialState, action) => {
     switch (action.type) {
         case GET_JUMPSTART_LIST:
-            return {
-                ...state, jumpStartData: [...state.jumpStartData, {
-                    visible: true,
-                    id: 1,
-                    title: 'Title 1',
-                    value: 100
-                }]
-            };
+        return state;
+        
         case SET_JUMPSTART_LIST:
             return [...state.map(data => data.id === action.payload.id ? action.payload : data)];
 

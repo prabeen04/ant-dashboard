@@ -20,7 +20,7 @@ class JumpStartBox extends Component {
             </Card>)
 
         return (
-            <div className="flex-container" style={{ flexGrow: 1,justifyContent: 'flex-start' }}>
+            <div className="flex-container" style={{ flexGrow: 1, justifyContent: 'flex-start' }}>
                 {renderJumpStartBoxes}
             </div>
         )
@@ -33,7 +33,7 @@ const mapStateToProps = (state) => {
 }
 const mapDispatchToProps = dispatch => {
     return bindActionCreators({
-        
+
     }, dispatch)
 }
 export default connect(mapStateToProps, mapDispatchToProps)(JumpStartBox);
