@@ -1,4 +1,6 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import { Modal, Button, Icon } from 'antd';
 
 class JumpStartModal extends Component {
@@ -19,5 +21,15 @@ class JumpStartModal extends Component {
     )
   }
 }
+const mapStateToProps = (state) => {
+    return{
 
-export default JumpStartModal;
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return bindActionCreators({
+
+    }, dispatch)
+}
+export default connect(mapStateToProps, mapDispatchToProps)(JumpStartModal);
