@@ -1,6 +1,7 @@
 import { GET_JUMPSTART_LIST, SET_JUMPSTART_LIST, OPEN_JUMPSTART_MODAL, CLOSE_JUMPSTART_MODAL } from '../types/dashboardActionTypes';
 const initialState = {
     isModalOpen: false,
+    jumpstartId:1,
     dateRangeList: [
         { id: 1, value: '1W' },
         { id: 2, value: '4W' },
@@ -58,10 +59,10 @@ export const dashboardReducer = (state = initialState, action) => {
             return { ...state, jumpStartList: [...state.jumpStartList.map(data => data.id === action.payload.id ? action.payload : data)] };
 
         case OPEN_JUMPSTART_MODAL:
-            return {...state, {isModalOpen: true}};
-        
+            return { ...state, isModalOpen: true, jumpstartId: action.payload };
+
         case CLOSE_JUMPSTART_MODAL:
-            return {...state, {isModalOpen: true}}  
+            return { ...state, isModalOpen: false }
 
         default:
             return state;
