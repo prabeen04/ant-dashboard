@@ -9,6 +9,7 @@ import GooglePlace from '../../components/google/googlePlace';
 import LoginWithGoogle from '../../components/google/googleLogin';
 import FunnelChart from '../../components/charts/funnelChart';
 import TransitionComponent from '../../components/animation/transition';
+
 class Dashboard extends Component {
   constructor(props) {
     super(props)

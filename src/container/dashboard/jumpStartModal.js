@@ -8,14 +8,13 @@ class JumpStartModal extends Component {
     return (
       <div>
         <Modal
-          title="Basic Modal"
+          title={this.props.jumpstartData.title}
           visible={this.props.isModalOpen}
           onOk={this.handleOk}
           onCancel={this.props.closeJumpstartModal}
         >
-          <p>Some contents...</p>
-          <p>Some contents...</p>
-          <p>Some contents...</p>
+          <p>{this.props.jumpstartData.title}</p>
+          <p>{this.props.jumpstartData.value}</p>
         </Modal>
       </div>
     )
@@ -23,7 +22,8 @@ class JumpStartModal extends Component {
 }
 const mapStateToProps = (state) => {
     return{
-        isModalOpen: state.dashboardReducer.isModalOpen
+        isModalOpen: state.dashboardReducer.isModalOpen,
+        jumpstartData: state.dashboardReducer.jumpstartData
     }
 }
 
