@@ -6,6 +6,7 @@ import { classNames } from 'classnames';
 import { Card } from 'antd';
 import { getJumpstartList } from '../../actions/dashboardAction';
 import JumpStartModal from './jumpStartModal';
+import { openJumpstartModal } from '../../actions/dashboardAction';
 import '../../App.css';
 import './dashboard.css';
 class JumpStartBox extends Component {
@@ -23,7 +24,7 @@ class JumpStartBox extends Component {
                 //   });
                 return <div key={data.id}
                     className={'jumpstart-box'}
-                    onClick={() => console.log(data.id)}>
+                    onClick={() => this.props.openJumpstartModal(data.id)}>
                     <div>
                         <h3 style={{color: '#aaa'}}>{data.title}</h3>
                         <h2 style={{color: '#eee'}}>{data.value}</h2>
@@ -46,7 +47,7 @@ const mapStateToProps = (state) => {
 }
 const mapDispatchToProps = dispatch => {
     return bindActionCreators({
-
+        openJumpstartModal
     }, dispatch)
 }
 export default connect(mapStateToProps, mapDispatchToProps)(JumpStartBox);
