@@ -5,6 +5,7 @@ import { Bar, Line } from 'react-chartjs-2';
 import { classNames } from 'classnames';
 import { Card } from 'antd';
 import { getJumpstartList } from '../../actions/dashboardAction';
+import JumpStartModal from './jumpStartModal';
 import '../../App.css';
 import './dashboard.css';
 class JumpStartBox extends Component {
@@ -33,6 +34,7 @@ class JumpStartBox extends Component {
         return (
             <div className="flex-container" style={{ flexGrow: 1, justifyContent: 'flex-start' }}>
                 {renderJumpStartBoxes}
+                <JumpStartModal/>
             </div>
         )
     }

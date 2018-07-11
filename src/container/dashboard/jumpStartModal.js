@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Modal, Button } from 'antd';
+import { Modal, Button, Icon } from 'antd';
 
 class JumpStartModal extends Component {
   render() {
@@ -7,7 +7,7 @@ class JumpStartModal extends Component {
       <div>
         <Modal
           title="Basic Modal"
-          visible={this.state.visible}
+          visible={true}
           onOk={this.handleOk}
           onCancel={this.handleCancel}
         >
