@@ -20,7 +20,7 @@ class AreaChart1 extends Component {
     }
     render() {
         return (
-            <div>
+            <div style={{margin: '0.2rem'}}>
                 <AreaChart width={this.props.width} height={this.props.height} data={data}
                     margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>
                     <defs>

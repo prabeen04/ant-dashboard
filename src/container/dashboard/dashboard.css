@@ -25,7 +25,7 @@
     box-shadow: 0 8px 6px -6px rgb(46, 44, 44);
     min-width: 180;
     flex-grow: 1;
-    max-width: 480px;
+    max-width: 280px;
     height: 100px; 
     transition: 0.3s all;
 }

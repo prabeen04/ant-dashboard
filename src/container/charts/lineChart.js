@@ -19,7 +19,7 @@ class LineChart1 extends Component {
     }
     render() {
         return (
-            <div>
+            <div style={{margin: '0.2rem'}}>
                 <LineChart width={this.props.width} height={this.props.height} data={data} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
                     <Line type="monotone" dataKey="uv" stroke="#8884d8" />
                     <Line type="monotone" dataKey="pv" stroke="tomato" />

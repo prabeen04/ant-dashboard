@@ -13,7 +13,7 @@ class BarChart1 extends Component {
     }
     render() {
         return (
-            <div>
+            <div style={{margin: '0.2rem'}}>
                 <BarChart width={this.props.width} height={this.props.height} data={data}>
                     <CartesianGrid strokeDasharray="3 3"/>
                     <XAxis dataKey="name" />
