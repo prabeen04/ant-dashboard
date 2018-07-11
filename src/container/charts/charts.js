@@ -32,7 +32,7 @@ class Charts extends Component {
 
     render() {
         return (
-            <div style={{ backgroundColor: '#fff', margin: '0.5rem' }}>
+            <div className="charts-wrapper">
                 <Tabs
                     size={'small'}
                     onChange={this.onChange}
