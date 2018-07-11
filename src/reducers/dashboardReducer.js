@@ -1,6 +1,6 @@
 import { GET_JUMPSTART_LIST, SET_JUMPSTART_LIST, OPEN_JUMPSTART_MODAL, CLOSE_JUMPSTART_MODAL } from '../types/dashboardActionTypes';
 const initialState = {
-    isModalOpen: false,
+    isModalOpen: true,
     jumpstartId:1,
     dateRangeList: [
         { id: 1, value: '1W' },
