@@ -35,6 +35,7 @@ class Charts extends Component {
             <div className="charts-wrapper">
                 <Tabs
                     size={'small'}
+                    animated={true}
                     onChange={this.onChange}
                     activeKey={this.state.activeKey}
                 >
