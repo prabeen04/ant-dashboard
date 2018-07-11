@@ -13,10 +13,12 @@
     filter: blur(6px)
 }
 .jumpstart-box{
-    margin: '0.3rem';
+    margin: 0.2rem 0.4rem;
+    border: none;
     justify-content: 'space-between';
-    background: #8884d8;
+    background: #274196;
     color: #fff !important;
+    cursor: pointer;
     -webkit-box-shadow: 0 8px 6px -6px rgb(46, 44, 44);
     -moz-box-shadow: 0 8px 6px -6px rgb(46, 44, 44);
     box-shadow: 0 8px 6px -6px rgb(46, 44, 44);

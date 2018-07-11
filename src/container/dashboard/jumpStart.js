@@ -20,14 +20,14 @@ class JumpStartBox extends Component {
                 //     'jumpstart-box': true,
                 //     'clickable': true
                 //   });
-                return <Card key={data.id}
+                return <div key={data.id}
                     className={'jumpstart-box'}
                     onClick={() => console.log(data.id)}>
                     <div>
-                        <h3 style={{color: '#f4f4f4'}}>{data.title}</h3>
-                        <h2 style={{color: '#fff'}}>{data.value}</h2>
+                        <h3 style={{color: '#aaa'}}>{data.title}</h3>
+                        <h2 style={{color: '#eee'}}>{data.value}</h2>
                     </div>
-                </Card>
+                </div>
             })
 
         return (
