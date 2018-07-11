@@ -2,10 +2,11 @@ import React, { Component } from 'react'
 import { Tabs } from 'antd';
 import GooglePlace from '../../components/google/googlePlace'
 import LineChart1 from './lineChart';
-import PieChart1 from './pieChart'
-import BarChart1 from './barChart'
-import AreaChart1 from './areaChart'
-import MyChart from './myChart'
+import PieChart1 from './pieChart';
+import BarChart1 from './barChart';
+import AreaChart1 from './areaChart';
+import MyChart from './myChart';
+import './charts.css';
 const TabPane = Tabs.TabPane;
 
 class Charts extends Component {
@@ -33,6 +34,7 @@ class Charts extends Component {
         return (
             <div style={{ backgroundColor: '#fff', margin: '0.5rem' }}>
                 <Tabs
+                    size={'small'}
                     onChange={this.onChange}
                     activeKey={this.state.activeKey}
                 >
