@@ -17,8 +17,7 @@ class MyMap extends Component {
         const position = [this.state.lat, this.state.lng]
         return (
             <div>
-                <h2>Map Component</h2>
-                <Map center={position} zoom={this.state.zoom} viewport={this.state.viewport}>>
+                <Map center={position} zoom={this.state.zoom} viewport={this.state.viewport} className="leaflet-container">
                     <TileLayer
                         attribution="&amp;copy <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
                         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
