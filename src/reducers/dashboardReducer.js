@@ -47,6 +47,18 @@ const initialState = {
             id: 6,
             title: ' Title 6',
             value: 7700
+        },
+        {
+            visible: true,
+            id: 7,
+            title: ' Title 7',
+            value: 87588.00
+        },
+        {
+            visible: true,
+            id: 8,
+            title: ' Title 8',
+            value: 111144.00
         }
     ]
 }
