@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Map, TileLayer, Marker, Popup } from 'react-leaflet';
 
-class Map extends Component {
+class MyMap extends Component {
     constructor(props) {
         super(props)
 
@@ -32,4 +32,4 @@ class Map extends Component {
     }
 }
 
-export default Map;
+export default MyMap;
