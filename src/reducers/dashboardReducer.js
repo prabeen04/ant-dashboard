@@ -43,13 +43,13 @@ const initialState = {
             value: 1100
         },
         {
-            visible: true,
+            visible: false,
             id: 6,
             title: ' Title 6',
             value: 7700
         },
         {
-            visible: true,
+            visible: false,
             id: 7,
             title: ' Title 7',
             value: 87588.00
