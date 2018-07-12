@@ -79,7 +79,7 @@ class NavMenu extends React.Component {
                     </Menu.Item>
                     <Menu.Item key="10">
                         <Link to='/map'>
-                            <Icon type="map" />
+                            <Icon type="global" />
                             <span>Map</span>
                         </Link>
                     </Menu.Item>
