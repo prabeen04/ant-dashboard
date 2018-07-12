@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Map, TileLayer, Marker, Popup } from 'react-leaflet';
+import 'leaflet/dist/leaflet.css';
 
 class MyMap extends Component {
     constructor(props) {
@@ -14,7 +15,7 @@ class MyMap extends Component {
     render() {
         const position = [this.state.lat, this.state.lng]
         return (
-            <div>
+            <div style={{position: 'absolute', height: 500, width: 800}}>
                 <h2>Map Component</h2>
                 <Map center={position} zoom={this.state.zoom}>
                     <TileLayer
