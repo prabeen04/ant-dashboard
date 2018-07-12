@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Map, TileLayer, Marker, Popup } from 'react-leaflet';
-// import 'leaflet/dist/leaflet.css';
+import 'leaflet/dist/leaflet.css';
+import './map.css';
 
 class MyMap extends Component {
     constructor(props) {
@@ -17,16 +18,16 @@ class MyMap extends Component {
         return (
             <div>
                 <h2>Map Component</h2>
-                <Map center={position} zoom={this.state.zoom}>
-                    {/* <TileLayer
+                <Map center={position} zoom={this.state.zoom} viewport={this.state.viewport}>>
+                    <TileLayer
                         attribution="&amp;copy <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
                         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                    /> */}
-                    {/* <Marker position={position}>
+                    />
+                    <Marker position={position}>
                         <Popup>
                             A pretty CSS3 popup. <br /> Easily customizable.
                         </Popup>
-                    </Marker> */}
+                    </Marker>
                 </Map>
             </div>
         )
