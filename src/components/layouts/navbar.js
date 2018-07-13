@@ -16,7 +16,8 @@ import Settings from '../../container/settings/settings';
 import DND from '../../container/DND/DND';
 import Charts from '../../container/charts/charts';
 import MyMap from '../../container/map/map';
-import GooglePlace from '../google/googlePlace' ;
+import GooglePlace from '../google/googlePlace';
+import AppBoundary from '../../errorHandler/appBoundary';
 const { Header, Sider, Content } = Layout;
 
 class Navbar extends React.Component {
@@ -98,7 +99,7 @@ class Navbar extends React.Component {
                             <Route exact path='/tables' component={Tables} />
                             <Route exact path='/settings' component={Settings} />
                             <Route exact path='/dnd' component={DND} />
-                            <Route exact path='/charts' component={Charts} />
+                            <AppBoundary><Route exact path='/charts' component={Charts} /></AppBoundary>
                             <Route exact path='/map' component={MyMap} />
                             <Route path='**' component={NotFound} />
                         </Switch>
