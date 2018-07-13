@@ -3,6 +3,19 @@ import { Map, TileLayer, Marker, Popup } from 'react-leaflet';
 // import 'leaflet/dist/leaflet.css';
 import './map.css';
 
+const MyPopupMarker = ({ children, position }) => (
+    <Marker position={position}>
+        <Popup>{children}</Popup>
+    </Marker>
+)
+
+const MyMarkersList = ({ markers }) => {
+    const items = markers.map(({ key, ...props }) => (
+        <MyPopupMarker key={key} {...props} />
+    ))
+    return <div style={{ display: 'none' }}>{items}</div>
+}
+
 class MyMap extends Component {
     constructor(props) {
         super(props)
