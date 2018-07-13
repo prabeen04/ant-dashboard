@@ -23,15 +23,15 @@ class MyMap extends Component {
         this.state = {
             lat: 51.505,
             lng: -0.09,
-            zoom: 13,
+            zoom: 4,
         }
     }
     render() {
         const position = [this.state.lat, this.state.lng]
         const markers = [
-            { key: 'marker1', position: [51.5, -0.1], children: 'My first popup' },
+            { key: 'marker1', position: [11.5, 10.1], children: 'My first popup' },
             { key: 'marker2', position: [51.51, -0.1], children: 'My second popup' },
-            { key: 'marker3', position: [51.49, -0.05], children: 'My third popup' },
+            { key: 'marker3', position: [2.49, 20.05], children: 'My third popup' },
         ]
         return (
             <div>
