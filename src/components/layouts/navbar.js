@@ -99,7 +99,9 @@ class Navbar extends React.Component {
                             <Route exact path='/tables' component={Tables} />
                             <Route exact path='/settings' component={Settings} />
                             <Route exact path='/dnd' component={DND} />
-                            <AppBoundary><Route exact path='/charts' component={Charts} /></AppBoundary>
+                            {/* <AppBoundary> */}
+                                <Route exact path='/charts' component={Charts} />
+                            {/* </AppBoundary> */}
                             <Route exact path='/map' component={MyMap} />
                             <Route path='**' component={NotFound} />
                         </Switch>
