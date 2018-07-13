@@ -28,6 +28,11 @@ class MyMap extends Component {
     }
     render() {
         const position = [this.state.lat, this.state.lng]
+        const markers = [
+            { key: 'marker1', position: [51.5, -0.1], children: 'My first popup' },
+            { key: 'marker2', position: [51.51, -0.1], children: 'My second popup' },
+            { key: 'marker3', position: [51.49, -0.05], children: 'My third popup' },
+          ]
         return (
             <div>
                 <Map center={position} zoom={this.state.zoom} viewport={this.state.viewport} className="leaflet-container">
