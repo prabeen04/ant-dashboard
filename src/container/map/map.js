@@ -23,7 +23,7 @@ class MyMap extends Component {
         this.state = {
             lat: 51.505,
             lng: -0.09,
-            zoom: 4,
+            zoom: 13,
         }
     }
     render() {

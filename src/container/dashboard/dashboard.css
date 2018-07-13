@@ -16,7 +16,9 @@
     margin: 0.2rem 0.4rem;
     padding: 1rem;
     border: none;
+    display: flex;
     justify-content: 'space-between';
+    align-items: center;
     background: #274196;
     color: #fff !important;
     cursor: pointer;
@@ -26,7 +28,7 @@
     min-width: 180;
     flex-grow: 1;
     max-width: 280px;
-    height: 100px; 
+    height: 80px; 
     transition: 0.3s all;
 }
 .jumpstart-box:hover{
