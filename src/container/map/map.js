@@ -32,7 +32,7 @@ class MyMap extends Component {
             { key: 'marker1', position: [51.5, -0.1], children: 'My first popup' },
             { key: 'marker2', position: [51.51, -0.1], children: 'My second popup' },
             { key: 'marker3', position: [51.49, -0.05], children: 'My third popup' },
-          ]
+        ]
         return (
             <div>
                 <Map center={position} zoom={this.state.zoom} viewport={this.state.viewport} className="leaflet-container">
@@ -40,11 +40,7 @@ class MyMap extends Component {
                         attribution="&amp;copy <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
                         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                     />
-                    <Marker position={position}>
-                        <Popup>
-                            A pretty CSS3 popup. <br /> Easily customizable.
-                        </Popup>
-                    </Marker>
+                    <MyMarkersList markers={markers} />
                 </Map>
             </div>
         )
