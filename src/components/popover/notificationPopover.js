@@ -4,13 +4,11 @@ import { Badge, Icon, Tooltip } from 'antd';
 class NotificationPopover extends Component {
     render() {
         return (
-            <div>
-                <Tooltip title="Notifications">
-                    <Badge count={10} >
-                        <Icon type="bell" />
-                    </Badge>
-                </Tooltip>
-            </div>
+            <Tooltip title="Notifications">
+                <Badge count={10} >
+                    <Icon type="bell" />
+                </Badge>
+            </Tooltip>
         )
     }
 }

@@ -69,7 +69,9 @@ class Navbar extends React.Component {
                                     <Icon type="user" />
                                 </Badge>
                             </a>
-                            <NotificationPopover />
+                            <a href="#" style={{ margin: 15 }}>
+                                <NotificationPopover />
+                            </a>
                         </div>
                     </Header>
 
