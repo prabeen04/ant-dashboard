@@ -41,6 +41,7 @@ class Navbar extends React.Component {
                     trigger={null}
                     collapsible
                     collapsed={this.state.collapsed}
+                    style={{ minHeight: '100vh' }}
                 >
                     <div className="logo" />
                     <NavMenu
