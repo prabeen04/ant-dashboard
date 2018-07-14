@@ -58,23 +58,21 @@ class Navbar extends React.Component {
                             type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'}
                             onClick={this.toggle}
                         />
-                        <div style={{ float: 'right', marginRight: 50, height: 45  }}>
-                            <a href="#" style={{margin: 15 }}>
+                        <div style={{ float: 'right', marginRight: 50, height: 45 }}>
+                            <a href="#" style={{ margin: 15 }}>
                                 <Badge count={1} >
                                     <Icon type="bell" />
                                 </Badge>
                             </a>
-                            <a href="#" style={{margin: 15}}>
+                            <a href="#" style={{ margin: 15 }}>
                                 <Badge count={5} >
                                     <Icon type="user" />
                                 </Badge>
                             </a>
-                            <a href="#" style={{margin: 15}}>
-                                <Badge count={10} >
-                                    <Icon type="bell" />
-                                </Badge>
+                            <a href="#" style={{ margin: 15 }}>
+
+                                <SettingPopover />
                             </a>
-                            <SettingPopover/>
                         </div>
                     </Header>
 
@@ -90,7 +88,7 @@ class Navbar extends React.Component {
                             <Route exact path='/settings' component={Settings} />
                             <Route exact path='/dnd' component={DND} />
                             {/* <AppBoundary> */}
-                                <Route exact path='/charts' component={Charts} />
+                            <Route exact path='/charts' component={Charts} />
                             {/* </AppBoundary> */}
                             <Route exact path='/map' component={MyMap} />
                             <Route path='**' component={NotFound} />
