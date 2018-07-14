@@ -23,8 +23,9 @@
     border: 4px solid teal !important;
   }
   .logo{
-    padding: 0.3rem;
+    margin: 0.3rem;
   }
   .logo>h2{
-    color: #fff;
+    color: rgb(189, 221, 7);
+    padding-left: 0.7rem;
   }
