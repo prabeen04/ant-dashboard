@@ -22,3 +22,9 @@
   .unCollapsedMargin{
     border: 4px solid teal !important;
   }
+  .logo{
+    padding: 0.3rem;
+  }
+  .logo>h2{
+    color: #fff;
+  }
