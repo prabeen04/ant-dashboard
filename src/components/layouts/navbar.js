@@ -56,7 +56,7 @@ class Navbar extends React.Component {
                             onClick={this.toggle}
                         />
                         <div style={{ float: 'right', marginRight: 50, height: 45  }}>
-                            <a href="#" style={{margin: 15, height: '100%' }}>
+                            <a href="#" style={{margin: 15 }}>
                                 <Badge count={1} >
                                     <Icon type="bell" />
                                 </Badge>
