@@ -43,7 +43,9 @@ class Navbar extends React.Component {
                     collapsed={this.state.collapsed}
                     style={{ minHeight: '100vh' }}
                 >
-                    <div className="logo" />
+                    <div className="logo">
+                        <h2>Ant Dashboard</h2>
+                    </div>
                     <NavMenu
                         collapsed={this.state.collapsed}
                         toggleCollapsed={this.toggle} />
