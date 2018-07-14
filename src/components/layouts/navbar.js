@@ -55,7 +55,7 @@ class Navbar extends React.Component {
                             type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'}
                             onClick={this.toggle}
                         />
-                        <div style={{ float: 'right', marginRight: 50 }}>
+                        <div style={{ float: 'right', marginRight: 50, height: 45  }}>
                             <a href="#" style={{margin: 15}}>
                                 <Badge count={1} >
                                     <Icon type="bell" />
