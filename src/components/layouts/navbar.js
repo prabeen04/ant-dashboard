@@ -18,7 +18,7 @@ import Charts from '../../container/charts/charts';
 import MyMap from '../../container/map/map';
 import GooglePlace from '../google/googlePlace';
 import AppBoundary from '../../errorHandler/appBoundary';
-import SettingPopover from '../popover/settingPopover';
+import NotificationPopover from '../popover/notificationPopover';
 const { Header, Sider, Content } = Layout;
 
 class Navbar extends React.Component {
@@ -69,10 +69,7 @@ class Navbar extends React.Component {
                                     <Icon type="user" />
                                 </Badge>
                             </a>
-                            <a href="#" style={{ margin: 15 }}>
-
-                                <SettingPopover />
-                            </a>
+                            <NotificationPopover />
                         </div>
                     </Header>
 
