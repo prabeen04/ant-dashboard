@@ -18,6 +18,7 @@ import Charts from '../../container/charts/charts';
 import MyMap from '../../container/map/map';
 import GooglePlace from '../google/googlePlace';
 import AppBoundary from '../../errorHandler/appBoundary';
+import SettingPopover from '../popover/settingPopover';
 const { Header, Sider, Content } = Layout;
 
 class Navbar extends React.Component {
@@ -73,6 +74,7 @@ class Navbar extends React.Component {
                                     <Icon type="bell" />
                                 </Badge>
                             </a>
+                            <SettingPopover/>
                         </div>
                     </Header>
 
