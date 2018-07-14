@@ -8,7 +8,7 @@ class NotificationPopover extends Component {
                 <Popover
                     content={
                         <div>
-                            <SettingTab hide={this.hide} />
+                            <h1>this is notification content</h1>
                         </div>
 
                     }
