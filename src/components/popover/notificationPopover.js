@@ -1,5 +1,6 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import { Badge, Icon, Tooltip, Popover } from 'antd';
+import NotificationTab from '../tabs/notificationTab';
 
 class NotificationPopover extends Component {
     constructor(props) {
@@ -20,7 +21,7 @@ class NotificationPopover extends Component {
                 <Popover
                     content={
                         <div>
-                            <h1>this is notification content</h1>
+                            <NotificationTab/>
                         </div>
 
                     }
