@@ -6,16 +6,15 @@ class NotificationTab extends Component {
     render() {
         return (
             <div>
-                <Tabs defaultActiveKey="1" style={{ width: 400 }}>
+                <Tabs defaultActiveKey="2" style={{ width: 400 }}>
                     <TabPane tab={<span><Icon type="team" />Yesterday</span>} key="1">
-
-
+                        <h3>Yesterday Notificationd</h3>
                     </TabPane>
                     <TabPane tab={<span><Icon type="trophy" />Today</span>} key="2">
-
+                        <h3>Today Notificationd</h3>
                     </TabPane>
                     <TabPane tab={<span><Icon type="line-chart" />Tommorow</span>} key="3">
-
+                        <h3>Tommorow Notificationd</h3>
                     </TabPane>
                 </Tabs>
             </div>
