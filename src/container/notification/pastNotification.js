@@ -1,6 +1,13 @@
 import React, { Component } from 'react';
-import { List, Button } from 'antd'; 
-
+import { List, Button, Checkbox } from 'antd'; 
+const data = [
+    <Checkbox>Manchester United</Checkbox>,
+    <Checkbox>Arsenal</Checkbox>,
+    <Checkbox>Chelsea</Checkbox>,
+    <Checkbox>Manchester City</Checkbox>,
+    <Checkbox>Liverpool</Checkbox>,
+    <Checkbox>Tottenham</Checkbox>
+];
 class PastNotification extends Component {
     render() {
         return (
@@ -8,10 +15,6 @@ class PastNotification extends Component {
                 <List
                     size="small"
                     bordered
-                    header={<div><h4> Team</h4></div>}
-                    footer={<div style={{ textAlign: 'right' }}> <Button
-                        type="primary"
-                        onClick={this.props.hide}>Close</Button></div>}
                     dataSource={data}
                     renderItem={item => (<List.Item>{item}</List.Item>)}
                 />
