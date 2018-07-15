@@ -7,13 +7,13 @@ class NotificationTab extends Component {
         return (
             <div>
                 <Tabs defaultActiveKey="2" style={{ width: 400 }}>
-                    <TabPane tab={<span><Icon type="team" />Yesterday</span>} key="1">
+                    <TabPane tab={<span style={{color: 'skyblue'}}><Icon type="team" />Yesterday</span>} key="1">
                         <h3>Yesterday Notificationd</h3>
                     </TabPane>
-                    <TabPane tab={<span><Icon type="trophy" />Today</span>} key="2">
+                    <TabPane tab={<span style={{color: 'lightgreen'}}><Icon type="trophy" />Today</span>} key="2">
                         <h3>Today Notificationd</h3>
                     </TabPane>
-                    <TabPane tab={<span><Icon type="line-chart" />Tommorow</span>} key="3">
+                    <TabPane tab={<span style={{color: 'tomato'}}><Icon type="line-chart" />Tommorow</span>} key="3">
                         <h3>Tommorow Notificationd</h3>
                     </TabPane>
                 </Tabs>
