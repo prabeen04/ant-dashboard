@@ -4,6 +4,10 @@ import { Badge, Icon, Tooltip, Popover } from 'antd';
 class NotificationPopover extends Component {
     constructor(props){
         super(props)
+
+        this.state = {
+            visible: false
+        }
     }
     render() {
         return (
@@ -18,7 +22,7 @@ class NotificationPopover extends Component {
                     // title={<a onClick={this.hide}>Close</a>}
                     trigger="click"
                     placement="bottomRight"
-                    visible={true}
+                    visible={this.state.visible}
                     // onVisibleChange={}
                 >
                     <Badge count={10} >
