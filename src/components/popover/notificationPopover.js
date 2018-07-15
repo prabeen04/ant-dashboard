@@ -2,13 +2,16 @@ import React, { Component } from 'react'
 import { Badge, Icon, Tooltip, Popover } from 'antd';
 
 class NotificationPopover extends Component {
-    constructor(props){
+    constructor(props) {
         super(props)
 
         this.state = {
             visible: false
         }
+        this.handleVisibleChange = this.handleVisibleChange.bind(this);
     }
+
+    handleVisibleChange = visible => console.log(visible)
     render() {
         return (
             <Tooltip title="Notifications">
@@ -19,19 +22,18 @@ class NotificationPopover extends Component {
                         </div>
 
                     }
-                    // title={<a onClick={this.hide}>Close</a>}
                     trigger="click"
                     placement="bottomRight"
                     visible={this.state.visible}
-                    // onVisibleChange={}
+                    onVisibleChange={this.handleVisibleChange}
                 >
                     <Badge count={10} >
                         <Icon type="bell" />
                     </Badge>
-                    </Popover>
+                </Popover>
             </Tooltip>
-                )
-            }
-        }
-        
+        )
+    }
+}
+
 export default NotificationPopover;
