@@ -2,6 +2,9 @@ import React, { Component } from 'react'
 import { Badge, Icon, Tooltip, Popover } from 'antd';
 
 class NotificationPopover extends Component {
+    constructor(props){
+        super(props)
+    }
     render() {
         return (
             <Tooltip title="Notifications">
