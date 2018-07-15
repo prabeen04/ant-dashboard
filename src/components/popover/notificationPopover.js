@@ -11,7 +11,9 @@ class NotificationPopover extends Component {
         this.handleVisibleChange = this.handleVisibleChange.bind(this);
     }
 
-    handleVisibleChange = visible => console.log(visible)
+    handleVisibleChange = visible => {
+        this.setState({ visible });
+    }
     render() {
         return (
             <Tooltip title="Notifications">
