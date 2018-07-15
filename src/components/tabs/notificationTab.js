@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
 import { Tabs, Icon, Button, List, Checkbox } from 'antd';
+import PastNotification from '../../container/notification/pastNotification';
+import PresentNotification from '../../container/notification/presentNotification';
+import FutureNotification from '../../container/notification/futureNotification';
 const TabPane = Tabs.TabPane;
 
 class NotificationTab extends Component {
