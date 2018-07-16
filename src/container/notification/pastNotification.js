@@ -12,7 +12,7 @@ const data = [
     },
     {
         title: 'Ant Design Title 4',
-    },
+    }
 ];
 class PastNotification extends Component {
     render() {
@@ -22,7 +22,15 @@ class PastNotification extends Component {
                     size="small"
                     bordered
                     dataSource={data}
-                    renderItem={item => (<List.Item>{item}</List.Item>)}
+                    renderItem={item => (
+                        <List.Item>
+                            <List.Item.Meta
+                                avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
+                                title={<a href="https://ant.design">{item.title}</a>}
+                                description="Ant Design, a design language for background applications, is refined by Ant UED Team"
+                            />
+                        </List.Item>
+                    )}
                 />
             </div>
         )
