@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { getPresentNotifications } from '../../actions/notificationActions';
+import { List, Avatar, Spin } from 'antd';
+import { InfiniteScroll } from 'react-infinite-scroller';
 
 class PresentNotification extends Component {
   componentDidMount(){
@@ -11,13 +13,13 @@ class PresentNotification extends Component {
     return (
       <div>
         {/* {this.props.isFetching && <p>Loading...</p>} */}
-        <InfiniteScroll
+        {/* <InfiniteScroll
           initialLoad={false}
           pageStart={0}
           // loadMore={this.handleInfiniteOnLoad}
           // hasMore={!this.props.isFetching && this.state.hasMore}
           useWindow={false}
-        >
+        > */}
           <List
             dataSource={this.props.presentNotifications.results}
             renderItem={item => (
@@ -31,13 +33,13 @@ class PresentNotification extends Component {
               </List.Item>
             )}
           >
-            {/* {this.state.loading && this.state.hasMore && (
-              <div className="demo-loading-container">
+            {this.props.isFetching &&(
+              <div style={{textAlign: 'center'}}>
                 <Spin />
               </div>
-            )} */}
+            )}
           </List>
-        </InfiniteScroll>
+        {/* </InfiniteScroll> */}
 
       </div>
     )
