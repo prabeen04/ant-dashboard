@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { List, Button, Checkbox } from 'antd';
+import { List, Button, Checkbox, Avatar } from 'antd';
 const data = [
     {
         title: 'Ant Design Title 1',
