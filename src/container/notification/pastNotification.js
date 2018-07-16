@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+
 import { List, Button, Checkbox, Avatar } from 'antd';
 const data = [
     {
@@ -21,7 +24,7 @@ class PastNotification extends Component {
                 <List
                     size="small"
                     bordered
-                    dataSource={data}
+                    dataSource={this.props.pastNotifications}
                     renderItem={item => (
                         <List.Item>
                             <List.Item.Meta
@@ -36,5 +39,14 @@ class PastNotification extends Component {
         )
     }
 }
+const mapStateToProps = state => {
+    return {
+        pastNotifications: state.notificationReducer.pastNotifications
+    }
+}
+const mapDispatchToProps = dispatch =>{
+    return bindActionCreators({
 
-export default PastNotification;
+    }, dispatch)
+}
+export default connect(mapStateToProps, mapDispatchToProps)(PastNotification);
