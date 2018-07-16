@@ -10,14 +10,14 @@ class PresentNotification extends Component {
   render() {
     return (
       <div>
-        
+        {this.props.isFetching && <p>Loading...</p>}
       </div>
     )
   }
 }
 const mapStateToProps = state => {
  return{
-   
+   isFetching: state.notificationReducer.isFetching
  }
 }
 const mapDispatchToProps = dispatch => {

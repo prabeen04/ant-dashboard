@@ -5,7 +5,7 @@ const notificationURL = 'https://randomuser.me/api/?results=5&inc=name,gender,em
 
 export const getPresentNotifications = () => dispatch => {
     console.log('inside notification action')
-    return dispatch({
+     dispatch({
         type: FETCHING_NOTIFICATIONS
     })
     return axios.get(`${notificationURL}`)
