@@ -14,13 +14,15 @@ const initialState = {
             title: 'Ant Design Title 4',
         }
     ],
+  presentNotifications: [],  
+  futureNotifications: []  
 }
 export const notificationReducer = (state = initialState, action) => {
     switch (action.type) {
         case GET_PAST_NOTIFICATIONS:
             return state;
         case GET_PRESENT_NOTIFICATIONS:
-            return state;
+            return {...state, presentNotifications: action.payload};
         case GET_FUTURE_NOTIFICATIONS:
             return state;
         default:
