@@ -3,11 +3,18 @@ import axios from 'axios';
 
 const notificationURL = 'https://randomuser.me/api/?results=5&inc=name,gender,email,nat&noinfo';
 
-export const getPresentNotifications = dispatch => {
+export const getPresentNotifications = () => dispatch => {
+    console.log('inside notification action')
     return dispatch({
         type: FETCHING_NOTIFICATIONS
     })
-    return axios.get(notificationURL)
-        .then(res => console.log(res))
+    return axios.get(`${notificationURL}`)
+        .then(res => {
+            console.log(res)
+            dispatch({
+                type: GET_PRESENT_NOTIFICATIONS,
+                payload: res.data
+            })
+        })
         .catch(err => console.log(err))
 }

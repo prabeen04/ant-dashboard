@@ -16,7 +16,9 @@ class PresentNotification extends Component {
   }
 }
 const mapStateToProps = state => {
-
+ return{
+   
+ }
 }
 const mapDispatchToProps = dispatch => {
   return bindActionCreators({
