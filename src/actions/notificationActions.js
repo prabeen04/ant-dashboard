@@ -1,4 +1,4 @@
-import { GET_PRESENT_NOTIFICATIONS, FETCHING_NOTIFICATIONS } from '../types/notificationActionTypes';
+import { GET_PRESENT_NOTIFICATIONS, GET_PRESENT_NOTIFICATIONS_SUCCESS, GET_PRESENT_NOTIFICATIONS_FAILURE } from '../types/notificationActionTypes';
 import axios from 'axios';
 
 const notificationURL = 'https://randomuser.me/api/?results=5&inc=name,gender,email,nat&noinfo';
@@ -6,15 +6,21 @@ const notificationURL = 'https://randomuser.me/api/?results=5&inc=name,gender,em
 export const getPresentNotifications = () => dispatch => {
     console.log('inside notification action')
      dispatch({
-        type: FETCHING_NOTIFICATIONS
+        type: GET_PRESENT_NOTIFICATIONS
     })
     return axios.get(`${notificationURL}`)
         .then(res => {
             console.log(res)
             dispatch({
-                type: GET_PRESENT_NOTIFICATIONS,
+                type: GET_PRESENT_NOTIFICATIONS_SUCCESS,
                 payload: res.data
             })
         })
-        .catch(err => console.log(err))
+        .catch(err =>{ 
+            console.log(err);
+            dispatch({
+                type: GET_PRESENT_NOTIFICATIONS_FAILURE,
+                payload: res.data
+            })
+        })
 }
