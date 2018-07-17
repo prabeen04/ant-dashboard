@@ -17,12 +17,13 @@ class NotificationPopover extends Component {
         this.setState({ visible });
     }
     render() {
+        console.log(this.props.notificationCount)
         return (
             <Tooltip title="Notifications">
                 <Popover
                     content={
                         <div>
-                            <NotificationTab/>
+                            <NotificationTab />
                         </div>
 
                     }
@@ -31,7 +32,7 @@ class NotificationPopover extends Component {
                     visible={this.state.visible}
                     onVisibleChange={this.handleVisibleChange}
                 >
-                    <Badge count={10} >
+                    <Badge count={this.props.notificationCount} >
                         <Icon type="bell" />
                     </Badge>
                 </Popover>
@@ -40,8 +41,12 @@ class NotificationPopover extends Component {
     }
 }
 const mapStateToProps = state => {
-    return{
-      notificationCount: state.notificationReducer.presentNotifications.length  
+    if (state.notificationReducer.presentNotifications.results) {
+        console.log('insidisnadinask')
+        return {
+            notificationCount: state.notificationReducer.presentNotifications.results.length
+        }
     }
+
 }
 export default connect(mapStateToProps)(NotificationPopover);
