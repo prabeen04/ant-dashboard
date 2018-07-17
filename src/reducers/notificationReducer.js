@@ -3,7 +3,8 @@ import {
     GET_PRESENT_NOTIFICATIONS_FAILURE, FETCHING_NOTIFICATIONS
 } from '../types/notificationActionTypes'
 const initialState = {
-    isError: {},
+    isError: false,
+    error: {},
     isFetching: false,
     pastNotifications: [
         {
@@ -32,6 +33,8 @@ export const notificationReducer = (state = initialState, action) => {
             return { ...state, isFetching: true };
         case GET_PRESENT_NOTIFICATIONS_SUCCESS:
             return { ...state, isFetching: false, presentNotifications: action.payload };
+        case GET_PRESENT_NOTIFICATIONS_FAILURE:
+            return { ...state, isFetching: false, isError: true };
         default:
             return state;
     }
