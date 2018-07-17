@@ -1,4 +1,4 @@
-import { GET_PAST_NOTIFICATIONS, GET_PRESENT_NOTIFICATIONS, GET_FUTURE_NOTIFICATIONS, FETCHING_NOTIFICATIONS } from '../types/notificationActionTypes'
+import { GET_PAST_NOTIFICATIONS, GET_PRESENT_NOTIFICATIONS, FETCHING_NOTIFICATIONS } from '../types/notificationActionTypes'
 const initialState = {
     isFetching: false,
     pastNotifications: [
@@ -25,7 +25,7 @@ export const notificationReducer = (state = initialState, action) => {
         case GET_PAST_NOTIFICATIONS:
             return state;
         case GET_PRESENT_NOTIFICATIONS:
-            return { ...state, isFetching: false, presentNotifications: action.payload };
+            return { ...state, isFetching: true};
         case GET_FUTURE_NOTIFICATIONS:
             return state;
         default:
