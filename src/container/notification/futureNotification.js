@@ -3,24 +3,27 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { getFutureNotifications } from '../../actions/notificationActions';
 class FutureNotification extends Component {
+  componentDidMount() {
+    this.props.getFutureNotifications();
+  }
   render() {
     return (
       <div>
-        
+
       </div>
     )
   }
 }
 
 const mapStateToProps = state => {
-  return{
+  return {
     isFetching: state.notificationReducer.isFetching,
     futureNotifications: state.notificationReducer.futureNotifications,
   }
- }
- const mapDispatchToProps = dispatch => {
-   return bindActionCreators({
-       getFutureNotifications
-   }, dispatch)
- }
- export default connect(mapStateToProps, mapDispatchToProps)(FutureNotification);
+}
+const mapDispatchToProps = dispatch => {
+  return bindActionCreators({
+    getFutureNotifications
+  }, dispatch)
+}
+export default connect(mapStateToProps, mapDispatchToProps)(FutureNotification);
