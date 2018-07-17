@@ -20,7 +20,7 @@ export const getPresentNotifications = () => dispatch => {
             console.log(err);
             dispatch({
                 type: GET_PRESENT_NOTIFICATIONS_FAILURE,
-                payload: res.data
+                payload: err
             })
         })
 }
