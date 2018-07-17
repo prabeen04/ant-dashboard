@@ -12,7 +12,7 @@ class FutureNotification extends Component {
     return (
       <div>
         <List
-          dataSource={this.props.presentNotifications.results}
+          dataSource={this.props.futureNotifications.results}
           renderItem={item => (
             <List.Item key={item.id}>
               <List.Item.Meta
