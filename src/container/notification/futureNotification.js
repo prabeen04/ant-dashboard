@@ -20,7 +20,6 @@ class FutureNotification extends Component {
                 title={<a href="https://ant.design">{item.name.last}</a>}
                 description={item.email}
               />
-              <div>Content</div>
             </List.Item>
           )}
         >
