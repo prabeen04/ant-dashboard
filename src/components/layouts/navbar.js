@@ -1,5 +1,4 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import { Route, Switch } from 'react-router-dom';
 import { Layout, Menu, Icon, Badge, Table } from 'antd';
 import './navbar.css';
@@ -100,9 +99,4 @@ class Navbar extends React.Component {
     }
 }
 
-const mapStateToProps = state => {
-    return{
-        
-    }
-}
-export default connect(mapStateToProps)(Navbar);
+export default Navbar;

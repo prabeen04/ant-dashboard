@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { Badge, Icon, Tooltip, Popover } from 'antd';
 import NotificationTab from '../tabs/notificationTab';
 
@@ -38,5 +39,9 @@ class NotificationPopover extends Component {
         )
     }
 }
-
-export default NotificationPopover;
+const mapStateToProps = state => {
+    return{
+      notificationCount: state.notificationReducer.presentNotifications.length  
+    }
+}
+export default connect(mapStateToProps)(NotificationPopover);
