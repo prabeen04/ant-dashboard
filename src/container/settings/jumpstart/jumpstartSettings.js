@@ -11,5 +11,15 @@ class JumpstartSettings extends Component {
     )
   }
 }
+const mapStateToProps = state => {
+  return {
+    jumpstartlist: state.dashboardReducer.jumpstartlist
+  }
+}
 
-export default connect()(JumpstartSettings);
+const mapDispatchToProps = dispatch => {
+  return bindActionCreators({
+
+  }, dispatch)
+}
+export default connect(mapStateToProps, mapDispatchToProps)(JumpstartSettings);
