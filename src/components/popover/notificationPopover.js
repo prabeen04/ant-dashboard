@@ -47,6 +47,7 @@ const mapStateToProps = state => {
             notificationCount: state.notificationReducer.presentNotifications.results.length
         }
     }
+    return{}
 
 }
 export default connect(mapStateToProps)(NotificationPopover);

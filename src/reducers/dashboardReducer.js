@@ -16,49 +16,57 @@ const initialState = {
             visible: true,
             id: 1,
             title: 'Title 1',
-            value: 100
+            value: 100,
+            progress: 45
         },
         {
             visible: true,
             id: 2,
             title: 'Title 2',
-            value: 4500
+            value: 4500,
+            progress: 45
         },
         {
             visible: true,
             id: 3,
             title: 'Title 3',
-            value: 90
+            value: 90,
+            progress: 45
         },
         {
             visible: true,
             id: 4,
             title: 'Title 4',
-            value: 45
+            value: 45,
+            progress: 45
         },
         {
             visible: true,
             id: 5,
             title: ' Title 5',
-            value: 1100
+            value: 1100,
+            progress: 45
         },
         {
             visible: false,
             id: 6,
             title: ' Title 6',
-            value: 7700
+            value: 7700,
+            progress: 45
         },
         {
             visible: false,
             id: 7,
             title: ' Title 7',
-            value: 87588.00
+            value: 87588.00,
+            progress: 45
         },
         {
             visible: true,
             id: 8,
             title: ' Title 8',
-            value: 111144.00
+            value: 111144.00,
+            progress: 45
         }
     ]
 }
