@@ -13,7 +13,7 @@ class JumpstartSettings extends Component {
 }
 const mapStateToProps = state => {
   return {
-    jumpstartlist: state.dashboardReducer.jumpstartlist
+    jumpStartList: state.dashboardReducer.jumpStartList
   }
 }
 

@@ -39,7 +39,7 @@ const ChartSettings = (props) => {
   )
 }
 const mapStateToProps = (state) => ({
-  jumpStartList: state.dashboardReducer.jumpStartList
+  jumpStartData: state.dashboardReducer.jumpStartList
 })
 
 const mapDispatchToProps = dispatch => {
