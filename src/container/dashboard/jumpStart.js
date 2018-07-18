@@ -27,7 +27,7 @@ class JumpStartBox extends Component {
                     onClick={() => this.props.openJumpstartModal(data)}>
                     <div>
                         <h3 style={{color: '#aaa'}}>{data.title}</h3>
-                        <h2 style={{color: '#eee'}}>{data.value}</h2>
+                        <h2 style={{color: '#eee'}}>{data.value}<span>{data.progress}</span></h2>
                     </div>
                 </div>
             })
