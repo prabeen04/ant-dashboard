@@ -4,3 +4,10 @@
     padding: 0.5rem;
     box-shadow:0 2px 12px 1px rgb(155, 153, 153)
 }
+.jumpstart-box{
+    background: #fff;
+    color: #666 !important;
+    margin: 0.5rem;
+    padding: 0.2rem;
+    box-shadow:0 2px 12px 1px rgb(155, 153, 153)
+}

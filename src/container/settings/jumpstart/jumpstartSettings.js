@@ -6,7 +6,9 @@ import '../settings.css';
 class JumpstartSettings extends Component {
   render() {
     const renderJumpstartBox = this.props.jumpStartList.map((box, index) => {
-      return <p key={box.id}>{box.value}</p>
+      return <div key={box.id} className="jumpstart-box">
+              {box.value}
+            </div>
     })
     return (
       <div>
