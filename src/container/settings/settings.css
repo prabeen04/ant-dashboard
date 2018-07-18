@@ -4,10 +4,16 @@
     padding: 0.5rem;
     box-shadow:0 2px 12px 1px rgb(155, 153, 153)
 }
-.jumpstart-box{
+.jumpstart-box-dnd{
     background: #fff;
     color: #666 !important;
-    margin: 0.5rem;
-    padding: 0.2rem;
-    box-shadow:0 2px 12px 1px rgb(155, 153, 153)
+    width: 500px;
+    margin: 0.4rem;
+    padding: 0.7rem;
+    border-radius: 0.2rem;
+    box-shadow:0 2px 12px 1px rgb(155, 153, 153);
+    cursor: pointer;
+}
+.jumpstart-box-dnd:hover{
+    background: rgb(226, 225, 225);
 }
