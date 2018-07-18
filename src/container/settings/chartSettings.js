@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { List, Button, Checkbox } from 'antd';
 import { setJumpstartList } from '../../actions/dashboardAction';
+import JumpstartSettings from './jumpstart/jumpstartSettings';
 
 const ChartSettings = (props) => {
   let jumpStartData = props.jumpStartData.map(data => {
@@ -23,6 +24,7 @@ const ChartSettings = (props) => {
   })
   return (
     <div>
+      <JumpstartSettings/>
       <List
         size="small"
         bordered
