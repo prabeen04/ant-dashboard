@@ -1,4 +1,6 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from "redux";
 
 class JumpstartSettings extends Component {
   render() {
@@ -10,4 +12,4 @@ class JumpstartSettings extends Component {
   }
 }
 
-export default JumpstartSettings;
+export default connect()(JumpstartSettings);
