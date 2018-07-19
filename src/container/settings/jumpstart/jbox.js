@@ -30,4 +30,8 @@ class Jbox extends Component {
     }
 }
 
-export default DragSource('jumpstartBox', itemSource, collect)(Jbox);
+// export default DragSource('jumpstartBox', itemSource, collect)(Jbox);
+export default flow([
+    DragSource('jumpstartBox', itemSource, collect),
+    // DropTarget('jumpstartBox', itemTarget, collect1)
+])(Jbox);
