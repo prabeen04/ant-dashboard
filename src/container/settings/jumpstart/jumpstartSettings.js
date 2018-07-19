@@ -4,7 +4,6 @@ import { bindActionCreators } from "redux";
 import HTML5Backend from 'react-dnd-html5-backend';
 import { DragDropContext } from 'react-dnd';
 import Jbox from './jbox';
-import '../settings.css';
 
 class JumpstartSettings extends Component {
   render() {
