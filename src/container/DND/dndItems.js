@@ -6,7 +6,7 @@ const DndItems = (props) => {
   return (
     <div className="dnd-items">
       <h2>DndItems Component</h2>
-      {props.items.map(item => <Item item={item} key={item.id} handleDrag={props.handleDrag} />)}
+      {props.items.slice(0, 6).map(item => <Item item={item} key={item.id} handleDrag={props.handleDrag} />)}
     </div>
   )
 }
