@@ -21,7 +21,10 @@ class DND extends Component {
         { id: 3, value: 'Mancity' },
         { id: 4, value: 'Arsenal' },
         { id: 5, value: 'Liverpool' },
-        { id: 6, value: 'Tottenham' }
+        { id: 6, value: 'Tottenham' },
+        { id: 7, value: 'Everton' },
+        { id: 8, value: 'Burnley' },
+        { id: 9, value: 'West Ham' },
       ]
     }
   }
