@@ -23,7 +23,7 @@ class Jbox extends Component {
         const opacity = isDragging ? 0 : 1
         return connectDragSource(
             <div className="jumpstart-box-dnd" style={{ opacity }}>
-                {this.props.box.value}
+                {this.props.box.title}: {this.props.box.value}
             </div>
         )
     }
