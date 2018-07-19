@@ -65,7 +65,7 @@ class DND extends Component {
         </div>
         <div className="dnd-items">
           {
-            this.state.items.slice(0, 4).map((item, index )=> {
+            this.state.items.map((item, index )=> {
               return <DndSort key={item.id} index={index} item={item} moveItem={this.sortItem}/>
             })
           }
