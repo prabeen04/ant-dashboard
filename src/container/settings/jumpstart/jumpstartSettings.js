@@ -3,16 +3,12 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from "redux";
 import HTML5Backend from 'react-dnd-html5-backend';
 import { DragDropContext } from 'react-dnd';
-
+import Jbox from './jbox';
 import '../settings.css';
 
 class JumpstartSettings extends Component {
   render() {
-    const renderJumpstartBox = this.props.jumpStartList.map((box, index) => {
-      return <div key={box.id} className="jumpstart-box-dnd">
-              {box.value}
-            </div>
-    })
+    const renderJumpstartBox = this.props.jumpStartList.map((box, index) => <Jbox box={box}/>)
     return (
       <div>
         {renderJumpstartBox}
