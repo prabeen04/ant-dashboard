@@ -7,6 +7,13 @@ const itemSource = {
         return box.id
     }
 }
+function collect(props, connect, monitor ){
+    return{
+        connectDragSource: connect.DragSource(),
+        connectDragPreview: connect.DragPreview(),
+        isDragging: monitor.isDragging(),
+    }
+}
 class Jbox extends Component {
     render() {
         return (
