@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { DragSource } from "react-dnd";
+import { DragSource, DropTarget } from "react-dnd";
+import { flow } from 'lodash';
 import '../settings.css';
 
 const itemSource = {
