@@ -3,12 +3,12 @@ import { DragSource } from "react-dnd";
 import '../settings.css';
 
 const itemSource = {
-    beginDrag(box) {
-        console.log(box.id, '----dragging');
-        const item = box.id
-
-        return{ item }
-    }
+    beginDrag(props, monitor, component) {
+        // Return the data describing the dragged item
+        console.log(props.box)
+        const item = { id: props.box.id };
+        return item;
+    },
 }
 function collect(connect, monitor) {
     return {
@@ -20,8 +20,9 @@ function collect(connect, monitor) {
 class Jbox extends Component {
     render() {
         const { connectDragSource, isDragging } = this.props;
+        const opacity = isDragging ? 0 : 1
         return connectDragSource(
-            <div className="jumpstart-box-dnd">
+            <div className="jumpstart-box-dnd" style={{ opacity }}>
                 {this.props.box.value}
             </div>
         )
