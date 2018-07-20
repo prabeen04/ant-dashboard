@@ -3,6 +3,7 @@ import { findDOMNode } from 'react-dom';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { DragSource, DropTarget } from "react-dnd";
+import { sortJumpstartBox } from '../../../actions/dashboardAction';
 import { flow } from 'lodash';
 import '../settings.css';
 
@@ -61,9 +62,9 @@ const itemTarget = {
         if (dragIndex > hoverIndex && hoverClientY > hoverMiddleY) {
             return
         }
-
+        console.log('inside itemTarget')
         // Time to actually perform the action
-        props.moveItem(dragIndex, hoverIndex)
+        props.sortJumpstartBox(dragIndex, hoverIndex)
 
         // Note: we're mutating the monitor item here!
         // Generally it's better to avoid mutations,
@@ -93,7 +94,7 @@ class Jbox extends Component {
 
 const mapDispatchToProps = dispatch => {
     return bindActionCreators({
-
+        sortJumpstartBox
     }, dispatch)
 }
 Jbox = flow([

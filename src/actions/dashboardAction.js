@@ -28,10 +28,11 @@ export const closeJumpstartModal = (id) => dispatch => {
 }
 
 export const sortJumpstartBox = (dragIndex, hoverIndex) => dispatch => {
-    return dispatch({
-        type: SORT_JUMPSTART_BOX,
-        payload: dragIndex,
-        payload2: hoverIndex,
+    console.log(dragIndex, hoverIndex)
+    // return dispatch({
+    //     type: SORT_JUMPSTART_BOX,
+    //     payload: dragIndex,
+    //     payload2: hoverIndex,
 
-    })
+    // })
 }
