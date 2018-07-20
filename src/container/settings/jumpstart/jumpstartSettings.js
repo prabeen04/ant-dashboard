@@ -7,7 +7,7 @@ import Jbox from './jbox';
 
 class JumpstartSettings extends Component {
   render() {
-    const renderJumpstartBox = this.props.jumpStartList.map((box, index) => <Jbox key={box.id} box={box}/>)
+    const renderJumpstartBox = this.props.jumpStartList.map((box, index) => <Jbox key={box.id} index={index} box={box}/>)
     return (
       <div>
         {renderJumpstartBox}

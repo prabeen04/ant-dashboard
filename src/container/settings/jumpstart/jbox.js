@@ -26,6 +26,8 @@ function collect(connect, monitor) {
 
 const itemTarget = {
     hover(props, monitor, component) {
+        // console.log(props)
+        // props.sortJumpstartBox('dragIndex', 'hoverIndex')
         if (!component) {
             return null
         }
@@ -55,11 +57,13 @@ const itemTarget = {
         // When dragging upwards, only move when the cursor is above 50%
         // Dragging downwards
         if (dragIndex < hoverIndex && hoverClientY < hoverMiddleY) {
+            console.log('1')
             return
         }
 
         // Dragging upwards
         if (dragIndex > hoverIndex && hoverClientY > hoverMiddleY) {
+            console.log('2')
             return
         }
         console.log('inside itemTarget')
