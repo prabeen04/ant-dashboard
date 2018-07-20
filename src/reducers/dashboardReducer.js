@@ -1,4 +1,4 @@
-import { GET_JUMPSTART_LIST, SET_JUMPSTART_LIST, OPEN_JUMPSTART_MODAL, CLOSE_JUMPSTART_MODAL } from '../types/dashboardActionTypes';
+import { GET_JUMPSTART_LIST, SET_JUMPSTART_LIST, OPEN_JUMPSTART_MODAL, CLOSE_JUMPSTART_MODAL, SORT_JUMPSTART_BOX } from '../types/dashboardActionTypes';
 const initialState = {
     isModalOpen: false,
     jumpstartData: {},
@@ -88,6 +88,8 @@ export const dashboardReducer = (state = initialState, action) => {
 
         case CLOSE_JUMPSTART_MODAL:
             return { ...state, isModalOpen: false }
+        case SORT_JUMPSTART_BOX:
+            return { ...state }    
 
         default:
             return state;
