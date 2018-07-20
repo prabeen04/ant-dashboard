@@ -91,7 +91,9 @@ class Jbox extends Component {
         )
     }
 }
-
+const mapStateToProps = state => {
+    return{}
+}
 const mapDispatchToProps = dispatch => {
     return bindActionCreators({
         sortJumpstartBox
@@ -101,4 +103,4 @@ Jbox = flow([
     DragSource('jumpstartBox', itemSource, collect),
     DropTarget('jumpstartBox', itemTarget, collect1)
 ])(Jbox);
-export default connect(null, mapDispatchToProps)(Jbox);
+export default connect(mapStateToProps, mapDispatchToProps)(Jbox);
