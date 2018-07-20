@@ -93,7 +93,7 @@ export const dashboardReducer = (state = initialState, action) => {
         case SORT_JUMPSTART_BOX:
             return  update(state, {
                 jumpStartList: {
-                  $splice: [[action.payload, 1], [action.payload2, 0, jumpStartList[action.payload]]],
+                  $splice: [[action.payload, 1], [action.payload2, 0, state.jumpStartList[action.payload]]],
                 },
               });   
 
