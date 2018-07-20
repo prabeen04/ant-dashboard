@@ -18,17 +18,9 @@ function collect(connect, monitor) {
         isDragging: monitor.isDragging(),
     }
 }
-const cardSource = {
-    beginDrag(props) {
-        console.log(props.index)
-        return {
-            id: props.id,
-            index: props.index,
-        }
-    },
-}
 
-const cardTarget = {
+
+const itemTarget = {
     hover(props, monitor, component) {
         if (!component) {
             return null
@@ -82,12 +74,7 @@ function collect1(connect, monitor) {
         connectDropTarget: connect.dropTarget(),
     }
 }
-function collect(connect, monitor) {
-    return {
-        connectDragSource: connect.dragSource(),
-        isDragging: monitor.isDragging(),
-    }
-}
+
 
 class Jbox extends Component {
     render() {
@@ -104,5 +91,5 @@ class Jbox extends Component {
 // export default DragSource('jumpstartBox', itemSource, collect)(Jbox);
 export default flow([
     DragSource('jumpstartBox', itemSource, collect),
-    // DropTarget('jumpstartBox', itemTarget, collect1)
+    DropTarget('jumpstartBox', itemTarget, collect1)
 ])(Jbox);
