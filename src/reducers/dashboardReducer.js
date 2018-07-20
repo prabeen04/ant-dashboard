@@ -1,4 +1,6 @@
 import { GET_JUMPSTART_LIST, SET_JUMPSTART_LIST, OPEN_JUMPSTART_MODAL, CLOSE_JUMPSTART_MODAL, SORT_JUMPSTART_BOX } from '../types/dashboardActionTypes';
+const update = require('immutability-helper')
+
 const initialState = {
     isModalOpen: false,
     jumpstartData: {},

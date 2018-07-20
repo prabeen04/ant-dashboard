@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { findDOMNode } from 'react-dom';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import { DragSource, DropTarget } from "react-dnd";
 import { flow } from 'lodash';
 import '../settings.css';
@@ -89,8 +91,13 @@ class Jbox extends Component {
     }
 }
 
-// export default DragSource('jumpstartBox', itemSource, collect)(Jbox);
-export default flow([
+const mapDispatchToProps = dispatch => {
+    return bindActionCreators({
+
+    }, dispatch)
+}
+Jbox = flow([
     DragSource('jumpstartBox', itemSource, collect),
     DropTarget('jumpstartBox', itemTarget, collect1)
 ])(Jbox);
+export default connect(null, mapDispatchToProps)(Jbox);
