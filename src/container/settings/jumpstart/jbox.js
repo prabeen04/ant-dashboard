@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { findDOMNode } from 'react-dom';
 import { DragSource, DropTarget } from "react-dnd";
 import { flow } from 'lodash';
 import '../settings.css';
@@ -78,12 +79,12 @@ function collect1(connect, monitor) {
 
 class Jbox extends Component {
     render() {
-        const { connectDragSource, isDragging } = this.props;
+        const { connectDragSource, connectDropTarget, isDragging } = this.props;
         const opacity = isDragging ? 0 : 1
         return connectDragSource(
-            <div className="jumpstart-box-dnd" style={{ opacity }}>
+            connectDropTarget(<div className="jumpstart-box-dnd" style={{ opacity }}>
                 {this.props.box.title}: {this.props.box.value}
-            </div>
+            </div>)
         )
     }
 }
