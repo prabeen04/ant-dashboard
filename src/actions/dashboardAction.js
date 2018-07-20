@@ -1,4 +1,4 @@
-import { GET_JUMPSTART_LIST, SET_JUMPSTART_LIST, OPEN_JUMPSTART_MODAL, CLOSE_JUMPSTART_MODAL } from '../types/dashboardActionTypes';
+import { GET_JUMPSTART_LIST, SET_JUMPSTART_LIST, OPEN_JUMPSTART_MODAL, CLOSE_JUMPSTART_MODAL, SORT_JUMPSTART_BOX } from '../types/dashboardActionTypes';
 export const getJumpstartList = () => dispatch => {
     return dispatch({
         type: GET_JUMPSTART_LIST
@@ -22,6 +22,14 @@ export const openJumpstartModal = (id) => dispatch => {
 export const closeJumpstartModal = (id) => dispatch => {
     return dispatch({
         type: CLOSE_JUMPSTART_MODAL,
+        payload: id
+
+    })
+}
+
+export const sortJumpstartBox = (id) => dispatch => {
+    return dispatch({
+        type: SORT_JUMPSTART_BOX,
         payload: id
 
     })
