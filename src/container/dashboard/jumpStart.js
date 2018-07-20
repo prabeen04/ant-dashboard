@@ -16,8 +16,7 @@ class JumpStartBox extends Component {
 
     render() {
 
-        let renderJumpStartBoxes = this.props.jumpStartData
-        //.filter((data) => data.visible)
+        let renderJumpStartBoxes = this.props.jumpStartData.filter((data) => data.visible)
             .map((data) => {
                 // const jumpstart = classNames({
                 //     'jumpstart-box': true,
