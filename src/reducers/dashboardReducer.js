@@ -91,11 +91,11 @@ export const dashboardReducer = (state = initialState, action) => {
         case CLOSE_JUMPSTART_MODAL:
             return { ...state, isModalOpen: false }
         case SORT_JUMPSTART_BOX:
-            return  update(this.state, {
+            return  update(state, {
                 jumpStartList: {
-                  $splice: [[dragIndex, 1], [hoverIndex, 0, dragCard]],
+                  $splice: [[action.payload, 1], [action.payload2, 0, jumpStartList[action.payload]]],
                 },
-              }),   
+              });   
 
         default:
             return state;
