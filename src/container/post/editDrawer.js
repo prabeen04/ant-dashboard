@@ -8,7 +8,6 @@ class EditDrawer extends Component {
     render() {
         return (
             <div>
-                <Button type="primary" onClick={this.props.handleOpen}>Open</Button>
                 <Drawer
                     title="Edit Post"
                     placement="right"

@@ -35,7 +35,8 @@ class SinglePost extends Component {
           >Back to Posts</Button>
           <Button
             type="primary"
-            icon="edit" >
+            icon="edit" 
+            onClick={this.showDrawer}>
             Edit Post</Button>
         </div>
         <div className="single-post">
