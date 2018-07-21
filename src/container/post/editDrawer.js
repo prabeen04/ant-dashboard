@@ -8,13 +8,13 @@ class EditDrawer extends Component {
     render() {
         return (
             <div>
-                <Button type="primary" onClick={this.showDrawer}>Open</Button>
+                <Button type="primary" onClick={this.props.handleOpen}>Open</Button>
                 <Drawer
                     title="Basic Drawer"
                     placement="right"
                     closable={false}
-                    onClose={this.onClose}
-                    visible={this.state.visible}
+                    onClose={this.props.onClose}
+                    visible={this.props.open}
                 >
                     <p>Some contents...</p>
                     <p>Some contents...</p>
