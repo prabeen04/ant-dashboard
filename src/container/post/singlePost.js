@@ -44,7 +44,11 @@ const SinglePost = (props) => {
         <h3>{props.singlePost.date || props.location.state.post.date}</h3>
         <p>{props.singlePost.body || props.location.state.post.body}</p>
       </div>
-      <EditDrawer open={this.state.isDrawerOpen}/>
+      <EditDrawer
+        open={this.state.isDrawerOpen}
+        handleOpen={this.showDrawer}
+        handleClose={this.onClose}
+      />
     </div>
 
   )
