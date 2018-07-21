@@ -4,6 +4,7 @@ import { bindActionCreators } from 'redux'
 import { withRouter } from 'react-router-dom'
 import { Button, Icon } from 'antd'
 import { getSinglePost } from '../../actions/post_actions'
+import EditDrawer from "./editDrawer";
 
 const SinglePost = (props) => {
   return (
@@ -23,6 +24,7 @@ const SinglePost = (props) => {
         <h3>{props.singlePost.date || props.location.state.post.date}</h3>
         <p>{props.singlePost.body || props.location.state.post.body}</p>
       </div>
+      <EditDrawer/>
     </div>
 
   )
