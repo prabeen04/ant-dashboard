@@ -12,7 +12,21 @@ const SinglePost = (props) => {
     this.state = {
       isDrawerOpen: false
     }
+    this.showDrawer = this.showDrawer.bind(this);
+    this.onClose = this.onClose.bind(this);
   }
+  showDrawer = () => {
+    this.setState({
+      isDrawerOpen: true,
+    });
+  };
+
+  onClose = () => {
+    this.setState({
+      isDrawerOpen: false,
+    });
+  };
+
   return (
     <div>
       <div className="post-actions">
@@ -30,7 +44,7 @@ const SinglePost = (props) => {
         <h3>{props.singlePost.date || props.location.state.post.date}</h3>
         <p>{props.singlePost.body || props.location.state.post.body}</p>
       </div>
-      <EditDrawer />
+      <EditDrawer open={this.state.isDrawerOpen}/>
     </div>
 
   )
