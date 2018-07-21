@@ -18,17 +18,17 @@ class JumpStartBox extends Component {
 
         let renderJumpStartBoxes = this.props.jumpStartData.filter((data) => data.visible)
             .map((data) => {
-                // const jumpstart = classNames({
-                //     'jumpstart-box': true,
-                //     'clickable': true
-                //   });
+                const jumpstartStyle = classNames({
+                    'increase': data.progress<0,
+                    'decrease': data.progress>0
+                  });
                 return <div key={data.id}
                     className={'jumpstart-box'}
                     onClick={() => this.props.openJumpstartModal(data)}>
                     <div>
                         <h3 style={{color: '#aaa'}}>{data.title}</h3>
                         <h2 style={{color: '#eee'}}>{data.value}
-                        <span className={'red-background1'}>{data.progress}</span>
+                        <span className={jumpstartStyle}>{data.progress}</span>
                         </h2>
                     </div>
                 </div>

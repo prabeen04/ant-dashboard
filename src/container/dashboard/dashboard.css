@@ -36,13 +36,13 @@
     -moz-box-shadow: 0 12px 6px -6px rgb(46, 44, 44);
     box-shadow: 0 12px 6px -6px rgb(46, 44, 44);
 }
-.red-background1{
+.increase{
     color: rgb(248, 15, 15);
     font-size: 0.8rem; 
-    margin-left: 5;
+    margin-left: 8px;
 }
-.green-background{
+.decrease{
     color: rgb(9, 236, 9);
     font-size: 0.8rem; 
-    margin-left: 5;
+    margin-left: 8px;
 }
