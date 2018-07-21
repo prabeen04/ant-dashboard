@@ -11,6 +11,7 @@ class EditDrawer extends Component {
                 <Drawer
                     title="Edit Post"
                     placement="right"
+                    width={600}
                     closable={true}
                     onClose={this.props.handleClose}
                     visible={this.props.open}
