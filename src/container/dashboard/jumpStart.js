@@ -28,7 +28,7 @@ class JumpStartBox extends Component {
                     <div>
                         <h3 style={{color: '#aaa'}}>{data.title}</h3>
                         <h2 style={{color: '#eee'}}>{data.value}
-                        <span className={classNames('red-background')} style={{color: 'tomato', fontSize: '0.8rem', marginLeft: 5}}>{data.progress}</span>
+                        <span className={'red-background1'}>{data.progress}</span>
                         </h2>
                     </div>
                 </div>

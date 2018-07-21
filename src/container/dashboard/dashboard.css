@@ -36,9 +36,13 @@
     -moz-box-shadow: 0 12px 6px -6px rgb(46, 44, 44);
     box-shadow: 0 12px 6px -6px rgb(46, 44, 44);
 }
-.red-background{
-    background: red !important;
+.red-background1{
+    color: rgb(248, 15, 15);
+    font-size: 0.8rem; 
+    margin-left: 5;
 }
-.red-background{
-    background: green !important;
+.green-background{
+    color: rgb(9, 236, 9);
+    font-size: 0.8rem; 
+    margin-left: 5;
 }
