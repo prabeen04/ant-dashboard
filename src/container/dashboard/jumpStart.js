@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { Bar, Line } from 'react-chartjs-2';
-import { classNames } from 'classnames';
+import  classNames  from 'classnames';
 import { Card } from 'antd';
 import { getJumpstartList } from '../../actions/dashboardAction';
 import JumpStartModal from './jumpStartModal';
@@ -28,7 +28,7 @@ class JumpStartBox extends Component {
                     <div>
                         <h3 style={{color: '#aaa'}}>{data.title}</h3>
                         <h2 style={{color: '#eee'}}>{data.value}
-                        <span style={{color: 'tomato', fontSize: '0.8rem', marginLeft: 5}}>{data.progress}</span>
+                        <span className={classNames('red-background')} style={{color: 'tomato', fontSize: '0.8rem', marginLeft: 5}}>{data.progress}</span>
                         </h2>
                     </div>
                 </div>
