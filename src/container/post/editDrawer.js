@@ -10,10 +10,10 @@ class EditDrawer extends Component {
             <div>
                 <Button type="primary" onClick={this.props.handleOpen}>Open</Button>
                 <Drawer
-                    title="Basic Drawer"
+                    title="Edit Post"
                     placement="right"
-                    closable={false}
-                    onClose={this.props.onClose}
+                    closable={true}
+                    onClose={this.props.handleClose}
                     visible={this.props.open}
                 >
                     <p>Some contents...</p>
