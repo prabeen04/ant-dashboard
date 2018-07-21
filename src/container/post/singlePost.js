@@ -6,8 +6,8 @@ import { Button, Icon } from 'antd'
 import { getSinglePost } from '../../actions/post_actions'
 import EditDrawer from "./editDrawer";
 
-const SinglePost = (props) => {
-  constructor(props){
+class SinglePost extends Component {
+  constructor(props) {
     super(props)
     this.state = {
       isDrawerOpen: false
@@ -26,32 +26,34 @@ const SinglePost = (props) => {
       isDrawerOpen: false,
     });
   };
-
-  return (
-    <div>
-      <div className="post-actions">
-        <Button type="primary" icon="rollback"
-          onClick={() => props.history.goBack()}
-        >Back to Posts</Button>
-        <Button
-          type="primary"
-          icon="edit" >
-          Edit Post</Button>
+  render() {
+    return (
+      <div>
+        <div className="post-actions">
+          <Button type="primary" icon="rollback"
+            onClick={() => this.props.history.goBack()}
+          >Back to Posts</Button>
+          <Button
+            type="primary"
+            icon="edit" >
+            Edit Post</Button>
+        </div>
+        <div className="single-post">
+          <h3>{this.props.singlePost.title || this.props.location.state.post.title}</h3>
+          <h3>{this.props.singlePost.author || this.props.location.state.post.author}</h3>
+          <h3>{this.props.singlePost.date || this.props.location.state.post.date}</h3>
+          <p>{this.props.singlePost.body || this.props.location.state.post.body}</p>
+        </div>
+        <EditDrawer
+          open={this.state.isDrawerOpen}
+          handleOpen={this.showDrawer}
+          handleClose={this.onClose}
+        />
       </div>
-      <div className="single-post">
-        <h3>{props.singlePost.title || props.location.state.post.title}</h3>
-        <h3>{props.singlePost.author || props.location.state.post.author}</h3>
-        <h3>{props.singlePost.date || props.location.state.post.date}</h3>
-        <p>{props.singlePost.body || props.location.state.post.body}</p>
-      </div>
-      <EditDrawer
-        open={this.state.isDrawerOpen}
-        handleOpen={this.showDrawer}
-        handleClose={this.onClose}
-      />
-    </div>
 
-  )
+    )
+  }
+
 }
 
 const mapStateToProps = (state) => {
