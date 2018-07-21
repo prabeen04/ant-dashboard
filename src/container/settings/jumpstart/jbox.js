@@ -11,8 +11,10 @@ const itemSource = {
     beginDrag(props, monitor, component) {
         // Return the data describing the dragged item
         console.log(props.box)
-        const item = { id: props.box.id };
-        return item;
+        return {
+            id: props.id,
+            index: props.index,
+        }
     },
 }
 function collect(connect, monitor) {
