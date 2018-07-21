@@ -19,56 +19,56 @@ const initialState = {
             id: 1,
             title: 'Title 1',
             value: 100,
-            progress: 45
+            progress: '+45'
         },
         {
             visible: true,
             id: 2,
             title: 'Title 2',
             value: 4500,
-            progress: -33
+            progress: '-33'
         },
         {
             visible: true,
             id: 3,
             title: 'Title 3',
             value: 90,
-            progress: 90
+            progress: '+90'
         },
         {
             visible: true,
             id: 4,
             title: 'Title 4',
             value: 45,
-            progress: -20
+            progress: '-20'
         },
         {
             visible: true,
             id: 5,
             title: ' Title 5',
             value: 1100,
-            progress: 6
+            progress: '+6'
         },
         {
             visible: false,
             id: 6,
             title: ' Title 6',
             value: 7700,
-            progress: -15
+            progress: '-15'
         },
         {
             visible: false,
             id: 7,
             title: ' Title 7',
             value: 87588.00,
-            progress: 11
+            progress: '+11'
         },
         {
             visible: true,
             id: 8,
             title: ' Title 8',
             value: 111144.00,
-            progress: -4
+            progress: '-4'
         }
     ]
 }
