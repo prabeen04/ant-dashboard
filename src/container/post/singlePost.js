@@ -7,6 +7,12 @@ import { getSinglePost } from '../../actions/post_actions'
 import EditDrawer from "./editDrawer";
 
 const SinglePost = (props) => {
+  constructor(props){
+    super(props)
+    this.state = {
+      isDrawerOpen: false
+    }
+  }
   return (
     <div>
       <div className="post-actions">
@@ -24,7 +30,7 @@ const SinglePost = (props) => {
         <h3>{props.singlePost.date || props.location.state.post.date}</h3>
         <p>{props.singlePost.body || props.location.state.post.body}</p>
       </div>
-      <EditDrawer/>
+      <EditDrawer />
     </div>
 
   )
