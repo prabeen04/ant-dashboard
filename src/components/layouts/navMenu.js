@@ -85,7 +85,7 @@ class NavMenu extends React.Component {
                     </Menu.Item>
                     <Menu.Item key="11">
                         <Link to='/drag'>
-                            <Icon type="pencil" />
+                            <Icon type="edit" />
                             <span>Drag</span>
                         </Link>
                     </Menu.Item>
