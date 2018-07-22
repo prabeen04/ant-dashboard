@@ -2,7 +2,7 @@ import React from 'react'
 
 export default (props) => {
   return (
-    <div>
+    <div style={{backgroundColor: 'blue', padding: 20}}>
       {props.title}
     </div>
   )
