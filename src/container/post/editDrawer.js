@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { Drawer, Button } from 'antd';
-import './post.css'
+import DrawerTitle from './drawerTitle';
+import './post.css';
+
 class EditDrawer extends Component {
     constructor(props) {
         super(props)
@@ -9,7 +11,7 @@ class EditDrawer extends Component {
         return (
             <div>
                 <Drawer
-                    title="Edit Post"
+                    title={<DrawerTitle title="Test Drawer"/>}
                     placement="right"
                     width={600}
                     closable={true}
