@@ -1,0 +1,7 @@
+.drag-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #eee;
+    padding: 0.3rem;
+}
