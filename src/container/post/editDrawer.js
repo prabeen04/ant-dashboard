@@ -13,6 +13,7 @@ class EditDrawer extends Component {
                     placement="right"
                     width={600}
                     closable={true}
+                    maskStyle={{backgroundColor: 'tomato')}}
                     onClose={this.props.handleClose}
                     visible={this.props.open}
                 >
