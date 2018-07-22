@@ -12,6 +12,7 @@ import { dashboardReducer } from '../reducers/dashboardReducer';
 import { tableReducer } from '../reducers/tableReducer';
 import { googleReducer } from '../reducers/googleReducer';
 import { notificationReducer } from '../reducers/notificationReducer';
+import { dragReducer } from '../reducers/dragReducer';
 
 export const rootReducer = combineReducers({
     form: FormReducer,
@@ -26,7 +27,8 @@ export const rootReducer = combineReducers({
     thirdArrayReducer,
     tableReducer,
     googleReducer,
-    notificationReducer
+    notificationReducer,
+    dragReducer
 })
 
 export default rootReducer;
