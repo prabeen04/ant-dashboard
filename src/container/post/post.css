@@ -78,3 +78,7 @@
     background-size: 100%;
     transition: background 0s;
   }
+
+  .red-background{
+      background: red !important;
+}

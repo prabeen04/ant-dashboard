@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Drawer, Button } from 'antd';
-
+import './post.css'
 class EditDrawer extends Component {
     constructor(props) {
         super(props)
@@ -13,7 +13,8 @@ class EditDrawer extends Component {
                     placement="right"
                     width={600}
                     closable={true}
-                    maskStyle={{backgroundColor: 'tomato')}}
+                    maskStyle={{backgroundColor: 'tomato'}}
+                    wrapClassName={'red-background'}
                     onClose={this.props.handleClose}
                     visible={this.props.open}
                 >
