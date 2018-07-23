@@ -12,6 +12,10 @@
     justify-content: center;
     align-items: flex-start;
     height: 500px;
-    background: #eee;
+    background: #fff;
     padding: 0.3rem;
+    margin: 0.3rem;
+    -webkit-box-shadow: 0 8px 6px -6px rgb(46, 44, 44);
+    -moz-box-shadow: 0 8px 6px -6px rgb(46, 44, 44);
+    box-shadow: 0 8px 6px -6px rgb(46, 44, 44);
 }

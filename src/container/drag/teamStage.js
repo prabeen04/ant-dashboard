@@ -7,24 +7,29 @@ class TeamStage extends Component {
     }
     render() {
         const backgroundColor = this.props.backgroundColor || '#fff';
-        const renderStages = this.props.stages.map((stage, index) => {
-            console.log(stage)
-            return (
-                <div key={index}>
-                    <h3>{stage}</h3>
-                </div>
-            )
-        })
+        const renderTeams = this.props.teams
+            .filter((team) => {
+                return team.stage === this.props.stage
+            })
+            .map((team, index) => {
+                return (
+                    <div key={index}>
+                        <h3>{team.name}</h3>
+                    </div>
+                )
+            })
         return (
             <div className="team-stage">
-                {renderStages}
+                {this.props.stage}
+                {renderTeams}
             </div>
         )
     }
 }
 const mapStateToProps = state => {
     return {
-        stages: state.dragReducer.stages
+        stages: state.dragReducer.stages,
+        teams: state.dragReducer.teams
     }
 }
 export default connect(mapStateToProps)(TeamStage);

@@ -11,12 +11,18 @@ class Drag extends Component {
   render() {
     const { teams } = this.props;
     let teamGroup = _.groupBy(teams, 'stage');
-    console.log(teamGroup)
+    // console.log(teamGroup)
     const renderStage = Object.keys(teamGroup)
-    console.log(renderStage)
+    // console.log(renderStage)
     return (
       <div className="drag-wrapper">
-      <TeamStage/>
+
+        {
+          this.props.stages.map((stage, index) => {
+            return <TeamStage key={index} stage={stage} />
+          })
+        }
+
         {/* {
           this.props.teams.map((team, index) => {
             if (team.stage == 'cl') {
@@ -42,7 +48,8 @@ class Drag extends Component {
 }
 const mapStateToProps = state => {
   return {
-    teams: state.dragReducer.teams
+    teams: state.dragReducer.teams,
+    stages: state.dragReducer.stages
   }
 }
 Drag = DragDropContext(HTML5Backend)(Drag);
