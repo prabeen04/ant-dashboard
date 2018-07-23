@@ -31,12 +31,13 @@ function collect(connect, monitor) {
 class TeamStage extends Component {
     render() {
         const { isOver, canDrop, connectDropTarget } = this.props;
+        const backgroundColor = isOver ?'#eee' :'#fff'
         const renderTeams = this.props.teams
             .filter((team) => team.stage === this.props.stage)
             .map((team, index) => <TeamBox key={index} team={team} />)
 
         return connectDropTarget(
-            <div className="team-stage">
+            <div className="team-stage" style={{backgroundColor}}>
                 <div className="stage-header">{this.props.stage}</div>
                 {renderTeams}
             </div>
