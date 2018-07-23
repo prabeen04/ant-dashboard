@@ -3,7 +3,7 @@ const initialState = {
     teams: [
         { id: 1, name: 'Manutd', pos: 1, stage: 'cl', meta: '' },
         { id: 2, name: 'Chelsea', pos: 2, stage: 'cl', meta: '' },
-        { id: 3, name: 'Mancity', pos: 3, stage: 'el', meta: '' },
+        { id: 3, name: 'Mancity', pos: 3, stage: 'cl', meta: '' },
         { id: 4, name: 'Arsenal', pos: 4, stage: 'el', meta: '' },
         { id: 5, name: 'Liverpool', pos: 5, stage: 'th', meta: '' },
         { id: 6, name: 'Tottenham', pos: 6, stage: 'th', meta: '' },

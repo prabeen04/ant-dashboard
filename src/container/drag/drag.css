@@ -1,7 +1,17 @@
 .drag-wrapper{
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
+    background: #eee;
+    padding: 0.3rem;
+}
+.team-stage{
+    flex-basis: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    height: 500px;
     background: #eee;
     padding: 0.3rem;
 }
