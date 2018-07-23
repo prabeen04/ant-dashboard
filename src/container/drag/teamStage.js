@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from "redux";
+import TeamBox from './teamBox';
+
 class TeamStage extends Component {
     constructor(props) {
         super(props)
@@ -13,9 +15,7 @@ class TeamStage extends Component {
             })
             .map((team, index) => {
                 return (
-                    <div key={index}>
-                        <h3>{team.name}</h3>
-                    </div>
+                    <TeamBox key={index} team={team}/>
                 )
             })
         return (
