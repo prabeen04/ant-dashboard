@@ -12,6 +12,8 @@ class Drag extends Component {
     const { teams } = this.props;
     let teamGroup = _.groupBy(teams, 'stage');
     console.log(teamGroup)
+    const renderStage = Object.keys(teamGroup)
+    console.log(renderStage)
     return (
       <div className="drag-wrapper">
         {/* {
