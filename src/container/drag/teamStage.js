@@ -37,7 +37,7 @@ class TeamStage extends Component {
 
         return connectDropTarget(
             <div className="team-stage">
-                {this.props.stage}
+                <div className="stage-header">{this.props.stage}</div>
                 {renderTeams}
             </div>
         )

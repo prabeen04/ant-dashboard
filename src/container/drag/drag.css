@@ -16,11 +16,23 @@
     border: 1px solid #aaa;
     margin: 0.3rem;
 }
+.stage-header{
+    display: flex;
+    justify-content: center;
+    background: #fff;
+    color: #0273dd;
+    padding: 0.5rem 1rem;
+    width: 100%;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    -webkit-box-shadow: 0 8px 6px -6px rgb(46, 44, 44);
+    -moz-box-shadow: 0 8px 6px -6px rgb(46, 44, 44);
+    box-shadow: 0 8px 6px -6px rgb(46, 44, 44);
+}
 .team-box{
     width: 200px;
     height: 80px;
-    background: rgb(228, 101, 101);
-    color: #fff;
+    background: #0273dd;
     padding: 0.3rem;
     margin: 0.3rem auto;
     cursor: pointer;
@@ -28,4 +40,7 @@
     -webkit-box-shadow: 0 8px 6px -6px rgb(46, 44, 44);
     -moz-box-shadow: 0 8px 6px -6px rgb(46, 44, 44);
     box-shadow: 0 8px 6px -6px rgb(46, 44, 44);
+}
+.team-box>h3{
+    color: #fff;
 }

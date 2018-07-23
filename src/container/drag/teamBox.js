@@ -29,9 +29,9 @@ function collect(connect, monitor) {
 class TeamBox extends Component {
   render() {
     const { isDragging, connectDragSource, item } = this.props;
-
+    const opacity = isDragging ? 0: 1;
     return connectDragSource(
-      <div className="team-box">
+      <div className="team-box" style={{opacity}}>
         <h3>{this.props.team.name}</h3>
       </div>
     )
