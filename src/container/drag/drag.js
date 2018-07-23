@@ -5,6 +5,7 @@ import HTML5Backend from 'react-dnd-html5-backend';
 import { DragDropContext } from 'react-dnd';
 import TeamStage from './teamStage';
 import ChampStage from './champStage';
+import RelStage from './relStage';
 import './drag.css';
 
 class Drag extends Component {
@@ -18,7 +19,10 @@ class Drag extends Component {
             })
           }
         </div>
-        <ChampStage/>
+        <div className="final-stage">
+          <ChampStage />
+          <RelStage />
+        </div>
       </div>
     )
   }
