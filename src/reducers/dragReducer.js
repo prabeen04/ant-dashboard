@@ -17,7 +17,11 @@ const initialState = {
 export const dragReducer = (state = initialState, action) => {
     switch (action.type) {
         case GET_TEAMS:
-            return state
+            return state;
+        case GET_TEAMS_SUCCESS:
+            return state;
+        case GET_TEAMS_FAILURE:
+            return state;
         default:
             return state;
     }
