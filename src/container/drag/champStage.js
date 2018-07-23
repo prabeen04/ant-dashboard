@@ -17,6 +17,7 @@ const spec = {
 };
 
 function collect(connect, monitor) {
+    console.log(monitor)
     return {
         connectDropTarget: connect.dropTarget(),
         isOver: monitor.isOver(),
@@ -26,13 +27,15 @@ function collect(connect, monitor) {
     };
 }
 class ChampStage extends Component {
-  render() {
-    return (
-      <div>
-        <h3>ChampStage Component</h3>
-      </div>
-    )
-  }
+    render() {
+        const { isOver, canDrop, connectDropTarget } = this.props;
+        const backgroundColor = canDrop ? 'tomato' : '#fff'
+        return connectDropTarget(
+            <div className="champ-stage" style={{backgroundColor}}>
+                <h3>ChampStage Component</h3>
+            </div>
+        )
+    }
 }
 
 export default DropTarget('stage', spec, collect)(ChampStage);
