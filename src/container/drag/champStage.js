@@ -29,10 +29,11 @@ function collect(connect, monitor) {
 class ChampStage extends Component {
     render() {
         const { isOver, canDrop, connectDropTarget } = this.props;
-        const backgroundColor = canDrop ? 'tomato' : '#fff'
+        const backgroundColor = canDrop ? 'lightgreen' : '#fff';
+        const opacity = canDrop ? 1 : 0;
         return connectDropTarget(
-            <div className="champ-stage" style={{backgroundColor}}>
-                <h3>ChampStage Component</h3>
+            <div className="champ-stage" style={{backgroundColor, opacity}}>
+                <h3>Champion</h3>
             </div>
         )
     }

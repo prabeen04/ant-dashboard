@@ -12,7 +12,7 @@
     justify-content: flex-start;
     align-items: flex-start;
     background: #fff;
-    height: 500px;
+    height: 550px;
     border: 1px solid #aaa;
     /* margin: 0.3rem; */
 }
@@ -42,5 +42,34 @@
     box-shadow: 0 8px 6px -6px rgb(46, 44, 44);
 }
 .team-box>h3{
+    color: #fff;
+}
+.final-stage{
+    display: flex;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+.champ-stage{
+    flex-basis: 50%;
+    display: flex;
+    padding: 1.2rem;
+    justify-content: center;
+    font-size: 2.5rem;
+    color: #fff;
+}
+.champ-stage > h3{
+    color: #fff;
+}
+.rel-stage{
+    flex-basis: 50%;
+    display: flex;
+    padding: 1.2rem;
+    justify-content: center;
+    font-size: 2.5rem;
+    color: #fff;
+}
+.rel-stage > h3{
     color: #fff;
 }
