@@ -7,9 +7,17 @@ class TeamStage extends Component {
     }
     render() {
         const backgroundColor = this.props.backgroundColor || '#fff';
+        const renderStages = this.props.stages.map((stage, index) => {
+            console.log(stage)
+            return (
+                <div key={index}>
+                    <h3>{stage}</h3>
+                </div>
+            )
+        })
         return (
-            <div className="team-stage" style={{ backgroundColor, filter: 'blur(16px)' }}>
-                <div>{this.props.team.name}</div>
+            <div className="team-stage">
+                {renderStages}
             </div>
         )
     }

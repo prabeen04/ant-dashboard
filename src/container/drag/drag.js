@@ -16,6 +16,7 @@ class Drag extends Component {
     console.log(renderStage)
     return (
       <div className="drag-wrapper">
+      <TeamStage/>
         {/* {
           this.props.teams.map((team, index) => {
             if (team.stage == 'cl') {
