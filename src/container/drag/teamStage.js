@@ -8,9 +8,6 @@ const spec = {
     drop(props, monitor, component) {
         if (monitor.didDrop()) {
             console.log('it did drop in target')
-            const item = monitor.getItem();
-            console.log(item)
-            props.dragTeam(item)
         }
         const item = monitor.getItem();
         console.log(item)

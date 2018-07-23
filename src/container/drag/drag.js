@@ -4,17 +4,21 @@ import { bindActionCreators } from 'redux';
 import HTML5Backend from 'react-dnd-html5-backend';
 import { DragDropContext } from 'react-dnd';
 import TeamStage from './teamStage';
+import ChampStage from './champStage';
 import './drag.css';
 
 class Drag extends Component {
   render() {
     return (
-      <div className="drag-wrapper">
-        {
-          this.props.stages.map((stage, index) => {
-            return <TeamStage key={index} stage={stage} />
-          })
-        }
+      <div>
+        <div className="drag-wrapper">
+          {
+            this.props.stages.map((stage, index) => {
+              return <TeamStage key={index} stage={stage} />
+            })
+          }
+        </div>
+        <ChampStage/>
       </div>
     )
   }
