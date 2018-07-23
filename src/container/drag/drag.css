@@ -9,12 +9,22 @@
     flex-basis: 20%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: flex-start;
-    height: 500px;
     background: #fff;
-    padding: 0.3rem;
+    height: 500px;
+    border: 1px solid #aaa;
     margin: 0.3rem;
+}
+.team-box{
+    width: 200px;
+    height: 80px;
+    background: rgb(228, 101, 101);
+    color: #fff;
+    padding: 0.3rem;
+    margin: 0.3rem auto;
+    cursor: pointer;
+    border-radius: 0.3rem;
     -webkit-box-shadow: 0 8px 6px -6px rgb(46, 44, 44);
     -moz-box-shadow: 0 8px 6px -6px rgb(46, 44, 44);
     box-shadow: 0 8px 6px -6px rgb(46, 44, 44);

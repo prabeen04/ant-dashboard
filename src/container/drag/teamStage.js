@@ -8,16 +8,10 @@ class TeamStage extends Component {
         super(props)
     }
     render() {
-        const backgroundColor = this.props.backgroundColor || '#fff';
         const renderTeams = this.props.teams
-            .filter((team) => {
-                return team.stage === this.props.stage
-            })
-            .map((team, index) => {
-                return (
-                    <TeamBox key={index} team={team}/>
-                )
-            })
+            .filter((team) => team.stage === this.props.stage)
+            .map((team, index) => <TeamBox key={index} team={team} />)
+
         return (
             <div className="team-stage">
                 {this.props.stage}
@@ -28,7 +22,6 @@ class TeamStage extends Component {
 }
 const mapStateToProps = state => {
     return {
-        stages: state.dragReducer.stages,
         teams: state.dragReducer.teams
     }
 }
