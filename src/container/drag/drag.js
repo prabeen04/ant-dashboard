@@ -10,7 +10,7 @@ class Drag extends Component {
     return (
       <div className="drag-wrapper">
         {
-          this.props.teams.map((team, index) => <h2 key={index}> { team.name } </h2>)
+          this.props.teams.map((team, index) => <h2 key={index}> { team.name } | </h2>)
         }
       </div>
     )
