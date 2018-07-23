@@ -1,6 +1,8 @@
-import React, { Component } from 'react'
-import { DragSource } from 'react-dnd'
-
+import React, { Component } from 'react';
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+import { DragSource } from 'react-dnd';
+import { dragTeam } from "../../actions/dragAction.js";
 const itemSource = {
     beginDrag(props, monitor, component) {
         return props.team;
@@ -13,7 +15,7 @@ const itemSource = {
         }
         const item = monitor.getItem();
         const dropResult = monitor.getDropResult();
-        return props.handleDrag(props.item.id)
+        // return props.dragTeam(props.team)
     }
 }
 function collect(connect, monitor) {
@@ -36,4 +38,10 @@ class TeamBox extends Component {
   }
 }
 
-export default DragSource('stage', itemSource, collect)(TeamBox);
+const mapDispatchToProps = dispatch =>{
+    return bindActionCreators({
+        dragTeam
+    }, dispatch)
+}
+TeamBox = DragSource('stage', itemSource, collect)(TeamBox);
+export default connect(null, mapDispatchToProps)(TeamBox);

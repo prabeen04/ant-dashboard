@@ -1,4 +1,4 @@
-import { GET_TEAMS, GET_TEAMS_SUCCESS, GET_TEAMS_FAILURE } from '../types/dragActionTypes';
+import { GET_TEAMS, GET_TEAMS_SUCCESS, GET_TEAMS_FAILURE, DRAG_TEAM } from '../types/dragActionTypes';
 const initialState = {
     stages: ['cl', 'el', 'th', 'bh', 'rel'],
     teams: [
@@ -11,7 +11,7 @@ const initialState = {
         { id: 7, name: 'Everton', pos: 7, stage: 'bh', meta: '' },
         { id: 8, name: 'Burnley', pos: 8, stage: 'bh', meta: '' },
         { id: 9, name: 'West Ham', pos: 9, stage: 'rel', meta: '' },
-        { id: 9, name: 'Watford', pos: 10, stage: 'rel', meta: '' }
+        { id: 10, name: 'Watford', pos: 10, stage: 'rel', meta: '' }
     ]
 }
 
@@ -23,6 +23,13 @@ export const dragReducer = (state = initialState, action) => {
             return state;
         case GET_TEAMS_FAILURE:
             return state;
+        case DRAG_TEAM:
+            return {
+                ...state, teams: [...state.teams.map(data => {
+                    return data.id === action.payload.id ? action.payload : data
+                }
+                )]
+            };
         default:
             return state;
     }
