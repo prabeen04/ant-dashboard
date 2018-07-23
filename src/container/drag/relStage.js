@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { DropTarget } from "react-dnd";
-
+import { connect } from "react-redux";
+import { bindActionCreators } from 'redux';
+import { dragTeam } from "../../actions/dragAction";
 const spec = {
     drop(props, monitor, component) {
         if (monitor.didDrop()) {
@@ -11,7 +13,7 @@ const spec = {
         }
         const item = monitor.getItem();
         console.log(item)
-        props.dragTeam(item, props.stage)
+        props.dragTeam(item, 'rel')
         return item;
     }
 };
@@ -30,7 +32,7 @@ class RelStage extends Component {
     render() {
         const { isOver, canDrop, connectDropTarget } = this.props;
         const backgroundColor = canDrop ? 'tomato' : '#fff';
-        const opacity = canDrop ? 1 : 0;
+        const opacity = canDrop ? 0.8 : 0;
         return connectDropTarget(
             <div className="champ-stage" style={{backgroundColor, opacity}}>
                 <h3>Relegated</h3>
@@ -38,5 +40,10 @@ class RelStage extends Component {
         )
     }
 }
-
-export default DropTarget('stage', spec, collect)(RelStage);
+const mapDispatchToProps = dispatch => {
+    return bindActionCreators({
+        dragTeam
+    }, dispatch)
+}
+RelStage = DropTarget('stage', spec, collect)(RelStage);
+export default connect(null, mapDispatchToProps)(RelStage)
