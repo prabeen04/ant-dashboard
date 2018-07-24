@@ -35,6 +35,8 @@ class ProfileCard extends Component {
                         <ProgressiveImage
                             preview={Preview}
                             image={imgUrl}
+                            width={'100%'}
+                            height={150}
                         />
                     }>
                     <Meta
