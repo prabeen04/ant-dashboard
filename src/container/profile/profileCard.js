@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { getSingleProfile } from '../../actions/profile_actions'
 import { Card } from 'antd';
+import Preview from './preview.jpg';
 import './profile.css';
 const { Meta } = Card;
 
@@ -17,7 +18,7 @@ class ProfileCard extends Component {
                     hoverable
                     style={{ width: 155, height: 200, margin: '0.5rem' }}
                     onClick={() => this.props.getSingleProfile(this.props.user)}
-                    cover={<img style={{ width: '100%', height: 150 }} alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}>
+                    cover={<img style={{ width: '100%', height: 150, filter: 'blur(6px)' }} alt="example" src={Preview} />}>
                     <Meta
                         title={this.props.user.name}
                         style={{display: 'flex', justifyContent:'center', alignItems:'center', height: '25px'}}
