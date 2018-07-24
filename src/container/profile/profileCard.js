@@ -6,11 +6,22 @@ import { Card } from 'antd';
 import Preview from './preview.jpg';
 import './profile.css';
 const { Meta } = Card;
+const imgUrl = 'https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png';
 
 class ProfileCard extends Component {
     constructor(props){
         super(props)
+
+
     }
+    loadImage = (src) => {
+        return new Promise((resolve, reject) => {
+          const image = new Image();
+          image.onload = () => resolve(src);
+          image.onerror = err => reject(err);
+          image.src = src;
+        });
+      }
     render() {
         return (
             <div className={this.props.activatedProfile.name === this.props.user.name ? 'activated-profile': ''}> 
