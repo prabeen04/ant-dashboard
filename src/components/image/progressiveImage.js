@@ -35,6 +35,7 @@ class ProgressiveImage extends Component {
             filter: `${loading ? 'blur(20px)' : ''}`,
             width: this.props.width || '100%',
             height: this.props.height || '100%',
+            padding: `${loading ? '20px' : ''}`, 
         }
     }
     render() {

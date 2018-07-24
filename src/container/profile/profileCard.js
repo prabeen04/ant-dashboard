@@ -5,6 +5,7 @@ import { getSingleProfile } from '../../actions/profile_actions'
 import { Card } from 'antd';
 import ProgressiveImage from '../../components/image/progressiveImage';
 import Preview from './preview.jpg';
+import LargeImage from './largeImage.jpeg';
 import './profile.css';
 const { Meta } = Card;
 const imgUrl = 'https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png';
