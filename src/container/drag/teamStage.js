@@ -11,7 +11,7 @@ const spec = {
         }
         const item = monitor.getItem();
         console.log(item)
-        props.dragTeam(item, props.stage)
+        props.dragTeam(item, props.stage.stageId)
         return item;
     }
 };
@@ -30,12 +30,12 @@ class TeamStage extends Component {
         const { isOver, canDrop, connectDropTarget } = this.props;
         const backgroundColor = isOver ?'#eee' :'#fff'
         const renderTeams = this.props.teams
-            .filter((team) => team.stage === this.props.stage)
+            .filter((team) => team.stage === this.props.stage.stageId)
             .map((team, index) => <TeamBox key={index} team={team} />)
 
         return connectDropTarget(
             <div className="team-stage" style={{backgroundColor}}>
-                <div className="stage-header">{this.props.stage}</div>
+                <div className="stage-header">{this.props.stage.name}</div>
                 {renderTeams}
             </div>
         )

@@ -1,6 +1,12 @@
 import { GET_TEAMS, GET_TEAMS_SUCCESS, GET_TEAMS_FAILURE, DRAG_TEAM } from '../types/dragActionTypes';
 const initialState = {
-    stages: ['cl', 'el', 'th', 'bh', 'rel'],
+    stages: [
+        {stageId: 'cl', name: 'Champions League'},
+        {stageId: 'el', name: 'Eupora League'},
+        {stageId: 'th', name: 'Top Half'},
+        {stageId: 'bh', name: 'Bottom Half'}, 
+        {stageId: 'rel', name: 'Relegated'}
+    ],
     teams: [
         { id: 1, name: 'Manutd', pos: 1, stage: 'cl', meta: '' },
         { id: 2, name: 'Chelsea', pos: 2, stage: 'cl', meta: '' },
