@@ -22,7 +22,19 @@ class ProgressiveImage extends Component {
             this.loadingImage.onload = null
         }
     }
+    fetchImage = src => {
+        const image = new Image()
+        image.onload = () => this.setState({ currentImage: this.loadingImage.src, loading: false })
+        image.src = src
+        this.loadingImage = image
+    }
 
+    style = loading => {
+        return {
+            transition: '0.5s filter linear',
+            filter: `${loading ? 'blur(50px)' : ''}`,
+        }
+    }
     render() {
         return (
             <div>
