@@ -23,8 +23,6 @@ class ProfileSettings extends Component {
                     value={this.state.selectedOption}
                     onChange={this.handleChange}
                     options={options}
-                    allowCreate={true}
-                    placeholder="Select your favourite(s)"
                 />
             </div>
         )
