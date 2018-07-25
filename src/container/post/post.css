@@ -81,4 +81,5 @@
 
   .red-background{
       background: red !important;
+      filter: blur(20px)
 }
