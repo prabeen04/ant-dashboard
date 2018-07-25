@@ -7,13 +7,24 @@ const options = [
     { value: 'vanilla', label: 'Vanilla' }
 ]
 class ProfileSettings extends Component {
+    state = {
+        selectedOption: null,
+    }
+    handleChange = (selectedOption) => {
+        this.setState({ selectedOption });
+        console.log(`Option selected:`, selectedOption);
+    }
     render() {
         return (
             <div>
                 <h3>ProfileSettings Component</h3>
                 <Select
+                    value={this.state.selectedOption}
+                    onChange={this.handleChange}
                     options={options}
-                    allowCreate={true} />
+                    allowCreate={true}
+                    placeholder="Select your favourite(s)"
+                />
             </div>
         )
     }
