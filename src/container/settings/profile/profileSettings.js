@@ -3,7 +3,7 @@ import Select from 'react-select';
 
 class ProfileSettings extends Component {
     state = {
-        selectedOption: null,
+        selectedOption: 'chocolate',
     }
     handleChange = (selectedOption) => {
         console.log(selectedOption)
