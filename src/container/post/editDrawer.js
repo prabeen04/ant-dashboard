@@ -15,7 +15,7 @@ class EditDrawer extends Component {
                     placement="right"
                     width={600}
                     closable={true}
-                    maskStyle={{filter: 'blur(16px)'}}
+                    maskStyle={{filter: 'blur(16px)', backgroundColor: 'red', opacity: 0.002}}
                     wrapClassName={'red-background'}
                     onClose={this.props.handleClose}
                     visible={this.props.open}

@@ -17,11 +17,11 @@ class ProgressiveImage extends Component {
         }
     }
 
-    componentWillUnmount() {
-        if (this.loadingImage) {
-            this.loadingImage.onload = null
-        }
-    }
+    // componentWillUnmount() {
+    //     if (this.loadingImage) {
+    //         this.loadingImage.onload = null
+    //     }
+    // }
     fetchImage = src => {
         const image = new Image()
         image.onload = () => this.setState({ currentImage: this.loadingImage.src, loading: false })
