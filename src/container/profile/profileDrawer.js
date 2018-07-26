@@ -11,6 +11,7 @@ class ProfileDrawer extends Component {
                     placement="right"
                     width={600}
                     closable={true}
+                    onClose={this.props.onClose}
                 >
                     hjghj
                 </Drawer>
