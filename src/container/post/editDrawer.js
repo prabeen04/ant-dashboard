@@ -13,7 +13,7 @@ class EditDrawer extends Component {
         return (
             <div>
                 <Drawer
-                    title={<DrawerTitle title="Test Drawer"/>}
+                    title={<DrawerTitle title={this.props.singlePost.title}/>}
                     placement="right"
                     width={600}
                     closable={true}
@@ -31,7 +31,7 @@ class EditDrawer extends Component {
 }
 const mapStateToProps = state => {
     return{
-
+        singlePost: state.postReducer.singlePost
     }
 }
 
