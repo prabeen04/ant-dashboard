@@ -34,7 +34,7 @@ class ProfileView extends Component {
               style={{ width: '100%' }}
               cover={<img alt="example" src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png" />}
               actions={[
-                <Icon onClick={() => console.log('settings clicked')} type="setting" />,
+                <Icon onClick={() => this.showDrawer()} type="setting" />,
                 <Icon type="edit" onClick={() => this.props.openEditProfile(this.props.profile)} />,
                 <Icon type="ellipsis" />
               ]}

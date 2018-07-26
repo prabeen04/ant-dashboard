@@ -6,7 +6,7 @@ class ProfileDrawer extends Component {
         return (
             <div>
                 <Drawer
-                    title={'cgcgh' >}
+                    title={'cgcgh'}
                     placement="right"
                     width={600}
                     closable={true}
