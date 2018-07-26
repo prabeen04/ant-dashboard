@@ -21,9 +21,10 @@ class EditDrawer extends Component {
                     onClose={this.props.handleClose}
                     visible={this.props.open}
                 >
-                    <p>Some contents...</p>
-                    <p>Some contents...</p>
-                    <p>Some contents...</p>
+                    <p>{this.props.singlePost.title}</p>
+                    <p>{this.props.singlePost.author}</p>
+                    <p>{this.props.singlePost.date}</p>
+                    <p>{this.props.singlePost.body}</p>
                 </Drawer>
             </div>
         )
