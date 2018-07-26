@@ -48,7 +48,7 @@ class ProfileView extends Component {
           </div>
 
         }
-        <ProfileDrawer />
+        <ProfileDrawer open={this.state.isDrawerOpen}/>
       </div>
     )
   }

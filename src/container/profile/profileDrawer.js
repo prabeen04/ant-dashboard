@@ -6,6 +6,7 @@ class ProfileDrawer extends Component {
         return (
             <div>
                 <Drawer
+                    visible={this.props.open}
                     title={'cgcgh'}
                     placement="right"
                     width={600}
