@@ -29,5 +29,15 @@ class EditDrawer extends Component {
         )
     }
 }
+const mapStateToProps = state => {
+    return{
 
+    }
+}
+
+const mapDispatchToProps = dispatch => {
+    return bindActionCreators({
+
+    }, dispatch)
+}
 export default connect(mapStateToProps, mapDispatchToProps)(EditDrawer);
