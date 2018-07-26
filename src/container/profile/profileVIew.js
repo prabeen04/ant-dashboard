@@ -7,6 +7,9 @@ import ProfileDrawer from './profileDrawer';
 const { Meta } = Card;
 
 class ProfileView extends Component {
+  state = {
+    isDrawerOpen: false
+  }
   render() {
     return (
       <div className="profile-view">
@@ -34,7 +37,7 @@ class ProfileView extends Component {
           </div>
 
         }
-        <ProfileDrawer/>
+        <ProfileDrawer />
       </div>
     )
   }
