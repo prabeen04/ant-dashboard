@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
 import { Drawer, Button } from 'antd';
 import DrawerTitle from './drawerTitle';
 import './post.css';
@@ -28,4 +30,4 @@ class EditDrawer extends Component {
     }
 }
 
-export default EditDrawer;
+export default connect(mapStateToProps, mapDispatchToProps)(EditDrawer);
