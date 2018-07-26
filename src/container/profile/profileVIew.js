@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { Card, Icon, Avatar } from 'antd'
-import { openEditProfile } from '../../actions/profile_actions'
+import { openEditProfile } from '../../actions/profile_actions';
+import ProfileDrawer from './profileDrawer';
 const { Meta } = Card;
 
 class ProfileView extends Component {
@@ -33,6 +34,7 @@ class ProfileView extends Component {
           </div>
 
         }
+        <ProfileDrawer/>
       </div>
     )
   }
