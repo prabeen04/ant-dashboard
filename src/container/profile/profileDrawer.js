@@ -7,7 +7,7 @@ class ProfileDrawer extends Component {
             <div>
                 <Drawer
                     visible={this.props.open}
-                    title={'cgcgh'}
+                    title={this.props.user.name}
                     placement="right"
                     width={600}
                     closable={true}
