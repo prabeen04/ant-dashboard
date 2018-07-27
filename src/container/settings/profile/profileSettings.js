@@ -6,9 +6,14 @@ const data = [
     { value: 'vanilla', label: 'Vanilla' }
 ]
 class ProfileSettings extends Component {
-    state = {
-        selectedOption: 'chocolate',
+    constructor(props) {
+        super(props)
+        this.state = {
+            selectedOption: null,
+        }
+        this.handleChange = this.handleChange.bind(this);
     }
+
     handleChange = (selectedOption) => {
         console.log(selectedOption)
         this.setState({ selectedOption });
