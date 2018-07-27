@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import Select from 'react-select';
-
+const data = [
+    { value: 'chocolate', label: 'Chocolate' },
+    { value: 'strawberry', label: 'Strawberry' },
+    { value: 'vanilla', label: 'Vanilla' }
+]
 class ProfileSettings extends Component {
     state = {
         selectedOption: 'chocolate',
@@ -11,18 +15,13 @@ class ProfileSettings extends Component {
         console.log(`Option selected:`, selectedOption);
     }
     render() {
-        const options = [
-            { value: 'chocolate', label: 'Chocolate' },
-            { value: 'strawberry', label: 'Strawberry' },
-            { value: 'vanilla', label: 'Vanilla' }
-        ]
         return (
             <div>
                 <h3>ProfileSettings Component</h3>
                 <Select
+                    options={data}
                     value={this.state.selectedOption}
                     onChange={this.handleChange}
-                    options={options}
                 />
             </div>
         )
