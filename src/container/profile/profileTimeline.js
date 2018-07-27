@@ -9,7 +9,7 @@ class ProfileTimeline extends Component {
                 ? <Icon style={{ fontSize: 15 }} type="phone" />
                 : <Icon style={{ fontSize: 15 }} type="mail" />
             const iconColor = profile.email === 'manutd'
-                ? "#6fba1c"
+                ? "teal"
                 : "tomato"
             return <TimelineEvent
                 title={profile.name}
