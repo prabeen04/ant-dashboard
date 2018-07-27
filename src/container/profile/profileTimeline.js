@@ -5,10 +5,12 @@ import { Icon } from 'antd';
 class ProfileTimeline extends Component {
     render() {
         const timelineEvents = this.props.profiles.map((profile, index) => {
+            const iconType = profile.email === 'manutd'
+                            ?<Icon style={{ fontSize: 15, color: 'green' }}type="phone" /> 
+                            :<Icon style={{ fontSize: 15, color: 'tomato' }}type="mail" /> 
             return <TimelineEvent title={profile.name}
                 createdAt={profile.location}
-                icon={<Icon style={{ fontSize: 15, color: 'lightgreen' }}
-                    type="phone" />}
+                icon={iconType}
             >
                 {profile.email}
             </TimelineEvent>
