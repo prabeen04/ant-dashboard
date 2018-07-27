@@ -6,11 +6,16 @@ class ProfileTimeline extends Component {
     render() {
         const timelineEvents = this.props.profiles.map((profile, index) => {
             const iconType = profile.email === 'manutd'
-                            ?<Icon style={{ fontSize: 15, color: 'green' }}type="phone" /> 
-                            :<Icon style={{ fontSize: 15, color: 'tomato' }}type="mail" /> 
-            return <TimelineEvent title={profile.name}
+                ? <Icon style={{ fontSize: 15 }} type="phone" />
+                : <Icon style={{ fontSize: 15 }} type="mail" />
+            const iconColor = profile.email === 'manutd'
+                ? "#6fba1c"
+                : "tomato"
+            return <TimelineEvent
+                title={profile.name}
                 createdAt={profile.location}
                 icon={iconType}
+                iconColor={iconColor}
             >
                 {profile.email}
             </TimelineEvent>
