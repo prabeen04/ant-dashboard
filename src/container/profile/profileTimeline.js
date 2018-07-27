@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+import { connect } from "react-redux";
 class ProfileTimeline extends Component {
   render() {
     return (
@@ -9,5 +9,10 @@ class ProfileTimeline extends Component {
     )
   }
 }
+const mapStateToProps = state => {
+    return{
+        
+    }
+}
 
-export default ProfileTimeline;
+export default connect(mapStateToProps)(ProfileTimeline);

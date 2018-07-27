@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import { Drawer, Button } from 'antd';
-
+import ProfileTimeline from './profileTimeline';
 class ProfileDrawer extends Component {
     render() {
         return (
@@ -13,7 +13,7 @@ class ProfileDrawer extends Component {
                     closable={true}
                     onClose={this.props.onClose}
                 >
-                    hjghj
+                    <ProfileTimeline />
                 </Drawer>
             </div>
         )
