@@ -1,16 +1,17 @@
 import React, { Component } from 'react'
 import { connect } from "react-redux";
 import { Timeline, TimelineEvent } from 'react-event-timeline'
-
+import { Icon } from 'antd';
 class ProfileTimeline extends Component {
     render() {
-        const timelineEvents = this.props.profiles.map((post, index) => {
-            return <TimelineEvent title="John Doe sent a SMS"
-                                  createdAt="2016-09-12 10:06 PM"
-                                  icon={<i className="material-icons md-18">textsms</i>}
-                                 >
-                                I received the payment for $543. Should be shipping the item within a couple of hours.
-                    </TimelineEvent>
+        const timelineEvents = this.props.profiles.map((profile, index) => {
+            return <TimelineEvent title={profile.name}
+                createdAt={profile.location}
+                icon={<Icon style={{ fontSize: 15, color: 'lightgreen' }}
+                    type="phone" />}
+            >
+                {profile.email}
+            </TimelineEvent>
         });
         return (
             <Timeline>
