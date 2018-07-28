@@ -24,7 +24,7 @@ const groupBadgeStyles = {
 
 const formatGroupLabel = data => (
     <div style={groupStyles}>
-        <span style={{ color: 'lightblue' }}> {data.label}</span>
+        <span style={{ color: 'blue' }}> {data.label}</span>
         <span style={groupBadgeStyles}>{data.options.length}</span>
     </div>
 );
@@ -55,15 +55,16 @@ class ProfileSettings extends Component {
     }
     render() {
         return (
-            <div style={{ height: 500, width: 200 }}>
+            <div style={{ height: 500, width: 400 }}>
                 <h3>ProfileSettings Component</h3>
-                <CreatableSelect
+                <Select
                     isClearable
-                    defaultValue={colourOptions[1]}
+                    // defaultValue={colourOptions[1]}
                     options={groupedOptions}
                     formatGroupLabel={formatGroupLabel}
                     onChange={this.handleChange}
                     onInputChange={this.handleInputChange}
+                    placeholder="Choose Color or Flavour ..."
                 />
             </div>
         )
