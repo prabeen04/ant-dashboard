@@ -7,43 +7,41 @@ class Creatable extends Component {
         isLoading: false,
         options: defaultOptions,
         value: undefined,
-      };
-      handleChange = (newValue: any, actionMeta: any) => {
+    };
+    handleChange = (newValue: any, actionMeta: any) => {
         console.group('Value Changed');
         console.log(newValue);
         console.log(`action: ${actionMeta.action}`);
         console.groupEnd();
         this.setState({ value: newValue });
-      };
-      handleCreate = (inputValue: any) => {
+    };
+    handleCreate = (inputValue: any) => {
         this.setState({ isLoading: true });
         console.group('Option created');
         console.log('Wait a moment...');
         setTimeout(() => {
-          const { options } = this.state;
-          const newOption = createOption(inputValue);
-          console.log(newOption);
-          console.groupEnd();
-          this.setState({
-            isLoading: false,
-            options: [...options, newOption],
-            value: newOption,
-          });
+            const { options } = this.state;
+            const newOption = createOption(inputValue);
+            console.log(newOption);
+            console.groupEnd();
+            this.setState({
+                isLoading: false,
+                options: [...options, newOption],
+                value: newOption,
+            });
         }, 1000);
-      };
+    };
     render() {
+        const { isLoading, options, value } = this.state;
         return (
             <CreatableSelect
                 isClearable
+                isDisabled={isLoading}
+                isLoading={isLoading}
                 onChange={this.handleChange}
-                onInputChange={this.handleInputChange}
-                options={colourOptions}
-                // onCreateOption={(value) => console.log(value)}
-                // getNewOptionData={(a, b)=>{
-                //     console.log(a)
-                //     console.log(b)
-                //     return b;
-                // }}
+                onCreateOption={this.handleCreate}
+                options={options}
+                value={value}
             />
         );
     }
