@@ -13,6 +13,7 @@ import { tableReducer } from '../reducers/tableReducer';
 import { googleReducer } from '../reducers/googleReducer';
 import { notificationReducer } from '../reducers/notificationReducer';
 import { dragReducer } from '../reducers/dragReducer';
+import { selectReducer } from "../reducers/selectReducer";
 
 export const rootReducer = combineReducers({
     form: FormReducer,
@@ -28,7 +29,8 @@ export const rootReducer = combineReducers({
     tableReducer,
     googleReducer,
     notificationReducer,
-    dragReducer
+    dragReducer,
+    selectReducer
 })
 
 export default rootReducer;
