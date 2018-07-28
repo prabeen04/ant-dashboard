@@ -2,10 +2,14 @@ import React, { Component } from 'react';
 import CreatableSelect from 'react-select/lib/Creatable';
 import { colourOptions } from './options';
 
+const createOption = (label: string) => ({
+    label,
+    value: label.toLowerCase().replace(/\W/g, ''),
+  });
 class Creatable extends Component {
     state = {
         isLoading: false,
-        options: defaultOptions,
+        options: colourOptions,
         value: undefined,
     };
     handleChange = (newValue: any, actionMeta: any) => {
