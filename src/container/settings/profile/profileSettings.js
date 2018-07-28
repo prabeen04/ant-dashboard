@@ -21,12 +21,13 @@ class ProfileSettings extends Component {
     }
     render() {
         return (
-            <div>
+            <div style={{height: 500}}>
                 <h3>ProfileSettings Component</h3>
                 <Select
                     options={data}
                     value={this.state.selectedOption}
                     onChange={this.handleChange}
+                    isSearchable 
                 />
             </div>
         )
