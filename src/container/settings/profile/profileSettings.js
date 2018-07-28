@@ -1,10 +1,32 @@
 import React, { Component } from 'react';
 import Select from 'react-select';
-const data = [
-    { value: 'chocolate', label: 'Chocolate' },
-    { value: 'strawberry', label: 'Strawberry' },
-    { value: 'vanilla', label: 'Vanilla' }
-]
+import { Icon } from 'antd'
+import { colourOptions, groupedOptions } from './options';
+
+const groupStyles = {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+  };
+  const groupBadgeStyles = {
+    backgroundColor: '#EBECF0',
+    borderRadius: '2em',
+    color: '#172B4D',
+    display: 'inline-block',
+    fontSize: 12,
+    fontWeight: 'normal',
+    lineHeight: '1',
+    minWidth: 1,
+    padding: '0.16666666666667em 0.5em',
+    textAlign: 'center',
+  };
+  
+  const formatGroupLabel = data => (
+    <div style={groupStyles}>
+      <span style={{color: 'lightblue'}}> {data.label}</span>
+      <span style={groupBadgeStyles}>{data.options.length}</span>
+    </div>
+  );
 class ProfileSettings extends Component {
     constructor(props) {
         super(props)
@@ -24,10 +46,9 @@ class ProfileSettings extends Component {
             <div style={{height: 500}}>
                 <h3>ProfileSettings Component</h3>
                 <Select
-                    options={data}
-                    value={this.state.selectedOption}
-                    onChange={this.handleChange}
-                    isSearchable 
+                    defaultValue={colourOptions[1]}
+                    options={groupedOptions}
+                    formatGroupLabel={formatGroupLabel}
                 />
             </div>
         )
