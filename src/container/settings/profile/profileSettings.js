@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Select from 'react-select';
-import CreatableSelect from 'react-select/lib/Creatable';
 import { Icon } from 'antd'
 import { colourOptions, groupedOptions } from './options';
 
@@ -36,18 +35,6 @@ class ProfileSettings extends Component {
         }
         this.handleChange = this.handleChange.bind(this);
     }
-    handleChange = (newValue: any, actionMeta: any) => {
-        console.group('Value Changed');
-        console.log(newValue);
-        console.log(`action: ${actionMeta.action}`);
-        console.groupEnd();
-    };
-    handleInputChange = (inputValue: any, actionMeta: any) => {
-        console.group('Input Changed');
-        console.log(inputValue);
-        console.log(`action: ${actionMeta.action}`);
-        console.groupEnd();
-    }
     handleChange = (selectedOption) => {
         console.log(selectedOption)
         this.setState({ selectedOption });
@@ -63,7 +50,6 @@ class ProfileSettings extends Component {
                     options={groupedOptions}
                     formatGroupLabel={formatGroupLabel}
                     onChange={this.handleChange}
-                    onInputChange={this.handleInputChange}
                     placeholder="Choose Color or Flavour ..."
                 />
             </div>
