@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Select from 'react-select';
 import { Icon } from 'antd'
 import { colourOptions, groupedOptions } from './options';
-
+import Creatable from "./creatableSelect";
 const groupStyles = {
     display: 'flex',
     alignItems: 'center',
@@ -43,7 +43,7 @@ class ProfileSettings extends Component {
     render() {
         return (
             <div style={{ height: 500, width: 400 }}>
-                <h3>ProfileSettings Component</h3>
+                <h3>Option group</h3>
                 <Select
                     isClearable
                     // defaultValue={colourOptions[1]}
@@ -52,6 +52,9 @@ class ProfileSettings extends Component {
                     onChange={this.handleChange}
                     placeholder="Choose Color or Flavour ..."
                 />
+                <br/>
+                <h3>Creatable Select box</h3>
+                <Creatable />
             </div>
         )
     }

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import CreatableSelect from 'react-select/lib/Creatable';
 import { colourOptions } from './options';
 
-class CreatableSelect extends Component {
+class Creatable extends Component {
     handleChange = (newValue: any, actionMeta: any) => {
         console.group('Value Changed');
         console.log(newValue);
@@ -27,4 +27,4 @@ class CreatableSelect extends Component {
     }
 }
 
-export default CreatableSelect;
+export default Creatable;
