@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
 import CreatableSelect from 'react-select/lib/Creatable';
 import { colourOptions } from './options';
 
@@ -44,11 +46,16 @@ class Creatable extends Component {
                 isLoading={isLoading}
                 onChange={this.handleChange}
                 onCreateOption={this.handleCreate}
-                options={options}
+                options={this.props.colourOptions}
                 value={value}
             />
         );
     }
 }
 
-export default Creatable;
+const mapStateToProps = state => {
+    return{
+        options: state.selectReducer.colourOptions;
+    }
+}
+export default connect(mapStateToProps)(Creatable);
