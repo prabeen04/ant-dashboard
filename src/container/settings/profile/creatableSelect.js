@@ -30,7 +30,7 @@ class Creatable extends Component {
         const { isLoading, colourOptions, currentValue } = this.props;
         return (
             <CreatableSelect
-                isClearable
+                // isClearable
                 isDisabled={isLoading}
                 isLoading={isLoading}
                 onChange={this.props.optionChange}

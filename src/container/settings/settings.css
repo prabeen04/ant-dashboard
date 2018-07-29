@@ -23,7 +23,7 @@
 }
 .form-items{
     display: flex;
-    
+    flex-direction: column;
 }
 .form-buttons{
     display: flex;

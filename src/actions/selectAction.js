@@ -14,25 +14,11 @@ const createOption = (label: string) => ({
     value: label.toLowerCase().replace(/\W/g, ''),
 });
 
-// export const newOptionCreate = (inputValue) => dispatch => {
-//     console.log('new option create', inputValue)
-//     return new Promise((resolve, reject) => {
-//         dispatch({
-//             type: NEW_OPTION_CREATE
-//         })
-//         resolve()
-//     }).then((resolve) => {
-//         setTimeout(() => {
-//             const newOption = createOption(inputValue);
-//             console.log(inputValue)
-//             return dispatch({
-//                 type: NEW_OPTION_CREATE_SUCCESS,
-//                 payload: newOption
-//             })
-//         }, 2000)
-//     })
-
-// }
+export const newOptionCreate = (inputValue) => dispatch => {
+    return dispatch({
+        type: NEW_OPTION_CREATE
+    })
+}
 export const openFormModal = (inputValue) => dispatch => {
     const newOption = createOption(inputValue);
     return dispatch({

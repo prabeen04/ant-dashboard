@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { Modal, Button } from 'antd';
-import { closeFormModal } from "../../../actions/selectAction";
+import { closeFormModal, newOptionCreate } from "../../../actions/selectAction";
 import '../settings.css'
 class SelectFormModal extends Component {
     render() {
@@ -12,15 +12,19 @@ class SelectFormModal extends Component {
                 <Modal
                     visible={isFormModalOpen}
                     title="Title"
+                    onCancel={this.props.closeFormModal}
                     footer={null}
                 >
                     <div className="form-modal">
                         <div className="form-items">
                             <p>{currentValue.label && currentValue.label}</p>
+                            <p>{currentValue.label && currentValue.label}</p>
+                            <p>{currentValue.label && currentValue.label}</p>
+                            <p>{currentValue.label && currentValue.label}</p>
                         </div>
                         <div className="form-buttons">
                             <Button key="back" onClick={this.props.closeFormModal}>Return</Button>
-                            <Button key="submit" type="primary" onClick={this.handleOk}>Submit</Button>
+                            <Button key="submit" type="primary" onClick={this.props.newOptionCreate}>Submit</Button>
                         </div>
                     </div>
                 </Modal>
@@ -36,7 +40,8 @@ const mapStateToProps = state => {
 }
 const mapDispatchToProps = dispatch => {
     return bindActionCreators({
-        closeFormModal
+        closeFormModal,
+        newOptionCreate
     }, dispatch)
 }
 export default connect(mapStateToProps, mapDispatchToProps)(SelectFormModal);
