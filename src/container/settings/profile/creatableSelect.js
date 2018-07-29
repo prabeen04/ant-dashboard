@@ -10,11 +10,6 @@ const createOption = (label: string) => ({
     value: label.toLowerCase().replace(/\W/g, ''),
   });
 class Creatable extends Component {
-    state = {
-        isLoading: false,
-        options: colourOptions,
-        value: undefined,
-    };
     handleChange = (newValue: any, actionMeta: any) => {
         console.group('Value Changed');
         console.log(newValue);
