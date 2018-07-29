@@ -1,3 +1,5 @@
+import { OPTION_CHANGE, NEW_OPTION_CREATE } from "../types/selectActionTypes";
+
 const initialState = {
     isLoading: false,
     currentValue: { value: 'ocean', label: 'Ocean', color: '#00B8D9' },
@@ -15,5 +17,9 @@ const initialState = {
     ]
 }
 export const selectReducer = (state = initialState, action) => {
+    switch (action.type) {
+        case OPTION_CHANGE:
+            return { ...state, currentValue: action.payload }
+    }
     return state;
 }
