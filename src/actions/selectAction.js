@@ -7,3 +7,9 @@ export const optionChange = value => dispatch => {
         payload: value
     })
 }
+export const newOptionCreate = (inputValue) => dispatch => {
+    console.log('new option create', inputValue)
+    return dispatch({
+        type: NEW_OPTION_CREATE
+    })
+}

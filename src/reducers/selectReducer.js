@@ -26,6 +26,8 @@ export const selectReducer = (state = initialState, action) => {
             return { ...state, currentValue: action.payload }
         case NEW_OPTION_CREATE_FAILURE:
             return { ...state, currentValue: action.payload }
+        default:
+            return state;
 
     }
     return state;
