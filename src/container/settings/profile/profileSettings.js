@@ -3,6 +3,7 @@ import Select from 'react-select';
 import { Icon } from 'antd'
 import { colourOptions, groupedOptions } from './options';
 import Creatable from "./creatableSelect";
+import SelectFormModal from "./selectFormModal";
 const groupStyles = {
     display: 'flex',
     alignItems: 'center',
@@ -55,6 +56,7 @@ class ProfileSettings extends Component {
                 <br/>
                 <h3>Creatable Select box</h3>
                 <Creatable />
+                <SelectFormModal />
             </div>
         )
     }
