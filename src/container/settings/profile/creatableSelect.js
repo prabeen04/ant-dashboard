@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import CreatableSelect from 'react-select/lib/Creatable';
-import { optionChange } from './../../../actions/selectAction';
+import { optionChange } from '../../../actions/selectAction';
 import { colourOptions } from './options';
 
 const createOption = (label: string) => ({

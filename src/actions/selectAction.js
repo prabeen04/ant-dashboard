@@ -1,4 +1,4 @@
-import { OPTION_CHANGE, NEW_OPTION_CREATE } from "../types/selectActionTypes";
+import { OPTION_CHANGE, NEW_OPTION_CREATE, NEW_OPTION_CREATE_SUCCESS, NEW_OPTION_CREATE_FAILURE } from "../types/selectActionTypes";
 
 export const optionChange = value => dispatch => {
     console.log(value)
