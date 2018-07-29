@@ -38,7 +38,7 @@ class Creatable extends Component {
         }, 1000);
     };
     render() {
-        const { isLoading, options, value } = this.state;
+        const { isLoading, options, value } = this.props;
         return (
             <CreatableSelect
                 isClearable
@@ -46,7 +46,7 @@ class Creatable extends Component {
                 isLoading={isLoading}
                 onChange={this.handleChange}
                 onCreateOption={this.handleCreate}
-                options={this.props.colourOptions}
+                options={colourOptions}
                 value={value}
             />
         );
@@ -55,7 +55,8 @@ class Creatable extends Component {
 
 const mapStateToProps = state => {
     return{
-        options: state.selectReducer.colourOptions;
+        colourOptions: state.selectReducer.colourOptions,       
+        currentValue:  state.selectReducer.currentValue
     }
 }
 export default connect(mapStateToProps)(Creatable);
