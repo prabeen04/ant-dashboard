@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import CreatableSelect from 'react-select/lib/Creatable';
+import { optionChange } from './../../../actions/selectAction';
 import { colourOptions } from './options';
 
 const createOption = (label: string) => ({
@@ -44,7 +45,7 @@ class Creatable extends Component {
                 isClearable
                 isDisabled={isLoading}
                 isLoading={isLoading}
-                onChange={this.handleChange}
+                onChange={this.props.optionChange}
                 onCreateOption={this.handleCreate}
                 options={colourOptions}
                 value={value}
@@ -58,5 +59,10 @@ const mapStateToProps = state => {
         colourOptions: state.selectReducer.colourOptions,       
         currentValue:  state.selectReducer.currentValue
     }
+}
+const mapDispatchToProps = dispatch => {
+    return bindActionCreators({
+        optionChange
+    }, dispatch)
 }
 export default connect(mapStateToProps)(Creatable);
