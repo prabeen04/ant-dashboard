@@ -1,4 +1,7 @@
-import { OPTION_CHANGE, NEW_OPTION_CREATE, NEW_OPTION_CREATE_SUCCESS, NEW_OPTION_CREATE_FAILURE, OPEN_FORM_MODAL } from "../types/selectActionTypes";
+import {
+    OPTION_CHANGE, NEW_OPTION_CREATE, NEW_OPTION_CREATE_SUCCESS, NEW_OPTION_CREATE_FAILURE,
+    OPEN_FORM_MODAL, CLOSE_FORM_MODAL
+} from "../types/selectActionTypes";
 
 const initialState = {
     isLoading: false,
@@ -21,6 +24,10 @@ export const selectReducer = (state = initialState, action) => {
     switch (action.type) {
         case OPTION_CHANGE:
             return { ...state, currentValue: action.payload }
+        case OPEN_FORM_MODAL:
+            return { ...state, currentValue: action.payload, isFormModalOpen: true }
+        case CLOSE_FORM_MODAL:
+            return { ...state, isFormModalOpen: false }
         case NEW_OPTION_CREATE:
             return { ...state, isLoading: true, isFormModalOpen: true }
         case NEW_OPTION_CREATE_SUCCESS:

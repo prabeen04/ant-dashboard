@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import CreatableSelect from 'react-select/lib/Creatable';
-import { optionChange, newOptionCreate } from '../../../actions/selectAction';
+import { optionChange, openFormModal } from '../../../actions/selectAction';
 
 const createOption = (label: string) => ({
     label,
@@ -34,7 +34,7 @@ class Creatable extends Component {
                 isDisabled={isLoading}
                 isLoading={isLoading}
                 onChange={this.props.optionChange}
-                onCreateOption={this.props.newOptionCreate}
+                onCreateOption={this.props.openFormModal}
                 options={colourOptions}
                 value={currentValue}
             />
@@ -52,7 +52,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return bindActionCreators({
         optionChange,
-        newOptionCreate
+        openFormModal
     }, dispatch)
 }
 export default connect(mapStateToProps, mapDispatchToProps)(Creatable);
