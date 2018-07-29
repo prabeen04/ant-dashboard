@@ -3,20 +3,13 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import CreatableSelect from 'react-select/lib/Creatable';
 import { optionChange, newOptionCreate } from '../../../actions/selectAction';
-import { colourOptions } from './options';
 
 const createOption = (label: string) => ({
     label,
     value: label.toLowerCase().replace(/\W/g, ''),
   });
 class Creatable extends Component {
-    handleChange = (newValue: any, actionMeta: any) => {
-        console.group('Value Changed');
-        console.log(newValue);
-        console.log(`action: ${actionMeta.action}`);
-        console.groupEnd();
-        this.setState({ value: newValue });
-    };
+
     handleCreate = (inputValue: any) => {
         this.setState({ isLoading: true });
         console.group('Option created');
@@ -34,7 +27,7 @@ class Creatable extends Component {
         }, 1000);
     };
     render() {
-        const { isLoading, options, value } = this.props;
+        const { isLoading, colourOptions, currentValue } = this.props;
         return (
             <CreatableSelect
                 isClearable
@@ -43,7 +36,7 @@ class Creatable extends Component {
                 onChange={this.props.optionChange}
                 onCreateOption={this.props.newOptionCreate}
                 options={colourOptions}
-                value={value}
+                value={currentValue}
             />
         );
     }
@@ -62,4 +55,4 @@ const mapDispatchToProps = dispatch => {
         newOptionCreate
     }, dispatch)
 }
-export default connect(mapStateToProps)(Creatable);
+export default connect(mapStateToProps, mapDispatchToProps)(Creatable);
