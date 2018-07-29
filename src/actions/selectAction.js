@@ -8,6 +8,11 @@ export const optionChange = value => dispatch => {
         payload: value
     })
 }
+const createOption = (label: string) => ({
+    label,
+    value: label.toLowerCase().replace(/\W/g, ''),
+  });
+
 export const newOptionCreate = (inputValue) => dispatch => {
     console.log('new option create', inputValue)
     return new Promise((resolve, reject) => {
@@ -17,9 +22,11 @@ export const newOptionCreate = (inputValue) => dispatch => {
         resolve()
     }).then((resolve) => {
         setTimeout(() => {
+            const newOption = createOption(inputValue);
+            console.log(inputValue)
             return dispatch({
                 type: NEW_OPTION_CREATE_SUCCESS,
-                payload: inputValue
+                payload: newOption
             })
         }, 2000)
     })

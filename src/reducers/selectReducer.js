@@ -23,7 +23,7 @@ export const selectReducer = (state = initialState, action) => {
         case NEW_OPTION_CREATE:
             return { ...state, isLoading: true }
         case NEW_OPTION_CREATE_SUCCESS:
-            return { ...state, isLoading: false, currentValue: action.payload }
+            return { ...state, isLoading: false, currentValue: action.payload,  colourOptions: [...state.colourOptions, action.payload] }
         case NEW_OPTION_CREATE_FAILURE:
             return { ...state, currentValue: action.payload }
         default:
