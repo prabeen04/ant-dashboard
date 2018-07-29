@@ -10,19 +10,18 @@ export const optionChange = value => dispatch => {
 }
 export const newOptionCreate = (inputValue) => dispatch => {
     console.log('new option create', inputValue)
-    const sleep = () => new Promise(resolve => {
+    return new Promise((resolve, reject) => {
         dispatch({
             type: NEW_OPTION_CREATE
         })
+        resolve()
+    }).then((resolve) => {
+        setTimeout(() => {
+            return dispatch({
+                type: NEW_OPTION_CREATE_SUCCESS,
+                payload: inputValue
+            })
+        }, 2000)
     })
-    sleep()
-        .then(() => {
-            setTimeout(() => {
-                return dispatch({
-                    type: NEW_OPTION_CREATE_SUCCESS,
-                    payload: inputValue
-                })
-            }, 2000)
-        })
 
 }
