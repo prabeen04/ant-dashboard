@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
+import { reduxForm, Field } from "redux-form";
 import { Modal, Button } from 'antd';
 import { closeFormModal, newOptionCreate } from "../../../actions/selectAction";
 import '../settings.css'
@@ -32,6 +33,11 @@ class SelectFormModal extends Component {
         )
     }
 }
+
+SelectFormModal = reduxForm({
+    form: 'selectForm'
+})(SelectFormModal)
+
 const mapStateToProps = state => {
     return {
         isFormModalOpen: state.selectReducer.isFormModalOpen,
