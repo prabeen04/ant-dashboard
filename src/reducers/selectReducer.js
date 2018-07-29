@@ -1,7 +1,8 @@
-import { OPTION_CHANGE, NEW_OPTION_CREATE, NEW_OPTION_CREATE_SUCCESS, NEW_OPTION_CREATE_FAILURE } from "../types/selectActionTypes";
+import { OPTION_CHANGE, NEW_OPTION_CREATE, NEW_OPTION_CREATE_SUCCESS, NEW_OPTION_CREATE_FAILURE, OPEN_FORM_MODAL } from "../types/selectActionTypes";
 
 const initialState = {
     isLoading: false,
+    isFormModalOpen: false,
     currentValue: { value: 'ocean', label: 'Ocean', color: '#00B8D9' },
     colourOptions: [
         { value: 'ocean', label: 'Ocean', color: '#00B8D9' },
@@ -23,9 +24,11 @@ export const selectReducer = (state = initialState, action) => {
         case NEW_OPTION_CREATE:
             return { ...state, isLoading: true }
         case NEW_OPTION_CREATE_SUCCESS:
-            return { ...state, isLoading: false, currentValue: action.payload,  colourOptions: [...state.colourOptions, action.payload] }
+            return { ...state, isLoading: false, currentValue: action.payload, colourOptions: [...state.colourOptions, action.payload] }
         case NEW_OPTION_CREATE_FAILURE:
             return { ...state, currentValue: action.payload }
+        case OPEN_FORM_MODAL:
+            return { ...state, isFormModalOpen: true }
         default:
             return state;
 

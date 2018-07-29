@@ -1,5 +1,5 @@
-import { OPTION_CHANGE, NEW_OPTION_CREATE, NEW_OPTION_CREATE_SUCCESS, NEW_OPTION_CREATE_FAILURE } from "../types/selectActionTypes";
-import { resolve } from "path";
+import { OPTION_CHANGE, NEW_OPTION_CREATE, NEW_OPTION_CREATE_SUCCESS, NEW_OPTION_CREATE_FAILURE, OPEN_FORM_MODAL } from "../types/selectActionTypes";
+// import { resolve } from "path";
 
 export const optionChange = value => dispatch => {
     console.log(value)
