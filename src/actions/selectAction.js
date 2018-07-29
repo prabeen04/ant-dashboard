@@ -34,9 +34,10 @@ const createOption = (label: string) => ({
 
 // }
 export const openFormModal = (inputValue) => dispatch => {
+    const newOption = createOption(inputValue);
     return dispatch({
         type: OPEN_FORM_MODAL,
-        payload: inputValue
+        payload: newOption
     })
 }
 export const closeFormModal = () => dispatch => {

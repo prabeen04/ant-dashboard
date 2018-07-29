@@ -17,3 +17,15 @@
 .jumpstart-box-dnd:hover{
     background: rgb(226, 225, 225);
 }
+.form-modal{
+    display: flex;
+    flex-direction: column;
+}
+.form-items{
+    display: flex;
+    
+}
+.form-buttons{
+    display: flex;
+    align-self: flex-end;
+}

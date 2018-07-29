@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { Modal, Button } from 'antd';
 import { closeFormModal } from "../../../actions/selectAction";
+import '../settings.css'
 class SelectFormModal extends Component {
     render() {
         const { isFormModalOpen, currentValue } = this.props;
@@ -11,24 +12,17 @@ class SelectFormModal extends Component {
                 <Modal
                     visible={isFormModalOpen}
                     title="Title"
-                    onOk={this.handleOk}
-                    onCancel={this.props.closeFormModal}
-                //         footer={[
-                //             <Button key="back" onClick={this.handleCancel}>Return</Button>,
-                //             <Button key="submit" type="primary" loading={loading} onClick={this.handleOk}>
-                //                 Submit
-                // </Button>,
-                //         ]}
+                    footer={null}
                 >
                     <div className="form-modal">
-                        <Button key="back" onClick={this.props.closeFormModal}>Return</Button>,
-                        <Button key="submit" type="primary" onClick={this.handleOk}>Submit</Button>
+                        <div className="form-items">
+                            <p>{currentValue.label && currentValue.label}</p>
+                        </div>
+                        <div className="form-buttons">
+                            <Button key="back" onClick={this.props.closeFormModal}>Return</Button>
+                            <Button key="submit" type="primary" onClick={this.handleOk}>Submit</Button>
+                        </div>
                     </div>
-                    <p>{currentValue.label && currentValue.label}</p>
-                    <p>Some contents...</p>
-                    <p>Some contents...</p>
-                    <p>Some contents...</p>
-                    <p>Some contents...</p>
                 </Modal>
             </div>
         )
