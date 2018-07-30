@@ -17,16 +17,15 @@ class SelectFormModal extends Component {
                     footer={null}
                 >
                     <div className="form-modal">
-                        <div className="form-items">
-                            <p>{currentValue.label && currentValue.label}</p>
-                            <p>{currentValue.label && currentValue.label}</p>
-                            <p>{currentValue.label && currentValue.label}</p>
-                            <p>{currentValue.label && currentValue.label}</p>
-                        </div>
-                        <div className="form-buttons">
-                            <Button key="back" onClick={this.props.closeFormModal}>Return</Button>
-                            <Button key="submit" type="primary" onClick={this.props.newOptionCreate}>Submit</Button>
-                        </div>
+                        <form>
+                            <div className="form-items">
+                                <p>{currentValue.label && currentValue.label}</p>
+                            </div>
+                            <div className="form-buttons">
+                                <Button key="back" onClick={this.props.closeFormModal}>Return</Button>
+                                <Button key="submit" type="primary" onClick={this.props.newOptionCreate}>Submit</Button>
+                            </div>
+                        </form>
                     </div>
                 </Modal>
             </div>

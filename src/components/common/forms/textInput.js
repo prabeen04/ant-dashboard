@@ -8,7 +8,6 @@ class TextInput extends Component {
     super(props)
   }
   render() {
-    console.log(PropTypes)
     return (
       <div>
         <input type="text" placeholder={this.props.placeholder} />

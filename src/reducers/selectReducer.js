@@ -6,6 +6,7 @@ import {
 const initialState = {
     isLoading: false,
     isFormModalOpen: false,
+    newCreatedValue: '',
     currentValue: { value: 'ocean', label: 'Ocean', color: '#00B8D9' },
     colourOptions: [
         { value: 'ocean', label: 'Ocean', color: '#00B8D9' },
@@ -25,7 +26,7 @@ export const selectReducer = (state = initialState, action) => {
         case OPTION_CHANGE:
             return { ...state, currentValue: action.payload }
         case OPEN_FORM_MODAL:
-            return { ...state, currentValue: action.payload, isFormModalOpen: true }
+            return { ...state, newCreatedValue: action.payload, isFormModalOpen: true }
         case CLOSE_FORM_MODAL:
             return { ...state, isFormModalOpen: false }
         case NEW_OPTION_CREATE:
