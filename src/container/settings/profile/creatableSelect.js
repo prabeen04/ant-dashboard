@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { reduxForm, Field } from "redux-form";
+import { Button } from "antd";
 import CreatableSelect from 'react-select/lib/Creatable';
 import { optionChange, openFormModal } from '../../../actions/selectAction';
 
@@ -33,7 +34,7 @@ class Creatable extends Component {
         const { handleSubmit, isLoading, colourOptions, currentValue } = this.props;
         const renderCreatableSelect = (props) => {
             return <CreatableSelect
-                {...props}
+                {...props.input}
                 // isClearable
                 isDisabled={isLoading}
                 isLoading={isLoading}
@@ -50,6 +51,8 @@ class Creatable extends Component {
                         name='creatableSelect'
                         component={renderCreatableSelect}
                     />
+                    <Button htmlType='submit' type='primary'>Submit</Button>    
+
                 </form>
             </div>
 
