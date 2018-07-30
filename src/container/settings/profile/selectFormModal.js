@@ -6,9 +6,16 @@ import { Modal, Button } from 'antd';
 import { closeFormModal, newOptionCreate } from "../../../actions/selectAction";
 import '../settings.css'
 class SelectFormModal extends Component {
+    constructor(props){
+        super(props)
+        this.onSubmit = this.onSubmit.bind(this);
+    }
+    onSubmit = (values) => {
+        console.log(values)
+    } 
     renderInput = (props) => {
         console.log(props)
-        return <input type='text' value={props.custom} />
+        return <input {...props.input}type='text' value={props.custom} />
     }
     render() {
         const { handleSubmit, isFormModalOpen, currentValue, newOptionCreate, closeFormModal } = this.props;
@@ -22,7 +29,7 @@ class SelectFormModal extends Component {
                     footer={null}
                 >
                     <div className="form-modal">
-                        <form onSubmit={handleSubmit(newOptionCreate)}>
+                        <form onSubmit={handleSubmit(this.onSubmit)}>
                             <div className="form-items">
                                 <p>{currentValue.label && currentValue.label}</p>
                             </div>
