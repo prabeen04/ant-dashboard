@@ -16,9 +16,11 @@ class SelectFormModal extends Component {
     renderInput = ({input, ...custom}) => {
         return <input
             {...custom}
-            {...input}
+            // {...input}
+            onChange={(value) => input.onChange(value)}
+            // value={custom.custom}
             type='text'
-            value={custom.custom} />
+            />
     }
     render() {
         const { handleSubmit, isFormModalOpen, currentValue, newOptionCreate, newCreatedValue, closeFormModal } = this.props;

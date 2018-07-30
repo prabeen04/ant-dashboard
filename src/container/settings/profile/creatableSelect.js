@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
+import { reduxForm, Field } from "redux-form";
 import CreatableSelect from 'react-select/lib/Creatable';
 import { optionChange, openFormModal } from '../../../actions/selectAction';
 
 const createOption = (label: string) => ({
     label,
     value: label.toLowerCase().replace(/\W/g, ''),
-  });
+});
 class Creatable extends Component {
 
     handleCreate = (inputValue: any) => {
@@ -41,11 +42,13 @@ class Creatable extends Component {
         );
     }
 }
-
+Creatable = reduxForm({
+    form: 'creatableForm'
+})(Creatable)
 const mapStateToProps = state => {
-    return{
-        colourOptions: state.selectReducer.colourOptions,       
-        currentValue:  state.selectReducer.currentValue,
+    return {
+        colourOptions: state.selectReducer.colourOptions,
+        currentValue: state.selectReducer.currentValue,
         isLoading: state.selectReducer.isLoading
     }
 }
