@@ -15,6 +15,7 @@ const createOption = (label: string) => ({
 });
 
 export const newOptionCreate = (inputValue) => dispatch => {
+    console.log('alajsfhas')
     return dispatch({
         type: NEW_OPTION_CREATE
     })

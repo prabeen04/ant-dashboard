@@ -11,17 +11,18 @@ class SelectFormModal extends Component {
         return <input type='text' value={props.custom} />
     }
     render() {
-        const { isFormModalOpen, currentValue } = this.props;
+        const { handleSubmit, isFormModalOpen, currentValue, newOptionCreate, closeFormModal } = this.props;
         return (
             <div>
                 <Modal
                     visible={isFormModalOpen}
                     title="Title"
+                    style={{width: 1000}}
                     onCancel={this.props.closeFormModal}
                     footer={null}
                 >
                     <div className="form-modal">
-                        <form>
+                        <form onSubmit={handleSubmit(newOptionCreate)}>
                             <div className="form-items">
                                 <p>{currentValue.label && currentValue.label}</p>
                             </div>
@@ -31,8 +32,8 @@ class SelectFormModal extends Component {
                                 custom={this.props.newCreatedValue} 
                                 />
                             <div className="form-buttons">
-                                <Button key="back" onClick={this.props.closeFormModal}>Return</Button>
-                                <Button key="submit" type="primary" onClick={this.props.newOptionCreate}>Submit</Button>
+                                <Button key="back" onClick={closeFormModal}>Return</Button>
+                                <Button key="submit" type="primary">Submit</Button>
                             </div>
                         </form>
                     </div>
