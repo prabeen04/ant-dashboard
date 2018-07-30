@@ -6,6 +6,9 @@ import { Modal, Button } from 'antd';
 import { closeFormModal, newOptionCreate } from "../../../actions/selectAction";
 import '../settings.css'
 class SelectFormModal extends Component {
+    renderInput = (props) => {
+        return <input type='text' value={props.value} />
+    }
     render() {
         const { isFormModalOpen, currentValue } = this.props;
         return (
@@ -23,8 +26,8 @@ class SelectFormModal extends Component {
                             </div>
                             <Field
                                 name='newValue'
-                                component="input"
-                                value={this.props.newCreatedValue} />
+                                component={this.renderInput}
+                                value={'this.props.newCreatedValue'} />
                             <div className="form-buttons">
                                 <Button key="back" onClick={this.props.closeFormModal}>Return</Button>
                                 <Button key="submit" type="primary" onClick={this.props.newOptionCreate}>Submit</Button>
