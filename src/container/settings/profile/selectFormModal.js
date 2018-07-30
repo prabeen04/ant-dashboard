@@ -7,7 +7,8 @@ import { closeFormModal, newOptionCreate } from "../../../actions/selectAction";
 import '../settings.css'
 class SelectFormModal extends Component {
     renderInput = (props) => {
-        return <input type='text' value={props.value} />
+        console.log(props)
+        return <input type='text' value={props.custom} />
     }
     render() {
         const { isFormModalOpen, currentValue } = this.props;
@@ -27,7 +28,8 @@ class SelectFormModal extends Component {
                             <Field
                                 name='newValue'
                                 component={this.renderInput}
-                                value={'this.props.newCreatedValue'} />
+                                custom={this.props.newCreatedValue} 
+                                />
                             <div className="form-buttons">
                                 <Button key="back" onClick={this.props.closeFormModal}>Return</Button>
                                 <Button key="submit" type="primary" onClick={this.props.newOptionCreate}>Submit</Button>
