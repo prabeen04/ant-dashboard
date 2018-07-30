@@ -10,7 +10,9 @@ const createOption = (label: string) => ({
     value: label.toLowerCase().replace(/\W/g, ''),
 });
 class Creatable extends Component {
-
+    onSubmit = (values) =>{
+        console.log(values)
+    }
     handleCreate = (inputValue: any) => {
         this.setState({ isLoading: true });
         console.group('Option created');
@@ -28,22 +30,26 @@ class Creatable extends Component {
         }, 1000);
     };
     render() {
-        const { isLoading, colourOptions, currentValue } = this.props;
+        const { handleSubmit, isLoading, colourOptions, currentValue } = this.props;
+        const renderCreatableSelect = (props) => {
+            return <CreatableSelect
+                {...props}
+                // isClearable
+                isDisabled={isLoading}
+                isLoading={isLoading}
+                onChange={this.props.optionChange}
+                onCreateOption={this.props.openFormModal}
+                options={colourOptions}
+                value={currentValue}
+            />
+        }
         return (
             <div>
-                <form>
+                <form onSubmit={handleSubmit(this.onSubmit)}>
                     <Field
                         name='creatableSelect'
-                        component={<CreatableSelect
-                            // isClearable
-                            isDisabled={isLoading}
-                            isLoading={isLoading}
-                            onChange={this.props.optionChange}
-                            onCreateOption={this.props.openFormModal}
-                            options={colourOptions}
-                            value={currentValue}
-                        />} 
-                        />
+                        component={renderCreatableSelect}
+                    />
                 </form>
             </div>
 
