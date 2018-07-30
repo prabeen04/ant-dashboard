@@ -20,10 +20,10 @@ export const newOptionCreate = (inputValue) => dispatch => {
     })
 }
 export const openFormModal = (inputValue) => dispatch => {
-    const newOption = createOption(inputValue);
+    // const newOption = createOption(inputValue);
     return dispatch({
         type: OPEN_FORM_MODAL,
-        payload: newOption
+        payload: inputValue
     })
 }
 export const closeFormModal = () => dispatch => {
