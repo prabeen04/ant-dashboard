@@ -21,6 +21,10 @@ class SelectFormModal extends Component {
                             <div className="form-items">
                                 <p>{currentValue.label && currentValue.label}</p>
                             </div>
+                            <Field
+                                name='newValue'
+                                component="input"
+                                value={this.props.newCreatedValue} />
                             <div className="form-buttons">
                                 <Button key="back" onClick={this.props.closeFormModal}>Return</Button>
                                 <Button key="submit" type="primary" onClick={this.props.newOptionCreate}>Submit</Button>
@@ -40,7 +44,8 @@ SelectFormModal = reduxForm({
 const mapStateToProps = state => {
     return {
         isFormModalOpen: state.selectReducer.isFormModalOpen,
-        currentValue: state.selectReducer.currentValue
+        currentValue: state.selectReducer.currentValue,
+        newCreatedValue: state.selectReducer.newCreatedValue
     }
 }
 const mapDispatchToProps = dispatch => {
