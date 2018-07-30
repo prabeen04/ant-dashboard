@@ -30,15 +30,23 @@ class Creatable extends Component {
     render() {
         const { isLoading, colourOptions, currentValue } = this.props;
         return (
-            <CreatableSelect
-                // isClearable
-                isDisabled={isLoading}
-                isLoading={isLoading}
-                onChange={this.props.optionChange}
-                onCreateOption={this.props.openFormModal}
-                options={colourOptions}
-                value={currentValue}
-            />
+            <div>
+                <form>
+                    <Field
+                        name='creatableSelect'
+                        component={<CreatableSelect
+                            // isClearable
+                            isDisabled={isLoading}
+                            isLoading={isLoading}
+                            onChange={this.props.optionChange}
+                            onCreateOption={this.props.openFormModal}
+                            options={colourOptions}
+                            value={currentValue}
+                        />} 
+                        />
+                </form>
+            </div>
+
         );
     }
 }
