@@ -58,7 +58,10 @@ const mapStateToProps = state => {
     return {
         isFormModalOpen: state.selectReducer.isFormModalOpen,
         currentValue: state.selectReducer.currentValue,
-        newCreatedValue: state.selectReducer.newCreatedValue
+        newCreatedValue: state.selectReducer.newCreatedValue,
+        initialValues: {
+            newValue: state.selectReducer.newCreatedValue,
+        }
     }
 }
 const mapDispatchToProps = dispatch => {
