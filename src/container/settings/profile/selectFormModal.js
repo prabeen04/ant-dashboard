@@ -33,7 +33,7 @@ class SelectFormModal extends Component {
                                 />
                             <div className="form-buttons">
                                 <Button key="back" onClick={closeFormModal}>Return</Button>
-                                <Button key="submit" type="primary">Submit</Button>
+                                <Button htmlType="submit" type="primary">Submit</Button>
                             </div>
                         </form>
                     </div>
