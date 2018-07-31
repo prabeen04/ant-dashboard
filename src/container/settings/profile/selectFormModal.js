@@ -4,6 +4,7 @@ import { bindActionCreators } from "redux";
 import { reduxForm, Field } from "redux-form";
 import { Modal, Button } from 'antd';
 import { closeFormModal, newOptionCreate } from "../../../actions/selectAction";
+import TextInput from '../../../components/common/forms/textInput';
 import '../settings.css'
 class SelectFormModal extends Component {
     constructor(props) {
@@ -15,7 +16,7 @@ class SelectFormModal extends Component {
         this.props.newOptionCreate(values.newValue)
     }
     renderInput = ({input}) => {
-        return <input
+        return <TextInput
             {...input}
             onChange={(value) => input.onChange(value)}
             value={input.value}

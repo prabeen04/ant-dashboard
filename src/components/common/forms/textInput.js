@@ -10,7 +10,7 @@ class TextInput extends Component {
   render() {
     return (
       <div>
-        <input type="text" placeholder={this.props.placeholder} />
+        <input type="text" {...this.props} />
       </div>
     )
   }
