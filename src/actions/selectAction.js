@@ -21,6 +21,7 @@ export const newOptionCreate = (inputValue) => dispatch => {
     })
 }
 export const openFormModal = (inputValue) => dispatch => {
+    console.log(inputValue)
     // const newOption = createOption(inputValue);
     return dispatch({
         type: OPEN_FORM_MODAL,

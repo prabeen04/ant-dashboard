@@ -16,10 +16,10 @@ class SelectFormModal extends Component {
     renderInput = ({input, ...custom}) => {
         return <input
             {...custom}
-            // {...input}
+            {...input}
             onChange={(value) => input.onChange(value)}
-            // value={custom.custom}
-            type='text'
+            value={this.props.newCreatedValue}
+            onBlur={() => input.onBlur(input.value)}
             />
     }
     render() {
@@ -41,7 +41,6 @@ class SelectFormModal extends Component {
                             <Field
                                 name='newValue'
                                 component={this.renderInput}
-                                custom={newCreatedValue}
                             />
                             <div className="form-buttons">
                                 <Button key="back" onClick={closeFormModal}>Return</Button>&nbsp;&nbsp;
