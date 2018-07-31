@@ -19,10 +19,10 @@ class Creatable extends Component {
             // isClearable
             // isDisabled={this.props.isLoading}
             isLoading={this.props.isLoading}
-            // onChange={this.props.optionChange}
+            onChange={(value) => input.onChange(value)}
             onCreateOption={this.props.openFormModal}
             options={this.props.colourOptions}
-            value={this.props.currentValue}
+            value={input.value}
             onBlur={() => input.onBlur(input.value)}
         // value={custom.custom}
         />
@@ -70,7 +70,10 @@ const mapStateToProps = state => {
     return {
         colourOptions: state.selectReducer.colourOptions,
         currentValue: state.selectReducer.currentValue,
-        isLoading: state.selectReducer.isLoading
+        isLoading: state.selectReducer.isLoading,
+        initialValues: {
+            creatableSelect: state.selectReducer.currentValue,
+        }
     }
 }
 const mapDispatchToProps = dispatch => {
