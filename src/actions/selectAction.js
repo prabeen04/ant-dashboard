@@ -15,14 +15,15 @@ const createOption = (label: string) => ({
 });
 
 export const newOptionCreate = (inputValue) => dispatch => {
+    const newOption = createOption(inputValue);
     console.log(inputValue)
     return dispatch({
-        type: NEW_OPTION_CREATE
+        type: NEW_OPTION_CREATE,
+        payload: newOption
     })
 }
 export const openFormModal = (inputValue) => dispatch => {
     console.log(inputValue)
-    // const newOption = createOption(inputValue);
     return dispatch({
         type: OPEN_FORM_MODAL,
         payload: inputValue
