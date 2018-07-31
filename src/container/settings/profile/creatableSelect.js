@@ -17,12 +17,12 @@ class Creatable extends Component {
             {...input}
             // {...custom}
             // isClearable
-            isDisabled={isLoading}
-            isLoading={isLoading}
+            isDisabled={this.props.isLoading}
+            isLoading={this.props.isLoading}
             onChange={this.props.optionChange}
             onCreateOption={this.props.openFormModal}
-            options={colourOptions}
-            value={currentValue}
+            options={this.props.colourOptions}
+            value={this.props.currentValue}
             onBlur={() => onBlur(value)}
             onBlur={() => input.onBlur(input.value)}
         // value={custom.custom}
