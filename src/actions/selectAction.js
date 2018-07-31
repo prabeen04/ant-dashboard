@@ -16,7 +16,7 @@ const createOption = (label: string) => ({
 
 export const newOptionCreate = (inputValue) => dispatch => {
     const newOption = createOption(inputValue);
-    console.log(inputValue)
+    console.log(newOption)
     return dispatch({
         type: NEW_OPTION_CREATE,
         payload: newOption

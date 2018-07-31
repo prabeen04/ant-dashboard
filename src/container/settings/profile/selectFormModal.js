@@ -12,6 +12,7 @@ class SelectFormModal extends Component {
     }
     onSubmit = (values) => {
         console.log(values)
+        this.props.newOptionCreate(values.newValue)
     }
     renderInput = ({input}) => {
         return <input
