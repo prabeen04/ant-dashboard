@@ -15,13 +15,13 @@ class SelectFormModal extends Component {
         console.log(values)
         this.props.newOptionCreate(values.newValue)
     }
-    renderInput = ({input}) => {
+    renderInput = ({ input }) => {
         return <TextInput
             {...input}
             onChange={(value) => input.onChange(value)}
             value={input.value}
             onBlur={() => input.onBlur(input.value)}
-            />
+        />
     }
     render() {
         const { handleSubmit, isFormModalOpen, currentValue, newOptionCreate, newCreatedValue, closeFormModal } = this.props;
@@ -37,12 +37,12 @@ class SelectFormModal extends Component {
                     <div className="form-modal">
                         <form onSubmit={handleSubmit(this.onSubmit)}>
                             <div className="form-items">
-                                <p>{newCreatedValue && newCreatedValue}</p>
+                                <Field
+                                    name='newValue'
+                                    component={this.renderInput}
+                                />
                             </div>
-                            <Field
-                                name='newValue'
-                                component={this.renderInput}
-                            />
+
                             <div className="form-buttons">
                                 <Button key="back" onClick={closeFormModal}>Return</Button>&nbsp;&nbsp;
                                 <Button htmlType="submit" type="primary">Submit</Button>
