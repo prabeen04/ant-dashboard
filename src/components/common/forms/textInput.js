@@ -19,7 +19,11 @@ export default TextInput;
 const styles = {
   input: {
     backgroundColor: '#fff',
-    outline: none,
-    padding: '0.5rem',
+    outline: 'none',
+    padding: '0.2rem 0.5rem',
+    border: 'none',
+    border: '1px solid #eee',
+    borderRadius: '0.3rem',
+    fontSize: '1.2rem',
   }
 }
