@@ -64,7 +64,8 @@ class Creatable extends Component {
     }
 }
 Creatable = reduxForm({
-    form: 'creatableForm'
+    form: 'creatableForm',
+    enableReinitialize: true
 })(Creatable)
 const mapStateToProps = state => {
     return {
