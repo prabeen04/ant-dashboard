@@ -9,15 +9,17 @@ class TextInput extends Component {
   }
   render() {
     return (
-      <div style={style.input}>
-        <input type="text" {...this.props} />
+      <div>
+        <input type="text" {...this.props} style={styles.input} />
       </div>
     )
   }
 }
 export default TextInput;
-const styles: {
+const styles = {
   input: {
-    backgroundColor: 'red'
+    backgroundColor: '#fff',
+    outline: none,
+    padding: '0.5rem',
   }
 }
