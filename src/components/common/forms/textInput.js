@@ -9,10 +9,15 @@ class TextInput extends Component {
   }
   render() {
     return (
-      <div>
+      <div style={style.input}>
         <input type="text" {...this.props} />
       </div>
     )
   }
 }
 export default TextInput;
+const styles: {
+  input: {
+    backgroundColor: 'red'
+  }
+}
