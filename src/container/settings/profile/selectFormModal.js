@@ -13,12 +13,11 @@ class SelectFormModal extends Component {
     onSubmit = (values) => {
         console.log(values)
     }
-    renderInput = ({input, ...custom}) => {
+    renderInput = ({input}) => {
         return <input
-            {...custom}
             {...input}
             onChange={(value) => input.onChange(value)}
-            value={this.props.newCreatedValue}
+            value={input.value}
             onBlur={() => input.onBlur(input.value)}
             />
     }
@@ -55,7 +54,8 @@ class SelectFormModal extends Component {
 }
 
 SelectFormModal = reduxForm({
-    form: 'selectForm'
+    form: 'selectForm',
+    enableReinitialize: true
 })(SelectFormModal)
 
 const mapStateToProps = state => {
