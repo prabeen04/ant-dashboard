@@ -32,9 +32,11 @@ class Creatable extends Component {
     };
     render() {
         const { handleSubmit, isLoading, colourOptions, currentValue } = this.props;
-        const renderCreatableSelect = (props) => {
+        const renderCreatableSelect = ({input, ...custom}) => {
+            const { value, onBlur, onChange } = input;
             return <CreatableSelect
-                {...props.input}
+                {...input}
+                // {...custom}
                 // isClearable
                 isDisabled={isLoading}
                 isLoading={isLoading}
@@ -42,6 +44,8 @@ class Creatable extends Component {
                 onCreateOption={this.props.openFormModal}
                 options={colourOptions}
                 value={currentValue}
+                onBlur={() =>{onBlur(value)}}
+                // value={custom.custom}
             />
         }
         return (
