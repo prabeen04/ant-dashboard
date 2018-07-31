@@ -11,7 +11,24 @@ const createOption = (label: string) => ({
     value: label.toLowerCase().replace(/\W/g, ''),
 });
 class Creatable extends Component {
-    onSubmit = (values) =>{
+    renderCreatableSelect = ({ input, ...custom }) => {
+        const { value, onBlur, onChange } = input;
+        return <CreatableSelect
+            {...input}
+            // {...custom}
+            // isClearable
+            isDisabled={isLoading}
+            isLoading={isLoading}
+            onChange={this.props.optionChange}
+            onCreateOption={this.props.openFormModal}
+            options={colourOptions}
+            value={currentValue}
+            onBlur={() => onBlur(value)}
+            onBlur={() => input.onBlur(input.value)}
+        // value={custom.custom}
+        />
+    }
+    onSubmit = (values) => {
         console.log(values)
     }
     handleCreate = (inputValue: any) => {
@@ -32,30 +49,14 @@ class Creatable extends Component {
     };
     render() {
         const { handleSubmit, isLoading, colourOptions, currentValue } = this.props;
-        const renderCreatableSelect = ({input, ...custom}) => {
-            const { value, onBlur, onChange } = input;
-            return <CreatableSelect
-                {...input}
-                // {...custom}
-                // isClearable
-                isDisabled={isLoading}
-                isLoading={isLoading}
-                onChange={this.props.optionChange}
-                onCreateOption={this.props.openFormModal}
-                options={colourOptions}
-                value={currentValue}
-                onBlur={() =>{onBlur(value)}}
-                // value={custom.custom}
-            />
-        }
         return (
             <div>
                 <form onSubmit={handleSubmit(this.onSubmit)}>
                     <Field
                         name='creatableSelect'
-                        component={renderCreatableSelect}
+                        component={this.renderCreatableSelect}
                     />
-                    <Button htmlType='submit' type='primary'>Submit</Button>    
+                    <Button htmlType='submit' type='primary'>Submit</Button>
 
                 </form>
             </div>
