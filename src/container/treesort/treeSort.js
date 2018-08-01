@@ -7,7 +7,7 @@ class TreeSort extends Component {
         super(props);
 
         this.state = {
-            treeData: [{ title: 'Chicken', children: [{ title: 'Egg' }] }],
+            treeData: [{ title: 'Chicken', children: [{ title: 'Egg' },{ title: 'Fish' }] },{ title: 'Chicken', children: [{ title: 'Egg' },{ title: 'Fish' }] }],
         };
     }
     render() {
@@ -15,7 +15,10 @@ class TreeSort extends Component {
             <div style={{ height: 400 }}>
                 <SortableTree
                     treeData={this.state.treeData}
-                    onChange={treeData => this.setState({ treeData })}
+                    onChange={treeData =>{ 
+                        console.log(this.state)
+                        this.setState({ treeData })
+                    }}
                 />
             </div>
         )
