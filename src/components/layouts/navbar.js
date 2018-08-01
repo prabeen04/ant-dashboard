@@ -17,6 +17,7 @@ import DND from '../../container/DND/DND';
 import Charts from '../../container/charts/charts';
 import MyMap from '../../container/map/map';
 import Drag from "../../container/drag/drag";
+import TreeSort from '../../container/treesort/treeSort';
 import GooglePlace from '../google/googlePlace';
 import AppBoundary from '../../errorHandler/appBoundary';
 import NotificationPopover from '../popover/notificationPopover';
@@ -92,6 +93,7 @@ class Navbar extends React.Component {
                             {/* </AppBoundary> */}
                             <Route exact path='/map' component={MyMap} />
                             <Route exact path='/drag' component={Drag} />
+                            <Route exact path='/tree' component={TreeSort} />
                             <Route path='**' component={NotFound} />
                         </Switch>
                     </Content>

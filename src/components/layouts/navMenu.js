@@ -89,6 +89,12 @@ class NavMenu extends React.Component {
                             <span>Drag</span>
                         </Link>
                     </Menu.Item>
+                    <Menu.Item key="12">
+                        <Link to='/tree'>
+                            <Icon type="edit" />
+                            <span>Sort Tree</span>
+                        </Link>
+                    </Menu.Item>
                 </Menu>
             </div>
         );
