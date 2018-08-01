@@ -7,7 +7,7 @@ class TreeSort extends Component {
         super(props);
 
         this.state = {
-            treeData: [{ title: 'Chicken', children: [{ title: 'Egg' },{ title: 'Fish' }] },{ title: 'Chicken', children: [{ title: 'Egg' },{ title: 'Fish' }] }],
+            treeData: [{ title: 'Non-Veg', children: [{ title: 'Egg' },{ title: 'Fish' }] },{ title: 'Veg', children: [{ title: 'Paneer' },{ title: 'Mushroom' }] }],
         };
     }
     render() {
