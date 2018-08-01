@@ -12,8 +12,11 @@ class TreeSort extends Component {
     }
     render() {
         return (
-            <div>
-                <h3>TreeSort Component</h3>
+            <div style={{ height: 400 }}>
+                <SortableTree
+                    treeData={this.state.treeData}
+                    onChange={treeData => this.setState({ treeData })}
+                />
             </div>
         )
     }
