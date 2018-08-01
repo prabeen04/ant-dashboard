@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import './forms.css';
 /* 
 Custom Text Input
 */
@@ -10,7 +11,7 @@ class TextInput extends Component {
   render() {
     return (
       <div>
-        <input type="text" {...this.props} style={styles.input} />
+        <input type="text" {...this.props} className="text-input"/>
       </div>
     )
   }

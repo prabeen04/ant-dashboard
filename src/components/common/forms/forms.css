@@ -1,0 +1,16 @@
+.text-input{
+    background: #fff;
+    outline: none;
+    padding: 0.2rem 0.5rem;
+    border:none;
+    border: 1px solid #eee;
+    border-radius: 0.3rem;
+    font-size: 1.2rem;
+    transition: 0.2s all ease-in-out;
+}
+.text-input:hover {
+box-shadow: 2px 2px 4px 8px #aaa;
+}
+.text-input:focus {
+    background: #ddd;
+}
