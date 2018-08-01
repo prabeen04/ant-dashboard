@@ -17,6 +17,7 @@ class SelectFormModal extends Component {
     }
     renderInput = ({ input }) => {
         return <TextInput
+            placeholder={'Create New Value...'}
             {...input}
             onChange={(value) => input.onChange(value)}
             value={input.value}
