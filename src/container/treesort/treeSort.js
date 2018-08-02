@@ -17,6 +17,8 @@ class TreeSort extends Component {
                     treeData={this.state.treeData}
                     onChange={treeData =>{ 
                         console.log(this.state)
+                        console.log('this.state')
+                        console.log(treeData)
                         this.setState({ treeData })
                     }}
                 />
