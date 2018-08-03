@@ -4,7 +4,7 @@ import Loadable  from 'react-loadable';
 import { Layout, Menu, Icon, Badge, Table } from 'antd';
 import './navbar.css';
 import BundleLoading from '../loading/bundleLoading'
-// import NavMenu from './navMenu';
+import NavMenu from './navMenu';
 // import Dashboard from '../../container/dashboard/dashboard';
 // import Calendar from '../../container/calendar/calendar';
 // import Profile from '../../container/profile/profile';
@@ -25,10 +25,10 @@ import AppBoundary from '../../errorHandler/appBoundary';
 import NotificationPopover from '../popover/notificationPopover';
 const { Header, Sider, Content } = Layout;
 
-const AsyncNavMenu = Loadable({
-    loader: () => import('./navMenu'),
-    loading: BundleLoading
-})
+// const AsyncNavMenu = Loadable({
+//     loader: () => import('./navMenu'),
+//     loading: BundleLoading
+// })
 const AsyncDashboard = Loadable({
     loader: () => import('../../container/dashboard/dashboard'),
     loading: BundleLoading
@@ -111,7 +111,7 @@ class Navbar extends React.Component {
                     <div className="logo">
                         <h2>Ant {!this.state.collapsed && <span> Dashboard</span>}</h2>
                     </div>
-                    <AsyncNavMenu
+                    <NavMenu
                         collapsed={this.state.collapsed}
                         toggleCollapsed={this.toggle} />
                 </Sider>

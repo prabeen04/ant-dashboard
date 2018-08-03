@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
-import Navbar from './components/layouts/navbar';
+import Loadable from "react-loadable";
+// import Navbar from './components/layouts/navbar';
 import './App.css';
-
+const AsyncNavbar = Loadable({
+  loader: () => import('./components/layouts/navbar'),
+  loading: () => <p>Loading...............</p>
+})
 const App = (props) => {
   return (
     <div className="wrapper">
-      <Navbar />
+      <AsyncNavbar />
     </div>
   );
 }
