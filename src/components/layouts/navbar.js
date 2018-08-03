@@ -15,10 +15,10 @@ import NotFound from '../../container/notFound/notFound';
 // import Forms from '../../container/forms/forms';
 // import Tables from '../../container/tables/tables';
 // import Settings from '../../container/settings/settings';
-import DND from '../../container/DND/DND';
-import Charts from '../../container/charts/charts';
-import MyMap from '../../container/map/map';
-import Drag from "../../container/drag/drag";
+// import DND from '../../container/DND/DND';
+// import Charts from '../../container/charts/charts';
+// import MyMap from '../../container/map/map';
+// import Drag from "../../container/drag/drag";
 import TreeSort from '../../container/treesort/treeSort';
 import GooglePlace from '../google/googlePlace';
 import AppBoundary from '../../errorHandler/appBoundary';
@@ -42,7 +42,7 @@ const AsyncPost = Loadable({
     loading: BundleLoading
 })
 const AsyncDND = Loadable({
-    loader: () => import('../../container/post/singlePost'),
+    loader: () => import('../../container/DND/DND'),
     loading: BundleLoading
 })
 const AsyncForms = Loadable({
@@ -57,10 +57,6 @@ const AsyncSettings = Loadable({
     loader: () => import('../../container/settings/settings'),
     loading: BundleLoading
 })
-const AsyncDND = Loadable({
-    loader: () => import('../../container/DND/DND'),
-    loading: BundleLoading
-})
 const AsyncCharts = Loadable({
     loader: () => import('../../container/charts/charts'),
     loading: BundleLoading
@@ -71,6 +67,10 @@ const AsyncMyMap = Loadable({
 })
 const AsyncDrag = Loadable({
     loader: () => import('../../container/drag/drag'),
+    loading: BundleLoading
+})
+const AsyncSinglePost = Loadable({
+    loader: () => import('../../container/post/singlePost'),
     loading: BundleLoading
 })
 class Navbar extends React.Component {
