@@ -5,16 +5,16 @@ import { Layout, Menu, Icon, Badge, Table } from 'antd';
 import './navbar.css';
 import BundleLoading from '../loading/bundleLoading'
 import NavMenu from './navMenu';
-import Dashboard from '../../container/dashboard/dashboard';
-import Calendar from '../../container/calendar/calendar';
-import Profile from '../../container/profile/profile';
-import Post from '../../container/post/post';
-import SinglePost from '../../container/post/singlePost';
+// import Dashboard from '../../container/dashboard/dashboard';
+// import Calendar from '../../container/calendar/calendar';
+// import Profile from '../../container/profile/profile';
+// import Post from '../../container/post/post';
+// import SinglePost from '../../container/post/singlePost';
 import Login from "../../container/login/login";
 import NotFound from '../../container/notFound/notFound';
-import Forms from '../../container/forms/forms';
-import Tables from '../../container/tables/tables';
-import Settings from '../../container/settings/settings';
+// import Forms from '../../container/forms/forms';
+// import Tables from '../../container/tables/tables';
+// import Settings from '../../container/settings/settings';
 import DND from '../../container/DND/DND';
 import Charts from '../../container/charts/charts';
 import MyMap from '../../container/map/map';
@@ -39,6 +39,22 @@ const AsyncProfile = Loadable({
 })
 const AsyncPost = Loadable({
     loader: () => import('../../container/post/post'),
+    loading: BundleLoading
+})
+const AsyncSinglePost = Loadable({
+    loader: () => import('../../container/post/singlePost'),
+    loading: BundleLoading
+})
+const AsyncForms = Loadable({
+    loader: () => import('../../container/forms/forms'),
+    loading: BundleLoading
+})
+const AsyncTables = Loadable({
+    loader: () => import('../../container/profile/profile'),
+    loading: BundleLoading
+})
+const AsyncSettings = Loadable({
+    loader: () => import('../../container/tables/tables'),
     loading: BundleLoading
 })
 class Navbar extends React.Component {
@@ -101,10 +117,10 @@ class Navbar extends React.Component {
                             <Route exact path='/calendar' component={AsyncCalendar} />
                             <Route exact path='/profile' component={AsyncProfile} />
                             <Route exact path='/post' component={AsyncPost} />
-                            <Route exact path='/post/:id' component={SinglePost} />
-                            <Route exact path='/forms' component={Forms} />
-                            <Route exact path='/tables' component={Tables} />
-                            <Route exact path='/settings' component={Settings} />
+                            <Route exact path='/post/:id' component={AsyncSinglePost} />
+                            <Route exact path='/forms' component={AsyncForms} />
+                            <Route exact path='/tables' component={AsyncTables} />
+                            <Route exact path='/settings' component={AsyncSettings} />
                             <Route exact path='/dnd' component={DND} />
                             {/* <AppBoundary> */}
                             <Route exact path='/charts' component={Charts} />
