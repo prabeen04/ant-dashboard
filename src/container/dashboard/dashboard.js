@@ -52,7 +52,7 @@ class Dashboard extends Component {
         {/* <TransitionComponent/> */}
         {/* <FunnelChart/> */}
         {/* <LoginWithGoogle /> */}
-        {/* <GooglePlace/> */}
+        <GooglePlace/>
         <Charts />
         <Settings />
         <Card loading={this.state.isLoading} style={{ height: '400px' }}>

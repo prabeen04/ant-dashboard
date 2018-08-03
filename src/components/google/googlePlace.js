@@ -18,13 +18,16 @@ class GooglePlace extends Component {
     handleSelect = (address) => {
         this.props.setGoogleAddress(address)
         geocodeByAddress(address)
-            .then(results => getLatLng(results[0]))
+            .then(results => {
+                console.log(results)
+                getLatLng(results[0])
+            })
             .then(latLng => console.log('Success', latLng))
             .catch(error => console.error('Error', error))
     }
     render() {
         return (
-            <div style={{width: 400}}>
+            <div style={{ width: 400 }}>
                 <h3>{this.props.address}</h3>
                 <PlacesAutocomplete
                     value={this.state.address}
@@ -56,14 +59,14 @@ class GooglePlace extends Component {
                         </div>
                     )}
                 </PlacesAutocomplete>
-                <br/>
+                <br />
             </div>
         )
     }
 }
 
 const mapStateToProps = state => {
-    return{
+    return {
         address: state.googleReducer.address
     }
 }
