@@ -41,7 +41,7 @@ const AsyncPost = Loadable({
     loader: () => import('../../container/post/post'),
     loading: BundleLoading
 })
-const AsyncSinglePost = Loadable({
+const AsyncDND = Loadable({
     loader: () => import('../../container/post/singlePost'),
     loading: BundleLoading
 })
@@ -55,6 +55,22 @@ const AsyncTables = Loadable({
 })
 const AsyncSettings = Loadable({
     loader: () => import('../../container/settings/settings'),
+    loading: BundleLoading
+})
+const AsyncDND = Loadable({
+    loader: () => import('../../container/DND/DND'),
+    loading: BundleLoading
+})
+const AsyncCharts = Loadable({
+    loader: () => import('../../container/charts/charts'),
+    loading: BundleLoading
+})
+const AsyncMyMap = Loadable({
+    loader: () => import('../../container/map/map'),
+    loading: BundleLoading
+})
+const AsyncDrag = Loadable({
+    loader: () => import('../../container/drag/drag'),
     loading: BundleLoading
 })
 class Navbar extends React.Component {
@@ -121,12 +137,12 @@ class Navbar extends React.Component {
                             <Route exact path='/forms' component={AsyncForms} />
                             <Route exact path='/tables' component={AsyncTables} />
                             <Route exact path='/settings' component={AsyncSettings} />
-                            <Route exact path='/dnd' component={DND} />
+                            <Route exact path='/dnd' component={AsyncDND} />
                             {/* <AppBoundary> */}
-                            <Route exact path='/charts' component={Charts} />
+                            <Route exact path='/charts' component={AsyncCharts} />
                             {/* </AppBoundary> */}
-                            <Route exact path='/map' component={MyMap} />
-                            <Route exact path='/drag' component={Drag} />
+                            <Route exact path='/map' component={AsyncMyMap} />
+                            <Route exact path='/drag' component={AsyncDrag} />
                             <Route exact path='/tree' component={TreeSort} />
                             <Route path='**' component={NotFound} />
                         </Switch>
