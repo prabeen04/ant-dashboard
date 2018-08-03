@@ -50,11 +50,11 @@ const AsyncForms = Loadable({
     loading: BundleLoading
 })
 const AsyncTables = Loadable({
-    loader: () => import('../../container/profile/profile'),
+    loader: () => import('../../container/tables/tables'),
     loading: BundleLoading
 })
 const AsyncSettings = Loadable({
-    loader: () => import('../../container/tables/tables'),
+    loader: () => import('../../container/settings/settings'),
     loading: BundleLoading
 })
 class Navbar extends React.Component {
