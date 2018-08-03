@@ -1,7 +1,9 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
+import {Loadable } from 'react-loadable';
 import { Layout, Menu, Icon, Badge, Table } from 'antd';
 import './navbar.css';
+import BundleLoading from '../loading/bundleLoading'
 import NavMenu from './navMenu';
 import Dashboard from '../../container/dashboard/dashboard';
 import Calendar from '../../container/calendar/calendar';
@@ -23,6 +25,11 @@ import AppBoundary from '../../errorHandler/appBoundary';
 import NotificationPopover from '../popover/notificationPopover';
 const { Header, Sider, Content } = Layout;
 
+const AsyncDashboard = Loadable({
+    loader: () => import('../../container/dashboard/dashboard'),
+    loading: BundleLoading
+    }
+})
 class Navbar extends React.Component {
     constructor(props) {
         super(props)
@@ -79,7 +86,7 @@ class Navbar extends React.Component {
 
                     <Content>
                         <Switch>
-                            <Route exact path='/' component={Dashboard} />
+                            <Route exact path='/' component={AsyncDashboard} />
                             <Route exact path='/calendar' component={Calendar} />
                             <Route exact path='/profile' component={Profile} />
                             <Route exact path='/post' component={Post} />
