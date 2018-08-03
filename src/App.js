@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import Loadable from "react-loadable";
-import Navbar from './components/layouts/navbar';
+// import Navbar from './components/layouts/navbar';
 import './App.css';
-import BundleLoading from './components/loading/bundleLoading'; 
+import AppLoading from './components/loading/appLoading'; 
 
 const AsyncNavbar = Loadable({
   loader: () => import('./components/layouts/navbar'),
-  loading: BundleLoading
+  loading: AppLoading,
+  delay: 5000,
+  timeout: 5000
 })
 const App = (props) => {
   return (
