@@ -91,7 +91,7 @@ class NavMenu extends React.Component {
                     </Menu.Item>
                     <Menu.Item key="12">
                         <Link to='/tree'>
-                            <Icon type="edit" />
+                            <Icon type="plus" />
                             <span>Sort Tree</span>
                         </Link>
                     </Menu.Item>

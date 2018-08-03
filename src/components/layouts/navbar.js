@@ -73,6 +73,14 @@ const AsyncSinglePost = Loadable({
     loader: () => import('../../container/post/singlePost'),
     loading: BundleLoading
 })
+const AsyncTreeSort = Loadable({
+    loader: () => import('../../container/treesort/treeSort'),
+    loading: BundleLoading
+})
+const AsyncNotFound = Loadable({
+    loader: () => import('../../container/notFound/notFound'),
+    loading: BundleLoading
+})
 class Navbar extends React.Component {
     constructor(props) {
         super(props)
@@ -143,8 +151,8 @@ class Navbar extends React.Component {
                             {/* </AppBoundary> */}
                             <Route exact path='/map' component={AsyncMyMap} />
                             <Route exact path='/drag' component={AsyncDrag} />
-                            <Route exact path='/tree' component={TreeSort} />
-                            <Route path='**' component={NotFound} />
+                            <Route exact path='/tree' component={AsyncTreeSort} />
+                            <Route path='**' component={AsyncNotFound} />
                         </Switch>
                     </Content>
                 </Layout>
