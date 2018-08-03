@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import {Loadable } from 'react-loadable';
+import Loadable  from 'react-loadable';
 import { Layout, Menu, Icon, Badge, Table } from 'antd';
 import './navbar.css';
 import BundleLoading from '../loading/bundleLoading'
@@ -28,7 +28,18 @@ const { Header, Sider, Content } = Layout;
 const AsyncDashboard = Loadable({
     loader: () => import('../../container/dashboard/dashboard'),
     loading: BundleLoading
-    }
+})
+const AsyncCalendar = Loadable({
+    loader: () => import('../../container/calendar/calendar'),
+    loading: BundleLoading
+})
+const AsyncProfile = Loadable({
+    loader: () => import('../../container/profile/profile'),
+    loading: BundleLoading
+})
+const AsyncPost = Loadable({
+    loader: () => import('../../container/post/post'),
+    loading: BundleLoading
 })
 class Navbar extends React.Component {
     constructor(props) {
@@ -87,9 +98,9 @@ class Navbar extends React.Component {
                     <Content>
                         <Switch>
                             <Route exact path='/' component={AsyncDashboard} />
-                            <Route exact path='/calendar' component={Calendar} />
-                            <Route exact path='/profile' component={Profile} />
-                            <Route exact path='/post' component={Post} />
+                            <Route exact path='/calendar' component={AsyncCalendar} />
+                            <Route exact path='/profile' component={AsyncProfile} />
+                            <Route exact path='/post' component={AsyncPost} />
                             <Route exact path='/post/:id' component={SinglePost} />
                             <Route exact path='/forms' component={Forms} />
                             <Route exact path='/tables' component={Tables} />
