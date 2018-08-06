@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
 class ReuseForm extends Component {
   render() {
     return (
@@ -10,4 +11,4 @@ class ReuseForm extends Component {
   }
 }
 
-export default ReuseForm;
+export default connect(mapStateToProps, mapDispatchToProps)(ReuseForm);
