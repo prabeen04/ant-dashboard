@@ -2,7 +2,7 @@ import React from 'react'
 import ContentLoader from "react-content-loader"
 
 export default (props) => (
-    <div style={{width: '100vw', height: '100vh'}}>
+    <div>
         <ContentLoader
             height={160}
             width={400}
