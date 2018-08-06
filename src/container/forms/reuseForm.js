@@ -6,7 +6,10 @@ class ReuseForm extends Component {
     render() {
         return (
             <div>
-
+                <form>
+                    <Field name="field1" component="input" />
+                    <button>Submit</button>
+                </form>
             </div>
         )
     }
