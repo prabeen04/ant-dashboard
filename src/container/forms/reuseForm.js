@@ -17,6 +17,7 @@ class ReuseForm extends Component {
             <div>
                 <form onSubmit={handleSubmit(this.onSubmit)}>
                     <Field name="field1" component={this.renderInput} />
+                    <Field name="field2" component={this.renderInput} />
                     <button>Submit</button>
                 </form>
             </div>
