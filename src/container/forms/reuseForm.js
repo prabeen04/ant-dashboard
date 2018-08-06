@@ -5,7 +5,7 @@ import { reduxForm, Field } from "redux-form";
 import TextInput from '../../components/common/forms/textInput';
 class ReuseForm extends Component {
     onSubmit = values => console.log(values)
-    renderInput = ({input, meta, label}) => (
+    renderInput = ({input, meta, label, ...custom}) => (
         <div >
             <label>{label}</label>
             <TextInput  {...input} />
