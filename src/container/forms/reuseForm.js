@@ -5,9 +5,9 @@ import { reduxForm, Field } from "redux-form";
 import TextInput from '../../components/common/forms/textInput';
 class ReuseForm extends Component {
     onSubmit = values => console.log(values)
-    renderInput = ({input, meta}) => (
+    renderInput = ({input, meta, label}) => (
         <div >
-            <label>Field1</label>
+            <label>{label}</label>
             <TextInput  {...input} />
         </div>
     )
@@ -16,8 +16,8 @@ class ReuseForm extends Component {
         return (
             <div>
                 <form onSubmit={handleSubmit(this.onSubmit)}>
-                    <Field name="field1" component={this.renderInput} />
-                    <Field name="field2" component={this.renderInput} />
+                    <Field name="field1" component={this.renderInput} label='Field1'/>
+                    <Field name="field2" component={this.renderInput} label='Field2' />
                     <button>Submit</button>
                 </form>
             </div>
