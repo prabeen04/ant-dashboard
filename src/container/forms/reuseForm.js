@@ -4,10 +4,10 @@ import { bindActionCreators } from "redux";
 import { reduxForm, Field } from "redux-form";
 class ReuseForm extends Component {
     onSubmit = values => console.log(values)
-    renderInput = (props) => (
-        <div>
+    renderInput = ({input, meta} ...custom) => (
+        <div >
             <label>Field1</label>
-            <input type="text"/>
+            <input type="text" {...input} />
         </div>
     )
     render() {
