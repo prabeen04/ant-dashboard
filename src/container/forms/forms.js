@@ -10,7 +10,7 @@ import ExampleForm from './exampleForm';
 import FieldArraysForm from './fieldArraysForm';
 import SecondArrayForm from './secondArrayForm';
 import ThirdArrayForm from './thirdArrayForm';
-
+import ReuseForm from './reuseForm';
 class Forms extends Component {
   render() {
     return (
@@ -28,10 +28,11 @@ class Forms extends Component {
           <NewFormArray /> */}
           {/* <ExampleForm /> */}
           {/* <FieldArraysForm /> */}
-          <Divider />
-          <ReduxFormArray />
-          <SecondArrayForm />
+          {/* <Divider /> */}
+          {/* <ReduxFormArray /> */}
+          {/* <SecondArrayForm /> */}
           {/* <ThirdArrayForm /> */}
+          <ReuseForm/>
         </Card>
       </div>
     )
