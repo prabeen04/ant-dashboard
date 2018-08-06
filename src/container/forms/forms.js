@@ -7,7 +7,7 @@ import FormArray from './formArray';
 import ReduxFormArray from './reduxFormArray';
 import NewFormArray from './newFormArray';
 import ExampleForm from './exampleForm';
-import FieldArraysForm from './test';
+import FieldArraysForm from './fieldArraysForm';
 import SecondArrayForm from './secondArrayForm';
 import ThirdArrayForm from './thirdArrayForm';
 
