@@ -2,12 +2,13 @@ import React, { Component } from 'react'
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { reduxForm, Field } from "redux-form";
+import TextInput from '../../components/common/forms/textInput';
 class ReuseForm extends Component {
     onSubmit = values => console.log(values)
-    renderInput = ({input, meta} ...custom) => (
+    renderInput = ({input, meta}) => (
         <div >
             <label>Field1</label>
-            <input type="text" {...input} />
+            <TextInput  {...input} />
         </div>
     )
     render() {
