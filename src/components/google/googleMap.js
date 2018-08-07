@@ -4,7 +4,7 @@ import { Map, InfoWindow, Marker, GoogleApiWrapper } from 'google-maps-react';
 class GoogleMap extends Component {
     render() {
         return (
-            <div>
+            <div style={{ height: 200, width: 200, margin: '3rem'}}>
                 <Map google={this.props.google} zoom={14}>
 
                     <Marker onClick={this.onMarkerClick}
@@ -12,7 +12,7 @@ class GoogleMap extends Component {
 
                     <InfoWindow onClose={this.onInfoWindowClose}>
                         <div>
-                            <h1>{this.state.selectedPlace.name}</h1>
+                            <h1>{'this.state.selectedPlace.name'}</h1>
                         </div>
                     </InfoWindow>
                 </Map>

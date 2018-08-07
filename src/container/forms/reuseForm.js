@@ -5,6 +5,7 @@ import { reduxForm, Field } from "redux-form";
 import { getLatLng, geocodeByAddress } from 'react-places-autocomplete';
 import TextInput from '../../components/common/forms/textInput';
 import PlaceInput from '../../components/common/forms/placeInput';
+import GoogleMap from '../../components/google/googleMap';
 class ReuseForm extends Component {
     onSubmit = values => console.log(values)
     
@@ -40,6 +41,9 @@ class ReuseForm extends Component {
                         onSelect={this.handleSelect}/>
                     <button>Submit</button>
                 </form>
+                <div>
+                <GoogleMap/>
+                </div>
             </div>
         )
     }
