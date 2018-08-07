@@ -33,7 +33,7 @@ class PlaceInput extends Component {
                         onSelect={onSelect}
                     >
                         {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (
-                            <div style={{ width}}>
+                            <div style={{ width: width || '100%'}}>
                                 <input
                                     {...getInputProps({
                                         placeholder:label,

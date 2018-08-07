@@ -9,6 +9,7 @@ class ReuseForm extends Component {
     onSubmit = values => console.log(values)
     
     handleSelect = address => {
+        console.log(this.props, address)
         geocodeByAddress(address)
             .then(results => getLatLng(results[0]))
             .then(latLng => console.log('Success', latLng))
@@ -35,7 +36,7 @@ class ReuseForm extends Component {
                         name="location"
                         component={PlaceInput}
                         label='Enter Event Location'
-                        width={400} 
+                        // width={400} 
                         onSelect={this.handleSelect}/>
                     <button>Submit</button>
                 </form>
