@@ -9,7 +9,7 @@ import GooglePlace from '../../components/google/googlePlace';
 import LoginWithGoogle from '../../components/google/googleLogin';
 import FunnelChart from '../../components/charts/funnelChart';
 import TransitionComponent from '../../components/animation/transition';
-
+import PlaceInput from '../../components/common/forms/placeInput';
 class Dashboard extends Component {
   constructor(props) {
     super(props)
@@ -52,7 +52,8 @@ class Dashboard extends Component {
         {/* <TransitionComponent/> */}
         {/* <FunnelChart/> */}
         {/* <LoginWithGoogle /> */}
-        <GooglePlace/>
+        {/* <GooglePlace/> */}
+        <PlaceInput/>
         <Charts />
         <Settings />
         <Card loading={this.state.isLoading} style={{ height: '400px' }}>
