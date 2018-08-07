@@ -14,10 +14,6 @@ class PlaceInput extends Component {
         console.log('script is loaded')
         this.setState({ isScriptLoaded: true })
     }
-    handleChange = address => {
-        this.setState({ address });
-    };
-
     render() {
         const { input, width, label, onSelect, meta:{touched, error}, ...rest} = this.props
         return (
@@ -28,8 +24,8 @@ class PlaceInput extends Component {
                 />
                 {this.state.isScriptLoaded &&
                     <PlacesAutocomplete
-                        value={this.state.address}
-                        onChange={this.handleChange}
+                        value={input.value}
+                        onChange={input.onChange}
                         onSelect={onSelect}
                     >
                         {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (

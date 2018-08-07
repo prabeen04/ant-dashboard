@@ -36,7 +36,7 @@ class ReuseForm extends Component {
                         name="location"
                         component={PlaceInput}
                         label='Enter Event Location'
-                        // width={400} 
+                        width={400} 
                         onSelect={this.handleSelect}/>
                     <button>Submit</button>
                 </form>
