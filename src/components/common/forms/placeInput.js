@@ -18,14 +18,8 @@ class PlaceInput extends Component {
         this.setState({ address });
     };
 
-    handleSelect = address => {
-        geocodeByAddress(address)
-            .then(results => getLatLng(results[0]))
-            .then(latLng => console.log('Success', latLng))
-            .catch(error => console.error('Error', error));
-    };
-
     render() {
+        const { input, width, label, onSelect, meta:{touched, error}, ...rest} = this.props
         return (
             <div>
                 <Script
@@ -36,13 +30,13 @@ class PlaceInput extends Component {
                     <PlacesAutocomplete
                         value={this.state.address}
                         onChange={this.handleChange}
-                        onSelect={this.handleSelect}
+                        onSelect={onSelect}
                     >
                         {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (
-                            <div style={{ width: 200}}>
+                            <div style={{ width}}>
                                 <input
                                     {...getInputProps({
-                                        placeholder: 'Search Places ...',
+                                        placeholder:label,
                                         className: 'location-search-input',
                                     })}
                                 />

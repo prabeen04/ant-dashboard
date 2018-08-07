@@ -2,10 +2,21 @@ import React, { Component } from 'react'
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { reduxForm, Field } from "redux-form";
+import { getLatLng, geocodeByAddress } from 'react-places-autocomplete';
 import TextInput from '../../components/common/forms/textInput';
+import PlaceInput from '../../components/common/forms/placeInput';
 class ReuseForm extends Component {
     onSubmit = values => console.log(values)
-    renderInput = ({input, meta, label, ...custom}) => (
+    
+    handleSelect = address => {
+        geocodeByAddress(address)
+            .then(results => getLatLng(results[0]))
+            .then(latLng => console.log('Success', latLng))
+            .then(() => this.props.change('location', address))
+            .catch(error => console.error('Error', error));
+    };
+
+    renderInput = ({ input, meta, label, ...custom }) => (
         <div >
             <label>{label}</label>
             <TextInput  {...input} />
@@ -16,8 +27,16 @@ class ReuseForm extends Component {
         return (
             <div>
                 <form onSubmit={handleSubmit(this.onSubmit)}>
-                    <Field name="field1" component={this.renderInput} label='Field1'/>
-                    <Field name="field2" component={this.renderInput} label='Field2' />
+                    <Field
+                        name="field1"
+                        component={this.renderInput}
+                        label='Event' />
+                    <Field
+                        name="location"
+                        component={PlaceInput}
+                        label='Enter Event Location'
+                        width={400} 
+                        onSelect={this.handleSelect}/>
                     <button>Submit</button>
                 </form>
             </div>
