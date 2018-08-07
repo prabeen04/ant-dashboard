@@ -1,9 +1,11 @@
-.location-search-input{
+.location-search-input,
+.location-search-input:focus,
+.location-search-input:hover{
     box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
     border: honeydew;
     display: block;
     width: 100%;
-    padding: 10px;
+    padding: 5px 10px;
     font-size: 16px;
     border-radius: 2px;
     outline: none;
@@ -23,7 +25,38 @@
     background-color: #fff;
     cursor: pointer;
   }
+  .suggestion-item:focus {
+    padding: 8px;
+    text-align: left;
+    background-color: #fff;
+    cursor: pointer;
+  }
+  .suggestion-item:hover {
+    padding: 8px;
+    text-align: left;
+    background-color: #fff;
+    cursor: pointer;
+  }
   
+  .suggestion-item--active:focus {
+    padding: 8px;
+    text-align: left;
+    background-color: #fff;
+    cursor: pointer;
+  }
+  .suggestion-item--active:hover {
+    padding: 8px;
+    text-align: left;
+    background-color: #fff;
+    cursor: pointer;
+  }
   .suggestion-item--active {
     background-color: #fafafa;
+  }
+  .form-group {
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5rem;
+    width: 50%;
   }

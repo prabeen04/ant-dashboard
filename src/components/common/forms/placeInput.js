@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Script from 'react-load-script';
 import PlacesAutocomplete, { geocodeByAddress, getLatLng } from 'react-places-autocomplete';
-
+import '../../google/google.css'
 class PlaceInput extends Component {
     constructor(props) {
         super(props)
@@ -29,7 +29,7 @@ class PlaceInput extends Component {
         return (
             <div>
                 <Script
-                    url="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"
+                    url="https://maps.googleapis.com/maps/api/js?key=AIzaSyAYl3tV8A0nsXc7TVHUTEFFHPE9fBmy03s&libraries=places"
                     onLoad={this.handleScriptLoad.bind(this)}
                 />
                 {this.state.isScriptLoaded &&
@@ -39,7 +39,7 @@ class PlaceInput extends Component {
                         onSelect={this.handleSelect}
                     >
                         {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (
-                            <div>
+                            <div style={{ width: 200}}>
                                 <input
                                     {...getInputProps({
                                         placeholder: 'Search Places ...',
