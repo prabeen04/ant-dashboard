@@ -8,6 +8,13 @@ import PlaceInput from '../../components/common/forms/placeInput';
 import UploadInput from '../../components/common/forms/uploadInput';
 import GoogleMap from '../../components/google/googleMap';
 class ReuseForm extends Component {
+    constructor(props){
+        super(props)
+
+        this.state= {
+            latLng: ''
+        }
+    }
     onSubmit = values => console.log(values)
 
     handleSelect = address => {
