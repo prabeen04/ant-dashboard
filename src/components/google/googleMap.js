@@ -5,7 +5,14 @@ class GoogleMap extends Component {
     render() {
         return (
             <div>
-                <Map google={this.props.google} zoom={14}>
+                <Map
+                    google={this.props.google}
+                    zoom={14}
+                    initialCenter={{
+                        lat: 40.854885,
+                        lng: -88.081807
+                    }}
+                >
 
                     <Marker onClick={this.onMarkerClick}
                         name={'Current location'} />
