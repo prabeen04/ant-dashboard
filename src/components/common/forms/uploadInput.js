@@ -2,10 +2,10 @@ import React, { Component } from 'react'
 import { Upload, message, Button, Icon } from 'antd';
 const props = {
     name: 'file',
-    action: '//jsonplaceholder.typicode.com/posts/',
-    headers: {
-        authorization: 'authorization-text',
-    },
+    action: 'http://46.249.53.111:8080/salesxl/api/v2.0/upload/image',
+    // headers: {
+    //     authorization: 'authorization-text',
+    // },
     onChange(info) {
         if (info.file.status !== 'uploading') {
             console.log(info.file, info.fileList);
