@@ -12,7 +12,7 @@ class ReuseForm extends Component {
         super(props)
 
         this.state= {
-            latLng: ''
+            latLng: null
         }
     }
     onSubmit = values => console.log(values)
@@ -60,7 +60,7 @@ class ReuseForm extends Component {
                     <button>Submit</button>
                 </form>
                 <div>
-                    <GoogleMap />
+                    <GoogleMap latLng={this.state.latLng}/>
                 </div>
             </div>
         )
