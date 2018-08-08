@@ -21,7 +21,12 @@ class ReuseForm extends Component {
         console.log(this.props, address)
         geocodeByAddress(address)
             .then(results => getLatLng(results[0]))
-            .then(latLng => console.log('Success', latLng))
+            .then(latLng => {
+                console.log('Success', latLng)
+                this.setState({
+                    latLng
+                })
+            })
             .then(() => this.props.change('location', address))
             .catch(error => console.error('Error', error));
     };
