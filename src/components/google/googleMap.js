@@ -7,12 +7,12 @@ class GoogleMap extends Component {
             <div>
                 <Map
                     google={this.props.google}
-                    zoom={6}
+                    zoom={13}
                     initialCenter={{
                         lat: 40.854885,
                         lng: -88.081807
                     }}
-                    // center= {this.props.latLng}
+                    center= {this.props.latLng}
                 >
 
                     <Marker onClick={this.onMarkerClick}
