@@ -5,7 +5,6 @@ import { reduxForm, Field } from "redux-form";
 import { getLatLng, geocodeByAddress } from 'react-places-autocomplete';
 import TextInput from '../../components/common/forms/textInput';
 import PlaceInput from '../../components/common/forms/placeInput';
-import UploadInput from '../../components/common/forms/uploadInput';
 import GoogleMap from '../../components/google/googleMap';
 class ReuseForm extends Component {
     constructor(props){
@@ -52,11 +51,6 @@ class ReuseForm extends Component {
                         label='Enter Event Location'
                         width={400}
                         onSelect={this.handleSelect} />
-                    <Field
-                        name="upload"
-                        component={UploadInput}
-                        latLng={this.state.latLng}
-                    />
                     <button>Submit</button>
                 </form>
                 <div>
