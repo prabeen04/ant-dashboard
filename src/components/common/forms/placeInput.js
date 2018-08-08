@@ -45,8 +45,7 @@ class PlaceInput extends Component {
                                         return (
                                             <div
                                                 {...getSuggestionItemProps(suggestion, {
-                                                    className,
-                                                    style,
+                                                    className
                                                 })}
                                             >
                                                 <span>{suggestion.description}</span>
