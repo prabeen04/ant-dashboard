@@ -7,16 +7,17 @@ class GoogleMap extends Component {
             <div>
                 <Map
                     google={this.props.google}
-                    zoom={14}
+                    zoom={6}
                     initialCenter={{
                         lat: 40.854885,
                         lng: -88.081807
                     }}
-                    center= {this.props.latLng}
+                    // center= {this.props.latLng}
                 >
 
                     <Marker onClick={this.onMarkerClick}
-                        name={'Current location'} />
+                        name={'Current location'} 
+                        position={this.props.latLng}/>
 
                     <InfoWindow onClose={this.onInfoWindowClose}>
                         <div>
