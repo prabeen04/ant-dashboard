@@ -55,6 +55,7 @@ class ReuseForm extends Component {
                     <Field
                         name="upload"
                         component={UploadInput}
+                        latLng={this.state.latLng}
                     />
                     <button>Submit</button>
                 </form>

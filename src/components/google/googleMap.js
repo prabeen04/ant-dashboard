@@ -12,6 +12,7 @@ class GoogleMap extends Component {
                         lat: 40.854885,
                         lng: -88.081807
                     }}
+                    center= {this.props.latLng}
                 >
 
                     <Marker onClick={this.onMarkerClick}
