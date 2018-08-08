@@ -5,10 +5,11 @@ import { reduxForm, Field } from "redux-form";
 import { getLatLng, geocodeByAddress } from 'react-places-autocomplete';
 import TextInput from '../../components/common/forms/textInput';
 import PlaceInput from '../../components/common/forms/placeInput';
+import UploadInput from '../../components/common/forms/uploadInput';
 import GoogleMap from '../../components/google/googleMap';
 class ReuseForm extends Component {
     onSubmit = values => console.log(values)
-    
+
     handleSelect = address => {
         console.log(this.props, address)
         geocodeByAddress(address)
@@ -37,12 +38,16 @@ class ReuseForm extends Component {
                         name="location"
                         component={PlaceInput}
                         label='Enter Event Location'
-                        width={400} 
-                        onSelect={this.handleSelect}/>
+                        width={400}
+                        onSelect={this.handleSelect} />
+                    <Field
+                        name="upload"
+                        component={UploadInput}
+                    />
                     <button>Submit</button>
                 </form>
                 <div>
-                <GoogleMap/>
+                    <GoogleMap />
                 </div>
             </div>
         )
