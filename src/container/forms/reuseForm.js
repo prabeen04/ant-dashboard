@@ -34,12 +34,12 @@ class ReuseForm extends Component {
                         name="field1"
                         component={this.renderInput}
                         label='Event' />
-                    {/* <Field
+                    <Field
                         name="location"
                         component={PlaceInput}
                         label='Enter Event Location'
                         width={400}
-                        onSelect={this.handleSelect} /> */}
+                        onSelect={this.handleSelect} />
                     <Field
                         name="upload"
                         component={UploadInput}
