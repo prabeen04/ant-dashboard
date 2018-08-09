@@ -4,7 +4,7 @@ import { Map, InfoWindow, Marker, GoogleApiWrapper } from 'google-maps-react';
 class GoogleMap extends Component {
     render() {
         return (
-            <div className='flex-container'>
+            <div>
                 <Map
                     google={this.props.google}
                     style={{ width: 800, height: 500 }}
@@ -18,10 +18,12 @@ class GoogleMap extends Component {
 
                     <Marker onClick={this.onMarkerClick}
                         name={'Current location'}
+                        title={'Default value'}
                         position={this.props.latLng} />
 
                     <Marker onClick={this.onMarkerClick}
                         name={'Current location'}
+                        title={'Searched value'}
                         position={{
                             lat: 40.854885,
                             lng: -88.081807

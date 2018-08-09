@@ -5,7 +5,9 @@ import { reduxForm, Field } from "redux-form";
 import { getLatLng, geocodeByAddress } from 'react-places-autocomplete';
 import TextInput from '../../components/common/forms/textInput';
 import PlaceInput from '../../components/common/forms/placeInput';
+import UploadInput from '../../components/common/forms/uploadInput';
 import GoogleMap from '../../components/google/googleMap';
+
 class ReuseForm extends Component {
     constructor(props){
         super(props)
@@ -54,6 +56,7 @@ class ReuseForm extends Component {
                     <button>Submit</button>
                 </form>
                 <div>
+                    <UploadInput/>
                     <GoogleMap latLng={this.state.latLng}/>
                 </div>
             </div>
