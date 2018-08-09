@@ -4,14 +4,9 @@ import axios from 'axios'
 class UploadInput extends Component {
     constructor(props) {
         super(props)
-
         this.state = {
             file: null
         }
-    }
-    beforeUpload = (file, fileList) => {
-        // this.setState({ file })
-        return;
     }
     onChange = (info) => {
         axios.post('http://46.249.53.111:8080/salesxl/api/v2.0/upload/image', info.file, {
@@ -38,7 +33,6 @@ class UploadInput extends Component {
                         .then(res => console.log(res))
                         .catch(err => 'some error occoured')
                     }}
-                    beforeUpload={this.beforeUpload}
                     onChange={this.onChange}
                     onPreview={(file)=>this.setState({file: file.url})}
                 >
