@@ -9,25 +9,26 @@ class UploadInput extends Component {
         }
     }
     onChange = (info) => {
-    //     const formData = new FormData();
-    //     formData.append('image', info.file, info.file.name)
-    //     console.log(formData)
-    //     axios.post('http://46.249.53.111:8080/salesxl/api/v2.0/upload/image', {formData}, Headers:{
+        //     const formData = new FormData();
+        //     formData.append('image', info.file, info.file.name)
+        //     console.log(formData)
+        //     axios.post('http://46.249.53.111:8080/salesxl/api/v2.0/upload/image', {formData}, Headers:{
 
-    // },)
-    //     .then(res => console.log(res))
-    //     .catch(err => console.log(err))
+        // },)
+        //     .then(res => console.log(res))
+        //     .catch(err => console.log(err))
         console.log(info)
-        if (info.file.status !== 'uploading') {
-            console.log(info.file, info.fileList);
-        }
-        if (info.file.status === 'done') {
-            message.success(`${info.file.name} file uploaded successfully`);
-        } else if (info.file.status === 'error') {
-            message.error(`${info.file.name} file upload failed.`);
-        }
+            this.setState({ file: info.file })
+            if (info.file.status !== 'uploading') {
+                console.log(info.file, info.fileList);
+            }
+            if (info.file.status === 'done') {
+                message.success(`${info.file.name} file uploaded successfully`);
+            } else if (info.file.status === 'error') {
+                message.error(`${info.file.name} file upload failed.`);
+            }
     }
-    handlePreview = (file) =>{
+    handlePreview = (file) => {
         console.log(file)
         this.setState({ file: file.url })
     }
