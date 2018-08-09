@@ -6,11 +6,11 @@ const props = {
     headers: {
         authorization: 'authorization-text',
     },
-    beforeUpload = (a, b, c) =>{
+    beforeUpload(a, b, c) {
         console.log(a)
         console.log(b)
         console.log(c)
-    }
+    },
     onChange(info) {
         if (info.file.status !== 'uploading') {
             console.log(info.file, info.fileList);
@@ -23,7 +23,13 @@ const props = {
     },
 };
 class UploadInput extends Component {
+    constructor(props) {
+        super(props)
 
+        this.state = {
+            file: null
+        }
+    }
     render() {
         return (
             <div>
@@ -32,6 +38,7 @@ class UploadInput extends Component {
                         <Icon type="upload" /> Click to Upload
                     </Button>
                 </Upload>
+                {this.state.file && <img src={this.state.file} alt="" />}
             </div>
         )
     }
