@@ -6,6 +6,11 @@ const props = {
     headers: {
         authorization: 'authorization-text',
     },
+    beforeUpload = (a, b, c) =>{
+        console.log(a)
+        console.log(b)
+        console.log(c)
+    }
     onChange(info) {
         if (info.file.status !== 'uploading') {
             console.log(info.file, info.fileList);
