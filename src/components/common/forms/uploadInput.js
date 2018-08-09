@@ -6,10 +6,8 @@ const props = {
     headers: {
         authorization: 'authorization-text',
     },
-    beforeUpload(a, b, c) {
-        console.log(a)
-        console.log(b)
-        console.log(c)
+    beforeUpload(file, fileList) {
+        this.setState({ file })
     },
     onChange(info) {
         if (info.file.status !== 'uploading') {
@@ -33,13 +31,17 @@ class UploadInput extends Component {
     render() {
         return (
             <div>
-                <Upload {...props}>
+                <Upload name='file'
+                    action='http://46.249.53.111:8080/salesxl/api/v2.0/upload/image'
+                    beforeUpload={this.beforeUpload}
+                    onChange={this.onChange}
+                >
                     <Button>
                         <Icon type="upload" /> Click to Upload
                     </Button>
                 </Upload>
                 {this.state.file && <img src={this.state.file} alt="" />}
-            </div>
+            </div >
         )
     }
 }
