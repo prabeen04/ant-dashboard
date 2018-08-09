@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Upload, message, Button, Icon } from 'antd';
-
+import axios from 'axios'
 class UploadInput extends Component {
     constructor(props) {
         super(props)
@@ -11,7 +11,8 @@ class UploadInput extends Component {
     }
     beforeUpload = (file, fileList) => {
         this.setState({ file })
-    },
+        return;
+    }
     onChange = (info) => {
         if (info.file.status !== 'uploading') {
             console.log(info.file, info.fileList);
@@ -26,7 +27,12 @@ class UploadInput extends Component {
         return (
             <div>
                 <Upload name='file'
-                    action='http://46.249.53.111:8080/salesxl/api/v2.0/upload/image'
+                    action={(file) => {
+                        console.log(file)
+                        axios.post('http://46.249.53.111:8080/salesxl/api/v2.0/upload/image')
+                        .then(res => res.json())
+                        .catch(err => 'some error occoured')
+                    }}
                     beforeUpload={this.beforeUpload}
                     onChange={this.onChange}
                 >

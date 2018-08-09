@@ -57,7 +57,7 @@ class ReuseForm extends Component {
                 </form>
                 <div>
                     <UploadInput/>
-                    <GoogleMap latLng={this.state.latLng}/>
+                    {/* <GoogleMap latLng={this.state.latLng}/> */}
                 </div>
             </div>
         )
