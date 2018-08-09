@@ -18,13 +18,17 @@ class UploadInput extends Component {
             message.error(`${info.file.name} file upload failed.`);
         }
     }
+    handlePreview = (file) =>{
+        console.log(file)
+        this.setState({ file: file.url })
+    }
     render() {
         return (
             <div>
                 <Upload name='file'
                     action='http://46.249.53.111:8080/salesxl/api/v2.0/upload/image'
                     onChange={this.onChange}
-                    onPreview={(file) => this.setState({ file: file.url })}
+                    onPreview={this.handlePreview}
                 >
                     <Button>
                         <Icon type="upload" /> Click to Upload
