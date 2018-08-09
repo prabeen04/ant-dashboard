@@ -27,12 +27,7 @@ class UploadInput extends Component {
         return (
             <div>
                 <Upload name='file'
-                    action={(file) => {
-                        console.log(file)
-                        axios.post('http://46.249.53.111:8080/salesxl/api/v2.0/upload/image', file)
-                        .then(res => console.log(res))
-                        .catch(err => 'some error occoured')
-                    }}
+                    action='http://46.249.53.111:8080/salesxl/api/v2.0/upload/image'
                     onChange={this.onChange}
                     onPreview={(file)=>this.setState({file: file.url})}
                 >
