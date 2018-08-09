@@ -1,15 +1,18 @@
 import React, { Component } from 'react'
 import { Upload, message, Button, Icon } from 'antd';
-const props = {
-    name: 'file',
-    action: 'http://46.249.53.111:8080/salesxl/api/v2.0/upload/image',
-    headers: {
-        authorization: 'authorization-text',
-    },
-    beforeUpload(file, fileList) {
+
+class UploadInput extends Component {
+    constructor(props) {
+        super(props)
+
+        this.state = {
+            file: null
+        }
+    }
+    beforeUpload = (file, fileList) => {
         this.setState({ file })
     },
-    onChange(info) {
+    onChange = (info) => {
         if (info.file.status !== 'uploading') {
             console.log(info.file, info.fileList);
         }
@@ -17,15 +20,6 @@ const props = {
             message.success(`${info.file.name} file uploaded successfully`);
         } else if (info.file.status === 'error') {
             message.error(`${info.file.name} file upload failed.`);
-        }
-    },
-};
-class UploadInput extends Component {
-    constructor(props) {
-        super(props)
-
-        this.state = {
-            file: null
         }
     }
     render() {
