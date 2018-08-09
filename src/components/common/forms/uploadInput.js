@@ -9,6 +9,11 @@ class UploadInput extends Component {
         }
     }
     onChange = (info) => {
+        const formData = new FormData();
+        formData.append('image', info.file, info.file.name)
+        axios.post('http://46.249.53.111:8080/salesxl/api/v2.0/upload/image', formData)
+        .then(res => console.log(res))
+        console.log(info)
         if (info.file.status !== 'uploading') {
             console.log(info.file, info.fileList);
         }
@@ -29,12 +34,13 @@ class UploadInput extends Component {
                     action='http://46.249.53.111:8080/salesxl/api/v2.0/upload/image'
                     onChange={this.onChange}
                     onPreview={this.handlePreview}
+                    name='image'
                 >
                     <Button>
                         <Icon type="upload" /> Click to Upload
                     </Button>
                 </Upload>
-                {this.state.file && <img src={this.state.file} alt="" />}
+                {this.state.file && <img src={this.state.file} alt="" style={{ width: 200, height: 200 }} />}
             </div >
         )
     }
