@@ -14,7 +14,9 @@ class UploadInput extends Component {
         return;
     }
     onChange = (info) => {
-        axios.post('http://46.249.53.111:8080/salesxl/api/v2.0/upload/image', info.file)
+        axios.post('http://46.249.53.111:8080/salesxl/api/v2.0/upload/image', info.file, {
+            headers: { 'content-type': 'multipart/form-data' }
+        })
                         .then(res => console.log(res))
                         .catch(err => 'some error occoured')
         // if (info.file.status !== 'uploading') {
@@ -30,12 +32,12 @@ class UploadInput extends Component {
         return (
             <div>
                 <Upload name='file'
-                    action={(file) => {
-                        console.log(file)
-                        axios.post('http://46.249.53.111:8080/salesxl/api/v2.0/upload/image', file)
-                        .then(res => console.log(res))
-                        .catch(err => 'some error occoured')
-                    }}
+                    // action={(file) => {
+                    //     console.log(file)
+                    //     axios.post('http://46.249.53.111:8080/salesxl/api/v2.0/upload/image', file)
+                    //     .then(res => console.log(res))
+                    //     .catch(err => 'some error occoured')
+                    // }}
                     beforeUpload={this.beforeUpload}
                     onChange={this.onChange}
                 >
