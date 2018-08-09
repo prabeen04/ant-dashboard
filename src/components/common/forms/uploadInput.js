@@ -9,10 +9,14 @@ class UploadInput extends Component {
         }
     }
     onChange = (info) => {
-        const formData = new FormData();
-        formData.append('image', info.file, info.file.name)
-        axios.post('http://46.249.53.111:8080/salesxl/api/v2.0/upload/image', formData)
-        .then(res => console.log(res))
+    //     const formData = new FormData();
+    //     formData.append('image', info.file, info.file.name)
+    //     console.log(formData)
+    //     axios.post('http://46.249.53.111:8080/salesxl/api/v2.0/upload/image', {formData}, Headers:{
+
+    // },)
+    //     .then(res => console.log(res))
+    //     .catch(err => console.log(err))
         console.log(info)
         if (info.file.status !== 'uploading') {
             console.log(info.file, info.fileList);
