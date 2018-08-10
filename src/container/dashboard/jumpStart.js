@@ -23,7 +23,7 @@ class JumpStartBox extends Component {
                     'increase': data.progress<0,
                     'decrease': data.progress>0
                   });
-                return <JumpStartDetail key={data.id} data={data}/>
+                return <JumpStartDetail key={data.id} data={data}jumpstartStyle={jumpstartStyle} />
             })
 
         return (
