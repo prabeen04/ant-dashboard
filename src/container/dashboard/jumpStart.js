@@ -6,6 +6,7 @@ import  classNames  from 'classnames';
 import { Card } from 'antd';
 import { getJumpstartList } from '../../actions/dashboardAction';
 import JumpStartModal from './jumpStartModal';
+import JumpStartDetail from './jumpStartDetail'
 import { openJumpstartModal } from '../../actions/dashboardAction';
 import '../../App.css';
 import './dashboard.css';
