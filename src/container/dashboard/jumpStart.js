@@ -23,16 +23,18 @@ class JumpStartBox extends Component {
                     'increase': data.progress<0,
                     'decrease': data.progress>0
                   });
-                return <div key={data.id}
-                    className={'jumpstart-box'}
-                    onClick={() => this.props.openJumpstartModal(data)}>
-                    <div>
-                        <h3 style={{color: '#aaa'}}>{data.title}</h3>
-                        <h2 style={{color: '#eee'}}>{data.value}
-                        <span className={jumpstartStyle}>{data.progress}</span>
-                        </h2>
-                    </div>
-                </div>
+                return <JumpStartDetail key={data.id} data={data}/>
+                
+                // <div key={data.id}
+                //     className={'jumpstart-box'}
+                //     onClick={() => this.props.openJumpstartModal(data)}>
+                //     <div>
+                //         <h3 style={{color: '#aaa'}}>{data.title}</h3>
+                //         <h2 style={{color: '#eee'}}>{data.value}
+                //         <span className={jumpstartStyle}>{data.progress}</span>
+                //         </h2>
+                //     </div>
+                // </div>
             })
 
         return (
