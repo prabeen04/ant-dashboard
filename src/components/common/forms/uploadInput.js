@@ -8,6 +8,11 @@ class UploadInput extends Component {
             file: null
         }
     }
+    actionHandler = (file) => {
+        axios.post('http://46.249.53.111:8080/salesxl/api/v2.0/upload/image', file)
+             .then(res => console.log(res))
+             .catch(err => console.log(err))
+    }
     onChange = (info) => {
         console.log(info)
             this.setState({ file: info.file })
@@ -28,7 +33,7 @@ class UploadInput extends Component {
         return (
             <div>
                 <Upload name='file'
-                    action='http://46.249.53.111:8080/salesxl/api/v2.0/upload/image'
+                    action={this.actionHandler}
                     onChange={this.onChange}
                     onPreview={this.handlePreview}
                     name='image'
