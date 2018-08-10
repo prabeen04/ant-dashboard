@@ -1,10 +1,12 @@
 import React from 'react'
+import { connect } from 'react-redux'
+import { bindActionCreators } from "redux";
 import  classNames  from 'classnames';
-
-export default (props) => {
+import { openJumpstartModal } from "../../actions/dashboardAction";
+const JumpStartDetail = (props) => {
     return (
         <div className={'jumpstart-box'}
-            // onClick={() => this.props.openJumpstartModal(data)}
+            onClick={() => props.openJumpstartModal(props.data)}
             >
             <div>
                 <h3 style={{ color: '#aaa' }}>{props.data.title}</h3>
@@ -15,3 +17,9 @@ export default (props) => {
         </div>
     )
 }
+
+export default connect(null, (dispatch) => {
+    return bindActionCreators({
+        openJumpstartModal
+    }, dispatch)
+})(JumpStartDetail);
