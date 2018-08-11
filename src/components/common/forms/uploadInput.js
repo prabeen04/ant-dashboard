@@ -22,6 +22,8 @@ class UploadInput extends Component {
             previewVisible: true,
         });
     }
+    handleChange = ({ fileList }) => this.setState({ fileList })
+
     // actionHandler = (file) => {
     //     axios.post('http://46.249.53.111:8080/salesxl/api/v2.0/upload/image', file)
     //          .then(res => console.log(res))
@@ -45,7 +47,7 @@ class UploadInput extends Component {
             <div>
                 <Upload name='file'
                     action='http://46.249.53.111:8080/salesxl/api/v2.0/upload/image'
-                    onChange={this.onChange}
+                    onChange={this.handleChange}
                     onPreview={this.handlePreview}
                     name='image'
                 >
