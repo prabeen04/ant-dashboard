@@ -4,10 +4,10 @@ import { Map, InfoWindow, Marker, GoogleApiWrapper } from 'google-maps-react';
 class GoogleMap extends Component {
     render() {
         return (
-            <div>
+            <div style={{ marginTop: 20}}>
                 <Map
                     google={this.props.google}
-                    style={{ width: 800, height: 500 }}
+                    style={{ width: 700, height: 250 }}
                     zoom={13}
                     initialCenter={{
                         lat: 40.854885,

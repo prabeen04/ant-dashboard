@@ -63,7 +63,7 @@ class ReuseForm extends Component {
                 </form>
                 <div style={{ marginTop: '0.5rem'}}>
                     <UploadInput />
-                    {/* <GoogleMap latLng={this.state.latLng}/> */}
+                    <GoogleMap latLng={this.state.latLng}/>
                 </div>
             </div>
         )
