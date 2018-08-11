@@ -2,6 +2,9 @@
   "name": "ant-dashboard",
   "version": "0.1.0",
   "homepage": "https://prabeen04.github.io/ant-dashboard",
+  "theme": {
+    "primary-color": "#444"
+  },
   "private": true,
   "dependencies": {
     "antd": "^3.7.0",
