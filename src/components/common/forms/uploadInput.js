@@ -33,10 +33,6 @@ class UploadInput extends Component {
                 message.error(`${info.file.name} file upload failed.`);
             }
     }
-    handlePreview = (file) => {
-        console.log(file)
-        this.setState({ file: file.url })
-    }
     render() {
         return (
             <div>
