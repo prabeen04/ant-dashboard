@@ -36,7 +36,6 @@ class ReuseForm extends Component {
 
     renderInput = ({ input, meta, width, label, ...custom }) => (
         <div style={{ width}}>
-            <label>{label}</label>
             <TextInput  {...input} {...custom} />
         </div>
     )
@@ -49,6 +48,7 @@ class ReuseForm extends Component {
                         name="field1"
                         component={this.renderInput}
                         label='Event'
+                        placeholder="Enter Event"
                         width={400}
                          />
                         <br/>
