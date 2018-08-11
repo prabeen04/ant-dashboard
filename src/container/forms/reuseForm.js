@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Button } from 'antd'
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { reduxForm, Field } from "redux-form";
@@ -10,10 +11,10 @@ import GoogleMap from '../../components/google/googleMap';
 import SwitchInput from "../../components/common/forms/switchInput";
 
 class ReuseForm extends Component {
-    constructor(props){
+    constructor(props) {
         super(props)
 
-        this.state= {
+        this.state = {
             latLng: null
         }
     }
@@ -57,11 +58,11 @@ class ReuseForm extends Component {
                     <Field
                         name="switch"
                         component={SwitchInput}
-                        />    
-                    <button>Submit</button>
+                    />
+                    <Button type="primary">Submit</Button>
                 </form>
                 <div>
-                    <UploadInput/>
+                    <UploadInput />
                     {/* <GoogleMap latLng={this.state.latLng}/> */}
                 </div>
             </div>
