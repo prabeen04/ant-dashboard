@@ -5,7 +5,7 @@ const onChange = (checked) => console.log(checked)
 
 const SearchInput =  (props) => {
   return (
-    <div>
+    <div style={{ margin: '0.2rem', padding: '0.3rem 1rem'}}>
         <Switch defaultChecked onChange={onChange} />
     </div>
   )
