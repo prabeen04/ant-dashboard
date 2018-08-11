@@ -7,6 +7,7 @@ import TextInput from '../../components/common/forms/textInput';
 import PlaceInput from '../../components/common/forms/placeInput';
 import UploadInput from '../../components/common/forms/uploadInput';
 import GoogleMap from '../../components/google/googleMap';
+import SwitchInput from "../../components/common/forms/switchInput";
 
 class ReuseForm extends Component {
     constructor(props){
@@ -53,6 +54,10 @@ class ReuseForm extends Component {
                         label='Enter Event Location'
                         width={400}
                         onSelect={this.handleSelect} />
+                    <Field
+                        name="switch"
+                        component={SwitchInput}
+                        />    
                     <button>Submit</button>
                 </form>
                 <div>
