@@ -34,10 +34,10 @@ class ReuseForm extends Component {
             .catch(error => console.error('Error', error));
     };
 
-    renderInput = ({ input, meta, label, ...custom }) => (
-        <div >
+    renderInput = ({ input, meta, width, label, ...custom }) => (
+        <div style={{ width}}>
             <label>{label}</label>
-            <TextInput  {...input} />
+            <TextInput  {...input} {...custom} />
         </div>
     )
     render() {
@@ -48,7 +48,10 @@ class ReuseForm extends Component {
                     <Field
                         name="field1"
                         component={this.renderInput}
-                        label='Event' />
+                        label='Event'
+                        width={400}
+                         />
+                        <br/>
                     <Field
                         name="location"
                         component={PlaceInput}
