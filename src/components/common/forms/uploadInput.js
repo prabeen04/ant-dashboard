@@ -10,6 +10,12 @@ class UploadInput extends Component {
             previewImage: ''
         }
     }
+    handlePreview = (file) => {
+        this.setState({
+          previewImage: file.url || file.thumbUrl,
+          previewVisible: true,
+        });
+      }
     // actionHandler = (file) => {
     //     axios.post('http://46.249.53.111:8080/salesxl/api/v2.0/upload/image', file)
     //          .then(res => console.log(res))
