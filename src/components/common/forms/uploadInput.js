@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Upload, message, Button, Icon } from 'antd';
+import { Upload, message, Button, Icon, Modal } from 'antd';
 import axios from 'axios'
 class UploadInput extends Component {
     constructor(props) {
