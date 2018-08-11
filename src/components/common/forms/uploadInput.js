@@ -5,7 +5,9 @@ class UploadInput extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            file: null
+            file: null,
+            previewVisible: false,
+            previewImage: ''
         }
     }
     // actionHandler = (file) => {
