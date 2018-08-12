@@ -46,7 +46,6 @@ class UploadInput extends Component {
                 <Modal visible={previewVisible} footer={null} onCancel={this.handleCancel}>
                     <img alt="example" style={{ width: '100%' }} src={previewImage} />
                 </Modal>
-                {this.state.file && <img src={previewImage} alt="" />}
             </div >
         )
     }
