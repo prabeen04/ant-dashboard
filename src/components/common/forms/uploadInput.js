@@ -39,7 +39,6 @@ class UploadInput extends Component {
                     fileList={fileList}
                     onChange={this.handleChange}
                     onPreview={this.handlePreview}
-                    name='image'
                 >
                     {fileList.length >= 3 ? null : uploadButton}
                 </Upload>
