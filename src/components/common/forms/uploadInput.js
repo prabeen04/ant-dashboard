@@ -23,10 +23,10 @@ class UploadInput extends Component {
     render() {
         const { previewVisible, previewImage, fileList } = this.state;
         const uploadButton = (
-          <div>
-            <Icon type="plus" />
-            <div className="ant-upload-text">Upload</div>
-          </div>
+            <div>
+                <Icon type="plus" />
+                <div className="ant-upload-text">Upload</div>
+            </div>
         );
         return (
             <div>
@@ -36,9 +36,7 @@ class UploadInput extends Component {
                     onPreview={this.handlePreview}
                     name='image'
                 >
-                    <Button>
-                        <Icon type="upload" /> Click to Upload
-                    </Button>
+                    {fileList.length >= 3 ? null : uploadButton}
                 </Upload>
                 <Modal visible={previewVisible} footer={null} onCancel={this.handleCancel}>
                     <img alt="example" style={{ width: '100%' }} src={previewImage} />
