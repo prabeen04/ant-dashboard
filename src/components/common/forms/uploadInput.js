@@ -34,7 +34,7 @@ class UploadInput extends Component {
         return (
             <div>
                 <Upload name='file'
-                    action='http://46.249.53.111:8080/salesxl/api/v2.0/upload/'
+                    action='http://46.249.53.111:8080/salesxl/api/v2.0/upload/image'
                     listType="picture-card"
                     fileList={fileList}
                     onChange={this.handleChange}
