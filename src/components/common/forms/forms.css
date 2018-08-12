@@ -18,12 +18,12 @@
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
 /* you can make up upload button and sample style by using stylesheets */
-.ant-upload-select-picture-card i {
+ i {
     font-size: 32px;
     color: #999;
   }
   
-  .ant-upload-select-picture-card .ant-upload-text {
+.ant-upload-text {
     margin-top: 8px;
     color: #666;
   }
