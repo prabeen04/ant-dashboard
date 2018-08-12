@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Upload, message, Button, Icon, Modal } from 'antd';
-import axios from 'axios'
+import axios from 'axios';
+import './forms.css';
 class UploadInput extends Component {
     constructor(props) {
         super(props)
@@ -20,7 +21,13 @@ class UploadInput extends Component {
     handleChange = ({ fileList }) => this.setState({ fileList })
 
     render() {
-        const { previewVisible, previewImage } = this.state
+        const { previewVisible, previewImage, fileList } = this.state;
+        const uploadButton = (
+          <div>
+            <Icon type="plus" />
+            <div className="ant-upload-text">Upload</div>
+          </div>
+        );
         return (
             <div>
                 <Upload name='file'
