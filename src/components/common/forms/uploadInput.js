@@ -18,7 +18,10 @@ class UploadInput extends Component {
             previewVisible: true,
         });
     }
-    handleChange = ({ fileList }) => this.setState({ fileList })
+    handleChange = (info) => {
+        console.log(info)
+        this.setState({ fileList: info.fileList })
+    }
 
     render() {
         const { previewVisible, previewImage, fileList } = this.state;
