@@ -8,12 +8,7 @@ class UploadInput extends Component {
             file: null,
             previewVisible: false,
             previewImage: '',
-            fileList: [{
-                uid: '-1',
-                name: 'xxx.png',
-                status: 'done',
-                url: 'https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png',
-            }],
+            fileList: [],
         }
     }
     handlePreview = (file) => {
@@ -23,7 +18,7 @@ class UploadInput extends Component {
         });
     }
     handleChange = ({ fileList }) => this.setState({ fileList })
-    
+
     render() {
         const { previewVisible, previewImage } = this.state
         return (
