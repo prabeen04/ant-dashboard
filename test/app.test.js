@@ -5,6 +5,6 @@ import App from '../src/App';
 describe('App', () => {
     it('should a classBase Component', () => {
         const component = shallow(<App />)
-        expect(component).to.have('render Method')
+        expect(component).to.exist()
     })
 })
