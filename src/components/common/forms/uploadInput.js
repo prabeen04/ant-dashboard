@@ -37,6 +37,7 @@ class UploadInput extends Component {
                     action='http://46.249.53.111:8080/salesxl/api/v2.0/upload/image'
                     listType="picture-card"
                     fileList={fileList}
+                    name='image'
                     onChange={this.handleChange}
                     onPreview={this.handlePreview}
                 >
