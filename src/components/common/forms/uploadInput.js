@@ -52,6 +52,7 @@ class UploadInput extends Component {
                 <Modal visible={previewVisible} footer={null} onCancel={this.handleCancel}>
                     <img alt="example" style={{ width: '100%' }} src={previewImage} />
                 </Modal>
+                {this.state.uploadResponse && <img src=`http://46.249.53.111:8080/salesxl/api/v2.0/upload/image${this.state.uploadResponse}` alt=""/>}
             </div >
         )
     }
