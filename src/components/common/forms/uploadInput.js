@@ -11,11 +11,18 @@ class UploadInput extends Component {
             previewImage: '',
             fileList: [],
             uploadResponse: ''
-        }    
+        }
     }
-    handleBeforeUpload = (file, fileList) => {
-        console.log(file)
-        console.log(fileList)
+    handleBeforeUpload = (file) => {
+        const isJPG = file.type === 'image/jpeg';
+        if (!isJPG) {
+            message.error('You can only upload JPG file!');
+        }
+        const isLt2M = file.size / 1024 / 1024 < 2;
+        if (!isLt2M) {
+            message.error('Image must smaller than 2MB!');
+        }
+        return isJPG && isLt2M;
     }
     handlePreview = (file) => {
         this.setState({
@@ -61,7 +68,7 @@ class UploadInput extends Component {
                 <Modal visible={previewVisible} footer={null} onCancel={this.handleCancel}>
                     <img alt="example" style={{ width: '100%' }} src={previewImage} />
                 </Modal>
-                <div style={{ minHeight: 200, backgroundColor: '#f4f4f4', width: '100%'}}>
+                <div style={{ minHeight: 200, backgroundColor: '#f4f4f4', width: '100%' }}>
                     {this.state.uploadResponse && <img src={`http://46.249.53.111:8080/salesxl/api/v2.0/upload/image/${this.state.uploadResponse}`} alt="" />}
                 </div>
             </div >
