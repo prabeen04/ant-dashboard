@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Upload, message, Button, Icon, Modal } from 'antd';
 import axios from 'axios';
+import ImageCropper from '../../utils/ImageCropper'
 import './forms.css';
 class UploadInput extends Component {
     constructor(props) {
@@ -70,6 +71,7 @@ class UploadInput extends Component {
                 </Modal>
                 <div style={{ minHeight: 200, backgroundColor: '#f4f4f4', width: '100%' }}>
                     {this.state.uploadResponse && <img src={`http://46.249.53.111:8080/salesxl/api/v2.0/upload/image/${this.state.uploadResponse}`} alt="" />}
+                    {this.state.uploadResponse && <ImageCropper imageURL={`http://46.249.53.111:8080/salesxl/api/v2.0/upload/image/${this.state.uploadResponse}`}/>}
                 </div>
             </div >
         )

@@ -6,7 +6,7 @@ export default class ImageCropper extends Component {
   render() {
     return (
       <div>
-        <ReactCrop src="" />
+        <ReactCrop src={this.props.ImageURL}/>
       </div>
     )
   }
