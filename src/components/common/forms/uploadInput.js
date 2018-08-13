@@ -10,6 +10,7 @@ class UploadInput extends Component {
             previewVisible: false,
             previewImage: '',
             fileList: [],
+            uploadResponse: ''
         }
     }
     handlePreview = (file) => {
@@ -21,6 +22,11 @@ class UploadInput extends Component {
     handleChange = (info) => {
         console.log(info)
         this.setState({ fileList: info.fileList })
+        if(info.file.status === 'done'){
+            this.setState({
+                uploadResponse: info.file.response
+            })
+        }
     }
 
     render() {
