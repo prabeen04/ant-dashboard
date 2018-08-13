@@ -11,7 +11,11 @@ class UploadInput extends Component {
             previewImage: '',
             fileList: [],
             uploadResponse: ''
-        }
+        }    
+    }
+    handleBeforeUpload = (file, fileList) => {
+        console.log(file)
+        console.log(fileList)
     }
     handlePreview = (file) => {
         this.setState({
@@ -20,7 +24,6 @@ class UploadInput extends Component {
         });
     }
     handleChange = (info) => {
-        console.log(info)
         this.setState({ fileList: info.fileList })
         if (info.file.status === 'done') {
             this.setState({
@@ -51,6 +54,7 @@ class UploadInput extends Component {
                     name='image'
                     onChange={this.handleChange}
                     onPreview={this.handlePreview}
+                    beforeUpload={this.handleBeforeUpload}
                 >
                     {fileList.length >= 3 ? null : uploadButton}
                 </Upload>
