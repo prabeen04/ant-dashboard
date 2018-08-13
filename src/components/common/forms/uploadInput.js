@@ -27,6 +27,11 @@ class UploadInput extends Component {
                 uploadResponse: info.file.response
             })
         }
+        if (info.file.status === 'removed') {
+            this.setState({
+                uploadResponse: ''
+            })
+        }
     }
 
     render() {
