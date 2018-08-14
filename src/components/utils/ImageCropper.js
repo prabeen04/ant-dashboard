@@ -7,15 +7,15 @@ export default class ImageCropper extends Component {
     crop: {
       x: 20,
       y: 10,
-      width: 30,
-      height: 10
+      width: 200,
+      height: 200
     }
   }
   render() {
     return (
       <div>
         <ReactCrop
-          src={'https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png'}
+          src={this.props.src || 'https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png'}
           onChange = {(crop) => {
           console.log(crop)
           this.setState({crop})
