@@ -33,11 +33,21 @@ class ReuseForm extends Component {
             .then(() => this.props.change('location', address))
             .catch(error => console.error('Error', error));
     };
-    renderUpload = ({ input, meta, width, label, ...custom }) => {
+    renderUpload = ({ input, meta, width, label, ...custom }) => (
         <div>
-            <Upload  {...input} {...custom} />
+            <Upload  {...input}
+                {...custom}
+                action='https://fokuswork.com:8443/salesxl/api/v2.0/upload/image/'
+                onChange={(info) => {
+                    if (info.file.status === 'done') {
+                        console.log(info.file.response)
+                    }
+                }
+                }>
+                Upload
+            </Upload>
         </div>
-    }
+    )
     renderInput = ({ input, meta, width, label, ...custom }) => (
         <div style={{ width }}>
             <TextInput  {...input} {...custom} />
