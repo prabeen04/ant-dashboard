@@ -34,6 +34,7 @@ class UploadInput extends Component {
     handleChange = (info) => {
         this.setState({ fileList: info.fileList })
         if (info.file.status === 'done') {
+            this.props.input.onChange(info.file.response)
             this.setState({
                 uploadResponse: info.file.response
             })

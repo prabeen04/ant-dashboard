@@ -79,7 +79,7 @@ class ReuseForm extends Component {
                     />
                     <Field
                         name="image"
-                        component={this.renderUpload}
+                        component={UploadInput}
                     />
                     <Button type="primary" htmlType="submit" >Submit</Button>
                 </form>
