@@ -14,6 +14,11 @@ class UploadInput extends Component {
             uploadResponse: ''
         }
     }
+    handleCancel = () => {
+        this.setState({
+            previewVisible: false
+        })
+    }
     handleBeforeUpload = (file) => {
         const isJPG = file.type === 'image/jpeg';
         if (!isJPG) {
@@ -68,7 +73,7 @@ class UploadInput extends Component {
                 >
                     {fileList.length >= 3 ? null : uploadButton}
                 </Upload>
-                <Modal visible={previewVisible} footer={null} onCancel={this.handleCancel}>
+                <Modal visible={previewVisible} footer={null} closable maskClosable onCancel={this.handleCancel}>
                     <img alt="example" style={{ width: '100%' }} src={previewImage} />
                 </Modal>
                 {/* <div style={{ minHeight: 200, backgroundColor: '#f4f4f4', width: '100%' }}>
