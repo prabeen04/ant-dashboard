@@ -71,10 +71,10 @@ class UploadInput extends Component {
                 <Modal visible={previewVisible} footer={null} onCancel={this.handleCancel}>
                     <img alt="example" style={{ width: '100%' }} src={previewImage} />
                 </Modal>
-                <div style={{ minHeight: 200, backgroundColor: '#f4f4f4', width: '100%' }}>
+                {/* <div style={{ minHeight: 200, backgroundColor: '#f4f4f4', width: '100%' }}>
                     {this.state.uploadResponse && <img src={`https://fokuswork.com:8443/salesxl/api/v2.0/upload/image/${this.state.uploadResponse}`} alt="" />}
                     <ImageCropper/>
-                </div>
+                </div> */}
             </div >
         )
     }

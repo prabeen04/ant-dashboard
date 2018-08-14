@@ -68,7 +68,6 @@ class ReuseForm extends Component {
                     <Button type="primary" htmlType="submit" >Submit</Button>
                 </form>
                 <div style={{ marginTop: '0.5rem' }}>
-                    <UploadInput />
                     <GoogleMap latLng={this.state.latLng} />
                 </div>
             </div>
