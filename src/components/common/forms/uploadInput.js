@@ -56,6 +56,7 @@ class UploadInput extends Component {
         return (
             <div>
                 <Upload name='file'
+                    {...this.props}
                     action='https://fokuswork.com:8443/salesxl/api/v2.0/upload/image/'
                     listType="picture-card"
                     fileList={fileList}
