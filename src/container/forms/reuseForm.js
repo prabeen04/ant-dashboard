@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Button } from 'antd'
+import { Button, Upload } from 'antd'
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { reduxForm, Field } from "redux-form";
@@ -33,9 +33,13 @@ class ReuseForm extends Component {
             .then(() => this.props.change('location', address))
             .catch(error => console.error('Error', error));
     };
-
+    renderUpload = ({ input, meta, width, label, ...custom }) => {
+        <div>
+            <Upload  {...input} {...custom} />
+        </div>
+    }
     renderInput = ({ input, meta, width, label, ...custom }) => (
-        <div style={{ width}}>
+        <div style={{ width }}>
             <TextInput  {...input} {...custom} />
         </div>
     )
@@ -50,8 +54,8 @@ class ReuseForm extends Component {
                         label='Event'
                         placeholder="Enter Event"
                         width={400}
-                         />
-                        <br/>
+                    />
+                    <br />
                     <Field
                         name="location"
                         component={PlaceInput}
@@ -64,13 +68,13 @@ class ReuseForm extends Component {
                     />
                     <Field
                         name="image"
-                        component={UploadInput}
+                        component={this.renderUpload}
                     />
                     <Button type="primary" htmlType="submit" >Submit</Button>
                 </form>
-                <div style={{ marginTop: '0.5rem'}}>
+                <div style={{ marginTop: '0.5rem' }}>
                     <UploadInput />
-                    <GoogleMap latLng={this.state.latLng}/>
+                    <GoogleMap latLng={this.state.latLng} />
                 </div>
             </div>
         )
