@@ -21,9 +21,9 @@ class UploadInput extends Component {
     }
     handleBeforeUpload = (file) => {
         console.log(file)
-        const isJPG = file.type === 'image/jpeg';
+        const isJPG = file.type === 'image/jpeg'||'image/jpg'|| 'image/png';
         if (!isJPG) {
-            message.error('You can only upload JPG file!');
+            message.error('You can only upload JPG/PNG file!');
         }
         const isLt2M = file.size / 1024 / 1024 < 2;
         if (!isLt2M) {
