@@ -41,6 +41,7 @@ class ReuseForm extends Component {
                 onChange={(info) => {
                     if (info.file.status === 'done') {
                         console.log(info.file.response)
+                        return input.onChange(info.file.response)
                     }
                 }
                 }>
