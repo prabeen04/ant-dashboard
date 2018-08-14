@@ -56,7 +56,7 @@ class UploadInput extends Component {
         return (
             <div>
                 <Upload name='file'
-                    action='http://46.249.53.111:8080/salesxl/api/v2.0/upload/image'
+                    action='https://fokuswork.com:8443/salesxl/api/v2.0/upload/image/'
                     listType="picture-card"
                     fileList={fileList}
                     name='image'
@@ -70,7 +70,7 @@ class UploadInput extends Component {
                     <img alt="example" style={{ width: '100%' }} src={previewImage} />
                 </Modal>
                 <div style={{ minHeight: 200, backgroundColor: '#f4f4f4', width: '100%' }}>
-                    {this.state.uploadResponse && <img src={`http://46.249.53.111:8080/salesxl/api/v2.0/upload/image/${this.state.uploadResponse}`} alt="" />}
+                    {this.state.uploadResponse && <img src={`https://fokuswork.com:8443/salesxl/api/v2.0/upload/image/${this.state.uploadResponse}`} alt="" />}
                     <ImageCropper/>
                 </div>
             </div >
