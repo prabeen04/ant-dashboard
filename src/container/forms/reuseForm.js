@@ -66,7 +66,7 @@ class ReuseForm extends Component {
                         name="image"
                         component={UploadInput}
                     />
-                    <Button type="primary">Submit</Button>
+                    <Button type="primary" htmlType="submit" >Submit</Button>
                 </form>
                 <div style={{ marginTop: '0.5rem'}}>
                     <UploadInput />
