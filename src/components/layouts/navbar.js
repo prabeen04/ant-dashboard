@@ -116,7 +116,7 @@ class Navbar extends React.Component {
                         toggleCollapsed={this.toggle} />
                 </Sider>
                 <Layout>
-                    <Header className="flex-container" style={{ background: '#fff', padding: 0, height: 45, justifyContent: 'space-between' }}>
+                    <Header className="flex-container" style={{ background: '#fff', padding: 0, height: 45, justifyContent: 'space-between', flexDirection: 'row' }}>
                         <div style={{ alignSelf: 'flex-start' }}>
                             <Icon
                                 className="trigger"
