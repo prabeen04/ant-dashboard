@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Script from 'react-load-script';
 import PlacesAutocomplete, { geocodeByAddress, getLatLng } from 'react-places-autocomplete';
+import GoogleMap from '../../google/googleMap';
 import '../../google/google.css'
 class PlaceInput extends Component {
     constructor(props) {
@@ -15,7 +16,7 @@ class PlaceInput extends Component {
         this.setState({ isScriptLoaded: true })
     }
     render() {
-        const { input, width, label, onSelect, meta:{touched, error}, ...rest} = this.props
+        const { input, width, label, onSelect, meta: { touched, error }, ...rest } = this.props
         return (
             <div>
                 <Script
@@ -29,10 +30,10 @@ class PlaceInput extends Component {
                         onSelect={onSelect}
                     >
                         {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (
-                            <div style={{ width: width || '100%'}}>
+                            <div style={{ width: width || '100%' }}>
                                 <input
                                     {...getInputProps({
-                                        placeholder:label,
+                                        placeholder: label,
                                         className: 'location-search-input',
                                     })}
                                 />
@@ -56,7 +57,7 @@ class PlaceInput extends Component {
                             </div>
                         )}
                     </PlacesAutocomplete>
-
+                    <GoogleMap />
                 }
             </div>
         )
