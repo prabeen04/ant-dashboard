@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Field, reduxForm } from 'redux-form';
 import { Input, DatePicker, Button } from 'antd';
+import PlaceInput from '../../components/common/forms/placeInput'
 import { addEvent } from '../../actions/calendar_actions';
 const { MonthPicker, RangePicker } = DatePicker;
 
@@ -64,7 +65,7 @@ class EventForm extends Component {
                     <Field
                         name="description"
                         label="Description"
-                        component={this.renderInput} />
+                        component={PlaceInput} />
                     <Button type="primary" htmlType="submit">Add Event</Button>
                 </form>
             </div>
