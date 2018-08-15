@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Script from 'react-load-script';
 import PlacesAutocomplete, { geocodeByAddress, getLatLng } from 'react-places-autocomplete';
-import GoogleMap from '../../google/googleMap';
 import '../../google/google.css'
 class PlaceInput extends Component {
     constructor(props) {
@@ -57,7 +56,6 @@ class PlaceInput extends Component {
                             </div>
                         )}
                     </PlacesAutocomplete>
-                    <GoogleMap />
                 }
             </div>
         )
