@@ -8,6 +8,7 @@ export default class ImageCropper extends Component {
       x: 20,
       y: 10,
       width: 100,
+      aspect: 1
     }
   }
   render() {
