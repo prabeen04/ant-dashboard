@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import Loadable  from 'react-loadable';
+import Loadable from 'react-loadable';
 import { Layout, Menu, Icon, Badge, Table } from 'antd';
 import './navbar.css';
 import BundleLoading from '../loading/bundleLoading'
@@ -116,13 +116,15 @@ class Navbar extends React.Component {
                         toggleCollapsed={this.toggle} />
                 </Sider>
                 <Layout>
-                    <Header className="flex-container" style={{ background: '#fff', padding: 0, height: 45 }}>
-                        <Icon
-                            className="trigger"
-                            type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'}
-                            onClick={this.toggle}
-                        />
-                        <div style={{ float: 'right', marginRight: 50, height: 45 }}>
+                    <Header className="flex-container" style={{ background: '#fff', padding: 0, height: 45, justifyContent: 'space-between' }}>
+                        <div style={{ alignSelf: 'flex-start' }}>
+                            <Icon
+                                className="trigger"
+                                type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'}
+                                onClick={this.toggle}
+                            />
+                        </div>
+                        <div style={{ alignSelf: 'flex-end', marginRight: 50, height: 45 }}>
                             <a href="#" style={{ margin: 15 }}>
                                 <Badge count={1} >
                                     <Icon type="bell" />
