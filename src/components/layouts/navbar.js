@@ -116,28 +116,30 @@ class Navbar extends React.Component {
                         toggleCollapsed={this.toggle} />
                 </Sider>
                 <Layout>
-                    <Header className="flex-container" style={{ background: '#fff', padding: 0, height: 45, justifyContent: 'space-between' }}>
-                        <div style={{ alignSelf: 'flex-start' }}>
-                            <Icon
-                                className="trigger"
-                                type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'}
-                                onClick={this.toggle}
-                            />
-                        </div>
-                        <div style={{ alignSelf: 'flex-end', marginRight: 50, height: 45 }}>
-                            <a href="#" style={{ margin: 15 }}>
-                                <Badge count={1} >
-                                    <Icon type="bell" />
-                                </Badge>
-                            </a>
-                            <a href="#" style={{ margin: 15 }}>
-                                <Badge count={5} >
-                                    <Icon type="user" />
-                                </Badge>
-                            </a>
-                            <a href="#" style={{ margin: 15 }}>
-                                <NotificationPopover />
-                            </a>
+                    <Header className="flex-container">
+                        <div className="flex-container" style={{ background: '#fff', padding: 0, height: 45, justifyContent: 'space-between' }}>
+                            <div style={{ alignSelf: 'flex-start' }}>
+                                <Icon
+                                    className="trigger"
+                                    type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'}
+                                    onClick={this.toggle}
+                                />
+                            </div>
+                            <div style={{ alignSelf: 'flex-end', marginRight: 50, height: 45 }}>
+                                <a href="#" style={{ margin: 15 }}>
+                                    <Badge count={1} >
+                                        <Icon type="bell" />
+                                    </Badge>
+                                </a>
+                                <a href="#" style={{ margin: 15 }}>
+                                    <Badge count={5} >
+                                        <Icon type="user" />
+                                    </Badge>
+                                </a>
+                                <a href="#" style={{ margin: 15 }}>
+                                    <NotificationPopover />
+                                </a>
+                            </div>
                         </div>
                     </Header>
 
