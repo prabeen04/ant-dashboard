@@ -7,8 +7,7 @@ export default class ImageCropper extends Component {
     crop: {
       x: 20,
       y: 10,
-      width: 200,
-      height: 200
+      width: 100,
     }
   }
   render() {
