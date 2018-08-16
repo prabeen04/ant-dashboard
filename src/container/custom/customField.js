@@ -5,9 +5,9 @@ class CustomField extends Component {
         super(props)
 
         this.state = {
-            name:'',
-            email:'',
-            phone:'',
+            name: '',
+            email: '',
+            phone: '',
             fields: [
                 { type: 'text', name: 'name' },
                 { type: 'email', name: 'email' },
@@ -27,12 +27,23 @@ class CustomField extends Component {
     render() {
         const renderFields = this.state.fields.map((field, index) => {
             return (
-                <input 
-                type={field.type} 
-                name={field.name} 
-                placeholder={field.name}
-                value={`${this.state}${field.name}`} 
-                onChange={this.handleChange} 
+                <input
+                    key={index}
+                    type={field.type}
+                    name={field.name}
+                    placeholder={field.name}
+                    value={() => {
+                        if (field.name === 'name') {
+                            return this.state.name
+                        }
+                        if (field.name === 'email') {
+                            return this.state.email
+                        }
+                        if (field.name === 'phone') {
+                            return this.state.phone
+                        }
+                    }}
+                    onChange={this.handleChange}
                 />
             )
         })
@@ -40,8 +51,8 @@ class CustomField extends Component {
             <div>
                 <h2>CustomField Component</h2>
                 <form>
-                {renderFields}
-                <button type="submit" onClick={this.handleSubmit}>Send</button>
+                    {renderFields}
+                    <button type="submit" onClick={this.handleSubmit}>Send</button>
                 </form>
             </div>
         )
