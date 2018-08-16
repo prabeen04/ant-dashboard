@@ -12,10 +12,15 @@ class CustomField extends Component {
             ]
         }
     }
+
     render() {
+        const renderFields = this.state.fields.map((field, index) => {
+            return <p>{field.type} - {field.name}</p>
+        }) 
         return (
             <div>
                 <h2>CustomField Component</h2>
+                {renderFields}
             </div>
         )
     }
