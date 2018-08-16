@@ -5,9 +5,9 @@ class CustomField extends Component {
         super(props)
 
         this.state = {
-            name: 'prabeen ',
-            email: 'sdg@kndf.vd',
-            phone: '643231313',
+            name: ' ',
+            email: '',
+            phone: '',
             fields: [
                 { type: 'text', name: 'name' },
                 { type: 'email', name: 'email' },
@@ -22,7 +22,11 @@ class CustomField extends Component {
     }
     handleSubmit = (e) => {
         e.preventDefault();
-        console.log(e)
+        console.log({
+            'name': this.state.name,
+            'email': this.state.email,
+            'phone': this.state.phone,
+        })
     }
     render() {
         const renderFields = this.state.fields.map((field, index) => {
