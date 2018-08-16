@@ -32,7 +32,7 @@ class CustomField extends Component {
                     type={field.type}
                     name={field.name}
                     placeholder={field.name}
-                    value={(field.name === 'name')? this.state.name: (field.name === 'email') ? this.state.email : ''}
+                    value={(field.name === 'name')? this.state.name: (field.name === 'email') ? this.state.email : (field.name === 'phone') ?this.state.phone : '' }
                     onChange={this.handleChange}
                 />
             )
@@ -48,4 +48,4 @@ class CustomField extends Component {
         )
     }
 }
-export default CustomField
+export default CustomField;
