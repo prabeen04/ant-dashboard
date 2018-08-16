@@ -15,7 +15,9 @@ class CustomField extends Component {
 
     render() {
         const renderFields = this.state.fields.map((field, index) => {
-            return <p>{field.type} - {field.name}</p>
+            return(
+                field.type ==='text' && <p>{field.type} - {field.name}</p>
+                )
         }) 
         return (
             <div>
