@@ -17,7 +17,7 @@ class CustomField extends Component {
     }
     handleChange = (e) => {
         this.setState({
-            [e.target.name]: [e.target.value]
+            [e.target.name]: e.target.value
         })
     }
     handleSubmit = (e) => {
@@ -32,17 +32,27 @@ class CustomField extends Component {
                     type={field.type}
                     name={field.name}
                     placeholder={field.name}
-                    value="ksdmv"
+                    value={
+                        if (field.name === 'name') {
+                             this.state.name
+                        }
+                        if (field.name === 'email') {
+                            return this.state.email
+                        }
+                        if (field.name === 'phone') {
+                            return this.state.phone
+                        }
+                    }
                     // value={() => { return 'dsgsdg'
-                        // if (field.name === 'name') {
-                        //     return this.state.name
-                        // }
-                        // if (field.name === 'email') {
-                        //     return this.state.email
-                        // }
-                        // if (field.name === 'phone') {
-                        //     return this.state.phone
-                        // }
+                        if (field.name === 'name') {
+                            return this.state.name
+                        }
+                        if (field.name === 'email') {
+                            return this.state.email
+                        }
+                        if (field.name === 'phone') {
+                            return this.state.phone
+                        }
                     // }}
                     onChange={this.handleChange}
                 />
