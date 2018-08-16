@@ -27,7 +27,13 @@ class CustomField extends Component {
     render() {
         const renderFields = this.state.fields.map((field, index) => {
             return (
-                <input type={field.type} name={field.name} placeholder={field.name} onChange={this.handleChange} />
+                <input 
+                type={field.type} 
+                name={field.name} 
+                placeholder={field.name}
+                value={`${this.state}${field.name}`} 
+                onChange={this.handleChange} 
+                />
             )
         })
         return (
