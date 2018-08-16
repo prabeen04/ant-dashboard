@@ -5,7 +5,11 @@ class CustomField extends Component {
         super(props)
 
         this.state = {
-
+            fields: [
+                { type: 'text', name: 'name' },
+                { type: 'email', name: 'email' },
+                { type: 'number', name: 'phone' }
+            ]
         }
     }
     render() {
