@@ -81,6 +81,10 @@ const AsyncTreeSort = Loadable({
     loader: () => import('../../container/treesort/treeSort'),
     loading: BundleLoading
 })
+const AsyncCustomField = Loadable({
+    loader: () => import('../../container/custom/customField'),
+    loading: BundleLoading
+})
 const AsyncNotFound = Loadable({
     loader: () => import('../../container/notFound/notFound'),
     loading: BundleLoading
@@ -158,6 +162,7 @@ class Navbar extends React.Component {
                             <Route exact path='/map' component={AsyncMyMap} />
                             <Route exact path='/drag' component={AsyncDrag} />
                             <Route exact path='/tree' component={AsyncTreeSort} />
+                            <Route exact path='/custom' component={AsyncCustomField} />
                             <Route path='**' component={AsyncNotFound} />
                         </Switch>
                     </Content>
