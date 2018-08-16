@@ -12,7 +12,10 @@ class CustomField extends Component {
             ]
         }
     }
-
+    handleSubmit = (e) => {
+        e.preventDefault();
+        console.log(e)
+    }
     render() {
         const renderFields = this.state.fields.map((field, index) => {
             return (
