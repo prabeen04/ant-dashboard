@@ -5,9 +5,9 @@ class CustomField extends Component {
         super(props)
 
         this.state = {
-            name: '',
-            email: '',
-            phone: '',
+            name: 'prabeen ',
+            email: 'sdg@kndf.vd',
+            phone: '643231313',
             fields: [
                 { type: 'text', name: 'name' },
                 { type: 'email', name: 'email' },
@@ -32,17 +32,18 @@ class CustomField extends Component {
                     type={field.type}
                     name={field.name}
                     placeholder={field.name}
-                    value={() => {
-                        if (field.name === 'name') {
-                            return this.state.name
-                        }
-                        if (field.name === 'email') {
-                            return this.state.email
-                        }
-                        if (field.name === 'phone') {
-                            return this.state.phone
-                        }
-                    }}
+                    value="ksdmv"
+                    // value={() => { return 'dsgsdg'
+                        // if (field.name === 'name') {
+                        //     return this.state.name
+                        // }
+                        // if (field.name === 'email') {
+                        //     return this.state.email
+                        // }
+                        // if (field.name === 'phone') {
+                        //     return this.state.phone
+                        // }
+                    // }}
                     onChange={this.handleChange}
                 />
             )
