@@ -15,10 +15,10 @@ class CustomField extends Component {
 
     render() {
         const renderFields = this.state.fields.map((field, index) => {
-            return(
-                field.type ==='text' && <input type={field.type} name={field.name} placeholder={field.name}/>
-                )
-        }) 
+            return (
+                <input type={field.type} name={field.name} placeholder={field.name} />
+            )
+        })
         return (
             <div>
                 <h2>CustomField Component</h2>
