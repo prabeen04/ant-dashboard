@@ -22,7 +22,10 @@ class CustomField extends Component {
         return (
             <div>
                 <h2>CustomField Component</h2>
+                <form>
                 {renderFields}
+                <button type="submit" onClick={this.handleSubmit}>Send</button>
+                </form>
             </div>
         )
     }
