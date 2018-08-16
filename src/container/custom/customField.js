@@ -5,12 +5,20 @@ class CustomField extends Component {
         super(props)
 
         this.state = {
+            name:'',
+            email:'',
+            phone:'',
             fields: [
                 { type: 'text', name: 'name' },
                 { type: 'email', name: 'email' },
                 { type: 'number', name: 'phone' }
             ]
         }
+    }
+    handleChange = (e) => {
+        this.setState({
+            [e.target.name]: [e.target.value]
+        })
     }
     handleSubmit = (e) => {
         e.preventDefault();
@@ -19,7 +27,7 @@ class CustomField extends Component {
     render() {
         const renderFields = this.state.fields.map((field, index) => {
             return (
-                <input type={field.type} name={field.name} placeholder={field.name} />
+                <input type={field.type} name={field.name} placeholder={field.name} onChange={this.handleChange} />
             )
         })
         return (
