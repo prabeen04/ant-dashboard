@@ -32,28 +32,7 @@ class CustomField extends Component {
                     type={field.type}
                     name={field.name}
                     placeholder={field.name}
-                    value={
-                        if (field.name === 'name') {
-                             this.state.name
-                        }
-                        if (field.name === 'email') {
-                            return this.state.email
-                        }
-                        if (field.name === 'phone') {
-                            return this.state.phone
-                        }
-                    }
-                    // value={() => { return 'dsgsdg'
-                        if (field.name === 'name') {
-                            return this.state.name
-                        }
-                        if (field.name === 'email') {
-                            return this.state.email
-                        }
-                        if (field.name === 'phone') {
-                            return this.state.phone
-                        }
-                    // }}
+                    value={(field.name === 'name')? this.state.name: (field.name === 'email') ? this.state.email : ''}
                     onChange={this.handleChange}
                 />
             )
