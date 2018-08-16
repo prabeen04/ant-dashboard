@@ -95,6 +95,12 @@ class NavMenu extends React.Component {
                             <span>Sort Tree</span>
                         </Link>
                     </Menu.Item>
+                    <Menu.Item key="13">
+                        <Link to='/custom'>
+                            <Icon type="plus" />
+                            <span>Custom Field</span>
+                        </Link>
+                    </Menu.Item>
                 </Menu>
             </div>
         );
