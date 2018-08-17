@@ -1,17 +1,17 @@
 import React, { Component } from 'react'
+import './customField.css'
 
 class CustomField extends Component {
     constructor(props) {
         super(props)
-
         this.state = {
             name: ' ',
             email: '',
             phone: '',
             fields: [
-                { type: 'text', name: 'name', placeholder: 'Username' },
-                { type: 'email', name: 'email', placeholder: 'Email'  },
-                { type: 'number', name: 'phone', placeholder: 'Phone'  }
+                { type: 'text', name: 'name' },
+                { type: 'email', name: 'email' },
+                { type: 'number', name: 'phone' }
             ]
         }
     }
@@ -35,8 +35,9 @@ class CustomField extends Component {
                     key={index}
                     type={field.type}
                     name={field.name}
-                    placeholder={field.placeholder}
-                    value={(field.name === 'name')? this.state.name: (field.name === 'email') ? this.state.email : (field.name === 'phone') ?this.state.phone : '' }
+                    placeholder={field.name}
+                    className="custom-field-input"
+                    value={(field.name === 'name')? this.state.name: (field.name === 'email') ? this.state.email : (field.name === 'phone') ?this.state.phone : 'sdf' }
                     onChange={this.handleChange}
                 />
             )
