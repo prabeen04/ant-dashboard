@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {Button} from 'antd'
+import { Button } from 'antd'
 import './customField.css'
 
 class CustomField extends Component {
@@ -31,24 +31,34 @@ class CustomField extends Component {
     }
     render() {
         const renderFields = this.state.fields.map((field, index) => {
-            return (
-                <input
-                    key={index}
+            // return (
+            if (field.type === 'text') {
+                return <input
                     type={field.type}
                     name={field.name}
                     placeholder={field.name}
                     className="custom-field-input"
-                    value={(field.name === 'name')? this.state.name: (field.name === 'email') ? this.state.email : (field.name === 'phone') ?this.state.phone : 'sdf' }
+                    value={this.state.name}
                     onChange={this.handleChange}
                 />
-            )
+            }
+            // <input
+            //     key={index}
+            //     type={field.type}
+            //     name={field.name}
+            //     placeholder={field.name}
+            //     className="custom-field-input"
+            //     value={(field.name === 'name')? this.state.name: (field.name === 'email') ? this.state.email : (field.name === 'phone') ?this.state.phone : 'sdf' }
+            //     onChange={this.handleChange}
+            // />
+            // )
         })
         return (
             <div className="custom-field-wrapper">
                 <h2>CustomField Component</h2>
-                <form className="form-wrapper">
+                <form className="">
                     {renderFields}
-                    <Button HTMLtype="submit" type="primary" onClick={this.handleSubmit}>Send</Button>
+                    <Button htmltype="submit" type="primary" onClick={this.handleSubmit}>Send</Button>
                 </form>
             </div>
         )
