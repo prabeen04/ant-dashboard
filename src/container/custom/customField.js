@@ -73,6 +73,7 @@ class CustomField extends Component {
             }
             if (field.type === 'select') {
                 return <select
+                    key={index}
                     name={field.name}
                     placeholder={field.name}
                     className="custom-field-input"
@@ -80,20 +81,10 @@ class CustomField extends Component {
                     onChange={this.handleChange}
                 >
                     {field.options.map((option, index) => {
-                        return <option value={option}>{option}</option>
+                        return <option key={index} value={option}>{option}</option>
                     })}
                 </select>
             }
-            // <input
-            //     key={index}
-            //     type={field.type}
-            //     name={field.name}
-            //     placeholder={field.name}
-            //     className="custom-field-input"
-            //     value={(field.name === 'name')? this.state.name: (field.name === 'email') ? this.state.email : (field.name === 'phone') ?this.state.phone : 'sdf' }
-            //     onChange={this.handleChange}
-            // />
-            // )
         })
         return (
             <div className="custom-field-wrapper">
