@@ -9,9 +9,9 @@ class CustomField extends Component {
             email: '',
             phone: '',
             fields: [
-                { type: 'text', name: 'name' },
-                { type: 'email', name: 'email' },
-                { type: 'number', name: 'phone' }
+                { type: 'text', name: 'name', placeholder: 'Username' },
+                { type: 'email', name: 'email', placeholder: 'Email'  },
+                { type: 'number', name: 'phone', placeholder: 'Phone'  }
             ]
         }
     }
@@ -35,14 +35,14 @@ class CustomField extends Component {
                     key={index}
                     type={field.type}
                     name={field.name}
-                    placeholder={field.name}
+                    placeholder={field.placeholder}
                     value={(field.name === 'name')? this.state.name: (field.name === 'email') ? this.state.email : (field.name === 'phone') ?this.state.phone : '' }
                     onChange={this.handleChange}
                 />
             )
         })
         return (
-            <div>
+            <div style={{ margin: 5, backgroundColor: '#fff', padding: 20}}>
                 <h2>CustomField Component</h2>
                 <form>
                     {renderFields}
