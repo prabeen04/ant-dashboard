@@ -11,9 +11,11 @@ class CustomField extends Component {
             phone: '',
             fields: [
                 { type: 'text', name: 'name' },
-                { type: 'text', name: 'location' },
                 { type: 'email', name: 'email' },
                 { type: 'number', name: 'phone' }
+                { type: 'select', name: 'location', options:[
+                    'bhubaneswar', 'cuttack', 'berhampur', 'puri'
+                ] },
             ]
         }
     }
