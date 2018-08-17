@@ -52,6 +52,16 @@ class CustomField extends Component {
                     onChange={this.handleChange}
                 />
             }
+            if (field.type === 'number') {
+                return <input
+                    type={field.type}
+                    name={field.name}
+                    placeholder={field.name}
+                    className="custom-field-input"
+                    value={this.state.number}
+                    onChange={this.handleChange}
+                />
+            }
             // <input
             //     key={index}
             //     type={field.type}
