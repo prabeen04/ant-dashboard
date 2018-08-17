@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import {Button} from 'antd'
 import './customField.css'
 
 class CustomField extends Component {
@@ -43,11 +44,11 @@ class CustomField extends Component {
             )
         })
         return (
-            <div style={{ margin: 5, backgroundColor: '#fff', padding: 20}}>
+            <div className="custom-field-wrapper">
                 <h2>CustomField Component</h2>
-                <form>
+                <form className="form-wrapper">
                     {renderFields}
-                    <button type="submit" onClick={this.handleSubmit}>Send</button>
+                    <Button HTMLtype="submit" type="primary" onClick={this.handleSubmit}>Send</Button>
                 </form>
             </div>
         )
