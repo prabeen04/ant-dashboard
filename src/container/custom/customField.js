@@ -9,13 +9,16 @@ class CustomField extends Component {
             name: ' ',
             email: '',
             phone: '',
+            location: '',
             fields: [
                 { type: 'text', name: 'name' },
                 { type: 'email', name: 'email' },
                 { type: 'number', name: 'phone' }
-                { type: 'select', name: 'location', options:[
-                    'bhubaneswar', 'cuttack', 'berhampur', 'puri'
-                ] },
+                {
+                    type: 'select', name: 'location', options: [
+                        'bhubaneswar', 'cuttack', 'berhampur', 'puri'
+                    ]
+                },
             ]
         }
     }
@@ -67,6 +70,20 @@ class CustomField extends Component {
                     value={this.state.number}
                     onChange={this.handleChange}
                 />
+            }
+            if (field.type === 'select') {
+                return <select
+                    name={field.name}
+                    placeholder={field.name}
+                    className="custom-field-input"
+                    value={this.state.number}
+                    onChange={this.handleChange}
+                >
+                    {field.options.map((option, index) => {
+                        return <option value={field.name}>{field.name}</option>
+                    })}
+                </select>
+                    />
             }
             // <input
             //     key={index}
