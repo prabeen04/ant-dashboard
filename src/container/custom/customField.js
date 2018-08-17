@@ -11,6 +11,7 @@ class CustomField extends Component {
             phone: '',
             fields: [
                 { type: 'text', name: 'name' },
+                { type: 'text', name: 'location' },
                 { type: 'email', name: 'email' },
                 { type: 'number', name: 'phone' }
             ]
@@ -34,6 +35,7 @@ class CustomField extends Component {
             // return (
             if (field.type === 'text') {
                 return <input
+                    key={index}
                     type={field.type}
                     name={field.name}
                     placeholder={field.name}
@@ -44,6 +46,7 @@ class CustomField extends Component {
             }
             if (field.type === 'email') {
                 return <input
+                    key={index}
                     type={field.type}
                     name={field.name}
                     placeholder={field.name}
@@ -54,6 +57,7 @@ class CustomField extends Component {
             }
             if (field.type === 'number') {
                 return <input
+                    key={index}
                     type={field.type}
                     name={field.name}
                     placeholder={field.name}
