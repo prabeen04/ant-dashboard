@@ -13,7 +13,7 @@ class CustomField extends Component {
             fields: [
                 { type: 'text', name: 'name' },
                 { type: 'email', name: 'email' },
-                { type: 'number', name: 'phone' }
+                { type: 'number', name: 'phone' },
                 {
                     type: 'select', name: 'location', options: [
                         'bhubaneswar', 'cuttack', 'berhampur', 'puri'
@@ -80,10 +80,9 @@ class CustomField extends Component {
                     onChange={this.handleChange}
                 >
                     {field.options.map((option, index) => {
-                        return <option value={field.name}>{field.name}</option>
+                        return <option value={option}>{option}</option>
                     })}
                 </select>
-                    />
             }
             // <input
             //     key={index}
