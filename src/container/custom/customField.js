@@ -42,6 +42,16 @@ class CustomField extends Component {
                     onChange={this.handleChange}
                 />
             }
+            if (field.type === 'email') {
+                return <input
+                    type={field.type}
+                    name={field.name}
+                    placeholder={field.name}
+                    className="custom-field-input"
+                    value={this.state.email}
+                    onChange={this.handleChange}
+                />
+            }
             // <input
             //     key={index}
             //     type={field.type}
