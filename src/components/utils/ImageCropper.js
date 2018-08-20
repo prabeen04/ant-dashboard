@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import ReactCrop from 'react-image-crop';
+import { Button } from 'antd'
 import 'react-image-crop/dist/ReactCrop.css';
 
 export default class ImageCropper extends Component {
@@ -22,6 +23,7 @@ export default class ImageCropper extends Component {
         }}
         crop = {this.state.crop}
       />
+      <Button type="primary" onClick={this.handleCrop}>Crop Here</Button>
       </div>
     )
   }
