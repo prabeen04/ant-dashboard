@@ -47,6 +47,7 @@ class UploadInput extends Component {
         }
         if (info.file.status === 'removed') {
             console.log('file remove is clicked')
+            axios.delete(`https://fokuswork.com:8443/salesxl/api/v2.0/image/${this.state.uploadResponse}`)
             // this.setState({
             //     uploadResponse: ''
             // })
