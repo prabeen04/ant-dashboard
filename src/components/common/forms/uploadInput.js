@@ -46,9 +46,10 @@ class UploadInput extends Component {
             })
         }
         if (info.file.status === 'removed') {
-            this.setState({
-                uploadResponse: ''
-            })
+            console.log('file remove is clicked')
+            // this.setState({
+            //     uploadResponse: ''
+            // })
         }
     }
 
