@@ -14,6 +14,12 @@ class UploadInput extends Component {
             uploadResponse: ''
         }
     }
+    function getBase64(img, callback) {
+        const reader = new FileReader();
+        reader.addEventListener('load', () => callback(reader.result));
+        reader.readAsDataURL(img);
+      }
+      
     handleCancel = () => {
         this.setState({
             previewVisible: false
