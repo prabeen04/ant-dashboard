@@ -14,7 +14,7 @@ class UploadInput extends Component {
             uploadResponse: ''
         }
     }
-    function getBase64(img, callback) {
+    getBase64 = (img, callback) => {
         console.log(img)
         console.log(callback)
         const reader = new FileReader();
@@ -33,6 +33,7 @@ class UploadInput extends Component {
         if (!isJPG) {
             message.error('You can only upload JPG/PNG file!');
         }
+        // getBase64(file, (object) => console.log(object))
         const isLt2M = file.size / 1024 / 1024 < 2;
         if (!isLt2M) {
             message.error('Image must smaller than 2MB!');
