@@ -12,6 +12,9 @@ export default class ImageCropper extends Component {
       aspect: 1
     }
   }
+  handleCrop = () => {
+    console.log(this.props)
+  }
   render() {
     return (
       <div>
@@ -23,7 +26,7 @@ export default class ImageCropper extends Component {
         }}
         crop = {this.state.crop}
       />
-      <Button type="primary" onClick={this.handleCrop}>Crop Here</Button>
+      {this.props.src && <Button type="primary" onClick={this.handleCrop}>Crop Here</Button>}
       </div>
     )
   }
