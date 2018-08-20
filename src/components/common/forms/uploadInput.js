@@ -11,16 +11,15 @@ class UploadInput extends Component {
             previewVisible: false,
             previewImage: '',
             fileList: [],
-            uploadResponse: ''
+            uploadResponse: '',
+            base64URL: ''
         }
     }
     getBase64 = (img, callback) => {
-        console.log(img)
-        console.log(callback)
         const reader = new FileReader();
         reader.addEventListener('load', () => callback(reader.result));
         reader.readAsDataURL(img);
-      }
+    }
 
     handleCancel = () => {
         this.setState({
@@ -29,11 +28,15 @@ class UploadInput extends Component {
     }
     handleBeforeUpload = (file) => {
         console.log(file)
-        const isJPG = file.type === 'image/jpeg'||'image/jpg'|| 'image/png';
+        const isJPG = file.type === 'image/jpeg' || 'image/jpg' || 'image/png';
         if (!isJPG) {
             message.error('You can only upload JPG/PNG file!');
         }
-        // getBase64(file, (object) => console.log(object))
+        this.getBase64(file, (object) => {
+            this.setState({
+                base64URL: object
+            })
+        });
         const isLt2M = file.size / 1024 / 1024 < 2;
         if (!isLt2M) {
             message.error('Image must smaller than 2MB!');
@@ -57,14 +60,14 @@ class UploadInput extends Component {
         if (info.file.status === 'removed') {
             console.log('file remove is clicked')
             axios.delete(`https://fokuswork.com:8443/salesxl/api/v2.0/image/${this.state.uploadResponse}`)
-            .then(res => {
-                console.log('file deleted')
-                this.setState({
-                    uploadResponse: ''
+                .then(res => {
+                    console.log('file deleted')
+                    this.setState({
+                        uploadResponse: ''
+                    })
                 })
-            })
-            .catch(err => console.log(err))
-            
+                .catch(err => console.log(err))
+
         }
     }
 
@@ -91,11 +94,11 @@ class UploadInput extends Component {
                     {fileList.length >= 3 ? null : uploadButton}
                 </Upload>
                 <Modal visible={previewVisible} footer={null} closable maskClosable onCancel={this.handleCancel}>
-                    <img alt="example" style={{ width: '100%' }} src={previewImage} />
+                    <img alt="example" style={{ width: '100%' }} src={this.state.base64URL} />
                 </Modal>
                 <div style={{ minHeight: 200, backgroundColor: '#f4f4f4', width: '100%' }}>
                     {/* {this.state.uploadResponse && <img src={`https://fokuswork.com:8443/salesxl/api/v2.0/image/${this.state.uploadResponse}`} alt="" />} */}
-                    <ImageCropper src={`https://fokuswork.com:8443/salesxl/api/v2.0/image/${this.state.uploadResponse}`}/>
+                    <ImageCropper src={`https://fokuswork.com:8443/salesxl/api/v2.0/image/${this.state.uploadResponse}`} />
                 </div>
             </div >
         )
