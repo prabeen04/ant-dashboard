@@ -15,27 +15,27 @@ export default class ImageCropper extends Component {
     croppedImage: null
   }
   getCroppedImg = (image, pixelCrop, fileName) => {
-    console.log(image)
-    console.log(pixelCrop)
-    console.log(fileName)
+    // console.log(image)
+    // console.log(pixelCrop)
+    // console.log(fileName)
 
     const canvas = document.createElement('canvas');
     canvas.width = pixelCrop.width;
     canvas.height = pixelCrop.height;
     const ctx = canvas.getContext('2d');
 
-    let canvas2 = document.getElementById("c");
-    let ctx = canvas2.getContext("2d");
+    let canvas2 = document.createElement("canvas");
+    let ctx2 = canvas2.getContext("2d");
     
     let image2 = new Image();
-    image.onload = function() {
-        ctx2.drawImage(image, 0, 0);
+    image2.onload = function() {
+        ctx2.drawImage(image2, 0, 0);
     };
-    image.src = 
+    image2.src = image
     // let myImage = new Image();
     // myImage.src = image;
 
-    console.log(myImage)
+    console.log(image2)
     ctx.drawImage(
       image2,
       pixelCrop.x,
