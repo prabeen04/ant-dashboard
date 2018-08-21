@@ -23,21 +23,21 @@ export default class ImageCropper extends Component {
     canvas.width = pixelCrop.width;
     canvas.height = pixelCrop.height;
     const ctx = canvas.getContext('2d');
-
-    let canvas2 = document.createElement("canvas");
-    let ctx2 = canvas2.getContext("2d");
+    const img = atob(image)
+    // let canvas2 = document.createElement("canvas");
+    // let ctx2 = canvas2.getContext("2d");
     
-    let image2 = new Image();
-    image2.onload = function() {
-        ctx2.drawImage(image2, 0, 0);
-    };
-    image2.src = image
+    // let image2 = new Image();
+    // image2.onload = function() {
+    //     ctx2.drawImage(image2, 0, 0);
+    // };
+    // image2.src = image
     // let myImage = new Image();
     // myImage.src = image;
 
-    console.log(image2)
+    console.log(img)
     ctx.drawImage(
-      image2,
+      image,
       pixelCrop.x,
       pixelCrop.y,
       pixelCrop.width,
