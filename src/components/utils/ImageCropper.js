@@ -46,6 +46,9 @@ export default class ImageCropper extends Component {
   handleCrop = () => {
     console.log(this.props)
   }
+  handleChange = (crop) => {
+    this.setState({crop})
+  }
   render() {
     return (
       <div>
