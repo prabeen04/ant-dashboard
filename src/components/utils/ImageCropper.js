@@ -20,8 +20,9 @@ export default class ImageCropper extends Component {
     canvas.width = pixelCrop.width;
     canvas.height = pixelCrop.height;
     const ctx = canvas.getContext('2d');
-    var myImage = new Image();
-    myImage.src = imgData;
+
+    let myImage = new Image();
+    myImage.src = image;
 
     ctx.drawImage(
       myImage,
@@ -54,8 +55,8 @@ export default class ImageCropper extends Component {
     console.log(this.props.src)
     this.setState({ crop })
     this.getCroppedImg(this.props.src, this.state.crop, 'testImage')
-    .then(res => console.log(res))
-    .catch(err => console.log(err))
+      .then(res => console.log(res))
+      .catch(err => console.log(err))
   }
   render() {
     return (
@@ -66,7 +67,7 @@ export default class ImageCropper extends Component {
           crop={this.state.crop}
         />
         {this.props.src && <Button type="primary" onClick={this.handleCrop}>Crop Here</Button>}
-        <img src={this.props.src || 'https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png'} alt="" />
+        {this.state.showCroppedImage && <img src={this.props.src || 'https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png'} alt="" />}
       </div>
     )
   }
