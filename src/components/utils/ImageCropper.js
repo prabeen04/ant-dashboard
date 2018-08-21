@@ -15,6 +15,9 @@ export default class ImageCropper extends Component {
     croppedImage: null
   }
   getCroppedImg = (image, pixelCrop, fileName) => {
+    console.log(image)
+    console.log(pixelCrop)
+    console.log(fileName)
 
     const canvas = document.createElement('canvas');
     canvas.width = pixelCrop.width;
@@ -40,12 +43,12 @@ export default class ImageCropper extends Component {
     // const base64Image = canvas.toDataURL('image/jpeg');
 
     // As a blob
-    return new Promise((resolve, reject) => {
-      canvas.toBlob(file => {
-        file.name = fileName;
-        resolve(file);
-      }, 'image/jpeg');
-    });
+    // return new Promise((resolve, reject) => {
+    //   canvas.toBlob(file => {
+    //     file.name = fileName;
+    //     resolve(file);
+    //   }, 'image/jpeg');
+    // });
   }
 
   handleCrop = () => {
