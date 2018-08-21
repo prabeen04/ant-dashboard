@@ -10,7 +10,9 @@ export default class ImageCropper extends Component {
       y: 10,
       width: 100,
       aspect: 1
-    }
+    },
+    showCroppedImage: false,
+    croppedImage: null
   }
   getCroppedImg = (image, pixelCrop, fileName) => {
 
@@ -47,6 +49,7 @@ export default class ImageCropper extends Component {
     console.log(this.props)
   }
   handleChange = (crop) => {
+    console.log(this.props.src)
     this.setState({ crop })
   }
   render() {
@@ -58,7 +61,7 @@ export default class ImageCropper extends Component {
           crop={this.state.crop}
         />
         {this.props.src && <Button type="primary" onClick={this.handleCrop}>Crop Here</Button>}
-        <img src={'https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png'} alt="" />
+        <img src={this.props.src || 'https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png'} alt="" />
       </div>
     )
   }
