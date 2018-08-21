@@ -24,11 +24,20 @@ export default class ImageCropper extends Component {
     canvas.height = pixelCrop.height;
     const ctx = canvas.getContext('2d');
 
-    let myImage = new Image();
-    myImage.src = image;
+    let canvas2 = document.getElementById("c");
+    let ctx = canvas2.getContext("2d");
+    
+    let image2 = new Image();
+    image.onload = function() {
+        ctx2.drawImage(image, 0, 0);
+    };
+    image.src = 
+    // let myImage = new Image();
+    // myImage.src = image;
 
+    console.log(myImage)
     ctx.drawImage(
-      myImage,
+      image2,
       pixelCrop.x,
       pixelCrop.y,
       pixelCrop.width,
@@ -43,19 +52,18 @@ export default class ImageCropper extends Component {
     // const base64Image = canvas.toDataURL('image/jpeg');
 
     // As a blob
-    // return new Promise((resolve, reject) => {
-    //   canvas.toBlob(file => {
-    //     file.name = fileName;
-    //     resolve(file);
-    //   }, 'image/jpeg');
-    // });
+    return new Promise((resolve, reject) => {
+      canvas.toBlob(file => {
+        file.name = fileName;
+        resolve(file);
+      }, 'image/jpeg');
+    });
   }
 
   handleCrop = () => {
     console.log(this.props)
   }
   handleChange = (crop) => {
-    console.log(this.props.src)
     this.setState({ crop })
     this.getCroppedImg(this.props.src, this.state.crop, 'testImage')
       .then(res => console.log(res))
