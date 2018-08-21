@@ -20,7 +20,6 @@ export default class ImageCropper extends Component {
     canvas.height = pixelCrop.height;
     const ctx = canvas.getContext('2d');
 
-    console.log(img)
     ctx.drawImage(
       image,
       pixelCrop.x,
@@ -50,7 +49,7 @@ export default class ImageCropper extends Component {
   }
   handleChange = (crop) => {
     this.setState({ crop })
-    this.getCroppedImg(this.props.src, this.state.crop, 'testImage')
+    this.getCroppedImg(this.props.file, this.state.crop, 'testImage')
       .then(res => console.log(res))
       .catch(err => console.log(err))
   }

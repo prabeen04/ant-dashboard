@@ -27,7 +27,8 @@ class UploadInput extends Component {
         })
     }
     handleBeforeUpload = (file) => {
-        console.log(file)
+        this.setState({file})
+        console.log('https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png')
         const isJPG = file.type === 'image/jpeg' || 'image/jpg' || 'image/png';
         if (!isJPG) {
             message.error('You can only upload JPG/PNG file!');
@@ -97,7 +98,7 @@ class UploadInput extends Component {
                     <img alt="example" style={{ width: '100%' }} src={`https://fokuswork.com:8443/salesxl/api/v2.0/image/${this.state.uploadResponse}`} />
                 </Modal>
                 <div style={{ minHeight: 200, backgroundColor: '#f4f4f4', width: '100%' }}>
-                    <ImageCropper src={this.state.base64URL} />
+                    <ImageCropper src={this.state.base64URL} file={this.state.file}/>
                 </div>
             </div >
         )
