@@ -58,6 +58,7 @@ export default class ImageCropper extends Component {
         crop = {this.state.crop}
       />
       {this.props.src && <Button type="primary" onClick={this.handleCrop}>Crop Here</Button>}
+      <img src={'https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png'} alt=""/>
       </div>
     )
   }
