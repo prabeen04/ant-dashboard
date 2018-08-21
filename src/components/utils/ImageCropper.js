@@ -12,7 +12,7 @@ export default class ImageCropper extends Component {
       aspect: 1
     }
   }
-  function getCroppedImg(image, pixelCrop, fileName) {
+   getCroppedImg = (image, pixelCrop, fileName) => {
 
     const canvas = document.createElement('canvas');
     canvas.width = pixelCrop.width;
