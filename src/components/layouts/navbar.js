@@ -128,7 +128,7 @@ class Navbar extends React.Component {
                                 onClick={this.toggle}
                             />
                         </div>
-                        <div style={{ alignSelf: 'flex-end', marginRight: 50, height: 45 }}>
+                        <div style={{ display: 'flex', alignItems: 'center',  alignSelf: 'flex-end', marginRight: 50, height: 45 }}>
                             <a href="#" style={{ margin: 15 }}>
                                 <Badge count={1} >
                                     <Icon type="bell" />
