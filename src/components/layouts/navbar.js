@@ -95,6 +95,7 @@ class Navbar extends React.Component {
         this.toggle = this.toggle.bind(this);
         this.state = {
             collapsed: false,
+            theme: 'light'
         };
     }
 
@@ -117,18 +118,19 @@ class Navbar extends React.Component {
                     </div>
                     <NavMenu
                         collapsed={this.state.collapsed}
-                        toggleCollapsed={this.toggle} />
+                        toggleCollapsed={this.toggle} 
+                        theme={this.state.theme}/>
                 </Sider>
                 <Layout>
-                    <Header className="flex-container" style={{ background: '#fff', padding: 0, height: 45,alignItems: 'center', justifyContent: 'space-between', flexDirection: 'row' }}>
-                        <div style={{ height: 45, display: 'flex', alignSelf: 'flex-start',alignItems: 'center' }}>
+                    <Header className="flex-container" style={{ background: '#fff', padding: 0, height: 45, alignItems: 'center', justifyContent: 'space-between', flexDirection: 'row' }}>
+                        <div style={{ height: 45, display: 'flex', alignSelf: 'flex-start', alignItems: 'center' }}>
                             <Icon
                                 className="trigger"
                                 type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'}
                                 onClick={this.toggle}
                             />
                         </div>
-                        <div style={{ display: 'flex', alignItems: 'center',  alignSelf: 'flex-end', marginRight: 50, height: 45 }}>
+                        <div style={{ display: 'flex', alignItems: 'center', alignSelf: 'flex-end', marginRight: 50, height: 45 }}>
                             <a href="#" style={{ margin: 15 }}>
                                 <Badge count={1} >
                                     <Icon type="bell" />
