@@ -104,6 +104,11 @@ class Navbar extends React.Component {
             collapsed: !this.state.collapsed,
         });
     }
+    toggleTheme = (value) => {
+        this.setState({
+            theme: value ? 'dark' : 'light',
+        })
+    }
     render() {
         return (
             <Layout>

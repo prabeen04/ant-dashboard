@@ -104,7 +104,7 @@ class NavMenu extends React.Component {
                     </Menu.Item>
                     <Menu.Item>
                         <Switch
-                            // checked={this.state.theme === 'dark'}
+                            checked={this.props.theme}
                             // onChange={this.changeTheme}
                             checkedChildren="Dark"
                             unCheckedChildren="Light"
