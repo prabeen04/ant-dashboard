@@ -35,15 +35,16 @@ export default class ImageCropper extends Component {
     );
 
     // As Base64 string
-    // const base64Image = canvas.toDataURL('image/jpeg');
-
+    const base64Image = canvas.toDataURL('image/jpeg');
+    console.log(base64Image)
+    return base64Image
     // As a blob
-    return new Promise((resolve, reject) => {
-      canvas.toBlob(file => {
-        // file.name = fileName;
-        resolve(file);
-      }, 'image/jpeg');
-    });
+    // return new Promise((resolve, reject) => {
+    //   canvas.toBlob(file => {
+    //     // file.name = fileName;
+    //     resolve(file);
+    //   }, 'image/jpeg');
+    // });
   }
 
   handleCrop = () => {
@@ -51,9 +52,9 @@ export default class ImageCropper extends Component {
   }
   handleChange = (crop) => {
     this.setState({ crop })
-    this.getCroppedImg(this.props.file, this.state.crop, 'testImage')
-      .then(res => console.log(typeof res))
-      .catch(err => console.log(err))
+    const testImage = this.getCroppedImg(this.props.file, this.state.crop, 'testImage')
+      // .then(res => console.log(typeof res))
+      // .catch(err => console.log(err))
   }
   render() {
     return (
