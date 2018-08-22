@@ -1,6 +1,6 @@
 import React from 'react';
 import { Redirect } from 'react-router-dom';
-import { Menu, Icon, Button } from 'antd';
+import { Menu, Icon, Button, Switch } from 'antd';
 import { Link } from 'react-router-dom';
 const SubMenu = Menu.SubMenu;
 
@@ -102,6 +102,15 @@ class NavMenu extends React.Component {
                             <span>Custom Field</span>
                         </Link>
                     </Menu.Item>
+                    <Menu.Item>
+                        <Switch
+                            // checked={this.state.theme === 'dark'}
+                            // onChange={this.changeTheme}
+                            checkedChildren="Dark"
+                            unCheckedChildren="Light"
+                        />
+                    </Menu.Item>
+
                 </Menu>
             </div>
         );
