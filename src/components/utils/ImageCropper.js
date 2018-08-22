@@ -19,9 +19,11 @@ export default class ImageCropper extends Component {
     canvas.width = pixelCrop.width;
     canvas.height = pixelCrop.height;
     const ctx = canvas.getContext('2d');
+    const myImage = document.createElement('img')
+    myImage.src = this.props.src
     // console.log(canvas.toDataURL('image/jpeg'))
     ctx.drawImage(
-      image,
+      myImage,
       pixelCrop.x,
       pixelCrop.y,
       pixelCrop.width,

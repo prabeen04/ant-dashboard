@@ -28,7 +28,6 @@ class UploadInput extends Component {
     }
     handleBeforeUpload = (file) => {
         this.setState({file})
-        console.log(typeof file)
         const isJPG = file.type === 'image/jpeg' || 'image/jpg' || 'image/png';
         if (!isJPG) {
             message.error('You can only upload JPG/PNG file!');
