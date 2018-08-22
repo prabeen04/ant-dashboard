@@ -1,3 +1,6 @@
+import 'core-js/es6/set'
+import 'core-js/es6/map'
+import 'core-js/library/fn/string/starts-with'
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
