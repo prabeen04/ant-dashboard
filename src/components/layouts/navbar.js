@@ -120,8 +120,8 @@ class Navbar extends React.Component {
                         toggleCollapsed={this.toggle} />
                 </Sider>
                 <Layout>
-                    <Header className="flex-container" style={{ background: '#fff', padding: 0, height: 45, justifyContent: 'space-between', flexDirection: 'row' }}>
-                        <div style={{ alignSelf: 'flex-start' }}>
+                    <Header className="flex-container" style={{ background: '#fff', padding: 0, height: 45,alignItems: 'center', justifyContent: 'space-between', flexDirection: 'row' }}>
+                        <div style={{ height: 45, display: 'flex', alignSelf: 'flex-start',alignItems: 'center' }}>
                             <Icon
                                 className="trigger"
                                 type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'}
