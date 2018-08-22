@@ -110,7 +110,7 @@ class Navbar extends React.Component {
                     trigger={null}
                     collapsible
                     collapsed={this.state.collapsed}
-                    style={{ minHeight: '100vh' }}
+                    style={{ minHeight: '100vh', background: '#fff' }}
                 >
                     <div className="logo">
                         <h2>Ant {!this.state.collapsed && <span> Dashboard</span>}</h2>

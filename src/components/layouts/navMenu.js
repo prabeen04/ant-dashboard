@@ -7,7 +7,7 @@ const SubMenu = Menu.SubMenu;
 class NavMenu extends React.Component {
     state = {
         collapsed: false,
-        theme: 'light'
+        theme: 'dark'
     }
     // toggleCollapsed = () => {
     //     this.setState({
