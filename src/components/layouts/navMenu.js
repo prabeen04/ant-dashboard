@@ -7,6 +7,7 @@ const SubMenu = Menu.SubMenu;
 class NavMenu extends React.Component {
     state = {
         collapsed: false,
+        theme: 'light'
     }
     // toggleCollapsed = () => {
     //     this.setState({
@@ -14,13 +15,14 @@ class NavMenu extends React.Component {
     //     });
     // }
     render() {
+        const { theme } = this.state
         return (
             <div>
                 <Menu
                     defaultSelectedKeys={['1']}
                     defaultOpenKeys={['sub1']}
                     mode="inline"
-                    theme="dark"
+                    theme={theme}
                     inlineCollapsed={this.props.collapsed}
                 >
                     <Menu.Item key="1">
