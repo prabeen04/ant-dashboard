@@ -40,7 +40,7 @@ export default class ImageCropper extends Component {
     // As a blob
     return new Promise((resolve, reject) => {
       canvas.toBlob(file => {
-        file.name = fileName;
+        // file.name = fileName;
         resolve(file);
       }, 'image/jpeg');
     });
@@ -52,7 +52,7 @@ export default class ImageCropper extends Component {
   handleChange = (crop) => {
     this.setState({ crop })
     this.getCroppedImg(this.props.file, this.state.crop, 'testImage')
-      .then(res => console.log(res))
+      .then(res => console.log(typeof res))
       .catch(err => console.log(err))
   }
   render() {
