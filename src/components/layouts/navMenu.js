@@ -14,7 +14,6 @@ class NavMenu extends React.Component {
     //     });
     // }
     render() {
-        const { theme } = this.state
         return (
             <div>
                 <Menu
@@ -104,8 +103,8 @@ class NavMenu extends React.Component {
                     </Menu.Item>
                     <Menu.Item>
                         <Switch
-                            checked={this.props.theme}
-                            // onChange={this.changeTheme}
+                            checked={this.props.theme === 'dark'}
+                            onChange={this.props.toggleTheme}
                             checkedChildren="Dark"
                             unCheckedChildren="Light"
                         />

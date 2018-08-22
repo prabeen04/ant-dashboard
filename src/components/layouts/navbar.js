@@ -92,11 +92,11 @@ const AsyncNotFound = Loadable({
 class Navbar extends React.Component {
     constructor(props) {
         super(props)
-        this.toggle = this.toggle.bind(this);
         this.state = {
             collapsed: false,
-            theme: 'light'
+            theme: 'dark'
         };
+        this.toggle = this.toggle.bind(this);
     }
 
     toggle = () => {
@@ -105,6 +105,7 @@ class Navbar extends React.Component {
         });
     }
     toggleTheme = (value) => {
+        console.log(value)
         this.setState({
             theme: value ? 'dark' : 'light',
         })
@@ -124,6 +125,7 @@ class Navbar extends React.Component {
                     <NavMenu
                         collapsed={this.state.collapsed}
                         toggleCollapsed={this.toggle} 
+                        toggleTheme={this.toggleTheme}
                         theme={this.state.theme}/>
                 </Sider>
                 <Layout>
