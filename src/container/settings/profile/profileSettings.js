@@ -47,6 +47,7 @@ class ProfileSettings extends Component {
                 <h3>Option group</h3>
                 <Select
                     isClearable
+                    isMulti
                     // defaultValue={colourOptions[1]}
                     options={groupedOptions}
                     formatGroupLabel={formatGroupLabel}
