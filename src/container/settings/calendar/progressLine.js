@@ -17,8 +17,9 @@ class ProgessLine extends Component {
     }
   }
   handleClick = (item) => {
+    let newData = this.state.data.map(element => element.id === item.id ? {...element, loading: true}: element)
       this.setState({
-        data: [...this.state.data, { ...item, loading: true}]
+        data: newData
       })
 
   }
