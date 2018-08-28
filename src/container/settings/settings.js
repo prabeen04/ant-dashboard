@@ -12,7 +12,7 @@ const TabPane = Tabs.TabPane;
 const Settings = (props) => {
     return (
         <div className="setting-wrapper">
-            <Tabs defaultActiveKey="2">
+            <Tabs defaultActiveKey="3">
                 <TabPane tab={<span><Icon type="area-chart" />Charts</span>} key="1">
                     <ChartSettings />
                 </TabPane>

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import './progessLine.css';
+import './progressLine.css';
 
 class ProgessLine extends Component {
     constructor(props){
@@ -19,8 +19,13 @@ class ProgessLine extends Component {
   render() {
     return (
       <div className="progressLine-wrapper">
-        <h3>ProgessLine Component</h3>
-
+          <div className="progressLine">
+          {
+            this.state.data.map((item, index) => {
+              return <p key={index}>{item.title}</p>
+            })
+          }
+          </div>
       </div>
     )
   }
