@@ -16,17 +16,24 @@ class ProgessLine extends Component {
       ]
     }
   }
+  handleClick = (item) => {
+    alert(item.title)
+  }
   render() {
     const progressRender = this.state.data.map((item, index) => {
       const flexBasis = `${item.progress}%`
-      return <div key={index} className="progress-item" style={{flexBasis}}>
+      return (<div
+        key={index}
+        className="progress-item"
+        style={{ flexBasis }}
+        onClick={() => this.handleClick(item)}>
         {item.title}
-      </div>
+      </div>)
     })
     return (
       <div className="progress-line-wrapper">
         <div className="progress-line">
-          {progressRender }
+          {progressRender}
         </div>
       </div>
     )
