@@ -48,7 +48,6 @@ class ProfileSettings extends Component {
                 <Select
                     isClearable
                     isMulti
-                    // defaultValue={colourOptions[1]}
                     options={groupedOptions}
                     formatGroupLabel={formatGroupLabel}
                     onChange={this.handleChange}
