@@ -13,15 +13,24 @@
     background: #f4f4f4;
 }
 .progress-item{
+    position: relative;
     display: flex;
     justify-content: center;
     padding: 0.4rem 0.5rem;
     flex-grow: inherit;
     background: rgb(1, 172, 30);
     color: #fff;
+    font-weight: 600;
     border: 1px solid #eee;
     height: min-content;
     cursor: pointer;
+}
+.progress-item::after{
+    position: absolute;
+    top: -15px;
+    content: '4 Days';
+    color: rgb(43, 42, 42);
+    font-size: 10px
 }
 .progress-item:first-child{
     border-top-left-radius: 10px;
