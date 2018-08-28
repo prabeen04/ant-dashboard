@@ -1,5 +1,19 @@
-.progressLine-wrapper{
+.progress-line-wrapper{
     height: 75vh;
     display: flex;
     justify-content: center;
+}
+.progress-line{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin: 1rem;
+    padding: 1rem;
+    background: #f4f4f4;
+}
+.progress-item{
+    padding: 0.3rem 0.5rem;
+    background: #fff;
+    border: 1px solid #eee;
+    height: 40px;
 }
