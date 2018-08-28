@@ -7,23 +7,23 @@ class ProgessLine extends Component {
 
     this.state = {
       data: [
-        { title: 'value1', progress: 10, loading: false },
-        { title: 'value2', progress: 15, loading: false },
-        { title: 'value3', progress: 10, loading: false },
-        { title: 'value4', progress: 25, loading: false },
-        { title: 'value5', progress: 30, loading: false },
-        { title: 'value6', progress: 10, loading: false },
+        { id: 1, title: 'value1', progress: 10, loading: false },
+        { id: 2, title: 'value2', progress: 15, loading: false },
+        { id: 3, title: 'value3', progress: 10, loading: false },
+        { id: 4, title: 'value4', progress: 25, loading: false },
+        { id: 5, title: 'value5', progress: 30, loading: false },
+        { id: 6, title: 'value6', progress: 10, loading: false },
       ]
     }
   }
   handleClick = (item) => {
       this.setState({
-        data: [...this.state.data,{ ...item, loading: true}]
+        data: [...this.state.data, { ...item, loading: true}]
       })
 
   }
   render() {
-    const progressRender = this.state.data.map((item, index) => {
+    const renderProgress = this.state.data.map((item, index) => {
       const flexBasis = `${item.progress}%`
       return (<div
         key={index}
@@ -36,7 +36,7 @@ class ProgessLine extends Component {
     return (
       <div className="progress-line-wrapper">
         <div className="progress-line">
-          {progressRender}
+          {renderProgress}
         </div>
       </div>
     )
