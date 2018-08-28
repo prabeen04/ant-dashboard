@@ -35,10 +35,10 @@ class ProgessLine extends Component {
       return (<div
               key={index}
               className="progress-item"
-              style={{ flexBasis, backgroundColor, color }}
+              style={{ flexBasis, backgroundColor}}
               onClick={() => this.handleClick(item, index)}>
-              <h4>{item.title}</h4>
-              <span className="progress-days">{item.days}</span>
+              <h4 style = {{ color }}>{item.title}</h4>
+              {item.touched && <span className="progress-days">{item.days}days</span>}
               {/* {item.loading ? 'Loading...' : item.title} */}
             </div>)
     })
