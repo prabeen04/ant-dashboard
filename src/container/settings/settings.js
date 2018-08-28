@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { Tabs, Icon } from 'antd';
 import ChartSettings from './chartSettings';
 import ProfileSettings from './profile/profileSettings';
-import ProgressLine from './calendar/progessLine';
+import ProgressLine from './calendar/progressLine';
 import './settings.css';
 const TabPane = Tabs.TabPane;
 

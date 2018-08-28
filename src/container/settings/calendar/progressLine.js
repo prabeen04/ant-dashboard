@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
+import './progessLine.css';
 
-class progessLine extends Component {
+class ProgessLine extends Component {
     constructor(props){
         super(props)
 
@@ -17,11 +18,12 @@ class progessLine extends Component {
     }
   render() {
     return (
-      <div>
-        <h3>progessLine Component</h3>
+      <div className="progressLine-wrapper">
+        <h3>ProgessLine Component</h3>
+
       </div>
     )
   }
 }
 
-export default progessLine;
+export default ProgessLine;
