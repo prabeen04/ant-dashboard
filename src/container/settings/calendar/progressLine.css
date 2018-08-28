@@ -17,8 +17,8 @@
     justify-content: center;
     padding: 0.4rem 0.5rem;
     flex-grow: inherit;
-    background: rgb(255, 255, 255);
-    color: #444;
+    background: rgb(1, 172, 30);
+    color: #fff;
     border: 1px solid #eee;
     height: min-content;
     cursor: pointer;
