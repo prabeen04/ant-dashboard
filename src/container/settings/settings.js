@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { Tabs, Icon } from 'antd';
 import ChartSettings from './chartSettings';
 import ProfileSettings from './profile/profileSettings';
+import ProgressLine from './calendar/progessLine';
 import './settings.css';
 const TabPane = Tabs.TabPane;
 
@@ -19,8 +20,8 @@ const Settings = (props) => {
                     <ProfileSettings />
                 </TabPane>
                 <TabPane tab={<span><Icon type="calendar" />calendar</span>} key="3">
-                    Tab 3
-                    </TabPane>
+                    <ProgressLine />
+                </TabPane>
                 <TabPane tab={<span><Icon type="cloud-download" />Downloads</span>} key="4">
                     Tab 4
                     </TabPane>
