@@ -16,9 +16,10 @@ class ProgessLine extends Component {
       ]
     }
   }
-  handleClick = (item) => {
-    let newData = this.state.data.map((element, index) => {
-      return element.id === item.id ? { ...element, loading: true, touched: true } : element
+  handleClick = (item, i) => {
+
+    let newData = this.state.data.map((element, index) => { 
+      return index <= i ? { ...element, loading: true, touched: true } : {...element, loading: true, touched: false}
     }
     )
     this.setState({
@@ -32,13 +33,13 @@ class ProgessLine extends Component {
       const backgroundColor = item.touched ? 'rgb(1, 172, 30)' : '#fff';
       const color = item.touched ? '#fff' : '#444';
       return (<div
-        key={index}
-        className="progress-item"
-        style={{ flexBasis, backgroundColor, color }}
-        onClick={() => this.handleClick(item)}>
-        {item.title}
-        {/* {item.loading ? 'Loading...' : item.title} */}
-      </div>)
+              key={index}
+              className="progress-item"
+              style={{ flexBasis, backgroundColor, color }}
+              onClick={() => this.handleClick(item, index)}>
+              {item.title}
+              {/* {item.loading ? 'Loading...' : item.title} */}
+            </div>)
     })
     return (
       <div className="progress-line-wrapper">
