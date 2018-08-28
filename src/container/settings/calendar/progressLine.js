@@ -7,12 +7,12 @@ class ProgessLine extends Component {
 
     this.state = {
       data: [
-        { id: 1, title: 'value1', progress: 10, loading: false, touched: false },
-        { id: 2, title: 'value2', progress: 15, loading: false, touched: false },
-        { id: 3, title: 'value3', progress: 10, loading: false, touched: false },
-        { id: 4, title: 'value4', progress: 25, loading: false, touched: false },
-        { id: 5, title: 'value5', progress: 30, loading: false, touched: false },
-        { id: 6, title: 'value6', progress: 10, loading: false, touched: false },
+        { id: 1, title: 'value1', progress: 10, loading: false, touched: false, days: 4 },
+        { id: 2, title: 'value2', progress: 15, loading: false, touched: false, days: 0 },
+        { id: 3, title: 'value3', progress: 10, loading: false, touched: false, days: 2 },
+        { id: 4, title: 'value4', progress: 25, loading: false, touched: false, days: 12 },
+        { id: 5, title: 'value5', progress: 30, loading: false, touched: false, days: 1 },
+        { id: 6, title: 'value6', progress: 10, loading: false, touched: false, days: 3 },
       ]
     }
   }
@@ -37,7 +37,8 @@ class ProgessLine extends Component {
               className="progress-item"
               style={{ flexBasis, backgroundColor, color }}
               onClick={() => this.handleClick(item, index)}>
-              {item.title}
+              <h4>{item.title}</h4>
+              <span className="progress-days">{item.days}</span>
               {/* {item.loading ? 'Loading...' : item.title} */}
             </div>)
     })
