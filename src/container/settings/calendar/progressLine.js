@@ -18,7 +18,8 @@ class ProgessLine extends Component {
   }
   render() {
     const progressRender = this.state.data.map((item, index) => {
-      return <div key={index} className="progress-item">
+      const flexBasis = `${item.progress}%`
+      return <div key={index} className="progress-item" style={{flexBasis}}>
         {item.title}
       </div>
     })

@@ -6,6 +6,7 @@
 .progress-line{
     display: flex;
     flex-direction: row;
+    flex-grow: 1;
     width: 100%;
     margin: 1rem;
     padding: 1rem;
@@ -13,7 +14,10 @@
 }
 .progress-item{
     padding: 0.3rem 0.5rem;
-    background: #fff;
+    flex-grow: inherit;
+    background: rgb(1, 172, 30);
+    color: #fff;
     border: 1px solid #eee;
     height: 40px;
+    
 }
