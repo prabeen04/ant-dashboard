@@ -7,8 +7,8 @@ class ProgessLine extends Component {
 
     this.state = {
       data: [
-        { id: 1, title: 'value1', progress: 10, loading: false, touched: false, days: 4 },
-        { id: 2, title: 'value2', progress: 15, loading: false, touched: false, days: 0 },
+        { id: 1, title: 'value1', progress: 5, loading: false, touched: false, days: 4 },
+        { id: 2, title: 'value2', progress: 20, loading: false, touched: false, days: 0 },
         { id: 3, title: 'value3', progress: 10, loading: false, touched: false, days: 2 },
         { id: 4, title: 'value4', progress: 25, loading: false, touched: false, days: 12 },
         { id: 5, title: 'value5', progress: 30, loading: false, touched: false, days: 1 },
