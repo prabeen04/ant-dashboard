@@ -95,10 +95,10 @@ class UploadInput extends Component {
                 </Upload>
                 <Modal visible={previewVisible} footer={null} closable maskClosable onCancel={this.handleCancel}>
                     <img alt="example" style={{ width: '100%' }} src={`https://fokuswork.com:8443/salesxl/api/v2.0/image/${this.state.uploadResponse}`} />
-                </Modal>
                 <div style={{ minHeight: 200, backgroundColor: '#f4f4f4', width: '100%' }}>
                     <ImageCropper src={this.state.base64URL} file={this.state.file}/>
                 </div>
+                </Modal>
             </div >
         )
     }
