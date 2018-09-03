@@ -18,24 +18,24 @@ const data02 = [
   { name: 'Group F', value: 4800, color: 'rgba(222, 249, 47, 0.7)' },
 ];
 class PieChart1 extends Component {
-  constructor(props){
+  constructor(props) {
     super(props)
-}
+  }
   render() {
     return (
-      <div style={{margin: '0.2rem'}}>
+      <div style={{ margin: '0.2rem' }}>
         <PieChart width={this.props.width} height={this.props.height} >
           <Pie data={data01} dataKey="value" nameKey="name" cx="50%" cy="50%" outerRadius={50}>
-          {
-          	data01.map((entry, index) => <Cell fill={entry.color}/>)
-          }
+            {
+              data01.map((entry, index) => <Cell fill={entry.color} />)
+            }
           </Pie>
           <Pie data={data02} dataKey="value" nameKey="name" cx="50%" cy="50%" innerRadius={60} outerRadius={80} label>
-          {
-          	data02.map((entry, index) => <Cell fill={entry.color}/>)
-          }
+            {
+              data02.map((entry, index) => <Cell fill={entry.color} />)
+            }
           </Pie>
-          <Tooltip/>
+          <Tooltip />
           {/* <Legend/> */}
         </PieChart>
       </div>
