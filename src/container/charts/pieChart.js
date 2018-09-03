@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 import { PieChart, Pie, Legend, Cell, Tooltip, ResponsiveContainer, Sector, Label, LabelList } from 'recharts';
 const data01 = [
-  { name: 'Group A', value: 400, v: 89, color: '#ffffff' },
-  { name: 'Group B', value: 300, v: 100, color: '#ffffff' },
-  { name: 'Group C', value: 200, v: 200, color: '#ffffff' },
-  { name: 'Group D', value: 200, v: 20, color: '#ffffff' },
-  { name: 'Group E', value: 278, v: 40, color: '#ffffff' },
-  { name: 'Group F', value: 189, v: 60, color: '#ffffff' },
+  { name: 'Group A', value: 400, v: 89, color: '#4286f4' },
+  { name: 'Group B', value: 300, v: 100, color: '#f44256' },
+  { name: 'Group C', value: 200, v: 200, color: '#70ed36' },
+  { name: 'Group D', value: 200, v: 20, color: '#7c89ba' },
+  { name: 'Group E', value: 278, v: 40, color: '#4245f4' },
+  { name: 'Group F', value: 189, v: 60, color: '#ddf738' },
 ];
 
 const data02 = [
@@ -26,6 +26,9 @@ class PieChart1 extends Component {
       <div style={{margin: '0.2rem'}}>
         <PieChart width={this.props.width} height={this.props.height} >
           <Pie data={data01} dataKey="value" nameKey="name" cx="50%" cy="50%" outerRadius={50}>
+          {
+          	data.map((entry, index) => <Cell fill={COLORS[index % COLORS.length]}/>)
+          }
           </Pie>
           <Pie data={data02} dataKey="value" nameKey="name" cx="50%" cy="50%" innerRadius={60} outerRadius={80}>
           </Pie>
