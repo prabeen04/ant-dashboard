@@ -29,9 +29,13 @@ export default class ImageCropper extends Component {
       height: Math.round(image.naturalHeight * (crop.height / 100)),
     };
 
-    // renderCropPreview(image, pixelCrop);
+    renderCropPreview(image, pixelCrop);
 
     this.setState({ crop });
+  }
+  renderCropPreview = (image, pixelCrop) => {
+    console.log(image);
+    console.log(pixelCrop);
   }
   handleCrop = () => {
     console.log('handle crop called')
