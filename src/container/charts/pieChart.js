@@ -1,21 +1,21 @@
 import React, { Component } from 'react'
 import { PieChart, Pie, Legend, Cell, Tooltip, ResponsiveContainer, Sector, Label, LabelList } from 'recharts';
 const data01 = [
-  { name: 'Group A', value: 400, v: 89 },
-  { name: 'Group B', value: 300, v: 100 },
-  { name: 'Group C', value: 200, v: 200 },
-  { name: 'Group D', value: 200, v: 20 },
-  { name: 'Group E', value: 278, v: 40 },
-  { name: 'Group F', value: 189, v: 60 },
+  { name: 'Group A', value: 400, v: 89, color: '#ffffff' },
+  { name: 'Group B', value: 300, v: 100, color: '#ffffff' },
+  { name: 'Group C', value: 200, v: 200, color: '#ffffff' },
+  { name: 'Group D', value: 200, v: 20, color: '#ffffff' },
+  { name: 'Group E', value: 278, v: 40, color: '#ffffff' },
+  { name: 'Group F', value: 189, v: 60, color: '#ffffff' },
 ];
 
 const data02 = [
-  { name: 'Group A', value: 2400 },
-  { name: 'Group B', value: 4567 },
-  { name: 'Group C', value: 1398 },
-  { name: 'Group D', value: 9800 },
-  { name: 'Group E', value: 3908 },
-  { name: 'Group F', value: 4800 },
+  { name: 'Group A', value: 2400, color: '#ffffff' },
+  { name: 'Group B', value: 4567, color: '#ffffff' },
+  { name: 'Group C', value: 1398, color: '#ffffff' },
+  { name: 'Group D', value: 9800, color: '#ffffff' },
+  { name: 'Group E', value: 3908, color: '#ffffff' },
+  { name: 'Group F', value: 4800, color: '#ffffff' },
 ];
 class PieChart1 extends Component {
   constructor(props){
