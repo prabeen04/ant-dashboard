@@ -27,7 +27,7 @@ class UploadInput extends Component {
         })
     }
     handleBeforeUpload = (file) => {
-        this.setState({file})
+        this.setState({ file })
         const isJPG = file.type === 'image/jpeg' || 'image/jpg' || 'image/png';
         if (!isJPG) {
             message.error('You can only upload JPG/PNG file!');
@@ -41,7 +41,8 @@ class UploadInput extends Component {
         if (!isLt2M) {
             message.error('Image must smaller than 2MB!');
         }
-        return isJPG && isLt2M;
+        // return isJPG && isLt2M;
+        return false;
     }
     handlePreview = (file) => {
         this.setState({
@@ -95,9 +96,9 @@ class UploadInput extends Component {
                 </Upload>
                 <Modal visible={previewVisible} footer={null} closable maskClosable onCancel={this.handleCancel}>
                     <img alt="example" style={{ width: '100%' }} src={`https://fokuswork.com:8443/salesxl/api/v2.0/image/${this.state.uploadResponse}`} />
-                <div style={{ minHeight: 200, backgroundColor: '#f4f4f4', width: '100%' }}>
-                    <ImageCropper src={this.state.base64URL} file={this.state.file}/>
-                </div>
+                    <div style={{ minHeight: 200, backgroundColor: '#f4f4f4', width: '100%' }}>
+                        <ImageCropper src={this.state.base64URL} file={this.state.file} />
+                    </div>
                 </Modal>
             </div >
         )
