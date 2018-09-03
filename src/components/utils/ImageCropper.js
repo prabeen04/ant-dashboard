@@ -8,11 +8,30 @@ export default class ImageCropper extends Component {
     crop: {
       x: 20,
       y: 10,
-      // width: 100,
+      width: 100,
       aspect: 1
     },
     showCroppedImage: false,
     croppedImage: null
+  }
+  onImageLoaded = (image) => {
+    const crop = makeAspectCrop({
+      x: 0,
+      y: 0,
+      aspect: 16 / 9,
+      width: 50,
+    }, image.width / image.height);
+
+    const pixelCrop = {
+      x: Math.round(image.naturalWidth * (crop.x / 100)),
+      y: Math.round(image.naturalHeight * (crop.y / 100)),
+      width: Math.round(image.naturalWidth * (crop.width / 100)),
+      height: Math.round(image.naturalHeight * (crop.height / 100)),
+    };
+
+    renderCropPreview(image, pixelCrop);
+
+    this.setState({ crop });
   }
   getCroppedImg = (image, pixelCrop, fileName) => {
     const canvas = document.createElement('canvas');
@@ -68,8 +87,8 @@ export default class ImageCropper extends Component {
           crop={this.state.crop}
         />
         {this.props.src && <Button type="primary" onClick={this.handleCrop}>Crop Here</Button>}
-        {this.state.showCroppedImage && <img src={this.state.croppedImage} style={{height: 400, width: 400}}/>}
+        {this.state.showCroppedImage && <img src={this.state.croppedImage} style={{ height: 400, width: 400 }} />}
       </div>
-        )
-      }
-    }
+    )
+  }
+}
