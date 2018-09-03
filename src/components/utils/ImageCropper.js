@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import ReactCrop, { makeAspectCrop } from 'react-image-crop';
+import ReactCrop from 'react-image-crop';
 import { Button } from 'antd'
 import 'react-image-crop/dist/ReactCrop.css';
 
@@ -8,7 +8,7 @@ export default class ImageCropper extends Component {
     crop: {
       x: 20,
       y: 10,
-      width: 1000,
+      // width: 100,
       aspect: 1
     },
     showCroppedImage: false,
@@ -51,21 +51,13 @@ export default class ImageCropper extends Component {
     const testImage = this.getCroppedImg(this.props.file, this.state.crop, 'testImage')
     this.setState({
       croppedImage: testImage,
-      showCroppedImage: true,
+      showCroppedImage: true
     })
     // .then(res => console.log(typeof res))
     // .catch(err => console.log(err))
   }
   handleChange = (crop) => {
-    console.log(crop)
-    this.setState({ 
-      crop: makeAspectCrop({
-        x: 0,
-        y: 0,
-        aspect: 16 / 9,
-        width: 50,
-      }, crop.width / crop.height),
-     })
+    this.setState({ crop })
   }
   render() {
     return (
