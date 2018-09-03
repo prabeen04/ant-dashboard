@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import ReactCrop from 'react-image-crop';
+import ReactCrop, {makeAspectCrop} from 'react-image-crop';
 import { Button } from 'antd'
 import 'react-image-crop/dist/ReactCrop.css';
 
@@ -29,7 +29,7 @@ export default class ImageCropper extends Component {
       height: Math.round(image.naturalHeight * (crop.height / 100)),
     };
 
-    renderCropPreview(image, pixelCrop);
+    // renderCropPreview(image, pixelCrop);
 
     this.setState({ crop });
   }
@@ -84,6 +84,7 @@ export default class ImageCropper extends Component {
         <ReactCrop
           src={this.props.src || 'https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png'}
           onChange={this.handleChange}
+          onImageLoaded = {this.onImageLoaded}
           crop={this.state.crop}
         />
         {this.props.src && <Button type="primary" onClick={this.handleCrop}>Crop Here</Button>}
