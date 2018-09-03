@@ -14,6 +14,7 @@ export default class ImageCropper extends Component {
     showCroppedImage: false,
     croppedImage: null
   }
+  
   onImageLoaded = (image) => {
     const crop = makeAspectCrop({
       x: 0,
@@ -29,7 +30,7 @@ export default class ImageCropper extends Component {
       height: Math.round(image.naturalHeight * (crop.height / 100)),
     };
 
-    renderCropPreview(image, pixelCrop);
+    this.renderCropPreview(image, pixelCrop);
 
     this.setState({ crop });
   }
