@@ -10,12 +10,12 @@ const data01 = [
 ];
 
 const data02 = [
-  { name: 'Group A', value: 2400, color: '#ffffff' },
-  { name: 'Group B', value: 4567, color: '#ffffff' },
-  { name: 'Group C', value: 1398, color: '#ffffff' },
-  { name: 'Group D', value: 9800, color: '#ffffff' },
-  { name: 'Group E', value: 3908, color: '#ffffff' },
-  { name: 'Group F', value: 4800, color: '#ffffff' },
+  { name: 'Group A', value: 2400, color: '#4286f4' },
+  { name: 'Group B', value: 4567, color: '#70ed36' },
+  { name: 'Group C', value: 1398, color: '#ddf738' },
+  { name: 'Group D', value: 9800, color: '#4245f4' },
+  { name: 'Group E', value: 3908, color: '#7c89ba' },
+  { name: 'Group F', value: 4800, color: '#f44256' },
 ];
 class PieChart1 extends Component {
   constructor(props){
@@ -27,10 +27,13 @@ class PieChart1 extends Component {
         <PieChart width={this.props.width} height={this.props.height} >
           <Pie data={data01} dataKey="value" nameKey="name" cx="50%" cy="50%" outerRadius={50}>
           {
-          	data.map((entry, index) => <Cell fill={COLORS[index % COLORS.length]}/>)
+          	data01.map((entry, index) => <Cell fill={entry.color}/>)
           }
           </Pie>
-          <Pie data={data02} dataKey="value" nameKey="name" cx="50%" cy="50%" innerRadius={60} outerRadius={80}>
+          <Pie data={data02} dataKey="value" nameKey="name" cx="50%" cy="50%" innerRadius={60} outerRadius={80} label>
+          {
+          	data02.map((entry, index) => <Cell fill={entry.color}/>)
+          }
           </Pie>
           <Tooltip/>
           {/* <Legend/> */}
