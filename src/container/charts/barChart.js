@@ -28,18 +28,30 @@ const data2 = [
 class BarChart1 extends Component {
     constructor(props) {
         super(props)
+        this.state = {
+            chartData: data1
+        }
+    }
+
+    componentDidMount() {
+        setTimeout(() => {
+            this.setState({
+                chartData: data2
+            })
+        }, 5000)
+
     }
     render() {
         return (
             <div style={{ margin: '0.2rem' }}>
-                <BarChart width={this.props.width} height={this.props.height} data={data}>
+                <BarChart width={this.props.width} height={this.props.height} data={this.state.chartData}>
                     <CartesianGrid strokeDasharray="3 3" />
                     <XAxis dataKey="name" />
                     <YAxis />
                     <Tooltip />
                     <Legend />
-                    <Bar dataKey="pv" fill="#8884d8" barSize={20} />
-                    <Bar dataKey="uv" fill="#82ca9d" barSize={20} />
+                    <Bar dataKey="amt" fill="#8884d8" barSize={20} />
+                    {/* <Bar dataKey="uv" fill="#82ca9d" barSize={20} /> */}
                 </BarChart>
             </div>
         )
