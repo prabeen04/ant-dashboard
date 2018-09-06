@@ -10,12 +10,36 @@ const data = [
 ];
 
 const data1 = [
-    { name: 'food', amt: 4500 },
-    { name: 'cosmetic', amt: 6500 },
-    { name: 'storage', amt: 5000 },
-    { name: 'async', amt: 5000 },
-    { name: 'analog', amt: 5000 },
-    { name: 'digital', amt: 4000 },
+    { name: '1', amt: 4500 },
+    { name: '2', amt: 6500 },
+    { name: '3', amt: 5000 },
+    { name: '4', amt: 5000 },
+    { name: '5', amt: 5000 },
+    { name: '6', amt: 4000 },
+    { name: '7', amt: 9800 },
+    { name: '8', amt: 5410 },
+    { name: '9', amt: 5000 },
+    { name: '10', amt: 1222 },
+    { name: '11', amt: 8744 },
+    { name: '12', amt: 9800 },
+    { name: '13', amt: 5410 },
+    { name: '14', amt: 5000 },
+    { name: '15', amt: 1222 },
+    { name: '16', amt: 8744 },
+    { name: '17', amt: 9800 },
+    { name: '18', amt: 5410 },
+    { name: '19', amt: 5000 },
+    { name: '20', amt: 1222 },
+    { name: '21', amt: 8744 },
+    { name: '22', amt: 9800 },
+    { name: '23', amt: 5410 },
+    { name: '24', amt: 5000 },
+    { name: '25', amt: 1222 },
+    { name: '26', amt: 8744 },
+    { name: '27', amt: 9800 },
+    { name: '28', amt: 5410 },
+    { name: '29', amt: 5000 },
+    { name: '30', amt: 1222 },
 ];
 const data2 = [
     { name: 'manutd', amt: 1222 },
@@ -25,6 +49,8 @@ const data2 = [
     { name: 'liverpool', amt: 1222 },
     { name: 'spurs', amt: 8744 },
 ];
+
+
 class BarChart1 extends Component {
     constructor(props) {
         super(props)
@@ -34,11 +60,11 @@ class BarChart1 extends Component {
     }
 
     componentDidMount() {
-        setTimeout(() => {
-            this.setState({
-                chartData: data2
-            })
-        }, 5000)
+        // setTimeout(() => {
+        //     this.setState({
+        //         chartData: data2
+        //     })
+        // }, 5000)
 
     }
     render() {
