@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import { BarChart, Bar, Brush, Cell, CartesianGrid, ReferenceLine, ReferenceDot, XAxis, YAxis, Tooltip, Legend, ErrorBar, LabelList } from 'recharts';
+import { BarChart, Bar, Brush, Cell, CartesianGrid, ReferenceLine, ReferenceDot,
+     XAxis, YAxis, Tooltip, Legend, ErrorBar, LabelList, Label } from 'recharts';
 const data = [
     { name: 'food', uv: 3300, pv: 2000, amt: 4500, time: 1, uvError: [100, 50], pvError: [110, 20] },
     { name: 'cosmetic', uv: 3300, pv: 2000, amt: 6500, time: 2, uvError: 120, pvError: 50 },
@@ -72,7 +73,9 @@ class BarChart1 extends Component {
             <div style={{ margin: '0.2rem' }}>
                 <BarChart width={this.props.width} height={this.props.height} data={this.state.chartData}>
                     <CartesianGrid strokeDasharray="3 3" />
-                    <XAxis dataKey="name" />
+                    <XAxis dataKey="name">
+                        <Label value="Pages of my website" offset={0} position="insideBottom" />
+                    </XAxis>
                     <YAxis />
                     <Tooltip />
                     <Legend />

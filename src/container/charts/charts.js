@@ -15,7 +15,7 @@ class Charts extends Component {
         this.newTabIndex = 0;
         const panes = [
             { title: 'My Chart', content: <MyChart height={200} width={500}/>, key: '1' },
-            { title: 'Bar Chart', content: <BarChart1 height={300} width={600}/>, key: '2' },
+            { title: 'Bar Chart', content: <BarChart1 height={300} width={800}/>, key: '2' },
             { title: 'Pie Chart', content: <PieChart1 height={300} width={600}/>, key: '3' },
             { title: 'Area Chart', content: <AreaChart1 height={300} width={600}/>, key: '4' },
             { title: 'Line Chart', content: <LineChart1 height={300} width={600}/>, key: '5' },
