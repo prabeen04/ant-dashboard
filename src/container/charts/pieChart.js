@@ -46,11 +46,11 @@ class PieChart1 extends Component {
               data01.map((entry, index) => <Cell fill={entry.color} />)
             }
           </Pie>
-          {/* <Pie data={data02} dataKey="value" nameKey="name" cx="50%" cy="50%" innerRadius={60} outerRadius={80} label>
+          <Pie data={this.state.chartData} dataKey="value" nameKey="name" cx="50%" cy="50%" innerRadius={60} outerRadius={80} label>
             {
               data02.map((entry, index) => <Cell fill={entry.color} />)
             }
-          </Pie> */}
+          </Pie>
           <Tooltip />
           {/* <Legend/> */}
         </PieChart>
