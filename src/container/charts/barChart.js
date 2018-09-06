@@ -18,12 +18,12 @@ const data1 = [
     { name: 'digital', amt: 4000 },
 ];
 const data2 = [
-    { name: 'food', amt: 4500 },
-    { name: 'cosmetic', amt: 6500 },
-    { name: 'storage', amt: 5000 },
-    { name: 'async', amt: 5000 },
-    { name: 'analog', amt: 5000 },
-    { name: 'digital', amt: 4000 },
+    { name: 'manutd', amt: 1222 },
+    { name: 'chelsea', amt: 9800 },
+    { name: 'arsenal', amt: 5410 },
+    { name: 'mancity', amt: 5000 },
+    { name: 'liverpool', amt: 1222 },
+    { name: 'spurs', amt: 8744 },
 ];
 class BarChart1 extends Component {
     constructor(props) {
