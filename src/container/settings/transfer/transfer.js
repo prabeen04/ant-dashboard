@@ -44,7 +44,16 @@ class Transfer extends Component {
     render() {
         return (
             <div>
-
+                <Transfer
+                    dataSource={mockData}
+                    titles={['Source', 'Target']}
+                    targetKeys={this.state.targetKeys}
+                    selectedKeys={this.state.selectedKeys}
+                    onChange={this.handleChange}
+                    onSelectChange={this.handleSelectChange}
+                    onScroll={this.handleScroll}
+                    render={item => item.title}
+                />
             </div>
         )
     }
