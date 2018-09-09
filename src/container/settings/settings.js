@@ -5,7 +5,7 @@ import { Tabs, Icon } from 'antd';
 import ChartSettings from './chartSettings';
 import ProfileSettings from './profile/profileSettings';
 import ProgressLine from './calendar/progressLine';
-import Transfer from './transfer/transfer'''
+import Transfer from './transfer/transfer';
 import './settings.css';
 const TabPane = Tabs.TabPane;
 
