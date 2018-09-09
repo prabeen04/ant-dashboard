@@ -18,7 +18,7 @@ const style = {
 class RadialChart1 extends Component {
     render() {
         return (
-            <div>
+            <div className="flex-container">
                 <RadialBarChart width={500} height={300} cx={150} cy={150} innerRadius={20} outerRadius={140} barSize={10} data={data}>
                     <RadialBar minAngle={15} label={{ position: 'insideStart', fill: '#fff' }} background clockWise={true} dataKey='uv' />
                     <Legend iconSize={10} width={120} height={140} layout='vertical' verticalAlign='middle' wrapperStyle={style} />

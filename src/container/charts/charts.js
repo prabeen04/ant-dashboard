@@ -21,7 +21,7 @@ class Charts extends Component {
             { title: 'Pie Chart', content: <PieChart1 height={300} width={600}/>, key: '3' },
             { title: 'Area Chart', content: <AreaChart1 height={300} width={600}/>, key: '4' },
             { title: 'Line Chart', content: <LineChart1 height={300} width={600}/>, key: '5' },
-            { title: 'Line Chart', content: <RadialChart1 height={300} width={600}/>, key: '6' },
+            { title: 'Radial Chart', content: <RadialChart1 height={300} width={600}/>, key: '6' },
         ];
         this.state = {
             activeKey: panes[0].key,
