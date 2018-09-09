@@ -23,7 +23,7 @@ class PieChart1 extends Component {
     super(props)
 
     this.state = {
-       chartData: []
+       chartData: data01
     }
   }
   componentDidMount = () => {
