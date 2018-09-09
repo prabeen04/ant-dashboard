@@ -22,6 +22,25 @@ class Transfer extends Component {
             selectedKeys: [],
         }
     }
+    handleChange = (nextTargetKeys, direction, moveKeys) => {
+        this.setState({ targetKeys: nextTargetKeys });
+
+        console.log('targetKeys: ', targetKeys);
+        console.log('direction: ', direction);
+        console.log('moveKeys: ', moveKeys);
+    }
+
+    handleSelectChange = (sourceSelectedKeys, targetSelectedKeys) => {
+        this.setState({ selectedKeys: [...sourceSelectedKeys, ...targetSelectedKeys] });
+
+        console.log('sourceSelectedKeys: ', sourceSelectedKeys);
+        console.log('targetSelectedKeys: ', targetSelectedKeys);
+    }
+
+    handleScroll = (direction, e) => {
+        console.log('direction:', direction);
+        console.log('target:', e.target);
+    }
     render() {
         return (
             <div>
