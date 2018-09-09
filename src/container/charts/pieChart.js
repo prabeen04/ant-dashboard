@@ -27,14 +27,14 @@ class PieChart1 extends Component {
     }
   }
   componentDidMount = () => {
-    axios.get('http://192.168.1.61:3000/oppo')
-    .then(res =>{ 
-      console.log(res)
-      this.setState({
-        chartData: res.data
-      })
-    })
-    .catch(err => console.log(err))
+    // axios.get('http://192.168.1.61:3000/oppo')
+    // .then(res =>{ 
+    //   console.log(res)
+    //   this.setState({
+    //     chartData: res.data
+    //   })
+    // })
+    // .catch(err => console.log(err))
   }
   
   render() {
