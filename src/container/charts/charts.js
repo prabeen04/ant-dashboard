@@ -6,6 +6,8 @@ import PieChart1 from './pieChart';
 import BarChart1 from './barChart';
 import AreaChart1 from './areaChart';
 import MyChart from './myChart';
+import RadialChart1 from './radialChart';
+
 import './charts.css';
 const TabPane = Tabs.TabPane;
 
@@ -19,6 +21,7 @@ class Charts extends Component {
             { title: 'Pie Chart', content: <PieChart1 height={300} width={600}/>, key: '3' },
             { title: 'Area Chart', content: <AreaChart1 height={300} width={600}/>, key: '4' },
             { title: 'Line Chart', content: <LineChart1 height={300} width={600}/>, key: '5' },
+            { title: 'Line Chart', content: <RadialChart1 height={300} width={600}/>, key: '6' },
         ];
         this.state = {
             activeKey: panes[0].key,

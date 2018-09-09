@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-class RadialChart extends Component {
+class RadialChart1 extends Component {
   render() {
     return (
       <div>
@@ -10,4 +10,4 @@ class RadialChart extends Component {
   }
 }
 
-export default RadialChart;
+export default RadialChart1;
