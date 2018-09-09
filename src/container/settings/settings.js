@@ -5,6 +5,7 @@ import { Tabs, Icon } from 'antd';
 import ChartSettings from './chartSettings';
 import ProfileSettings from './profile/profileSettings';
 import ProgressLine from './calendar/progressLine';
+import Transfer from './transfer/transfer'''
 import './settings.css';
 const TabPane = Tabs.TabPane;
 
@@ -23,8 +24,8 @@ const Settings = (props) => {
                     <ProgressLine />
                 </TabPane>
                 <TabPane tab={<span><Icon type="cloud-download" />Downloads</span>} key="4">
-                    Tab 4
-                    </TabPane>
+                    <Transfer />
+                </TabPane>
                 <TabPane tab={<span><Icon type="desktop" />Desktop</span>} key="5">
                     Tab 5
                     </TabPane>
