@@ -14,7 +14,7 @@ const targetKeys = mockData
     .filter(item => +item.key % 3 > 1)
     .map(item => item.key);
 
-class Transfer extends Component {
+class ColumnTransfer extends Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -59,4 +59,4 @@ class Transfer extends Component {
     }
 }
 
-export default Transfer;
+export default ColumnTransfer;
