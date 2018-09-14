@@ -9,6 +9,7 @@ import MyChart from './myChart';
 import RadialChart1 from './radialChart';
 
 import './charts.css';
+import FunnelChart from '../../components/charts/funnelChart';
 const TabPane = Tabs.TabPane;
 
 class Charts extends Component {
@@ -22,6 +23,7 @@ class Charts extends Component {
             { title: 'Area Chart', content: <AreaChart1 height={300} width={600}/>, key: '4' },
             { title: 'Line Chart', content: <LineChart1 height={300} width={600}/>, key: '5' },
             { title: 'Radial Chart', content: <RadialChart1 height={300} width={600}/>, key: '6' },
+            { title: 'Funnel Chart', content: <FunnelChart height={300} width={600}/>, key: '7' },
         ];
         this.state = {
             activeKey: panes[0].key,
