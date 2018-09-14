@@ -13,6 +13,9 @@ class FunnelChart extends Component {
                 { label: 'Deposits', value: 20 },
             ],
             options: {
+                chart: {
+                    bottomWidth: 6/7,
+                },
                 block: {
                     dynamicHeight: true,
                     minHeight: 15,
