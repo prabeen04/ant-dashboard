@@ -18,11 +18,15 @@ class FunnelChart extends Component {
                     height: height,
                     width: width,
                     bottomWidth: 1/7,
+                    animate: 300
                 },
                 block: {
                     dynamicHeight: true,
                     minHeight: 15,
-                    highlight: true
+                    highlight: true,
+                    fill: {
+                        type: 'gradient'
+                    }
                 },
                 tooltip: {
                     enabled: true
