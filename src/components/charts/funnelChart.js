@@ -21,8 +21,9 @@ class FunnelChart extends Component {
         }
     }
     componentDidMount() {
+        const { data, options} = this.state;
         const chart = new D3Funnel(this.myRef.current);
-        chart.draw(this.state.data, this.state.options);
+        chart.draw(data, options);
     }
     render() {
         return (
