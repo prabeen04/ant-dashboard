@@ -4,6 +4,7 @@ import D3Funnel from 'd3-funnel';
 class FunnelChart extends Component {
     constructor(props) {
         super(props)
+        const { height, width} = this.props;
         this.myRef = React.createRef();
         this.state = {
             data: [
@@ -14,7 +15,9 @@ class FunnelChart extends Component {
             ],
             options: {
                 chart: {
-                    bottomWidth: 6/7,
+                    height: height,
+                    width: width,
+                    bottomWidth: 1/7,
                 },
                 block: {
                     dynamicHeight: true,
@@ -33,11 +36,10 @@ class FunnelChart extends Component {
         chart.draw(data, options,);
     }
     render() {
-        const { height, width} = this.props;
         return (
             <div>  
                 <h2>FunnelChart Component</h2>
-                <div ref={this.myRef}  style={{ height, width}} />
+                <div ref={this.myRef} />
             </div>
         )
     }
