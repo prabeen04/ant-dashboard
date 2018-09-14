@@ -26,10 +26,11 @@ class FunnelChart extends Component {
         chart.draw(data, options);
     }
     render() {
+        const { height, width} = this.props;
         return (
             <div>  
                 <h2>FunnelChart Component</h2>
-                <div ref={this.myRef}  style={{ height: this.props.height, width: this.props.width}} />
+                <div ref={this.myRef}  style={{ height, width}} />
             </div>
         )
     }
