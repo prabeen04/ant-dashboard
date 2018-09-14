@@ -26,7 +26,7 @@ class FunnelChart extends Component {
     }
     render() {
         return (
-            <div>
+            <div style={{  width: this.props.width}}>  
                 <h2>FunnelChart Component</h2>
                 <div ref={this.myRef} />
             </div>
