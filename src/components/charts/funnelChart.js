@@ -10,12 +10,13 @@ class FunnelChart extends Component {
                 { label: 'Inquiries', value: 5000 },
                 { label: 'Applicants', value: 2500 },
                 { label: 'Admits', value: 500 },
-                { label: 'Deposits', value: 200 },
+                { label: 'Deposits', value: 20 },
             ],
             options: {
                 block: {
                     dynamicHeight: true,
                     minHeight: 15,
+                    highlight: true
                 },
                 tooltip: {
                     enabled: true
