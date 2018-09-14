@@ -17,13 +17,16 @@ class FunnelChart extends Component {
                     dynamicHeight: true,
                     minHeight: 15,
                 },
+                tooltip: {
+                    enabled: true
+                }
             }
         }
     }
     componentDidMount() {
-        const { data, options} = this.state;
+        const { data, options, } = this.state;
         const chart = new D3Funnel(this.myRef.current);
-        chart.draw(data, options);
+        chart.draw(data, options,);
     }
     render() {
         const { height, width} = this.props;
