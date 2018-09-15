@@ -5,30 +5,11 @@ import { Layout, Menu, Icon, Badge, Table } from 'antd';
 import './navbar.css';
 import BundleLoading from '../loading/bundleLoading'
 import NavMenu from './navMenu';
-// import Dashboard from '../../container/dashboard/dashboard';
-// import Calendar from '../../container/calendar/calendar';
-// import Profile from '../../container/profile/profile';
-// import Post from '../../container/post/post';
-// import SinglePost from '../../container/post/singlePost';
-// import Login from "../../container/login/login";
-// import NotFound from '../../container/notFound/notFound';
-// import Forms from '../../container/forms/forms';
-// import Tables from '../../container/tables/tables';
-// import Settings from '../../container/settings/settings';
-// import DND from '../../container/DND/DND';
-// import Charts from '../../container/charts/charts';
-// import MyMap from '../../container/map/map';
-// import Drag from "../../container/drag/drag";
-// import TreeSort from '../../container/treesort/treeSort';
 import GooglePlace from '../google/googlePlace';
 import AppBoundary from '../../errorHandler/appBoundary';
 import NotificationPopover from '../popover/notificationPopover';
 const { Header, Sider, Content } = Layout;
 
-// const AsyncNavMenu = Loadable({
-//     loader: () => import('./navMenu'),
-//     loading: BundleLoading
-// })
 const AsyncDashboard = Loadable({
     loader: () => import('../../container/dashboard/dashboard'),
     loading: BundleLoading
