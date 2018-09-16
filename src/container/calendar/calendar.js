@@ -49,36 +49,39 @@ class Calendar extends Component {
     //   return (<p>Some Error occoured...</p>)
     // }
     return (
-      <div className="flex-container" style={{ height: '520px', backgroundColor: '#fff', margin: '1rem' }}>
+      <div>
         <ActionHeader />
-        {this.state.activeTab === '1'
-          ? <CalendarInstance
-            events={this.props.events}
-            defaultDate={new Date()}
-            selectable={true}
-            popup={true}
-            onSelectEvent={this.eventSelect}
-            onSelectSlot={this.handleOk}
-          />
-          : <p style={{ flexBasis: '70%' }}>Second tab Content</p>
 
-        }
+        <div className="flex-container" style={{ height: '520px', backgroundColor: '#fff', margin: '1rem' }}>
+          {this.state.activeTab === '1'
+            ? <CalendarInstance
+              events={this.props.events}
+              defaultDate={new Date()}
+              selectable={true}
+              popup={true}
+              onSelectEvent={this.eventSelect}
+              onSelectSlot={this.handleOk}
+            />
+            : <p style={{ flexBasis: '70%' }}>Second tab Content</p>
 
-        <div className="event-form" >
-          <Tabs
-            defaultActiveKey={this.state.activeTab}
-            onChange={(activeKey) => {
-              this.setState({
-                activeTab: activeKey.toString()
-              })
-            }}>
-            <TabPane tab={<span><Icon type="apple" />Apple</span>} key="1">
-              <EventForm />
-            </TabPane>
-            <TabPane tab={<span><Icon type="android" />Android</span>} key="2">
-              <Button type="primary">submit</Button>
-            </TabPane>
-          </Tabs>
+          }
+
+          <div className="event-form" >
+            <Tabs
+              defaultActiveKey={this.state.activeTab}
+              onChange={(activeKey) => {
+                this.setState({
+                  activeTab: activeKey.toString()
+                })
+              }}>
+              <TabPane tab={<span><Icon type="apple" />Apple</span>} key="1">
+                <EventForm />
+              </TabPane>
+              <TabPane tab={<span><Icon type="android" />Android</span>} key="2">
+                <Button type="primary">submit</Button>
+              </TabPane>
+            </Tabs>
+          </div>
         </div>
       </div>
     )
