@@ -7,7 +7,7 @@ import EventForm from './eventForm';
 import EventList from './eventList';
 import ActionHeader from '../../components/layouts/ActionHeader';
 import './calendar.css';
-import { Button, Icon, message, Tabs } from 'antd';
+import { Button, Icon, message, Tabs, Tooltip } from 'antd';
 const TabPane = Tabs.TabPane;
 const dateFormat = 'YYYY-MM-DD';
 const timeFormat = 'HH:mm:ss';
@@ -107,3 +107,16 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Calendar);
+
+const LeftActionHeader = props => {
+  return (<Tooltip title="Grid View">
+    <Icon
+      type="appstore-o"
+    />
+  </Tooltip>
+    <Tooltip title="List View">
+      <Icon
+        type="profile"
+      />
+    </Tooltip>)
+}
