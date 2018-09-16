@@ -5,6 +5,7 @@ import CalendarInstance from './calendarInstance';
 import { getEvents, addEvent, setDate } from '../../actions/calendar_actions';
 import EventForm from './eventForm';
 import EventList from './eventList';
+import ActionHeader from '../../components/layouts/ActionHeader';
 import './calendar.css';
 import { Button, Icon, message, Tabs } from 'antd';
 const TabPane = Tabs.TabPane;
@@ -49,7 +50,7 @@ class Calendar extends Component {
     // }
     return (
       <div className="flex-container" style={{ height: '520px', backgroundColor: '#fff', margin: '1rem' }}>
-
+        <ActionHeader />
         {this.state.activeTab === '1'
           ? <CalendarInstance
             events={this.props.events}
