@@ -2,7 +2,7 @@ import React from 'react'
 
 const ActionHeader = (props) => {
     return (
-        <div>
+        <div className="action-header">
 
         </div>
     )
