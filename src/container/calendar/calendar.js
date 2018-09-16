@@ -131,9 +131,9 @@ const RightActionHeader = props => {
         type="car"
       />
     </Tooltip>
-    <Tooltip title="Train">
+    <Tooltip title="User">
       <Icon
-        type="train"
+        type="user"
       />
     </Tooltip>
   </React.Fragment>

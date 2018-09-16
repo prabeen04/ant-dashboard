@@ -6,7 +6,7 @@ import { setFilterText, setViewType, showAddProfile, setSortKey } from '../../ac
 import SettingPopover from '../../components/popover/settingPopover';
 import './profile.css';
 const Search = Input.Search;
-class ProfileHeader extends Component {
+class ProfileActionHeaderLeft extends Component {
     render() {
         return (
             <div className="profile-header">
@@ -84,4 +84,4 @@ const mapDispatchProps = dispatch => {
         setSortKey
     }, dispatch)
 }
-export default connect(mapStateToProps, mapDispatchProps)(ProfileHeader);
+export default connect(mapStateToProps, mapDispatchProps)(ProfileActionHeaderLeft);

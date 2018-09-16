@@ -4,14 +4,16 @@ import ProfileList from './profileList';
 import AddProfile from './addProfile';
 import EditProfile from './editProfile';
 import ProfileView from './profileView';
-import ProfileHeader from './profileHeader';
+import ProfileActionHeaderLeft from './ProfileActionHeaderLeft';
+import ActionHeader from '../../components/layouts/ActionHeader';
 import PaginationComponent from '../../components/common/pagination/pagination';
 import './profile.css';
 
 const Profile = (props) => {
   return (
     <div className="pr">
-      <ProfileHeader />
+      <ActionHeader />
+      <ProfileActionHeaderLeft />
       <div className="profile-wrapper">
         <div className="profile-view">
           <ProfileList />
@@ -37,3 +39,16 @@ const mapStateToProps = (state) => {
   }
 }
 export default connect(mapStateToProps)(Profile);
+const LeftActionHeader = props => {
+  return (<React.Fragment>
+
+  </React.Fragment>
+  )
+}
+
+const RightActionHeader = props => {
+  return (<React.Fragment>
+
+  </React.Fragment>
+  )
+}
