@@ -50,7 +50,10 @@ class Calendar extends Component {
     // }
     return (
       <div>
-        <ActionHeader />
+        <ActionHeader
+          leftComponent="left"
+          rightComponent="right"
+        />
 
         <div className="flex-container" style={{ height: '520px', backgroundColor: '#fff', margin: '1rem' }}>
           {this.state.activeTab === '1'
