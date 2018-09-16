@@ -52,7 +52,7 @@ class Calendar extends Component {
       <div>
         <ActionHeader
           leftComponent={() => <h1>left</h1>}
-          rightComponent="right"
+          rightComponent={<Button type="primary">right</Button>}
         />
 
         <div className="flex-container" style={{ height: '520px', backgroundColor: '#fff', margin: '1rem' }}>

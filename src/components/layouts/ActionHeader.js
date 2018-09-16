@@ -12,6 +12,6 @@ const ActionHeader = (props) => {
 }
 ActionHeader.propTypes = {
     leftComponent: PropTypes.func.isRequired,
-    rightComponent: PropTypes.string,
+    rightComponent: PropTypes.element
 }
 export default ActionHeader
