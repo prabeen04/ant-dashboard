@@ -1,9 +1,10 @@
 import React from 'react'
 
-export default () => {
-  return (
-    <div>
-      
-    </div>
-  )
+const ActionHeader = (props) => {
+    return (
+        <div>
+
+        </div>
+    )
 }
+export default ActionHeader
