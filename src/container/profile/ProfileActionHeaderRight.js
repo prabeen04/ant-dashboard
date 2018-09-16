@@ -9,50 +9,6 @@ const Search = Input.Search;
 class ProfileActionHeaderRight extends Component {
     render() {
         return (
-            <div className="profile-header">
-                <div className="view-icons">
-                    <Tooltip title="Grid View">
-                        <Icon
-                            style={{ fontSize: 25, cursor: 'pointer' }}
-                            type="appstore-o"
-                            onClick={() => this.props.setViewType('GRID')}
-                        />
-                    </Tooltip>
-                    <Tooltip title="List View">
-                        <Icon
-                            style={{ fontSize: 25, marginLeft: '0.5rem', marginRight: '1rem', cursor: 'pointer' }}
-                            type="profile"
-                            onClick={() => this.props.setViewType('LIST')}
-
-                        />
-                    </Tooltip>
-
-                    {this.props.sortKey === 'DESC'
-                        ? <Tooltip title="Sort by Ascending">
-                            <div onClick={() => this.props.setSortKey('ASC')}>
-                                <i className="fas fa-sort-alpha-up"
-                                    style={{ fontSize: 25, marginLeft: '0.5rem', marginRight: '1rem', cursor: 'pointer' }}
-
-                                ></i>
-                            </div>
-                        </Tooltip>
-                        : <Tooltip title="Sort by Descending">
-                            <div onClick={() => this.props.setSortKey('DESC')}>
-                                <i className="fas fa-sort-alpha-down"
-                                    style={{ fontSize: 25, marginLeft: '0.5rem', marginRight: '1rem', cursor: 'pointer' }}
-                                ></i>
-                            </div>
-                        </Tooltip>}
-                    {this.props.viewType === 'LIST' && <Tooltip title="Add Profile">
-                        <Button
-                            type="primary"
-                            icon="plus"
-                            onClick={() => this.props.showAddProfile()}
-                        >
-                            Add Profile</Button>
-                    </Tooltip>}
-
-                </div>
                 <div className="setting-icons">
                     <Search
                         placeholder="Search Profile"
@@ -66,7 +22,6 @@ class ProfileActionHeaderRight extends Component {
                     />
                     <SettingPopover />
                 </div>
-            </div>
         )
     }
 }

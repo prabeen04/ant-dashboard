@@ -53,19 +53,6 @@ class ProfileActionHeaderLeft extends Component {
                     </Tooltip>}
 
                 </div>
-                <div className="setting-icons">
-                    <Search
-                        placeholder="Search Profile"
-                        onSearch={value => this.props.setFilterText(value)}
-                        style={{ marginRight: '1rem' }}
-                        className="filter-text-input"
-                        onChange={(e) => {
-                            console.log(e.target.value)
-                            this.props.setFilterText(e.target.value)
-                        }}
-                    />
-                    <SettingPopover />
-                </div>
             </div>
         )
     }

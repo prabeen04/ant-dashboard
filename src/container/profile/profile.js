@@ -5,6 +5,7 @@ import AddProfile from './addProfile';
 import EditProfile from './editProfile';
 import ProfileView from './profileView';
 import ProfileActionHeaderLeft from './ProfileActionHeaderLeft';
+import ProfileActionHeaderRight from "./ProfileActionHeaderRight";
 import ActionHeader from '../../components/layouts/ActionHeader';
 import PaginationComponent from '../../components/common/pagination/pagination';
 import './profile.css';
@@ -12,7 +13,7 @@ import './profile.css';
 const Profile = (props) => {
   return (
     <div className="pr">
-      <ActionHeader />
+      <ActionHeader rightComponent={<ProfileActionHeaderRight />} />
       <ProfileActionHeaderLeft />
       <div className="profile-wrapper">
         <div className="profile-view">
