@@ -123,3 +123,19 @@ const LeftActionHeader = props => {
     </React.Fragment>
   )
 }
+
+const RightActionHeader = props => {
+  return (<React.Fragment>
+      <Tooltip title="Car">
+        <Icon
+          type="car"
+        />
+      </Tooltip>
+      <Tooltip title="Train">
+        <Icon
+          type="train"
+        />
+      </Tooltip>
+    </React.Fragment>
+  )
+}
