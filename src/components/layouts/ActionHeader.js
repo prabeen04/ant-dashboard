@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import PropTypes from 'prop-types'
 import './ActionHeader.css';
 
 const ActionHeader = (props) => {
@@ -8,5 +9,9 @@ const ActionHeader = (props) => {
             <h3>{props.rightComponent}</h3>
         </div>
     )
+}
+ActionHeader.prototype = {
+    leftComponent: PropTypes.string,
+    rightComponent: PropTypes.string,
 }
 export default ActionHeader
