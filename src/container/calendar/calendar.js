@@ -51,8 +51,8 @@ class Calendar extends Component {
     return (
       <div>
         <ActionHeader
-          leftComponent={() => <h1>left</h1>}
-          rightComponent={<Button type="primary">right</Button>}
+          leftComponent={<LeftActionHeader />}
+          rightComponent={<RightActionHeader />}
         />
 
         <div className="flex-container" style={{ height: '520px', backgroundColor: '#fff', margin: '1rem' }}>
@@ -110,32 +110,32 @@ export default connect(mapStateToProps, mapDispatchToProps)(Calendar);
 
 const LeftActionHeader = props => {
   return (<React.Fragment>
-      <Tooltip title="Grid View">
-        <Icon
-          type="appstore-o"
-        />
-      </Tooltip>
-      <Tooltip title="List View">
-        <Icon
-          type="profile"
-        />
-      </Tooltip>
-    </React.Fragment>
+    <Tooltip title="Grid View">
+      <Icon
+        type="appstore-o"
+      />
+    </Tooltip>
+    <Tooltip title="List View">
+      <Icon
+        type="profile"
+      />
+    </Tooltip>
+  </React.Fragment>
   )
 }
 
 const RightActionHeader = props => {
   return (<React.Fragment>
-      <Tooltip title="Car">
-        <Icon
-          type="car"
-        />
-      </Tooltip>
-      <Tooltip title="Train">
-        <Icon
-          type="train"
-        />
-      </Tooltip>
-    </React.Fragment>
+    <Tooltip title="Car">
+      <Icon
+        type="car"
+      />
+    </Tooltip>
+    <Tooltip title="Train">
+      <Icon
+        type="train"
+      />
+    </Tooltip>
+  </React.Fragment>
   )
 }
