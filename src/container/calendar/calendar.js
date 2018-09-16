@@ -51,7 +51,7 @@ class Calendar extends Component {
     return (
       <div>
         <ActionHeader
-          leftComponent="left"
+          leftComponent={() => <h1>left</h1>}
           rightComponent="right"
         />
 
