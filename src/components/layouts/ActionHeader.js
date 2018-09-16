@@ -5,13 +5,13 @@ import './ActionHeader.css';
 const ActionHeader = (props) => {
     return (
         <div className="action-header">
-            <div>{props.leftComponent()}</div>
+            <div>{props.leftComponent}</div>
             <div>{props.rightComponent}</div>
         </div>
     )
 }
 ActionHeader.propTypes = {
-    leftComponent: PropTypes.func.isRequired,
+    leftComponent: PropTypes.element,
     rightComponent: PropTypes.element
 }
 export default ActionHeader
