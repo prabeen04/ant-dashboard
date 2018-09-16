@@ -13,8 +13,10 @@ import './profile.css';
 const Profile = (props) => {
   return (
     <div className="pr">
-      <ActionHeader rightComponent={<ProfileActionHeaderRight />} />
-      <ProfileActionHeaderLeft />
+      <ActionHeader
+        leftComponent={<ProfileActionHeaderLeft />}
+        rightComponent={<ProfileActionHeaderRight />}
+      />
       <div className="profile-wrapper">
         <div className="profile-view">
           <ProfileList />
