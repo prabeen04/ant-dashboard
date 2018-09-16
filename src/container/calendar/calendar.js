@@ -109,14 +109,17 @@ const mapDispatchToProps = (dispatch) => {
 export default connect(mapStateToProps, mapDispatchToProps)(Calendar);
 
 const LeftActionHeader = props => {
-  return (<Tooltip title="Grid View">
-    <Icon
-      type="appstore-o"
-    />
-  </Tooltip>
-    <Tooltip title="List View">
-      <Icon
-        type="profile"
-      />
-    </Tooltip>)
+  return (<React.Fragment>
+      <Tooltip title="Grid View">
+        <Icon
+          type="appstore-o"
+        />
+      </Tooltip>
+      <Tooltip title="List View">
+        <Icon
+          type="profile"
+        />
+      </Tooltip>
+    </React.Fragment>
+  )
 }
