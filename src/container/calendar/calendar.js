@@ -55,7 +55,7 @@ class Calendar extends Component {
           rightComponent={<RightActionHeader />}
         />
 
-        <div className="flex-container" style={{ height: '520px', backgroundColor: '#fff', margin: '1rem' }}>
+        <div className="flex-container" style={{ height: '520px', backgroundColor: '#fff', margin: '0.5rem' }}>
           {this.state.activeTab === '1'
             ? <CalendarInstance
               events={this.props.events}
@@ -113,7 +113,7 @@ const LeftActionHeader = props => {
     <Tooltip title="Grid View">
       <Icon
         type="appstore-o"
-        style={{ fontSize: 25, cursor: 'pointer', marginRight: '0.5rem'  }}
+        style={{ fontSize: 25, cursor: 'pointer', marginRight: '0.5rem' }}
       />
     </Tooltip>
     <Tooltip title="List View">
@@ -131,7 +131,7 @@ const RightActionHeader = props => {
     <Tooltip title="Car">
       <Icon
         type="car"
-        style={{ fontSize: 25, cursor: 'pointer', marginRight: '0.5rem'  }}
+        style={{ fontSize: 25, cursor: 'pointer', marginRight: '0.5rem' }}
       />
     </Tooltip>
     <Tooltip title="User">
