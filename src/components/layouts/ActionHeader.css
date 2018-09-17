@@ -1,6 +1,7 @@
 .action-header{
     background: #fff;
-   margin:  0.2rem  0.5rem;
+    height: 40px;
+    margin:  0.2rem  0.5rem;
     padding: 0.3rem 1rem;
     display: flex;
     justify-content: space-between;
