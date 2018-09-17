@@ -7,7 +7,6 @@ import ProfileView from './profileView';
 import ProfileActionHeaderLeft from './ProfileActionHeaderLeft';
 import ProfileActionHeaderRight from "./ProfileActionHeaderRight";
 import ActionHeader from '../../components/layouts/ActionHeader';
-// import PaginationComponent from '../../components/common/pagination/pagination';
 import './profile.css';
 
 const Profile = (props) => {
@@ -20,7 +19,6 @@ const Profile = (props) => {
       <div className="profile-wrapper">
         <div className="profile-view">
           <ProfileList />
-          {/* <PaginationComponent /> */}
         </div>
         <div className="profile-action">
           {props.showAddProfile && <AddProfile />}
