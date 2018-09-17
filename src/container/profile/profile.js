@@ -40,16 +40,3 @@ const mapStateToProps = (state) => {
   }
 }
 export default connect(mapStateToProps)(Profile);
-const LeftActionHeader = props => {
-  return (<React.Fragment>
-
-  </React.Fragment>
-  )
-}
-
-const RightActionHeader = props => {
-  return (<React.Fragment>
-
-  </React.Fragment>
-  )
-}
