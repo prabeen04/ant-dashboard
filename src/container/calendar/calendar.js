@@ -113,7 +113,7 @@ const LeftActionHeader = props => {
     <Tooltip title="Grid View">
       <Icon
         type="appstore-o"
-        style={{ fontSize: 25, cursor: 'pointer' }}
+        style={{ fontSize: 25, cursor: 'pointer', marginRight: '0.5rem'  }}
       />
     </Tooltip>
     <Tooltip title="List View">
@@ -131,7 +131,7 @@ const RightActionHeader = props => {
     <Tooltip title="Car">
       <Icon
         type="car"
-        style={{ fontSize: 25, cursor: 'pointer' }}
+        style={{ fontSize: 25, cursor: 'pointer', marginRight: '0.5rem'  }}
       />
     </Tooltip>
     <Tooltip title="User">
