@@ -113,11 +113,13 @@ const LeftActionHeader = props => {
     <Tooltip title="Grid View">
       <Icon
         type="appstore-o"
+        style={{ fontSize: 25, cursor: 'pointer' }}
       />
     </Tooltip>
     <Tooltip title="List View">
       <Icon
         type="profile"
+        style={{ fontSize: 25, cursor: 'pointer' }}
       />
     </Tooltip>
   </React.Fragment>
@@ -129,11 +131,13 @@ const RightActionHeader = props => {
     <Tooltip title="Car">
       <Icon
         type="car"
+        style={{ fontSize: 25, cursor: 'pointer' }}
       />
     </Tooltip>
     <Tooltip title="User">
       <Icon
         type="user"
+        style={{ fontSize: 25, cursor: 'pointer' }}
       />
     </Tooltip>
   </React.Fragment>
