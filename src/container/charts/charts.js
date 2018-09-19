@@ -7,6 +7,7 @@ import BarChart1 from './barChart';
 import AreaChart1 from './areaChart';
 import MyChart from './myChart';
 import RadialChart1 from './radialChart';
+import AdvancedBarChart from './AdvancedBarChart';
 
 import './charts.css';
 import FunnelChart from '../../components/charts/funnelChart';
@@ -24,6 +25,7 @@ class Charts extends Component {
             { title: 'Line Chart', content: <LineChart1 height={300} width={600}/>, key: '5' },
             { title: 'Radial Chart', content: <RadialChart1 height={300} width={600}/>, key: '6' },
             { title: 'Funnel Chart', content: <FunnelChart height={300} width={600}/>, key: '7' },
+            { title: 'AdvancedBarChart', content: <AdvancedBarChart height={400} width={800}/>, key: '8' },
         ];
         this.state = {
             activeKey: panes[0].key,
