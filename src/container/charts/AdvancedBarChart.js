@@ -112,7 +112,7 @@ class AdvancedBarChart extends Component {
         }
     }
     displayXTick = (tick) => {
-        return moment(tick).toISOString();
+        return `day ${tick}`;
     }
     displayYTick = (tick) => {
         return `Day ${tick}`;
