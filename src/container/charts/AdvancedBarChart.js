@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { Button } from "antd";
 import { BarChart, Bar, Brush, Cell, CartesianGrid, XAxis, YAxis, Tooltip, Legend, Label } from 'recharts';
+import moment from 'moment';
+
 class AdvancedBarChart extends Component {
     constructor(props) {
         super(props)
@@ -163,7 +165,10 @@ class AdvancedBarChart extends Component {
             ]
         }
     }
-    displayTick = (tick) => {
+    displayXTick = (tick) => {
+        return `Day ${tick}`;
+    }
+    displayYTick = (tick) => {
         return `Day ${tick}`;
     }
     render() {
@@ -176,14 +181,16 @@ class AdvancedBarChart extends Component {
                 <BarChart width={this.props.width} height={this.props.height} data={this.state.data}>
                     <CartesianGrid strokeDasharray="3 3" />
                     <XAxis
-                        dataKey="name"
-                        tickFormatter={this.displayTick}>
+                        dataKey="eventId"
+                        tickFormatter={this.displayXTick}>
                         <Label value="Pages of my website" offset={0} position="insideBottom" />
                     </XAxis>
-                    <YAxis />
+                    <YAxis
+                        dataKey="startDate"
+                        tickFormatter={this.displayYTick} />
                     <Tooltip />
                     <Legend />
-                    <Bar dataKey="amt" fill="#8884d8" barSize={20} />
+                    <Bar dataKey={"startDate"} fill="#8884d8" barSize={20} />
                     {/* <Bar dataKey="uv" fill="#82ca9d" barSize={20} /> */}
                 </BarChart>
             </div>
