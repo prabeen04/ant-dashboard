@@ -15,150 +15,96 @@ class AdvancedBarChart extends Component {
                     eventHeading: "eventHeading",
                     eventDescription: "eventDescription",
                     timeZone: "UCT",
-                    startDate: "2018-09-19T21:30:17+05:30",
+                    startDate: "2018-09-1T21:30:17+05:30",
                     endDate: "2018-09-19T21:35:17+05:30",
-                    eventStatus: "pending",
-                    accountId: "AC0001",
-                    opportunityId: "opportunityId",
-                    contactId: "contactId",
-                    userId: "USER00001",
-                    organizationId: "organizationId",
                     eventClosureDate: "2018-09-19T21:30:17+05:30"
                 },
                 {
-                    eventId: "EVEN00001",
+                    eventId: "EVEN00002",
                     eventType: "call",
                     eventOwnerId: "user00001",
                     eventHeading: "eventHeading",
                     eventDescription: "eventDescription",
                     timeZone: "UCT",
-                    startDate: "2018-09-19T21:30:17+05:30",
+                    startDate: "2018-09-2T21:30:17+05:30",
                     endDate: "2018-09-19T21:35:17+05:30",
-                    eventStatus: "pending",
-                    accountId: "AC0001",
-                    opportunityId: "opportunityId",
-                    contactId: "contactId",
-                    userId: "USER00001",
-                    organizationId: "organizationId",
                     eventClosureDate: "2018-09-19T21:30:17+05:30"
                 },
                 {
-                    eventId: "EVEN00001",
+                    eventId: "EVEN00003",
                     eventType: "call",
                     eventOwnerId: "user00001",
                     eventHeading: "eventHeading",
                     eventDescription: "eventDescription",
                     timeZone: "UCT",
-                    startDate: "2018-09-19T21:30:17+05:30",
+                    startDate: "2018-09-3T21:30:17+05:30",
                     endDate: "2018-09-19T21:35:17+05:30",
-                    eventStatus: "pending",
-                    accountId: "AC0001",
-                    opportunityId: "opportunityId",
-                    contactId: "contactId",
-                    userId: "USER00001",
-                    organizationId: "organizationId",
                     eventClosureDate: "2018-09-19T21:30:17+05:30"
                 },
                 {
-                    eventId: "EVEN00001",
+                    eventId: "EVEN00004",
                     eventType: "call",
                     eventOwnerId: "user00001",
                     eventHeading: "eventHeading",
                     eventDescription: "eventDescription",
                     timeZone: "UCT",
-                    startDate: "2018-09-19T21:30:17+05:30",
+                    startDate: "2018-09-4T21:30:17+05:30",
                     endDate: "2018-09-19T21:35:17+05:30",
-                    eventStatus: "pending",
-                    accountId: "AC0001",
-                    opportunityId: "opportunityId",
-                    contactId: "contactId",
-                    userId: "USER00001",
-                    organizationId: "organizationId",
                     eventClosureDate: "2018-09-19T21:30:17+05:30"
                 },
                 {
-                    eventId: "EVEN00001",
+                    eventId: "EVEN00005",
                     eventType: "call",
                     eventOwnerId: "user00001",
                     eventHeading: "eventHeading",
                     eventDescription: "eventDescription",
                     timeZone: "UCT",
-                    startDate: "2018-09-19T21:30:17+05:30",
+                    startDate: "2018-09-5T21:30:17+05:30",
                     endDate: "2018-09-19T21:35:17+05:30",
-                    eventStatus: "pending",
-                    accountId: "AC0001",
-                    opportunityId: "opportunityId",
-                    contactId: "contactId",
-                    userId: "USER00001",
-                    organizationId: "organizationId",
                     eventClosureDate: "2018-09-19T21:30:17+05:30"
                 },
                 {
-                    eventId: "EVEN00001",
+                    eventId: "EVEN00006",
                     eventType: "call",
                     eventOwnerId: "user00001",
                     eventHeading: "eventHeading",
                     eventDescription: "eventDescription",
                     timeZone: "UCT",
-                    startDate: "2018-09-19T21:30:17+05:30",
+                    startDate: "2018-09-6T21:30:17+05:30",
                     endDate: "2018-09-19T21:35:17+05:30",
-                    eventStatus: "pending",
-                    accountId: "AC0001",
-                    opportunityId: "opportunityId",
-                    contactId: "contactId",
-                    userId: "USER00001",
-                    organizationId: "organizationId",
                     eventClosureDate: "2018-09-19T21:30:17+05:30"
                 },
                 {
-                    eventId: "EVEN00001",
+                    eventId: "EVEN00007",
                     eventType: "call",
                     eventOwnerId: "user00001",
                     eventHeading: "eventHeading",
                     eventDescription: "eventDescription",
                     timeZone: "UCT",
-                    startDate: "2018-09-19T21:30:17+05:30",
+                    startDate: "2018-09-7T21:30:17+05:30",
                     endDate: "2018-09-19T21:35:17+05:30",
-                    eventStatus: "pending",
-                    accountId: "AC0001",
-                    opportunityId: "opportunityId",
-                    contactId: "contactId",
-                    userId: "USER00001",
-                    organizationId: "organizationId",
                     eventClosureDate: "2018-09-19T21:30:17+05:30"
                 },
                 {
-                    eventId: "EVEN00001",
+                    eventId: "EVEN00008",
                     eventType: "call",
                     eventOwnerId: "user00001",
                     eventHeading: "eventHeading",
                     eventDescription: "eventDescription",
                     timeZone: "UCT",
-                    startDate: "2018-09-19T21:30:17+05:30",
+                    startDate: "2018-09-8T21:30:17+05:30",
                     endDate: "2018-09-19T21:35:17+05:30",
-                    eventStatus: "pending",
-                    accountId: "AC0001",
-                    opportunityId: "opportunityId",
-                    contactId: "contactId",
-                    userId: "USER00001",
-                    organizationId: "organizationId",
                     eventClosureDate: "2018-09-19T21:30:17+05:30"
                 },
                 {
-                    eventId: "EVEN00001",
+                    eventId: "EVEN00009",
                     eventType: "call",
                     eventOwnerId: "user00001",
                     eventHeading: "eventHeading",
                     eventDescription: "eventDescription",
                     timeZone: "UCT",
-                    startDate: "2018-09-19T21:30:17+05:30",
+                    startDate: "2018-09-9T21:30:17+05:30",
                     endDate: "2018-09-19T21:35:17+05:30",
-                    eventStatus: "pending",
-                    accountId: "AC0001",
-                    opportunityId: "opportunityId",
-                    contactId: "contactId",
-                    userId: "USER00001",
-                    organizationId: "organizationId",
                     eventClosureDate: "2018-09-19T21:30:17+05:30"
                 },
 
@@ -166,7 +112,7 @@ class AdvancedBarChart extends Component {
         }
     }
     displayXTick = (tick) => {
-        return `Day ${tick}`;
+        return moment(tick).toISOString();
     }
     displayYTick = (tick) => {
         return `Day ${tick}`;
@@ -181,7 +127,7 @@ class AdvancedBarChart extends Component {
                 <BarChart width={this.props.width} height={this.props.height} data={this.state.data}>
                     <CartesianGrid strokeDasharray="3 3" />
                     <XAxis
-                        dataKey="eventId"
+                        dataKey="startDate"
                         tickFormatter={this.displayXTick}>
                         <Label value="Pages of my website" offset={0} position="insideBottom" />
                     </XAxis>
