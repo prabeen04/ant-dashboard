@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
-
+import {
+    BarChart, Bar, Brush, Cell, CartesianGrid, ReferenceLine, ReferenceDot,
+    XAxis, YAxis, Tooltip, Legend, ErrorBar, LabelList, Label
+} from 'recharts';
 class AdvancedBarChart extends Component {
     constructor(props) {
         super(props)
@@ -42,6 +45,17 @@ class AdvancedBarChart extends Component {
         return (
             <div>
                 <h3>AdvancedBarChart Component</h3>
+                <BarChart width={this.props.width} height={this.props.height} data={this.state.chartData}>
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <XAxis dataKey="name">
+                        <Label value="Pages of my website" offset={0} position="insideBottom" />
+                    </XAxis>
+                    <YAxis />
+                    <Tooltip />
+                    <Legend />
+                    <Bar dataKey="amt" fill="#8884d8" barSize={20} />
+                    {/* <Bar dataKey="uv" fill="#82ca9d" barSize={20} /> */}
+                </BarChart>
             </div>
         )
     }
