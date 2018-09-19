@@ -108,7 +108,8 @@ class AdvancedBarChart extends Component {
                     eventClosureDate: "2018-09-19T21:30:17+05:30"
                 },
 
-            ]
+            ],
+            chartData: []
         }
     }
     displayXTick = (tick) => {
@@ -116,6 +117,13 @@ class AdvancedBarChart extends Component {
     }
     displayYTick = (tick) => {
         return `Day ${tick}`;
+    }
+    componentDidMount(){
+        const newData = [];
+        this.state.data.map((event, i) => {
+            newData.push({eventId: event.eventId, startDate: event.startDate,});
+        })
+        console.log(newData)
     }
     render() {
         return (
