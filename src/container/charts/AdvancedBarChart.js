@@ -124,6 +124,9 @@ class AdvancedBarChart extends Component {
             newData.push({eventId: event.eventId, startDate: event.startDate,});
         })
         console.log(newData)
+        this.setState({
+            chartData: [...newData]
+        })
     }
     render() {
         return (
@@ -132,15 +135,15 @@ class AdvancedBarChart extends Component {
                 <div className="flex-container">
 
                 </div>
-                <BarChart width={this.props.width} height={this.props.height} data={this.state.data}>
+                <BarChart width={this.props.width} height={this.props.height} data={this.state.chartData}>
                     <CartesianGrid strokeDasharray="3 3" />
                     <XAxis
-                        dataKey="startDate"
+                        dataKey="eventId"
                         tickFormatter={this.displayXTick}>
                         <Label value="Pages of my website" offset={0} position="insideBottom" />
                     </XAxis>
                     <YAxis
-                        dataKey="startDate"
+                        dataKey="eventId"
                         tickFormatter={this.displayYTick} />
                     <Tooltip />
                     <Legend />
