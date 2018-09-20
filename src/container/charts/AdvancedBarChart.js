@@ -121,7 +121,7 @@ class AdvancedBarChart extends Component {
     componentDidMount(){
         const newData = [];
         this.state.data.map((event, i) => {
-            newData.push({eventId: event.eventId, startDate: moment(event.startDate).year()});
+            newData.push({eventId: event.eventId, startDate: moment(event.startDate).day()});
         })
         console.log(newData)
         this.setState({
@@ -142,9 +142,7 @@ class AdvancedBarChart extends Component {
                         tickFormatter={this.displayXTick}>
                         <Label value="Pages of my website" offset={0} position="insideBottom" />
                     </XAxis>
-                    <YAxis
-                        dataKey="eventId"
-                        tickFormatter={this.displayYTick} />
+                    <YAxis/>
                     <Tooltip />
                     <Legend />
                     <Bar dataKey="startDate" fill="#8884d8" barSize={20} />
