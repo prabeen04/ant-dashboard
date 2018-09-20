@@ -120,6 +120,15 @@ class AdvancedBarChart extends Component {
     }
     componentDidMount(){
         const newData =  this.state.data.map((event, i) => ({eventId: event.eventId, startDate: moment(event.startDate).day()}))
+                         .reduce((acc, data, i, arr) => {
+                            if (data in acc) {
+                                acc[data]++;
+                              }
+                              else {
+                                acc[data] = 1;
+                              }
+                            return acc
+                         }, [])   
         this.setState({
             chartData: newData
         })
