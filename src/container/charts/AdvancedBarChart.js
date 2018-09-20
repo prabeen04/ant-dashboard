@@ -119,9 +119,7 @@ class AdvancedBarChart extends Component {
         return `Day ${tick}`;
     }
     componentDidMount(){
-        const newData =  this.state.data.map((event, i) => {
-            return {eventId: event.eventId, startDate: moment(event.startDate).day()} ;
-        })
+        const newData =  this.state.data.map((event, i) => ({eventId: event.eventId, startDate: moment(event.startDate).day()}))
         this.setState({
             chartData: newData
         })
