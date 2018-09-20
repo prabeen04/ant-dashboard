@@ -118,24 +118,23 @@ class AdvancedBarChart extends Component {
     displayYTick = (tick) => {
         return `Day ${tick}`;
     }
-    componentDidMount(){
-        const newData =  this.state.data.map((event, i) => ({eventId: event.eventId, eventType: event.eventType, startDate: moment(event.startDate).day()}))
-                         .reduce((acc, data, i, arr) => {
-                             console.log(data.eventType)
-                            if (data.eventType  == acc[data.eventType]) {
-                                let i=0;
-                                acc.push({startDate: data.startDate,  eventType: data.eventType, count: i })
-                                // acc[data.startDate]++;
-                                i++;
-                              }
-                              else {
-                                let i=0;
-                                acc.push({startDate: data.startDate,  eventType: data.eventType , count: i})
-                                i++;
-                              }
-                            return acc
-                         }, []);
-            // console.log(newData);                
+    componentDidMount() {
+        const newData = this.state.data.map((event, i) => ({ eventId: event.eventId, eventType: event.eventType, startDate: moment(event.startDate).day() }))
+            .reduce((acc, data, i, arr) => {
+                console.log(data.eventType)
+                let counter = 0;
+                if (data.eventType == 'call') {
+                    acc.push({ startDate: data.startDate, eventType: data.eventType, count: counter })
+                    // acc[data.startDate]++;
+                    counter++;
+                }
+                else {
+                    acc.push({ startDate: data.startDate, eventType: data.eventType, count: counter })
+                    counter++;
+                }
+                return acc
+            }, []);
+        console.log(newData);
         // this.setState({
         //     chartData: newData
         // })
@@ -154,7 +153,7 @@ class AdvancedBarChart extends Component {
                         tickFormatter={this.displayXTick}>
                         <Label value="Pages of my website" offset={0} position="insideBottom" />
                     </XAxis>
-                    <YAxis/>
+                    <YAxis />
                     <Tooltip />
                     <Legend />
                     <Bar dataKey="startDate" fill="#8884d8" barSize={20} />
