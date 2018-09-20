@@ -121,7 +121,7 @@ class AdvancedBarChart extends Component {
     componentDidMount(){
         const newData = [];
         this.state.data.map((event, i) => {
-            newData.push({eventId: event.eventId, startDate: event.startDate,});
+            newData.push({eventId: event.eventId, startDate: moment(event.startDate).year()});
         })
         console.log(newData)
         this.setState({
