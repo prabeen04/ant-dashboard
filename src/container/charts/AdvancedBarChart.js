@@ -119,13 +119,11 @@ class AdvancedBarChart extends Component {
         return `Day ${tick}`;
     }
     componentDidMount(){
-        const newData = [];
-        this.state.data.map((event, i) => {
-            newData.push({eventId: event.eventId, startDate: moment(event.startDate).day()});
+        const newData =  this.state.data.map((event, i) => {
+            return {eventId: event.eventId, startDate: moment(event.startDate).day()} ;
         })
-        console.log(newData)
         this.setState({
-            chartData: [...newData]
+            chartData: newData
         })
     }
     render() {
@@ -146,7 +144,6 @@ class AdvancedBarChart extends Component {
                     <Tooltip />
                     <Legend />
                     <Bar dataKey="startDate" fill="#8884d8" barSize={20} />
-                    {/* <Bar dataKey="uv" fill="#82ca9d" barSize={20} /> */}
                 </BarChart>
             </div>
         )
