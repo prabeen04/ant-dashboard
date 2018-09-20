@@ -15,7 +15,7 @@ class AdvancedBarChart extends Component {
                     eventHeading: "eventHeading",
                     eventDescription: "eventDescription",
                     timeZone: "UCT",
-                    startDate: "2018-09-1T21:30:17+05:30",
+                    startDate: "2018-09-01T21:30:17+05:30",
                     endDate: "2018-09-19T21:35:17+05:30",
                     eventClosureDate: "2018-09-19T21:30:17+05:30"
                 },
@@ -26,7 +26,7 @@ class AdvancedBarChart extends Component {
                     eventHeading: "eventHeading",
                     eventDescription: "eventDescription",
                     timeZone: "UCT",
-                    startDate: "2018-09-2T21:30:17+05:30",
+                    startDate: "2018-09-02T21:30:17+05:30",
                     endDate: "2018-09-19T21:35:17+05:30",
                     eventClosureDate: "2018-09-19T21:30:17+05:30"
                 },
@@ -37,7 +37,7 @@ class AdvancedBarChart extends Component {
                     eventHeading: "eventHeading",
                     eventDescription: "eventDescription",
                     timeZone: "UCT",
-                    startDate: "2018-09-3T21:30:17+05:30",
+                    startDate: "2018-09-03T21:30:17+05:30",
                     endDate: "2018-09-19T21:35:17+05:30",
                     eventClosureDate: "2018-09-19T21:30:17+05:30"
                 },
@@ -48,7 +48,7 @@ class AdvancedBarChart extends Component {
                     eventHeading: "eventHeading",
                     eventDescription: "eventDescription",
                     timeZone: "UCT",
-                    startDate: "2018-09-4T21:30:17+05:30",
+                    startDate: "2018-09-04T21:30:17+05:30",
                     endDate: "2018-09-19T21:35:17+05:30",
                     eventClosureDate: "2018-09-19T21:30:17+05:30"
                 },
@@ -59,7 +59,7 @@ class AdvancedBarChart extends Component {
                     eventHeading: "eventHeading",
                     eventDescription: "eventDescription",
                     timeZone: "UCT",
-                    startDate: "2018-09-5T21:30:17+05:30",
+                    startDate: "2018-09-05T21:30:17+05:30",
                     endDate: "2018-09-19T21:35:17+05:30",
                     eventClosureDate: "2018-09-19T21:30:17+05:30"
                 },
@@ -70,7 +70,7 @@ class AdvancedBarChart extends Component {
                     eventHeading: "eventHeading",
                     eventDescription: "eventDescription",
                     timeZone: "UCT",
-                    startDate: "2018-09-6T21:30:17+05:30",
+                    startDate: "2018-09-06T21:30:17+05:30",
                     endDate: "2018-09-19T21:35:17+05:30",
                     eventClosureDate: "2018-09-19T21:30:17+05:30"
                 },
@@ -81,7 +81,7 @@ class AdvancedBarChart extends Component {
                     eventHeading: "eventHeading",
                     eventDescription: "eventDescription",
                     timeZone: "UCT",
-                    startDate: "2018-09-7T21:30:17+05:30",
+                    startDate: "2018-09-07T21:30:17+05:30",
                     endDate: "2018-09-19T21:35:17+05:30",
                     eventClosureDate: "2018-09-19T21:30:17+05:30"
                 },
@@ -92,7 +92,7 @@ class AdvancedBarChart extends Component {
                     eventHeading: "eventHeading",
                     eventDescription: "eventDescription",
                     timeZone: "UCT",
-                    startDate: "2018-09-8T21:30:17+05:30",
+                    startDate: "2018-09-08T21:30:17+05:30",
                     endDate: "2018-09-19T21:35:17+05:30",
                     eventClosureDate: "2018-09-19T21:30:17+05:30"
                 },
@@ -103,7 +103,7 @@ class AdvancedBarChart extends Component {
                     eventHeading: "eventHeading",
                     eventDescription: "eventDescription",
                     timeZone: "UCT",
-                    startDate: "2018-09-9T21:30:17+05:30",
+                    startDate: "2018-09-09T21:30:17+05:30",
                     endDate: "2018-09-19T21:35:17+05:30",
                     eventClosureDate: "2018-09-19T21:30:17+05:30"
                 },
@@ -147,7 +147,7 @@ class AdvancedBarChart extends Component {
                         tickFormatter={this.displayYTick} />
                     <Tooltip />
                     <Legend />
-                    <Bar dataKey={"startDate"} fill="#8884d8" barSize={20} />
+                    <Bar dataKey="startDate" fill="#8884d8" barSize={20} />
                     {/* <Bar dataKey="uv" fill="#82ca9d" barSize={20} /> */}
                 </BarChart>
             </div>
