@@ -32,7 +32,7 @@ class AdvancedBarChart extends Component {
                 },
                 {
                     eventId: "EVEN00003",
-                    eventType: "call",
+                    eventType: "meeting",
                     eventOwnerId: "user00001",
                     eventHeading: "eventHeading",
                     eventDescription: "eventDescription",
@@ -54,7 +54,7 @@ class AdvancedBarChart extends Component {
                 },
                 {
                     eventId: "EVEN00005",
-                    eventType: "call",
+                    eventType: "meeting",
                     eventOwnerId: "user00001",
                     eventHeading: "eventHeading",
                     eventDescription: "eventDescription",
@@ -65,7 +65,7 @@ class AdvancedBarChart extends Component {
                 },
                 {
                     eventId: "EVEN00006",
-                    eventType: "call",
+                    eventType: "email",
                     eventOwnerId: "user00001",
                     eventHeading: "eventHeading",
                     eventDescription: "eventDescription",
@@ -87,7 +87,7 @@ class AdvancedBarChart extends Component {
                 },
                 {
                     eventId: "EVEN00008",
-                    eventType: "call",
+                    eventType: "meeting",
                     eventOwnerId: "user00001",
                     eventHeading: "eventHeading",
                     eventDescription: "eventDescription",
@@ -119,15 +119,15 @@ class AdvancedBarChart extends Component {
         return `Day ${tick}`;
     }
     componentDidMount(){
-        const newData =  this.state.data.map((event, i) => ({eventId: event.eventId, startDate: moment(event.startDate).day()}))
+        const newData =  this.state.data.map((event, i) => ({eventId: event.eventId, eventType: event.eventType, startDate: moment(event.startDate).day()}))
                          .reduce((acc, data, i, arr) => {
                              console.log(acc)
                             if (data.startDate in acc) {
-                                acc.push({eventId: data.eventId, startDate: data.startDate })
+                                acc.push({eventId: data.eventId, startDate: data.startDate,  eventType: event.eventType })
                                 // acc[data.startDate]++;
                               }
                               else {
-                                acc.push({eventId: data.eventId, startDate: data.startDate })
+                                acc.push({eventId: data.eventId, startDate: data.startDate,  eventType: event.eventType })
                               }
                             return acc
                          }, []);
