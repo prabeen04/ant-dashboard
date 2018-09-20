@@ -123,8 +123,11 @@ class AdvancedBarChart extends Component {
                          .reduce((acc, data, i, arr) => {
                              console.log(acc)
                             if (data.eventType  == acc[data.eventType]) {
-                                acc.push({startDate: data.startDate,  eventType: data.eventType, count: 1 })
+                                acc.push({startDate: data.startDate,  eventType: data.eventType, count: acc[data.startDate] })
                                 acc[data.startDate]++;
+                              }
+                              else {
+                                acc.push({startDate: data.startDate,  eventType: data.eventType , count: acc[data.startDate]})
                               }
                             return acc
                          }, []);
