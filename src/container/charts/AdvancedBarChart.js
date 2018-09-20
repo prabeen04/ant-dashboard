@@ -119,10 +119,12 @@ class AdvancedBarChart extends Component {
         return `Day ${tick}`;
     }
     componentDidMount(){
-        const newData =  this.state.data.map((event, i) => ({eventId: event.eventId, startDate: moment(event.startDate).month()}))
+        const newData =  this.state.data.map((event, i) => ({eventId: event.eventId, startDate: moment(event.startDate).dates()}))
                          .reduce((acc, data, i, arr) => {
+                             console.log(acc)
                             if (data.startDate in acc) {
-                                acc[data.startDate]++;
+                                acc.push({startDate: acc[data.startDate]++ })
+                                // acc[data.startDate]++;
                               }
                               else {
                                 acc[data.startDate] = 1;
