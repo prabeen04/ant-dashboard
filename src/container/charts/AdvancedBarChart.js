@@ -132,7 +132,10 @@ class AdvancedBarChart extends Component {
         const eventArr = Object.entries(newData)
                          .reduce((acc, node, i, arr) => {
                              console.log(node)
-                             return acc++;
+                             acc.push({
+                                 node[0]: node[1]
+                             })
+                             return acc;
                          }, []);   
         console.log(eventArr)
         // this.setState({
