@@ -122,17 +122,12 @@ class AdvancedBarChart extends Component {
         const newData = this.state.data.map((event, i) => ({ eventId: event.eventId, eventType: event.eventType, startDate: moment(event.startDate).day() }))
             .reduce((acc, data, i, arr) => {
                 console.log(data.eventType)
-                let counter = 0;
-                if (data.eventType == 'call') {
-                    acc.push({ startDate: data.startDate, eventType: data.eventType, count: counter })
-                    // acc[data.startDate]++;
-                    counter++;
+                if (!acc['eventType']) {
+                    acc.push({ eventType: 1})
+                } else {
+                    acc.push({ eventType: acc['eventType'] + 1 })
                 }
-                else {
-                    acc.push({ startDate: data.startDate, eventType: data.eventType, count: counter })
-                    counter++;
-                }
-                return acc
+                return acc;
             }, []);
         console.log(newData);
         // this.setState({
