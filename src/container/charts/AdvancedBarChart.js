@@ -129,6 +129,8 @@ class AdvancedBarChart extends Component {
                 return acc;
             }, {});
         console.log(newData);
+        const eventArr = Object.entries(newData);
+        console.log(eventArr)
         // this.setState({
         //     chartData: newData
         // })
