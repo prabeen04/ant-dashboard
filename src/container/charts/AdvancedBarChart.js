@@ -4,6 +4,7 @@ import { bindActionCreators } from "redux";
 import { Button } from "antd";
 import { BarChart, PieChart, Pie, Bar, Brush, Cell, CartesianGrid, XAxis, YAxis, Tooltip, Legend, Label } from 'recharts';
 import moment from 'moment';
+import { setPieChartData } from '../../actions/chartsAction';
 
 class AdvancedBarChart extends Component {
     constructor(props) {
@@ -19,15 +20,17 @@ class AdvancedBarChart extends Component {
         return `Day ${tick}`;
     }
     componentDidMount() {
+        this.props.setPieChartData();
     }
     render() {
+        const { pieChartData } = this.props;
         return (
             <div>
                 <h3>AdvancedBarChart Component</h3>
                 <div className="flex-container">
 
                 </div>
-                <BarChart width={this.props.width} height={this.props.height} data={this.state.chartData}>
+                {/* <BarChart width={this.props.width} height={this.props.height} data={this.state.chartData}>
                     <CartesianGrid strokeDasharray="3 3" />
                     <XAxis
                         dataKey="type"
@@ -38,9 +41,9 @@ class AdvancedBarChart extends Component {
                     <Tooltip />
                     <Legend />
                     <Bar dataKey="value" fill="#8884d8" barSize={20} />
-                </BarChart>
+                </BarChart> */}
                 <PieChart width={this.props.width} height={this.props.height} >
-                    <Pie data={this.state.chartData} dataKey="value" nameKey="name" cx="50%" cy="50%" outerRadius={50} />
+                    <Pie data={pieChartData} dataKey="value" nameKey="name" cx="50%" cy="50%" outerRadius={50} />
                     <Tooltip />
                 </PieChart>
             </div>
@@ -48,15 +51,16 @@ class AdvancedBarChart extends Component {
     }
 }
 
-const mapStateToProps = ({chartsReducer}) => {
-    return{
-        data: chartsReducer.data
+const mapStateToProps = ({ chartsReducer }) => {
+    return {
+        data: chartsReducer.data,
+        pieChartData: chartsReducer.pieChartData
     }
 }
 
 const mapDispatchToProps = dispatch => {
     return bindActionCreators({
-
+        setPieChartData
     }, dispatch)
 }
 export default connect(mapStateToProps, mapDispatchToProps)(AdvancedBarChart);
