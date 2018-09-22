@@ -157,14 +157,14 @@ class AdvancedBarChart extends Component {
                 <BarChart width={this.props.width} height={this.props.height} data={this.state.chartData}>
                     <CartesianGrid strokeDasharray="3 3" />
                     <XAxis
-                        dataKey="eventId"
+                        dataKey="type"
                         tickFormatter={this.displayXTick}>
                         <Label value="Pages of my website" offset={0} position="insideBottom" />
                     </XAxis>
                     <YAxis />
                     <Tooltip />
                     <Legend />
-                    <Bar dataKey="startDate" fill="#8884d8" barSize={20} />
+                    <Bar dataKey="value" fill="#8884d8" barSize={20} />
                 </BarChart>
             </div>
         )
