@@ -1,19 +1,20 @@
 import { combineReducers } from 'redux';
 import { reducer as FormReducer } from 'redux-form';
-import { calendarReducer } from '../reducers/calendar_reducer';
-import { profileReducer } from '../reducers/profile_reducer';
-import { postReducer } from '../reducers/post_reducer';
-import { authReducer } from '../reducers/auth_reducer';
-import { formReducer } from "../reducers/testFormReducer";
-import { formArrayReducer } from "../reducers/formArrayReducer";
-import { secondArrayReducer } from '../reducers/secondArrayReducer';
-import { thirdArrayReducer } from '../reducers/thirdArrayReducer';
-import { dashboardReducer } from '../reducers/dashboardReducer';
-import { tableReducer } from '../reducers/tableReducer';
-import { googleReducer } from '../reducers/googleReducer';
-import { notificationReducer } from '../reducers/notificationReducer';
-import { dragReducer } from '../reducers/dragReducer';
-import { selectReducer } from "../reducers/selectReducer";
+import { calendarReducer } from './calendar_reducer';
+import { profileReducer } from './profile_reducer';
+import { postReducer } from './post_reducer';
+import { authReducer } from './auth_reducer';
+import { formReducer } from "./testFormReducer";
+import { formArrayReducer } from "./formArrayReducer";
+import { secondArrayReducer } from './secondArrayReducer';
+import { thirdArrayReducer } from './thirdArrayReducer';
+import { dashboardReducer } from './dashboardReducer';
+import { tableReducer } from './tableReducer';
+import { googleReducer } from './googleReducer';
+import { notificationReducer } from './notificationReducer';
+import { dragReducer } from './dragReducer';
+import { selectReducer } from "./selectReducer";
+import { chartsReducer } from "./chartsReducer";
 
 export const rootReducer = combineReducers({
     form: FormReducer,
@@ -30,7 +31,8 @@ export const rootReducer = combineReducers({
     googleReducer,
     notificationReducer,
     dragReducer,
-    selectReducer
+    selectReducer,
+    chartsReducer
 })
 
 export default rootReducer;
