@@ -134,8 +134,11 @@ class AdvancedBarChart extends Component {
                              console.log(node)
                              let [type, val ] = node;
                              console.log(type)
-                             let item = {}
-                             item[type] = val;   
+                             let item = {
+                                 name: type,
+                                 value: val
+                             }
+                                
                              acc.push(item)
                              return acc;
                          }, []);   
