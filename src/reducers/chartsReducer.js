@@ -1,4 +1,4 @@
-import { GET_CHART_DATA, SET_INTERNAL_VIEW_TYPE, SET_VIEW_TYPE } from "../types/chartActionTypes";
+import { GET_CHART_DATA, SET_INTERNAL_VIEW_TYPE, SET_VIEW_TYPE, SET_BAR_CHART_DATA, SET_PIE_CHART_DATA } from "../types/chartActionTypes";
 import { DEFAULT_ECDH_CURVE } from "tls";
 const initialState = {
     data: [
