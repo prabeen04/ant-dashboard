@@ -1,0 +1,3 @@
+export const GET_CHART_DATA = "GET_CHART_DATA";
+export const SET_VIEW_TYPE = "SET_VIEW_TYPE";
+export const SET_INTERNAL_VIEW_TYPE = "SET_INTERNAL_VIEW_TYPE";
