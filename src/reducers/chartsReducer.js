@@ -1,3 +1,4 @@
+import { GET_CHART_DATA, SET_INTERNAL_VIEW_TYPE, SET_VIEW_TYPE } from "../types/chartActionTypes";
 const initialState = {
     data: [
         {
@@ -101,8 +102,18 @@ const initialState = {
         },
 
     ],
+    barChartData: [],
+    pichartData,
+    viewType: 'week',
+    internalViewType: 'week'
 
 };
 export const chartsReducer = (state = initialState, action) => {
+    switch (action.type) {
+        case GET_CHART_DATA:
+            return state;
+        case SET_VIEW_TYPE:
+            return state;
+    }
     return state;
 }
