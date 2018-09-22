@@ -1,4 +1,6 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from "redux";
 import { Button } from "antd";
 import { BarChart, PieChart, Pie, Bar, Brush, Cell, CartesianGrid, XAxis, YAxis, Tooltip, Legend, Label } from 'recharts';
 import moment from 'moment';
@@ -73,4 +75,15 @@ class AdvancedBarChart extends Component {
     }
 }
 
-export default AdvancedBarChart;
+const mapStateToProps = (state) => {
+    return{
+
+    }
+}
+
+const mapDispatchToProps = dispatch => {
+    return bindActionCreators({
+
+    }, dispatch)
+}
+export default connect(mapStateToProps, mapDispatchToProps)(AdvancedBarChart);
