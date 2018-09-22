@@ -25,7 +25,7 @@ class Charts extends Component {
             { title: 'Line Chart', content: <LineChart1 height={300} width={600}/>, key: '5' },
             { title: 'Radial Chart', content: <RadialChart1 height={300} width={600}/>, key: '6' },
             { title: 'Funnel Chart', content: <FunnelChart height={300} width={600}/>, key: '7' },
-            { title: 'AdvancedBarChart', content: <AdvancedBarChart height={400} width={800}/>, key: '8' },
+            { title: 'AdvancedBarChart', content: <AdvancedBarChart height={300} width={600}/>, key: '8' },
         ];
         this.state = {
             activeKey: panes[7].key,

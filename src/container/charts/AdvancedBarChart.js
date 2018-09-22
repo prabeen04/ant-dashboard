@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Button } from "antd";
-import { BarChart, Bar, Brush, Cell, CartesianGrid, XAxis, YAxis, Tooltip, Legend, Label } from 'recharts';
+import { BarChart, PieChart, Pie, Bar, Brush, Cell, CartesianGrid, XAxis, YAxis, Tooltip, Legend, Label } from 'recharts';
 import moment from 'moment';
 
 class AdvancedBarChart extends Component {
@@ -130,18 +130,18 @@ class AdvancedBarChart extends Component {
             }, {});
         console.log(newData);
         const eventArr = Object.entries(newData)
-                         .reduce((acc, node, i, arr) => {
-                             console.log(node)
-                             let [type, val ] = node;
-                             console.log(type)
-                             let item = {
-                                 name: type,
-                                 value: val
-                             }
-                                
-                             acc.push(item)
-                             return acc;
-                         }, []);   
+            .reduce((acc, node, i, arr) => {
+                console.log(node)
+                let [type, val] = node;
+                console.log(type)
+                let item = {
+                    name: type,
+                    value: val
+                }
+
+                acc.push(item)
+                return acc;
+            }, []);
         console.log(eventArr)
         this.setState({
             chartData: eventArr
@@ -166,6 +166,20 @@ class AdvancedBarChart extends Component {
                     <Legend />
                     <Bar dataKey="value" fill="#8884d8" barSize={20} />
                 </BarChart>
+                <PieChart width={this.props.width} height={this.props.height} >
+                    <Pie data={this.state.chartData} dataKey="value" nameKey="name" cx="50%" cy="50%" outerRadius={50}>
+                        {
+                            data01.map((entry, index) => <Cell fill={entry.color} />)
+                        }
+                    </Pie>
+                    <Pie data={this.state.chartData} dataKey="value" nameKey="name" cx="50%" cy="50%" innerRadius={60} outerRadius={80} label>
+                        {
+                            data02.map((entry, index) => <Cell fill={entry.color} />)
+                        }
+                    </Pie>
+                    <Tooltip />
+                    {/* <Legend/> */}
+                </PieChart>
             </div>
         )
     }
