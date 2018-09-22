@@ -19,7 +19,7 @@ class AdvancedBarChart extends Component {
         return `Day ${tick}`;
     }
     componentDidMount() {
-        const newData = this.state.data.map((event, i) => ({ eventId: event.eventId, eventType: event.eventType, startDate: moment(event.startDate).day() }))
+        const newData = this.props.data.map((event, i) => ({ eventId: event.eventId, eventType: event.eventType, startDate: moment(event.startDate).day() }))
             .reduce((acc, data, i, arr) => {
                 if (!acc[data.eventType]) {
                     acc[data.eventType] = 1;
@@ -75,9 +75,9 @@ class AdvancedBarChart extends Component {
     }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = ({chartsReducer}) => {
     return{
-
+        data: chartsReducer.data
     }
 }
 
