@@ -167,10 +167,8 @@ class AdvancedBarChart extends Component {
                     <Bar dataKey="value" fill="#8884d8" barSize={20} />
                 </BarChart>
                 <PieChart width={this.props.width} height={this.props.height} >
-                    <Pie data={this.state.chartData} dataKey="value" nameKey="type" cx="50%" cy="50%" outerRadius={50}/>
-                    <Pie data={this.state.chartData} dataKey="value" nameKey="type" cx="50%" cy="50%" innerRadius={60} outerRadius={80} label/>
+                    <Pie data={this.state.chartData} dataKey="value" nameKey="name" cx="50%" cy="50%" outerRadius={50} />
                     <Tooltip />
-                    {/* <Legend/> */}
                 </PieChart>
             </div>
         )
