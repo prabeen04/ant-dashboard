@@ -113,6 +113,8 @@ export const chartsReducer = (state = initialState, action) => {
     switch (action.type) {
         case GET_CHART_DATA:
             return state;
+        case SET_PIE_CHART_DATA: 
+            return {...state, pichartData: action.payload}    
         case SET_VIEW_TYPE:
             return state;
         case SET_INTERNAL_VIEW_TYPE:

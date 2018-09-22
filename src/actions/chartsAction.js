@@ -25,5 +25,8 @@ export const setPieChartData = data => dispatch => {
             return acc;
         }, []);
     console.log(eventArr)
-    return eventArr;
+    dispatch({
+        type: SET_INTERNAL_VIEW_TYPE,
+        payload: action.payload
+    })
 }
