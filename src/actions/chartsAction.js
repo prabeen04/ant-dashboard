@@ -28,17 +28,18 @@ export const setPieChartData = data => dispatch => {
 export const setBarChartData = data => dispatch => {
     let trimedData = data.map((item, i) => ({ eventId: item.eventId, eventType: item.eventType, startDate: moment(item.startDate).weekday() }))
         .reduce((acc, item, i, arr) => {
-            console.log(acc[3]);
-            if(!acc[i]){
+            console.log(acc[i]);
+            console.log(acc[i]);
+            if(acc[i]){
                 console.log('inside first if')
-                // if (acc[i].hasOwnProperty('date')) {
-                //     console.log('inside second if')
-                //     let obj = {
-                //         date: item.startDate,
-                //         value: 1
-                //     }
-                //     acc.push(obj)
-                // } 
+                if (acc[i] && acc[i]['date']) {
+                    console.log('inside second if')
+                    let obj = {
+                        date: item.startDate,
+                        value: 1
+                    }
+                    acc.push(obj)
+                } 
                 let obj = {
                     date: item.startDate,
                     value: 4
@@ -53,7 +54,7 @@ export const setBarChartData = data => dispatch => {
                 }
                 acc.push(obj)
             }
-            // console.log(acc[i]['date']);
+            console.log(acc[i])
             return acc;
         }, [])
     console.log(trimedData)
