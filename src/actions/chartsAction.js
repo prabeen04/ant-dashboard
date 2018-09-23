@@ -38,11 +38,13 @@ export const setBarChartData = data => dispatch => {
                         date: item.startDate,
                         value: 1
                     })
+                } else {
+                    console.log('inside second else')
+                    acc.push({
+                        date: item.startDate,
+                        value: item.eventType
+                    })
                 }
-                acc.push({
-                    date: item.startDate,
-                    value: item.eventType
-                })
             }
             else {
                 console.log('inside else')
