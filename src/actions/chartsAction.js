@@ -26,7 +26,7 @@ export const setPieChartData = data => dispatch => {
         }, []);
     console.log(eventArr)
     dispatch({
-        type: SET_INTERNAL_VIEW_TYPE,
+        type: SET_PIE_CHART_DATA,
         payload: eventArr
     })
 }

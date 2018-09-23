@@ -104,7 +104,7 @@ const initialState = {
 
     ],
     barChartData: [],
-    pichartData: [],
+    pieChartData: [],
     viewType: 'week',
     internalViewType: 'week'
 
@@ -114,7 +114,7 @@ export const chartsReducer = (state = initialState, action) => {
         case GET_CHART_DATA:
             return state;
         case SET_PIE_CHART_DATA: 
-            return {...state, pichartData: action.payload}    
+            return {...state, pieChartData: action.payload}    
         case SET_VIEW_TYPE:
             return state;
         case SET_INTERNAL_VIEW_TYPE:

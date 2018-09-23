@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from "redux";
 import { Button } from "antd";
 import { BarChart, PieChart, Pie, Bar, Brush, Cell, CartesianGrid, XAxis, YAxis, Tooltip, Legend, Label } from 'recharts';
-import moment from 'moment';
 import { setPieChartData } from '../../actions/chartsAction';
 
 class AdvancedBarChart extends Component {
@@ -20,7 +19,7 @@ class AdvancedBarChart extends Component {
         return `Day ${tick}`;
     }
     componentDidMount() {
-        this.props.setPieChartData();
+        this.props.setPieChartData(this.props.data);
     }
     render() {
         const { pieChartData } = this.props;
