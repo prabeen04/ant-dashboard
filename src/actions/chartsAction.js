@@ -30,21 +30,19 @@ export const setBarChartData = data => dispatch => {
         .reduce((acc, item, i, arr) => {
             console.log(acc[i]);
             console.log(acc[i]);
-            if(acc[i]){
+            if (acc[i]) {
                 console.log('inside first if')
                 if (acc[i] && acc[i]['date']) {
                     console.log('inside second if')
-                    let obj = {
+                    acc.push({
                         date: item.startDate,
                         value: 1
-                    }
-                    acc.push(obj)
-                } 
-                let obj = {
-                    date: item.startDate,
-                    value: 4
+                    })
                 }
-                acc.push(obj)
+                acc.push({
+                    date: item.startDate,
+                    value: item.eventType
+                })
             }
             else {
                 console.log('inside else')
