@@ -26,6 +26,10 @@ export const setPieChartData = data => dispatch => {
 }
 
 export const setBarChartData = data => dispatch => {
-    let trimedData = data.map((item, i) => ({eventId: item.eventId, eventType: item.eventType, startDate: item.startDate}));
+    let trimedData = data.map((item, i) => ({eventId: item.eventId, eventType: item.eventType, startDate: moment(item.startDate).weekday()}))
+                     .reduce((acc, item, i, arr) => {
+                         acc.push(item)
+                         return acc;
+                     }, [])   
     console.log(trimedData)
 }
