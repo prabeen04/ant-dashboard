@@ -10,21 +10,15 @@ export const setPieChartData = data => dispatch => {
             }
             return acc;
         }, {});
-    console.log(newData);
     const eventArr = Object.entries(newData)
         .reduce((acc, node, i, arr) => {
-            console.log(node)
             let [type, val] = node;
-            console.log(type)
-            let item = {
+            acc.push({
                 name: type,
                 value: val
-            }
-
-            acc.push(item)
+            })
             return acc;
         }, []);
-    console.log(eventArr)
     dispatch({
         type: SET_PIE_CHART_DATA,
         payload: eventArr
@@ -32,5 +26,6 @@ export const setPieChartData = data => dispatch => {
 }
 
 export const setBarChartData = data => dispatch => {
-    
+    let trimedData = data.map((item, i) => ({eventId: item.eventId, eventType: item.eventType, startDate: item.startDate}));
+    console.log(trimedData)
 }

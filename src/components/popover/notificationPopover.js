@@ -17,7 +17,6 @@ class NotificationPopover extends Component {
         this.setState({ visible });
     }
     render() {
-        console.log(this.props.notificationCount)
         return (
             <Tooltip title="Notifications">
                 <Popover
