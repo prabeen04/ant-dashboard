@@ -26,10 +26,23 @@ export const setPieChartData = data => dispatch => {
 }
 
 export const setBarChartData = data => dispatch => {
-    let trimedData = data.map((item, i) => ({eventId: item.eventId, eventType: item.eventType, startDate: moment(item.startDate).weekday()}))
-                     .reduce((acc, item, i, arr) => {
-                         acc.push(item)
-                         return acc;
-                     }, [])   
+    let trimedData = data.map((item, i) => ({ eventId: item.eventId, eventType: item.eventType, startDate: moment(item.startDate).weekday() }))
+        .reduce((acc, item, i, arr) => {
+            //  let newObj = {
+
+            //  }
+            // console.log(acc[i]['date']);
+            if (typeof acc[i]['date'] === undefined) {
+                let obj = {
+                    date: item.startDate,
+                    value: 1
+                }
+                acc.push(obj)
+            } else {
+                console.log('inside else')
+            }
+            // console.log(acc[i]['itemName']);
+            return acc;
+        }, [])
     console.log(trimedData)
 }
