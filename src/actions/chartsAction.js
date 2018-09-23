@@ -26,11 +26,11 @@ export const setPieChartData = data => dispatch => {
 }
 
 export const setBarChartData = data => dispatch => {
-    let trimedData = data.map((item, i) => ({ eventId: item.eventId, eventType: item.eventType, startDate: moment(item.startDate).format('ddd') }))
+    const trimedData = data.map((item, i) => ({ eventId: item.eventId, eventType: item.eventType, startDate: moment(item.startDate).format('ddd') }))
         .reduce((acc, item, i, arr) => {
             console.log(acc[i]);
             if (acc && acc.length) {
-                console.log(acc[i]);
+                console.log(acc);
                 console.log('inside first if')
                 if (acc[i] && acc[i].hasOwnProperty('date')) {
                     console.log('inside second if')
