@@ -30,3 +30,7 @@ export const setPieChartData = data => dispatch => {
         payload: eventArr
     })
 }
+
+export const setBarChartData = data => dispatch => {
+    
+}

@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from "redux";
 import { Button } from "antd";
 import { BarChart, PieChart, Pie, Bar, Brush, Cell, CartesianGrid, XAxis, YAxis, Tooltip, Legend, Label } from 'recharts';
-import { setPieChartData } from '../../actions/chartsAction';
+import { setPieChartData, setBarChartData } from '../../actions/chartsAction';
 
 class AdvancedBarChart extends Component {
     constructor(props) {
@@ -20,6 +20,7 @@ class AdvancedBarChart extends Component {
     }
     componentDidMount() {
         this.props.setPieChartData(this.props.data);
+        this.props.setBarChartData(this.props.data);
     }
     render() {
         const { pieChartData } = this.props;
@@ -59,7 +60,8 @@ const mapStateToProps = ({ chartsReducer }) => {
 
 const mapDispatchToProps = dispatch => {
     return bindActionCreators({
-        setPieChartData
+        setPieChartData,
+        setBarChartData
     }, dispatch)
 }
 export default connect(mapStateToProps, mapDispatchToProps)(AdvancedBarChart);
