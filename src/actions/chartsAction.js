@@ -29,8 +29,8 @@ export const setBarChartData = data => dispatch => {
     let trimedData = data.map((item, i) => ({ eventId: item.eventId, eventType: item.eventType, startDate: moment(item.startDate).weekday() }))
         .reduce((acc, item, i, arr) => {
             console.log(acc[i]);
-            console.log(acc[i]);
-            if (acc[i]) {
+            if (acc && acc.length) {
+                console.log(acc[i]);
                 console.log('inside first if')
                 if (acc[i] && acc[i]['date']) {
                     console.log('inside second if')
@@ -52,8 +52,10 @@ export const setBarChartData = data => dispatch => {
                 }
                 acc.push(obj)
             }
+            // console.log(JSON.stringify(acc, null, 4))
+            // console.log(JSON.stringify(acc[i], null, 4))
             console.log(acc[i])
             return acc;
-        }, [])
+        }, []);
     console.log(trimedData)
 }
