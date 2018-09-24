@@ -13,7 +13,7 @@ class AdvancedBarChart extends Component {
         }
     }
     displayXTick = (tick) => {
-        return `day ${tick}`;
+        return `${tick}`;
     }
     displayYTick = (tick) => {
         return `Day ${tick}`;
@@ -34,14 +34,14 @@ class AdvancedBarChart extends Component {
                 <BarChart width={this.props.width} height={this.props.height} data={barChartData}>
                     <CartesianGrid strokeDasharray="3 3" />
                     <XAxis
-                        dataKey="value"
+                        dataKey="days"
                         tickFormatter={this.displayXTick}>
                         <Label value="Pages of my website" offset={0} position="insideBottom" />
                     </XAxis>
                     <YAxis />
                     <Tooltip />
                     <Legend />
-                    <Bar dataKey="days" fill="#8884d8" barSize={20} />
+                    <Bar dataKey="value" fill="#8884d8" barSize={20} />
                 </BarChart>
                 <PieChart width={this.props.width} height={this.props.height} >
                     <Pie data={pieChartData} dataKey="value" nameKey="name" cx="50%" cy="50%" outerRadius={50} />
