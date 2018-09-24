@@ -20,7 +20,7 @@ class AdvancedBarChart extends Component {
     }
     componentDidMount() {
         this.props.setPieChartData(this.props.data);
-        this.props.setBarChartData(this.props.data);
+        // this.props.setBarChartData(this.props.data);
         this.props.setBarChartData2(this.props.data);
     }
     render() {

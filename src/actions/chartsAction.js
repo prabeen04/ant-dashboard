@@ -65,12 +65,12 @@ export const setBarChartData = data => dispatch => {
 export const setBarChartData2 = data => dispatch => {
     const trimedData = data.map((item, i) => ({ eventId: item.eventId, eventType: item.eventType, startDate: moment(item.startDate).format('ddd') }))
         .reduce((acc, item, i, arr) => {
-            if (!acc[data.eventType]) {
-                acc[data.eventType] = 1;
+            if (!acc[item.eventType]) {
+                acc[item.eventType] = 1;
             } else {
-                acc[data.eventType] += 1;
+                acc[item.eventType] += 1;
             }
             return acc;
-        }, []);
+        }, {});
     console.log(trimedData)
 }
