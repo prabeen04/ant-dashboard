@@ -72,7 +72,7 @@ export const setBarChartData2 = data => dispatch => {
             }
             return acc;
         }, {});
-        const dayArray = Object.entries(trimedData)
+    const dayArray = Object.entries(trimedData)
         .reduce((acc, node, i, arr) => {
             let [days, val] = node;
             acc.push({
@@ -82,4 +82,8 @@ export const setBarChartData2 = data => dispatch => {
             return acc;
         }, []);
     console.log(dayArray)
+    dispatch({
+        type: SET_BAR_CHART_DATA,
+        payload: dayArray
+    })
 }
