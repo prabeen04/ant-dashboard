@@ -24,25 +24,25 @@ class AdvancedBarChart extends Component {
         this.props.setBarChartData2(this.props.data);
     }
     render() {
-        const { pieChartData } = this.props;
+        const { pieChartData, barChartData } = this.props;
         return (
             <div>
                 <h3>AdvancedBarChart Component</h3>
                 <div className="flex-container">
 
                 </div>
-                {/* <BarChart width={this.props.width} height={this.props.height} data={this.state.chartData}>
+                <BarChart width={this.props.width} height={this.props.height} data={barChartData}>
                     <CartesianGrid strokeDasharray="3 3" />
                     <XAxis
-                        dataKey="type"
+                        dataKey="value"
                         tickFormatter={this.displayXTick}>
                         <Label value="Pages of my website" offset={0} position="insideBottom" />
                     </XAxis>
                     <YAxis />
                     <Tooltip />
                     <Legend />
-                    <Bar dataKey="value" fill="#8884d8" barSize={20} />
-                </BarChart> */}
+                    <Bar dataKey="days" fill="#8884d8" barSize={20} />
+                </BarChart>
                 <PieChart width={this.props.width} height={this.props.height} >
                     <Pie data={pieChartData} dataKey="value" nameKey="name" cx="50%" cy="50%" outerRadius={50} />
                     <Tooltip />
@@ -55,7 +55,8 @@ class AdvancedBarChart extends Component {
 const mapStateToProps = ({ chartsReducer }) => {
     return {
         data: chartsReducer.data,
-        pieChartData: chartsReducer.pieChartData
+        pieChartData: chartsReducer.pieChartData,
+        barChartData: chartsReducer.barChartData,
     }
 }
 
