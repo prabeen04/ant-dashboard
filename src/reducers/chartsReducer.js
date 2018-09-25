@@ -1,6 +1,7 @@
 import { GET_CHART_DATA, SET_INTERNAL_VIEW_TYPE, SET_VIEW_TYPE, SET_BAR_CHART_DATA, SET_PIE_CHART_DATA } from "../types/chartActionTypes";
 import { DEFAULT_ECDH_CURVE } from "tls";
 const initialState = {
+    timeInterval: ['fis', 'year', 'month', 'week'],
     data: [
         {
             eventId: "EVEN00001",
