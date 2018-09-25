@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-export default class TimeInterval extends Component {
+class TimeInterval extends Component {
   render() {
       const { times } = this.props;
     return (
       <div>
         {times.map((time, i) => {
             return (
-                <div className>
+                <div className="time-interval">
                     <p>{time}</p>
                 </div>
             )
@@ -21,3 +21,5 @@ export default class TimeInterval extends Component {
 TimeInterval.propTypes({
     times: PropTypes.array
 })
+
+export default TimeInterval;
