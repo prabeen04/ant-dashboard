@@ -5,7 +5,7 @@ class TimeInterval extends Component {
     render() {
         const { times } = this.props;
         return (
-            <div>
+            <div style={styles.timeInterval}>
                 {times.map((time, i) => {
                     return <div className="time-interval" key={i}>
                         <p>{time}</p>
@@ -21,3 +21,10 @@ TimeInterval.propTypes = {
 }
 
 export default TimeInterval;
+
+const styles = {
+    timeInterval: {
+        display: 'flex',
+        flexDirection: 'row'
+    }
+}
