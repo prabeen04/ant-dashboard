@@ -6,12 +6,6 @@ import { BarChart, PieChart, Pie, Bar, Brush, Cell, CartesianGrid, XAxis, YAxis,
 import { setPieChartData, setBarChartData,setBarChartData2 } from '../../actions/chartsAction';
 
 class AdvancedBarChart extends Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            chartData: []
-        }
-    }
     displayXTick = (tick) => {
         return `${tick}`;
     }
