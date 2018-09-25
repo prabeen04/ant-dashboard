@@ -3,11 +3,17 @@ import PropTypes from 'prop-types';
 
 class TimeInterval extends Component {
     render() {
-        const { times } = this.props;
+        const { times, handleClick } = this.props;
         return (
             <div style={styles.timeInterval}>
                 {times.map((time, i) => {
-                    return <p style={styles.timeItem}>{time}</p>
+                    return (
+                        <p 
+                            style={styles.timeItem}
+                            onClick={handleClick}>
+                            {time}
+                        </p>
+                    )
                 })}
             </div>
         )
