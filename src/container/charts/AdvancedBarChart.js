@@ -19,7 +19,7 @@ class AdvancedBarChart extends Component {
         this.props.setBarChartData2(this.props.data);
     }
     render() {
-        const { pieChartData, barChartData, timeInterval, setViewType } = this.props;
+        const { height, width, pieChartData, barChartData, timeInterval, setViewType } = this.props;
         return (
             <div>
                 <div className="flex-container">
@@ -27,7 +27,7 @@ class AdvancedBarChart extends Component {
                         times={timeInterval}
                         handleClick={setViewType} />
                 </div>
-                <BarChart width={this.props.width} height={this.props.height} data={barChartData}>
+                <BarChart width={width} height={height} data={barChartData}>
                     <CartesianGrid strokeDasharray="3 3" />
                     <XAxis
                         dataKey="days"
@@ -39,7 +39,7 @@ class AdvancedBarChart extends Component {
                     <Legend />
                     <Bar dataKey="value" fill="#8884d8" barSize={20} />
                 </BarChart>
-                <PieChart width={this.props.width} height={this.props.height} >
+                <PieChart width={width} height={height} >
                     <Pie data={pieChartData} dataKey="value" nameKey="name" cx="50%" cy="50%" outerRadius={50} />
                     <Tooltip />
                 </PieChart>
@@ -54,7 +54,7 @@ const mapStateToProps = ({ chartsReducer }) => {
         data: chartsReducer.data,
         pieChartData: chartsReducer.pieChartData,
         barChartData: chartsReducer.barChartData,
-        
+        viewType: chartsReducer.viewType
     }
 }
 
