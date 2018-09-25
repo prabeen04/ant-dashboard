@@ -23,7 +23,7 @@ class AdvancedBarChart extends Component {
         return (
             <div>
                 <div className="flex-container">
-                <TimeInterval times = { timeInterval}/>
+                <TimeInterval times = { timeInterval} />
                 </div>
                 <BarChart width={this.props.width} height={this.props.height} data={barChartData}>
                     <CartesianGrid strokeDasharray="3 3" />

@@ -87,3 +87,10 @@ export const setBarChartData2 = data => dispatch => {
         payload: dayArray
     })
 }
+
+export const setViewType = viewType => dispatch => {
+    dispatch({
+        type: SET_VIEW_TYPE,
+        payload: viewType
+    })
+}
