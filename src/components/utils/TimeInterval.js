@@ -7,9 +7,7 @@ class TimeInterval extends Component {
         return (
             <div style={styles.timeInterval}>
                 {times.map((time, i) => {
-                    return <div className="time-interval" key={i}>
-                        <p>{time}</p>
-                    </div>
+                    return <p style={styles.timeItem}>{time}</p>
                 })}
             </div>
         )
@@ -26,5 +24,10 @@ const styles = {
     timeInterval: {
         display: 'flex',
         flexDirection: 'row'
+    },
+    timeItem: {
+        padding: 10,
+        fontSize: 16,
+        fontWeight: 300
     }
 }
