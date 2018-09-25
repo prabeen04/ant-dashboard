@@ -22,7 +22,6 @@ class AdvancedBarChart extends Component {
         const { pieChartData, barChartData, timeInterval } = this.props;
         return (
             <div>
-                <h3>AdvancedBarChart Component</h3>
                 <div className="flex-container">
                 <TimeInterval times = { timeInterval}/>
                 </div>

@@ -25,11 +25,12 @@ const styles = {
         display: 'flex',
         flexDirection: 'row',
         borderWidth: 1,
-        borderColor: '#666'
+        borderColor: '#666666',
+        cursor: 'pointer'
     },
     timeItem: {
         padding: 5,
         fontSize: 16,
-        fontWeight: 300
+        fontWeight: 400
     }
 }
