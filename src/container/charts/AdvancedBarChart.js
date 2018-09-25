@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from "redux";
 import { Button } from "antd";
 import { BarChart, PieChart, Pie, Bar, Brush, Cell, CartesianGrid, XAxis, YAxis, Tooltip, Legend, Label } from 'recharts';
-import { setPieChartData, setBarChartData,setBarChartData2 } from '../../actions/chartsAction';
+import { setPieChartData, setBarChartData, setBarChartData2, setViewType } from '../../actions/chartsAction';
 import TimeInterval from '../../components/utils/TimeInterval';
 
 class AdvancedBarChart extends Component {
@@ -19,11 +19,13 @@ class AdvancedBarChart extends Component {
         this.props.setBarChartData2(this.props.data);
     }
     render() {
-        const { pieChartData, barChartData, timeInterval } = this.props;
+        const { pieChartData, barChartData, timeInterval, setViewType } = this.props;
         return (
             <div>
                 <div className="flex-container">
-                <TimeInterval times = { timeInterval} />
+                    <TimeInterval
+                        times={timeInterval}
+                        handleClick={setViewType} />
                 </div>
                 <BarChart width={this.props.width} height={this.props.height} data={barChartData}>
                     <CartesianGrid strokeDasharray="3 3" />
@@ -52,6 +54,7 @@ const mapStateToProps = ({ chartsReducer }) => {
         data: chartsReducer.data,
         pieChartData: chartsReducer.pieChartData,
         barChartData: chartsReducer.barChartData,
+        
     }
 }
 
@@ -60,6 +63,7 @@ const mapDispatchToProps = dispatch => {
         setPieChartData,
         setBarChartData,
         setBarChartData2,
+        setViewType,
     }, dispatch)
 }
 export default connect(mapStateToProps, mapDispatchToProps)(AdvancedBarChart);
