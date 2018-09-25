@@ -23,10 +23,12 @@ export default TimeInterval;
 const styles = {
     timeInterval: {
         display: 'flex',
-        flexDirection: 'row'
+        flexDirection: 'row',
+        borderWidth: 1,
+        borderColor: '#666'
     },
     timeItem: {
-        padding: 10,
+        padding: 5,
         fontSize: 16,
         fontWeight: 300
     }
