@@ -6,12 +6,18 @@ export default class TimeInterval extends Component {
       const { times } = this.props;
     return (
       <div>
-        {}
+        {times.map((time, i) => {
+            return (
+                <div className>
+                    <p>{time}</p>
+                </div>
+            )
+        })}
       </div>
     )
   }
 }
 
 TimeInterval.propTypes({
-    times: PropTypes.array;
+    times: PropTypes.array
 })

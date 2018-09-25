@@ -4,6 +4,7 @@ import { bindActionCreators } from "redux";
 import { Button } from "antd";
 import { BarChart, PieChart, Pie, Bar, Brush, Cell, CartesianGrid, XAxis, YAxis, Tooltip, Legend, Label } from 'recharts';
 import { setPieChartData, setBarChartData,setBarChartData2 } from '../../actions/chartsAction';
+import TimeInterval from '../../components/utils/TimeInterval';
 
 class AdvancedBarChart extends Component {
     displayXTick = (tick) => {
@@ -18,12 +19,12 @@ class AdvancedBarChart extends Component {
         this.props.setBarChartData2(this.props.data);
     }
     render() {
-        const { pieChartData, barChartData } = this.props;
+        const { pieChartData, barChartData, timeInterval } = this.props;
         return (
             <div>
                 <h3>AdvancedBarChart Component</h3>
                 <div className="flex-container">
-
+                <TimeInterval times = { timeInterval}/>
                 </div>
                 <BarChart width={this.props.width} height={this.props.height} data={barChartData}>
                     <CartesianGrid strokeDasharray="3 3" />
@@ -48,6 +49,7 @@ class AdvancedBarChart extends Component {
 
 const mapStateToProps = ({ chartsReducer }) => {
     return {
+        timeInterval: chartsReducer.timeInterval,
         data: chartsReducer.data,
         pieChartData: chartsReducer.pieChartData,
         barChartData: chartsReducer.barChartData,
