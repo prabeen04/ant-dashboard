@@ -14,6 +14,7 @@ class AdvancedBarChart extends Component {
         return `Day ${tick}`;
     }
     componentDidMount() {
+        console.log(this.props.viewType)
         this.props.setPieChartData(this.props.viewType, this.props.data);
         // this.props.setBarChartData(this.props.data);
         this.props.setBarChartData2(this.props.viewType, this.props.data);

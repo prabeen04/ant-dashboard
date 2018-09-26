@@ -18,12 +18,13 @@ export const setPieChartData = (viewType, data) => dispatch => {
                     name: type,
                     value: val
                 })
-            }else{
-                acc.push({
-                    name: val,
-                    value: type
-                }) 
             }
+            // else{
+            //     acc.push({
+            //         name: val,
+            //         value: type
+            //     }) 
+            // }
 
             return acc;
         }, []);
@@ -97,6 +98,7 @@ export const setBarChartData2 = (viewType, data) => dispatch => {
 }
 
 export const setViewType = viewType => dispatch => {
+    console.log(viewType)
     dispatch({
         type: SET_VIEW_TYPE,
         payload: viewType

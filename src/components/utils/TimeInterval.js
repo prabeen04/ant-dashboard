@@ -10,7 +10,7 @@ class TimeInterval extends Component {
                     return (
                         <p 
                             style={styles.timeItem}
-                            onClick={handleClick}>
+                            onClick={handleClick(time)}>
                             {time}
                         </p>
                     )
