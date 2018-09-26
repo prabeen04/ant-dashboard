@@ -19,6 +19,9 @@ class AdvancedBarChart extends Component {
         // this.props.setBarChartData(this.props.data);
         this.props.setBarChartData2(this.props.viewType, this.props.data);
     }
+    componentWillReceiveProps(){
+        console.log(this.props.viewType)
+    }
     render() {
         const { height, width, pieChartData, barChartData, timeInterval, setViewType } = this.props;
         return (

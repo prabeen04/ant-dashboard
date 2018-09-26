@@ -1,6 +1,7 @@
 import { GET_CHART_DATA, SET_INTERNAL_VIEW_TYPE, SET_CHART_VIEW_TYPE, SET_BAR_CHART_DATA, SET_PIE_CHART_DATA } from "../types/chartActionTypes";
 import moment from 'moment';
 export const setPieChartData = (viewType, data) => dispatch => {
+    console.log(viewType)
     const newData = data.map((event, i) => ({ eventId: event.eventId, eventType: event.eventType, startDate: moment(event.startDate).day() }))
         .reduce((acc, data, i, arr) => {
             if (!acc[data.eventType]) {
