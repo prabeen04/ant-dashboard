@@ -1,4 +1,4 @@
-import { GET_CHART_DATA, SET_INTERNAL_VIEW_TYPE, SET_VIEW_TYPE, SET_BAR_CHART_DATA, SET_PIE_CHART_DATA } from "../types/chartActionTypes";
+import { GET_CHART_DATA, SET_INTERNAL_VIEW_TYPE, SET_CHART_VIEW_TYPE, SET_BAR_CHART_DATA, SET_PIE_CHART_DATA } from "../types/chartActionTypes";
 import moment from 'moment';
 export const setPieChartData = (viewType, data) => dispatch => {
     const newData = data.map((event, i) => ({ eventId: event.eventId, eventType: event.eventType, startDate: moment(event.startDate).day() }))
@@ -21,8 +21,8 @@ export const setPieChartData = (viewType, data) => dispatch => {
             }
             else{
                 acc.push({
-                    name: val,
-                    value: type
+                    name: type,
+                    value: 1
                 }) 
             }
 
@@ -100,7 +100,7 @@ export const setBarChartData2 = (viewType, data) => dispatch => {
 export const setViewType = viewType => dispatch => {
     console.log(viewType)
     dispatch({
-        type: SET_VIEW_TYPE,
+        type: SET_CHART_VIEW_TYPE,
         payload: viewType
     })
 }
