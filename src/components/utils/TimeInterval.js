@@ -9,8 +9,9 @@ class TimeInterval extends Component {
                 {times.map((time, i) => {
                     return (
                         <p 
+                            key={i}
                             style={styles.timeItem}
-                            onClick={handleClick(time)}>
+                            onClick={(e) => handleClick(time)}>
                             {time}
                         </p>
                     )
