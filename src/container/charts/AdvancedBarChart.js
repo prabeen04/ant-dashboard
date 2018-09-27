@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from "redux";
 import { Button } from "antd";
 import { BarChart, PieChart, Pie, Bar, Brush, Cell, CartesianGrid, XAxis, YAxis, Tooltip, Legend, Label } from 'recharts';
-import { setPieChartData, setBarChartData, setBarChartData2, setViewType } from '../../actions/chartsAction';
+import { setPieChartData, setBarChartData, setViewType } from '../../actions/chartsAction';
 import TimeInterval from '../../components/utils/TimeInterval';
 
 class AdvancedBarChart extends Component {
@@ -16,8 +16,6 @@ class AdvancedBarChart extends Component {
     componentDidMount() {
         console.log(this.props.viewType)
         this.props.setPieChartData(this.props.viewType, this.props.data);
-        // this.props.setBarChartData(this.props.data);
-        this.props.setBarChartData2(this.props.viewType, this.props.data);
     }
     componentWillReceiveProps(nextProps) {
         if (nextProps.viewType != this.props.viewType) {
@@ -69,7 +67,6 @@ const mapDispatchToProps = dispatch => {
     return bindActionCreators({
         setPieChartData,
         setBarChartData,
-        setBarChartData2,
         setViewType,
     }, dispatch)
 }
