@@ -35,43 +35,6 @@ export const setPieChartData = (viewType, data) => dispatch => {
     })
 }
 
-export const setBarChartData = data => dispatch => {
-    const trimedData = data.map((item, i) => ({ eventId: item.eventId, eventType: item.eventType, startDate: moment(item.startDate).format('ddd') }))
-        .reduce((acc, item, i, arr) => {
-            console.log(acc[i]);
-            if (acc && acc.length) {
-                console.log(acc);
-                console.log('inside first if')
-                if (acc[i] && acc[i].hasOwnProperty('date')) {
-                    console.log('inside second if')
-                    acc.push({
-                        date: item.startDate,
-                        value: 1
-                    })
-                } else {
-                    console.log('inside second else')
-                    acc.push({
-                        date: item.startDate,
-                        value: item.eventType
-                    })
-                }
-            }
-            else {
-                console.log('inside else')
-                let obj = {
-                    date: item.startDate,
-                    value: 1
-                }
-                acc.push(obj)
-            }
-            // console.log(JSON.stringify(acc, null, 4))
-            // console.log(JSON.stringify(acc[i], null, 4))
-            console.log(acc[i])
-            return acc;
-        }, []);
-    console.log(trimedData)
-}
-
 export const setBarChartData2 = (viewType, data) => dispatch => {
     const trimedData = data.map((item, i) => ({ eventId: item.eventId, eventType: item.eventType, startDate: moment(item.startDate).format('ddd') }))
         .reduce((acc, item, i, arr) => {
