@@ -32,12 +32,14 @@ const styles = {
         display: 'flex',
         flexDirection: 'row',
         borderWidth: 1,
-        borderColor: '#666666',
+        borderColor: 'red',
         cursor: 'pointer'
     },
     timeItem: {
-        padding: 5,
+        padding: 15,
         fontSize: 16,
-        fontWeight: 400
+        fontWeight: 400,
+        borderWidth: 1,
+        borderColor: 'red',
     }
 }
