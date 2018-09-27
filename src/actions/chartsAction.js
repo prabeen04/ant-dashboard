@@ -48,10 +48,12 @@ export const setBarChartData = (viewType, data) => dispatch => {
     const dayArray = Object.entries(trimedData)
         .reduce((acc, node, i, arr) => {
             let [days, val] = node;
-            acc.push({
-                days: days,
-                value: val
-            })
+            if (viewType === 'week') {
+                acc.push({
+                    days: days,
+                    value: val
+                })
+            }
             return acc;
         }, []);
     console.log(dayArray)

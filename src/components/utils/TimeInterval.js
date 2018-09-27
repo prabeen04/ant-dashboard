@@ -38,8 +38,8 @@ const styles = {
     timeItem: {
         padding: 15,
         fontSize: 16,
-        fontWeight: 400,
-        borderWidth: 1,
+        fontWeight: 500,
         borderColor: 'red',
+        borderWidth: 1,
     }
 }
