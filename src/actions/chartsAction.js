@@ -20,11 +20,11 @@ export const setPieChartData = (viewType, data) => dispatch => {
                     value: val
                 })
             }
-            else{
+            else {
                 acc.push({
                     name: type,
                     value: 1
-                }) 
+                })
             }
 
             return acc;
