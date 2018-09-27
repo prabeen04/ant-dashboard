@@ -53,6 +53,11 @@ export const setBarChartData = (viewType, data) => dispatch => {
                     days: days,
                     value: val
                 })
+            }else{
+                acc.push({
+                    days: days,
+                    value: 1
+                })  
             }
             return acc;
         }, []);
