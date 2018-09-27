@@ -1,5 +1,6 @@
 import { GET_CHART_DATA, SET_INTERNAL_VIEW_TYPE, SET_CHART_VIEW_TYPE, SET_BAR_CHART_DATA, SET_PIE_CHART_DATA } from "../types/chartActionTypes";
 import moment from 'moment';
+import { Math } from "core-js";
 export const setPieChartData = (viewType, data) => dispatch => {
     console.log(viewType)
     const newData = data.map((event, i) => ({ eventId: event.eventId, eventType: event.eventType, startDate: moment(event.startDate).day() }))
@@ -56,7 +57,7 @@ export const setBarChartData = (viewType, data) => dispatch => {
             }else{
                 acc.push({
                     days: days,
-                    value: 1
+                    value: val*3
                 })  
             }
             return acc;
