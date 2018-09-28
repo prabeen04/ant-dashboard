@@ -38,7 +38,12 @@ export const setPieChartData = (viewType, data) => dispatch => {
 
 export const setBarChartData = (viewType, data) => dispatch => {
     const trimedData = data.map((item, i) => {
-        return { eventId: item.eventId, eventType: item.eventType, startDate: moment(item.startDate).format('ddd') }
+        if (viewType === 'week') {
+            return { eventId: item.eventId, eventType: item.eventType, startDate: moment(item.startDate).format('ddd') }
+        }
+        else{
+            return { eventId: item.eventId, eventType: item.eventType, startDate: moment(item.startDate).format('MMM') }
+        }
     })
         .reduce((acc, item, i, arr) => {
             if (!acc[item.startDate]) {
