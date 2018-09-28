@@ -10,7 +10,7 @@ const initialState = {
             eventHeading: "eventHeading",
             eventDescription: "eventDescription",
             timeZone: "UCT",
-            startDate: "2018-09-01T21:30:17+05:30",
+            startDate: "2018-08-01T21:30:17+05:30",
             endDate: "2018-09-19T21:35:17+05:30",
             eventClosureDate: "2018-09-19T21:30:17+05:30"
         },
@@ -21,7 +21,7 @@ const initialState = {
             eventHeading: "eventHeading",
             eventDescription: "eventDescription",
             timeZone: "UCT",
-            startDate: "2018-09-01T21:30:17+05:30",
+            startDate: "2018-08-01T21:30:17+05:30",
             endDate: "2018-09-19T21:35:17+05:30",
             eventClosureDate: "2018-09-19T21:30:17+05:30"
         },
@@ -32,7 +32,7 @@ const initialState = {
             eventHeading: "eventHeading",
             eventDescription: "eventDescription",
             timeZone: "UCT",
-            startDate: "2018-09-03T21:30:17+05:30",
+            startDate: "2018-08-03T21:30:17+05:30",
             endDate: "2018-09-19T21:35:17+05:30",
             eventClosureDate: "2018-09-19T21:30:17+05:30"
         },
