@@ -51,7 +51,7 @@ export const setBarChartData = (viewType, data) => dispatch => {
             let [days, val] = node;
             if (viewType === 'week') {
                 acc.push({
-                    days: days.format('ddd'),
+                    days: moment(days).format('ddd'),
                     value: val
                 })
             } else if (viewType === 'month') {
