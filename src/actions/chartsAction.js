@@ -41,8 +41,11 @@ export const setBarChartData = (viewType, data) => dispatch => {
         if (viewType === 'week') {
             return { eventId: item.eventId, eventType: item.eventType, startDate: moment(item.startDate).format('ddd') }
         }
-        else{
+        else if (viewType === 'month') {
             return { eventId: item.eventId, eventType: item.eventType, startDate: moment(item.startDate).format('MMM') }
+        }
+        else {            
+            return { eventId: item.eventId, eventType: item.eventType, startDate: moment(item.startDate).format('YYYY') }
         }
     })
         .reduce((acc, item, i, arr) => {
