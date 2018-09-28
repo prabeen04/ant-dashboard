@@ -39,22 +39,21 @@ export const setPieChartData = (viewType, data) => dispatch => {
 export const setBarChartData = (viewType, data) => dispatch => {
     const trimedData = data.map((item, i) => {
         return { eventId: item.eventId, eventType: item.eventType, startDate: moment(item.startDate).format('ddd') }
-    }
-    )
-    data.reduce((acc, item, i, arr) => {
-        if (!acc[item.startDate]) {
-            acc[item.startDate] = 1;
-        } else {
-            acc[item.startDate] += 1;
-        }
-        return acc;
-    }, {});
+    })
+        .reduce((acc, item, i, arr) => {
+            if (!acc[item.startDate]) {
+                acc[item.startDate] = 1;
+            } else {
+                acc[item.startDate] += 1;
+            }
+            return acc;
+        }, {});
     console.log(trimedData)
     const dayArray = Object.entries(trimedData)
         .reduce((acc, node, i, arr) => {
             let [days, val] = node;
             acc.push({
-                days: moment(days),
+                days: days,
                 value: val
             })
             return acc;
