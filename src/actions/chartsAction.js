@@ -51,10 +51,15 @@ export const setBarChartData = (viewType, data) => dispatch => {
     console.log(trimedData)
     const dayArray = Object.entries(trimedData)
         .reduce((acc, node, i, arr) => {
-            let months = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec'];
-            months.map((month, index) => {
-                if(month === node)
-            })
+
+            if(viewType  === 'month'){
+
+                let months = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec'];
+                months.map((month, index) => {
+                    if(month === node)
+                })
+                
+            }
             let [days, val] = node;
             acc.push({
                 days: days,
