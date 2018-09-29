@@ -15,19 +15,10 @@ export const setPieChartData = (viewType, data) => dispatch => {
     const eventArr = Object.entries(newData)
         .reduce((acc, node, i, arr) => {
             let [type, val] = node;
-            if (viewType === 'week') {
                 acc.push({
                     name: type,
                     value: val
                 })
-            }
-            else {
-                acc.push({
-                    name: type,
-                    value: 1
-                })
-            }
-
             return acc;
         }, []);
     dispatch({
@@ -44,18 +35,18 @@ export const setBarChartData = (viewType, data) => dispatch => {
         else if (viewType === 'month') {
             return { eventId: item.eventId, eventType: item.eventType, startDate: moment(item.startDate).format('MMM') }
         }
-        else {            
+        else {
             return { eventId: item.eventId, eventType: item.eventType, startDate: moment(item.startDate).format('YYYY') }
         }
     })
-    .reduce((acc, item, i, arr) => {
-        if (!acc[item.startDate]) {
-            acc[item.startDate] = 1;
-        } else {
-            acc[item.startDate] += 1;
-        }
-        return acc;
-    }, {});
+        .reduce((acc, item, i, arr) => {
+            if (!acc[item.startDate]) {
+                acc[item.startDate] = 1;
+            } else {
+                acc[item.startDate] += 1;
+            }
+            return acc;
+        }, {});
     console.log(trimedData)
     const dayArray = Object.entries(trimedData)
         .reduce((acc, node, i, arr) => {
