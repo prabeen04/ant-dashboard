@@ -56,7 +56,18 @@ export const setBarChartData = (viewType, data) => dispatch => {
 
                 let months = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec'];
                 months.map((month, index) => {
-                    if(month === node)
+                    if(month === node){
+                        let [days, val] = node;
+                        acc.push({
+                            days: days,
+                            value: val
+                        })
+                    }else{
+                        acc.push({
+                            days: month,
+                            value: 0
+                        })
+                    }
                 })
                 
             }
