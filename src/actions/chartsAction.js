@@ -12,9 +12,11 @@ export const setPieChartData = (viewType, data) => dispatch => {
             }
             return acc;
         }, {});
+        console.log(Object.entries(newData))
     const eventArr = Object.entries(newData)
         .reduce((acc, node, i, arr) => {
             let [type, val] = node;
+            let months = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec']
                 acc.push({
                     name: type,
                     value: val
