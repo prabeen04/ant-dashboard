@@ -6,13 +6,13 @@ export const setPieChartData = (viewType, data) => dispatch => {
     const newData = data.map((event, i) => ({ eventId: event.eventId, eventType: event.eventType, startDate: moment(event.startDate).day() }))
         .reduce((acc, data, i, arr) => {
             console.log(acc)
-            if (!acc[data.eventType]) {
-                acc[data.eventType] = 1;
+            if (!acc[i][data.eventType]) {
+                acc[i][data.eventType] = 1;
             } else {
-                acc[data.eventType] += 1;
+                acc[i][data.eventType] += 1;
             }
             return acc;
-        }, {});
+        }, [{}]);
     console.log(newData)
     // const eventArr = Object.entries(newData)
     //     .reduce((acc, node, i, arr) => {
