@@ -59,21 +59,12 @@ export const setBarChartData = (viewType, data) => dispatch => {
                 days: days,
                 value: val
             })
-
-        })
-
-}
-let [days, val] = node;
-acc.push({
-    days: days,
-    value: val
-})
-return acc;
+            return acc;
         }, []);
-dispatch({
-    type: SET_BAR_CHART_DATA,
-    payload: dayArray
-})
+    dispatch({
+        type: SET_BAR_CHART_DATA,
+        payload: dayArray
+    })
 }
 
 export const setViewType = viewType => dispatch => {
