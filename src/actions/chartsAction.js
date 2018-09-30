@@ -6,7 +6,13 @@ export const setPieChartData = (viewType, data) => dispatch => {
     const newData = data.map((event, i) => ({ eventId: event.eventId, eventType: event.eventType, startDate: moment(event.startDate).day() }))
         .reduce((acc, data, i, arr) => {
             console.log(acc[i])
-            acc[i]['test'] = 5
+            if (acc[i] === undefined) {
+                acc.push(
+                    acc[i]['test'] = 5
+                )
+            }
+
+
             // if (!acc[i][data.eventType]) {
             //     console.log('inside IF')
             //     acc[i][data.eventType] = 1;
@@ -14,7 +20,7 @@ export const setPieChartData = (viewType, data) => dispatch => {
             //     console.log('inside ELSE')
             //     acc[i][data.eventType] += 1;
             // }
-            return acc;
+            return acc; fukrey pulkit samrat
         }, []);
     console.log(newData)
     // const eventArr = Object.entries(newData)
