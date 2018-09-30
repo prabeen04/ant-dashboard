@@ -91,3 +91,4 @@ export const setViewType = viewType => dispatch => {
         payload: viewType
     })
 }
+
