@@ -7,9 +7,13 @@ export const setPieChartData = (viewType, data) => dispatch => {
         .reduce((acc, data, i, arr) => {
             console.log(acc[i])
             if (acc[i] === undefined) {
-                acc.push(
-                    acc[i]['test'] = 5
-                )
+                acc.push({
+                    acc[eventType]: 1
+                })
+            }else{
+                acc.push({
+                    acc[eventType]: acc[eventType] + 1
+                })
             }
 
 
@@ -20,7 +24,7 @@ export const setPieChartData = (viewType, data) => dispatch => {
             //     console.log('inside ELSE')
             //     acc[i][data.eventType] += 1;
             // }
-            return acc; fukrey pulkit samrat
+            return acc; 
         }, []);
     console.log(newData)
     // const eventArr = Object.entries(newData)
