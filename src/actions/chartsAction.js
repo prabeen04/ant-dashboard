@@ -9,15 +9,14 @@ export const setPieChartData = (viewType, data) => dispatch => {
             if (acc[i] === undefined) {
                 console.log('inside IF')
                 acc.push({
-                    acc['eventType']: 1
+                    'js': 1
                 })
             }else{
                 console.log('inside ELSE')
                 acc.push({
-                    acc['eventType']: acc['eventType'] + 1
+                    'sjbj': acc['js'] + 1
                 })
             }
-
 
             // if (!acc[i][data.eventType]) {
             //     console.log('inside IF')
