@@ -7,12 +7,14 @@ export const setPieChartData = (viewType, data) => dispatch => {
         .reduce((acc, data, i, arr) => {
             console.log(acc[i])
             if (acc[i] === undefined) {
+                console.log('inside IF')
                 acc.push({
-                    acc[eventType]: 1
+                    acc['eventType']: 1
                 })
             }else{
+                console.log('inside ELSE')
                 acc.push({
-                    acc[eventType]: acc[eventType] + 1
+                    acc['eventType']: acc['eventType'] + 1
                 })
             }
 
