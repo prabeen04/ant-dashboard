@@ -12,14 +12,14 @@ export const setPieChartData = (viewType, data) => dispatch => {
             }
             return acc;
         }, {});
-        console.log(Object.entries(newData))
+    console.log(Object.entries(newData))
     const eventArr = Object.entries(newData)
         .reduce((acc, node, i, arr) => {
             let [type, val] = node;
-                acc.push({
-                    name: type,
-                    value: val
-                })
+            acc.push({
+                name: type,
+                value: val
+            })
             return acc;
         }, []);
     dispatch({
@@ -49,39 +49,31 @@ export const setBarChartData = (viewType, data) => dispatch => {
             return acc;
         }, {});
     console.log(trimedData)
+    console.log('-----------------------------------------------')
+    console.log(Object.entries(trimedData))
     const dayArray = Object.entries(trimedData)
         .reduce((acc, node, i, arr) => {
 
-            if(viewType  === 'month'){
-
-                let months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-                months.map((month, index) => {
-                    if(month === node){
-                        let [days, val] = node;
-                        acc.push({
-                            days: days,
-                            value: val
-                        })
-                    }else{
-                        acc.push({
-                            days: month,
-                            value: 0
-                        })
-                    }
-                })
-                
-            }
             let [days, val] = node;
             acc.push({
                 days: days,
                 value: val
             })
-            return acc;
+
+        })
+
+}
+let [days, val] = node;
+acc.push({
+    days: days,
+    value: val
+})
+return acc;
         }, []);
-    dispatch({
-        type: SET_BAR_CHART_DATA,
-        payload: dayArray
-    })
+dispatch({
+    type: SET_BAR_CHART_DATA,
+    payload: dayArray
+})
 }
 
 export const setViewType = viewType => dispatch => {
