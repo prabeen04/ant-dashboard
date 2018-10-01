@@ -26,7 +26,7 @@ export const setPieChartData = (viewType, data) => dispatch => {
             //     acc[i][data.eventType] += 1;
             // }
             return acc; 
-        }, []);
+        }, [{as: 1}]);
     console.log(newData)
     // const eventArr = Object.entries(newData)
     //     .reduce((acc, node, i, arr) => {
