@@ -14,7 +14,7 @@ export const setPieChartData = (viewType, data) => dispatch => {
             }else{
                 console.log('inside ELSE')
                 acc.push({
-                    'sjbj': acc['js'] + 1
+                    'sjbj': Date.now()
                 })
             }
 
@@ -26,7 +26,7 @@ export const setPieChartData = (viewType, data) => dispatch => {
             //     acc[i][data.eventType] += 1;
             // }
             return acc; 
-        }, [{as: 1}]);
+        }, [{call: 0}]);
     console.log(newData)
     // const eventArr = Object.entries(newData)
     //     .reduce((acc, node, i, arr) => {
