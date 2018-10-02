@@ -8,14 +8,14 @@ export const setPieChartData = (viewType, data) => dispatch => {
             console.log(acc[i][data.eventType])
             if (acc[i][data.eventType] === undefined) {
                 console.log('inside IF')
-                acc.push({
-                    acc[i][data.eventType]: 1
-                })
+                // acc.push({
+                //     acc[i][data.eventType]: 1
+                // })
             }else{
                 console.log('inside ELSE')
-                acc.push({
-                    acc[i][data.eventType]: acc[i][data.eventType]+1
-                })
+                // acc.push({
+                //     acc[i][data.eventType]: acc[i][data.eventType]+1
+                // })
             }
 
             // if (!acc[i][data.eventType]) {
