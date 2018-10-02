@@ -13,9 +13,10 @@ export const setPieChartData = (viewType, data) => dispatch => {
                 // })
             }else{
                 console.log('inside ELSE')
-                // acc.push({
-                //     acc[i][data.eventType]: acc[i][data.eventType]+1
-                // })
+                console.log(acc[i])
+                acc.push({
+                    'data': 1
+                })
             }
 
             // if (!acc[i][data.eventType]) {
@@ -26,7 +27,7 @@ export const setPieChartData = (viewType, data) => dispatch => {
             //     acc[i][data.eventType] += 1;
             // }
             return acc; 
-        }, [{call: 0}]);
+        }, []);
     console.log(newData)
     // const eventArr = Object.entries(newData)
     //     .reduce((acc, node, i, arr) => {
