@@ -19,12 +19,12 @@ export const setPieChartData = (viewType, data) => dispatch => {
             //     })
             // }
 
-            if (!acc[i][data.eventType]) {
+            if (!acc[data.eventType]) {
                 console.log('inside IF')
-                acc[i][data.eventType] = 1;
+                acc[data.eventType] = 1;
             } else {
                 console.log('inside ELSE')
-                acc[i][data.eventType] += 1;
+                acc[data.eventType] += 1;
             }
             return acc; 
         }, {});
