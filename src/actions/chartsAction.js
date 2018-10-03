@@ -27,21 +27,21 @@ export const setPieChartData = (viewType, data) => dispatch => {
                 acc[i][data.eventType] += 1;
             }
             return acc; 
-        }, []);
+        }, {});
     console.log(newData)
-    // const eventArr = Object.entries(newData)
-    //     .reduce((acc, node, i, arr) => {
-    //         let [type, val] = node;
-    //         acc.push({
-    //             name: type,
-    //             value: val
-    //         })
-    //         return acc;
-    //     }, []);
-    // dispatch({
-    //     type: SET_PIE_CHART_DATA,
-    //     payload: eventArr
-    // })
+    const eventArr = Object.entries(newData)
+        .reduce((acc, node, i, arr) => {
+            let [type, val] = node;
+            acc.push({
+                name: type,
+                value: val
+            })
+            return acc;
+        }, []);
+    dispatch({
+        type: SET_PIE_CHART_DATA,
+        payload: eventArr
+    })
 }
 
 export const setBarChartData = (viewType, data) => dispatch => {
