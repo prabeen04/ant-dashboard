@@ -42,7 +42,7 @@ export const setPieChartData1 = (viewType, data) => dispatch => {
                 acc[data.eventType] += 1;
             }
             return acc; 
-        }, {});
+        }, []]);
 }
 
 export const setBarChartData = (viewType, data) => dispatch => {
