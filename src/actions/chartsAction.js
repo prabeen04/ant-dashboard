@@ -37,13 +37,13 @@ export const setPieChartData = (viewType, data) => dispatch => {
             console.log(acc.length)
             if (acc.length && acc[i] && acc[i]['call']) {
                 console.log('inside IF')
-                acc.concat({
+                acc.push({
                     'eventType': data.eventType
                 })
             } else {
                 console.log('inside ELSE')                
                 // console.log(acc)
-                acc.concat({
+                acc.push({
                     [data.eventType]: 1
                 })
             }
