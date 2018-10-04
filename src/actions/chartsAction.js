@@ -34,13 +34,7 @@ export const setPieChartData1 = (viewType, data) => dispatch => {
     console.log(viewType)
     const newData = data.map((event, i) => ({ eventId: event.eventId, eventType: event.eventType, startDate: moment(event.startDate).day() }))
         .reduce((acc, data, i, arr) => {
-            if (!acc[data.eventType]) {
-                console.log('inside IF')
-                acc[data.eventType] = 1;
-            } else {
-                console.log('inside ELSE')
-                acc[data.eventType] += 1;
-            }
+            console.log(data)
             return acc; 
         }, []);
 }
