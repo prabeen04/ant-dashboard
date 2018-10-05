@@ -1,5 +1,4 @@
-import React, { Component } from 'react'
-import 'FullCalendar.css';
+import React, { Component } from 'react';
 
 class FullCalendar extends Component {
   render() {
