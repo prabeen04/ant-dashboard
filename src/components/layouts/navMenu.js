@@ -101,6 +101,12 @@ class NavMenu extends React.Component {
                             <span>Custom Field</span>
                         </Link>
                     </Menu.Item>
+                    <Menu.Item key="14">
+                        <Link to='/fullCalendar'>
+                            <Icon type="calendar" />
+                            <span>Full Calendar</span>
+                        </Link>
+                    </Menu.Item>
                     <Menu.Item>
                         <Switch
                             checked={this.props.theme === 'dark'}
