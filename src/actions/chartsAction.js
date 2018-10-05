@@ -34,7 +34,7 @@ export const setPieChartData = (viewType, data) => dispatch => {
     console.log(viewType)
     const newData = data.map((event, i) => ({ eventId: event.eventId, eventType: event.eventType, startDate: moment(event.startDate).day() }))
         .reduce((acc, data, i, arr) => {
-            console.log(acc.length)
+            console.log(acc)
             if (acc.length && acc[i] && acc[i]['call']) {
                 console.log('inside IF')
                 acc.push({
@@ -47,11 +47,11 @@ export const setPieChartData = (viewType, data) => dispatch => {
                     [data.eventType]: 1
                 })
             }
-            console.log(acc)
             return acc;
         }, []);
-}
-
+        console.log(newData)
+    }
+    
 export const setBarChartData = (viewType, data) => dispatch => {
     const trimedData = data.map((item, i) => {
         if (viewType === 'week') {
