@@ -24,6 +24,7 @@ class FullCalendar extends Component {
       selectable: true,
       selectHelper: true,
       select: this.handleSelect,
+      eventClick: this.handleEventClick,
       themeSystem: 'standard',
       nowIndicator: true,
       events: [
@@ -38,6 +39,12 @@ class FullCalendar extends Component {
     });
   }
   handleSelect = (a, b, c, d) => {
+    console.log(a)
+    console.log(b)
+    console.log(c)
+    console.log(d)
+  }
+  handleEventClick = (a, b, c, d) => {
     console.log(a)
     console.log(b)
     console.log(c)
