@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
+import { bindActionCreators } from 'redux'
 import { reduxForm, Field } from 'redux-form';
 import { Button, Skeleton, Drawer } from "antd";
+import { getEvents } from "../../actions/calendar_actions";
 import $ from 'jquery';
 // import 'moment/min/moment.min.js';
 // import 'fullcalendar/dist/fullcalendar.print.min.css';
@@ -34,7 +36,7 @@ class FullCalendar extends Component {
   }
   componentDidMount() {
     const { calendar } = this.refs;
-
+    this.props.getEvents();
     $(calendar).fullCalendar({
       header: {
         left: 'today prev,next',
@@ -107,4 +109,8 @@ const mapStateToProps = ({ calendarReducer }) => ({
   isLoading: calendarReducer.isLoading,
   isError: calendarReducer.isError,
 })
-export default connect(mapStateToProps)(FullCalendar);
+
+const mapDispatchToProps = dispatch => bindActionCreators({
+  getEvents
+}, dispatch)
+export default connect(mapStateToProps, mapDispatchToProps)(FullCalendar);
