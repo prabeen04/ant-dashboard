@@ -22,26 +22,34 @@ class FullCalendar extends Component {
       },
       height: 550,
       selectable: true,
+      selectHelper: true,
+      select: this.handleSelect,
       themeSystem: 'standard',
       nowIndicator: true,
-  events: [
-    {
-      start: '2018-10-06',
-      end: '2018-10-08',
-      title: 'Test event',
-      // rendering: 'background',
-      color: '#00FF00'
-    },
-  ]
-});
+      events: [
+        {
+          start: '2018-10-06',
+          end: '2018-10-08',
+          title: 'Test event',
+          // rendering: 'background',
+          color: 'tomato'
+        },
+      ]
+    });
   }
-render() {
-  return (
-    <div className="full-calendar-wrapper">
-      <div ref="calendar"></div>
-    </div>
-  )
-}
+  handleSelect = (a, b, c, d) => {
+    console.log(a)
+    console.log(b)
+    console.log(c)
+    console.log(d)
+  }
+  render() {
+    return (
+      <div className="full-calendar-wrapper">
+        <div ref="calendar"></div>
+      </div>
+    )
+  }
 }
 
 export default FullCalendar;
