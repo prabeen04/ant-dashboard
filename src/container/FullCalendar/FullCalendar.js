@@ -7,6 +7,7 @@ import $ from 'jquery';
 import 'fullcalendar/dist/fullcalendar.css';
 import 'fullcalendar/dist/fullcalendar.js';
 import './FullCalendar.css';
+import TextInput from '../../components/common/forms/textInput';
 
 class FullCalendar extends Component {
   constructor(props) {
@@ -16,7 +17,7 @@ class FullCalendar extends Component {
     }
   }
   onDrawerClose = () => {
-    this.setState({drawerVisible: false})
+    this.setState({ drawerVisible: false })
   }
   componentDidMount() {
     const { calendar } = this.refs;
@@ -38,7 +39,7 @@ class FullCalendar extends Component {
     });
   }
   handleSelect = (a, b, c, d) => {
-    this.setState({drawerVisible: true})
+    this.setState({ drawerVisible: true })
     console.log(a)
     console.log(b)
     console.log(c)
@@ -61,6 +62,10 @@ class FullCalendar extends Component {
           onClose={this.onDrawerClose}
           visible={this.state.drawerVisible}
         >
+          <div className="flex-container-column">
+            <TextInput />
+            <TextInput />
+          </div>
         </Drawer>
       </div>
     )
