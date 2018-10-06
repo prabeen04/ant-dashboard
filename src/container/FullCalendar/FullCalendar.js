@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import $ from 'jquery';
-import 'moment/min/moment.min.js';
+// import 'moment/min/moment.min.js';
 // import 'fullcalendar/dist/fullcalendar.print.min.css';
 import 'fullcalendar/dist/fullcalendar.css';
 import 'fullcalendar/dist/fullcalendar.js';
@@ -20,6 +20,10 @@ class FullCalendar extends Component {
         center: 'title',
         right: 'month,agendaWeek,agendaDay'
       },
+      height: 550,
+      selectable: true,
+      themeSystem: 'standard',
+      nowIndicator: true,
   events: [
     {
       start: '2018-10-06',
