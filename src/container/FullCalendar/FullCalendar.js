@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from "react-redux";
 import $ from 'jquery';
 // import 'moment/min/moment.min.js';
 // import 'fullcalendar/dist/fullcalendar.print.min.css';
@@ -27,15 +28,7 @@ class FullCalendar extends Component {
       eventClick: this.handleEventClick,
       themeSystem: 'standard',
       nowIndicator: true,
-      events: [
-        {
-          start: '2018-10-06',
-          end: '2018-10-08',
-          title: 'Test event',
-          // rendering: 'background',
-          color: 'tomato'
-        },
-      ]
+      events: this.props.events
     });
   }
   handleSelect = (a, b, c, d) => {
@@ -44,11 +37,11 @@ class FullCalendar extends Component {
     console.log(c)
     console.log(d)
   }
-  handleEventClick = (a, b, c, d) => {
+  handleEventClick = (a, b, c) => {
+    alert(a.title)
     console.log(a)
     console.log(b)
     console.log(c)
-    console.log(d)
   }
   render() {
     return (
@@ -59,4 +52,7 @@ class FullCalendar extends Component {
   }
 }
 
-export default FullCalendar;
+const mapStateToProps = ({ calendarReducer }) => ({
+  events: calendarReducer.events
+})
+export default connect(mapStateToProps)(FullCalendar);
