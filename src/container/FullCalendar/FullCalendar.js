@@ -38,6 +38,7 @@ class FullCalendar extends Component {
     });
   }
   handleSelect = (a, b, c, d) => {
+    this.setState({drawerVisible: true})
     console.log(a)
     console.log(b)
     console.log(c)
@@ -58,7 +59,7 @@ class FullCalendar extends Component {
           placement="right"
           closable={false}
           onClose={this.onDrawerClose}
-          visible={this.state.drawer}
+          visible={this.state.drawerVisible}
         >
           <p>Some contents...</p>
           <p>Some contents...</p>
