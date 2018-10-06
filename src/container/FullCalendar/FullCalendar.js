@@ -65,6 +65,8 @@ class FullCalendar extends Component {
     console.log(c)
   }
   render() {
+    const { isError, isLoading } = this.props;
+    { isLoading && <Skeleton /> }
     return (
       <div className="full-calendar-wrapper">
         <div ref="calendar"></div>
@@ -76,7 +78,7 @@ class FullCalendar extends Component {
           onClose={this.onDrawerClose}
           visible={this.state.drawerVisible}
         >
-          <div className="flex-container-column" style={{justifyContent: 'flex-start'}}>
+          <div className="flex-container-column" style={{ justifyContent: 'flex-start' }}>
             <form>
               <Field
                 name="title"
@@ -101,6 +103,8 @@ FullCalendar = reduxForm({
 })(FullCalendar)
 
 const mapStateToProps = ({ calendarReducer }) => ({
-  events: calendarReducer.events
+  events: calendarReducer.events,
+  isLoading: calendarReducer.isLoading,
+  isError: calendarReducer.isError,
 })
 export default connect(mapStateToProps)(FullCalendar);
