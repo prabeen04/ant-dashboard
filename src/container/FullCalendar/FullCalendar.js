@@ -76,8 +76,13 @@ class FullCalendar extends Component {
           visible={this.state.drawerVisible}
         >
           <div className="flex-container-column">
-            <TextInput />
-            <TextInput />
+            <form>
+              <Field
+                name="title"
+                label="Title"
+                component={this.renderInput}
+              />
+            </form>
           </div>
         </Drawer>
       </div>
