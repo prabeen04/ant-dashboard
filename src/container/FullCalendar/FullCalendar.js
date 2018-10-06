@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
+import { Skeleton, Drawer } from "antd";
 import $ from 'jquery';
 // import 'moment/min/moment.min.js';
 // import 'fullcalendar/dist/fullcalendar.print.min.css';
@@ -47,6 +48,17 @@ class FullCalendar extends Component {
     return (
       <div className="full-calendar-wrapper">
         <div ref="calendar"></div>
+        <Drawer
+          title="Basic Drawer"
+          placement="right"
+          closable={false}
+          onClose={this.onClose}
+          visible={this.state.visible}
+        >
+          <p>Some contents...</p>
+          <p>Some contents...</p>
+          <p>Some contents...</p>
+        </Drawer>
       </div>
     )
   }
