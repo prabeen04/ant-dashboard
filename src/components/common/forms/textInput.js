@@ -10,7 +10,7 @@ class TextInput extends Component {
   }
   render() {
     return (
-      <div>
+      <div style={{marginBottom: 10}}>
         <input type="text" {...this.props} className="text-input"/>
       </div>
     )

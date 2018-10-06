@@ -69,19 +69,26 @@ class FullCalendar extends Component {
       <div className="full-calendar-wrapper">
         <div ref="calendar"></div>
         <Drawer
-          title="Basic Drawer"
+          title="Create Event"
           placement="right"
           closable={false}
+          width={500}
           onClose={this.onDrawerClose}
           visible={this.state.drawerVisible}
         >
-          <div className="flex-container-column">
+          <div className="flex-container-column" style={{justifyContent: 'flex-start'}}>
             <form>
               <Field
                 name="title"
                 label="Title"
                 component={this.renderInput}
               />
+              <Field
+                name="description"
+                label="Description"
+                component={this.renderInput}
+              />
+              <Button type="primary" htmlType="submit">Create Event</Button>
             </form>
           </div>
         </Drawer>
