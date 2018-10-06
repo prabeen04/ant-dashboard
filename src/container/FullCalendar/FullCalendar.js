@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
-import { Skeleton, Drawer } from "antd";
+import { reduxForm, Field } from 'redux-form';
+import { Button, Skeleton, Drawer } from "antd";
 import $ from 'jquery';
 // import 'moment/min/moment.min.js';
 // import 'fullcalendar/dist/fullcalendar.print.min.css';
@@ -71,6 +72,9 @@ class FullCalendar extends Component {
     )
   }
 }
+FullCalendar = reduxForm({
+  form: 'fullCalendarForm'
+})(FullCalendar)
 
 const mapStateToProps = ({ calendarReducer }) => ({
   events: calendarReducer.events
