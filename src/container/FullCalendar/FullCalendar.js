@@ -7,7 +7,6 @@ import $ from 'jquery';
 import 'fullcalendar/dist/fullcalendar.css';
 import 'fullcalendar/dist/fullcalendar.js';
 import './FullCalendar.css';
-import EventForm from '../calendar/eventForm';
 
 class FullCalendar extends Component {
   constructor(props) {
@@ -62,7 +61,6 @@ class FullCalendar extends Component {
           onClose={this.onDrawerClose}
           visible={this.state.drawerVisible}
         >
-          <EventForm/>
         </Drawer>
       </div>
     )
