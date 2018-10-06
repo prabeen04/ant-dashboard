@@ -17,6 +17,18 @@ class FullCalendar extends Component {
       drawerVisible: false
     }
   }
+  renderInput = ({ input, label, type, meta: { touched, error }, ...custom }) => {
+    return (
+      <div>
+        <TextInput
+          placeholder={label}
+          {...input}
+          {...custom}
+        />
+        {touched && error && <span style={{ color: 'tomato' }}>{error}</span>}
+      </div>
+    )
+  }
   onDrawerClose = () => {
     this.setState({ drawerVisible: false })
   }
