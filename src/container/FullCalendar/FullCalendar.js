@@ -11,7 +11,12 @@ import './FullCalendar.css';
 class FullCalendar extends Component {
   constructor(props) {
     super(props)
-
+    this.state = {
+      drawerVisible: false
+    }
+  }
+  onDrawerClose = () => {
+    this.setState({drawerVisible: false})
   }
   componentDidMount() {
     const { calendar } = this.refs;
@@ -52,8 +57,8 @@ class FullCalendar extends Component {
           title="Basic Drawer"
           placement="right"
           closable={false}
-          onClose={this.onClose}
-          visible={this.state.visible}
+          onClose={this.onDrawerClose}
+          visible={this.state.drawer}
         >
           <p>Some contents...</p>
           <p>Some contents...</p>
