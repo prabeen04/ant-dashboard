@@ -16,9 +16,9 @@ class FullCalendar extends Component {
 
     $(calendar).fullCalendar({
       header: {
-        left: 'title',
-        center: '',
-        right: 'today prev,next'
+        left: 'today prev,next',
+        center: 'title',
+        right: 'month,agendaWeek,agendaDay'
       },
   events: [
     {
