@@ -5,6 +5,7 @@ import { reduxForm, Field } from 'redux-form';
 import { Button, Skeleton, Drawer } from "antd";
 import { getEvents } from "../../actions/calendar_actions";
 import $ from 'jquery';
+import moment from 'moment';
 // import 'moment/min/moment.min.js';
 // import 'fullcalendar/dist/fullcalendar.print.min.css';
 import 'fullcalendar/dist/fullcalendar.css';
@@ -17,7 +18,9 @@ class FullCalendar extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      drawerVisible: false
+      drawerVisible: false,
+      startDate: null,
+      endDate: null,
     }
   }
   renderInput = ({ input, label, type, meta: { touched, error }, ...custom }) => {
@@ -39,6 +42,7 @@ class FullCalendar extends Component {
           placeholder={label}
           {...input}
           {...custom}
+          value={input.value != '' ? moment(moment(input.value).format('DD MMM YYYY')) : null}
         />
         {touched && error && <span style={{ color: 'tomato' }}>{error}</span>}
       </div>
@@ -135,4 +139,5 @@ const mapStateToProps = ({ calendarReducer }) => ({
 const mapDispatchToProps = dispatch => bindActionCreators({
   getEvents
 }, dispatch)
+
 export default connect(mapStateToProps, mapDispatchToProps)(FullCalendar);
