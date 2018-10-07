@@ -82,7 +82,7 @@ class FullCalendar extends Component {
   render() {
     const { isError, isLoading } = this.props;
     if (isLoading) {
-       <div style={{ width: '100vw', height: '80vh', display: 'flex', justifyContent: 'center' }}>
+      <div style={{ width: '100vw', height: '80vh', display: 'flex', justifyContent: 'center' }}>
         <Skeleton paragraph={{ rows: 8 }} />
       </div>
     }
@@ -101,6 +101,16 @@ class FullCalendar extends Component {
           <div className="flex-container-column" style={{ justifyContent: 'flex-start' }}>
             <form>
               <Field
+                name="startDate"
+                label="Start Date"
+                component={this.renderDate}
+              />
+              <Field
+                name="endDate"
+                label="End Date"
+                component={this.renderDate}
+              />
+              <Field
                 name="title"
                 label="Title"
                 component={this.renderInput}
@@ -109,11 +119,6 @@ class FullCalendar extends Component {
                 name="description"
                 label="Description"
                 component={this.renderInput}
-              />
-              <Field
-                name="startDate"
-                label="Start Date"
-                component={this.renderDate}
               />
               <Button type="primary" htmlType="submit">Create Event</Button>
             </form>

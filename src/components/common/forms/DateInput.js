@@ -6,7 +6,7 @@ class DateInput extends Component {
     render() {
         return (
             <div>
-                <DatePicker className="text-input" {...this.props} />
+                <DatePicker {...this.props} />
             </div>
         )
     }
