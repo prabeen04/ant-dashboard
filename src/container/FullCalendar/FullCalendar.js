@@ -11,6 +11,7 @@ import 'fullcalendar/dist/fullcalendar.css';
 import 'fullcalendar/dist/fullcalendar.js';
 import './FullCalendar.css';
 import TextInput from '../../components/common/forms/textInput';
+import DateInput from '../../components/common/forms/DateInput'
 
 class FullCalendar extends Component {
   constructor(props) {
@@ -96,6 +97,11 @@ class FullCalendar extends Component {
                 name="description"
                 label="Description"
                 component={this.renderInput}
+              />
+              <Field
+                name="startDate"
+                label="Start Date"
+                component={<DateInput/>}
               />
               <Button type="primary" htmlType="submit">Create Event</Button>
             </form>
