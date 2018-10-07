@@ -113,7 +113,7 @@ class FullCalendar extends Component {
               <Field
                 name="startDate"
                 label="Start Date"
-                component={<DateInput/>}
+                component={this.renderDate}
               />
               <Button type="primary" htmlType="submit">Create Event</Button>
             </form>
