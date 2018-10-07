@@ -81,7 +81,6 @@ class FullCalendar extends Component {
           title="Create Event"
           placement="right"
           closable={false}
-          maskStyle={{backgroundColor: 'rgba(211, 20, 155, 0.3)'}}
           width={500}
           onClose={this.onDrawerClose}
           visible={this.state.drawerVisible}
