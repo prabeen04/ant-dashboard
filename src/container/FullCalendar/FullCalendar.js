@@ -68,18 +68,11 @@ class FullCalendar extends Component {
   }
   handleSelect = (a, b, c, d) => {
     this.setState({ drawerVisible: true })
-    console.log(a)
-    console.log(b)
-    console.log(c)
-    console.log(d)
   }
   handleEventClick = (a, b, c) => {
     alert(a.title)
-    console.log(a)
-    console.log(b)
-    console.log(c)
   }
-  onSubmit = (values) => console.log(value)
+  onSubmit = (values) => console.log(values)
   render() {
     const { isError, isLoading, handleSubmit, submitting } = this.props;
     if (isLoading) {
@@ -121,7 +114,7 @@ class FullCalendar extends Component {
                 label="Description"
                 component={this.renderInput}
               />
-              <Button type="primary" htmlType="submit">Create Event</Button>
+              <Button type="primary" htmlType="submit" loading={submitting}>Create Event</Button>
             </form>
           </div>
         </Drawer>
