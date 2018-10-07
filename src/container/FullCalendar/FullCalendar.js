@@ -68,6 +68,9 @@ class FullCalendar extends Component {
   }
   render() {
     const { isError, isLoading } = this.props;
+    if(isLoading){
+      console.log('isLoading')
+    }
     // if (isLoading) {
     //   return (
     //     <div style={{ height: '80vh', justifyContent: 'center' }}>
