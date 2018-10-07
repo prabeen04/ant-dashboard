@@ -79,8 +79,9 @@ class FullCalendar extends Component {
     console.log(b)
     console.log(c)
   }
+  onSubmit = (values) => console.log(value)
   render() {
-    const { isError, isLoading } = this.props;
+    const { isError, isLoading, handleSubmit, submitting } = this.props;
     if (isLoading) {
       <div style={{ width: '100vw', height: '80vh', display: 'flex', justifyContent: 'center' }}>
         <Skeleton paragraph={{ rows: 8 }} />
@@ -99,7 +100,7 @@ class FullCalendar extends Component {
           visible={this.state.drawerVisible}
         >
           <div className="flex-container-column" style={{ justifyContent: 'flex-start' }}>
-            <form>
+            <form onSubmit={handleSubmit(this.onSubmit)}>
               <Field
                 name="startDate"
                 label="Start Date"
