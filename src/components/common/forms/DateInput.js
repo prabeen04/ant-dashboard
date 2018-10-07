@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { DatePicker } from "antd";
-import './form.css';
+import './forms.css';
 
 class DateInput extends Component {
     render() {
