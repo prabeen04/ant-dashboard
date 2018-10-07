@@ -68,16 +68,12 @@ class FullCalendar extends Component {
   }
   render() {
     const { isError, isLoading } = this.props;
-    if(isLoading){
-      console.log('isLoading')
+    if (isLoading) {
+       <div style={{ width: '100vw', height: '80vh', display: 'flex', justifyContent: 'center' }}>
+        <Skeleton paragraph={{ rows: 8 }} />
+      </div>
     }
-    // if (isLoading) {
-    //   return (
-    //     <div style={{ height: '80vh', justifyContent: 'center' }}>
-    //       <Skeleton paragraph={{ rows: 8 }} />
-    //     </div>
-    //   )
-    // }
+
     return (
       <div className="full-calendar-wrapper">
         <div ref="calendar"></div>
