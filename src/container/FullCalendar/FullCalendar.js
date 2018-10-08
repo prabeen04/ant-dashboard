@@ -13,7 +13,7 @@ import 'fullcalendar/dist/fullcalendar.js';
 import './FullCalendar.css';
 import TextInput from '../../components/common/forms/textInput';
 import DateInput from '../../components/common/forms/DateInput'
-import { MainWrapper, Title } from '../../components/UI/Elements';
+import { MainWrapper } from '../../components/UI/Elements';
 
 class FullCalendar extends Component {
   constructor(props) {
@@ -88,7 +88,6 @@ class FullCalendar extends Component {
 
     return (
       <MainWrapper>
-        <Title>Testins</Title>
         <div ref="calendar"></div>
         <Drawer
           title="Create Event"
