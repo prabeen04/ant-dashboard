@@ -4,7 +4,7 @@ const MainWrapper = styled.div`
 border-radius: 0.2rem;
 box-shadow: 0 1px 4px 1px rgb(211, 208, 208);
 ${props => props.dark ? `
-background: #444;
+background: #001529;
 color: white;
 `: `
 background: #fff;

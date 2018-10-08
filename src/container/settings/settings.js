@@ -26,9 +26,9 @@ const Settings = (props) => {
                 <TabPane tab={<span><Icon type="cloud-download" />Downloads</span>} key="4">
                     <ColumnTransfer />
                 </TabPane>
-                <TabPane tab={<span><Icon type="desktop" />Desktop</span>} key="5">
+                <TabPane tab={<span><Icon type="desktop" />Theme</span>} key="5">
                     Tab 5
-                    </TabPane>
+                </TabPane>
                 <TabPane tab={<span><Icon type="share-alt" />Sharing</span>} key="6">
                     Tab 6
                     </TabPane>
