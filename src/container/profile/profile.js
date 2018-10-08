@@ -8,10 +8,11 @@ import ProfileActionHeaderLeft from './ProfileActionHeaderLeft';
 import ProfileActionHeaderRight from "./ProfileActionHeaderRight";
 import ActionHeader from '../../components/layouts/ActionHeader';
 import './profile.css';
+import MainWrapper from "../../components/UI/Elements/MainWrapper";
 
 const Profile = (props) => {
   return (
-    <div className="pr">
+    <MainWrapper dark>
       <ActionHeader
         leftComponent={<ProfileActionHeaderLeft />}
         rightComponent={<ProfileActionHeaderRight />}
@@ -26,7 +27,7 @@ const Profile = (props) => {
           {props.showViewProfile && <ProfileView />}
         </div>
       </div>
-    </div>
+    </MainWrapper>
 
   )
 }

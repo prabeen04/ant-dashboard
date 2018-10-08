@@ -6,6 +6,7 @@ import { bindActionCreators } from 'redux';
 import { Icon, Card, Button  } from 'antd';
 import { getProfiles, addProfile, showAddProfile } from '../../actions/profile_actions';
 import { getProfilesState } from '../../selectors/demoSelector';
+import MainWrapper from '../../components/UI/Elements/MainWrapper'
 import './profile.css';
 
 class ProfileList extends Component {
@@ -42,6 +43,7 @@ class ProfileList extends Component {
 
         })
         return (
+            <MainWrapper dark>
             <div className={this.props.viewType === 'GRID'? 'profile-grid-view' :'profile-list-view'} >
                {this.props.viewType === 'GRID' && <div className="flex-container"
                     style={{ width: 155, height: 200, margin: '0.5rem', justifyContent: 'center', backgroundColor: '#fff', cursor: 'pointer' }}
@@ -51,6 +53,7 @@ class ProfileList extends Component {
                 </div>}
                 {renderCard}
             </div>
+            </MainWrapper>
         )
     }
 }

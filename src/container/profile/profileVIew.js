@@ -4,6 +4,7 @@ import { bindActionCreators } from 'redux'
 import { Card, Icon, Avatar } from 'antd'
 import { openEditProfile } from '../../actions/profile_actions';
 import ProfileDrawer from './profileDrawer';
+import MainWrapper from '../../components/UI/Elements/MainWrapper'
 const { Meta } = Card;
 
 class ProfileView extends Component {
@@ -23,7 +24,7 @@ class ProfileView extends Component {
   };
   render() {
     return (
-      <div className="profile-view">
+      <MainWrapper dark>
         {this.props.profile.name &&
           <div>
 
@@ -49,7 +50,7 @@ class ProfileView extends Component {
 
         }
         <ProfileDrawer open={this.state.isDrawerOpen} onClose={this.onClose} user={this.props.profile}/>
-      </div>
+      </MainWrapper>
     )
   }
 }
