@@ -24,7 +24,7 @@ class ProfileView extends Component {
   };
   render() {
     return (
-      <MainWrapper dark>
+      <MainWrapper>
         {this.props.profile.name &&
           <div>
 

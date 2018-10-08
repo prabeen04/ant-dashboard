@@ -12,7 +12,7 @@ import MainWrapper from "../../components/UI/Elements/MainWrapper";
 
 const Profile = (props) => {
   return (
-    <MainWrapper dark>
+    <MainWrapper>
       <ActionHeader
         leftComponent={<ProfileActionHeaderLeft />}
         rightComponent={<ProfileActionHeaderRight />}

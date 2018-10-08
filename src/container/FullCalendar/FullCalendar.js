@@ -87,7 +87,7 @@ class FullCalendar extends Component {
     }
 
     return (
-      <MainWrapper dark>
+      <MainWrapper>
         <Title>Testins</Title>
         <div ref="calendar"></div>
         <Drawer
