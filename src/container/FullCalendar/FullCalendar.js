@@ -13,13 +13,13 @@ import 'fullcalendar/dist/fullcalendar.js';
 import './FullCalendar.css';
 import TextInput from '../../components/common/forms/textInput';
 import DateInput from '../../components/common/forms/DateInput'
-// import Title from '../../components/UI/Elements';
+import {Title} from '../../components/UI/Elements';
 import styled from 'styled-components'
 
-const Title = styled.div`
-    color: red;
-    font-size: 26px;
-`
+// const Title = styled.div`
+//     color: red;
+//     font-size: 26px;
+// `
 class FullCalendar extends Component {
   constructor(props) {
     super(props)
