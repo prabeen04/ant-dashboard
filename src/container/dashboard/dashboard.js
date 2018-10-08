@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Card, Spin, Icon } from 'antd';
 import classNames from 'classnames';
+import { MainWrapper } from '../../components/UI/Elements'
 import JumpStartBox from './jumpStart';
 import Settings from '../settings/settings';
 import DashboardHeader from './dashboardHeader';
@@ -44,7 +45,7 @@ class Dashboard extends Component {
       'blur-wrapper': this.state.isFetching
     });
     return (
-      <div className={blurClass}>
+      <MainWrapper className={blurClass}>
         <DashboardHeader fetchChartData={this.fetchChartData} />
         <div className='flex-container'>
           <JumpStartBox />
@@ -61,7 +62,7 @@ class Dashboard extends Component {
             <Icon type="loading" style={{ fontSize: 60, color: 'tomato' }} spin />
           </div>
         </Card>
-      </div>
+      </MainWrapper>
     )
   }
 }
