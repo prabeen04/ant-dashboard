@@ -1,2 +1,1 @@
-import Title from './Title';
-export const Title;
+export { default as Title } from "./Title";
