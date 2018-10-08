@@ -2,12 +2,14 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Loadable from 'react-loadable';
 import { Layout, Menu, Icon, Badge, Table } from 'antd';
+import  {MainWrapper} from "../UI/Elements";
 import './navbar.css';
 import BundleLoading from '../loading/bundleLoading'
 import NavMenu from './navMenu';
 import GooglePlace from '../google/googlePlace';
 import AppBoundary from '../../errorHandler/appBoundary';
 import NotificationPopover from '../popover/notificationPopover';
+
 const { Header, Sider, Content } = Layout;
 
 const AsyncDashboard = Loadable({
@@ -99,6 +101,7 @@ class Navbar extends React.Component {
     render() {
         const background = this.state.theme === 'light' ? '#fff' : null
         return (
+            <MainWrapper dark>
             <Layout>
                 <Sider
                     trigger={null}
@@ -165,6 +168,7 @@ class Navbar extends React.Component {
                     </Content>
                 </Layout>
             </Layout>
+            </MainWrapper>
         );
     }
 }
