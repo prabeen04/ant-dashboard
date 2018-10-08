@@ -13,7 +13,13 @@ import 'fullcalendar/dist/fullcalendar.js';
 import './FullCalendar.css';
 import TextInput from '../../components/common/forms/textInput';
 import DateInput from '../../components/common/forms/DateInput'
-import { Title } from '../../components/UI/Elements'
+// import Title from '../../components/UI/Elements';
+import styled from 'styled-components'
+
+const Title = styled.div`
+    color: red;
+    font-size: 26px;
+`
 class FullCalendar extends Component {
   constructor(props) {
     super(props)
@@ -38,7 +44,6 @@ class FullCalendar extends Component {
   renderDate = ({ input, label, type, meta: { touched, error }, ...custom }) => {
     return (
       <div>
-        <Title>Testins</Title>
         <DateInput
           placeholder={label}
           {...input}
@@ -88,6 +93,7 @@ class FullCalendar extends Component {
 
     return (
       <div className="full-calendar-wrapper">
+        <Title>Testins</Title>
         <div ref="calendar"></div>
         <Drawer
           title="Create Event"
