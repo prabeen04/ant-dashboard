@@ -6,6 +6,7 @@ import ChartSettings from './chartSettings';
 import ProfileSettings from './profile/profileSettings';
 import ProgressLine from './calendar/progressLine';
 import ColumnTransfer from './transfer/columnTransfer';
+import Theme from './Theme/Theme'
 import './settings.css';
 const TabPane = Tabs.TabPane;
 
@@ -27,7 +28,7 @@ const Settings = (props) => {
                     <ColumnTransfer />
                 </TabPane>
                 <TabPane tab={<span><Icon type="desktop" />Theme</span>} key="5">
-                    Tab 5
+                    <Theme/>
                 </TabPane>
                 <TabPane tab={<span><Icon type="share-alt" />Sharing</span>} key="6">
                     Tab 6
