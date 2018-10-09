@@ -45,7 +45,7 @@ class Charts extends Component {
                     animated={true}
                     onChange={this.onChange}
                     activeKey={this.state.activeKey}
-                    style={{backgroundColor: '#001529', color: '#aaa'}}
+                    // style={{backgroundColor: '#001529', color: '#aaa'}}
                 >
                     {this.state.panes.map(pane => <TabPane tab={pane.title} key={pane.key} closable={pane.closable}>{pane.content}</TabPane>)}
                 </Tabs>
