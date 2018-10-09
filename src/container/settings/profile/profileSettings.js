@@ -44,16 +44,23 @@ class ProfileSettings extends Component {
     }
     handleChange = (selectedOption) => {
         console.log(selectedOption)
-        this.setState((prevState) => {
-            selectedOption: selectedOption, selectedOptions: prevState.selectedOptions.push(selectedOption)
-        })
+        this.setState((prevState) => ({
+            selectedOption: selectedOption,
+        }))
         console.log(`Option selected:`, selectedOption);
-        console.log(this.state.selectedOptions);
     }
     render() {
+        const { selectedOption } = this.state;
         return (
             <div style={{ height: 500, width: 400 }}>
                 <h3>Option group</h3>
+                {selectedOption &&
+                    selectedOption.map((option, i) => {
+                       return ( <p>
+                          {option.label}  
+                        </p>)
+                    })
+                }
                 <Select
                     isClearable
                     isMulti
