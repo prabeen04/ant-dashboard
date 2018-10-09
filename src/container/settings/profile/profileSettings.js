@@ -5,9 +5,10 @@ import { colourOptions, groupedOptions } from './options';
 import Creatable from "./creatableSelect";
 import SelectFormModal from "./selectFormModal";
 const optionTypes = [
-    { name: 'Forward', type: 'forward' },
-    { name: 'Midfielder', type: 'midfielder' },
-    { name: 'Defence', type: 'defence' },
+    { value: 'vanilla', label: 'Vanilla', rating: 'safe' },
+    { value: 'chocolate', label: 'Chocolate', rating: 'good' },
+    { value: 'strawberry', label: 'Strawberry', rating: 'wild' },
+    { value: 'salted-caramel', label: 'Salted Caramel', rating: 'crazy' },
 ]
 const groupStyles = {
     display: 'flex',
@@ -57,7 +58,7 @@ class ProfileSettings extends Component {
                 {selectedOption &&
                     selectedOption.map((option, i) => {
                         return (
-                            <React.Fragment>
+                            <React.Fragment key={i}>
                                 <span>{option.label} </span>
                                 <Select
                                     isClearable
