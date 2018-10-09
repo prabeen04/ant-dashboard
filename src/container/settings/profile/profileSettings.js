@@ -4,6 +4,11 @@ import { Icon } from 'antd'
 import { colourOptions, groupedOptions } from './options';
 import Creatable from "./creatableSelect";
 import SelectFormModal from "./selectFormModal";
+const optionTypes = [
+    { name: 'Forward', type: 'forward' },
+    { name: 'Midfielder', type: 'midfielder' },
+    { name: 'Defence', type: 'defence' },
+]
 const groupStyles = {
     display: 'flex',
     alignItems: 'center',
@@ -53,7 +58,7 @@ class ProfileSettings extends Component {
                     onChange={this.handleChange}
                     placeholder="Choose Color or Flavour ..."
                 />
-                <br/>
+                <br />
                 <h3>Creatable Select box</h3>
                 <Creatable />
                 <SelectFormModal />
