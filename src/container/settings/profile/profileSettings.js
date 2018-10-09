@@ -53,11 +53,13 @@ class ProfileSettings extends Component {
         }))
         console.log(`Option selected:`, selectedOption);
     }
+    onSubmit = values => console.log(values)
     render() {
         const { selectedOption } = this.state;
+        const { handleSubmit, submitting } = this.props;
         return (
             <div style={{ height: 500, width: 400 }}>
-                <form>
+                <form onSubmit={handleSubmit(this.onSubmit)}>
                     <h3>Option group</h3>
                     {selectedOption &&
                         selectedOption.map((option, i) => {
