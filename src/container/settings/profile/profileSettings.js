@@ -38,13 +38,17 @@ class ProfileSettings extends Component {
         super(props)
         this.state = {
             selectedOption: null,
+            selectedOptions: []
         }
         this.handleChange = this.handleChange.bind(this);
     }
     handleChange = (selectedOption) => {
         console.log(selectedOption)
-        this.setState({ selectedOption });
+        this.setState((prevState) => {
+            selectedOption: selectedOption, selectedOptions: prevState.selectedOptions.push(selectedOption)
+        })
         console.log(`Option selected:`, selectedOption);
+        console.log(this.state.selectedOptions);
     }
     render() {
         return (
