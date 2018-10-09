@@ -59,13 +59,15 @@ class ProfileSettings extends Component {
                     selectedOption.map((option, i) => {
                         return (
                             <React.Fragment key={i}>
-                                <span>{option.label} </span>
-                                <Select
-                                    isClearable
-                                    options={optionTypes}
-                                    formatGroupLabel={formatGroupLabel}
-                                    placeholder="Chose position ..."
-                                />
+                                <div style={{ display: 'flex', flexDirection: 'row', width: 400}}>
+                                    <h2>{option.label}</h2>
+                                    <Select
+                                        isClearable
+                                        options={optionTypes}
+                                        formatGroupLabel={formatGroupLabel}
+                                        placeholder="Chose position ..."
+                                    />
+                                </div>
                             </React.Fragment>
                         )
                     })
