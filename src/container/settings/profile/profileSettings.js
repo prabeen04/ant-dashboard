@@ -88,10 +88,10 @@ class ProfileSettings extends Component {
                         placeholder="Choose Color or Flavour ..."
                     />
                     <br />
-                    <h3>Creatable Select box</h3>
                     <Button type="primary" htmlType="submit">Submit</Button>
                 </form>
                 <Divider />
+                <h3>Creatable Select box</h3>
                 <Creatable />
                 <SelectFormModal />
             </div>
