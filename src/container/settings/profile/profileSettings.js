@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+import { Field, FieldArray, reduxform } from 'redux-form'
 import Select from 'react-select';
 import { Icon } from 'antd'
 import { colourOptions, groupedOptions } from './options';
@@ -59,9 +62,9 @@ class ProfileSettings extends Component {
                     selectedOption.map((option, i) => {
                         return (
                             <React.Fragment key={i}>
-                                <div style={{ display: 'flex', flexDirection: 'row',}}>
+                                <div style={{ display: 'flex', flexDirection: 'row' }}>
                                     <h2>{option.label}</h2>
-                                    <div style={{ flexBasis: '80%'}}>
+                                    <div style={{ flexBasis: '80%' }}>
                                         <Select
                                             isClearable
                                             options={optionTypes}
@@ -92,4 +95,9 @@ class ProfileSettings extends Component {
     }
 }
 
-export default ProfileSettings;
+const mapStateToProps = (state) => ({
+
+})
+
+const mapDispatchToProps = dispatch => bindActionCreators({}, dispatch)
+export default connect(mapStateToProps, mapDispatchToProps)(ProfileSettings);
