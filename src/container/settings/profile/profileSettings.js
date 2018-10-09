@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { Field, FieldArray, reduxForm } from 'redux-form'
 import Select from 'react-select';
-import { Icon, Button } from 'antd'
+import { Icon, Button, Divider } from 'antd'
 import { colourOptions, groupedOptions } from './options';
 import Creatable from "./creatableSelect";
 import SelectFormModal from "./selectFormModal";
@@ -89,10 +89,11 @@ class ProfileSettings extends Component {
                     />
                     <br />
                     <h3>Creatable Select box</h3>
-                    <Creatable />
-                    <SelectFormModal />
                     <Button type="primary" htmlType="submit">Submit</Button>
                 </form>
+                <Divider />
+                <Creatable />
+                <SelectFormModal />
             </div>
         )
     }
