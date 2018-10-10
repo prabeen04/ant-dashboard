@@ -88,18 +88,12 @@ class ProfileSettings extends Component {
                                     <div style={{ display: 'flex', flexDirection: 'row' }}>
                                         <h2>{option.label}</h2>
                                         <div style={{ flexBasis: '80%' }}>
-                                            <Field
-                                                name={`option${i}`}
-                                                component={() => (
-                                                    <Select
-                                                        isClearable
-                                                        options={optionTypes}
-                                                        formatGroupLabel={formatGroupLabel}
-                                                        placeholder="Chose position ..."
-                                                        styles={{ width: 200 }}
-                                                    />
-                                                )
-                                                }
+                                            <Select
+                                                isClearable
+                                                options={optionTypes}
+                                                formatGroupLabel={formatGroupLabel}
+                                                placeholder="Chose position ..."
+                                                styles={{ width: 200 }}
                                             />
                                         </div>
                                     </div>
