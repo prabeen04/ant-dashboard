@@ -73,14 +73,14 @@ class ProfileSettings extends Component {
     }
     onSubmit = values => console.log(values)
     render() {
-        const { selectedOption } = this.state;
-        const { handleSubmit, submitting } = this.props;
+        // const { selectedOption } = this.state;
+        const { handleSubmit, submitting, selectedOptions} = this.props;
         return (
             <div style={{ height: 500, width: 400 }}>
                 <form onSubmit={handleSubmit(this.onSubmit)}>
                     <h3>Option group</h3>
-                    {selectedOption &&
-                        selectedOption.map((option, i) => {
+                    {selectedOptions &&
+                        selectedOptions.map((option, i) => {
                             return (
                                 <React.Fragment key={i}>
                                     <div style={{ display: 'flex', flexDirection: 'row' }}>
