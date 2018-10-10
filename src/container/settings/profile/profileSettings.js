@@ -55,9 +55,9 @@ class ProfileSettings extends Component {
     }
     handleCustomOptionChange = (option) => {
         console.log(option)
-        this.setState((prevState) => {
+        this.setState((prevState) => ({
             selectedCustomOptions: [...prevState.selectedCustomOptions, option]
-        })
+        }))
 
         console.log(this.state.selectedCustomOptions)
     }
