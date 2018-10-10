@@ -72,7 +72,7 @@ class ProfileSettings extends Component {
         )
     }
 
-    renderCustomOptios = ({ input, meta: { error, isTouched }, ...custom }) => {
+    renderCustomOptions = ({ input, meta: { error, isTouched }, ...custom }) => {
         {
             this.props.selectedOptions &&
             this.props.selectedOptions.map((option, i) => {
@@ -109,6 +109,7 @@ class ProfileSettings extends Component {
                         component={this.renderSelect}
                     // onChange={this.handleChange}
                     />
+                    <FieldArray name={`${member}.hobbies`} component={this.renderCustomOptions}/>
                     <Button type="primary" htmlType="submit">Submit</Button>
                 </form>
                 <Divider />
