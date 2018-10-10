@@ -72,29 +72,9 @@ class ProfileSettings extends Component {
         )
     }
 
-    renderCustomOptions = ({ input, meta: { error, isTouched }, ...custom }) => {
-        {
-            this.props.selectedOptions &&
-            this.props.selectedOptions.map((option, i) => {
-                return (
-                    <React.Fragment key={i}>
-                        <div style={{ display: 'flex', flexDirection: 'row' }}>
-                            <h2>{option.label}</h2>
-                            <div style={{ flexBasis: '80%' }}>
-                                <Select
-                                    isClearable
-                                    options={optionTypes}
-                                    formatGroupLabel={formatGroupLabel}
-                                    placeholder="Chose position ..."
-                                    styles={{ width: 200 }}
-                                />
-                            </div>
-                        </div>
-                    </React.Fragment>
-                )
-            })
-        }
-    }
+    renderCustomOptios = ({ input, meta: { error, isTouched }, ...custom }) =>{
+        
+    } 
     onSubmit = values => console.log(values)
     render() {
         // const { selectedOption } = this.state;
@@ -103,13 +83,31 @@ class ProfileSettings extends Component {
             <div style={{ height: 500, width: 400 }}>
                 <form onSubmit={handleSubmit(this.onSubmit)}>
                     <h3>Option group</h3>
-
+                    {selectedOptions &&
+                        selectedOptions.map((option, i) => {
+                            return (
+                                <React.Fragment key={i}>
+                                    <div style={{ display: 'flex', flexDirection: 'row' }}>
+                                        <h2>{option.label}</h2>
+                                        <div style={{ flexBasis: '80%' }}>
+                                            <Select
+                                                isClearable
+                                                options={optionTypes}
+                                                formatGroupLabel={formatGroupLabel}
+                                                placeholder="Chose position ..."
+                                                styles={{ width: 200 }}
+                                            />
+                                        </div>
+                                    </div>
+                                </React.Fragment>
+                            )
+                        })
+                    }
                     <Field
                         name="selectItem"
                         component={this.renderSelect}
                     // onChange={this.handleChange}
                     />
-                    <FieldArray name={`${member}.hobbies`} component={this.renderCustomOptions}/>
                     <Button type="primary" htmlType="submit">Submit</Button>
                 </form>
                 <Divider />
