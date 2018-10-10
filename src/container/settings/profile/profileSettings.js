@@ -71,10 +71,7 @@ class ProfileSettings extends Component {
             />
         )
     }
-
-    renderCustomOptios = ({ input, meta: { error, isTouched }, ...custom }) =>{
-        
-    } 
+ 
     onSubmit = values => console.log(values)
     render() {
         // const { selectedOption } = this.state;
@@ -94,7 +91,7 @@ class ProfileSettings extends Component {
                                                 isClearable
                                                 options={optionTypes}
                                                 formatGroupLabel={formatGroupLabel}
-                                                placeholder="Chose position ..."
+                                                placeholder="Choose position ..."
                                                 styles={{ width: 200 }}
                                             />
                                         </div>
