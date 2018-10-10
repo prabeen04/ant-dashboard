@@ -42,7 +42,7 @@ class ProfileSettings extends Component {
         super(props)
         this.state = {
             selectedOption: null,
-            selectedOptions: []
+            selectedCustomOptions: []
         }
         this.handleChange = this.handleChange.bind(this);
     }
@@ -52,6 +52,9 @@ class ProfileSettings extends Component {
             selectedOption: selectedOption,
         }))
         console.log(`Option selected:`, selectedOption);
+    }
+    handleCustomOptionChange = (option) => {
+        console.log(option)
     }
     renderSelect = ({ input, meta: { error, isTouched }, ...custom }) => {
         console.log('...custom')
