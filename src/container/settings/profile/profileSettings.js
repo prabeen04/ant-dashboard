@@ -64,7 +64,9 @@ class ProfileSettings extends Component {
                 formatGroupLabel={formatGroupLabel}
                 placeholder="Choose Color or Flavour ..."
                 {...input}
-                onChange={() => input.onChange(this.handleChange)}
+                onChange={input.onChange}
+                onBlur={() => input.onBlur()}
+                defaultValue={[]}
                 {...custom}
             />
         )
@@ -100,7 +102,7 @@ class ProfileSettings extends Component {
                     <Field
                         name="selectItem"
                         component={this.renderSelect}
-                        onChange={this.handleChange}
+                        // onChange={this.handleChange}
                     />
                     <Button type="primary" htmlType="submit">Submit</Button>
                 </form>
