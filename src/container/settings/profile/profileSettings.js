@@ -53,7 +53,7 @@ class ProfileSettings extends Component {
         }))
         console.log(`Option selected:`, selectedOption);
     }
-    renderSelect = ({ input, meta: { error, isTouched } }) => {
+    renderSelect = ({ input, meta: { error, isTouched }, ...custom }) => {
         return (
             <Select
                 isClearable
@@ -62,6 +62,8 @@ class ProfileSettings extends Component {
                 formatGroupLabel={formatGroupLabel}
                 onChange={this.handleChange}
                 placeholder="Choose Color or Flavour ..."
+                {...input}
+                {...custom}
             />
         )
     }
@@ -93,13 +95,9 @@ class ProfileSettings extends Component {
                             )
                         })
                     }
-                    <Select
-                        isClearable
-                        isMulti
-                        options={groupedOptions}
-                        formatGroupLabel={formatGroupLabel}
-                        onChange={this.handleChange}
-                        placeholder="Choose Color or Flavour ..."
+                    <Field
+                        name="selectItem"
+                        component={this.renderSelect}
                     />
                     <Button type="primary" htmlType="submit">Submit</Button>
                 </form>
