@@ -54,15 +54,17 @@ class ProfileSettings extends Component {
         console.log(`Option selected:`, selectedOption);
     }
     renderSelect = ({ input, meta: { error, isTouched }, ...custom }) => {
+        console.log('...custom')
+        console.log(...custom)
         return (
             <Select
                 isClearable
                 isMulti
                 options={groupedOptions}
                 formatGroupLabel={formatGroupLabel}
-                onChange={this.handleChange}
                 placeholder="Choose Color or Flavour ..."
                 {...input}
+                onChange={() => input.onChange(this.handleChange)}
                 {...custom}
             />
         )
@@ -98,6 +100,7 @@ class ProfileSettings extends Component {
                     <Field
                         name="selectItem"
                         component={this.renderSelect}
+                        onChange={this.handleChange}
                     />
                     <Button type="primary" htmlType="submit">Submit</Button>
                 </form>
