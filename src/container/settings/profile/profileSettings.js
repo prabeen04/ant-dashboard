@@ -71,10 +71,12 @@ class ProfileSettings extends Component {
             />
         )
     }
+
+
     onSubmit = values => console.log(values)
     render() {
         // const { selectedOption } = this.state;
-        const { handleSubmit, submitting, selectedOptions} = this.props;
+        const { handleSubmit, submitting, selectedOptions } = this.props;
         return (
             <div style={{ height: 500, width: 400 }}>
                 <form onSubmit={handleSubmit(this.onSubmit)}>
@@ -86,12 +88,18 @@ class ProfileSettings extends Component {
                                     <div style={{ display: 'flex', flexDirection: 'row' }}>
                                         <h2>{option.label}</h2>
                                         <div style={{ flexBasis: '80%' }}>
-                                            <Select
-                                                isClearable
-                                                options={optionTypes}
-                                                formatGroupLabel={formatGroupLabel}
-                                                placeholder="Chose position ..."
-                                                styles={{ width: 200 }}
+                                            <Field
+                                                name={`option${i}`}
+                                                component={() => (
+                                                    <Select
+                                                        isClearable
+                                                        options={optionTypes}
+                                                        formatGroupLabel={formatGroupLabel}
+                                                        placeholder="Chose position ..."
+                                                        styles={{ width: 200 }}
+                                                    />
+                                                )
+                                                }
                                             />
                                         </div>
                                     </div>
@@ -102,7 +110,7 @@ class ProfileSettings extends Component {
                     <Field
                         name="selectItem"
                         component={this.renderSelect}
-                        // onChange={this.handleChange}
+                    // onChange={this.handleChange}
                     />
                     <Button type="primary" htmlType="submit">Submit</Button>
                 </form>
