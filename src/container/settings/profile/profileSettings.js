@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import { Field, FieldArray, reduxForm } from 'redux-form'
+import { Field, FieldArray, reduxForm, formValueSelector } from 'redux-form'
 import Select from 'react-select';
 import { Icon, Button, Divider } from 'antd'
 import { colourOptions, groupedOptions } from './options';
@@ -117,9 +117,10 @@ class ProfileSettings extends Component {
 ProfileSettings = reduxForm({
     form: 'profileSettingsForm'
 })(ProfileSettings)
+const selector = formValueSelector('profileSettingsForm')
 
 const mapStateToProps = (state) => ({
-
+    selectedOptions: selector(state, 'selectItem')
 })
 
 const mapDispatchToProps = dispatch => bindActionCreators({}, dispatch)
