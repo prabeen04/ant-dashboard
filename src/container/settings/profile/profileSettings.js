@@ -55,6 +55,11 @@ class ProfileSettings extends Component {
     }
     handleCustomOptionChange = (option) => {
         console.log(option)
+        this.setState((prevState) => {
+            selectedCustomOptions: [...prevState.selectedCustomOptions, option]
+        })
+
+        console.log(this.state.selectedCustomOptions)
     }
     renderSelect = ({ input, meta: { error, isTouched }, ...custom }) => {
         console.log('...custom')
@@ -96,6 +101,7 @@ class ProfileSettings extends Component {
                                                 formatGroupLabel={formatGroupLabel}
                                                 placeholder="Choose position ..."
                                                 styles={{ width: 200 }}
+                                                onChange={this.handleCustomOptionChange}
                                             />
                                         </div>
                                     </div>
