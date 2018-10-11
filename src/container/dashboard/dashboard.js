@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Card, Spin, Icon } from 'antd';
+import { Card, Spin, Icon, Popover } from 'antd';
 import classNames from 'classnames';
 import JumpStartBox from './jumpStart';
 import Settings from '../settings/settings';
@@ -16,7 +16,8 @@ class Dashboard extends Component {
 
     this.state = {
       isLoading: true,
-      isFetching: true
+      isFetching: true,
+      isPopover: false
     }
     this.fetchChartData = this.fetchChartData.bind(this);
   }
@@ -45,7 +46,13 @@ class Dashboard extends Component {
     });
     return (
       <div className={blurClass}>
-        <DashboardHeader fetchChartData={this.fetchChartData} />
+      <Popover
+        title="Title"
+        trigger="click"
+        visible={this.state.isPopover}
+        onVisibleChange={this.handleVisibleChange}
+      >
+        <DashboardHeader fetchChartData={this.fetchChartData} /></Popover>
         <div className='flex-container'>
           <JumpStartBox />
         </div>
