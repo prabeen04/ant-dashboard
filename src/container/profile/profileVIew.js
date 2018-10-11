@@ -37,7 +37,7 @@ class ProfileView extends Component {
               actions={[
                 <Icon onClick={() => this.showDrawer()} type="setting" />,
                 <Icon type="edit" onClick={() => this.props.openEditProfile(this.props.profile)} />,
-                <Icon type="ellipsis" />
+                <Icon type="tool" theme="outlined" />
               ]}
             >
               <Meta
