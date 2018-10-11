@@ -8,7 +8,12 @@ const ButtonGroup = Button.Group;
 class DashboardHeader extends Component {
     constructor(props) {
         super(props)
+
+        this.state = {
+            isPopover: true
+        }
     }
+    handleVisibleChange = () => this.setState({ isPopover: false })
     render() {
         return (
             <div className="dashboard-header">
