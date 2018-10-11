@@ -17,7 +17,7 @@ class Dashboard extends Component {
     this.state = {
       isLoading: true,
       isFetching: true,
-      isPopover: false
+      isPopover: true
     }
     this.fetchChartData = this.fetchChartData.bind(this);
   }
@@ -49,7 +49,7 @@ class Dashboard extends Component {
       <div className={blurClass}>
         <Popover
           title="Message"
-          content={<a onClick={this.hide}>OK, Got it!</a>}
+          content={<a onClick={this.handleVisibleChange}>OK, Got it!</a>}
           trigger="click"
           visible={this.state.isPopover}
           onVisibleChange={this.handleVisibleChange}
