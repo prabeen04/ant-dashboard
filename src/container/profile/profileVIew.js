@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { Card, Icon, Avatar } from 'antd'
+import { Card, Icon, Avatar, Drawer } from 'antd'
 import { openEditProfile } from '../../actions/profile_actions';
 import ProfileDrawer from './profileDrawer';
 import MainWrapper from '../../components/UI/Elements/MainWrapper'
@@ -10,7 +10,8 @@ const { Meta } = Card;
 
 class ProfileView extends Component {
   state = {
-    isDrawerOpen: false
+    isDrawerOpen: false,
+    drawerVisible: true
   }
 
   showDrawer = () => {
@@ -50,8 +51,16 @@ class ProfileView extends Component {
           </div>
 
         }
-        <ProfileDrawer open={this.state.isDrawerOpen} onClose={this.onClose} user={this.props.profile}/>
-        <EventTimeline/>
+        <ProfileDrawer open={this.state.isDrawerOpen} onClose={this.onClose} user={this.props.profile} />
+        <Drawer
+          title="Multi-level drawer"
+          width={520}
+          closable={false}
+          // onClose={this.onClose}
+          visible={this.state.drawerVisible}
+        >
+          <EventTimeline />
+        </Drawer>
       </MainWrapper>
     )
   }
