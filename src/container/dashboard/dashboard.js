@@ -36,7 +36,8 @@ class Dashboard extends Component {
     })
     setTimeout(() => {
       this.setState({
-        isFetching: false
+        isFetching: false,
+        isPopover: false
       })
     }, 500)
   }
@@ -49,7 +50,8 @@ class Dashboard extends Component {
     return (
       <div className={blurClass}>
         <Popover
-          title="Title"
+          title="Message"
+          content={<a onClick={this.hide}>OK, Got it!</a>}
           trigger="click"
           visible={this.state.isPopover}
           onVisibleChange={this.handleVisibleChange}
