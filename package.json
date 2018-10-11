@@ -50,6 +50,7 @@
     "react-table": "^6.8.6",
     "react-test-renderer": "^16.4.1",
     "react-transition-group": "^2.4.0",
+    "react-vertical-timeline-component": "^2.3.1",
     "recharts": "^1.0.1",
     "redux": "^3.7.2",
     "redux-form": "^7.3.0",

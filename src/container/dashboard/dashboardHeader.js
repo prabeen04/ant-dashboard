@@ -28,6 +28,7 @@ class DashboardHeader extends Component {
                     title="Message"
                     content={<a onClick={this.handleVisibleChange}>OK, Got it!</a>}
                     trigger="click"
+                    placement="topLeft"
                     visible={this.state.isPopover}
                     onVisibleChange={this.handleVisibleChange}
                 > <SettingPopover />
