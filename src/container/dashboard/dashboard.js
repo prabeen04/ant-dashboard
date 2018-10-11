@@ -31,7 +31,8 @@ class Dashboard extends Component {
   }
   fetchChartData() {
     this.setState({
-      isFetching: true
+      isFetching: true,
+      isPopover: true
     })
     setTimeout(() => {
       this.setState({
@@ -39,6 +40,7 @@ class Dashboard extends Component {
       })
     }, 500)
   }
+  handleVisibleChange = () => this.setState({isPopover: true})
   render() {
     const antIcon = <Icon type="loading" style={{ fontSize: 60, color: 'tomato' }} spin />;
     const blurClass = classNames({
@@ -46,13 +48,14 @@ class Dashboard extends Component {
     });
     return (
       <div className={blurClass}>
-      <Popover
-        title="Title"
-        trigger="click"
-        visible={this.state.isPopover}
-        onVisibleChange={this.handleVisibleChange}
-      >
-        <DashboardHeader fetchChartData={this.fetchChartData} /></Popover>
+        <Popover
+          title="Title"
+          trigger="click"
+          visible={this.state.isPopover}
+          onVisibleChange={this.handleVisibleChange}
+        >
+          <DashboardHeader fetchChartData={this.fetchChartData} />
+        </Popover>
         <div className='flex-container'>
           <JumpStartBox />
         </div>
