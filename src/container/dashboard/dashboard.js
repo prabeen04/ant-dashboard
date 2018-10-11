@@ -31,17 +31,15 @@ class Dashboard extends Component {
   }
   fetchChartData() {
     this.setState({
-      isFetching: true,
-      isPopover: true
+      isFetching: true
     })
     setTimeout(() => {
       this.setState({
-        isFetching: false,
-        isPopover: false
+        isFetching: false
       })
     }, 500)
   }
-  handleVisibleChange = () => this.setState({isPopover: true})
+  handleVisibleChange = () => this.setState({isPopover: false})
   render() {
     const antIcon = <Icon type="loading" style={{ fontSize: 60, color: 'tomato' }} spin />;
     const blurClass = classNames({
