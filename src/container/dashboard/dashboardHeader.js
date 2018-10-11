@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Button, Icon } from 'antd';
+import { Button, Icon, Popover } from 'antd';
 import SettingPopover from '../../components/popover/settingPopover';
 import './dashboard.css';
 const ButtonGroup = Button.Group;
@@ -19,7 +19,14 @@ class DashboardHeader extends Component {
                         })
                     }
                 </ButtonGroup>
-                <SettingPopover />
+                <Popover
+                    title="Message"
+                    content={<a onClick={this.handleVisibleChange}>OK, Got it!</a>}
+                    trigger="click"
+                    visible={this.state.isPopover}
+                    onVisibleChange={this.handleVisibleChange}
+                > <SettingPopover />
+                </Popover>
             </div>
         )
     }

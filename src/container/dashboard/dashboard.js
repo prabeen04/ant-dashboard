@@ -47,15 +47,7 @@ class Dashboard extends Component {
     });
     return (
       <div className={blurClass}>
-        <Popover
-          title="Message"
-          content={<a onClick={this.handleVisibleChange}>OK, Got it!</a>}
-          trigger="click"
-          visible={this.state.isPopover}
-          onVisibleChange={this.handleVisibleChange}
-        >
           <DashboardHeader fetchChartData={this.fetchChartData} />
-        </Popover>
         <div className='flex-container'>
           <JumpStartBox />
         </div>
