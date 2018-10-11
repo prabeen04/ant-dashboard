@@ -5,6 +5,7 @@ import { Card, Icon, Avatar } from 'antd'
 import { openEditProfile } from '../../actions/profile_actions';
 import ProfileDrawer from './profileDrawer';
 import MainWrapper from '../../components/UI/Elements/MainWrapper'
+import EventTimeline from "../../components/utils/EventTimeline";
 const { Meta } = Card;
 
 class ProfileView extends Component {
@@ -50,6 +51,7 @@ class ProfileView extends Component {
 
         }
         <ProfileDrawer open={this.state.isDrawerOpen} onClose={this.onClose} user={this.props.profile}/>
+        <EventTimeline/>
       </MainWrapper>
     )
   }
