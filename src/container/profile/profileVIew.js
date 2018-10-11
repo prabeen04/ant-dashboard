@@ -24,6 +24,7 @@ class ProfileView extends Component {
       isDrawerOpen: false,
     });
   };
+  onDrawerClose = () => this.setState({drawerVisible: false})
   render() {
     return (
       <MainWrapper>
@@ -56,7 +57,7 @@ class ProfileView extends Component {
           title="Multi-level drawer"
           width={820}
           closable={true}
-          // onClose={this.onClose}
+          onClose={this.onDrawerClose}
           visible={this.state.drawerVisible}
         >
           <EventTimeline />
