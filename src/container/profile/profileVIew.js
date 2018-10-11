@@ -55,7 +55,7 @@ class ProfileView extends Component {
         <Drawer
           title="Multi-level drawer"
           width={820}
-          closable={false}
+          closable={true}
           // onClose={this.onClose}
           visible={this.state.drawerVisible}
         >
