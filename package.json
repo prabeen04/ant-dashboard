@@ -16,6 +16,7 @@
     "d3-funnel": "^1.2.0",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
+    "file-saver": "^2.0.0-rc.3",
     "firebase": "^5.3.0",
     "fullcalendar": "^3.9.0",
     "google-maps-react": "^2.0.2",
