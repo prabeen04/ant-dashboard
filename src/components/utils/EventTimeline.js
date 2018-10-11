@@ -5,9 +5,9 @@ import 'react-vertical-timeline-component/style.min.css';
 class EventTimeline extends Component {
     render() {
         return (
-            <div>
-                <VerticalTimeline>
-                    <VerticalTimelineElement
+            <div style={{ backgroundColor: '#eee' }}>
+                <VerticalTimeline layout={"1-columns"}>
+                    <VerticalTimelineElement 
                         className="vertical-timeline-element--work"
                         date="2011 - present"
                         iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}

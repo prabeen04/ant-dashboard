@@ -54,7 +54,7 @@ class ProfileView extends Component {
         <ProfileDrawer open={this.state.isDrawerOpen} onClose={this.onClose} user={this.props.profile} />
         <Drawer
           title="Multi-level drawer"
-          width={520}
+          width={820}
           closable={false}
           // onClose={this.onClose}
           visible={this.state.drawerVisible}
