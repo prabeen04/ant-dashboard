@@ -5,10 +5,10 @@ import './App.css';
 
 const App = (props) => {
   return (
-    <ThemeProvider theme={
-      background: 'red',
+    <ThemeProvider theme={{
+      backgroundColor: 'red',
       color: 'teal'
-    }>
+    }}>
       <Navbar />
     </ThemeProvider>
   );
