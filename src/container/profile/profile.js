@@ -11,6 +11,7 @@ import './profile.css';
 import MainWrapper from "../../components/UI/Elements/MainWrapper";
 
 const Profile = (props) => {
+  console.log(props)
   return (
     <MainWrapper>
       <ActionHeader
