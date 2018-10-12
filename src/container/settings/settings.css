@@ -1,11 +1,11 @@
 .setting-wrapper{
-    background: #fff;
+    /* background: #fff; */
     margin: 0.5rem;
     padding: 0.5rem;
     box-shadow:0 2px 12px 1px rgb(155, 153, 153)
 }
 .jumpstart-box-dnd{
-    background: #fff;
+    /* background: #fff; */
     color: #666 !important;
     width: 500px;
     margin: 0.4rem;

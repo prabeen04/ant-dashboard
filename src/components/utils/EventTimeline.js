@@ -6,7 +6,7 @@ class EventTimeline extends Component {
     render() {
         return (
             <div style={{ backgroundColor: '#eee' }}>
-                <VerticalTimeline layout={"1-columns"}>
+                <VerticalTimeline layout={"1-column"}>
                     <VerticalTimelineElement 
                         className="vertical-timeline-element--work"
                         date="2011 - present"
