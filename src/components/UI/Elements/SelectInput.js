@@ -1,9 +1,6 @@
 import styled from "styled-components";
 
-const SelectInput = styled.select.attrs({
-    type: 'text',
-    size: props => (props.small ? 4 : undefined),
-})`
+const SelectInput = styled.select`
     border-radius: 3px;
     border: 1px solid ${props => props.theme.borderColor};
     background-color: ${props => props.theme.backgroundColor};

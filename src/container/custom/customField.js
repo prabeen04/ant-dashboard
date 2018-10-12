@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Button } from 'antd'
-import { Input } from "../../components/UI/Elements";
+import { Input, SelectInput } from "../../components/UI/Elements";
 import './customField.css'
 
 class CustomField extends Component {
@@ -70,18 +70,17 @@ class CustomField extends Component {
                 />
             }
             if (field.type === 'select') {
-                return <select
+                return <SelectInput
                     key={index}
                     name={field.name}
                     placeholder={field.name}
-                    className="custom-field-input"
                     value={this.state.number}
                     onChange={this.handleChange}
                 >
                     {field.options.map((option, index) => {
                         return <option key={index} value={option}>{option}</option>
                     })}
-                </select>
+                </SelectInput>
             }
         })
         return (
