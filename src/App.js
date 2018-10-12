@@ -6,8 +6,8 @@ import './App.css';
 const App = (props) => {
   return (
     <ThemeProvider theme={{
-      backgroundColor: 'red',
-      color: 'teal'
+      backgroundColor: '#001529',
+      color: '#eeeeee'
     }}>
       <Navbar />
     </ThemeProvider>
