@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Button } from 'antd'
+import { Input } from "../../components/UI/Elements";
 import './customField.css'
 
 class CustomField extends Component {
@@ -39,34 +40,31 @@ class CustomField extends Component {
         const renderFields = this.state.fields.map((field, index) => {
             // return (
             if (field.type === 'text') {
-                return <input
+                return <Input
                     key={index}
                     type={field.type}
                     name={field.name}
                     placeholder={field.name}
-                    className="custom-field-input"
                     value={this.state.name}
                     onChange={this.handleChange}
                 />
             }
             if (field.type === 'email') {
-                return <input
+                return <Input
                     key={index}
                     type={field.type}
                     name={field.name}
                     placeholder={field.name}
-                    className="custom-field-input"
                     value={this.state.email}
                     onChange={this.handleChange}
                 />
             }
             if (field.type === 'number') {
-                return <input
-                    key={index}
+                return <Input
+                    key={Input}
                     type={field.type}
                     name={field.name}
                     placeholder={field.name}
-                    className="custom-field-input"
                     value={this.state.number}
                     onChange={this.handleChange}
                 />
