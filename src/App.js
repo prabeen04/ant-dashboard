@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import { ThemeProvider } from "styled-components";
 import Navbar from './components/layouts/navbar';
+import { ApplicationWrapper } from "./components/UI/Layout";
 import './App.css';
 
 const theme = {
-  applicationBackground: '#001529'
+  applicationBackground: '#001529',
   applicationColor: '#fff',
   backgroundColor: '#001529',
   color: '#eeeeee',
@@ -15,7 +16,9 @@ const theme = {
 const App = (props) => {
   return (
     <ThemeProvider theme={theme}>
-      <Navbar />
+      <ApplicationWrapper>
+        <Navbar />
+      </ApplicationWrapper>
     </ThemeProvider>
   );
 }

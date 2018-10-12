@@ -1,1 +1,1 @@
-export { default as ApplicationWrapper } from "./MainWrapper";
+export { default as ApplicationWrapper } from "./ApplicationWrapper";
