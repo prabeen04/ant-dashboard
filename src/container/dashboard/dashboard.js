@@ -47,7 +47,7 @@ class Dashboard extends Component {
       'blur-wrapper': this.state.isFetching
     });
     return (
-      <div className={blurClass}>
+      <MainWrapper className={blurClass}>
           <DashboardHeader fetchChartData={this.fetchChartData} />
         <div className='flex-container'>
           <JumpStartBox />
@@ -64,7 +64,7 @@ class Dashboard extends Component {
             <Icon type="loading" style={{ fontSize: 60, color: 'tomato' }} spin />
           </div>
         </Card>
-      </div>
+      </MainWrapper>
     )
   }
 }
