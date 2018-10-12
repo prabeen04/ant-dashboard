@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Button } from 'antd'
-import { Input, SelectInput } from "../../components/UI/Elements";
+import { Input, SelectInput, Option } from "../../components/UI/Elements";
 import './customField.css'
 
 class CustomField extends Component {
@@ -78,7 +78,7 @@ class CustomField extends Component {
                     onChange={this.handleChange}
                 >
                     {field.options.map((option, index) => {
-                        return <option key={index} value={option}>{option}</option>
+                        return <Option key={index} value={option}>{option}</Option>
                     })}
                 </SelectInput>
             }
