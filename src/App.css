@@ -1,7 +1,4 @@
 @import '~antd/dist/antd.css';
-.wrapper{
-
-}
 .flex-container{
   display: flex;
   justify-content: center;

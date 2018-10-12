@@ -7,7 +7,7 @@ import './App.css';
 const theme = {
   applicationBackground: '#001529',
   applicationColor: '#fff',
-  backgroundColor: '#001529',
+  backgroundColor: 'rgba(121, 140, 173, 0.3)',
   color: '#eeeeee',
   borderColor: '#001529',
   boxShadowColor: '#001529',
@@ -16,9 +16,9 @@ const theme = {
 const App = (props) => {
   return (
     <ThemeProvider theme={theme}>
-      <ApplicationWrapper>
+      {/* <ApplicationWrapper> */}
         <Navbar />
-      </ApplicationWrapper>
+      {/* </ApplicationWrapper> */}
     </ThemeProvider>
   );
 }
