@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
+import { ThemeProvider } from "styled-components";
 import Navbar from './components/layouts/navbar';
 import './App.css';
 
 const App = (props) => {
   return (
-    <div className="wrapper">
+    <ThemeProvider theme={
+      background: 'red',
+      color: 'teal'
+    }>
       <Navbar />
-    </div>
+    </ThemeProvider>
   );
 }
 
