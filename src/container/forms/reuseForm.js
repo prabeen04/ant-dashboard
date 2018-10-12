@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { reduxForm, Field } from "redux-form";
 import { getLatLng, geocodeByAddress } from 'react-places-autocomplete';
+import { Input } from '../../components/UI/Elements';
 import TextInput from '../../components/common/forms/textInput';
 import PlaceInput from '../../components/common/forms/placeInput';
 import UploadInput from '../../components/common/forms/uploadInput';
@@ -35,7 +36,7 @@ class ReuseForm extends Component {
     };
     renderInput = ({ input, meta, width, label, ...custom }) => (
         <div style={{ width }}>
-            <TextInput  {...input} {...custom} />
+            <Input  {...input} {...custom} />
         </div>
     )
     render() {

@@ -11,13 +11,12 @@ const Input = styled.input.attrs({
     border-radius: 0.3rem;
     outline: none;
     box-shadow: 0px 4px 10px -4px  #aaa;
-    padding: ${props => props.padding};
+    padding: ${props => props.padding || 2.5};
    &:hover{
     box-shadow: 0px 4px 10px -2px  #777;
-  
     }
-  
     ::placeholder {
       color: #888;
     }
    `
+export default Input;
