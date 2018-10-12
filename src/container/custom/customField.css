@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     min-height: 90vh;
-    background: #fff;
+    /* background: #fff; */
     margin: 0.3rem;
     padding: 1rem;
     border-radius: 0.3rem;
@@ -15,7 +15,7 @@
 .custom-field-input{
     display: block;
     width: 400px;
-    background: #fff;
+    /* background: #fff; */
     outline: none;
     padding: 0.3rem 0.5rem;
     margin: 0.2rem;
@@ -31,6 +31,6 @@
     box-shadow: 0 2px 4px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
 .custom-field-input:focus {
-    background: #f4f4f4;
+    /* background: #f4f4f4; */
     box-shadow: 0 2px 4px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
