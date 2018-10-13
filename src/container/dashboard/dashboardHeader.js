@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Button, Icon, Popover } from 'antd';
 import ActionHeader from "../../components/layouts/ActionHeader";
 import SettingPopover from '../../components/popover/settingPopover';
+import TimeInterval from '../../components/utils/TimeInterval';
 import './dashboard.css';
 const ButtonGroup = Button.Group;
 
@@ -30,13 +31,7 @@ class DashboardActionHeaderLeft extends Component {
     render() {
         return (
             <React.Fragment>
-                <div>
-                    {
-                        this.props.dateRangeList.map((range) => {
-                            return <div key={range.id} onClick={() => this.props.fetchChartData()}>{range.value}</div>
-                        })
-                    }
-                </div>
+                <TimeInterval time={this.props.dateRangeList} handleClick={this.props.fetchChartData}/>
             </React.Fragment>
         )
     }
