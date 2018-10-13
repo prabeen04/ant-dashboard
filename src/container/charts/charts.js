@@ -12,6 +12,7 @@ import AdvancedBarChart from './AdvancedBarChart';
 
 import './charts.css';
 import FunnelChart from '../../components/charts/funnelChart';
+import { TabsWrapper } from '../../components/UI/Layout';
 const TabPane = Tabs.TabPane;
 
 class Charts extends Component {
@@ -40,7 +41,7 @@ class Charts extends Component {
 
     render() {
         return (
-            <div className="charts-wrapper">
+            <TabsWrapper>
                 <StyledTabs
                     size={'small'}
                     animated={true}
@@ -50,7 +51,7 @@ class Charts extends Component {
                 >
                     {this.state.panes.map(pane => <TabPane tab={pane.title} key={pane.key} closable={pane.closable}>{pane.content}</TabPane>)}
                 </StyledTabs>
-            </div>
+            </TabsWrapper>
         );
     }
 }

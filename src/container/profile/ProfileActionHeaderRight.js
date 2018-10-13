@@ -1,20 +1,21 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { Icon, Tooltip, Input, Button } from 'antd';
+import { Icon, Tooltip, Button } from 'antd';
+import { Input } from "../../components/UI/Elements";
 import { setFilterText, setViewType, showAddProfile, setSortKey } from '../../actions/profile_actions';
 import SettingPopover from '../../components/popover/settingPopover';
 import './profile.css';
-const Search = Input.Search;
+// const Search = Input.Search;
 class ProfileActionHeaderRight extends Component {
     render() {
         return (
                 <div className="setting-icons">
-                    <Search
+                    <Input
                         placeholder="Search Profile"
                         onSearch={value => this.props.setFilterText(value)}
                         style={{ marginRight: '1rem' }}
-                        className="filter-text-input"
+                        // className="filter-text-input"
                         onChange={(e) => {
                             console.log(e.target.value)
                             this.props.setFilterText(e.target.value)

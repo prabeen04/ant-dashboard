@@ -9,13 +9,13 @@ const Input = styled.input.attrs({
     background-color: ${props => props.theme.backgroundColor};
     color: ${props => props.theme.color};
     display: block;
-    margin: 0 0 1em;
+    margin: 0.5rem;
     border-radius: 0.3rem;
     outline: none;
     box-shadow: 0px 4px 10px -4px  ${props => props.theme.boxShadowColor};
     padding: 0.3rem 1rem;
    &:hover{
-    box-shadow: 0px 4px 10px -2px  #777;
+    box-shadow: 0px 4px 10px -2px  ${props => props.theme.boxShadowColor};
     }
     ::placeholder {
       color: #888;

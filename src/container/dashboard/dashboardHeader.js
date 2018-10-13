@@ -8,9 +8,13 @@ const ButtonGroup = Button.Group;
 
 class DashboardHeader extends Component {
     render() {
+        const { dateRangeList, fetchChartData } = this.props;
         return (
             <ActionHeader
-                leftComponent={<DashboardActionHeaderLeft dateRangeList={this.props.dateRangeList} />}
+                leftComponent={<DashboardActionHeaderLeft
+                    dateRangeList={dateRangeList}
+                    fetchChartData={fetchChartData}
+                />}
                 rightComponent={<DashboardActionHeaderRight />}
             />
         )
