@@ -3,9 +3,10 @@ import moment from 'moment';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Field, reduxForm } from 'redux-form';
-import { Input, DatePicker, Button } from 'antd';
+import { DatePicker, Button } from 'antd';
 import PlaceInput from '../../components/common/forms/placeInput'
 import { addEvent } from '../../actions/calendar_actions';
+import { Input } from "../../components/UI/Elements";
 const { MonthPicker, RangePicker } = DatePicker;
 
 class EventForm extends Component {

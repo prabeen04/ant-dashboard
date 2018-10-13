@@ -4,7 +4,7 @@
     align-items: flex-start;
     align-content: flex-start;
     justify-content: center;
-    /* flex-grow: 1; */
+    flex-grow: 1;
     align-self: flex-start;
     /* padding: 0.5rem; */
 }
