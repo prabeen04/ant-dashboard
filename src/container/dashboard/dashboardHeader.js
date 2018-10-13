@@ -30,13 +30,13 @@ class DashboardActionHeaderLeft extends Component {
     render() {
         return (
             <React.Fragment>
-                <ButtonGroup>
+                <div>
                     {
                         this.props.dateRangeList.map((range) => {
-                            return <Button key={range.id} onClick={() => this.props.fetchChartData()}>{range.value}</Button>
+                            return <div key={range.id} onClick={() => this.props.fetchChartData()}>{range.value}</div>
                         })
                     }
-                </ButtonGroup>
+                </div>
             </React.Fragment>
         )
     }
