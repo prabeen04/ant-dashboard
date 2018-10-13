@@ -15,7 +15,7 @@ import { notificationReducer } from './notificationReducer';
 import { dragReducer } from './dragReducer';
 import { selectReducer } from "./selectReducer";
 import { chartsReducer } from "./chartsReducer";
-
+import { themeReducer } from "./themeReducer";
 export const rootReducer = combineReducers({
     form: FormReducer,
     dashboardReducer,
@@ -32,7 +32,8 @@ export const rootReducer = combineReducers({
     notificationReducer,
     dragReducer,
     selectReducer,
-    chartsReducer
+    chartsReducer,
+    themeReducer,
 })
 
 export default rootReducer;
