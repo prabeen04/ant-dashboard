@@ -13,7 +13,7 @@ import MainWrapper from "../../components/UI/Elements/MainWrapper";
 const Profile = (props) => {
   console.log(props)
   return (
-    <MainWrapper>
+    <React.Fragment>
       <ActionHeader
         leftComponent={<ProfileActionHeaderLeft />}
         rightComponent={<ProfileActionHeaderRight />}
@@ -28,7 +28,7 @@ const Profile = (props) => {
           {props.showViewProfile && <ProfileView />}
         </div>
       </div>
-    </MainWrapper>
+    </React.Fragment>
 
   )
 }

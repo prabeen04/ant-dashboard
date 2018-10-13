@@ -43,7 +43,6 @@ class ProfileList extends Component {
 
         })
         return (
-            <MainWrapper>
             <div className={this.props.viewType === 'GRID'? 'profile-grid-view' :'profile-list-view'} >
                {this.props.viewType === 'GRID' && <div className="flex-container"
                     style={{ width: 155, height: 200, margin: '0.5rem', justifyContent: 'center', backgroundColor: '#fff', cursor: 'pointer' }}
@@ -53,7 +52,6 @@ class ProfileList extends Component {
                 </div>}
                 {renderCard}
             </div>
-            </MainWrapper>
         )
     }
 }

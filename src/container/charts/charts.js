@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Tabs } from 'antd';
+import { StyledTabs } from "../../components/UI/Antd";
 import GooglePlace from '../../components/google/googlePlace'
 import LineChart1 from './lineChart';
 import PieChart1 from './pieChart';
@@ -40,7 +41,7 @@ class Charts extends Component {
     render() {
         return (
             <div className="charts-wrapper">
-                <Tabs
+                <StyledTabs
                     size={'small'}
                     animated={true}
                     onChange={this.onChange}
@@ -48,7 +49,7 @@ class Charts extends Component {
                     // style={{backgroundColor: '#001529', color: '#aaa'}}
                 >
                     {this.state.panes.map(pane => <TabPane tab={pane.title} key={pane.key} closable={pane.closable}>{pane.content}</TabPane>)}
-                </Tabs>
+                </StyledTabs>
             </div>
         );
     }

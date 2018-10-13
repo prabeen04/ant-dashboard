@@ -27,7 +27,7 @@ class ProfileView extends Component {
   onDrawerClose = () => this.setState({drawerVisible: false})
   render() {
     return (
-      <MainWrapper>
+      <div>
         {this.props.profile.name &&
           <div>
 
@@ -62,7 +62,7 @@ class ProfileView extends Component {
         >
           <EventTimeline />
         </Drawer>
-      </MainWrapper>
+      </div>
     )
   }
 }

@@ -9,6 +9,7 @@ import GooglePlace from '../google/googlePlace';
 import AppBoundary from '../../errorHandler/appBoundary';
 import NotificationPopover from '../popover/notificationPopover';
 import { ApplicationWrapper } from "../UI/Layout";
+import Theme from '../../container/settings/Theme/Theme';
 const { Header, Sider, Content } = Layout;
 
 const AsyncDashboard = Loadable({
@@ -139,6 +140,7 @@ class Navbar extends React.Component {
                             <a href="#" style={{ margin: 15 }}>
                                 <NotificationPopover />
                             </a>
+                            <Theme />
                         </div>
                     </Header>
                     <ApplicationWrapper>
