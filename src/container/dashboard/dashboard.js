@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Card, Spin, Icon, Popover } from 'antd';
 import classNames from 'classnames';
-import { MainWrapper } from "../../components/UI/Layout";
+import { MainWrapper, StyledActionHeader } from "../../components/UI/Layout";
 import JumpStartBox from './jumpStart';
 import Settings from '../settings/settings';
 import DashboardHeader from './dashboardHeader';

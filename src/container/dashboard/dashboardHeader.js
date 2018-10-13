@@ -1,11 +1,44 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Button, Icon, Popover } from 'antd';
+import ActionHeader from "../../components/layouts/ActionHeader";
 import SettingPopover from '../../components/popover/settingPopover';
 import './dashboard.css';
 const ButtonGroup = Button.Group;
 
 class DashboardHeader extends Component {
+    render() {
+        return (
+            <ActionHeader
+                leftComponent={<DashboardActionHeaderLeft dateRangeList={this.props.dateRangeList} />}
+                rightComponent={<DashboardActionHeaderRight />}
+            />
+        )
+    }
+}
+const mapStateToProps = (state) => ({
+    dateRangeList: state.dashboardReducer.dateRangeList
+})
+export default connect(mapStateToProps)(DashboardHeader);
+
+
+class DashboardActionHeaderLeft extends Component {
+    render() {
+        return (
+            <React.Fragment>
+                <ButtonGroup>
+                    {
+                        this.props.dateRangeList.map((range) => {
+                            return <Button key={range.id} onClick={() => this.props.fetchChartData()}>{range.value}</Button>
+                        })
+                    }
+                </ButtonGroup>
+            </React.Fragment>
+        )
+    }
+}
+
+class DashboardActionHeaderRight extends Component {
     constructor(props) {
         super(props)
 
@@ -16,14 +49,7 @@ class DashboardHeader extends Component {
     handleVisibleChange = () => this.setState({ isPopover: false })
     render() {
         return (
-            <div className="dashboard-header">
-                <ButtonGroup>
-                    {
-                        this.props.dateRangeList.map((range) => {
-                            return <Button key={range.id} onClick={() => this.props.fetchChartData()}>{range.value}</Button>
-                        })
-                    }
-                </ButtonGroup>
+            <React.Fragment>
                 <Popover
                     title="Message"
                     content={<a onClick={this.handleVisibleChange}>OK, Got it!</a>}
@@ -33,11 +59,7 @@ class DashboardHeader extends Component {
                     onVisibleChange={this.handleVisibleChange}
                 > <SettingPopover />
                 </Popover>
-            </div>
+            </React.Fragment>
         )
     }
 }
-const mapStateToProps = (state) => ({
-    dateRangeList: state.dashboardReducer.dateRangeList
-})
-export default connect(mapStateToProps)(DashboardHeader);

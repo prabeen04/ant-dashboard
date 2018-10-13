@@ -8,7 +8,7 @@ import ProfileActionHeaderLeft from './ProfileActionHeaderLeft';
 import ProfileActionHeaderRight from "./ProfileActionHeaderRight";
 import ActionHeader from '../../components/layouts/ActionHeader';
 import './profile.css';
-import MainWrapper from "../../components/UI/Elements/MainWrapper";
+import { MainWrapper } from "../../components/UI/Layout";
 
 const Profile = (props) => {
   console.log(props)
@@ -20,7 +20,9 @@ const Profile = (props) => {
       />
       <div className="profile-wrapper">
         <div className="profile-view">
-          <ProfileList />
+          <MainWrapper>
+            <ProfileList />
+          </MainWrapper>
         </div>
         <div className="profile-action">
           {props.showAddProfile && <AddProfile />}
