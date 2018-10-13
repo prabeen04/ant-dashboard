@@ -4,10 +4,9 @@
     align-items: flex-start;
     align-content: flex-start;
     justify-content: center;
-    border: 1px solid #ccc;
-    flex-grow: 1;
+    /* flex-grow: 1; */
     align-self: flex-start;
-    padding: 0.5rem;
+    /* padding: 0.5rem; */
 }
 .red-background{
     background: red !important;

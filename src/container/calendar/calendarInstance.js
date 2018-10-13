@@ -2,12 +2,13 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types';
 import BigCalendar from 'react-big-calendar';
 import moment from 'moment';
+import { MainWrapper } from "../../components/UI/Layout";
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 BigCalendar.setLocalizer(BigCalendar.momentLocalizer(moment))
 
 const CalendarInstance = (props) => {
   return (
-    <div style={{ flexBasis: '70%', height: 500 }}>
+    <MainWrapper style={{ flexBasis: '70%', height: 500 }}>
       <BigCalendar
         style={{ flexBasis: '70%' }}
         events={props.events ? props.events : []}
@@ -32,7 +33,7 @@ const CalendarInstance = (props) => {
       //   // ({className: 'red-background'})
       // }}
       />
-    </div>
+    </MainWrapper>
   )
 }
 export default CalendarInstance;

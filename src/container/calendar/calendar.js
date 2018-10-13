@@ -6,6 +6,8 @@ import { getEvents, addEvent, setDate } from '../../actions/calendar_actions';
 import EventForm from './eventForm';
 import EventList from './eventList';
 import ActionHeader from '../../components/layouts/ActionHeader';
+import { StyledTabs } from "../../components/UI/Antd";
+import { TabsWrapper } from "../../components/UI/Layout";
 import './calendar.css';
 import { Button, Icon, message, Tabs, Tooltip } from 'antd';
 const TabPane = Tabs.TabPane;
@@ -55,7 +57,7 @@ class Calendar extends Component {
           rightComponent={<RightActionHeader />}
         />
 
-        <div className="flex-container" style={{ height: '520px', backgroundColor: '#fff', margin: '0.5rem' }}>
+        <div className="flex-container" style={{ height: '520px' }}>
           {this.state.activeTab === '1'
             ? <CalendarInstance
               events={this.props.events}
@@ -70,20 +72,22 @@ class Calendar extends Component {
           }
 
           <div className="event-form" >
-            <Tabs
-              defaultActiveKey={this.state.activeTab}
-              onChange={(activeKey) => {
-                this.setState({
-                  activeTab: activeKey.toString()
-                })
-              }}>
-              <TabPane tab={<span><Icon type="apple" />Apple</span>} key="1">
-                <EventForm />
-              </TabPane>
-              <TabPane tab={<span><Icon type="android" />Android</span>} key="2">
-                <Button type="primary">submit</Button>
-              </TabPane>
-            </Tabs>
+            <TabsWrapper>
+              <StyledTabs
+                defaultActiveKey={this.state.activeTab}
+                onChange={(activeKey) => {
+                  this.setState({
+                    activeTab: activeKey.toString()
+                  })
+                }}>
+                <TabPane tab={<span><Icon type="apple" />Apple</span>} key="1">
+                  <EventForm />
+                </TabPane>
+                <TabPane tab={<span><Icon type="android" />Android</span>} key="2">
+                  <Button type="primary">submit</Button>
+                </TabPane>
+              </StyledTabs>
+            </TabsWrapper>
           </div>
         </div>
       </div>
