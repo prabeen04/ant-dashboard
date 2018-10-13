@@ -16,31 +16,32 @@ const lightTheme = {
 }
 
 const darkTheme = {
-    applicationBackground: '#eee',
-    applicationColor: '#444',
-    backgroundColor: '#fff',
-    color: '#444',
-    borderColor: '#eee',
-    boxShadowColor: '#aaa',
-    opacity: 1
+    applicationBackground: '#001529',
+    applicationColor: '#fff',
+    backgroundColor: 'rgba(121, 140, 173, 0.3)',
+    color: '#eeeeee',
+    borderColor: '#001529',
+    boxShadowColor: '#001529',
+    opacity: 0.3,
 }
 class Theme extends Component {
-
     toggleTheme = (checked) => {
+        console.log(this.props)
         console.log(checked)
         if (checked === true) {
-            this.props.setLightTheme(lightTheme)
-        } else {
             this.props.setDarkTheme(darkTheme)
+        } else {
+            this.props.setLightTheme(lightTheme)
         }
 
     }
     render() {
         const { themeType } = this.props;
+        console.log(themeType)
         return (
             <div>
                 <Switch
-                    checked={themeType === 'dark' ? true : false}
+                    checked={themeType === 'light' ? false : true}
                     onChange={this.toggleTheme}
                     checkedChildren="Dark"
                     unCheckedChildren="Light"
