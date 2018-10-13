@@ -18,7 +18,7 @@ const theme = {
   color: '#444',
   borderColor: '#eee',
   boxShadowColor: '#aaa',
-  opacity: 0.3
+  opacity: 1
 }
 const App = (props) => {
   return (
