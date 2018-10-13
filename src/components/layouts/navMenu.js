@@ -2,6 +2,7 @@ import React from 'react';
 import { Redirect } from 'react-router-dom';
 import { Menu, Icon, Button, Switch } from 'antd';
 import { Link } from 'react-router-dom';
+import Theme from '../../container/settings/Theme/Theme';
 const SubMenu = Menu.SubMenu;
 
 class NavMenu extends React.Component {
@@ -114,6 +115,9 @@ class NavMenu extends React.Component {
                             checkedChildren="Dark"
                             unCheckedChildren="Light"
                         />
+                    </Menu.Item>
+                    <Menu.Item>
+                        <Theme/>
                     </Menu.Item>
 
                 </Menu>
