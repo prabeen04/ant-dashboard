@@ -8,7 +8,7 @@ import NavMenu from './navMenu';
 import GooglePlace from '../google/googlePlace';
 import AppBoundary from '../../errorHandler/appBoundary';
 import NotificationPopover from '../popover/notificationPopover';
-import { ApplicationWrapper, MainWrapper } from "../UI/Layout";
+import { ApplicationWrapper,LayoutWrapper, MainWrapper } from "../UI/Layout";
 import Theme from '../../container/settings/Theme/Theme';
 const { Header, Sider, Content } = Layout;
 
@@ -101,7 +101,7 @@ class Navbar extends React.Component {
     render() {
         const background = this.state.theme === 'light' ? '#fff' : null
         return (
-            <Layout>
+            <LayoutWrapper>
                 <Sider
                     trigger={null}
                     collapsible
@@ -117,7 +117,7 @@ class Navbar extends React.Component {
                         toggleTheme={this.toggleTheme}
                         theme={this.state.theme} />
                 </Sider>
-                <Layout>
+                <LayoutWrapper>
                     <Header className="flex-container" style={{ background: '#fff', padding: 0, height: 45, alignItems: 'center', justifyContent: 'space-between', flexDirection: 'row' }}>
                         <div style={{ height: 45, display: 'flex', alignSelf: 'flex-start', alignItems: 'center' }}>
                             <Icon
@@ -167,8 +167,8 @@ class Navbar extends React.Component {
                             </Switch>
                         </Content>
                     </ApplicationWrapper>
-                </Layout>
-            </Layout>
+                </LayoutWrapper>
+            </LayoutWrapper>
         );
     }
 }

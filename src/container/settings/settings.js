@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Tabs, Icon } from 'antd';
 import { StyledTabs } from "../../components/UI/Antd";
+import { TabsWrapper } from "../../components/UI/Layout";
 import ChartSettings from './chartSettings';
 import ProfileSettings from './profile/profileSettings';
 import ProgressLine from './calendar/progressLine';
@@ -14,7 +15,7 @@ const TabPane = Tabs.TabPane;
 
 const Settings = (props) => {
     return (
-        <div className="setting-wrapper">
+        <TabsWrapper>
             <StyledTabs defaultActiveKey="2">
                 <TabPane tab={<span><Icon type="area-chart" />Charts</span>} key="1">
                     <ChartSettings />
@@ -47,7 +48,7 @@ const Settings = (props) => {
                     Tab 10
                     </TabPane>
             </StyledTabs>
-        </div>
+        </TabsWrapper>
     )
 }
 
