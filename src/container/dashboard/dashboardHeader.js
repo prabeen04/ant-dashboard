@@ -31,7 +31,7 @@ class DashboardActionHeaderLeft extends Component {
     render() {
         return (
             <React.Fragment>
-                <TimeInterval time={this.props.dateRangeList} handleClick={this.props.fetchChartData}/>
+                <TimeInterval times={this.props.dateRangeList} handleClick={ this.props.fetchChartData}/>
             </React.Fragment>
         )
     }
