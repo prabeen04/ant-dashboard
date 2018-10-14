@@ -118,8 +118,8 @@ class Navbar extends React.Component {
                         theme={this.state.theme} />
                 </Sider>
                 <LayoutWrapper>
-                    <NavbarWrapper>
-                        <Header className="flex-container" style={{ background: '#fff', padding: 0, height: 45, alignItems: 'center', justifyContent: 'space-between', flexDirection: 'row' }}>
+                    <Header>
+                        <NavbarWrapper>
                             <div style={{ height: 45, display: 'flex', alignSelf: 'flex-start', alignItems: 'center' }}>
                                 <Icon
                                     className="trigger"
@@ -143,8 +143,8 @@ class Navbar extends React.Component {
                                 </a>
                                 <Theme />
                             </div>
-                        </Header>
-                    </NavbarWrapper>
+                        </NavbarWrapper>
+                    </Header>
                     <ApplicationWrapper>
                         <Content>
                             <Switch>
