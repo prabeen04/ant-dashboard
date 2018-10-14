@@ -118,7 +118,7 @@ class Navbar extends React.Component {
                         theme={this.state.theme} />
                 </Sider>
                 <LayoutWrapper>
-                    <Header>
+                    <Header style={{width: '100%'}}>
                         <NavbarWrapper>
                             <div style={{ height: 45, display: 'flex', alignSelf: 'flex-start', alignItems: 'center' }}>
                                 <Icon
