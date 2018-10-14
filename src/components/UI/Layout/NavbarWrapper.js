@@ -10,12 +10,12 @@ const NavbarWrapper = styled(Header)`
     align-items: center;
     align-content: center;
     flex-wrap: nowrap;
-    padding: 0;
     margin: 0;
     box-shadow: 0 1px 4px 1px ${props => props.theme.boxShadowColor};
     color: ${props => props.theme.color};
     background-color: ${props => props.theme.backgroundColor};
     height: 50px; 
+    padding: 0;
     line-height: 64px;
 }
 `
