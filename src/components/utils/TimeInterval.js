@@ -39,7 +39,7 @@ const styles = {
     timeItem: {
         fontSize: 16,
         fontWeight: 500,
-        borderColor: 'red',
-        borderWidth: 1,
+        backgroundcolor: '#ddd',
+        paddingRight: 10
     }
 }
