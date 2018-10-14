@@ -8,12 +8,12 @@ class TimeInterval extends Component {
             <div style={styles.timeInterval}>
                 {times.map((time, i) => {
                     return (
-                        <p 
+                        <span 
                             key={i}
                             style={styles.timeItem}
                             onClick={(e) => handleClick(time)}>
-                            {time}
-                        </p>
+                            {time.value}
+                        </span>
                     )
                 })}
             </div>
@@ -33,10 +33,10 @@ const styles = {
         flexDirection: 'row',
         borderWidth: 1,
         borderColor: 'red',
-        cursor: 'pointer'
+        cursor: 'pointer',
+        justifyContent: 'center'
     },
     timeItem: {
-        padding: 15,
         fontSize: 16,
         fontWeight: 500,
         borderColor: 'red',
