@@ -8,7 +8,7 @@ import NavMenu from './navMenu';
 import GooglePlace from '../google/googlePlace';
 import AppBoundary from '../../errorHandler/appBoundary';
 import NotificationPopover from '../popover/notificationPopover';
-import { ApplicationWrapper,LayoutWrapper, MainWrapper } from "../UI/Layout";
+import { ApplicationWrapper, LayoutWrapper, MainWrapper, NavbarWrapper } from "../UI/Layout";
 import Theme from '../../container/settings/Theme/Theme';
 const { Header, Sider, Content } = Layout;
 
@@ -118,31 +118,33 @@ class Navbar extends React.Component {
                         theme={this.state.theme} />
                 </Sider>
                 <LayoutWrapper>
-                    <Header className="flex-container" style={{ background: '#fff', padding: 0, height: 45, alignItems: 'center', justifyContent: 'space-between', flexDirection: 'row' }}>
-                        <div style={{ height: 45, display: 'flex', alignSelf: 'flex-start', alignItems: 'center' }}>
-                            <Icon
-                                className="trigger"
-                                type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'}
-                                onClick={this.toggle}
-                            />
-                        </div>
-                        <div style={{ display: 'flex', alignItems: 'center', alignSelf: 'flex-end', marginRight: 50, height: 45 }}>
-                            <a href="#" style={{ margin: 15 }}>
-                                <Badge count={1} >
-                                    <Icon type="bell" />
-                                </Badge>
-                            </a>
-                            <a href="#" style={{ margin: 15 }}>
-                                <Badge count={5} >
-                                    <Icon type="user" />
-                                </Badge>
-                            </a>
-                            <a href="#" style={{ margin: 15 }}>
-                                <NotificationPopover />
-                            </a>
-                            <Theme />
-                        </div>
-                    </Header>
+                    <NavbarWrapper>
+                        <Header className="flex-container" style={{ background: '#fff', padding: 0, height: 45, alignItems: 'center', justifyContent: 'space-between', flexDirection: 'row' }}>
+                            <div style={{ height: 45, display: 'flex', alignSelf: 'flex-start', alignItems: 'center' }}>
+                                <Icon
+                                    className="trigger"
+                                    type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'}
+                                    onClick={this.toggle}
+                                />
+                            </div>
+                            <div style={{ display: 'flex', alignItems: 'center', alignSelf: 'flex-end', marginRight: 50, height: 45 }}>
+                                <a href="#" style={{ margin: 15 }}>
+                                    <Badge count={1} >
+                                        <Icon type="bell" />
+                                    </Badge>
+                                </a>
+                                <a href="#" style={{ margin: 15 }}>
+                                    <Badge count={5} >
+                                        <Icon type="user" />
+                                    </Badge>
+                                </a>
+                                <a href="#" style={{ margin: 15 }}>
+                                    <NotificationPopover />
+                                </a>
+                                <Theme />
+                            </div>
+                        </Header>
+                    </NavbarWrapper>
                     <ApplicationWrapper>
                         <Content>
                             <Switch>
