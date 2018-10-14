@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Icon, Popover, Tooltip, Card, Button } from 'antd';
 // import AddProfile from '../../container/profile/addProfile';
 import SettingTab from '../tabs/settingTab';
+import { StyledPopover } from "../UI/Antd";
 
 class SettingPopover extends Component {
     constructor(props) {
@@ -25,7 +26,7 @@ class SettingPopover extends Component {
         return (
             <div>
                 <Tooltip title="Settings">
-                    <Popover
+                    <StyledPopover
                         content={
                             <div>
                                 <SettingTab hide={this.hide}/>
@@ -43,7 +44,7 @@ class SettingPopover extends Component {
                             type="setting"
                             onClick={() => this.handleVisibleChange()}
                         />
-                    </Popover>
+                    </StyledPopover>
                 </Tooltip>
             </div>
         )
