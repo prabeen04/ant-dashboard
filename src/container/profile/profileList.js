@@ -7,6 +7,7 @@ import { Icon, Card, Button  } from 'antd';
 import { getProfiles, addProfile, showAddProfile } from '../../actions/profile_actions';
 import { getProfilesState } from '../../selectors/demoSelector';
 import MainWrapper from '../../components/UI/Elements/MainWrapper'
+import { StyledSkeleton } from "../../components/UI/Antd";
 import './profile.css';
 
 class ProfileList extends Component {
@@ -17,7 +18,7 @@ class ProfileList extends Component {
     render() {
 
         if (this.props.isLoading) {
-             return   <Card loading style={{ width: '100%' }}></Card>
+             return  <StyledSkeleton/>
         }
         if (this.props.isError) {
             return (<h2>Some Error Occoured</h2>)
