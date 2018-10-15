@@ -7,6 +7,7 @@ import { DatePicker, Button } from 'antd';
 import PlaceInput from '../../components/common/forms/placeInput'
 import { addEvent } from '../../actions/calendar_actions';
 import { Input } from "../../components/UI/Elements";
+import { StyledDatePicker } from "../../components/UI/Antd";
 const { MonthPicker, RangePicker } = DatePicker;
 
 class EventForm extends Component {
@@ -35,7 +36,7 @@ class EventForm extends Component {
     renderDate = ({ input, meta: { touched, error }, ...custom }) => {
         return (
             <div>
-                <DatePicker {...input} disabled={true}
+                <StyledDatePicker {...input} disabled={true}
                 />
                 {touched && error && <span style={{ color: 'tomato' }}>{error}</span>}
             </div>
