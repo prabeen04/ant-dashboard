@@ -7,6 +7,8 @@ import { Icon, Button, Divider } from 'antd'
 import { colourOptions, groupedOptions } from './options';
 import Creatable from "./creatableSelect";
 import SelectFormModal from "./selectFormModal";
+import { StyledReactSelect } from "../../../components/UI/Elements";
+
 const optionTypes = [
     { value: 'vanilla', label: 'Vanilla', rating: 'safe' },
     { value: 'chocolate', label: 'Chocolate', rating: 'good' },
@@ -60,7 +62,7 @@ class ProfileSettings extends Component {
         console.log('...custom')
         console.log(...custom)
         return (
-            <Select
+            <StyledReactSelect
                 isClearable
                 isMulti
                 options={groupedOptions}
@@ -90,7 +92,7 @@ class ProfileSettings extends Component {
                                     <div style={{ display: 'flex', flexDirection: 'row' }}>
                                         <h2>{option.label}</h2>
                                         <div style={{ flexBasis: '80%' }}>
-                                            <Select
+                                            <StyledReactSelect
                                                 isClearable
                                                 options={optionTypes}
                                                 formatGroupLabel={formatGroupLabel}
