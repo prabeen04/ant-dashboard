@@ -7,7 +7,7 @@ import { Icon, Button, Divider } from 'antd'
 import { colourOptions, groupedOptions } from './options';
 import Creatable from "./creatableSelect";
 import SelectFormModal from "./selectFormModal";
-import { StyledReactSelect } from "../../../components/UI/Elements";
+import { StyledReactSelect, StyledCreatable } from "../../../components/UI/Elements";
 
 const optionTypes = [
     { value: 'vanilla', label: 'Vanilla', rating: 'safe' },
@@ -76,7 +76,7 @@ class ProfileSettings extends Component {
             />
         )
     }
- 
+
     onSubmit = values => console.log(values)
     render() {
         // const { selectedOption } = this.state;
@@ -115,6 +115,14 @@ class ProfileSettings extends Component {
                 </form>
                 <Divider />
                 <h3>Creatable Select box</h3>
+                <StyledCreatable
+                    isClearable
+                    options={optionTypes}
+                    formatGroupLabel={formatGroupLabel}
+                    placeholder="Choose position ..."
+                    styles={{ width: 200 }}
+                    onChange={this.handleCustomOptionChange}
+                />
                 <Creatable />
                 <SelectFormModal />
             </div>
