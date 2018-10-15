@@ -2,6 +2,7 @@ import Select from 'react-select'
 import styled from 'styled-components'
 
 const StyledReactSelect = styled(Select)`
+input{
     border-radius: 3px;
     border: 1px solid ${props => props.theme.borderColor};
     background-color: ${props => props.theme.backgroundColor};
@@ -12,5 +13,6 @@ const StyledReactSelect = styled(Select)`
     outline: none;
     box-shadow: 0px 4px 10px -4px  ${props => props.theme.boxShadowColor};
     padding: 0.3rem 1rem;
-`
+}
+    `
 export default StyledReactSelect;
