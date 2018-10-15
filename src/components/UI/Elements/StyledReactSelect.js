@@ -1,7 +1,18 @@
-import Select from 'react-select'
+import ReactSelect  from 'react-select'
 import styled from 'styled-components'
 
-const StyledReactSelect = styled(Select)`
+const StyledReactSelect = styled(ReactSelect )`
+&.Select--multi  {
+
+    .Select-value {
+        display: inline-flex;
+        align-items: center;
+    }		
+}
+
+& .Select-placeholder {
+    font-size: smaller;
+}
 input{
     border-radius: 3px;
     border: 1px solid ${props => props.theme.borderColor};
