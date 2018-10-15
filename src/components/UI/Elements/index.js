@@ -4,3 +4,4 @@ export { default as Input } from "./Input";
 export { default as SelectInput } from "./SelectInput";
 export { default as Option } from "./Option";
 export { default as StyledReactSelect } from "./StyledReactSelect";
+export { default as StyledCreatable } from "./StyledCreatable";
