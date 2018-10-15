@@ -18,7 +18,11 @@ class ProfileList extends Component {
     render() {
 
         if (this.props.isLoading) {
-             return  <StyledSkeleton/>
+             return(<StyledSkeleton
+                 active={true}
+                 loading={true}
+                 title={'Fetching Profile..'}
+                 />)
         }
         if (this.props.isError) {
             return (<h2>Some Error Occoured</h2>)
