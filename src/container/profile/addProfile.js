@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { Field, reduxForm } from 'redux-form'
 import { Button, Icon, Card,  message } from 'antd';
-import { StyledUpload } from "../../components/UI/Antd";
+import { StyledUpload, StyledCard } from "../../components/UI/Antd";
 import { Input } from "../../components/UI/Elements";
 import './profile.css'
 import { addProfile } from '../../actions/profile_actions';
@@ -78,7 +78,7 @@ class AddProfile extends Component {
         <div className="panel-header">
           <h3>Add Profiles</h3>
         </div>
-        <Card>
+        <StyledCard>
           <StyledUpload
             name="avatar"
             listType="picture-card"
@@ -99,7 +99,7 @@ class AddProfile extends Component {
         </Button>
             {console.log(submitting)}
           </form>
-        </Card>
+        </StyledCard>
       </div>
     )
   }
