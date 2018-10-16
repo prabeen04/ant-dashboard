@@ -121,6 +121,7 @@ class ProfileSettings extends Component {
                     formatGroupLabel={formatGroupLabel}
                     placeholder="Choose position ..."
                     styles={{ width: 200 }}
+                    className="prabeen"
                     onChange={this.handleCustomOptionChange}
                 />
                 <Creatable />
