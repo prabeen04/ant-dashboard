@@ -2,8 +2,9 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { Field, reduxForm } from 'redux-form'
-import { Input, Button, Icon, Card,  message } from 'antd';
+import { Button, Icon, Card,  message } from 'antd';
 import { StyledUpload } from "../../components/UI/Antd";
+import { Input } from "../../components/UI/Elements";
 import './profile.css'
 import { addProfile } from '../../actions/profile_actions';
 
