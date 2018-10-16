@@ -6,7 +6,8 @@ import { openEditProfile } from '../../actions/profile_actions';
 import ProfileDrawer from './profileDrawer';
 import MainWrapper from '../../components/UI/Elements/MainWrapper'
 import EventTimeline from "../../components/utils/EventTimeline";
-const { Meta } = Card;
+import { StyledCard } from "../../components/UI/Antd";
+const { Meta } = StyledCard;
 
 class ProfileView extends Component {
   state = {
@@ -34,7 +35,7 @@ class ProfileView extends Component {
             <div className="panel-header">
               <h3>{this.props.profile.name}</h3>
             </div>
-            <Card
+            <StyledCard
               style={{ width: '100%' }}
               cover={<img alt="example" src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png" />}
               actions={[
@@ -48,7 +49,7 @@ class ProfileView extends Component {
                 title={this.props.profile.name}
                 description={this.props.profile.email}
               />
-            </Card>
+            </StyledCard>
           </div>
 
         }
