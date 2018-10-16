@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
-import { Upload, message, Button, Icon, Modal } from 'antd';
+import { message, Button, Icon, Modal } from 'antd';
 import axios from 'axios';
-import ImageCropper from '../../utils/ImageCropper'
+import ImageCropper from '../../utils/ImageCropper';
+import { StyledUpload } from "../../UI/Antd";
 import './forms.css';
 class UploadInput extends Component {
     constructor(props) {
@@ -82,7 +83,7 @@ class UploadInput extends Component {
         );
         return (
             <div>
-                <Upload name='file'
+                <StyledUpload name='file'
                     {...this.props}
                     action='https://fokuswork.com:8443/salesxl/api/v2.0/image/'
                     listType="picture-card"
@@ -93,7 +94,7 @@ class UploadInput extends Component {
                     beforeUpload={this.handleBeforeUpload}
                 >
                     {fileList.length >= 3 ? null : uploadButton}
-                </Upload>
+                </StyledUpload>
                 <Modal visible={previewVisible} footer={null} closable maskClosable onCancel={this.handleCancel}>
                     <img alt="example" style={{ width: '100%' }} src={`https://fokuswork.com:8443/salesxl/api/v2.0/image/${this.state.uploadResponse}`} />
                     <div style={{ minHeight: 200, backgroundColor: '#f4f4f4', width: '100%' }}>
