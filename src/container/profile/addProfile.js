@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { Field, reduxForm } from 'redux-form'
-import { Input, Button, Icon, Card, Upload, message } from 'antd'
+import { Input, Button, Icon, Card,  message } from 'antd';
+import { StyledUpload } from "../../components/UI/Antd";
 import './profile.css'
 import { addProfile } from '../../actions/profile_actions';
 
@@ -77,7 +78,7 @@ class AddProfile extends Component {
           <h3>Add Profiles</h3>
         </div>
         <Card>
-          <Upload
+          <StyledUpload
             name="avatar"
             listType="picture-card"
             className="avatar-uploader"
@@ -87,7 +88,7 @@ class AddProfile extends Component {
             onChange={this.handleChange}
           >
             {imageUrl ? <img src={imageUrl} alt="avatar" /> : uploadButton}
-          </Upload>
+          </StyledUpload>
           <form onSubmit={handleSubmit(this.submitProfile)}>
             <Field component={this.renderInput} label={'Name'} name="name" />
             <Field component={this.renderInput} label={'Email'} name="email" />
