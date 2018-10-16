@@ -3,6 +3,10 @@ import styled from 'styled-components'
 
 const StyledCard = styled(Card)`
 .ant-card {
+    background-color: ${props => props.theme.applicationBackground};
+    color: ${props => props.theme.color};
+}
+.ant-card-body {
     border: 1px dashed ${props => props.theme.borderColor};
     width: 104px;
     height: 104px;
