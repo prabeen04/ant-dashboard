@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { reduxForm, Field } from "redux-form";
 import { Button } from "antd";
-import CreatableSelect from 'react-select/lib/Creatable';
+import { StyledCreatable } from '../../../components/UI/Elements';
 import { optionChange, openFormModal } from '../../../actions/selectAction';
 
 const createOption = (label: string) => ({
@@ -13,7 +13,7 @@ const createOption = (label: string) => ({
 class Creatable extends Component {
     renderCreatableSelect = ({ input, ...custom }) => {
         const { value, onBlur, onChange } = input;
-        return <CreatableSelect
+        return <StyledCreatable
             {...input}
             // {...custom}
             // isClearable
