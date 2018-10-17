@@ -11,5 +11,10 @@ const StyledBigCalendar = styled(BigCalendar)`
     outline: none;
     box-shadow: 0px 4px 10px -4px  ${props => props.theme.boxShadowColor};
     padding: 0.3rem 1rem;
+    
+    .rbc-toolbar button {
+        background-color: ${props => props.theme.backgroundColor};
+        color: ${props => props.theme.color};
+    }
    `
 export default StyledBigCalendar;
