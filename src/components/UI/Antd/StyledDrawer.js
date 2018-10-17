@@ -7,6 +7,10 @@ const StyledDrawer = styled(Drawer)`
         color: ${props => props.theme.color};
         border: none !important;
     }
+    .ant-drawer-content {
+        background-color: ${props => props.theme.applicationBackground} !important;
+        color: ${props => props.theme.color};
+    }
     .ant-drawer-body {
         background-color: ${props => props.theme.applicationBackground} !important;
         color: ${props => props.theme.color};
