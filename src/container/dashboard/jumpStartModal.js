@@ -2,12 +2,13 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Modal, Button, Icon } from 'antd';
+import { StyledModal } from '../../components/UI/Antd';
 import { closeJumpstartModal } from '../../actions/dashboardAction'
 class JumpStartModal extends Component {
   render() {
     return (
       <div>
-        <Modal
+        <StyledModal
           title={this.props.jumpstartData.title}
           visible={this.props.isModalOpen}
           onOk={this.handleOk}
@@ -15,7 +16,7 @@ class JumpStartModal extends Component {
         >
           <p>{this.props.jumpstartData.title}</p>
           <p>{this.props.jumpstartData.value}</p>
-        </Modal>
+        </StyledModal>
       </div>
     )
   }
