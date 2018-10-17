@@ -7,7 +7,15 @@ const StyledModal = styled(Modal)`
         color: ${props => props.theme.color};
    }
     .ant-modal-header{
-        background-color: ${props => props.theme.applicationBackground} !important;
+        background-color: ${props => props.theme.backgroundColor} !important;
+        color: ${props => props.theme.color};
+   }
+    .ant-modal-body{
+        background-color: ${props => props.theme.backgroundColor} !important;
+        color: ${props => props.theme.color};
+   }
+    .ant-modal-footer{
+        background-color: ${props => props.theme.backgroundColor} !important;
         color: ${props => props.theme.color};
    }
     .ant-modal-title{
