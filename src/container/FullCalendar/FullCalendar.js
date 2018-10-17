@@ -12,7 +12,7 @@ import 'fullcalendar/dist/fullcalendar.css';
 import 'fullcalendar/dist/fullcalendar.js';
 import './FullCalendar.css';
 import { Input } from '../../components/UI/Elements';
-import { StyledDatePicker } from '../../components/UI/Antd';
+import { StyledDatePicker, StyledDrawer } from '../../components/UI/Antd';
 import { MainWrapper } from '../../components/UI/Elements';
 
 class FullCalendar extends Component {
@@ -89,7 +89,7 @@ class FullCalendar extends Component {
     return (
       <MainWrapper>
         <div ref="calendar"></div>
-        <Drawer
+        <StyledDrawer
           title="Create Event"
           placement="right"
           closable={false}
@@ -122,7 +122,7 @@ class FullCalendar extends Component {
               <Button type="primary" htmlType="submit" loading={submitting}>Create Event</Button>
             </form>
           </div>
-        </Drawer>
+        </StyledDrawer>
       </MainWrapper>
     )
   }

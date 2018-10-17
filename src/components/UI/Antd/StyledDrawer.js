@@ -6,7 +6,7 @@ const StyledDrawer = styled(Drawer)`
     color: ${props => props.theme.color};
     box-shadow: 0px 4px 10px -4px  ${props => props.theme.boxShadowColor};
     border: none !important;
-    .ant-card {
+    ..ant-drawer-content-wrapper {
         background-color: ${props => props.theme.applicationBackground} !important;
         color: ${props => props.theme.color};
         border: none !important;
