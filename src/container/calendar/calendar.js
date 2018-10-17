@@ -8,6 +8,7 @@ import EventList from './eventList';
 import ActionHeader from '../../components/layouts/ActionHeader';
 import './calendar.css';
 import { Button, Icon, message, Tabs, Tooltip } from 'antd';
+import { MainWrapper } from '../../components/UI/Layout';
 const TabPane = Tabs.TabPane;
 const dateFormat = 'YYYY-MM-DD';
 const timeFormat = 'HH:mm:ss';
@@ -69,7 +70,7 @@ class Calendar extends Component {
 
           }
 
-          <div className="event-form" >
+          <MainWrapper className="event-form" >
             <Tabs
               defaultActiveKey={this.state.activeTab}
               onChange={(activeKey) => {
@@ -84,7 +85,7 @@ class Calendar extends Component {
                 <Button type="primary">submit</Button>
               </TabPane>
             </Tabs>
-          </div>
+          </MainWrapper>
         </div>
       </div>
     )

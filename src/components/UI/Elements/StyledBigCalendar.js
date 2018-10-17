@@ -6,7 +6,7 @@ const StyledBigCalendar = styled(BigCalendar)`
     background-color: ${props => props.theme.backgroundColor};
     color: ${props => props.theme.color};
     display: block;
-    margin: 0 0 1em;
+    margin: 0.3rem;
     border-radius: 0.3rem;
     outline: none;
     box-shadow: 0px 4px 10px -4px  ${props => props.theme.boxShadowColor};
