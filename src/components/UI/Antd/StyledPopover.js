@@ -2,6 +2,8 @@ import { Popover } from 'antd';
 import styled from 'styled-components';
 
 const StyledPopover = styled(Popover)`
+        color: ${props => props.theme.color};
+        background-color: ${props => props.theme.applicationBackground};
     .ant-popover-inner {
         color: ${props => props.theme.color};
         background-color: ${props => props.theme.applicationBackground};
@@ -10,10 +12,12 @@ const StyledPopover = styled(Popover)`
     }  
     .ant-popover-inner-content {
         color: ${props => props.theme.color};
-        background-color: ${props => props.theme.applicationBackground};
+        background-color: ${props => props.theme.backgroundColor};
         border: 3px solid red;
     }  
     .ant-popover {
+        color: ${props => props.theme.color};
+        background-color: ${props => props.theme.applicationBackground};
         border: 3px solid red;
     }  
 `
