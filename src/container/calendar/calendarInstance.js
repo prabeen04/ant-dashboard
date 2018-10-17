@@ -1,14 +1,14 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types';
-import BigCalendar from 'react-big-calendar';
+import { StyledBigCalendar } from '../../components/UI/Elements';
 import moment from 'moment';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
-BigCalendar.setLocalizer(BigCalendar.momentLocalizer(moment))
+StyledBigCalendar.setLocalizer(StyledBigCalendar.momentLocalizer(moment))
 
 const CalendarInstance = (props) => {
   return (
     <div style={{ flexBasis: '70%', height: 500 }}>
-      <BigCalendar
+      <StyledBigCalendar
         style={{ flexBasis: '70%' }}
         events={props.events ? props.events : []}
         defaultDate={props.defaultDate || new Date()}
