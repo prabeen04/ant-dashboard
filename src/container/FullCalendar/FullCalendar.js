@@ -11,8 +11,8 @@ import moment from 'moment';
 import 'fullcalendar/dist/fullcalendar.css';
 import 'fullcalendar/dist/fullcalendar.js';
 import './FullCalendar.css';
-import TextInput from '../../components/common/forms/textInput';
-import DateInput from '../../components/common/forms/DateInput'
+import { Input } from '../../components/UI/Elements';
+import { StyledDatePicker } from '../../components/UI/Antd';
 import { MainWrapper } from '../../components/UI/Elements';
 
 class FullCalendar extends Component {
@@ -27,7 +27,7 @@ class FullCalendar extends Component {
   renderInput = ({ input, label, type, meta: { touched, error }, ...custom }) => {
     return (
       <div>
-        <TextInput
+        <Input
           placeholder={label}
           {...input}
           {...custom}
@@ -39,7 +39,7 @@ class FullCalendar extends Component {
   renderDate = ({ input, label, type, meta: { touched, error }, ...custom }) => {
     return (
       <div>
-        <DateInput
+        <StyledDatePicker
           placeholder={label}
           {...input}
           {...custom}
