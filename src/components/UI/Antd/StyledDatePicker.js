@@ -4,7 +4,7 @@ import styled from 'styled-components'
 const StyledDatePicker = styled(DatePicker)`
     .ant-input{
         border-radius: 3px;
-        border: 1px solid ${props => props.theme.borderColor};
+        border: 1px solid ${props => props.theme.inputBorderColor};
         background-color: ${props => props.theme.backgroundColor};
         color: ${props => props.theme.color};
         display: block;

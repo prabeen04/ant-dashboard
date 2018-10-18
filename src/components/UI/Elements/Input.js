@@ -5,7 +5,7 @@ const Input = styled.input.attrs({
     size: props => (props.small ? 4 : undefined),
 })`
     border-radius: 3px;
-    border: 1px solid ${props => props.theme.borderColor};
+    border: 1px solid ${props => props.theme.inputBorderColor};
     background-color: ${props => props.theme.backgroundColor};
     color: ${props => props.theme.color};
     display: block;

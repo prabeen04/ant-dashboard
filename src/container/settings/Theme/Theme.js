@@ -11,6 +11,7 @@ const lightTheme = {
     backgroundColor: '#fff',
     color: '#444',
     borderColor: '#eee',
+    inputBorderColor: '#eee',
     boxShadowColor: '#aaa',
     opacity: 1
 }
@@ -21,6 +22,7 @@ const darkTheme = {
     backgroundColor: 'rgba(121, 140, 173, 0.3)',
     color: '#eeeeee',
     borderColor: '#001529',
+    inputBorderColor: 'rgba(121, 140, 173, 0.3)',
     boxShadowColor: '#001529',
     opacity: 0.3,
 }
