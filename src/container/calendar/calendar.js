@@ -9,6 +9,7 @@ import ActionHeader from '../../components/layouts/ActionHeader';
 import './calendar.css';
 import { Button, Icon, message, Tabs, Tooltip } from 'antd';
 import { MainWrapper } from '../../components/UI/Layout';
+import { StyledSkeleton } from '../../components/UI/Antd';
 const TabPane = Tabs.TabPane;
 const dateFormat = 'YYYY-MM-DD';
 const timeFormat = 'HH:mm:ss';
@@ -55,7 +56,7 @@ class Calendar extends Component {
           leftComponent={<LeftActionHeader />}
           rightComponent={<RightActionHeader />}
         />
-
+        <StyledSkeleton active/>
         <div className="flex-container" style={{ height: '520px', margin: '0.5rem' }}>
           {this.state.activeTab === '1'
             ? <CalendarInstance
