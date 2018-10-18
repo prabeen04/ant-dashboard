@@ -8,6 +8,7 @@ const initialState = {
         backgroundColor: '#fff',
         color: '#444',
         borderColor: '#eee',
+        inputBorderColor: '#eee',
         boxShadowColor: '#aaa',
         opacity: 1
     }
