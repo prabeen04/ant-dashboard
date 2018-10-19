@@ -48,9 +48,10 @@ export const setPieChartData = (viewType, data) => dispatch => {
             console.log(acc)
             console.log(acc && acc[i-1] && acc[i-1][data.eventType] === 'call')
             const count = 1
-            if(acc && acc[i-1] && acc[i-1][data.eventType] === 'call'){  
-                acc.push({acc[i-1][data.eventType]: count})
-                count++
+            if(acc && acc[i-1] && acc[i-1][data.eventType]){  
+                acc.push({[data.eventType]: count})
+            }else{
+                acc.push({[data.eventType]: 1})
             }
             return acc;
         }, []);
