@@ -4,7 +4,17 @@ import moment from 'moment';
 export const setPieChartData = (viewType, data) => dispatch => {
     console.log('inside set pichart data')
     console.log(viewType)
-    const newData = data.map((event, i) => ({ eventId: event.eventId, eventType: event.eventType, startDate: moment(event.startDate).day() }))
+    const newData = data.map((event, i) => {
+        if (viewType.value === 'year') {
+            return { eventId: event.eventId, eventType: event.eventType, startDate: moment(event.startDate).day() }
+        }
+        else if (viewType.value === 'month') {
+            return { eventId: event.eventId, eventType: event.eventType, startDate: moment(event.startDate).day() }
+        }
+        else (viewType.value === 'week') {
+            return { eventId: event.eventId, eventType: event.eventType, startDate: moment(event.startDate).day() }
+        }
+    })
         .reduce((acc, data, i, arr) => {
             if (!acc[data.eventType]) {
                 console.log('inside IF')
@@ -13,7 +23,7 @@ export const setPieChartData = (viewType, data) => dispatch => {
                 console.log('inside ELSE')
                 acc[data.eventType] += 1;
             }
-            return acc; 
+            return acc;
         }, {});
     console.log(newData)
     const eventArr = Object.entries(newData)
@@ -52,7 +62,7 @@ export const setPieChartData = (viewType, data) => dispatch => {
 //         }, []);
 //         console.log(newData)
 //     }
-    
+
 export const setBarChartData = (viewType, data) => dispatch => {
     console.log('inside set bar chart data')
     const trimedData = data.map((item, i) => {
