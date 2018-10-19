@@ -1,7 +1,12 @@
 import { GET_CHART_DATA, SET_INTERNAL_VIEW_TYPE, SET_CHART_VIEW_TYPE, SET_BAR_CHART_DATA, SET_PIE_CHART_DATA } from "../types/chartActionTypes";
 import { DEFAULT_ECDH_CURVE } from "tls";
 const initialState = {
-    timeInterval: ['fiscal', 'year', 'month', 'week'],
+    timeInterval: [
+        { id: 1, 'fiscal'},
+        { id: 2, 'year'},
+        { id: 3, 'month'},
+        { id: 4, 'week'}
+    ],
     data: [
         {
             eventId: "EVEN00001",
@@ -114,16 +119,16 @@ export const chartsReducer = (state = initialState, action) => {
     switch (action.type) {
         case GET_CHART_DATA:
             return state;
-        case SET_PIE_CHART_DATA: 
-            return {...state, pieChartData: action.payload};    
-        case SET_BAR_CHART_DATA: 
-            return {...state, barChartData: action.payload};    
+        case SET_PIE_CHART_DATA:
+            return { ...state, pieChartData: action.payload };
+        case SET_BAR_CHART_DATA:
+            return { ...state, barChartData: action.payload };
         case SET_CHART_VIEW_TYPE:
             return { ...state, viewType: action.payload };
         case SET_INTERNAL_VIEW_TYPE:
             return state;
         default:
-            return state;    
+            return state;
     }
     return state;
 }
