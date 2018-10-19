@@ -7,7 +7,6 @@ import { ApplicationWrapper } from "./components/UI/Layout";
 import './App.css';
 
 const App = (props) => {
-  console.log(props)
   return (
     <ThemeProvider theme={props.theme}>
         <Navbar />

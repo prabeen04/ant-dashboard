@@ -59,8 +59,6 @@ class ProfileSettings extends Component {
         console.log(option)
     }
     renderSelect = ({ input, meta: { error, isTouched }, ...custom }) => {
-        console.log('...custom')
-        console.log(...custom)
         return (
             <StyledReactSelect
                 isClearable

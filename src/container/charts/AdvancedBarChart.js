@@ -19,14 +19,12 @@ class AdvancedBarChart extends Component {
     }
     componentWillReceiveProps(nextProps) {
         if (nextProps.viewType != this.props.viewType) {
-            console.log('props changed')
             this.props.setPieChartData(nextProps.viewType, nextProps.data);
             this.props.setBarChartData(nextProps.viewType, nextProps.data);
         }
     }
     render() {
         const { height, width, pieChartData, barChartData, timeInterval, setViewType } = this.props;
-        console.log(pieChartData)
         return (
             <div>
                 <div className="flex-container">

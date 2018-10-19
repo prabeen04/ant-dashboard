@@ -39,7 +39,6 @@ class Theme extends Component {
     }
     render() {
         const { themeType } = this.props;
-        console.log(themeType)
         return (
             <div>
                 <Switch
