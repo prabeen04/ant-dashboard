@@ -5,9 +5,12 @@ import styled from 'styled-components';
 const StyledTimeinterval = styled.div`
     display: flex;
     flex-direction: row;
-    color: ${props => props.theme.color};
-    background-color: ${props => props.theme.backgroundColor};
-    font-size: 20px;
+    span {       
+        font-size: 16px;
+        color: ${props => props.theme.color};
+        margin: 0.2rem 0.3rem;
+        font-weight: 600;
+    }
 `
 class TimeInterval extends Component {
     render() {
