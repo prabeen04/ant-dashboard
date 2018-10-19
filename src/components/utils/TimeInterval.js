@@ -10,6 +10,7 @@ const StyledTimeinterval = styled.div`
         color: ${props => props.theme.color};
         margin: 0.2rem 0.3rem;
         font-weight: 600;
+        cursor: pointer;
     }
 `
 class TimeInterval extends Component {

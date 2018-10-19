@@ -1,63 +1,65 @@
 import { GET_CHART_DATA, SET_INTERNAL_VIEW_TYPE, SET_CHART_VIEW_TYPE, SET_BAR_CHART_DATA, SET_PIE_CHART_DATA } from "../types/chartActionTypes";
 import moment from 'moment';
-import { Math } from "core-js";
+
+export const setPieChartData = (viewType, data) => dispatch => {
+    console.log('inside set pichart data')
+    console.log(viewType)
+    const newData = data.map((event, i) => ({ eventId: event.eventId, eventType: event.eventType, startDate: moment(event.startDate).day() }))
+        .reduce((acc, data, i, arr) => {
+            if (!acc[data.eventType]) {
+                console.log('inside IF')
+                acc[data.eventType] = 1;
+            } else {
+                console.log('inside ELSE')
+                acc[data.eventType] += 1;
+            }
+            return acc; 
+        }, {});
+    console.log(newData)
+    const eventArr = Object.entries(newData)
+        .reduce((acc, node, i, arr) => {
+            let [type, val] = node;
+            acc.push({
+                name: type,
+                value: val
+            })
+            return acc;
+        }, []);
+    dispatch({
+        type: SET_PIE_CHART_DATA,
+        payload: eventArr
+    })
+}
+
 // export const setPieChartData = (viewType, data) => dispatch => {
 //     console.log(viewType)
 //     const newData = data.map((event, i) => ({ eventId: event.eventId, eventType: event.eventType, startDate: moment(event.startDate).day() }))
 //         .reduce((acc, data, i, arr) => {
-//             if (!acc[data.eventType]) {
+//             console.log(acc)
+//             if (acc.length && acc[i] && acc[i]['call']) {
 //                 console.log('inside IF')
-//                 acc[data.eventType] = 1;
+//                 acc.push({
+//                     'eventType': data.eventType
+//                 })
 //             } else {
-//                 console.log('inside ELSE')
-//                 acc[data.eventType] += 1;
+//                 console.log('inside ELSE')                
+//                 // console.log(acc)
+//                 acc.push({
+//                     [data.eventType]: 1
+//                 })
 //             }
-//             return acc; 
-//         }, {});
-//     console.log(newData)
-//     const eventArr = Object.entries(newData)
-//         .reduce((acc, node, i, arr) => {
-//             let [type, val] = node;
-//             acc.push({
-//                 name: type,
-//                 value: val
-//             })
 //             return acc;
 //         }, []);
-//     dispatch({
-//         type: SET_PIE_CHART_DATA,
-//         payload: eventArr
-//     })
-// }
-
-export const setPieChartData = (viewType, data) => dispatch => {
-    console.log(viewType)
-    const newData = data.map((event, i) => ({ eventId: event.eventId, eventType: event.eventType, startDate: moment(event.startDate).day() }))
-        .reduce((acc, data, i, arr) => {
-            console.log(acc)
-            if (acc.length && acc[i] && acc[i]['call']) {
-                console.log('inside IF')
-                acc.push({
-                    'eventType': data.eventType
-                })
-            } else {
-                console.log('inside ELSE')                
-                // console.log(acc)
-                acc.push({
-                    [data.eventType]: 1
-                })
-            }
-            return acc;
-        }, []);
-        console.log(newData)
-    }
+//         console.log(newData)
+//     }
     
 export const setBarChartData = (viewType, data) => dispatch => {
+    console.log('inside set bar chart data')
     const trimedData = data.map((item, i) => {
-        if (viewType === 'week') {
+        if (viewType.value === 'week') {
             return { eventId: item.eventId, eventType: item.eventType, startDate: moment(item.startDate).format('ddd') }
         }
-        else if (viewType === 'month') {
+        else if (viewType.value === 'month') {
             return { eventId: item.eventId, eventType: item.eventType, startDate: moment(item.startDate).format('MMM') }
         }
         else {
