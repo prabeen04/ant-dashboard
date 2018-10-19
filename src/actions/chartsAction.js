@@ -46,8 +46,12 @@ export const setPieChartData = (viewType, data) => dispatch => {
     const newData = data.map((event, i) => ({ eventId: event.eventId, eventType: event.eventType, startDate: moment(event.startDate).day() }))
         .reduce((acc, data, i, arr) => {
             console.log(acc)
-            console.log(!acc[i-1])
-            acc.push({[data.eventType]: 1})
+            console.log(acc && acc[i-1] && acc[i-1][data.eventType] === 'call')
+            const count = 1
+            if(acc && acc[i-1] && acc[i-1][data.eventType] === 'call'){  
+                acc.push({acc[i-1][data.eventType]: count})
+                count++
+            }
             return acc;
         }, []);
         // console.log(newData)
