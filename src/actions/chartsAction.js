@@ -47,7 +47,7 @@ export const setPieChartData = (viewType, data) => dispatch => {
         .reduce((acc, data, i, arr) => {
             console.log(acc)
             // console.log(!!acc && acc[i])
-            acc.concat({[data.eventType]: 1})
+            acc.push({[data.eventType]: 1})
             return acc;
         }, []);
         console.log(newData)

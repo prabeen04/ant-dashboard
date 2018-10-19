@@ -11,6 +11,8 @@ const StyledTimeinterval = styled.div`
         margin: 0.2rem 0.3rem;
         font-weight: 600;
         cursor: pointer;
+    }& :: after{
+        content: ' | '
     }
 `
 class TimeInterval extends Component {
