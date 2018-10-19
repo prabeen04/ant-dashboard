@@ -2,10 +2,10 @@ import { GET_CHART_DATA, SET_INTERNAL_VIEW_TYPE, SET_CHART_VIEW_TYPE, SET_BAR_CH
 import { DEFAULT_ECDH_CURVE } from "tls";
 const initialState = {
     timeInterval: [
-        { id: 1, 'fiscal'},
-        { id: 2, 'year'},
-        { id: 3, 'month'},
-        { id: 4, 'week'}
+        { id: 1, value: 'fiscal'},
+        { id: 2, value: 'year'},
+        { id: 3, value: 'month'},
+        { id: 4, value: 'week'}
     ],
     data: [
         {
