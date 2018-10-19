@@ -26,6 +26,7 @@ class AdvancedBarChart extends Component {
     }
     render() {
         const { height, width, pieChartData, barChartData, timeInterval, setViewType } = this.props;
+        console.log(pieChartData)
         return (
             <div>
                 <div className="flex-container">
