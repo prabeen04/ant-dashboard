@@ -6,13 +6,13 @@ export const setPieChartData = (viewType, data) => dispatch => {
     console.log(viewType)
     const newData = data.map((event, i) => {
         if (viewType.value === 'year') {
-            return { eventId: event.eventId, eventType: event.eventType, startDate: moment(event.startDate).day() }
+            return { eventId: event.eventId, eventType: event.eventType, startDate: moment(event.startDate).format('YYYY') }
         }
         else if (viewType.value === 'month') {
-            return { eventId: event.eventId, eventType: event.eventType, startDate: moment(event.startDate).day() }
+            return { eventId: event.eventId, eventType: event.eventType, startDate: moment(event.startDate).format('MMM') }
         }
-        else (viewType.value === 'week') {
-            return { eventId: event.eventId, eventType: event.eventType, startDate: moment(event.startDate).day() }
+        else {
+            return { eventId: event.eventId, eventType: event.eventType, startDate: moment(event.startDate).format('ddd') }
         }
     })
         .reduce((acc, data, i, arr) => {
