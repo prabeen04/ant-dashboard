@@ -46,11 +46,11 @@ export const setPieChartData = (viewType, data) => dispatch => {
     const newData = data.map((event, i) => ({ eventId: event.eventId, eventType: event.eventType, startDate: moment(event.startDate).day() }))
         .reduce((acc, data, i, arr) => {
             console.log(acc)
-            // console.log(!!acc && acc[i])
+            console.log(!acc[i-1])
             acc.push({[data.eventType]: 1})
             return acc;
         }, []);
-        console.log(newData)
+        // console.log(newData)
     }
 
 export const setBarChartData = (viewType, data) => dispatch => {
