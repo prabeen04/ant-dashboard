@@ -17,7 +17,7 @@ class AdvancedBarChart extends Component {
         // if (asSVG) {
             let svgURL = new XMLSerializer().serializeToString(chartSVG);
             let svgBlob = new Blob([svgURL], {type: "image/svg+xml;charset=utf-8"});
-            FileSaver.saveAs(svgBlob, this.state.uuid + ".svg");
+            FileSaver.saveAs(svgBlob, 'chart' + ".svg");
         // } else {
         //     let svgBlob = new Blob([chartSVG.outerHTML], {type: "text/html;charset=utf-8"});
         //     FileSaver.saveAs(svgBlob, this.state.uuid + ".html");
