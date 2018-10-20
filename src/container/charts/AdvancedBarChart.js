@@ -31,6 +31,9 @@ class AdvancedBarChart extends Component {
                     <TimeInterval
                         times={timeInterval}
                         handleClick={setViewType} />
+                    <Button type="primary">
+                        Download Chart
+                      </Button>
                 </div>
                 <BarChart width={width} height={height} data={barChartData}>
                     <CartesianGrid strokeDasharray="3 3" />

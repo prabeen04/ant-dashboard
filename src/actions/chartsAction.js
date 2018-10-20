@@ -48,9 +48,13 @@ export const setPieChartData = (viewType, data) => dispatch => {
             if(acc[i-1] && !acc[i-1][data.eventType]){  
                 console.log('inside IF')
             }else{
-                let data = {}
+                let object = {}
                 console.log('inside ELSE')
-
+                console.log(acc)
+                let label = data.eventType;
+                console.log(label)
+                // object.label = 1
+                acc.push({[label]: 1})
             }
             return acc;
         }, []);
