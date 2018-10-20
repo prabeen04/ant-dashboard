@@ -28,8 +28,6 @@ const darkTheme = {
 }
 class Theme extends Component {
     toggleTheme = (checked) => {
-        console.log(this.props)
-        console.log(checked)
         if (checked === true) {
             this.props.setDarkTheme(darkTheme)
         } else {
