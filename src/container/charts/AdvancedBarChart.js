@@ -16,7 +16,13 @@ class AdvancedBarChart extends Component {
         console.log(chartSVG)
         let svgURL = new XMLSerializer().serializeToString(chartSVG);
         let svgBlob = new Blob([svgURL], { type: "image/png;charset=utf-8" });
+        img  = new Image()
+
+        img.setAttribute('src', data)
+        document.body.appendChild(img)
+        
         FileSaver.saveAs(svgBlob, 'chart' + ".svg");
+
 
     }
     displayXTick = (tick) => {
