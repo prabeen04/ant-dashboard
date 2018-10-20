@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from "redux";
 import { Button } from "antd";
 import { BarChart, PieChart, Pie, Bar, Brush, Cell, CartesianGrid, XAxis, YAxis, Tooltip, Legend, Label } from 'recharts';
+import FileSaver from "file-saver";
 import { setPieChartData, setBarChartData, setViewType } from '../../actions/chartsAction';
 import TimeInterval from '../../components/utils/TimeInterval';
 
@@ -13,6 +14,14 @@ class AdvancedBarChart extends Component {
         console.log('download chart btn clicked')
         let chartSVG = findDOMNode(this.currentChart).children[0];
         console.log(chartSVG)
+        // if (asSVG) {
+            let svgURL = new XMLSerializer().serializeToString(chartSVG);
+            let svgBlob = new Blob([svgURL], {type: "image/svg+xml;charset=utf-8"});
+            FileSaver.saveAs(svgBlob, this.state.uuid + ".svg");
+        // } else {
+        //     let svgBlob = new Blob([chartSVG.outerHTML], {type: "text/html;charset=utf-8"});
+        //     FileSaver.saveAs(svgBlob, this.state.uuid + ".html");
+        // }
     }
     displayXTick = (tick) => {
         return `${tick}`;
