@@ -11,7 +11,7 @@ class AdvancedBarChart extends Component {
 
     handleDownloadChart = () => {
         console.log('download chart btn clicked')
-        let chartSVG = ReactDOM.findDOMNode(this.currentChart).children[0];
+        let chartSVG = findDOMNode(this.currentChart).children[0];
         console.log(chartSVG)
     }
     displayXTick = (tick) => {
