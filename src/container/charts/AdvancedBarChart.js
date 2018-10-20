@@ -15,9 +15,12 @@ class AdvancedBarChart extends Component {
         let chartSVG = findDOMNode(this.currentChart).children[0];
         console.log(chartSVG)
         // if (asSVG) {
-            let svgURL = new XMLSerializer().serializeToString(chartSVG);
-            let svgBlob = new Blob([svgURL], {type: "image/svg+xml;charset=utf-8"});
-            FileSaver.saveAs(svgBlob, 'chart' + ".svg");
+        let svgURL = new XMLSerializer().serializeToString(chartSVG);
+        let svgBlob = new Blob([svgURL], { type: "image/png;charset=utf-8" });
+        domURL = self.URL || self.webkitURL || self,
+            url = domURL.createObjectURL(svg),
+            img = new Image;
+        FileSaver.saveAs(svgBlob, 'chart' + ".png");
         // } else {
         //     let svgBlob = new Blob([chartSVG.outerHTML], {type: "text/html;charset=utf-8"});
         //     FileSaver.saveAs(svgBlob, this.state.uuid + ".html");
@@ -48,12 +51,12 @@ class AdvancedBarChart extends Component {
                         times={timeInterval}
                         handleClick={setViewType} />
                     <Button type="primary"
-                            onClick={this.handleDownloadChart}>
+                        onClick={this.handleDownloadChart}>
                         Download Chart
                       </Button>
                 </div>
-                <BarChart width={width} height={height} data={barChartData} 
-                ref={(chart) => this.currentChart = chart}>
+                <BarChart width={width} height={height} data={barChartData}
+                    ref={(chart) => this.currentChart = chart}>
                     <CartesianGrid strokeDasharray="3 3" />
                     <XAxis
                         dataKey="days"
