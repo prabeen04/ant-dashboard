@@ -7,6 +7,10 @@ import { setPieChartData, setBarChartData, setViewType } from '../../actions/cha
 import TimeInterval from '../../components/utils/TimeInterval';
 
 class AdvancedBarChart extends Component {
+
+    handleDownloadChart = () => {
+        console.log('download chart btn clicked')
+    }
     displayXTick = (tick) => {
         return `${tick}`;
     }
@@ -31,7 +35,8 @@ class AdvancedBarChart extends Component {
                     <TimeInterval
                         times={timeInterval}
                         handleClick={setViewType} />
-                    <Button type="primary">
+                    <Button type="primary"
+                            onClick={this.handleDownloadChart}>
                         Download Chart
                       </Button>
                 </div>
