@@ -17,10 +17,7 @@ class AdvancedBarChart extends Component {
         // if (asSVG) {
         let svgURL = new XMLSerializer().serializeToString(chartSVG);
         let svgBlob = new Blob([svgURL], { type: "image/png;charset=utf-8" });
-        domURL = self.URL || self.webkitURL || self,
-            url = domURL.createObjectURL(svg),
-            img = new Image;
-        FileSaver.saveAs(svgBlob, 'chart' + ".png");
+        FileSaver.saveAs(svgBlob, 'chart' + ".svg");
         // } else {
         //     let svgBlob = new Blob([chartSVG.outerHTML], {type: "text/html;charset=utf-8"});
         //     FileSaver.saveAs(svgBlob, this.state.uuid + ".html");
