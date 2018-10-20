@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { findDOMNode } from "react-dom";
 import { connect } from 'react-redux';
 import { bindActionCreators } from "redux";
 import { Button } from "antd";
@@ -10,6 +11,8 @@ class AdvancedBarChart extends Component {
 
     handleDownloadChart = () => {
         console.log('download chart btn clicked')
+        let chartSVG = ReactDOM.findDOMNode(this.currentChart).children[0];
+        console.log(chartSVG)
     }
     displayXTick = (tick) => {
         return `${tick}`;
@@ -40,7 +43,8 @@ class AdvancedBarChart extends Component {
                         Download Chart
                       </Button>
                 </div>
-                <BarChart width={width} height={height} data={barChartData}>
+                <BarChart width={width} height={height} data={barChartData} 
+                ref={(chart) => this.currentChart = chart}>
                     <CartesianGrid strokeDasharray="3 3" />
                     <XAxis
                         dataKey="days"
