@@ -18,11 +18,12 @@ class AdvancedBarChart extends Component {
         let svgBlob = new Blob([svgURL], { type: "image/png;charset=utf-8" });
         var canvas = document.createElement("canvas");
         // var svgSize = svgBlob.getBoundingClientRect();
-        // canvas.width = svgSize.width;
-        // canvas.height = svgSize.height;
+        canvas.width = 400;
+        canvas.height = 400;
         var ctx = canvas.getContext("2d");
 
         var img = document.createElement("img");
+        img.setAttribute( "src", svgBlob + btoa( svgURL ));
         canvas.toBlob(function (blob) {
             FileSaver.saveAs(blob, "pretty image.png");
         });
