@@ -14,14 +14,10 @@ class AdvancedBarChart extends Component {
         console.log('download chart btn clicked')
         let chartSVG = findDOMNode(this.currentChart).children[0];
         console.log(chartSVG)
-        // if (asSVG) {
         let svgURL = new XMLSerializer().serializeToString(chartSVG);
         let svgBlob = new Blob([svgURL], { type: "image/png;charset=utf-8" });
         FileSaver.saveAs(svgBlob, 'chart' + ".svg");
-        // } else {
-        //     let svgBlob = new Blob([chartSVG.outerHTML], {type: "text/html;charset=utf-8"});
-        //     FileSaver.saveAs(svgBlob, this.state.uuid + ".html");
-        // }
+
     }
     displayXTick = (tick) => {
         return `${tick}`;
