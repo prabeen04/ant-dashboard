@@ -16,6 +16,16 @@ class AdvancedBarChart extends Component {
         console.log(chartSVG)
         let svgURL = new XMLSerializer().serializeToString(chartSVG);
         let svgBlob = new Blob([svgURL], { type: "image/png;charset=utf-8" });
+        var canvas = document.createElement("canvas");
+        var svgSize = svg.getBoundingClientRect();
+        canvas.width = svgSize.width;
+        canvas.height = svgSize.height;
+        var ctx = canvas.getContext("2d");
+
+        var img = document.createElement("img");
+        canvas.toBlob(function (blob) {
+            saveAs(blob, "pretty image.png");
+        });
         FileSaver.saveAs(svgBlob, 'chart' + ".svg");
 
 
