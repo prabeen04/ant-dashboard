@@ -7,8 +7,6 @@ import { BarChart, PieChart, Pie, Bar, Brush, Cell, CartesianGrid, XAxis, YAxis,
 import FileSaver from "file-saver";
 import { setPieChartData, setBarChartData, setViewType } from '../../actions/chartsAction';
 import TimeInterval from '../../components/utils/TimeInterval';
-let self = this;
-var DOMURL = self.URL || self.webkitURL || self;
 
 class AdvancedBarChart extends Component {
 
@@ -18,17 +16,7 @@ class AdvancedBarChart extends Component {
         console.log(chartSVG)
         let svgURL = new XMLSerializer().serializeToString(chartSVG);
         let svgBlob = new Blob([svgURL], { type: "image/svg;charset=utf-8" });
-        var canvas = document.createElement("canvas");
-        canvas.width = 400;
-        canvas.height = 400;
-        var ctx = canvas.getContext("2d");
-        var img = document.createElement("img");
-        img.setAttribute( "src", svgBlob);
-        ctx.drawImage(img, 0, 0)
-        canvas.toBlob(function (blob) {
-            FileSaver.saveAs(blob, "pretty image.png");
-        });
-        // FileSaver.saveAs(svgBlob, 'chart' + ".svg");
+        FileSaver.saveAs(svgBlob, 'chart' + ".svg");
 
 
     }
