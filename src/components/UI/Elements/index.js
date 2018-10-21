@@ -6,3 +6,4 @@ export { default as Option } from "./Option";
 export { default as StyledReactSelect } from "./StyledReactSelect";
 export { default as StyledCreatable } from "./StyledCreatable";
 export { default as StyledBigCalendar } from "./StyledBigCalendar";
+export { default as StyledSkeleton } from "./StyledSkeleton";
