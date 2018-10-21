@@ -27,7 +27,8 @@ const darkTheme = {
     opacity: 0.3,
 }
 class Theme extends Component {
-    toggleTheme = (checked) => {
+    toggleTheme = () => {
+        let checked = localStorage.getItem('themeType')
         if (checked === true) {
             this.props.setDarkTheme(darkTheme)
         } else {
