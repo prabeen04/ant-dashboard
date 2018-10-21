@@ -10,6 +10,7 @@ import './calendar.css';
 import { Button, Icon, message, Tabs, Tooltip } from 'antd';
 import { MainWrapper } from '../../components/UI/Layout';
 import { StyledTabs } from '../../components/UI/Antd';
+import { StyledSkeleton } from "../../components/UI/Elements";
 const TabPane = Tabs.TabPane;
 const dateFormat = 'YYYY-MM-DD';
 const timeFormat = 'HH:mm:ss';
@@ -43,8 +44,9 @@ class Calendar extends Component {
 
   render() {
     if (this.props.isLoading) {
-      return (<div className="flex-container" style={{ height: '80vh', justifyContent: 'center', alignItems: 'flex-start'}}>
-        <Icon type="loading" style={{ fontSize: 60, color: 'tomato' }} spin />
+      return (<div className="flex-container" style={{ height: '80vh', justifyContent: 'center', alignItems: 'flex-start' }}>
+        <StyledSkeleton />
+        {/* <Icon type="loading" style={{ fontSize: 60, color: 'tomato' }} spin /> */}
       </div>)
     }
     // if (this.props.isError) {
