@@ -91,12 +91,21 @@ export const setBarChartData = (viewType, data) => dispatch => {
             })
             return acc;
         }, []);
+        console.log(dayArray)
     dispatch({
         type: SET_BAR_CHART_DATA,
         payload: dayArray
     })
 }
+// const data=[{eventId:"EVEN00001",eventType:"call",startDate:"2018-08-01T21:30:17+05:30",},{eventId:"EVEN00002",eventType:"call",startDate:"2018-08-01T21:30:17+05:30",},{eventId:"EVEN00003",eventType:"meeting",startDate:"2017-02-03T21:30:17+05:30",},{eventId:"EVEN00004",eventType:"email",startDate:"2018-09-04T21:30:17+05:30",},{eventId:"EVEN00005",eventType:"meeting",startDate:"2018-09-05T21:30:17+05:30",}]
 
+// console.log(Object.values(
+//   data.reduce((a, { eventType }) => {
+//     if (!a[eventType]) a[eventType] = { [eventType] : 0 };
+//     a[eventType][eventType]++;
+//     return a;
+//   }, {})
+// ));
 export const setViewType = viewType => dispatch => {
     console.log(viewType)
     dispatch({
