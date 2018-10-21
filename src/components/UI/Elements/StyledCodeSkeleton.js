@@ -4,9 +4,11 @@ import styled from "styled-components";
 
 const Skeleton = () => (<Code/>)
 
-const StyledCodeSkeleton  = styled(Skeleton)`
-    background-color: ${props => props.theme.backgroundColor};
-    color: ${props => props.theme.color};
-` 
+const StyledCodeSkeleton = styled(Skeleton)`
+    svg > rect{
+        background-color: ${props => props.theme.backgroundColor};
+        color: ${props => props.theme.color};
+    }
+`
 
 export default StyledCodeSkeleton;

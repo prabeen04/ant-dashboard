@@ -1,9 +1,9 @@
 import React from 'react'
-
+import { StyledCodeSkeleton } from "../UI/Elements";
 export default () => {
   return (
     <div>
-      <h3>Loading...</h3>
+      <StyledCodeSkeleton />
     </div>
   )
 }
