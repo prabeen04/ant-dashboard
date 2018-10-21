@@ -2,7 +2,7 @@ import React from "react";
 import { Code } from "react-content-loader";
 import styled from "styled-components";
 
-const Skeleton = () => (<Code/>)
+const Skeleton = () => (<Code height={600}/>)
 
 const StyledCodeSkeleton = styled(Skeleton)`
     svg > rect{

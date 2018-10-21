@@ -55,7 +55,6 @@ class Calendar extends Component {
     // }
     return (
       <div>
-        <StyledCodeSkeleton/>
         <ActionHeader
           leftComponent={<LeftActionHeader />}
           rightComponent={<RightActionHeader />}
