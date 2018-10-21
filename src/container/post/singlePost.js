@@ -28,11 +28,6 @@ class SinglePost extends Component {
           <h3>{this.props.singlePost.date || this.props.location.state.post.date}</h3>
           <p>{this.props.singlePost.body || this.props.location.state.post.body}</p>
         </div>
-        <EditDrawer
-          open={this.state.isDrawerOpen}
-          handleOpen={this.showDrawer}
-          handleClose={this.onClose}
-        />
       </div>
 
     )
