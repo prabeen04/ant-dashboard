@@ -45,7 +45,12 @@ class Calendar extends Component {
   render() {
     if (this.props.isLoading) {
       return (<div className="flex-container" style={{ height: '80vh', justifyContent: 'center', alignItems: 'flex-start' }}>
-        <StyledSkeleton />
+        <StyledSkeleton
+          height={160}
+          width={400}
+          speed={2}
+          primaryColor="#3fd6b4"
+          secondaryColor="#483cb9" />
         {/* <Icon type="loading" style={{ fontSize: 60, color: 'tomato' }} spin /> */}
       </div>)
     }
