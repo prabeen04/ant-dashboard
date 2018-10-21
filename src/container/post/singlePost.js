@@ -4,28 +4,12 @@ import { bindActionCreators } from 'redux'
 import { withRouter } from 'react-router-dom'
 import { Button, Icon } from 'antd'
 import { getSinglePost } from '../../actions/post_actions'
-import EditDrawer from "./editDrawer";
 
 class SinglePost extends Component {
   constructor(props) {
     super(props)
-    this.state = {
-      isDrawerOpen: false
-    }
-    this.showDrawer = this.showDrawer.bind(this);
-    this.onClose = this.onClose.bind(this);
   }
-  showDrawer = () => {
-    this.setState({
-      isDrawerOpen: true,
-    });
-  };
 
-  onClose = () => {
-    this.setState({
-      isDrawerOpen: false,
-    });
-  };
   render() {
     return (
       <div>
@@ -35,8 +19,7 @@ class SinglePost extends Component {
           >Back to Posts</Button>
           <Button
             type="primary"
-            icon="edit" 
-            onClick={this.showDrawer}>
+            icon="edit">
             Edit Post</Button>
         </div>
         <div className="single-post">
