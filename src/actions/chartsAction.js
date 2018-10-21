@@ -1,65 +1,57 @@
 import { GET_CHART_DATA, SET_INTERNAL_VIEW_TYPE, SET_CHART_VIEW_TYPE, SET_BAR_CHART_DATA, SET_PIE_CHART_DATA } from "../types/chartActionTypes";
 import moment from 'moment';
 
-// export const setPieChartData = (viewType, data) => dispatch => {
-//     console.log('inside set pichart data')
-//     console.log(viewType)
-//     const newData = data.map((event, i) => {
-//         if (viewType.value === 'year') {
-//             return { eventId: event.eventId, eventType: event.eventType, startDate: moment(event.startDate).format('YYYY') }
-//         }
-//         else if (viewType.value === 'month') {
-//             return { eventId: event.eventId, eventType: event.eventType, startDate: moment(event.startDate).format('MMM') }
-//         }
-//         else {
-//             return { eventId: event.eventId, eventType: event.eventType, startDate: moment(event.startDate).format('ddd') }
-//         }
-//     })
-//         .reduce((acc, data, i, arr) => {
-//             if (!acc[data.eventType]) {
-//                 console.log('inside IF')
-//                 acc[data.eventType] = 1;
-//             } else {
-//                 console.log('inside ELSE')
-//                 acc[data.eventType] += 1;
-//             }
-//             return acc;
-//         }, {});
-//     console.log(newData)
-//     const eventArr = Object.entries(newData)
-//         .reduce((acc, node, i, arr) => {
-//             let [type, val] = node;
-//             acc.push({
-//                 name: type,
-//                 value: val
-//             })
-//             return acc;
-//         }, []);
-//     dispatch({
-//         type: SET_PIE_CHART_DATA,
-//         payload: eventArr
-//     })
-// }
-
 export const setPieChartData = (viewType, data) => dispatch => {
+    console.log('inside set pichart data')
     console.log(viewType)
-    const newData = data.map((event, i) => ({ eventId: event.eventId, eventType: event.eventType, startDate: moment(event.startDate).day() }))
+    const newData = data.map((event, i) => {
+        if (viewType.value === 'year') {
+            return { eventId: event.eventId, eventType: event.eventType, startDate: moment(event.startDate).format('YYYY') }
+        }
+        else if (viewType.value === 'month') {
+            return { eventId: event.eventId, eventType: event.eventType, startDate: moment(event.startDate).format('MMM') }
+        }
+        else {
+            return { eventId: event.eventId, eventType: event.eventType, startDate: moment(event.startDate).format('ddd') }
+        }
+    })
         .reduce((acc, data, i, arr) => {
-            if(acc[i-1] && !acc[i-1][data.eventType]){  
+            if (!acc[data.eventType]) {
                 console.log('inside IF')
-            }else{
-                let object = {}
+                acc[data.eventType] = 1;
+            } else {
                 console.log('inside ELSE')
-                console.log(acc)
-                let label = data.eventType;
-                console.log(label)
-                // object.label = 1
-                acc.push({[label]: 1})
+                acc[data.eventType] += 1;
             }
             return acc;
+        }, {});
+    console.log(newData)
+    const eventArr = Object.entries(newData)
+        .reduce((acc, node, i, arr) => {
+            let [type, val] = node;
+            acc.push({
+                name: type,
+                value: val
+            })
+            return acc;
         }, []);
-        console.log(newData)
-    }
+    dispatch({
+        type: SET_PIE_CHART_DATA,
+        payload: eventArr
+    })
+}
+
+// export const setPieChartData = (viewType, data) => dispatch => {
+//     console.log(viewType)
+//     const newData = data.map((event, i) => ({ eventId: event.eventId, eventType: event.eventType, startDate: moment(event.startDate).day() }))
+//     console.log(Object.values(
+//         newData.reduce((a, { eventType }) => {
+//             if (!a[eventType]) a[eventType] = {type: eventType, [eventType]: 0 };
+//             a[eventType][eventType]++;
+//             return a;
+//         }, {})
+//     ));
+// }
 
 export const setBarChartData = (viewType, data) => dispatch => {
     const trimedData = data.map((item, i) => {
@@ -91,21 +83,12 @@ export const setBarChartData = (viewType, data) => dispatch => {
             })
             return acc;
         }, []);
-        console.log(dayArray)
+    console.log(dayArray)
     dispatch({
         type: SET_BAR_CHART_DATA,
         payload: dayArray
     })
 }
-// const data=[{eventId:"EVEN00001",eventType:"call",startDate:"2018-08-01T21:30:17+05:30",},{eventId:"EVEN00002",eventType:"call",startDate:"2018-08-01T21:30:17+05:30",},{eventId:"EVEN00003",eventType:"meeting",startDate:"2017-02-03T21:30:17+05:30",},{eventId:"EVEN00004",eventType:"email",startDate:"2018-09-04T21:30:17+05:30",},{eventId:"EVEN00005",eventType:"meeting",startDate:"2018-09-05T21:30:17+05:30",}]
-
-// console.log(Object.values(
-//   data.reduce((a, { eventType }) => {
-//     if (!a[eventType]) a[eventType] = { [eventType] : 0 };
-//     a[eventType][eventType]++;
-//     return a;
-//   }, {})
-// ));
 export const setViewType = viewType => dispatch => {
     console.log(viewType)
     dispatch({
