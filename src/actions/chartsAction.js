@@ -112,16 +112,9 @@ export const setMixedBarChartData = (viewType, data) => dispatch => {
             console.log(acc)
             if(!acc[startDate]){
                 console.log('inside staerDate  If')
-                if (!acc[startDate][eventType]) {
-                    acc[startDate][eventType] = startDate
-                    console.log(eventType)
-                } else {
-                    console.log('inside ELSE')
-                    acc[eventType] += 1;
-                }
+
             }else{
                 console.log('inside staerDate  else')
-                acc[startDate] = startDate;  
             }
             return acc;
         }, {})
