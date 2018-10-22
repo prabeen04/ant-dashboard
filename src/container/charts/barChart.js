@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { BarChart, Bar, Brush, Cell, CartesianGrid, ReferenceLine, ReferenceDot,
      XAxis, YAxis, Tooltip, Legend, ErrorBar, LabelList, Label } from 'recharts';
+import MixedBarChart from './MixedBarChart';     
 const data = [
     { name: 'food', uv: 3300, pv: 2000, amt: 4500, time: 1, uvError: [100, 50], pvError: [110, 20] },
     { name: 'cosmetic', uv: 3300, pv: 2000, amt: 6500, time: 2, uvError: 120, pvError: 50 },
@@ -82,6 +83,7 @@ class BarChart1 extends Component {
                     <Bar dataKey="amt" fill="#8884d8" barSize={20} />
                     {/* <Bar dataKey="uv" fill="#82ca9d" barSize={20} /> */}
                 </BarChart>
+                <MixedBarChart/>
             </div>
         )
     }
