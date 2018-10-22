@@ -1,11 +1,14 @@
-import { GET_CHART_DATA, SET_INTERNAL_VIEW_TYPE, SET_CHART_VIEW_TYPE, SET_BAR_CHART_DATA, SET_PIE_CHART_DATA } from "../types/chartActionTypes";
+import {
+    GET_CHART_DATA, SET_INTERNAL_VIEW_TYPE, SET_CHART_VIEW_TYPE, SET_BAR_CHART_DATA, SET_PIE_CHART_DATA,
+    SET_MIXED_BAR_CHART_DATA,
+} from "../types/chartActionTypes";
 import { DEFAULT_ECDH_CURVE } from "tls";
 const initialState = {
     timeInterval: [
-        { id: 1, value: 'fiscal'},
-        { id: 2, value: 'year'},
-        { id: 3, value: 'month'},
-        { id: 4, value: 'week'}
+        { id: 1, value: 'fiscal' },
+        { id: 2, value: 'year' },
+        { id: 3, value: 'month' },
+        { id: 4, value: 'week' }
     ],
     data: [
         {

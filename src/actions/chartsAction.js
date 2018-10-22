@@ -1,4 +1,7 @@
-import { GET_CHART_DATA, SET_INTERNAL_VIEW_TYPE, SET_CHART_VIEW_TYPE, SET_BAR_CHART_DATA, SET_PIE_CHART_DATA } from "../types/chartActionTypes";
+import {
+    GET_CHART_DATA, SET_INTERNAL_VIEW_TYPE, SET_CHART_VIEW_TYPE, SET_BAR_CHART_DATA, SET_PIE_CHART_DATA,
+    SET_MIXED_BAR_CHART_DATA,
+} from "../types/chartActionTypes";
 import moment from 'moment';
 
 export const setPieChartData = (viewType, data) => dispatch => {
