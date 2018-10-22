@@ -30,8 +30,8 @@ class MixedBarChart extends Component {
         )
     }
 }
-const mapStateToProps = ({chartReducer}) => ({
-    mixedbarChartData: chartReducer.mixedbarChartData
+const mapStateToProps = ({chartsReducer}) => ({
+    mixedBarChartData: chartsReducer.mixedBarChartData
 })
 const mapDispatchToProps =dispatch => bindActionCreators({ }, dispatch)
 export default connect(mapStateToProps, mapDispatchToProps)(MixedBarChart);
