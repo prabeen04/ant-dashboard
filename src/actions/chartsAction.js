@@ -95,17 +95,26 @@ export const setBarChartData = (viewType, data) => dispatch => {
 
 export const setMixedBarChartData = (viewType, data) => dispatch => {
     console.log('inside setMixedBarChartData')
+    console.log(viewType)
     const trimedData = data.map((item, i) => {
-        if (viewType.value === 'week') {
+        if (viewType === 'week') {
+            console.log('inside week')
             return { eventId: item.eventId, eventType: item.eventType, startDate: moment(item.startDate).format('ddd') }
         }
-        else if (viewType.value === 'month') {
+        else if (viewType === 'month') {
             return { eventId: item.eventId, eventType: item.eventType, startDate: moment(item.startDate).format('MMM') }
         }
         else {
             return { eventId: item.eventId, eventType: item.eventType, startDate: moment(item.startDate).format('YYYY') }
         }
     })
+        .reduce((acc, item) => {
+            if (!acc[item.eventType]) {
+                acc[item.eventType] = 1
+                console.log(item.eventType)
+            }
+        }, {})
+    console.log(trimedData)
     // dispatch({
     //     type: SET_MIXED_BAR_CHART_DATA,
     //     payload: dayArray
