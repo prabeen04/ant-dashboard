@@ -14,6 +14,11 @@ const data = [
     { name: 'Page G', uv: 3490, pv: 4300, amt: 2100 },
 ];
 class MixedBarChart extends Component {
+    componentDidMount(){
+        const { data, viewType } = this.props;
+        this.props.setMixedBarChartData(viewType, data);
+        console.log(this.props.mixedBarChartData)
+    }
     render() {
         return (
             <div>
@@ -32,7 +37,9 @@ class MixedBarChart extends Component {
     }
 }
 const mapStateToProps = ({chartsReducer}) => ({
-    mixedBarChartData: chartsReducer.mixedBarChartData
+    mixedBarChartData: chartsReducer.mixedBarChartData,
+    viewType: chartsReducer.viewType,
+    data: chartsReducer.data
 })
 const mapDispatchToProps =dispatch => bindActionCreators({
     setMixedBarChartData
