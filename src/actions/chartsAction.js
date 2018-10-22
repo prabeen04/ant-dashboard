@@ -106,29 +106,10 @@ export const setMixedBarChartData = (viewType, data) => dispatch => {
             return { eventId: item.eventId, eventType: item.eventType, startDate: moment(item.startDate).format('YYYY') }
         }
     })
-        .reduce((acc, item, i, arr) => {
-            if (!acc[item.startDate]) {
-                acc[item.startDate] = 1;
-            } else {
-                acc[item.startDate] += 1;
-            }
-            return acc;
-        }, {});
-    const dayArray = Object.entries(trimedData)
-        .reduce((acc, node, i, arr) => {
-
-            let [days, val] = node;
-            acc.push({
-                days: days,
-                value: val
-            })
-            return acc;
-        }, []);
-    console.log(dayArray)
-    dispatch({
-        type: SET_MIXED_BAR_CHART_DATA,
-        payload: dayArray
-    })
+    // dispatch({
+    //     type: SET_MIXED_BAR_CHART_DATA,
+    //     payload: dayArray
+    // })
 }
 export const setViewType = viewType => dispatch => {
     console.log(viewType)

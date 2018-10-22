@@ -28,7 +28,7 @@ class MixedBarChart extends Component {
                     <YAxis />
                     <Tooltip />
                     <Legend />
-                    <Bar dataKey="days" stackId="a" fill="#8884d8" />
+                    <Bar dataKey="days" stackId="days" fill="#8884d8" />
                     <Bar dataKey="uv" stackId="a" fill="#82ca9d" />
                 </BarChart>
             </div>
