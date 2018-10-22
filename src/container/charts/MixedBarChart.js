@@ -1,4 +1,6 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
 
 const data = [
@@ -28,5 +30,8 @@ class MixedBarChart extends Component {
         )
     }
 }
-
-export default MixedBarChart;
+const mapStateToProps = ({chartReducer}) => ({
+    mixedbarChartData: chartReducer.mixedbarChartData
+})
+const mapDispatchToProps =dispatch => bindActionCreators({ }, dispatch)
+export default connect(mapStateToProps, mapDispatchToProps)(MixedBarChart);
