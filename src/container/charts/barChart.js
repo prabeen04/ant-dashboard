@@ -71,7 +71,7 @@ class BarChart1 extends Component {
     }
     render() {
         return (
-            <div style={{ margin: '0.2rem' }}>
+            <div style={{display: 'flex', margin: '0.2rem' }}>
                 <BarChart width={this.props.width} height={this.props.height} data={this.state.chartData}>
                     <CartesianGrid strokeDasharray="3 3" />
                     <XAxis dataKey="name">
