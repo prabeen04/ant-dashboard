@@ -127,6 +127,8 @@ export const chartsReducer = (state = initialState, action) => {
             return { ...state, pieChartData: action.payload };
         case SET_BAR_CHART_DATA:
             return { ...state, barChartData: action.payload };
+        case SET_MIXED_BAR_CHART_DATA:
+            return { ...state, mixedBarChartData: action.payload };
         case SET_CHART_VIEW_TYPE:
             return { ...state, viewType: action.payload };
         case SET_INTERNAL_VIEW_TYPE:
