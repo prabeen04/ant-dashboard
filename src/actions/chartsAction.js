@@ -110,14 +110,18 @@ export const setMixedBarChartData = (viewType, data) => dispatch => {
     })
         .reduce((acc, { eventType }) => {
             console.log(acc)
-            if (!acc[eventType]) {
-                acc[eventType] = 1
-                console.log(eventType)
-            } else {
-                console.log('inside ELSE')
-                acc[eventType] += 1;
+            if(!acc[startDate]){
+                if (!acc[eventType]) {
+                    acc[eventType] = 1
+                    console.log(eventType)
+                } else {
+                    console.log('inside ELSE')
+                    acc[eventType] += 1;
+                }
+            }else{
+                acc[startDate] += 1;  
             }
-            return acc
+            return acc;
         }, {})
     console.log(trimedData)
     // dispatch({
