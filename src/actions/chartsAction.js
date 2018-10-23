@@ -110,23 +110,18 @@ export const setMixedBarChartData = (viewType, data) => dispatch => {
     })
         .reduce((acc, { eventType, startDate }) => {
             if (!acc[startDate]) {
-                console.log('inside staerDate  If')
                 acc[startDate] = { [eventType]: 1 }
-                // acc[startDate][eventType]++
             } else {
-                console.log('inside starDate  else')
                 if (!acc[startDate][eventType]) {
-                    console.log('inside else nested IF')
                     acc[startDate] = { ...acc[startDate], [eventType]: 1 }
-                }else{
+                } else {
                     acc[startDate][eventType]++
                     console.log(acc[startDate])
-                    console.log('insisdasfljashdgfsdhgk')
                 }
             }
             return acc;
         }, {})
-    console.log(trimedData)
+    console.log(Object.entries(trimedData))
     // dispatch({
     //     type: SET_MIXED_BAR_CHART_DATA,
     //     payload: dayArray
