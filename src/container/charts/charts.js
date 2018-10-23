@@ -30,7 +30,7 @@ class Charts extends Component {
             { title: 'AdvancedBarChart', content: <AdvancedBarChart height={300} width={600}/>, key: '8' },
         ];
         this.state = {
-            activeKey: panes[1].key,
+            activeKey: panes[7].key,
             panes,
         };
     }

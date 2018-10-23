@@ -28,9 +28,9 @@ class MixedBarChart extends Component {
                     <YAxis />
                     <Tooltip />
                     <Legend />
-                    <Bar dataKey="call" stackId="call" fill="#8884d8" />
-                    <Bar dataKey="meeting" stackId="meeting" fill="#82ca9d" />
-                    <Bar dataKey="email" stackId="email" fill="tomato" />
+                    <Bar dataKey="call" stackId="a" fill="#8884d8" />
+                    <Bar dataKey="meeting" stackId="a" fill="#82ca9d" />
+                    <Bar dataKey="email" stackId="a" fill="tomato" />
                 </BarChart>
             </div>
         )

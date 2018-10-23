@@ -83,7 +83,6 @@ class BarChart1 extends Component {
                     <Bar dataKey="amt" fill="#8884d8" barSize={20} />
                     {/* <Bar dataKey="uv" fill="#82ca9d" barSize={20} /> */}
                 </BarChart>
-                <MixedBarChart/>
             </div>
         )
     }

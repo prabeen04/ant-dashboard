@@ -7,7 +7,8 @@ import { BarChart, PieChart, Pie, Bar, Brush, Cell, CartesianGrid, XAxis, YAxis,
 import FileSaver from "file-saver";
 import { setPieChartData, setBarChartData, setViewType } from '../../actions/chartsAction';
 import TimeInterval from '../../components/utils/TimeInterval';
-
+import { FlexContainer } from '../../components/UI/Layout';
+import MixedBarChart from './MixedBarChart';
 class AdvancedBarChart extends Component {
 
     handleDownloadChart = () => {
@@ -62,6 +63,7 @@ class AdvancedBarChart extends Component {
                     <Legend />
                     <Bar dataKey="value" fill="#8884d8" barSize={20} />
                 </BarChart>
+                <MixedBarChart/>
                 <PieChart width={width} height={height} >
                     <Pie data={pieChartData} dataKey="value" nameKey="name" cx="50%" cy="50%" outerRadius={50} />
                     <Tooltip />
