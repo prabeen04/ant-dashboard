@@ -121,7 +121,15 @@ export const setMixedBarChartData = (viewType, data) => dispatch => {
             }
             return acc;
         }, {})
-    console.log(Object.entries(trimedData))
+    const newData = Object.entries(trimedData)
+                    .reduce((acc, item) =>{
+                        const [node , items ] = item;
+                        console.log(node)
+                        console.log(items)
+                        acc.push({days: node, ...items})
+                        return acc
+                    }, [])    
+    console.log(newData)
     // dispatch({
     //     type: SET_MIXED_BAR_CHART_DATA,
     //     payload: dayArray
