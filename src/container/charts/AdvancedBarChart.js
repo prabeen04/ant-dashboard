@@ -63,7 +63,7 @@ class AdvancedBarChart extends Component {
                         <YAxis />
                         <Tooltip />
                         <Legend />
-                        <Bar dataKey="value" fill="#8884d8" barSize={20} />
+                        <Bar dataKey="value" fill="#8884d8" barSize={30} />
                     </BarChart>
                     <MixedBarChart />
                     <PieChart width={width} height={height} >
