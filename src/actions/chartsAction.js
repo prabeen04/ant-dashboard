@@ -112,12 +112,16 @@ export const setMixedBarChartData = (viewType, data) => dispatch => {
             if (!acc[startDate]) {
                 console.log('inside staerDate  If')
                 acc[startDate] = { [eventType]: 1 }
-                acc[startDate][eventType]++
+                // acc[startDate][eventType]++
             } else {
                 console.log('inside starDate  else')
                 if (!acc[startDate][eventType]) {
                     console.log('inside else nested IF')
                     acc[startDate] = { ...acc[startDate], [eventType]: 1 }
+                }else{
+                    acc[startDate][eventType]++
+                    console.log(acc[startDate])
+                    console.log('insisdasfljashdgfsdhgk')
                 }
             }
             return acc;
