@@ -27,6 +27,7 @@
     "lodash": "^4.17.10",
     "moment": "^2.22.0",
     "react": "^16.5.1",
+    "react-beautiful-dnd": "^9.0.2",
     "react-big-calendar": "^0.19.1",
     "react-chartjs-2": "^2.7.0",
     "react-content-loader": "^3.1.2",
