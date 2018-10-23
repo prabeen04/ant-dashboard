@@ -21,8 +21,4 @@ const JumpStartDetail = (props) => {
     )
 }
 
-export default connect(null, (dispatch) => {
-    return bindActionCreators({
-        openJumpstartModal
-    }, dispatch)
-})(JumpStartDetail);
+export default connect(null, (dispatch) => bindActionCreators({ openJumpstartModal }, dispatch))(JumpStartDetail);
