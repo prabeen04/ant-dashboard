@@ -13,8 +13,8 @@ const JumpStartDetail = (props) => {
                 <h3 style={{ color: '#aaa' }}>{props.data.title}</h3>
                 <h2 style={{ color: '#eee' }}>{props.data.value}
                     <span className={props.jumpstartStyle}>
-                        {this.props.progress > 0 ? <Icon type='caret-up' /> : <Icon type='caret-down' />}
-                        {props.data.progress}</span>
+                        {props.data.progress > 0 ? <Icon type='caret-up' /> : <Icon type='caret-down' />}
+                        &nbsp;{props.data.progress}</span>
                 </h2>
             </div>
         </div>
