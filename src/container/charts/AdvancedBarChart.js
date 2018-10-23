@@ -50,24 +50,26 @@ class AdvancedBarChart extends Component {
                         Download Chart
                       </Button>
                 </div>
-                <BarChart width={width} height={height} data={barChartData}
-                    ref={(chart) => this.currentChart = chart}>
-                    <CartesianGrid strokeDasharray="3 3" />
-                    <XAxis
-                        dataKey="days"
-                        tickFormatter={this.displayXTick}>
-                        <Label value="Pages of my website" offset={0} position="insideBottom" />
-                    </XAxis>
-                    <YAxis />
-                    <Tooltip />
-                    <Legend />
-                    <Bar dataKey="value" fill="#8884d8" barSize={20} />
-                </BarChart>
-                <MixedBarChart/>
-                <PieChart width={width} height={height} >
-                    <Pie data={pieChartData} dataKey="value" nameKey="name" cx="50%" cy="50%" outerRadius={50} />
-                    <Tooltip />
-                </PieChart>
+                <FlexContainer>
+                    <BarChart width={width} height={height} data={barChartData}
+                        ref={(chart) => this.currentChart = chart}>
+                        <CartesianGrid strokeDasharray="3 3" />
+                        <XAxis
+                            dataKey="days"
+                            tickFormatter={this.displayXTick}>
+                            <Label value="Pages of my website" offset={0} position="insideBottom" />
+                        </XAxis>
+                        <YAxis />
+                        <Tooltip />
+                        <Legend />
+                        <Bar dataKey="value" fill="#8884d8" barSize={20} />
+                    </BarChart>
+                    <MixedBarChart />
+                    <PieChart width={width} height={height} >
+                        <Pie data={pieChartData} dataKey="value" nameKey="name" cx="50%" cy="50%" outerRadius={50} />
+                        <Tooltip />
+                    </PieChart>
+                </FlexContainer>
             </div>
         )
     }

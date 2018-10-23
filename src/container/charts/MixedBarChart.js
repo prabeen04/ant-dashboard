@@ -18,6 +18,11 @@ class MixedBarChart extends Component {
         const { data, viewType } = this.props;
         this.props.setMixedBarChartData(viewType, data);
     }
+    componentWillReceiveProps(nextProps) {
+        if (nextProps.viewType != this.props.viewType) {
+            this.props.setMixedBarChartData(nextProps.viewType, nextProps.data);
+        }
+    }
     render() {
         return (
             <div>
