@@ -21,15 +21,16 @@ class MixedBarChart extends Component {
     render() {
         return (
             <div>
-                <BarChart width={600} height={300} data={this.props.data}
+                <BarChart width={600} height={300} data={this.props.mixedBarChartData}
                     margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
                     <CartesianGrid strokeDasharray="3 3" />
                     <XAxis dataKey="days" />
                     <YAxis />
                     <Tooltip />
                     <Legend />
-                    <Bar dataKey="days" stackId="days" fill="#8884d8" />
-                    <Bar dataKey="uv" stackId="a" fill="#82ca9d" />
+                    <Bar dataKey="call" stackId="call" fill="#8884d8" />
+                    <Bar dataKey="meeting" stackId="meeting" fill="#82ca9d" />
+                    <Bar dataKey="email" stackId="email" fill="tomato" />
                 </BarChart>
             </div>
         )
