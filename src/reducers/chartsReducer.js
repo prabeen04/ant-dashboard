@@ -115,7 +115,7 @@ const initialState = {
     barChartData: [],
     pieChartData: [],
     mixedBarChartData: [],
-    viewType: 'week',
+    viewType: { id: 4, value: 'week' },
     internalViewType: 'week'
 
 };
