@@ -6,7 +6,7 @@ import { Button } from "antd";
 import { BarChart, PieChart, Pie, Bar, Brush, Cell, CartesianGrid, XAxis, YAxis, Tooltip, Legend, Label } from 'recharts';
 import FileSaver from "file-saver";
 import { setPieChartData, setBarChartData, setViewType } from '../../actions/chartsAction';
-import { advancedBarChartDataSelector } from "../../selectors/chartsSelector";
+import { advancedBarChartSelector } from "../../selectors/chartsSelector";
 import TimeInterval from '../../components/utils/TimeInterval';
 import { FlexContainer } from '../../components/UI/Layout';
 import MixedBarChart from './MixedBarChart';
@@ -83,7 +83,7 @@ const mapStateToProps = (state) => {
         timeInterval: state.chartsReducer.timeInterval,
         data: state.chartsReducer.data,
         pieChartData: state.chartsReducer.pieChartData,
-        barChartData: advancedBarChartDataSelector(state, state.chartsReducer.viewTye),
+        barChartData: advancedBarChartSelector(state, state.chartsReducer.viewType),
         viewType: state.chartsReducer.viewType
     }
 }

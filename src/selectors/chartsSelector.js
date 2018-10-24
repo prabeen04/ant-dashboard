@@ -3,7 +3,7 @@ import moment from 'moment';
 const getData = (state) => state.chartsReducer.data
 const getViewType = (state) => state.chartsReducer.viewType
 
-export const advancedBarChartDataSelector = createSelector(
+export const advancedBarChartSelector = createSelector(
     [getData, getViewType],
     (data, viewType) => {
         const trimedData = data.map((item, i) => {
@@ -35,6 +35,43 @@ export const advancedBarChartDataSelector = createSelector(
                 })
                 return acc;
             }, []);
+        return dayArray;
+    }
+)
+
+export const mixedBarChartSelector = createSelector(
+    [getData, getViewType],
+    (data, viewType) => {
+        const trimedData = data.map((item, i) => {
+            if (viewType.value === 'week') {
+                console.log('inside week')
+                return { eventId: item.eventId, eventType: item.eventType, startDate: moment(item.startDate).format('ddd') }
+            }
+            else if (viewType.value === 'month') {
+                return { eventId: item.eventId, eventType: item.eventType, startDate: moment(item.startDate).format('MMM') }
+            }
+            else {
+                return { eventId: item.eventId, eventType: item.eventType, startDate: moment(item.startDate).format('YYYY') }
+            }
+        })
+            .reduce((acc, { eventType, startDate }) => {
+                if (!acc[startDate]) {
+                    acc[startDate] = { [eventType]: 1 }
+                } else {
+                    if (!acc[startDate][eventType]) {
+                        acc[startDate] = { ...acc[startDate], [eventType]: 1 }
+                    } else {
+                        acc[startDate][eventType]++
+                    }
+                }
+                return acc;
+            }, {})
+        const newData = Object.entries(trimedData)
+            .reduce((acc, item) => {
+                const [node, items] = item;
+                acc.push({ days: node, ...items })
+                return acc
+            }, [])
         return dayArray;
     }
 )
