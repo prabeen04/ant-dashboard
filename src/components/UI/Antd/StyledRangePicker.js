@@ -3,6 +3,7 @@ import styled from 'styled-components'
 
 const StyledRangePicker = styled(DatePicker.RangePicker)`
 .ant-input{
+    width: 250px;
     border-radius: 3px;
     border: 1px solid ${props => props.theme.inputBorderColor};
     background-color: ${props => props.theme.backgroundColor};

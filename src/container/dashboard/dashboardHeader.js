@@ -33,9 +33,9 @@ class DashboardActionHeaderLeft extends Component {
     render() {
         return (
             <React.Fragment>
-                <FlexContainer>
+                <FlexContainer style={{alignItems: 'center'}}>
                     <TimeInterval times={this.props.dateRangeList} handleClick={this.props.fetchChartData} />
-                    <StyledRangePicker />
+                    <StyledRangePicker style={{marginLeft: 8}}/>
                 </FlexContainer>
             </React.Fragment>
         )
