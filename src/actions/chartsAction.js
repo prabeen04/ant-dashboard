@@ -93,45 +93,6 @@ export const setBarChartData = (viewType, data) => dispatch => {
     })
 }
 
-export const setMixedBarChartData = (viewType, data) => dispatch => {
-    console.log('inside setMixedBarChartData')
-    console.log(viewType)
-    const trimedData = data.map((item, i) => {
-        if (viewType.value === 'week') {
-            console.log('inside week')
-            return { eventId: item.eventId, eventType: item.eventType, startDate: moment(item.startDate).format('ddd') }
-        }
-        else if (viewType.value === 'month') {
-            return { eventId: item.eventId, eventType: item.eventType, startDate: moment(item.startDate).format('MMM') }
-        }
-        else {
-            return { eventId: item.eventId, eventType: item.eventType, startDate: moment(item.startDate).format('YYYY') }
-        }
-    })
-        .reduce((acc, { eventType, startDate }) => {
-            if (!acc[startDate]) {
-                acc[startDate] = { [eventType]: 1 }
-            } else {
-                if (!acc[startDate][eventType]) {
-                    acc[startDate] = { ...acc[startDate], [eventType]: 1 }
-                } else {
-                    acc[startDate][eventType]++
-                }
-            }
-            return acc;
-        }, {})
-    const newData = Object.entries(trimedData)
-        .reduce((acc, item) => {
-            const [node, items] = item;
-            acc.push({ days: node, ...items })
-            return acc
-        }, [])
-        console.log(newData)
-    dispatch({
-        type: SET_MIXED_BAR_CHART_DATA,
-        payload: newData
-    })
-}
 export const setViewType = viewType => dispatch => {
     console.log(viewType)
     dispatch({

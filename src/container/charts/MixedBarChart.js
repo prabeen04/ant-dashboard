@@ -48,7 +48,7 @@ const mapStateToProps = state => ({
     viewType: state.chartsReducer.viewType,
     data: state.chartsReducer.data
 })
-const mapDispatchToProps =dispatch => bindActionCreators({
+const mapDispatchToProps = dispatch => bindActionCreators({
     setMixedBarChartData
  }, dispatch)
 export default connect(mapStateToProps, mapDispatchToProps)(MixedBarChart);
