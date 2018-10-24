@@ -72,7 +72,7 @@ export const mixedBarChartSelector = createSelector(
                 acc.push({ days: node, ...items })
                 return acc
             }, [])
-        return dayArray;
+        return newData;
     }
 )
 

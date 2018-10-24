@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
 import { setMixedBarChartData } from "../../actions/chartsAction";
-
+import { mixedBarChartSelector } from "../../selectors/chartsSelector";
 const data = [
     { name: 'Page A', uv: 4000, pv: 2400, amt: 2400 },
     { name: 'Page B', uv: 3000, pv: 1398, amt: 2210 },
@@ -43,10 +43,10 @@ class MixedBarChart extends Component {
         )
     }
 }
-const mapStateToProps = ({chartsReducer}) => ({
-    mixedBarChartData: chartsReducer.mixedBarChartData,
-    viewType: chartsReducer.viewType,
-    data: chartsReducer.data
+const mapStateToProps = state => ({
+    mixedBarChartData: mixedBarChartSelector(state, state.chartsReducer.mixedBarChartData),
+    viewType: state.chartsReducer.viewType,
+    data: state.chartsReducer.data
 })
 const mapDispatchToProps =dispatch => bindActionCreators({
     setMixedBarChartData
