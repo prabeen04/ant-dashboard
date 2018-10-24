@@ -20,10 +20,8 @@ export const setPieChartData = (viewType, data) => dispatch => {
     })
         .reduce((acc, data, i, arr) => {
             if (!acc[data.eventType]) {
-                console.log('inside IF')
                 acc[data.eventType] = 1;
             } else {
-                console.log('inside ELSE')
                 acc[data.eventType] += 1;
             }
             return acc;
