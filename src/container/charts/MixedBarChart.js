@@ -28,8 +28,8 @@ class MixedBarChart extends Component {
     render() {
         return (
             <div>
-                <BarChart width={600} height={300} data={this.props.mixedBarChartData}
-                    margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
+                <BarChart width={500} height={300} data={this.props.mixedBarChartData}
+                    margin={{ top: 20, bottom: 5 }}>
                     <CartesianGrid strokeDasharray="3 3" />
                     <XAxis dataKey="days" />
                     <YAxis />

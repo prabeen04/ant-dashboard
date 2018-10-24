@@ -57,12 +57,13 @@ class AdvancedBarChart extends Component {
                         <CartesianGrid strokeDasharray="3 3" />
                         <XAxis
                             dataKey="days"
-                            tickFormatter={this.displayXTick}>
-                            <Label value="Pages of my website" offset={0} position="insideBottom" />
+                            tickFormatter={this.displayXTick}
+                            >
+                            <Label value="Pages of my website"position="insideBottom" />
                         </XAxis>
                         <YAxis />
                         <Tooltip />
-                        <Legend />
+                        <Legend/>
                         <Bar dataKey="value" fill="#8884d8" barSize={30} />
                     </BarChart>
                     <MixedBarChart />
