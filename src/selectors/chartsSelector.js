@@ -1,10 +1,10 @@
 import { createSelector } from "reselect";
+import moment from 'moment';
+const getData = (state) => state.chartsReducer.data
+const getViewType = (state) => state.chartsReducer.viewType
 
-const data = state => state.chartsReducer.data
-const viewType = state => state.chartsReducer.viewType
-
-const advancedBarChartData = createSelector(
-    [data, viewType],
+export const advancedBarChartDataSelector = createSelector(
+    [getData, getViewType],
     (data, viewType) => {
         const trimedData = data.map((item, i) => {
             if (viewType.value === 'week') {
@@ -38,3 +38,4 @@ const advancedBarChartData = createSelector(
         return dayArray;
     }
 )
+
