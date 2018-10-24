@@ -1,7 +1,7 @@
 import { DatePicker } from "antd";
 import styled from 'styled-components'
 
-const StyledRangePicker = styled(DatePicker)`
+const StyledRangePicker = styled(DatePicker.RangePicker)`
 .ant-input{
     border-radius: 3px;
     border: 1px solid ${props => props.theme.inputBorderColor};
