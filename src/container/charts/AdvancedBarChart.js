@@ -5,7 +5,7 @@ import { bindActionCreators } from "redux";
 import { Button } from "antd";
 import { BarChart, PieChart, Pie, Bar, Brush, Cell, CartesianGrid, XAxis, YAxis, Tooltip, Legend, Label } from 'recharts';
 import FileSaver from "file-saver";
-import { setPieChartData, setBarChartData, setViewType } from '../../actions/chartsAction';
+import { setPieChartData, setViewType } from '../../actions/chartsAction';
 import { advancedBarChartSelector } from "../../selectors/chartsSelector";
 import TimeInterval from '../../components/utils/TimeInterval';
 import { FlexContainer } from '../../components/UI/Layout';
@@ -31,12 +31,10 @@ class AdvancedBarChart extends Component {
     componentDidMount() {
         console.log(this.props.viewType)
         this.props.setPieChartData(this.props.viewType, this.props.data);
-        this.props.setBarChartData(this.props.viewType, this.props.data);
     }
     componentWillReceiveProps(nextProps) {
         if (nextProps.viewType != this.props.viewType) {
             this.props.setPieChartData(nextProps.viewType, nextProps.data);
-            this.props.setBarChartData(nextProps.viewType, nextProps.data);
         }
     }
     render() {
@@ -91,7 +89,6 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = dispatch => {
     return bindActionCreators({
         setPieChartData,
-        setBarChartData,
         setViewType,
     }, dispatch)
 }
