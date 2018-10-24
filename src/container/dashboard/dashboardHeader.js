@@ -4,6 +4,7 @@ import { Button, Icon, Popover } from 'antd';
 import ActionHeader from "../../components/layouts/ActionHeader";
 import SettingPopover from '../../components/popover/settingPopover';
 import TimeInterval from '../../components/utils/TimeInterval';
+import { StyledRangePicker } from "../../components/UI/Antd";
 import './dashboard.css';
 const ButtonGroup = Button.Group;
 
@@ -32,6 +33,7 @@ class DashboardActionHeaderLeft extends Component {
         return (
             <React.Fragment>
                 <TimeInterval times={this.props.dateRangeList} handleClick={ this.props.fetchChartData}/>
+                <StyledRangePicker/>
             </React.Fragment>
         )
     }
