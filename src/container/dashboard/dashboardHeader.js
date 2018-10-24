@@ -5,6 +5,7 @@ import ActionHeader from "../../components/layouts/ActionHeader";
 import SettingPopover from '../../components/popover/settingPopover';
 import TimeInterval from '../../components/utils/TimeInterval';
 import { StyledRangePicker } from "../../components/UI/Antd";
+import { FlexContainer } from "../../components/UI/Layout";
 import './dashboard.css';
 const ButtonGroup = Button.Group;
 
@@ -32,8 +33,10 @@ class DashboardActionHeaderLeft extends Component {
     render() {
         return (
             <React.Fragment>
-                <TimeInterval times={this.props.dateRangeList} handleClick={ this.props.fetchChartData}/>
-                <StyledRangePicker/>
+                <FlexContainer>
+                    <TimeInterval times={this.props.dateRangeList} handleClick={this.props.fetchChartData} />
+                    <StyledRangePicker />
+                </FlexContainer>
             </React.Fragment>
         )
     }
