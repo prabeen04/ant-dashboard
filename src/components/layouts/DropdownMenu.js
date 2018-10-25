@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Menu, Icon } from "antd";
+import { Menu, Icon, Avatar } from "antd";
 import { StyledDropdown } from "../UI/Antd";
 const menu = (
     <Menu>
@@ -16,8 +16,10 @@ const menu = (
 class DropdownMenu extends Component {
     render() {
         return (
-            <StyledDropdown>
-
+            <StyledDropdown overlay={menu} trigger={['click']}>
+                <Avatar style={{ backgroundColor: 'red', verticalAlign: 'middle' }} size="large">
+                    {'Prabeen'}
+                </Avatar>
             </StyledDropdown>
         )
     }

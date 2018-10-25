@@ -9,7 +9,7 @@ import GooglePlace from '../google/googlePlace';
 import AppBoundary from '../../errorHandler/appBoundary';
 import NotificationPopover from '../popover/notificationPopover';
 import { ApplicationWrapper, LayoutWrapper, MainWrapper, NavbarWrapper } from "../UI/Layout";
-import { StyledDropdown } from "../UI/Antd";
+import DropdownMenu from './DropdownMenu';
 import Theme from '../../container/settings/Theme/Theme';
 const { Header, Sider, Content } = Layout;
 
@@ -142,11 +142,7 @@ class Navbar extends React.Component {
                                 <a href="#" style={{ margin: 15 }}>
                                     <NotificationPopover />
                                 </a>
-                                <StyledDropdown overlay={menu} trigger={['click']}>
-                                    <a className="ant-dropdown-link" href="#">
-                                        Click me <Icon type="down" />
-                                    </a>
-                                </StyledDropdown>
+                                <DropdownMenu/>
                                 <Theme />
                             </div>
                         </Header>
