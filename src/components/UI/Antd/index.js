@@ -7,3 +7,4 @@ export { default as StyledSkeleton } from "./StyledSkeleton";
 export { default as StyledDatePicker } from "./StyledDatePicker";
 export { default as StyledRangePicker } from "./StyledRangePicker";
 export { default as StyledUpload } from "./StyledUpload";
+export { default as StyledDropdown } from "./StyledDropdown";
