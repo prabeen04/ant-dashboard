@@ -7,12 +7,12 @@ const menu = (
     <ApplicationWrapper>
         <MainWrapper>
         <Menu>
-            <Menu.Item key="0">
+            <StyledMenu key="0">
                 <a href="#">Profile</a>
-            </Menu.Item>
-            <Menu.Item key="1">
+            </StyledMenu>
+            <StyledMenu key="1">
                 <a href="#">Settings</a>
-            </Menu.Item>
+            </StyledMenu>
             <Menu.Divider />
         </Menu>
         <Theme />

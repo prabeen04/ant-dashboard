@@ -9,4 +9,5 @@ export { default as StyledRangePicker } from "./StyledRangePicker";
 export { default as StyledUpload } from "./StyledUpload";
 export { default as StyledDropdown } from "./StyledDropdown";
 export { default as StyledMenu } from "./StyledMenu";
+export { default as StyledMenuItem } from "./StyledMenuItem";
 
