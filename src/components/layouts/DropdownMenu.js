@@ -1,20 +1,20 @@
 import React, { Component } from 'react'
 import { Menu, Icon, Avatar } from "antd";
-import { StyledDropdown, StyledMenu } from "../UI/Antd";
+import { StyledDropdown, StyledMenu, StyledMenuItem } from "../UI/Antd";
 import { ApplicationWrapper, MainWrapper } from "../UI/Layout";
 import Theme from '../../container/settings/Theme/Theme';
 const menu = (
     <ApplicationWrapper>
         <MainWrapper>
-        <Menu>
-            <StyledMenu key="0">
+        <StyledMenu>
+            <StyledMenuItem key="0">
                 <a href="#">Profile</a>
-            </StyledMenu>
-            <StyledMenu key="1">
+            </StyledMenuItem>
+            <StyledMenuItem key="1">
                 <a href="#">Settings</a>
-            </StyledMenu>
+            </StyledMenuItem>
             <Menu.Divider />
-        </Menu>
+        </StyledMenu>
         <Theme />
         </MainWrapper>
     </ApplicationWrapper>
