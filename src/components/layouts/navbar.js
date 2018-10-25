@@ -12,7 +12,18 @@ import { ApplicationWrapper, LayoutWrapper, MainWrapper, NavbarWrapper } from ".
 import { StyledDropdown } from "../UI/Antd";
 import Theme from '../../container/settings/Theme/Theme';
 const { Header, Sider, Content } = Layout;
-
+const menu = (
+    <Menu>
+      <Menu.Item key="0">
+        <a href="http://www.alipay.com/">1st menu item</a>
+      </Menu.Item>
+      <Menu.Item key="1">
+        <a href="http://www.taobao.com/">2nd menu item</a>
+      </Menu.Item>
+      <Menu.Divider />
+      <Menu.Item key="3">3rd menu item</Menu.Item>
+    </Menu>
+  );
 const AsyncDashboard = Loadable({
     loader: () => import('../../container/dashboard/dashboard'),
     loading: BundleLoading
@@ -142,7 +153,7 @@ class Navbar extends React.Component {
                                 <a href="#" style={{ margin: 15 }}>
                                     <NotificationPopover />
                                 </a>
-                                <StyledDropdown trigger={['click']}>
+                                <StyledDropdown overlay={menu} trigger={['click']}>
                                     <a className="ant-dropdown-link" href="#">
                                         Click me <Icon type="down" />
                                     </a>
