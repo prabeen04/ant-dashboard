@@ -143,7 +143,6 @@ class Navbar extends React.Component {
                                     <NotificationPopover />
                                 </a>
                                 <DropdownMenu/>
-                                <Theme />
                             </div>
                         </Header>
                     </NavbarWrapper>
