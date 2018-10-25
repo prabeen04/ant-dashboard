@@ -9,6 +9,7 @@ import GooglePlace from '../google/googlePlace';
 import AppBoundary from '../../errorHandler/appBoundary';
 import NotificationPopover from '../popover/notificationPopover';
 import { ApplicationWrapper, LayoutWrapper, MainWrapper, NavbarWrapper } from "../UI/Layout";
+import { StyledDropdown } from "../UI/Antd";
 import Theme from '../../container/settings/Theme/Theme';
 const { Header, Sider, Content } = Layout;
 
@@ -118,7 +119,7 @@ class Navbar extends React.Component {
                         theme={this.state.theme} />
                 </Sider>
                 <LayoutWrapper>
-                    <NavbarWrapper style={{ padding: 0, height: 50}}>
+                    <NavbarWrapper style={{ padding: 0, height: 50 }}>
                         <Header>
                             <div style={{ height: 45, display: 'flex', alignSelf: 'flex-start', alignItems: 'center' }}>
                                 <Icon
@@ -141,6 +142,11 @@ class Navbar extends React.Component {
                                 <a href="#" style={{ margin: 15 }}>
                                     <NotificationPopover />
                                 </a>
+                                <StyledDropdown trigger={['click']}>
+                                    <a className="ant-dropdown-link" href="#">
+                                        Click me <Icon type="down" />
+                                    </a>
+                                </StyledDropdown>
                                 <Theme />
                             </div>
                         </Header>
