@@ -13,22 +13,22 @@ import DropdownMenu from './DropdownMenu';
 import Theme from '../../container/settings/Theme/Theme';
 const { Header, Sider, Content } = Layout;
 
-const AsyncDashboard = lazy(() => import('../../container/dashboard/dashboard'));
-const AsyncCalendar = lazy(() => import('../../container/calendar/calendar'));
-const AsyncProfile = lazy(() => import('../../container/profile/profile'));
-const AsyncPost = lazy(() => import('../../container/post/post'));
-const AsyncDND = lazy(() => import('../../container/DND/DND'));
-const AsyncForms = lazy(() => import('../../container/forms/forms'));
-const AsyncTables = lazy(() => import('../../container/tables/tables'));
-const AsyncSettings = lazy(() => import('../../container/settings/settings'));
-const AsyncCharts = lazy(() => import('../../container/charts/charts'));
-const AsyncMyMap = lazy(() => import('../../container/map/map'));
-const AsyncDrag = lazy(() => import('../../container/drag/drag'));
-const AsyncSinglePost = lazy(() => import('../../container/post/singlePost'));
-const AsyncTreeSort = lazy(() => import('../../container/treesort/treeSort'));
-const AsyncCustomField = lazy(() => import('../../container/custom/customField'));
-const AsyncFullCalendar = lazy(() => import('../../container/FullCalendar/FullCalendar'));
-const AsyncNotFound = lazy(() => import('../../container/notFound/notFound'));
+const Dashboard = lazy(() => import('../../container/dashboard/dashboard'));
+const Calendar = lazy(() => import('../../container/calendar/calendar'));
+const Profile = lazy(() => import('../../container/profile/profile'));
+const Post = lazy(() => import('../../container/post/post'));
+const DND = lazy(() => import('../../container/DND/DND'));
+const Forms = lazy(() => import('../../container/forms/forms'));
+const Tables = lazy(() => import('../../container/tables/tables'));
+const Settings = lazy(() => import('../../container/settings/settings'));
+const Charts = lazy(() => import('../../container/charts/charts'));
+const MyMap = lazy(() => import('../../container/map/map'));
+const Drag = lazy(() => import('../../container/drag/drag'));
+const SinglePost = lazy(() => import('../../container/post/singlePost'));
+const TreeSort = lazy(() => import('../../container/treesort/treeSort'));
+const CustomField = lazy(() => import('../../container/custom/customField'));
+const FullCalendar = lazy(() => import('../../container/FullCalendar/FullCalendar'));
+const NotFound = lazy(() => import('../../container/notFound/notFound'));
 
 class Navbar extends React.Component {
     constructor(props) {
@@ -102,24 +102,24 @@ class Navbar extends React.Component {
                         <Content>
                             <Suspense fallback={<BundleLoading />}>
                                 <Switch>
-                                    <Route exact path='/' component={AsyncDashboard} />
-                                    <Route exact path='/calendar' component={AsyncCalendar} />
-                                    <Route exact path='/profile' component={AsyncProfile} />
-                                    <Route exact path='/post' component={AsyncPost} />
-                                    <Route exact path='/post/:id' component={AsyncSinglePost} />
-                                    <Route exact path='/forms' component={AsyncForms} />
-                                    <Route exact path='/tables' component={AsyncTables} />
-                                    <Route exact path='/settings' component={AsyncSettings} />
-                                    <Route exact path='/dnd' component={AsyncDND} />
+                                    <Route exact path='/' component={Dashboard} />
+                                    <Route exact path='/calendar' component={Calendar} />
+                                    <Route exact path='/profile' component={Profile} />
+                                    <Route exact path='/post' component={Post} />
+                                    <Route exact path='/post/:id' component={SinglePost} />
+                                    <Route exact path='/forms' component={Forms} />
+                                    <Route exact path='/tables' component={Tables} />
+                                    <Route exact path='/settings' component={Settings} />
+                                    <Route exact path='/dnd' component={DND} />
                                     {/* <AppBoundary> */}
-                                    <Route exact path='/charts' component={AsyncCharts} />
+                                    <Route exact path='/charts' component={Charts} />
                                     {/* </AppBoundary> */}
-                                    <Route exact path='/map' component={AsyncMyMap} />
-                                    <Route exact path='/drag' component={AsyncDrag} />
-                                    <Route exact path='/tree' component={AsyncTreeSort} />
-                                    <Route exact path='/custom' component={AsyncCustomField} />
-                                    <Route exact path='/fullCalendar' component={AsyncFullCalendar} />
-                                    <Route path='**' component={AsyncNotFound} />
+                                    <Route exact path='/map' component={MyMap} />
+                                    <Route exact path='/drag' component={Drag} />
+                                    <Route exact path='/tree' component={TreeSort} />
+                                    <Route exact path='/custom' component={CustomField} />
+                                    <Route exact path='/fullCalendar' component={FullCalendar} />
+                                    <Route path='**' component={NotFound} />
                                 </Switch>
                             </Suspense>
                         </Content>
