@@ -3,7 +3,7 @@ import { Card, Spin, Icon, Popover } from 'antd';
 import classNames from 'classnames';
 import { MainWrapper, StyledActionHeader } from "../../components/UI/Layout";
 // import JumpStartBox from './jumpStart';
-import Settings from '../settings/settings';
+// import Settings from '../settings/settings';
 import DashboardHeader from './dashboardHeader';
 // import Charts from '../charts/charts';
 import GooglePlace from '../../components/google/googlePlace';
@@ -13,6 +13,7 @@ import TransitionComponent from '../../components/animation/transition';
 import PlaceInput from '../../components/common/forms/placeInput';
 const JumpStartBox = lazy(() => import('./jumpStart'))
 const Charts = lazy(() => import('./../charts/charts'))
+const Settings = lazy(() => import('../settings/settings'))
 
 class Dashboard extends Component {
   constructor(props) {
@@ -65,7 +66,9 @@ class Dashboard extends Component {
         <Suspense fallback={<div>Loading Charts ...</div>}>
           <Charts />
         </Suspense>
-        <Settings />
+        <Suspense fallback={<div>Loading Settings ...</div>}>
+          <Settings />
+        </Suspense>
         <Card loading={this.state.isLoading} style={{ height: '400px' }}>
           <div className="flex-container" style={{ justifyContent: 'space-evenly' }}>
             <Icon type="loading" style={{ fontSize: 60, color: 'tomato' }} spin />
