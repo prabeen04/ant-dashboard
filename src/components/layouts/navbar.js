@@ -100,8 +100,8 @@ class Navbar extends React.Component {
                     </NavbarWrapper>
                     <ApplicationWrapper>
                         <Content>
-                            <Switch>
-                                <Suspense fallback={<BundleLoading />}>
+                            <Suspense fallback={<BundleLoading />}>
+                                <Switch>
                                     <Route exact path='/' component={AsyncDashboard} />
                                     <Route exact path='/calendar' component={AsyncCalendar} />
                                     <Route exact path='/profile' component={AsyncProfile} />
@@ -120,8 +120,8 @@ class Navbar extends React.Component {
                                     <Route exact path='/custom' component={AsyncCustomField} />
                                     <Route exact path='/fullCalendar' component={AsyncFullCalendar} />
                                     <Route path='**' component={AsyncNotFound} />
-                                </Suspense>
-                            </Switch>
+                                </Switch>
+                            </Suspense>
                         </Content>
                     </ApplicationWrapper>
                 </LayoutWrapper>
