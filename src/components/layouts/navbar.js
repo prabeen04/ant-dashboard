@@ -18,46 +18,14 @@ const AsyncCalendar = lazy(() => import('../../container/calendar/calendar'));
 const AsyncProfile = lazy(() => import('../../container/profile/profile'));
 const AsyncPost = lazy(() => import('../../container/post/post'));
 const AsyncDND = lazy(() => import('../../container/DND/DND'));
-// const AsyncDashboard = lazy(() => import('../../container/dashboard/dashboard'));
-// const AsyncDashboard = lazy(() => import('../../container/dashboard/dashboard'));
-// const AsyncDashboard = lazy(() => import('../../container/dashboard/dashboard'));
-// const AsyncDashboard = lazy(() => import('../../container/dashboard/dashboard'));
+const AsyncForms = lazy(() => import('../../container/forms/forms'));
+const AsyncTables = lazy(() => import('../../container/tables/tables'));
+const AsyncSettings = lazy(() => import('../../container/settings/settings'));
+const AsyncCharts = lazy(() => import('../../container/charts/charts'));
 // const AsyncDashboard = lazy(() => import('../../container/dashboard/dashboard'));
 // const AsyncDashboard = lazy(() => import('../../container/dashboard/dashboard'));
 // const AsyncDashboard = lazy(() => import('../../container/dashboard/dashboard'));
 
-// const AsyncCalendar = Loadable({
-//     loader: () => import('../../container/calendar/calendar'),
-//     loading: BundleLoading
-// })
-// const AsyncProfile = Loadable({
-//     loader: () => import('../../container/profile/profile'),
-//     loading: BundleLoading
-// })
-// const AsyncPost = Loadable({
-//     loader: () => import('../../container/post/post'),
-//     loading: BundleLoading
-// })
-// const AsyncDND = Loadable({
-//     loader: () => import('../../container/DND/DND'),
-//     loading: BundleLoading
-// })
-const AsyncForms = Loadable({
-    loader: () => import('../../container/forms/forms'),
-    loading: BundleLoading
-})
-const AsyncTables = Loadable({
-    loader: () => import('../../container/tables/tables'),
-    loading: BundleLoading
-})
-const AsyncSettings = Loadable({
-    loader: () => import('../../container/settings/settings'),
-    loading: BundleLoading
-})
-const AsyncCharts = Loadable({
-    loader: () => import('../../container/charts/charts'),
-    loading: BundleLoading
-})
 const AsyncMyMap = Loadable({
     loader: () => import('../../container/map/map'),
     loading: BundleLoading
