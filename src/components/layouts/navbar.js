@@ -22,38 +22,13 @@ const AsyncForms = lazy(() => import('../../container/forms/forms'));
 const AsyncTables = lazy(() => import('../../container/tables/tables'));
 const AsyncSettings = lazy(() => import('../../container/settings/settings'));
 const AsyncCharts = lazy(() => import('../../container/charts/charts'));
-// const AsyncDashboard = lazy(() => import('../../container/dashboard/dashboard'));
-// const AsyncDashboard = lazy(() => import('../../container/dashboard/dashboard'));
-// const AsyncDashboard = lazy(() => import('../../container/dashboard/dashboard'));
-
-const AsyncMyMap = Loadable({
-    loader: () => import('../../container/map/map'),
-    loading: BundleLoading
-})
-const AsyncDrag = Loadable({
-    loader: () => import('../../container/drag/drag'),
-    loading: BundleLoading
-})
-const AsyncSinglePost = Loadable({
-    loader: () => import('../../container/post/singlePost'),
-    loading: BundleLoading
-})
-const AsyncTreeSort = Loadable({
-    loader: () => import('../../container/treesort/treeSort'),
-    loading: BundleLoading
-})
-const AsyncCustomField = Loadable({
-    loader: () => import('../../container/custom/customField'),
-    loading: BundleLoading
-})
-const AsyncFullCalendar = Loadable({
-    loader: () => import('../../container/FullCalendar/FullCalendar'),
-    loading: BundleLoading
-})
-const AsyncNotFound = Loadable({
-    loader: () => import('../../container/notFound/notFound'),
-    loading: BundleLoading
-})
+const AsyncMyMap = lazy(() => import('../../container/map/map'));
+const AsyncDrag = lazy(() => import('../../container/drag/drag'));
+const AsyncSinglePost = lazy(() => import('../../container/post/singlePost'));
+const AsyncTreeSort = lazy(() => import('../../container/treesort/treeSort'));
+const AsyncCustomField = lazy(() => import('../../container/custom/customField'));
+const AsyncFullCalendar = lazy(() => import('../../container/FullCalendar/FullCalendar'));
+const AsyncNotFound = lazy(() => import('../../container/notFound/notFound'));
 
 class Navbar extends React.Component {
     constructor(props) {
