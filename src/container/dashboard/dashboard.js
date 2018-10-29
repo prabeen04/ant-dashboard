@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React, { Component, lazy, Suspense } from 'react';
 import { Card, Spin, Icon, Popover } from 'antd';
 import classNames from 'classnames';
 import { MainWrapper, StyledActionHeader } from "../../components/UI/Layout";
-import JumpStartBox from './jumpStart';
+// import JumpStartBox from './jumpStart';
 import Settings from '../settings/settings';
 import DashboardHeader from './dashboardHeader';
 import Charts from '../charts/charts';
@@ -11,6 +11,8 @@ import LoginWithGoogle from '../../components/google/googleLogin';
 import FunnelChart from '../../components/charts/funnelChart';
 import TransitionComponent from '../../components/animation/transition';
 import PlaceInput from '../../components/common/forms/placeInput';
+const JumpStartBox = lazy(() => import('./jumpStart'))
+
 class Dashboard extends Component {
   constructor(props) {
     super(props)
@@ -50,7 +52,9 @@ class Dashboard extends Component {
       <div className={blurClass}>
           <DashboardHeader fetchChartData={this.fetchChartData} />
         <div className='flex-container'>
+        <Suspense fallback={<div>Loading ...</div>}>
           <JumpStartBox />
+        </Suspense>  
         </div>
         {/* <TransitionComponent/> */}
         {/* <FunnelChart/> */}
