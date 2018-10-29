@@ -5,13 +5,14 @@ import { MainWrapper, StyledActionHeader } from "../../components/UI/Layout";
 // import JumpStartBox from './jumpStart';
 import Settings from '../settings/settings';
 import DashboardHeader from './dashboardHeader';
-import Charts from '../charts/charts';
+// import Charts from '../charts/charts';
 import GooglePlace from '../../components/google/googlePlace';
 import LoginWithGoogle from '../../components/google/googleLogin';
 import FunnelChart from '../../components/charts/funnelChart';
 import TransitionComponent from '../../components/animation/transition';
 import PlaceInput from '../../components/common/forms/placeInput';
 const JumpStartBox = lazy(() => import('./jumpStart'))
+const Charts = lazy(() => import('./../charts/charts'))
 
 class Dashboard extends Component {
   constructor(props) {
@@ -42,7 +43,7 @@ class Dashboard extends Component {
       })
     }, 500)
   }
-  
+
   render() {
     const antIcon = <Icon type="loading" style={{ fontSize: 60, color: 'tomato' }} spin />;
     const blurClass = classNames({
@@ -50,18 +51,20 @@ class Dashboard extends Component {
     });
     return (
       <div className={blurClass}>
-          <DashboardHeader fetchChartData={this.fetchChartData} />
+        <DashboardHeader fetchChartData={this.fetchChartData} />
         <div className='flex-container'>
-        <Suspense fallback={<div>Loading ...</div>}>
-          <JumpStartBox />
-        </Suspense>  
+          <Suspense fallback={<div>Loading ...</div>}>
+            <JumpStartBox />
+          </Suspense>
         </div>
         {/* <TransitionComponent/> */}
         {/* <FunnelChart/> */}
         {/* <LoginWithGoogle /> */}
         {/* <GooglePlace/> */}
         {/* <PlaceInput/> */}
-        <Charts />
+        <Suspense fallback={<div>Loading Charts ...</div>}>
+          <Charts />
+        </Suspense>
         <Settings />
         <Card loading={this.state.isLoading} style={{ height: '400px' }}>
           <div className="flex-container" style={{ justifyContent: 'space-evenly' }}>
