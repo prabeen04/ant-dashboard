@@ -14,22 +14,34 @@ import Theme from '../../container/settings/Theme/Theme';
 const { Header, Sider, Content } = Layout;
 
 const AsyncDashboard = lazy(() => import('../../container/dashboard/dashboard'));
-const AsyncCalendar = Loadable({
-    loader: () => import('../../container/calendar/calendar'),
-    loading: BundleLoading
-})
-const AsyncProfile = Loadable({
-    loader: () => import('../../container/profile/profile'),
-    loading: BundleLoading
-})
-const AsyncPost = Loadable({
-    loader: () => import('../../container/post/post'),
-    loading: BundleLoading
-})
-const AsyncDND = Loadable({
-    loader: () => import('../../container/DND/DND'),
-    loading: BundleLoading
-})
+const AsyncCalendar = lazy(() => import('../../container/calendar/calendar'));
+const AsyncProfile = lazy(() => import('../../container/profile/profile'));
+const AsyncPost = lazy(() => import('../../container/post/post'));
+const AsyncDND = lazy(() => import('../../container/DND/DND'));
+// const AsyncDashboard = lazy(() => import('../../container/dashboard/dashboard'));
+// const AsyncDashboard = lazy(() => import('../../container/dashboard/dashboard'));
+// const AsyncDashboard = lazy(() => import('../../container/dashboard/dashboard'));
+// const AsyncDashboard = lazy(() => import('../../container/dashboard/dashboard'));
+// const AsyncDashboard = lazy(() => import('../../container/dashboard/dashboard'));
+// const AsyncDashboard = lazy(() => import('../../container/dashboard/dashboard'));
+// const AsyncDashboard = lazy(() => import('../../container/dashboard/dashboard'));
+
+// const AsyncCalendar = Loadable({
+//     loader: () => import('../../container/calendar/calendar'),
+//     loading: BundleLoading
+// })
+// const AsyncProfile = Loadable({
+//     loader: () => import('../../container/profile/profile'),
+//     loading: BundleLoading
+// })
+// const AsyncPost = Loadable({
+//     loader: () => import('../../container/post/post'),
+//     loading: BundleLoading
+// })
+// const AsyncDND = Loadable({
+//     loader: () => import('../../container/DND/DND'),
+//     loading: BundleLoading
+// })
 const AsyncForms = Loadable({
     loader: () => import('../../container/forms/forms'),
     loading: BundleLoading
