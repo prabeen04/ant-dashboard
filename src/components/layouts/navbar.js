@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Loadable from 'react-loadable';
 import { Layout, Menu, Icon, Badge, Table } from 'antd';
@@ -13,10 +13,7 @@ import DropdownMenu from './DropdownMenu';
 import Theme from '../../container/settings/Theme/Theme';
 const { Header, Sider, Content } = Layout;
 
-const AsyncDashboard = Loadable({
-    loader: () => import('../../container/dashboard/dashboard'),
-    loading: BundleLoading
-})
+const AsyncDashboard = lazy(() => import('../../container/dashboard/dashboard'));
 const AsyncCalendar = Loadable({
     loader: () => import('../../container/calendar/calendar'),
     loading: BundleLoading
@@ -142,31 +139,33 @@ class Navbar extends React.Component {
                                 <a href="#" style={{ margin: 15 }}>
                                     <NotificationPopover />
                                 </a>
-                                <DropdownMenu/>
+                                <DropdownMenu />
                             </div>
                         </Header>
                     </NavbarWrapper>
                     <ApplicationWrapper>
                         <Content>
                             <Switch>
-                                <Route exact path='/' component={AsyncDashboard} />
-                                <Route exact path='/calendar' component={AsyncCalendar} />
-                                <Route exact path='/profile' component={AsyncProfile} />
-                                <Route exact path='/post' component={AsyncPost} />
-                                <Route exact path='/post/:id' component={AsyncSinglePost} />
-                                <Route exact path='/forms' component={AsyncForms} />
-                                <Route exact path='/tables' component={AsyncTables} />
-                                <Route exact path='/settings' component={AsyncSettings} />
-                                <Route exact path='/dnd' component={AsyncDND} />
-                                {/* <AppBoundary> */}
-                                <Route exact path='/charts' component={AsyncCharts} />
-                                {/* </AppBoundary> */}
-                                <Route exact path='/map' component={AsyncMyMap} />
-                                <Route exact path='/drag' component={AsyncDrag} />
-                                <Route exact path='/tree' component={AsyncTreeSort} />
-                                <Route exact path='/custom' component={AsyncCustomField} />
-                                <Route exact path='/fullCalendar' component={AsyncFullCalendar} />
-                                <Route path='**' component={AsyncNotFound} />
+                                <Suspense fallback={<BundleLoading />}>
+                                    <Route exact path='/' component={AsyncDashboard} />
+                                    <Route exact path='/calendar' component={AsyncCalendar} />
+                                    <Route exact path='/profile' component={AsyncProfile} />
+                                    <Route exact path='/post' component={AsyncPost} />
+                                    <Route exact path='/post/:id' component={AsyncSinglePost} />
+                                    <Route exact path='/forms' component={AsyncForms} />
+                                    <Route exact path='/tables' component={AsyncTables} />
+                                    <Route exact path='/settings' component={AsyncSettings} />
+                                    <Route exact path='/dnd' component={AsyncDND} />
+                                    {/* <AppBoundary> */}
+                                    <Route exact path='/charts' component={AsyncCharts} />
+                                    {/* </AppBoundary> */}
+                                    <Route exact path='/map' component={AsyncMyMap} />
+                                    <Route exact path='/drag' component={AsyncDrag} />
+                                    <Route exact path='/tree' component={AsyncTreeSort} />
+                                    <Route exact path='/custom' component={AsyncCustomField} />
+                                    <Route exact path='/fullCalendar' component={AsyncFullCalendar} />
+                                    <Route path='**' component={AsyncNotFound} />
+                                </Suspense>
                             </Switch>
                         </Content>
                     </ApplicationWrapper>
