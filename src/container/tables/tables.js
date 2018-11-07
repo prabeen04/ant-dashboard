@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import ReactTable from "react-table";
 import { getTableData } from '../../actions/tableAction';
+import { ApplicationWrapper, LayoutWrapper } from '../../components/UI/Layout'
 import 'react-table/react-table.css';
 import './tables.css';
 
@@ -14,8 +15,7 @@ class Tables extends Component {
     }
     render() {
         return (
-            <div className="table-container">
-                <h3>Tables Component</h3>
+            <LayoutWrapper>
                 <ReactTable
                     data={this.props.tableData}
                     columns={this.props.columns}
@@ -26,7 +26,7 @@ class Tables extends Component {
                     pageSizeOptions={[5, 10, 20, 25, 50, 100]}
                     defaultPageSize={5}
                 />
-            </div>
+            </LayoutWrapper>
         )
     }
 }
