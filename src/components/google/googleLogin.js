@@ -25,7 +25,7 @@ class LoginWithGoogle extends Component {
                 {this.state.googleUser && <h3>{this.state.googleUser.name}</h3>}
                {!this.state.isLoggedIn && <GoogleLogin
                     clientId="553440503285-rgciog1jtcen74j5hq1ojul6o4b93erh.apps.googleusercontent.com"
-                    buttonText=" Login with Google "
+                    buttonText={this.props.buttonText || 'Login with Google'}
                     onSuccess={this.responseGoogle}
                     onFailure={this.responseGoogle}
                 />}
