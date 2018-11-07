@@ -61,18 +61,13 @@ class Dashboard extends Component {
         {/* <TransitionComponent/> */}
         {/* <FunnelChart/> */}
         <LoginWithGoogle />
-        <GooglePlace/>
+        {/* <GooglePlace/> */}
         <Suspense fallback={<div>Loading Charts ...</div>}>
           <Charts />
         </Suspense>
         <Suspense fallback={<div>Loading Settings ...</div>}>
           <Settings />
         </Suspense>
-        <Card loading={this.state.isLoading} style={{ height: '400px' }}>
-          <div className="flex-container" style={{ justifyContent: 'space-evenly' }}>
-            <Icon type="loading" style={{ fontSize: 60, color: 'tomato' }} spin />
-          </div>
-        </Card>
       </div>
     )
   }
