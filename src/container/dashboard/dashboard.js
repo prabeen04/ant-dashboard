@@ -62,7 +62,6 @@ class Dashboard extends Component {
         {/* <FunnelChart/> */}
         <LoginWithGoogle />
         <GooglePlace/>
-        <PlaceInput/>
         <Suspense fallback={<div>Loading Charts ...</div>}>
           <Charts />
         </Suspense>
