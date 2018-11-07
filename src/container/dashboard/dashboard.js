@@ -60,7 +60,6 @@ class Dashboard extends Component {
         </div>
         {/* <TransitionComponent/> */}
         {/* <FunnelChart/> */}
-        <LoginWithGoogle />
         {/* <GooglePlace/> */}
         <Suspense fallback={<div>Loading Charts ...</div>}>
           <Charts />
@@ -68,6 +67,7 @@ class Dashboard extends Component {
         <Suspense fallback={<div>Loading Settings ...</div>}>
           <Settings />
         </Suspense>
+        <LoginWithGoogle buttonText='Login with Google' />
       </div>
     )
   }
