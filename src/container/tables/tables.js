@@ -8,25 +8,27 @@ import 'react-table/react-table.css';
 import './tables.css';
 
 class Tables extends Component {
-    componentDidMount(){
-        setTimeout(() =>{
+    componentDidMount() {
+        setTimeout(() => {
             this.props.getTableData()
-        },2000)
+        }, 2000)
     }
     render() {
         return (
-            <LayoutWrapper>
-                <ReactTable
-                    data={this.props.tableData}
-                    columns={this.props.columns}
-                    showPagination={true}
-                    showPaginationTop={false}
-                    showPaginationBottom={true}
-                    showPageSizeOptions={true}
-                    pageSizeOptions={[5, 10, 20, 25, 50, 100]}
-                    defaultPageSize={5}
-                />
-            </LayoutWrapper>
+            <ApplicationWrapper>
+                <LayoutWrapper>
+                    <ReactTable
+                        data={this.props.tableData}
+                        columns={this.props.columns}
+                        showPagination={true}
+                        showPaginationTop={false}
+                        showPaginationBottom={true}
+                        showPageSizeOptions={true}
+                        pageSizeOptions={[5, 10, 20, 25, 50, 100]}
+                        defaultPageSize={5}
+                    />
+                </LayoutWrapper>
+            </ApplicationWrapper>
         )
     }
 }
