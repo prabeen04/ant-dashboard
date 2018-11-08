@@ -8,19 +8,8 @@ const StyledReactTable = styled(ReactTable)`
     color: ${props => props.theme.color};
     .ReactTable{
         background-color: ${props => props.theme.backgroundColor};
-        color: ${props => props.theme.color};
-
-        .-pagination>select{
-            background-color: ${props => props.theme.backgroundColor};
-            color: ${props => props.theme.backgroundColor};
-        }
-         
-    }
-    .-sort-desc, .-sort-asc{
-                    -webkit-box-shadow: inset 0 -3px 0 0 red;
-                    box-shadow: inset 0 -3px 0 0 red;
-                }  
-    
+        color: ${props => props.theme.color};       
+    }    
 `
 const AppReactTable = (props) => <StyledReactTable {...props} />
 export default AppReactTable;
