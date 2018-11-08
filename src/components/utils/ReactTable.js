@@ -9,10 +9,17 @@ const StyledReactTable = styled(ReactTable)`
     .ReactTable{
         background-color: ${props => props.theme.backgroundColor};
         color: ${props => props.theme.color};
+
+        .-pagination>select{
+            background-color: ${props => props.theme.backgroundColor};
+            color: ${props => props.theme.backgroundColor};
+        }
     }
-    .select-wrap > select{
-        color: ${props => props.theme.backgroundColor};
-    }
+    .ReactTable .rt-thead .rt-th.-sort-desc, .ReactTable .rt-thead .rt-td.-sort-desc {
+    -webkit-box-shadow: inset 0 -3px 0 0 red;
+    box-shadow: inset 0 -3px 0 0 red;
+}
+    
 `
-const AppReactTable = (props) => <StyledReactTable {...props}/>
+const AppReactTable = (props) => <StyledReactTable {...props} />
 export default AppReactTable;
