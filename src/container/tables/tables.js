@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import ReactTable from "react-table";
+import AppReactTable from "../../components/utils/ReactTable";
 import { getTableData } from '../../actions/tableAction';
 import { ApplicationWrapper, LayoutWrapper } from '../../components/UI/Layout'
-import 'react-table/react-table.css';
 import './tables.css';
 
 class Tables extends Component {
@@ -17,7 +16,7 @@ class Tables extends Component {
         return (
             <ApplicationWrapper>
                 <LayoutWrapper>
-                    <ReactTable
+                    <AppReactTable
                         data={this.props.tableData}
                         columns={this.props.columns}
                         showPagination={true}
