@@ -10,6 +10,10 @@ const StyledReactTable = styled(ReactTable)`
         background-color: ${props => props.theme.backgroundColor};
         color: ${props => props.theme.color};
     }
+    .ReactTable .-pagination input, .ReactTable .-pagination select{
+        background-color: ${props => props.theme.backgroundColor};
+        color: ${props => props.theme.color};
+    }
 `
 const AppReactTable = (props) => <StyledReactTable {...props}/>
 export default AppReactTable;
