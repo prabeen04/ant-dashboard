@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import {ReactTable} from "react-table";
+import ReactTable from "react-table";
 import 'react-table/react-table.css';
 
 const StyledReactTable = styled(ReactTable)`
@@ -8,10 +8,5 @@ const StyledReactTable = styled(ReactTable)`
     color: ${props => props.theme.color};
 
 `
-class AppReactTable extends React.Component {
-    render() {
-        return <StyledReactTable/>
-    }
-}
-
+const AppReactTable = () => <StyledReactTable />
 export default AppReactTable;
