@@ -14,15 +14,12 @@ const StyledReactTable = styled(ReactTable)`
             background-color: ${props => props.theme.backgroundColor};
             color: ${props => props.theme.backgroundColor};
         }
-        .rt-thead{
-            .rt-th{
-                .-sort-desc{
+         
+    }
+    .-sort-desc, .-sort-asc{
                     -webkit-box-shadow: inset 0 -3px 0 0 red;
                     box-shadow: inset 0 -3px 0 0 red;
                 }  
-            }
-        }
-    }
     
 `
 const AppReactTable = (props) => <StyledReactTable {...props} />
