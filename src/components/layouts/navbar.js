@@ -81,19 +81,19 @@ class Navbar extends React.Component {
                                 />
                             </div>
                             <div style={{ display: 'flex', alignItems: 'center', alignSelf: 'flex-end', marginRight: 50, height: 45 }}>
-                                <a href="#" style={{ margin: 15 }}>
+                                <span style={{ margin: 15 }}>
                                     <Badge count={1} >
                                         <Icon type="bell" />
                                     </Badge>
-                                </a>
-                                <a href="#" style={{ margin: 15 }}>
+                                </span>
+                                <span style={{ margin: 15 }}>
                                     <Badge count={5} >
                                         <Icon type="user" />
                                     </Badge>
-                                </a>
-                                <a href="#" style={{ margin: 15 }}>
+                                </span>
+                                <span style={{ margin: 15 }}>
                                     <NotificationPopover />
-                                </a>
+                                </span>
                                 <DropdownMenu />
                             </div>
                         </Header>
