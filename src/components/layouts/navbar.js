@@ -102,7 +102,7 @@ class Navbar extends React.Component {
                         <Content>
                             <Suspense fallback={<BundleLoading />}>
                                 <Switch>
-                                    <Route exact path='/' component={() => <Dashboard />} />
+                                    <Route exact path='/' component={Dashboard} />
                                     <Route exact path='/calendar' component={() => <Calendar />} />
                                     <Route exact path='/profile' component={() => <Profile />} />
                                     <Route exact path='/post' component={() => <Post />} />
