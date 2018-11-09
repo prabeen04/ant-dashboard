@@ -103,23 +103,23 @@ class Navbar extends React.Component {
                             <Suspense fallback={<BundleLoading />}>
                                 <Switch>
                                     <Route exact path='/' component={Dashboard} />
-                                    <Route exact path='/calendar' component={() => <Calendar />} />
-                                    <Route exact path='/profile' component={() => <Profile />} />
-                                    <Route exact path='/post' component={() => <Post />} />
-                                    <Route exact path='/post/:id' component={() => <SinglePost />} />
-                                    <Route exact path='/forms' component={() => <Forms />} />
-                                    <Route exact path='/tables' component={() => <Tables />} />
-                                    <Route exact path='/settings' component={() => <Settings />} />
-                                    <Route exact path='/dnd' component={() => <DND />} />
+                                    <Route exact path='/calendar' component={Calendar} />
+                                    <Route exact path='/profile' component={Profile} />
+                                    <Route exact path='/post' component={Post} />
+                                    <Route exact path='/post/:id' component={SinglePost} />
+                                    <Route exact path='/forms' component={Forms} />
+                                    <Route exact path='/tables' component={Tables} />
+                                    <Route exact path='/settings' component={Settings} />
+                                    <Route exact path='/dnd' component={DND} />
                                     {/* <AppBoundary> */}
-                                    <Route exact path='/charts' component={() => <Charts />} />
+                                    <Route exact path='/charts' component={Charts} />
                                     {/* </AppBoundary> */}
-                                    <Route exact path='/map' component={() => <MyMap />} />
-                                    <Route exact path='/drag' component={() => <Drag />} />
-                                    <Route exact path='/tree' component={() => <TreeSort />} />
-                                    <Route exact path='/custom' component={() => <CustomField />} />
-                                    <Route exact path='/fullCalendar' component={() => <FullCalendar />} />
-                                    <Route path='**' component={() => <NotFound />} />
+                                    <Route exact path='/map' component={MyMap} />
+                                    <Route exact path='/drag' component={Drag} />
+                                    <Route exact path='/tree' component={TreeSort} />
+                                    <Route exact path='/custom' component={CustomField} />
+                                    <Route exact path='/fullCalendar' component={FullCalendar} />
+                                    <Route path='**' component={NotFound} />
                                 </Switch>
                             </Suspense>
                         </Content>
