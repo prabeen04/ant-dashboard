@@ -1,16 +1,13 @@
 import React, { lazy, Suspense } from 'react';
 import { Route, Switch } from 'react-router-dom';
-import Loadable from 'react-loadable';
-import { Layout, Menu, Icon, Badge, Table } from 'antd';
+import { Layout, Icon, Badge } from 'antd';
 import './navbar.css';
 import BundleLoading from '../loading/bundleLoading'
 import NavMenu from './navMenu';
-import GooglePlace from '../google/googlePlace';
 import AppBoundary from '../../errorHandler/appBoundary';
 import NotificationPopover from '../popover/notificationPopover';
-import { ApplicationWrapper, LayoutWrapper, MainWrapper, NavbarWrapper } from "../UI/Layout";
+import { ApplicationWrapper, LayoutWrapper, NavbarWrapper } from "../UI/Layout";
 import DropdownMenu from './DropdownMenu';
-import Theme from '../../container/settings/Theme/Theme';
 const { Header, Sider, Content } = Layout;
 
 const Dashboard = lazy(() => import('../../container/dashboard/dashboard'));
