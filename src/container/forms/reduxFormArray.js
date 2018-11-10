@@ -362,9 +362,7 @@ const required = value => (value ? undefined : 'Required')
 
 ReduxFormArray = reduxForm({
     form: 'formArray',
-    validate,
-    // touchOnChange: truece
-    //enableReinitialize: true,
+    validate
 })(ReduxFormArray)
 
 const mapStateToProps = (state) => {
@@ -373,21 +371,12 @@ const mapStateToProps = (state) => {
         dollar: 3,
         rupees: 4,
         pound: 5,
-        initialValues: {
-            // "members": [{
-            //     // select1: 'food',
-            //     // field1: state.formArrayReducer.currency
-            // }]
-        },
+        initialValues: {},
         currency: state.formArrayReducer.currency,
         firstValue: selector(state, 'field4')
     }
 }
 
-const mapDispatchToProps = dispatch => {
-    return bindActionCreators({
-        setCurrency: setCurrency
-    }, dispatch)
-}
+const mapDispatchToProps = dispatch => bindActionCreators({setCurrency}, dispatch)
 
 export default connect(mapStateToProps, mapDispatchToProps)(ReduxFormArray)
