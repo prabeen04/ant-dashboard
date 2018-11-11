@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { Field, reduxForm } from 'redux-form';
 import { addPost } from '../../actions/post_actions'
-import { Input, Icon, Card, Button, Modal } from 'antd'
+import { Input, Modal } from 'antd'
 const { TextArea } = Input
 
 class AddPost extends Component {
@@ -47,7 +47,7 @@ class AddPost extends Component {
     if (this.props.isError) {
       return <h4>Oops... Something went wrong!!!</h4>
     }
-    const { handleSubmit, pristine, reset, submitting } = this.props
+    const { handleSubmit } = this.props
     return (
       <div>
         <form>
