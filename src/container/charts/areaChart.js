@@ -1,9 +1,5 @@
 import React, { Component } from 'react'
-import {
-    AreaChart, Area, XAxis, YAxis, Tooltip, CartesianGrid, Brush, Legend,
-    ReferenceArea, ReferenceLine, ReferenceDot, ResponsiveContainer,
-    LabelList, Label
-} from 'recharts';
+import { AreaChart, XAxis, YAxis, Tooltip, CartesianGrid, Legend, ResponsiveContainer } from 'recharts';
 
 const data = [
     { name: 'Page A', uv: 4000, pv: 2400, amt: 2400, time: 1 },
@@ -15,9 +11,6 @@ const data = [
     { name: 'Page G', uv: 2300, pv: 4300, amt: 2100, time: 18 },
 ];
 class AreaChart1 extends Component {
-    constructor(props){
-        super(props)
-    }
     render() {
         return (
             <div style={{margin: '0.2rem'}}>
