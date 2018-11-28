@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
-import { PieChart, Pie, Legend, Cell, Tooltip, ResponsiveContainer, Sector, Label, LabelList } from 'recharts';
-import axios from 'axios';
+import { PieChart, Pie,  Cell, Tooltip } from 'recharts';
 const data01 = [
   { name: 'Group A', value: 400, v: 89, color: 'rgba(52, 182, 193, 0.7)' },
   { name: 'Group B', value: 300, v: 100, color: 'rgba(56, 206, 33, 0.7)' },
