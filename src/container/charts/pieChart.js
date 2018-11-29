@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { PieChart, Pie,  Cell, Tooltip } from 'recharts';
+import { PieChart, Pie, Cell, Tooltip } from 'recharts';
 import axios from 'axios';
 const url = 'https://fokuswork.com:8443/salesxl/api/v2.0/opportunity/user/wonLoss';
 const token = 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwcmFiZWVuLnN0cmFuZ2VAZ21haWwuY29tIiwic2NvcGVzIjoiUk9MRV9BRE1JTiIsInVzZXJJZCI6IlVTSUY0NjA4NzYyMTIwMTgiLCJvcmdJZCI6Ik9JRjQzMzgxOTIxMjAxOCIsImlhdCI6MTU0MzQ5MzQ0NSwiZXhwIjoxNTQzNTExNDQ1fQ.3wG5f1VUPTzygItFmw9B1yW6_moWS7CPgwYa_NTkOk8'
@@ -17,20 +17,24 @@ class PieChart1 extends Component {
     super(props)
 
     this.state = {
-       chartData: data01
+      chartData: data01
     }
   }
   componentDidMount = () => {
-    axios.get(`${url}}`)
-    .then(res =>{ 
-      console.log(res)
-      this.setState({
-        chartData: res.data
-      })
+    axios.get(`${url}`, {
+      headers: {
+        'Authorization': 'Bearer ' + token;
+      }
     })
-    .catch(err => console.log(err))
+      .then(res => {
+        console.log(res)
+        // this.setState({
+        //   chartData: res.data
+        // })
+      })
+      .catch(err => console.log(err))
   }
-  
+
   render() {
     return (
       <div style={{ margin: '0.2rem' }}>
