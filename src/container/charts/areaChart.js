@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { AreaChart, XAxis, YAxis, Tooltip, CartesianGrid, Legend, ResponsiveContainer } from 'recharts';
+import { AreaChart, Area, XAxis, YAxis, Tooltip, CartesianGrid, Legend, ResponsiveContainer } from 'recharts';
 
 const data = [
     { name: 'Page A', uv: 4000, pv: 2400, amt: 2400, time: 1 },

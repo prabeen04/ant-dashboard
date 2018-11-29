@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { PieChart, Pie, Cell, Tooltip } from 'recharts';
+import { PieChart,Area, Pie, Cell, Tooltip } from 'recharts';
 import axios from 'axios';
 const url = 'https://fokuswork.com:8443/salesxl/api/v2.0/opportunity/user/wonLoss';
 const token = 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwcmFiZWVuLnN0cmFuZ2VAZ21haWwuY29tIiwic2NvcGVzIjoiUk9MRV9BRE1JTiIsInVzZXJJZCI6IlVTSUY0NjA4NzYyMTIwMTgiLCJvcmdJZCI6Ik9JRjQzMzgxOTIxMjAxOCIsImlhdCI6MTU0MzQ5MzQ0NSwiZXhwIjoxNTQzNTExNDQ1fQ.3wG5f1VUPTzygItFmw9B1yW6_moWS7CPgwYa_NTkOk8'
@@ -23,9 +23,9 @@ class PieChart1 extends Component {
   componentDidMount = () => {
     axios.get(`https://fokuswork.com:8443/salesxl/api/v2.0/opportunity/user/wonLoss`, {
       headers: {
-        'Authorization': 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwcmFiZWVuLnN0cmFuZ2VAZ21haWwuY29tIiwic2NvcGVzIjoiUk9MRV9BRE1JTiIsInVzZ
+        'Authorization': `Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwcmFiZWVuLnN0cmFuZ2VAZ21haWwuY29tIiwic2NvcGVzIjoiUk9MRV9BRE1JTiIsInVzZ
         XJJZCI6IlVTSUY0NjA4NzYyMTIwMTgiLCJvcmdJZCI6Ik9JRjQzMzgxOTIxMjAxOCIsImlhdCI6MTU0MzQ5MzQ0NSwiZXhwIjoxNTQzNTExNDQ1fQ.3wG
-        5f1VUPTzygItFmw9B1yW6_moWS7CPgwYa_NTkOk8'
+        5f1VUPTzygItFmw9B1yW6_moWS7CPgwYa_NTkOk8`
       }
     })
       .then(res => {
