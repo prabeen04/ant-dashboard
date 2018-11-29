@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { PieChart, Pie,  Cell, Tooltip } from 'recharts';
+const token = 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwcmFiZWVuLnN0cmFuZ2VAZ21haWwuY29tIiwic2NvcGVzIjoiUk9MRV9BRE1JTiIsInVzZXJJZCI6IlVTSUY0NjA4NzYyMTIwMTgiLCJvcmdJZCI6Ik9JRjQzMzgxOTIxMjAxOCIsImlhdCI6MTU0MzQ5MzQ0NSwiZXhwIjoxNTQzNTExNDQ1fQ.3wG5f1VUPTzygItFmw9B1yW6_moWS7CPgwYa_NTkOk8'
 const data01 = [
   { name: 'Group A', value: 400, v: 89, color: 'rgba(52, 182, 193, 0.7)' },
   { name: 'Group B', value: 300, v: 100, color: 'rgba(56, 206, 33, 0.7)' },
@@ -9,14 +10,6 @@ const data01 = [
   { name: 'Group F', value: 189, v: 60, color: 'rgba(222, 249, 47, 0.7)' },
 ];
 
-const data02 = [
-  { name: 'Group A', value: 2400, color: 'rgba(52, 182, 193, 0.7)' },
-  { name: 'Group B', value: 4567, color: 'rgba(208, 88, 216, 0.7)' },
-  { name: 'Group C', value: 1398, color: 'rgba(56, 206, 33, 0.7)' },
-  { name: 'Group D', value: 9800, color: 'rgba(206, 66, 47, 0.7)' },
-  { name: 'Group E', value: 3908, color: 'rgba(72, 84, 191, 0.7)' },
-  { name: 'Group F', value: 4800, color: 'rgba(222, 249, 47, 0.7)' },
-];
 class PieChart1 extends Component {
   constructor(props) {
     super(props)
@@ -43,11 +36,6 @@ class PieChart1 extends Component {
           <Pie data={this.state.chartData} dataKey="value" nameKey="name" cx="50%" cy="50%" outerRadius={50}>
             {
               data01.map((entry, index) => <Cell fill={entry.color} />)
-            }
-          </Pie>
-          <Pie data={this.state.chartData} dataKey="value" nameKey="name" cx="50%" cy="50%" innerRadius={60} outerRadius={80} label>
-            {
-              data02.map((entry, index) => <Cell fill={entry.color} />)
             }
           </Pie>
           <Tooltip />
