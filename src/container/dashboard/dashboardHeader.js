@@ -47,7 +47,7 @@ class DashboardActionHeaderRight extends Component {
         super(props)
 
         this.state = {
-            isPopover: localStorage.getItem('settingPopover') || true
+            isPopover: localStorage.getItem('settingPopover') ? true : false
         }
     }
     handleVisibleChange = () => {
