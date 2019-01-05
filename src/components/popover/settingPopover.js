@@ -7,19 +7,18 @@ import { StyledPopover } from "../UI/Antd";
 class SettingPopover extends Component {
     constructor(props) {
         super(props)
-
         this.state = {
-            visible: false
+            visible: localStorage.getItem('settingPopover') || false
         }
-        this.handleVisibleChange = this.handleVisibleChange.bind(this);
-        this.hide = this.hide.bind(this)
     }
     hide = () => {
+        localStorage.removeItem('settingPopover')
         this.setState({
             visible: false,
         });
     }
     handleVisibleChange = (visible) => {
+        localStorage.setItem('settingPopover', true)
         this.setState({ visible });
     }
     render() {
@@ -29,10 +28,10 @@ class SettingPopover extends Component {
                     <StyledPopover
                         content={
                             <div>
-                                <SettingTab hide={this.hide}/>
+                                <SettingTab hide={this.hide} />
                             </div>
 
-                    }
+                        }
                         // title={<a onClick={this.hide}>Close</a>}
                         trigger="click"
                         placement="bottomRight"
