@@ -4,7 +4,6 @@ import ProgressiveImage from './progressiveImage';
 
 describe('<ProgressiveImage />', () => {
     const ImageWrapper = shallow(<ProgressiveImage/>);
-    console.log(ImageWrapper)
     it('matches snapshot', () => {
         expect(ImageWrapper).toMatchSnapshot()
     })
