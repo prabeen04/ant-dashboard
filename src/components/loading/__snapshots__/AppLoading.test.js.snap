@@ -1,0 +1,1175 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<AppLoading /> AppLoadingWrapper matches snapshot 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Unknown />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": <ContentLoader
+        height={160}
+        primaryColor="#3fd6b4"
+        secondaryColor="#483cb9"
+        speed={2}
+        width={400}
+>
+        <rect
+                height="0"
+                rx="0"
+                ry="0"
+                width="0"
+                x="132.5"
+                y="144.27"
+        />
+        <rect
+                height="0"
+                rx="0"
+                ry="0"
+                width="0"
+                x="84.5"
+                y="10.27"
+        />
+        <rect
+                height="0"
+                rx="0"
+                ry="0"
+                width="0"
+                x="96.5"
+                y="8.27"
+        />
+        <rect
+                height="0"
+                rx="0"
+                ry="0"
+                width="0"
+                x="122.5"
+                y="25.27"
+        />
+        <rect
+                height="0"
+                rx="0"
+                ry="0"
+                width="0"
+                x="242.5"
+                y="86.27"
+        />
+        <rect
+                height="0"
+                rx="0"
+                ry="0"
+                width="0"
+                x="232.5"
+                y="91.27"
+        />
+        <rect
+                height="0"
+                rx="0"
+                ry="0"
+                width="0"
+                x="251.5"
+                y="94.27"
+        />
+        <rect
+                height="0"
+                rx="0"
+                ry="0"
+                width="0"
+                x="164.5"
+                y="34.27"
+        />
+        <circle
+                cx="260.5"
+                cy="150.27"
+                r="1"
+        />
+        <rect
+                height="0"
+                rx="0"
+                ry="0"
+                width="0"
+                x="273.5"
+                y="65.27"
+        />
+        <rect
+                height="6"
+                rx="0"
+                ry="0"
+                width="55"
+                x="134.5"
+                y="63.27"
+        />
+        <rect
+                height="28"
+                rx="0"
+                ry="0"
+                width="6"
+                x="183.5"
+                y="34.27"
+        />
+        <rect
+                height="6"
+                rx="0"
+                ry="0"
+                width="56"
+                x="133.5"
+                y="27.27"
+        />
+        <rect
+                height="78"
+                rx="0"
+                ry="0"
+                width="6"
+                x="123.5"
+                y="27.27"
+        />
+        <rect
+                height="0"
+                rx="0"
+                ry="0"
+                width="0"
+                x="124.5"
+                y="47.27"
+        />
+        <rect
+                height="0"
+                rx="0"
+                ry="0"
+                width="0"
+                x="124.5"
+                y="47.27"
+        />
+        <rect
+                height="0"
+                rx="0"
+                ry="0"
+                width="0"
+                x="101.5"
+                y="56.27"
+        />
+</ContentLoader>,
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "function",
+      "props": Object {
+        "children": Array [
+          <rect
+            height="0"
+            rx="0"
+            ry="0"
+            width="0"
+            x="132.5"
+            y="144.27"
+/>,
+          <rect
+            height="0"
+            rx="0"
+            ry="0"
+            width="0"
+            x="84.5"
+            y="10.27"
+/>,
+          <rect
+            height="0"
+            rx="0"
+            ry="0"
+            width="0"
+            x="96.5"
+            y="8.27"
+/>,
+          <rect
+            height="0"
+            rx="0"
+            ry="0"
+            width="0"
+            x="122.5"
+            y="25.27"
+/>,
+          <rect
+            height="0"
+            rx="0"
+            ry="0"
+            width="0"
+            x="242.5"
+            y="86.27"
+/>,
+          <rect
+            height="0"
+            rx="0"
+            ry="0"
+            width="0"
+            x="232.5"
+            y="91.27"
+/>,
+          <rect
+            height="0"
+            rx="0"
+            ry="0"
+            width="0"
+            x="251.5"
+            y="94.27"
+/>,
+          <rect
+            height="0"
+            rx="0"
+            ry="0"
+            width="0"
+            x="164.5"
+            y="34.27"
+/>,
+          <circle
+            cx="260.5"
+            cy="150.27"
+            r="1"
+/>,
+          <rect
+            height="0"
+            rx="0"
+            ry="0"
+            width="0"
+            x="273.5"
+            y="65.27"
+/>,
+          <rect
+            height="6"
+            rx="0"
+            ry="0"
+            width="55"
+            x="134.5"
+            y="63.27"
+/>,
+          <rect
+            height="28"
+            rx="0"
+            ry="0"
+            width="6"
+            x="183.5"
+            y="34.27"
+/>,
+          <rect
+            height="6"
+            rx="0"
+            ry="0"
+            width="56"
+            x="133.5"
+            y="27.27"
+/>,
+          <rect
+            height="78"
+            rx="0"
+            ry="0"
+            width="6"
+            x="123.5"
+            y="27.27"
+/>,
+          <rect
+            height="0"
+            rx="0"
+            ry="0"
+            width="0"
+            x="124.5"
+            y="47.27"
+/>,
+          <rect
+            height="0"
+            rx="0"
+            ry="0"
+            width="0"
+            x="124.5"
+            y="47.27"
+/>,
+          <rect
+            height="0"
+            rx="0"
+            ry="0"
+            width="0"
+            x="101.5"
+            y="56.27"
+/>,
+        ],
+        "height": 160,
+        "primaryColor": "#3fd6b4",
+        "secondaryColor": "#483cb9",
+        "speed": 2,
+        "width": 400,
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "height": "0",
+            "rx": "0",
+            "ry": "0",
+            "width": "0",
+            "x": "132.5",
+            "y": "144.27",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "rect",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "height": "0",
+            "rx": "0",
+            "ry": "0",
+            "width": "0",
+            "x": "84.5",
+            "y": "10.27",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "rect",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "height": "0",
+            "rx": "0",
+            "ry": "0",
+            "width": "0",
+            "x": "96.5",
+            "y": "8.27",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "rect",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "height": "0",
+            "rx": "0",
+            "ry": "0",
+            "width": "0",
+            "x": "122.5",
+            "y": "25.27",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "rect",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "height": "0",
+            "rx": "0",
+            "ry": "0",
+            "width": "0",
+            "x": "242.5",
+            "y": "86.27",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "rect",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "height": "0",
+            "rx": "0",
+            "ry": "0",
+            "width": "0",
+            "x": "232.5",
+            "y": "91.27",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "rect",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "height": "0",
+            "rx": "0",
+            "ry": "0",
+            "width": "0",
+            "x": "251.5",
+            "y": "94.27",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "rect",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "height": "0",
+            "rx": "0",
+            "ry": "0",
+            "width": "0",
+            "x": "164.5",
+            "y": "34.27",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "rect",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "cx": "260.5",
+            "cy": "150.27",
+            "r": "1",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "circle",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "height": "0",
+            "rx": "0",
+            "ry": "0",
+            "width": "0",
+            "x": "273.5",
+            "y": "65.27",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "rect",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "height": "6",
+            "rx": "0",
+            "ry": "0",
+            "width": "55",
+            "x": "134.5",
+            "y": "63.27",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "rect",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "height": "28",
+            "rx": "0",
+            "ry": "0",
+            "width": "6",
+            "x": "183.5",
+            "y": "34.27",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "rect",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "height": "6",
+            "rx": "0",
+            "ry": "0",
+            "width": "56",
+            "x": "133.5",
+            "y": "27.27",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "rect",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "height": "78",
+            "rx": "0",
+            "ry": "0",
+            "width": "6",
+            "x": "123.5",
+            "y": "27.27",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "rect",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "height": "0",
+            "rx": "0",
+            "ry": "0",
+            "width": "0",
+            "x": "124.5",
+            "y": "47.27",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "rect",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "height": "0",
+            "rx": "0",
+            "ry": "0",
+            "width": "0",
+            "x": "124.5",
+            "y": "47.27",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "rect",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "height": "0",
+            "rx": "0",
+            "ry": "0",
+            "width": "0",
+            "x": "101.5",
+            "y": "56.27",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "rect",
+        },
+      ],
+      "type": [Function],
+    },
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <ContentLoader
+          height={160}
+          primaryColor="#3fd6b4"
+          secondaryColor="#483cb9"
+          speed={2}
+          width={400}
+>
+          <rect
+                    height="0"
+                    rx="0"
+                    ry="0"
+                    width="0"
+                    x="132.5"
+                    y="144.27"
+          />
+          <rect
+                    height="0"
+                    rx="0"
+                    ry="0"
+                    width="0"
+                    x="84.5"
+                    y="10.27"
+          />
+          <rect
+                    height="0"
+                    rx="0"
+                    ry="0"
+                    width="0"
+                    x="96.5"
+                    y="8.27"
+          />
+          <rect
+                    height="0"
+                    rx="0"
+                    ry="0"
+                    width="0"
+                    x="122.5"
+                    y="25.27"
+          />
+          <rect
+                    height="0"
+                    rx="0"
+                    ry="0"
+                    width="0"
+                    x="242.5"
+                    y="86.27"
+          />
+          <rect
+                    height="0"
+                    rx="0"
+                    ry="0"
+                    width="0"
+                    x="232.5"
+                    y="91.27"
+          />
+          <rect
+                    height="0"
+                    rx="0"
+                    ry="0"
+                    width="0"
+                    x="251.5"
+                    y="94.27"
+          />
+          <rect
+                    height="0"
+                    rx="0"
+                    ry="0"
+                    width="0"
+                    x="164.5"
+                    y="34.27"
+          />
+          <circle
+                    cx="260.5"
+                    cy="150.27"
+                    r="1"
+          />
+          <rect
+                    height="0"
+                    rx="0"
+                    ry="0"
+                    width="0"
+                    x="273.5"
+                    y="65.27"
+          />
+          <rect
+                    height="6"
+                    rx="0"
+                    ry="0"
+                    width="55"
+                    x="134.5"
+                    y="63.27"
+          />
+          <rect
+                    height="28"
+                    rx="0"
+                    ry="0"
+                    width="6"
+                    x="183.5"
+                    y="34.27"
+          />
+          <rect
+                    height="6"
+                    rx="0"
+                    ry="0"
+                    width="56"
+                    x="133.5"
+                    y="27.27"
+          />
+          <rect
+                    height="78"
+                    rx="0"
+                    ry="0"
+                    width="6"
+                    x="123.5"
+                    y="27.27"
+          />
+          <rect
+                    height="0"
+                    rx="0"
+                    ry="0"
+                    width="0"
+                    x="124.5"
+                    y="47.27"
+          />
+          <rect
+                    height="0"
+                    rx="0"
+                    ry="0"
+                    width="0"
+                    x="124.5"
+                    y="47.27"
+          />
+          <rect
+                    height="0"
+                    rx="0"
+                    ry="0"
+                    width="0"
+                    x="101.5"
+                    y="56.27"
+          />
+</ContentLoader>,
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "children": Array [
+            <rect
+              height="0"
+              rx="0"
+              ry="0"
+              width="0"
+              x="132.5"
+              y="144.27"
+/>,
+            <rect
+              height="0"
+              rx="0"
+              ry="0"
+              width="0"
+              x="84.5"
+              y="10.27"
+/>,
+            <rect
+              height="0"
+              rx="0"
+              ry="0"
+              width="0"
+              x="96.5"
+              y="8.27"
+/>,
+            <rect
+              height="0"
+              rx="0"
+              ry="0"
+              width="0"
+              x="122.5"
+              y="25.27"
+/>,
+            <rect
+              height="0"
+              rx="0"
+              ry="0"
+              width="0"
+              x="242.5"
+              y="86.27"
+/>,
+            <rect
+              height="0"
+              rx="0"
+              ry="0"
+              width="0"
+              x="232.5"
+              y="91.27"
+/>,
+            <rect
+              height="0"
+              rx="0"
+              ry="0"
+              width="0"
+              x="251.5"
+              y="94.27"
+/>,
+            <rect
+              height="0"
+              rx="0"
+              ry="0"
+              width="0"
+              x="164.5"
+              y="34.27"
+/>,
+            <circle
+              cx="260.5"
+              cy="150.27"
+              r="1"
+/>,
+            <rect
+              height="0"
+              rx="0"
+              ry="0"
+              width="0"
+              x="273.5"
+              y="65.27"
+/>,
+            <rect
+              height="6"
+              rx="0"
+              ry="0"
+              width="55"
+              x="134.5"
+              y="63.27"
+/>,
+            <rect
+              height="28"
+              rx="0"
+              ry="0"
+              width="6"
+              x="183.5"
+              y="34.27"
+/>,
+            <rect
+              height="6"
+              rx="0"
+              ry="0"
+              width="56"
+              x="133.5"
+              y="27.27"
+/>,
+            <rect
+              height="78"
+              rx="0"
+              ry="0"
+              width="6"
+              x="123.5"
+              y="27.27"
+/>,
+            <rect
+              height="0"
+              rx="0"
+              ry="0"
+              width="0"
+              x="124.5"
+              y="47.27"
+/>,
+            <rect
+              height="0"
+              rx="0"
+              ry="0"
+              width="0"
+              x="124.5"
+              y="47.27"
+/>,
+            <rect
+              height="0"
+              rx="0"
+              ry="0"
+              width="0"
+              x="101.5"
+              y="56.27"
+/>,
+          ],
+          "height": 160,
+          "primaryColor": "#3fd6b4",
+          "secondaryColor": "#483cb9",
+          "speed": 2,
+          "width": 400,
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "height": "0",
+              "rx": "0",
+              "ry": "0",
+              "width": "0",
+              "x": "132.5",
+              "y": "144.27",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "rect",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "height": "0",
+              "rx": "0",
+              "ry": "0",
+              "width": "0",
+              "x": "84.5",
+              "y": "10.27",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "rect",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "height": "0",
+              "rx": "0",
+              "ry": "0",
+              "width": "0",
+              "x": "96.5",
+              "y": "8.27",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "rect",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "height": "0",
+              "rx": "0",
+              "ry": "0",
+              "width": "0",
+              "x": "122.5",
+              "y": "25.27",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "rect",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "height": "0",
+              "rx": "0",
+              "ry": "0",
+              "width": "0",
+              "x": "242.5",
+              "y": "86.27",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "rect",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "height": "0",
+              "rx": "0",
+              "ry": "0",
+              "width": "0",
+              "x": "232.5",
+              "y": "91.27",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "rect",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "height": "0",
+              "rx": "0",
+              "ry": "0",
+              "width": "0",
+              "x": "251.5",
+              "y": "94.27",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "rect",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "height": "0",
+              "rx": "0",
+              "ry": "0",
+              "width": "0",
+              "x": "164.5",
+              "y": "34.27",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "rect",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "cx": "260.5",
+              "cy": "150.27",
+              "r": "1",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "circle",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "height": "0",
+              "rx": "0",
+              "ry": "0",
+              "width": "0",
+              "x": "273.5",
+              "y": "65.27",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "rect",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "height": "6",
+              "rx": "0",
+              "ry": "0",
+              "width": "55",
+              "x": "134.5",
+              "y": "63.27",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "rect",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "height": "28",
+              "rx": "0",
+              "ry": "0",
+              "width": "6",
+              "x": "183.5",
+              "y": "34.27",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "rect",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "height": "6",
+              "rx": "0",
+              "ry": "0",
+              "width": "56",
+              "x": "133.5",
+              "y": "27.27",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "rect",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "height": "78",
+              "rx": "0",
+              "ry": "0",
+              "width": "6",
+              "x": "123.5",
+              "y": "27.27",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "rect",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "height": "0",
+              "rx": "0",
+              "ry": "0",
+              "width": "0",
+              "x": "124.5",
+              "y": "47.27",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "rect",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "height": "0",
+              "rx": "0",
+              "ry": "0",
+              "width": "0",
+              "x": "124.5",
+              "y": "47.27",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "rect",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "height": "0",
+              "rx": "0",
+              "ry": "0",
+              "width": "0",
+              "x": "101.5",
+              "y": "56.27",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "rect",
+          },
+        ],
+        "type": [Function],
+      },
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+}
+`;
