@@ -5,6 +5,7 @@ import JumpstartDetail from './jumpStartDetail';
 describe('<JumpstartDetail />', () => {
     const wrapper = shallow(<JumpstartDetail />)
     it('JumpstartDetail snapshot test', () => {
-        expect(wrapper).toMatchSnapshot()
+        expect(wrapper).toMatchSnapshot();
+        // expect(wrapper).hasClass('jumpstart-box');
     })
 })
