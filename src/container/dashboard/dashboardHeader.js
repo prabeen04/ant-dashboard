@@ -33,9 +33,9 @@ class DashboardActionHeaderLeft extends Component {
     render() {
         return (
             <React.Fragment>
-                <FlexContainer style={{alignItems: 'center'}}>
+                <FlexContainer style={{ alignItems: 'center' }}>
                     <TimeInterval times={this.props.dateRangeList} handleClick={this.props.fetchChartData} />
-                    <StyledRangePicker style={{marginLeft: 8}}/>
+                    <StyledRangePicker style={{ marginLeft: 8 }} />
                 </FlexContainer>
             </React.Fragment>
         )
@@ -47,10 +47,13 @@ class DashboardActionHeaderRight extends Component {
         super(props)
 
         this.state = {
-            isPopover: true
+            isPopover: localStorage.getItem('settingPopover') || true
         }
     }
-    handleVisibleChange = () => this.setState({ isPopover: false })
+    handleVisibleChange = () => {
+        localStorage.setItem('settingPopover', false)
+        this.setState({ isPopover: false })
+    }
     render() {
         return (
             <React.Fragment>
