@@ -3,6 +3,8 @@ import { shallow } from "enzyme";
 import JumpstartDetail from './jumpStartDetail';
 
 describe('<JumpstartDetail />', () => {
+    const wrapper = shallow(<JumpstartDetail />)
     it('JumpstartDetail snapshot test', () => {
+        expect(wrapper).toMatchSnapshot()
     })
 })
