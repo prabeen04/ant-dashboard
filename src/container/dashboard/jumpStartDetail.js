@@ -6,7 +6,7 @@ import { openJumpstartModal } from "../../actions/dashboardAction";
 import { Icon } from 'antd'
 const JumpStartDetail = (props) => {
     return (
-        <div className={'jumpstart-box'}
+        <div className={'jumpstart-box test'}
             onClick={() => props.openJumpstartModal(props.data)}
         >
             <div>
