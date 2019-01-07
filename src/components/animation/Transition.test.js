@@ -6,7 +6,7 @@ import { toJson } from "enzyme-to-json";
 describe('<Transition />', () => {
     const wrapper = shallow(<Transition />)
     const div = <div>this is TransitionComponent</div>
-    it('FunnelChart matches snapshot', () => {
+    it('Transition matches snapshot', () => {
         expect(toJson(wrapper)).toMatchSnapshot()
     })
 })
