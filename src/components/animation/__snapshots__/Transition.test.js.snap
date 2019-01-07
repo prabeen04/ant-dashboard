@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Transition /> Transition matches snapshot 1`] = `
+<div>
+  this is TransitionComponent
+</div>
+`;
