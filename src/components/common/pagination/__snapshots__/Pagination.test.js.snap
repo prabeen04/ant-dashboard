@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<PaginationComponent /> PaginationComponent matches snapshot 1`] = `
+<div>
+  <Pagination
+    defaultCurrent={1}
+    prefixCls="ant-pagination"
+    selectPrefixCls="ant-select"
+    total={50}
+  />
+</div>
+`;
