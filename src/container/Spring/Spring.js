@@ -3,9 +3,9 @@ import React, { Component } from 'react'
 class Spring extends Component {
     render() {
         return (
-            <div>
-
-            </div>
+            <>
+                <h1>Spring component</h1>
+            </>
         )
     }
 }

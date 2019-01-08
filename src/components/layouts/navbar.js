@@ -25,6 +25,7 @@ const SinglePost = lazy(() => import('../../container/post/singlePost'));
 const TreeSort = lazy(() => import('../../container/treesort/treeSort'));
 const CustomField = lazy(() => import('../../container/custom/customField'));
 const FullCalendar = lazy(() => import('../../container/FullCalendar/FullCalendar'));
+const Spring = lazy(() => import('../../container/Spring/Spring'))
 const NotFound = lazy(() => import('../../container/notFound/notFound'));
 
 class Navbar extends React.Component {
@@ -116,6 +117,7 @@ class Navbar extends React.Component {
                                     <Route exact path='/tree' component={TreeSort} />
                                     <Route exact path='/custom' component={CustomField} />
                                     <Route exact path='/fullCalendar' component={FullCalendar} />
+                                    <Route exact path='/spring' component={Spring} />
                                     <Route path='**' component={NotFound} />
                                 </Switch>
                             </Suspense>
