@@ -7,7 +7,7 @@
   },
   "private": true,
   "dependencies": {
-    "antd": "^3.10.0",
+    "antd": "^3.12.1",
     "axios": "^0.18.0",
     "chart.js": "^2.7.2",
     "chartjs": "^0.3.24",
