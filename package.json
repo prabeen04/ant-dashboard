@@ -46,6 +46,7 @@
     "react-scripts": "1.1.1",
     "react-select": "^2.0.0",
     "react-sortable-tree": "^2.2.0",
+    "react-spring": "^7.2.8",
     "react-table": "^6.8.6",
     "react-transition-group": "^2.4.0",
     "react-vertical-timeline-component": "^2.3.1",
