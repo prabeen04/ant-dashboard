@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Trail, animated } from 'react-spring'
 import styled from 'styled-components';
 import { Title } from "../../components/UI/Elements";
-import './SpringTrail.css';
 
 const Box = styled(animated.div)`
     cursor: pointer;
@@ -33,16 +32,15 @@ class SpringTrail extends Component {
                     from={{ opacity: 0, x: -100 }}
                     to={{ opacity: toggle ? 1 : 0.25, x: toggle ? 0 : 100 }}>
                     {item => ({ x, opacity }) => (
-                        <animated.div
-                            className="box"
+                        <Box
                             onClick={this.toggle}
                             style={{
                                 opacity,
                                 transform: x.interpolate(x => `translate3d(${x}%,0,0)`),
                             }}
                         >
-                       {item}
-                        </animated.div>
+                            {item}
+                        </Box>
 
                     )}
                 </Trail>
