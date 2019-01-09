@@ -6,6 +6,9 @@ import { Title } from "../../components/UI/Elements";
 const Box = styled(animated.div)`
     cursor: pointer;
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 50%;
     height: 20%;
     background-color: #F3FFBD;
@@ -52,7 +55,8 @@ class SpringTrail extends Component {
 export default SpringTrail;
 
 function Item({ item }) {
+    console.log(item)
     return (
-        <Title>{Item}</Title>
+        <Title>{item}</Title>
     )
 }
