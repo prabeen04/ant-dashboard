@@ -39,7 +39,7 @@ class SpringTrail extends Component {
                                 transform: x.interpolate(x => `translate3d(${x}%,0,0)`),
                             }}
                         >
-                            {item}
+                            <Item item={item} />
                         </Box>
 
                     )}
@@ -50,3 +50,9 @@ class SpringTrail extends Component {
 }
 
 export default SpringTrail;
+
+function Item({ item }) {
+    return (
+        <Title>{Item}</Title>
+    )
+}
