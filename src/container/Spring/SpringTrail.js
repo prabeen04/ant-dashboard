@@ -13,8 +13,8 @@ class SpringTrail extends Component {
                 style={{
                     backgroundColor: '#247BA0',
                     position: 'relative',
-                    width: '100%',
-                    height: '100%',
+                    width: '100vw',
+                    height: '80vh',
                 }}>
                 <Trail
                     native
