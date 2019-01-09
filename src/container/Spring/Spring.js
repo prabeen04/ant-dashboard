@@ -5,10 +5,10 @@ class Spring_ extends Component {
     render() {
         return (
             <React.Fragment>
-                <Spring
+                <Spring                
                     from={{ number: 0 }}
-                    to={{ number: 1 }}>
-                    {props => <h1>{props.number.toFixed(2)}</h1>}
+                    to={{ number: 100 }}>
+                    {props => <h1>{props.number.toFixed()}</h1>}
                 </Spring>
                 <SpringTransition />
             </React.Fragment>
