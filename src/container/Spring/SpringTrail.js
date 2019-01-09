@@ -1,8 +1,17 @@
 import React, { Component } from 'react';
 import { Trail, animated } from 'react-spring'
+import styled from 'styled-components';
 import { Title } from "../../components/UI/Elements";
 import './SpringTrail.css';
 
+const Box = styled(animated.div)`
+    cursor: pointer;
+    position: relative;
+    width: 50%;
+    height: 20%;
+    background-color: #F3FFBD;
+    will-change: transform;
+`
 class SpringTrail extends Component {
     state = { toggle: true, items: ['item1', 'item2', 'item3', 'item4', 'item5'] }
     toggle = () => this.setState(state => ({ toggle: !state.toggle }))
@@ -31,7 +40,10 @@ class SpringTrail extends Component {
                                 opacity,
                                 transform: x.interpolate(x => `translate3d(${x}%,0,0)`),
                             }}
-                        />
+                        >
+                       {item}
+                        </animated.div>
+
                     )}
                 </Trail>
             </div>
