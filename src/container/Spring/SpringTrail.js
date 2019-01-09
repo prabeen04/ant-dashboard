@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
-
+import { Title } from "../../components/UI/Elements";
 class SpringTrail extends Component {
   render() {
     return (
-      <div>
-        
-      </div>
-    )
+      <>
+        <Title color='teal'>Spring Trail</Title> 
+      </>
+    )   
   }
 }
 

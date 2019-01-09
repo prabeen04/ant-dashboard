@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Spring } from 'react-spring'
 import SpringTransition from "./SpringTransition";
+import SpringTrail from "./SpringTrail";
 class Spring_ extends Component {
     render() {
         return (
@@ -11,6 +12,7 @@ class Spring_ extends Component {
                     {props => <h1>{props.number.toFixed()}</h1>}
                 </Spring>
                 <SpringTransition />
+                <SpringTrail />
             </React.Fragment>
         )
     }
