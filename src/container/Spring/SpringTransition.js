@@ -14,7 +14,7 @@ const defaultStyles = {
 }
 
 export default class SpringTransitions extends React.PureComponent {
-  state = { items: [] }
+  state = { items: ['Apples'] }
 
   handleClick = () => {
     this.t1 && clearTimeout(this.t1)
