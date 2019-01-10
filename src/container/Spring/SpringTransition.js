@@ -16,22 +16,6 @@ const defaultStyles = {
 export default class SpringTransitions extends React.PureComponent {
   state = { items: [] }
 
-  async componentDidMount() {
-    this.t1 && clearTimeout(this.t1)
-    this.t2 && clearTimeout(this.t2)
-    this.t3 && clearTimeout(this.t3)
-
-    this.setState({ items: ['Apples', 'Oranges', 'Bananas'] })
-    this.t1 = setTimeout(
-      () => this.setState({ items: ['Apples', 'Bananas'] }),
-      1500
-    )
-    this.t2 = setTimeout(
-      () => this.setState({ items: ['Apples', 'Oranges', 'Bananas'] }),
-      3000
-    )
-    this.t3 = setTimeout(() => this.setState({ items: ['Kiwis'] }), 4500)
-  }
   handleClick = () => {
     this.t1 && clearTimeout(this.t1)
     this.t2 && clearTimeout(this.t2)
