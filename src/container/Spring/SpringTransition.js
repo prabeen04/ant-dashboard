@@ -32,7 +32,22 @@ export default class SpringTransitions extends React.PureComponent {
     )
     this.t3 = setTimeout(() => this.setState({ items: ['Kiwis'] }), 4500)
   }
+  handleClick = () => {
+    this.t1 && clearTimeout(this.t1)
+    this.t2 && clearTimeout(this.t2)
+    this.t3 && clearTimeout(this.t3)
 
+    this.setState({ items: ['Apples', 'Oranges', 'Bananas'] })
+    this.t1 = setTimeout(
+      () => this.setState({ items: ['Apples', 'Bananas'] }),
+      1500
+    )
+    this.t2 = setTimeout(
+      () => this.setState({ items: ['Apples', 'Oranges', 'Bananas'] }),
+      3000
+    )
+    this.t3 = setTimeout(() => this.setState({ items: ['Kiwis'] }), 4500)
+  }
   render() {
     return (
       <div
@@ -43,7 +58,8 @@ export default class SpringTransitions extends React.PureComponent {
           margin: 0,
           padding: 0,
         }}
-        onClick={() => this.componentDidMount()}>
+      onClick={() => this.handleClick()}
+      >
         <Transition
           items={this.state.items}
           //initial={null}
