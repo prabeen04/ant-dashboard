@@ -8,12 +8,12 @@ import { openJumpstartModal } from "../../actions/dashboardAction";
 const JumpStartDetail = (props) => {
     return (
         <Spring
-        delay={500}
-            from={{ opacity: 0 }}
-            to={{ opacity: 1 }}>
+            delay={200}
+            from={{ transform: 'translate3d(400px,0,0) scale(2) rotateX(90deg)', }}
+            to={{  transform: 'translate3d(0px,0,0) scale(1) rotateX(0deg)' }}>
             {styles => (
                 <div
-                style={styles}
+                    style={styles}
                     className={'jumpstart-box test'}
                     onClick={() => props.openJumpstartModal(props.data)}
                 >
