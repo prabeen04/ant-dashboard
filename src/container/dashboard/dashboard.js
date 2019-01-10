@@ -32,7 +32,7 @@ class Dashboard extends Component {
         isLoading: false,
         isFetching: false
       })
-    }, 1000);
+    }, 500);
   }
   fetchChartData() {
     this.setState({
@@ -42,7 +42,7 @@ class Dashboard extends Component {
       this.setState({
         isFetching: false
       })
-    }, 500)
+    }, 300)
   }
 
   render() {
