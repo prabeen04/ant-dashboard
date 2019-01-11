@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { Spring } from "react-spring";
 const StyledTimeinterval = styled.div`
     display: flex;
     flex-direction: row;
@@ -21,20 +20,13 @@ class TimeInterval extends Component {
         return (
             <StyledTimeinterval>
                 {times.map((time, i) => {
-                    return (
-                        <Spring 
-                            delay={500}
-                            from={{ transform: 'translate3d(400px,0,0) scale(2) rotateX(90deg)', }}
-                            to={{ transform: 'translate3d(0px,0,0) scale(1) rotateX(0deg)' }}>
-                            {styles => (
+                    return (                     
                                 <span
                                     style={styles}
                                     key={i}
                                     onClick={(e) => handleClick(time)}>
                                     {time.value}
                                 </span>
-                            )}
-                        </Spring>
                     )
                 })}
             </StyledTimeinterval>
