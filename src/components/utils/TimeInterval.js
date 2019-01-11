@@ -22,7 +22,6 @@ class TimeInterval extends Component {
                 {times.map((time, i) => {
                     return (                     
                                 <span
-                                    style={styles}
                                     key={i}
                                     onClick={(e) => handleClick(time)}>
                                     {time.value}
