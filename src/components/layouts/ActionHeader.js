@@ -13,7 +13,14 @@ const ActionHeader = (props) => {
                     <div style={styles}>{props.leftComponent}</div>
                 )}
             </Spring>
-            <div>{props.rightComponent}</div>
+            <Spring
+                delay={500}
+                from={{ transform: 'translate3d(-400px,0,0) scale(2) rotateX(90deg)', }}
+                to={{ transform: 'translate3d(0px,0,0) scale(1) rotateX(0deg)' }}>
+                {styles => (
+                    <div style={styles}>{props.rightComponent}</div>
+                )}
+            </Spring>
         </StyledActionHeader>
     )
 }
