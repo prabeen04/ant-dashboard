@@ -13,8 +13,8 @@ const JumpStartDetail = (props) => {
         >
             <Spring
                 delay={500}
-                from={{ transform: 'translate3d(400px,0,0) scale(2) rotateX(90deg)', }}
-                to={{ transform: 'translate3d(0px,0,0) scale(1) rotateX(0deg)' }}>
+                from={{ transform: ' scale(0.2)', }}
+                to={{ transform: 'scale(1)' }}>
                 {styles => (
                     <div style={styles}>
                         <h3 style={{ color: '#aaa' }}>{props.data.title}</h3>
