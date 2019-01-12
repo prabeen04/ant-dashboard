@@ -20,12 +20,12 @@ class TimeInterval extends Component {
         return (
             <StyledTimeinterval>
                 {times.map((time, i) => {
-                    return (                     
-                                <span
-                                    key={i}
-                                    onClick={(e) => handleClick(time)}>
-                                    {time.value}
-                                </span>
+                    return (
+                        <span
+                            key={i}
+                            onClick={(e) => handleClick(time)}>
+                            {time.value}
+                        </span>
                     )
                 })}
             </StyledTimeinterval>
