@@ -1,9 +1,9 @@
 import React from 'react';
 import { shallow } from "enzyme";
-import EventTimelie from '../EventTimelie'
+import EventTimeline from '../EventTimeline'
 import { toJson } from "enzyme-to-json";
-describe('<EventTimelie/>', () => {
-    const wrapper = shallow(<EventTimelie />)
+describe('<EventTimeline/>', () => {
+    const wrapper = shallow(<EventTimeline />)
     it('should matches snapshot', () => {
         expect(toJson(wrapper)).toMatchSnapshot()
     })
