@@ -4,7 +4,7 @@ import { Menu, Icon, Button, Switch } from 'antd';
 import { Link } from 'react-router-dom';
 import Theme from '../../container/settings/Theme/Theme';
 const SubMenu = Menu.SubMenu;
-
+import { Spring } from "react-spring";
 class NavMenu extends React.Component {
     state = {
         collapsed: false
@@ -16,118 +16,125 @@ class NavMenu extends React.Component {
     // }
     render() {
         return (
-            <div>
-                <Menu
-                    defaultSelectedKeys={['1']}
-                    defaultOpenKeys={['sub1']}
-                    mode="inline"
-                    theme={this.props.theme}
-                    inlineCollapsed={this.props.collapsed}
-                >
-                    <Menu.Item key="1">
-                        <Link to='/'>
-                            <Icon type="appstore" />
-                            <span>DashBoard</span>
-                        </Link>
-                    </Menu.Item>
-                    <Menu.Item key="2">
-                        <Link to='/calendar'>
-                            <Icon type="calendar" />
-                            <span>Calendar</span>
-                        </Link>
-                    </Menu.Item>
-                    <Menu.Item key="3">
-                        <Link to='/profile'>
-                            <Icon type="profile" />
-                            <span>Profile</span>
-                        </Link>
-                    </Menu.Item>
-                    <Menu.Item key="4">
-                        <Link to='/post'>
-                            <Icon type="medium" />
-                            <span>Post</span>
-                        </Link>
-                    </Menu.Item>
-                    <Menu.Item key="5">
-                        <Link to='/forms'>
-                            <Icon type="edit" />
-                            <span>Forms</span>
-                        </Link>
-                    </Menu.Item>
-                    <Menu.Item key="6">
-                        <Link to='/tables'>
-                            <Icon type="table" />
-                            <span>Tables</span>
-                        </Link>
-                    </Menu.Item>
-                    <Menu.Item key="7">
-                        <Link to='/settings'>
-                            <Icon type="setting" />
-                            <span>Settings</span>
-                        </Link>
-                    </Menu.Item>
-                    <Menu.Item key="8">
-                        <Link to='/dnd'>
-                            <Icon type="select" />
-                            <span>DND</span>
-                        </Link>
-                    </Menu.Item>
-                    <Menu.Item key="9">
-                        <Link to='/charts'>
-                            <Icon type="area-chart" />
-                            <span>Charts</span>
-                        </Link>
-                    </Menu.Item>
-                    <Menu.Item key="10">
-                        <Link to='/map'>
-                            <Icon type="global" />
-                            <span>Map</span>
-                        </Link>
-                    </Menu.Item>
-                    <Menu.Item key="11">
-                        <Link to='/drag'>
-                            <Icon type="edit" />
-                            <span>Drag</span>
-                        </Link>
-                    </Menu.Item>
-                    <Menu.Item key="12">
-                        <Link to='/tree'>
-                            <Icon type="plus" />
-                            <span>Sort Tree</span>
-                        </Link>
-                    </Menu.Item>
-                    <Menu.Item key="13">
-                        <Link to='/custom'>
-                            <Icon type="plus" />
-                            <span>Custom Field</span>
-                        </Link>
-                    </Menu.Item>
-                    <Menu.Item key="14">
-                        <Link to='/fullCalendar'>
-                            <Icon type="calendar" />
-                            <span>Full Calendar</span>
-                        </Link>
-                    </Menu.Item>
-                    <Menu.Item key="15">
-                        <Link to='/spring'>
-                            <Icon type="gift" />
-                            <span>Spring</span>
-                        </Link>
-                    </Menu.Item>
-                    <Menu.Item>
-                        <Switch
-                            checked={this.props.theme === 'dark'}
-                            onChange={this.props.toggleTheme}
-                            checkedChildren="Dark"
-                            unCheckedChildren="Light"
-                        />
-                    </Menu.Item>
-                    <Menu.Item>
-                        <Theme/>
-                    </Menu.Item>
+            <Spring
+                delay={500}
+                from={{ opacity: 0, transform: 'translate3d(200px,0,0) ', }}
+                to={{ opacity: 1, transform: 'translate3d(0px,0,0) ' }}>
+                {styles => (
+                    <div>
+                        <Menu
+                            defaultSelectedKeys={['1']}
+                            defaultOpenKeys={['sub1']}
+                            mode="inline"
+                            theme={this.props.theme}
+                            inlineCollapsed={this.props.collapsed}
+                        >
+                            <Menu.Item key="1">
+                                <Link to='/'>
+                                    <Icon type="appstore" />
+                                    <span>DashBoard</span>
+                                </Link>
+                            </Menu.Item>
+                            <Menu.Item key="2">
+                                <Link to='/calendar'>
+                                    <Icon type="calendar" />
+                                    <span>Calendar</span>
+                                </Link>
+                            </Menu.Item>
+                            <Menu.Item key="3">
+                                <Link to='/profile'>
+                                    <Icon type="profile" />
+                                    <span>Profile</span>
+                                </Link>
+                            </Menu.Item>
+                            <Menu.Item key="4">
+                                <Link to='/post'>
+                                    <Icon type="medium" />
+                                    <span>Post</span>
+                                </Link>
+                            </Menu.Item>
+                            <Menu.Item key="5">
+                                <Link to='/forms'>
+                                    <Icon type="edit" />
+                                    <span>Forms</span>
+                                </Link>
+                            </Menu.Item>
+                            <Menu.Item key="6">
+                                <Link to='/tables'>
+                                    <Icon type="table" />
+                                    <span>Tables</span>
+                                </Link>
+                            </Menu.Item>
+                            <Menu.Item key="7">
+                                <Link to='/settings'>
+                                    <Icon type="setting" />
+                                    <span>Settings</span>
+                                </Link>
+                            </Menu.Item>
+                            <Menu.Item key="8">
+                                <Link to='/dnd'>
+                                    <Icon type="select" />
+                                    <span>DND</span>
+                                </Link>
+                            </Menu.Item>
+                            <Menu.Item key="9">
+                                <Link to='/charts'>
+                                    <Icon type="area-chart" />
+                                    <span>Charts</span>
+                                </Link>
+                            </Menu.Item>
+                            <Menu.Item key="10">
+                                <Link to='/map'>
+                                    <Icon type="global" />
+                                    <span>Map</span>
+                                </Link>
+                            </Menu.Item>
+                            <Menu.Item key="11">
+                                <Link to='/drag'>
+                                    <Icon type="edit" />
+                                    <span>Drag</span>
+                                </Link>
+                            </Menu.Item>
+                            <Menu.Item key="12">
+                                <Link to='/tree'>
+                                    <Icon type="plus" />
+                                    <span>Sort Tree</span>
+                                </Link>
+                            </Menu.Item>
+                            <Menu.Item key="13">
+                                <Link to='/custom'>
+                                    <Icon type="plus" />
+                                    <span>Custom Field</span>
+                                </Link>
+                            </Menu.Item>
+                            <Menu.Item key="14">
+                                <Link to='/fullCalendar'>
+                                    <Icon type="calendar" />
+                                    <span>Full Calendar</span>
+                                </Link>
+                            </Menu.Item>
+                            <Menu.Item key="15">
+                                <Link to='/spring'>
+                                    <Icon type="gift" />
+                                    <span>Spring</span>
+                                </Link>
+                            </Menu.Item>
+                            <Menu.Item>
+                                <Switch
+                                    checked={this.props.theme === 'dark'}
+                                    onChange={this.props.toggleTheme}
+                                    checkedChildren="Dark"
+                                    unCheckedChildren="Light"
+                                />
+                            </Menu.Item>
+                            <Menu.Item>
+                                <Theme />
+                            </Menu.Item>
 
-                </Menu>
-            </div>
+                        </Menu>
+                    </div>
+                )}
+            </Spring>
         );
     }
 }
