@@ -8,6 +8,7 @@
   "private": true,
   "dependencies": {
     "@vx/gradient": "0.0.183",
+    "ajv": "^6.6.2",
     "antd": "^3.12.1",
     "axios": "^0.18.0",
     "chart.js": "^2.7.2",
