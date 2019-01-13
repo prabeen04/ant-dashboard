@@ -42,19 +42,19 @@ class NavMenu extends React.Component {
                 >
                     {this.state.menuData.map(menu => {
                         return (
-                            <Spring
-                                delay={200}
-                                from={{ opacity: 0, tansform: 'scale: 0' }}
-                                to={{ opacity: 1, tansform: 'scale: 1' }}>
-                                {styles => (
-                                    <Menu.Item key={menu.key}>
-                                        <Link to={menu.path}>
+                            <Menu.Item key={menu.key}>
+                                <Spring
+                                    delay={200}
+                                    from={{ opacity: 0, transform: 'translate3d(200px,0,0) scale: 0' }}
+                                    to={{ opacity: 1, transform: 'translate3d(0px,0,0) scale: 1' }}>
+                                    {styles => (
+                                        <Link to={menu.path} style={styles}>
                                             <Icon type={menu.iconType} />
                                             <span>{menu.title}</span>
                                         </Link>
-                                    </Menu.Item>
-                                )}
-                            </Spring>
+                                    )}
+                                </Spring>
+                            </Menu.Item>
                         )
                     })}
                     <Menu.Item>
