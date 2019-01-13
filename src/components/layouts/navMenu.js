@@ -37,45 +37,38 @@ class NavMenu extends React.Component {
     // }
     render() {
         return (
-            <Spring
-                delay={200}
-                from={{ opacity: 0, tansform: 'scale: 0' }}
-                to={{ opacity: 1, tansform: 'scale: 1' }}>
-                {styles => (
-                    <div style={styles}>
-                        <Menu
-                            defaultSelectedKeys={['1']}
-                            defaultOpenKeys={['sub1']}
-                            mode="inline"
-                            theme={this.props.theme}
-                            inlineCollapsed={this.props.collapsed}
-                        >
-                            {this.state.menuData.map(menu => {
-                                return (
-                                    <Menu.Item key={menu.key}>
-                                        <Link to={menu.path}>
-                                            <Icon type={menu.iconType} />
-                                            <span>{menu.title}</span>
-                                        </Link>
-                                    </Menu.Item>
-                                )
-                            })}
-                            <Menu.Item>
-                                <Switch
-                                    checked={this.props.theme === 'dark'}
-                                    onChange={this.props.toggleTheme}
-                                    checkedChildren="Dark"
-                                    unCheckedChildren="Light"
-                                />
+            <div>
+                <Menu
+                    defaultSelectedKeys={['1']}
+                    defaultOpenKeys={['sub1']}
+                    mode="inline"
+                    theme={this.props.theme}
+                    inlineCollapsed={this.props.collapsed}
+                >
+                    {this.state.menuData.map(menu => {
+                        return (
+                            <Menu.Item key={menu.key}>
+                                <Link to={menu.path}>
+                                    <Icon type={menu.iconType} />
+                                    <span>{menu.title}</span>
+                                </Link>
                             </Menu.Item>
-                            <Menu.Item>
-                                <Theme />
-                            </Menu.Item>
+                        )
+                    })}
+                    <Menu.Item>
+                        <Switch
+                            checked={this.props.theme === 'dark'}
+                            onChange={this.props.toggleTheme}
+                            checkedChildren="Dark"
+                            unCheckedChildren="Light"
+                        />
+                    </Menu.Item>
+                    <Menu.Item>
+                        <Theme />
+                    </Menu.Item>
 
-                        </Menu>
-                    </div>
-                )}
-            </Spring>
+                </Menu>
+            </div>
         );
     }
 }
