@@ -30,11 +30,6 @@ class NavMenu extends React.Component {
             menuData: menuData,
         }
     }
-    // toggleCollapsed = () => {
-    //     this.setState({
-    //         collapsed: !this.state.collapsed,
-    //     });
-    // }
     render() {
         return (
             <div>
@@ -47,12 +42,19 @@ class NavMenu extends React.Component {
                 >
                     {this.state.menuData.map(menu => {
                         return (
-                            <Menu.Item key={menu.key}>
-                                <Link to={menu.path}>
-                                    <Icon type={menu.iconType} />
-                                    <span>{menu.title}</span>
-                                </Link>
-                            </Menu.Item>
+                            <Spring
+                                delay={200}
+                                from={{ opacity: 0, tansform: 'scale: 0' }}
+                                to={{ opacity: 1, tansform: 'scale: 1' }}>
+                                {styles => (
+                                    <Menu.Item key={menu.key}>
+                                        <Link to={menu.path}>
+                                            <Icon type={menu.iconType} />
+                                            <span>{menu.title}</span>
+                                        </Link>
+                                    </Menu.Item>
+                                )}
+                            </Spring>
                         )
                     })}
                     <Menu.Item>
