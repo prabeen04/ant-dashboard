@@ -3,8 +3,8 @@ import { Redirect } from 'react-router-dom';
 import { Menu, Icon, Button, Switch } from 'antd';
 import { Link } from 'react-router-dom';
 import Theme from '../../container/settings/Theme/Theme';
-const SubMenu = Menu.SubMenu;
 import { Spring } from "react-spring";
+const SubMenu = Menu.SubMenu;
 class NavMenu extends React.Component {
     state = {
         collapsed: false
@@ -17,11 +17,11 @@ class NavMenu extends React.Component {
     render() {
         return (
             <Spring
-                delay={500}
-                from={{ opacity: 0, transform: 'translate3d(200px,0,0) ', }}
-                to={{ opacity: 1, transform: 'translate3d(0px,0,0) ' }}>
+                delay={200}
+                from={{ opacity: 0, tansform: 'scale: 0' }}
+                to={{ opacity: 1, tansform: 'scale: 1' }}>
                 {styles => (
-                    <div>
+                    <div style={styles}>
                         <Menu
                             defaultSelectedKeys={['1']}
                             defaultOpenKeys={['sub1']}
