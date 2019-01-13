@@ -7,20 +7,20 @@ import { Spring } from "react-spring";
 const SubMenu = Menu.SubMenu;
 const menuData = [
     { path: '/', key: '1', iconType: 'appstore', title: 'DashBoard' },
-    { path: '/calendar', key: '2', iconType: 'appstore', title: 'Calendar' },
-    { path: '/profile', key: '3', iconType: 'appstore', title: 'Profile' },
-    { path: '/post', key: '4', iconType: 'appstore', title: 'Post' },
-    { path: '/forms', key: '5', iconType: 'appstore', title: 'Forms' },
-    { path: '/tables', key: '6', iconType: 'appstore', title: 'Table' },
-    { path: '/settings', key: '7', iconType: 'appstore', title: 'Setting' },
-    { path: '/dnd', key: '8', iconType: 'appstore', title: 'DND' },
-    { path: '/charts', key: '9', iconType: 'appstore', title: 'Charts' },
-    { path: '/map', key: '10', iconType: 'appstore', title: 'Map' },
-    { path: '/drag', key: '11', iconType: 'appstore', title: 'Drag n Change' },
-    { path: '/tree', key: '12', iconType: 'appstore', title: 'Tree' },
-    { path: '/custom', key: '13', iconType: 'appstore', title: 'Custom Fields' },
-    { path: '/fullCalendar', key: '14', iconType: 'appstore', title: 'Full calendar' },
-    { path: '/spring', key: '15', iconType: 'appstore', title: 'Spring' },
+    { path: '/calendar', key: '2', iconType: 'calendar', title: 'Calendar' },
+    { path: '/profile', key: '3', iconType: 'profile', title: 'Profile' },
+    { path: '/post', key: '4', iconType: 'medium', title: 'Post' },
+    { path: '/forms', key: '5', iconType: 'edit', title: 'Forms' },
+    { path: '/tables', key: '6', iconType: 'table', title: 'Table' },
+    { path: '/settings', key: '7', iconType: 'setting', title: 'Setting' },
+    { path: '/dnd', key: '8', iconType: 'select', title: 'DND' },
+    { path: '/charts', key: '9', iconType: 'area-chart', title: 'Charts' },
+    { path: '/map', key: '10', iconType: 'global', title: 'Map' },
+    { path: '/drag', key: '11', iconType: 'edit', title: 'Drag n Change' },
+    { path: '/tree', key: '12', iconType: 'plus', title: 'Tree' },
+    { path: '/custom', key: '13', iconType: 'plus', title: 'Custom Fields' },
+    { path: '/fullCalendar', key: '14', iconType: 'calendar', title: 'Full calendar' },
+    { path: '/spring', key: '15', iconType: 'gift', title: 'Spring' },
 ]
 class NavMenu extends React.Component {
     constructor(props) {
@@ -45,8 +45,8 @@ class NavMenu extends React.Component {
                             <Menu.Item key={menu.key}>
                                 <Spring
                                     delay={200}
-                                    from={{ opacity: 0, transform: 'translate3d(200px,0,0) scale: 0' }}
-                                    to={{ opacity: 1, transform: 'translate3d(0px,0,0) scale: 1' }}>
+                                    from={{ transform: 'translate3d(200px,0,0) scale(0)' }}
+                                    to={{ transform: 'translate3d(0px,0,0) scale(1)' }}>
                                     {styles => (
                                         <Link to={menu.path} style={styles}>
                                             <Icon type={menu.iconType} />
