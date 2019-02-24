@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 const StyledTimeinterval = styled.div`
@@ -14,23 +14,21 @@ const StyledTimeinterval = styled.div`
         content: ' | '
     }
 `
-class TimeInterval extends Component {
-    render() {
-        const { times, handleClick } = this.props;
-        return (
-            <StyledTimeinterval>
-                {times.map((time, i) => {
-                    return (
-                        <span
-                            key={i}
-                            onClick={(e) => handleClick(time)}>
-                            {time.value}
-                        </span>
-                    )
-                })}
-            </StyledTimeinterval>
-        )
-    }
+function TimeInterval(props) {
+    const { times, handleClick } = props;
+    return (
+        <StyledTimeinterval>
+            {times.map((time, i) => {
+                return (
+                    <span
+                        key={i}
+                        onClick={(e) => handleClick(time)}>
+                        {time.value}
+                    </span>
+                )
+            })}
+        </StyledTimeinterval>
+    )
 }
 
 TimeInterval.propTypes = {
