@@ -52,7 +52,7 @@ exports[`<EventTimeline/> should matches snapshot 1`] = `
         Miami, FL
       </h4>
       <p>
-        Creative Direction, User Experience, Visual Design, Project Management, Team Leading
+         Creative Direction, User Experience, Visual Design, Project Management, Team Leading 
       </p>
     </VerticalTimelineElement>
     <VerticalTimelineElement
@@ -94,7 +94,7 @@ exports[`<EventTimeline/> should matches snapshot 1`] = `
         San Francisco, CA
       </h4>
       <p>
-        Creative Direction, User Experience, Visual Design, SEO, Online Marketing
+         Creative Direction, User Experience, Visual Design, SEO, Online Marketing 
       </p>
     </VerticalTimelineElement>
     <VerticalTimelineElement
@@ -178,7 +178,7 @@ exports[`<EventTimeline/> should matches snapshot 1`] = `
         San Francisco, CA
       </h4>
       <p>
-        User Experience, Visual Design
+         User Experience, Visual Design 
       </p>
     </VerticalTimelineElement>
     <VerticalTimelineElement
@@ -220,7 +220,7 @@ exports[`<EventTimeline/> should matches snapshot 1`] = `
         Online Course
       </h4>
       <p>
-        Strategy, Social Media
+         Strategy, Social Media 
       </p>
     </VerticalTimelineElement>
     <VerticalTimelineElement
@@ -262,7 +262,7 @@ exports[`<EventTimeline/> should matches snapshot 1`] = `
         Certification
       </h4>
       <p>
-        Creative Direction, User Experience, Visual Design
+         Creative Direction, User Experience, Visual Design 
       </p>
     </VerticalTimelineElement>
     <VerticalTimelineElement
@@ -304,7 +304,7 @@ exports[`<EventTimeline/> should matches snapshot 1`] = `
         Bachelor Degree
       </h4>
       <p>
-        Creative Direction, Visual Design
+         Creative Direction, Visual Design 
       </p>
     </VerticalTimelineElement>
     <VerticalTimelineElement
