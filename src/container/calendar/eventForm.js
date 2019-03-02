@@ -11,12 +11,6 @@ import { StyledDatePicker } from "../../components/UI/Antd";
 const { MonthPicker, RangePicker } = DatePicker;
 
 class EventForm extends Component {
-    constructor(props) {
-        super(props)
-        this.renderInput = this.renderInput.bind(this);
-        this.renderDate = this.renderDate.bind(this);
-        this.eventSubmit = this.eventSubmit.bind(this);
-    }
     eventSubmit = (values) => {
         console.log(values)
         this.props.addEvent(values)

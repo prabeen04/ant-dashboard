@@ -24,13 +24,6 @@ const CalendarInstance = (props) => {
         slotPropGetter={(date) => {
           console.log(date)
         }}
-      // eventPropGetter={(a,b,c,d)=>{
-      //   console.log(a)
-      //   console.log(b)
-      //   console.log(c)
-      //   console.log(d)
-      //   // ({className: 'red-background'})
-      // }}
       />
     </div>
   )
