@@ -18,10 +18,6 @@ class Calendar extends Component {
       activeTab: "1",
       view: 'week'
     }
-
-    this.handleOk = this.handleOk.bind(this);
-    this.success = this.success.bind(this);
-    this.eventSelect = this.eventSelect.bind(this);
   }
 
   success = () => {
