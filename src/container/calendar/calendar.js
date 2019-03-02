@@ -39,6 +39,7 @@ class Calendar extends Component {
       selectedEvent: event
     })
   }
+  onModalClose = () => this.setState({ isModalVisible: false, selectedEvent: {} })
   componentDidMount() {
     this.props.getEvents();
   }
@@ -66,7 +67,7 @@ class Calendar extends Component {
               defaultDate={new Date()}
               selectable={true}
               popup={true}
-              onSelectEvent={this.eventSelect}
+              onSelectEvent={this.onSelectEvent}
               onSelectSlot={this.handleOk}
             />
             : <p style={{ flexBasis: '70%' }}>Second tab Content</p>
@@ -82,7 +83,7 @@ class Calendar extends Component {
                 })
               }}>
               <TabPane tab={<span><Icon type="apple" />Apple</span>} key="1">
-                <EventForm onSelectEvent={this.onSelectEvent} />
+                <EventForm />
               </TabPane>
               <TabPane tab={<span><Icon type="android" />Android</span>} key="2">
                 <Button type="primary">submit</Button>
@@ -93,6 +94,8 @@ class Calendar extends Component {
         <EditEventModal
           title='Event Detail'
           visible={this.state.isModalVisible}
+          onClose={this.onModalClose}
+          onOk={this.onModalClose}
         >
           <p>Modal</p>
           <p>{this.state.selectedEvent.description}</p>
