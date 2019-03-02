@@ -3,14 +3,16 @@ import { StyledModal } from '../../components/UI/Antd';
 
 class EditEventModal extends Component {
     render() {
+        const { title, visible, onClose, onOk } = this.props
         return (
             <div>
                 <StyledModal
-                    title={null}
-                    visible={null}
-                    onOk={null}
-                    onCancel={null}
+                    title={title || ''}
+                    visible={visible || null}
+                    onOk={onOk || null}
+                    onCancel={onClose || null}
                 >
+                    {this.props.children}
                 </StyledModal>
             </div>
         )
