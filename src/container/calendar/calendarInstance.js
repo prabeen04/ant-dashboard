@@ -9,6 +9,7 @@ const CalendarInstance = (props) => {
   return (
     <div style={{ flexBasis: '70%', height: 500 }}>
       <StyledBigCalendar
+
         style={{ flexBasis: '70%' }}
         events={props.events ? props.events : []}
         defaultDate={props.defaultDate || new Date()}
@@ -20,7 +21,7 @@ const CalendarInstance = (props) => {
         onSelectSlot={(range) => {
           props.onSelectSlot(range)
         }}
-        onSelectEvent={props.onSelectEvent()}
+        onSelectEvent={props.onSelectEvent}
         slotPropGetter={(date) => {
           console.log(date)
         }}

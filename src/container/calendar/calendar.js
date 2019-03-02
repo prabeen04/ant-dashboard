@@ -29,6 +29,9 @@ class Calendar extends Component {
   eventSelect = (event) => {
     console.log(event)
   }
+  onSelectEvent = (event) => {
+    console.log(event)
+  }
   componentDidMount() {
     this.props.getEvents();
   }
@@ -72,7 +75,7 @@ class Calendar extends Component {
                 })
               }}>
               <TabPane tab={<span><Icon type="apple" />Apple</span>} key="1">
-                <EventForm />
+                <EventForm onSelectEvent={this.onSelectEvent} />
               </TabPane>
               <TabPane tab={<span><Icon type="android" />Android</span>} key="2">
                 <Button type="primary">submit</Button>
