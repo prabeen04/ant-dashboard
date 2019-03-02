@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import CalendarInstance from './calendarInstance';
 import { getEvents, setDate } from '../../actions/calendar_actions';
+import CalendarInstance from './calendarInstance';
+import EditEventModal from "./EditEventModal";
 import EventForm from './eventForm';
 import ActionHeader from '../../components/layouts/ActionHeader';
 import './calendar.css';
@@ -16,7 +17,9 @@ class Calendar extends Component {
     super(props)
     this.state = {
       activeTab: "1",
-      view: 'week'
+      view: 'week',
+      isModalVisible: false,
+      selectedEvent: {}
     }
   }
 
@@ -31,6 +34,10 @@ class Calendar extends Component {
   }
   onSelectEvent = (event) => {
     console.log(event)
+    this.setState({
+      isModalVisible: true,
+      selectedEvent: event
+    })
   }
   componentDidMount() {
     this.props.getEvents();
@@ -46,7 +53,7 @@ class Calendar extends Component {
     //   return (<p>Some Error occoured...</p>)
     // }
     return (
-      <div>
+      <React.Fragment>
         <ActionHeader
           leftComponent={<LeftActionHeader />}
           rightComponent={<RightActionHeader />}
@@ -83,7 +90,14 @@ class Calendar extends Component {
             </StyledTabs>
           </MainWrapper>
         </div>
-      </div>
+        <EditEventModal
+          title='Event Detail'
+          visible={this.state.isModalVisible}
+        >
+          <p>Modal</p>
+          <p>{this.state.selectedEvent.description}</p>
+        </EditEventModal>
+      </React.Fragment>
     )
   }
 }
