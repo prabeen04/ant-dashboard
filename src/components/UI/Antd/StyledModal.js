@@ -1,4 +1,4 @@
-import { Modal } from "antd";
+import Modal from "antd/lib/modal";
 import styled from 'styled-components'
 
 const StyledModal = styled(Modal)`
@@ -7,7 +7,7 @@ const StyledModal = styled(Modal)`
         color: ${props => props.theme.color};
    }
     .ant-modal-header{
-        background-color: ${props => props.theme.backgroundColor} !important;
+        background-image: linear-gradient(180deg, teal, cyan);
         color: ${props => props.theme.color};
    }
     .ant-modal-body{
@@ -19,7 +19,11 @@ const StyledModal = styled(Modal)`
         color: ${props => props.theme.color};
    }
     .ant-modal-title{
-        color: ${props => props.theme.color};
+        color: ${props => '#fff'};
+        font-size: 1.3rem;
+   }
+   .ant-modal-close-x{
+        color: ${props => '#fff'};
    }
 `
 export default StyledModal;
