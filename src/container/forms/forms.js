@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Divider } from 'antd';
+import { Divider, PageHeader, Typography } from 'antd';
 import SimpleForm from "./simpleForm";
 import ComplexForm from "./complexForm";
 import ReduxForm from './reduxForm';
@@ -11,11 +11,17 @@ import FieldArraysForm from './fieldArraysForm';
 import SecondArrayForm from './secondArrayForm';
 import ThirdArrayForm from './thirdArrayForm';
 import ReuseForm from './reuseForm';
+const { Paragraph } = Typography;
+
 class Forms extends Component {
   render() {
     return (
       <div>
-          {/* <Divider />
+        <PageHeader
+          onBack={() => null}
+          title="Forms"
+        />
+        {/* <Divider />
           <SimpleForm />
           <Divider />
           <ComplexForm />
@@ -25,13 +31,13 @@ class Forms extends Component {
           <FormArray />
           <Divider />
           <NewFormArray /> */}
-          {/* <ExampleForm /> */}
-          {/* <FieldArraysForm /> */}
-          {/* <Divider /> */}
-          {/* <ReduxFormArray /> */}
-          {/* <SecondArrayForm /> */}
-          {/* <ThirdArrayForm /> */}
-          <ReuseForm/>
+        {/* <ExampleForm /> */}
+        {/* <FieldArraysForm /> */}
+        {/* <Divider /> */}
+        {/* <ReduxFormArray /> */}
+        {/* <SecondArrayForm /> */}
+        {/* <ThirdArrayForm /> */}
+        <ReuseForm />
       </div>
     )
   }
