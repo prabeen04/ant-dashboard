@@ -82,11 +82,11 @@ class Calendar extends Component {
                   activeTab: activeKey.toString()
                 })
               }}>
-              <TabPane tab={<span><Icon type="apple" />Apple</span>} key="1">
+              <TabPane tab={<span><Icon type="Apple" />Apple</span>} key="1">
                 <EventForm />
               </TabPane>
-              <TabPane tab={<span><Icon type="android" />Android</span>} key="2">
-                <Button type="primary">submit</Button>
+              <TabPane tab={<span><Icon type="Android" />Android</span>} key="2">
+                
               </TabPane>
             </StyledTabs>
           </MainWrapper>

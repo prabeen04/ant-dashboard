@@ -7,7 +7,7 @@ const StyledModal = styled(Modal)`
         color: ${props => props.theme.color};
    }
     .ant-modal-header{
-        background-image: linear-gradient(180deg, teal, cyan);
+        background-image: linear-gradient(180deg, orange, tomato);
         color: ${props => props.theme.color};
    }
     .ant-modal-body{
