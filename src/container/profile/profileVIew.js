@@ -59,7 +59,7 @@ class ProfileView extends Component {
           width={820}
           closable={true}
           onClose={this.onDrawerClose}
-          visible={this.state.drawerVisible}
+          // visible={this.state.drawerVisible}
         >
           <EventTimeline />
         </Drawer>

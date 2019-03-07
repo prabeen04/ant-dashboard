@@ -59,10 +59,6 @@ class ReuseForm extends Component {
                         width={400}
                         onSelect={this.handleSelect} />
                     <Field
-                        name="switch"
-                        component={SwitchInput}
-                    />
-                    <Field
                         name="image"
                         component={UploadInput}
                     />
