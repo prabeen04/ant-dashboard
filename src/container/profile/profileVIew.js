@@ -25,7 +25,7 @@ class ProfileView extends Component {
       isDrawerOpen: false,
     });
   };
-  onDrawerClose = () => this.setState({drawerVisible: false})
+  onDrawerClose = () => this.setState({ drawerVisible: false })
   render() {
     return (
       <div>
@@ -59,7 +59,7 @@ class ProfileView extends Component {
           width={820}
           closable={true}
           onClose={this.onDrawerClose}
-          // visible={this.state.drawerVisible}
+        // visible={this.state.drawerVisible}
         >
           <EventTimeline />
         </Drawer>
@@ -67,14 +67,10 @@ class ProfileView extends Component {
     )
   }
 }
-const mapStateToProps = (state) => {
-  return {
-    profile: state.profileReducer.singleProfile
-  }
-}
-const mapDispatchToProps = (dispatch) => {
-  return bindActionCreators({
-    openEditProfile
-  }, dispatch)
-}
+const mapStateToProps = (state) => ({
+  profile: state.profileReducer.singleProfile
+})
+const mapDispatchToProps = (dispatch) => bindActionCreators({
+  openEditProfile
+}, dispatch)
 export default connect(mapStateToProps, mapDispatchToProps)(ProfileView);
