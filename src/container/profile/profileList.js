@@ -10,47 +10,41 @@ import MainWrapper from '../../components/UI/Elements/MainWrapper'
 import { StyledCodeSkeleton } from "../../components/UI/Elements";
 import './profile.css';
 
-class ProfileList extends Component {
-    componentDidMount() {
-        this.props.getProfiles()
+function ProfileList(props) {
+
+    if (props.isLoading) {
+        return (<StyledCodeSkeleton />)
+    }
+    if (props.isError) {
+        return (<h2>Some Error Occoured</h2>)
     }
 
-    render() {
-
-        if (this.props.isLoading) {
-            return (<StyledCodeSkeleton />)
-        }
-        if (this.props.isError) {
-            return (<h2>Some Error Occoured</h2>)
-        }
-
-        let renderCard = this.props.profiles
-            .sort((a, b) => this.props.sortKey === 'ASC' ? a.name > b.name : a.name < b.name)
-            .map(profile => {
-                if (this.props.viewType === 'GRID') {
-                    return <ProfileCard
-                        key={profile._id}
-                        user={profile}
-                    />
-                }
-                if (this.props.viewType === 'LIST') {
-                    return <ProfileListView key={profile._id} user={profile} />
-                }
+    let renderCard = props.profiles
+        .sort((a, b) => props.sortKey === 'ASC' ? a.name > b.name : a.name < b.name)
+        .map(profile => {
+            if (props.viewType === 'GRID') {
+                return <ProfileCard
+                    key={profile._id}
+                    user={profile}
+                />
+            }
+            if (props.viewType === 'LIST') {
+                return <ProfileListView key={profile._id} user={profile} />
+            }
 
 
-            })
-        return (
-            <div className={this.props.viewType === 'GRID' ? 'profile-grid-view' : 'profile-list-view'} >
-                {this.props.viewType === 'GRID' && <div className="flex-container"
-                    style={{ width: 155, height: 200, margin: '0.5rem', justifyContent: 'center', backgroundColor: '#fff', cursor: 'pointer' }}
-                    onClick={() => this.props.showAddProfile()}
-                >
-                    <Icon type="user-add" style={{ fontSize: '10rem', color: '#444' }} />
-                </div>}
-                {renderCard}
-            </div>
-        )
-    }
+        })
+    return (
+        <div className={props.viewType === 'GRID' ? 'profile-grid-view' : 'profile-list-view'} >
+            {props.viewType === 'GRID' && <div className="flex-container"
+                style={{ width: 155, height: 200, margin: '0.5rem', justifyContent: 'center', backgroundColor: '#fff', cursor: 'pointer' }}
+                onClick={() => props.showAddProfile()}
+            >
+                <Icon type="user-add" style={{ fontSize: '10rem', color: '#444' }} />
+            </div>}
+            {renderCard}
+        </div>
+    )
 }
 const mapStateToProps = state => ({
     isLoading: state.profileReducer.isLoading,
