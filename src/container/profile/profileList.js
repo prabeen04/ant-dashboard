@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useEffect } from 'react';
 import ProfileCard from './profileCard';
 import ProfileListView from './profileListView';
 import { connect } from 'react-redux';
@@ -11,7 +11,9 @@ import { StyledCodeSkeleton } from "../../components/UI/Elements";
 import './profile.css';
 
 function ProfileList(props) {
-
+    useEffect(() => {
+        props.getProfiles()
+    },[])
     if (props.isLoading) {
         return (<StyledCodeSkeleton />)
     }
