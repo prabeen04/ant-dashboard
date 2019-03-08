@@ -25,11 +25,7 @@ class ProfileList extends Component {
         }
 
         let renderCard = this.props.profiles
-            .sort((a, b) => {
-                return this.props.sortKey === 'ASC'
-                    ? a.name > b.name
-                    : a.name < b.name
-            })
+            .sort((a, b) => this.props.sortKey === 'ASC' ? a.name > b.name : a.name < b.name)
             .map(profile => {
                 if (this.props.viewType === 'GRID') {
                     return <ProfileCard
