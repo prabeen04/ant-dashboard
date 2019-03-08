@@ -9,26 +9,18 @@ import EventTimeline from "../../components/utils/EventTimeline";
 import { StyledCard } from "../../components/UI/Antd";
 const { Meta } = StyledCard;
 
-// class ProfileView extends Component {
-//   state = {
-//     isDrawerOpen: false,
-//     drawerVisible: true
-//   }
-
-//   showDrawer = () => {
-//     this.setState({
-//       isDrawerOpen: true,
-//     });
-//   };
-//   onClose = () => {
-//     this.setState({
-//       isDrawerOpen: false,
-//     });
-//   };
-//   onDrawerClose = () => this.setState({ drawerVisible: false })
 function ProfileView(props) {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false)
   const [drawerVisible, setDrawerVisible] = useState(true)
+  function onClose (){
+    setDrawerVisible(true)
+  }
+  function showDrawer (){
+    setDrawerVisible(true)
+  }
+  function onDrawerClose (){
+    setDrawerVisible(true)
+  }
   return (
     <div>
       {props.profile.name &&
@@ -41,7 +33,7 @@ function ProfileView(props) {
             style={{ width: '100%' }}
             cover={<img alt="example" src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png" />}
             actions={[
-              <Icon onClick={() => this.showDrawer()} type="setting" />,
+              <Icon onClick={() => showDrawer()} type="setting" />,
               <Icon type="edit" onClick={() => props.openEditProfile(props.profile)} />,
               <Icon type="tool" theme="outlined" />
             ]}
@@ -55,20 +47,19 @@ function ProfileView(props) {
         </div>
 
       }
-      <ProfileDrawer open={this.state.isDrawerOpen} onClose={this.onClose} user={props.profile} />
+      <ProfileDrawer open={isDrawerOpen} onClose={onClose} user={props.profile} />
       <Drawer
         title="Multi-level drawer"
         width={820}
         closable={true}
-        onClose={this.onDrawerClose}
-      // visible={this.state.drawerVisible}
+        onClose={onDrawerClose}
+      // visible={drawerVisible}
       >
         <EventTimeline />
       </Drawer>
     </div>
   )
 }
-// }
 const mapStateToProps = (state) => ({
   profile: state.profileReducer.singleProfile
 })
