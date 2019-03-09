@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
-import { Button } from 'antd'
-import { connect } from "react-redux";
-import { bindActionCreators } from "redux";
+import { Button } from 'antd';
 import { reduxForm, Field } from "redux-form";
 import { getLatLng, geocodeByAddress } from 'react-places-autocomplete';
 import { Input } from '../../components/UI/Elements';
@@ -75,14 +73,4 @@ ReuseForm = reduxForm({
     form: 'reuseForm'
 })(ReuseForm)
 
-const mapStateToProps = state => {
-    return {
-
-    }
-}
-const mapDispatchToProps = dispatch => {
-    return bindActionCreators({
-
-    })
-}
-export default connect(mapStateToProps, mapDispatchToProps)(ReuseForm);
+export default ReuseForm;
