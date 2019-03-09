@@ -9,17 +9,9 @@ import UploadInput from '../../components/common/forms/uploadInput';
 import GoogleMap from '../../components/google/googleMap';
 import SwitchInput from "../../components/common/forms/switchInput";
 
-// class ReuseForm extends Component {
-//     constructor(props) {
-//         super(props)
-
-//         state = {
-//             latLng: null
-//         }
-//     }
-
 function ReuseForm(props) {
     const { handleSubmit } = props;
+    const [latLng, setLatlng] = useState(null)
     const onSubmit = values => console.log(values)
 
     const handleSelect = address => {
@@ -28,9 +20,7 @@ function ReuseForm(props) {
             .then(results => getLatLng(results[0]))
             .then(latLng => {
                 console.log('Success', latLng)
-                // setState({
-                //     latLng
-                // })
+                setLatlng(latLng)
             })
             .then(() => props.change('location', address))
             .catch(error => console.error('Error', error));
@@ -69,7 +59,6 @@ function ReuseForm(props) {
         </div>
     )
 }
-// }
 ReuseForm = reduxForm({
     form: 'reuseForm'
 })(ReuseForm)
