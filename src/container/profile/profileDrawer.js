@@ -18,5 +18,4 @@ function ProfileDrawer(props) {
         </div>
     )
 }
-}
 export default ProfileDrawer;
