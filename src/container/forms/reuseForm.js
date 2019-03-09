@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { useState } from 'react'
 import { Button } from 'antd';
 import { reduxForm, Field } from "redux-form";
 import { getLatLng, geocodeByAddress } from 'react-places-autocomplete';
@@ -9,66 +9,67 @@ import UploadInput from '../../components/common/forms/uploadInput';
 import GoogleMap from '../../components/google/googleMap';
 import SwitchInput from "../../components/common/forms/switchInput";
 
-class ReuseForm extends Component {
-    constructor(props) {
-        super(props)
+// class ReuseForm extends Component {
+//     constructor(props) {
+//         super(props)
 
-        this.state = {
-            latLng: null
-        }
-    }
-    onSubmit = values => console.log(values)
+//         state = {
+//             latLng: null
+//         }
+//     }
 
-    handleSelect = address => {
-        console.log(this.props, address)
+function ReuseForm(props) {
+    const { handleSubmit } = props;
+    const onSubmit = values => console.log(values)
+
+    const handleSelect = address => {
+        console.log(props, address)
         geocodeByAddress(address)
             .then(results => getLatLng(results[0]))
             .then(latLng => {
                 console.log('Success', latLng)
-                this.setState({
-                    latLng
-                })
+                // setState({
+                //     latLng
+                // })
             })
-            .then(() => this.props.change('location', address))
+            .then(() => props.change('location', address))
             .catch(error => console.error('Error', error));
     };
-    renderInput = ({ input, meta, width, label, ...custom }) => (
+    const renderInput = ({ input, meta, width, label, ...custom }) => (
         <div style={{ width }}>
             <Input  {...input} {...custom} />
         </div>
     )
-    render() {
-        const { handleSubmit } = this.props;
-        return (
-            <div>
-                <form onSubmit={handleSubmit(this.onSubmit)}>
-                    <Field
-                        name="field1"
-                        component={this.renderInput}
-                        label='Event'
-                        placeholder="Enter Event"
-                        width={400}
-                    />
-                    <br />
-                    <Field
-                        name="location"
-                        component={PlaceInput}
-                        label='Enter Event Location'
-                        width={400}
-                        onSelect={this.handleSelect} />
-                    <Field
-                        name="image"
-                        component={UploadInput}
-                    />
-                    <Button type="primary" htmlType="submit" >Submit</Button>
-                </form>
-                <div style={{ marginTop: '0.5rem' }}>
-                    <GoogleMap latLng={this.state.latLng} />
-                </div>
+    return (
+        <div>
+            <form onSubmit={handleSubmit(onSubmit)}>
+                <Field
+                    name="field1"
+                    component={renderInput}
+                    label='Event'
+                    placeholder="Enter Event"
+                    width={400}
+                />
+                <br />
+                <Field
+                    name="location"
+                    component={PlaceInput}
+                    label='Enter Event Location'
+                    width={400}
+                    onSelect={handleSelect} />
+                <Field
+                    name="image"
+                    component={UploadInput}
+                />
+                <Button type="primary" htmlType="submit" >Submit</Button>
+            </form>
+            <div style={{ marginTop: '0.5rem' }}>
+                <GoogleMap latLng={latLng} />
             </div>
-        )
-    }
+        </div>
+    )
 }
+// }
 ReuseForm = reduxForm({
     form: 'reuseForm'
 })(ReuseForm)
