@@ -7,7 +7,6 @@ import { Spring } from "react-spring";
 const SubMenu = Menu.SubMenu;
 
 export default function NavMenu(props) {
-    const [collapsed, setCollapsed] = useState(false)
     const [menuData, setMenuData] = useState([
         { path: '/', key: '1', iconType: 'appstore', title: 'DashBoard' },
         { path: '/calendar', key: '2', iconType: 'calendar', title: 'Calendar' },
