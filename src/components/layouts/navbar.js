@@ -28,27 +28,6 @@ const FullCalendar = lazy(() => import('../../container/FullCalendar/FullCalenda
 const Spring = lazy(() => import('../../container/Spring/Spring'))
 const NotFound = lazy(() => import('../../container/notFound/notFound'));
 
-// class Navbar extends React.Component {
-//     constructor(props) {
-//         super(props)
-//         state = {
-//             collapsed: false,
-//             theme: 'dark'
-//         };
-//         toggle = toggle.bind(this);
-//     }
-
-//     toggle = () => {
-//         setState({
-//             collapsed: !collapsed,
-//         });
-//     }
-//     toggleTheme = (value) => {
-//         console.log(value)
-//         setState({
-//             theme: value ? 'dark' : 'light',
-//         })
-//     }
 export default function Navbar(props) {
     const [collapsed, setCollapsed] = useState(false)
     const [theme, setTheme] = useState('dark')
@@ -137,6 +116,3 @@ export default function Navbar(props) {
         </LayoutWrapper>
     );
 }
-// }
-
-// export default Navbar;
