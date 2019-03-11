@@ -1,52 +1,37 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { Badge, Icon, Tooltip, Popover } from 'antd';
 import NotificationTab from '../tabs/notificationTab';
 
-class NotificationPopover extends Component {
-    constructor(props) {
-        super(props)
-
-        this.state = {
-            visible: false
-        }
-        this.handleVisibleChange = this.handleVisibleChange.bind(this);
+function NotificationPopover(props) {
+    const [visible, setVisible] = useState(false)
+    const handleVisibleChange = visible => {
+        setVisible(visible)
     }
+    return (
+        <Tooltip title="Notifications">
+            <Popover
+                content={
+                    <div>
+                        <NotificationTab />
+                    </div>
 
-    handleVisibleChange = visible => {
-        this.setState({ visible });
-    }
-    render() {
-        return (
-            <Tooltip title="Notifications">
-                <Popover
-                    content={
-                        <div>
-                            <NotificationTab />
-                        </div>
-
-                    }
-                    trigger="click"
-                    placement="bottomRight"
-                    visible={this.state.visible}
-                    onVisibleChange={this.handleVisibleChange}
-                >
-                    <Badge count={this.props.notificationCount} >
-                        <Icon type="bell" />
-                    </Badge>
-                </Popover>
-            </Tooltip>
-        )
-    }
+                }
+                trigger="click"
+                placement="bottomRight"
+                visible={visible}
+                onVisibleChange={handleVisibleChange}
+            >
+                <Badge count={props.notificationCount} >
+                    <Icon type="bell" />
+                </Badge>
+            </Popover>
+        </Tooltip>
+    )
 }
-const mapStateToProps = state => {
-    if (state.notificationReducer.presentNotifications.results) {
-        console.log('insidisnadinask')
-        return {
-            notificationCount: state.notificationReducer.presentNotifications.results.length
-        }
-    }
-    return{}
 
-}
+const mapStateToProps = ({ notificationReducer }) => ({
+    notificationCount: notificationReducer.presentNotifications.results && notificationReducer.presentNotifications.results.length
+})
+
 export default connect(mapStateToProps)(NotificationPopover);
