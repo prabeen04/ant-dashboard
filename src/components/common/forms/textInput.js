@@ -4,16 +4,12 @@ import './forms.css';
 /* 
 Custom Text Input
 */
-class TextInput extends Component {
-  constructor(props) {
-    super(props)
-  }
-  render() {
-    return (
-      <div style={{marginBottom: 10}}>
-        <input type="text" {...this.props} className="text-input"/>
-      </div>
-    )
-  }
+
+export default function TextInput(props) {
+  return (
+    <div style={{ marginBottom: 10 }}>
+      <input type="text" {...props} className="text-input" />
+    </div>
+  )
 }
-export default TextInput;
+
