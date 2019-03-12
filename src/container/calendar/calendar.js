@@ -12,27 +12,15 @@ import { MainWrapper } from '../../components/UI/Layout';
 import { StyledTabs } from '../../components/UI/Antd';
 const TabPane = Tabs.TabPane;
 
-// class Calendar extends Component {
-//   constructor(props) {
-//     super(props)
-//     state = {
-//       activeTab: "1",
-//       view: 'week',
-//       isModalVisible: false,
-//       selectedEvent: {}
-//     }
-//   }
-
-
-//   componentDidMount() {
-//     props.getEvents();
-//   }
-
 function Calendar(props) {
   const [activeTab, setActiveTab] = useState('1')
   const [view, setView] = useState('week')
   const [isModalVisible, setIsModalVisible] = useState(false)
   const [selectedEvent, setSelectedEvent] = useState({})
+
+  useEffect(() => {
+    props.getEvents();
+  }, [])
   const success = () => {
     message.success('Event Added', 10);
   };
@@ -107,7 +95,6 @@ function Calendar(props) {
     </React.Fragment>
   )
 }
-// }
 
 const mapStateToProps = ({ calendarReducer }) => ({
   isLoading: calendarReducer.isLoading,
