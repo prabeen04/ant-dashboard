@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { StyledModal } from '../../components/UI/Antd';
 
-export default function EditEventModal({ title, visible, onClose, onOk }) {
+export default function EditEventModal({ title, visible, onClose, onOk, children }) {
     return (
         <div>
             <StyledModal
@@ -10,7 +10,7 @@ export default function EditEventModal({ title, visible, onClose, onOk }) {
                 onOk={onOk || null}
                 onCancel={onClose || null}
             >
-                {this.props.children}
+                {children}
             </StyledModal>
         </div>
     )

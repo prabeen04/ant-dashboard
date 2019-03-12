@@ -10,12 +10,13 @@ import { Input } from "../../components/UI/Elements";
 import { StyledDatePicker } from "../../components/UI/Antd";
 const { MonthPicker, RangePicker } = DatePicker;
 
-class EventForm extends Component {
-    eventSubmit = (values) => {
+function EventForm(props) {
+    const { handleSubmit, submitting } = props
+    const eventSubmit = (values) => {
         console.log(values)
-        this.props.addEvent(values)
+        props.addEvent(values)
     }
-    renderInput = ({ input, label, type, meta: { touched, error }, ...custom }) => {
+    const renderInput = ({ input, label, type, meta: { touched, error }, ...custom }) => {
         return (
             <div>
                 <Input
@@ -27,7 +28,7 @@ class EventForm extends Component {
             </div>
         )
     }
-    renderDate = ({ input, meta: { touched, error }, ...custom }) => {
+    const renderDate = ({ input, meta: { touched, error }, ...custom }) => {
         return (
             <div>
                 <StyledDatePicker {...input} disabled={true}
@@ -36,38 +37,36 @@ class EventForm extends Component {
             </div>
         )
     }
-    render() {
-        const { handleSubmit, submitting } = this.props
-        return (
-            <div>
-                <form onSubmit={handleSubmit(this.eventSubmit)}>
-                    <Field
-                        name="start"
-                        label="Start Date"
-                        component={this.renderDate} />
-                    <Field
-                        name="end"
-                        label="End Date"
-                        component={this.renderDate}
-                    />
-                    <Field
-                        name="title"
-                        label="Title"
-                        component={this.renderInput} />
-                    <Field
-                        name="user"
-                        label="User"
-                        component={this.renderInput} />
-                    <Field
-                        name="description"
-                        label="Description"
-                        component={PlaceInput} />
-                    <Button type="primary" htmlType="submit">Add Event</Button>
-                </form>
-            </div>
-        )
-    }
+    return (
+        <div>
+            <form onSubmit={handleSubmit(eventSubmit)}>
+                <Field
+                    name="start"
+                    label="Start Date"
+                    component={renderDate} />
+                <Field
+                    name="end"
+                    label="End Date"
+                    component={renderDate}
+                />
+                <Field
+                    name="title"
+                    label="Title"
+                    component={renderInput} />
+                <Field
+                    name="user"
+                    label="User"
+                    component={renderInput} />
+                <Field
+                    name="description"
+                    label="Description"
+                    component={PlaceInput} />
+                <Button type="primary" htmlType="submit">Add Event</Button>
+            </form>
+        </div>
+    )
 }
+
 const validate = (values) => {
     const errors = {}
     if (!values.start) {
