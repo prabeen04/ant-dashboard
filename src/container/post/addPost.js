@@ -41,12 +41,6 @@ class AddPost extends Component {
     </div>
   )
   render() {
-    if (this.props.isLoading) {
-      return <h4>Loading...</h4>
-    }
-    if (this.props.isError) {
-      return <h4>Oops... Something went wrong!!!</h4>
-    }
     const { handleSubmit } = this.props
     return (
       <div>

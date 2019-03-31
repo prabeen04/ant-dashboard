@@ -13,23 +13,18 @@ const PostRow = styled.div`
   justify-content: space-between;
   align-items: center;
   align-content: center;
-  color: rgb(126, 123, 141);
-  /* background: #ffffff; */
+  color: ${props => props.theme.color};
+  background: ${props => props.theme.backgroundColor}
   font-weight: 500;
   padding: 0.8rem 1rem;
-  margin: 0.1rem 0.5rem;
+  margin: 0.5rem 0.5rem;
   border-radius: 0.15rem;
   box-shadow: 0 2px 6px 1px #ccc;
   transition: 0.2s all ease-in-out;
   cursor: pointer;
 `
 class PostList extends Component {
-  constructor(props) {
-    super(props)
-    this.getSinglePost = this.getSinglePost.bind(this);
-  }
   componentDidMount() {
-    console.log('hghgjh')
     this.props.getPosts();
   }
 
