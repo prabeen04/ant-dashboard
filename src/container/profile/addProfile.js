@@ -50,7 +50,7 @@ class AddProfile extends Component {
     }
   }
   renderInput = ({ input, label, type, meta: { touched, error }, ...custom }) => {
-    return <div className="text-input">
+    return <div>
       <Input
         placeholder={label}
         {...input}
