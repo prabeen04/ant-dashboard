@@ -4,7 +4,7 @@ import {
 } from '../types/post_actiontypes';
 import axios from 'axios';
 
-const baseURL = 'https://prabeen-restapi.herokuapp.com/api/posts';
+const baseURL = 'https://murmuring-hamlet-22423.herokuapp.com/api/posts';
 
 export const getPosts = (dispatch) => {
 

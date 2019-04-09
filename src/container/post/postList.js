@@ -18,6 +18,7 @@ const PostRow = styled.div`
   font-weight: 500;
   padding: 0.8rem 1rem;
   margin: 0.5rem 0.5rem;
+  border-left: 3px solid ${props => props.theme.primaryColor};
   border-radius: 0.15rem;
   box-shadow: 0 2px 6px 1px #ccc;
   transition: 0.2s all ease-in-out;

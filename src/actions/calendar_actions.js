@@ -4,7 +4,7 @@ import {
 } from '../types/calendar_actiontypes';
 import axios from 'axios';
 
-const baseURL = 'https://prabeen-restapi.herokuapp.com/api/events';
+const baseURL = 'https://murmuring-hamlet-22423.herokuapp.com/api/events';
 
 export const setDate = (dates) => {
     return (dispatch) => {

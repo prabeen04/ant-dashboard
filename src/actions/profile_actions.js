@@ -8,7 +8,7 @@ import {
 
 import axios from 'axios';
 
-const baseURL = 'https://prabeen-restapi.herokuapp.com/api/users';
+const baseURL = 'https://murmuring-hamlet-22423.herokuapp.com/api/users';
 
 export const getProfiles = () => {
     return (dispatch) => {
