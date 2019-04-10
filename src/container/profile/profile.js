@@ -34,13 +34,11 @@ const Profile = (props) => {
 
   )
 }
-const mapStateToProps = (state) => {
-  return {
-    isLoading: state.profileReducer.isLoading,
-    isError: state.profileReducer.isError,
-    showAddProfile: state.profileReducer.showAddProfile,
-    showEditProfile: state.profileReducer.showEditProfile,
-    showViewProfile: state.profileReducer.showViewProfile
-  }
-}
+const mapStateToProps = ({ profileReducer }) => ({
+  isLoading: profileReducer.isLoading,
+  isError: profileReducer.isError,
+  showAddProfile: profileReducer.showAddProfile,
+  showEditProfile: profileReducer.showEditProfile,
+  showViewProfile: profileReducer.showViewProfile
+})
 export default connect(mapStateToProps)(Profile);
