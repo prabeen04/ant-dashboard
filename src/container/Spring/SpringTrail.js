@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Trail, animated } from 'react-spring'
+import { Trail, animated } from 'react-spring/renderprops'
 import styled from 'styled-components';
 import { Title } from "../../components/UI/Elements";
 

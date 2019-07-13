@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Spring, animated } from 'react-spring'
+import { Spring, animated } from 'react-spring/renderprops'
 import { interpolate } from 'flubber'
 import { GradientPinkRed as Gradient } from '@vx/gradient'
 const paths = [

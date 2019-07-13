@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Spring } from "react-spring";
+import { Spring } from "react-spring/renderprops";
 import { StyledActionHeader } from "../UI/Layout";
 const ActionHeader = (props) => {
     return (

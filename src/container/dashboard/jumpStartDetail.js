@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from "redux";
 import classNames from 'classnames';
 import { Icon } from 'antd'
-import { Spring } from "react-spring";
+import { Spring } from "react-spring/renderprops";
 import { openJumpstartModal } from "../../actions/dashboardAction";
 const JumpStartDetail = (props) => {
     return (
