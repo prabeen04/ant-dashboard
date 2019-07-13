@@ -1,5 +1,5 @@
 import React from 'react';
-import { Creatable } from 'react-select';
+import Creatable from 'react-select/creatable';
 import styled from 'styled-components';
 
 const StyledCreatable = styled(Creatable)`

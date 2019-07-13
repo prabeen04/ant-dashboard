@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { DragDropContext } from 'react-dnd';
+import { DndProvider } from 'react-dnd';
 import HTML5Backend from 'react-dnd-html5-backend';
 import DndItems from './dndItems';
 import DndTarget from './dndTarget';
@@ -58,7 +58,7 @@ class DND extends Component {
 
   render() {
     return (
-      <div>
+      <DndProvider backend={HTML5Backend}>
         <div className="dnd-wrapper">
           <DndItems items={this.state.items} handleDrag={this.handleDrag} />
           <DndTarget />
@@ -70,9 +70,9 @@ class DND extends Component {
             })
           }
         </div>
-      </div>
+      </DndProvider>
     )
   }
 }
 
-export default DragDropContext(HTML5Backend)(DND);
+export default DND;
