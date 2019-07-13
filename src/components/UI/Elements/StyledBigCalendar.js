@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import BigCalendar from 'react-big-calendar'
-const StyledBigCalendar = styled(BigCalendar)`
+import {Calendar} from 'react-big-calendar'
+const StyledBigCalendar = styled(Calendar)`
     border-radius: 3px;
     border: 1px solid ${props => props.theme.borderColor};
     background-color: ${props => props.theme.backgroundColor};

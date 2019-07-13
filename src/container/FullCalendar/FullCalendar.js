@@ -80,11 +80,11 @@ class FullCalendar extends Component {
   onSubmit = (values) => console.log(values)
   render() {
     const { isError, isLoading, handleSubmit, submitting } = this.props;
-    if (isLoading) {
-      <div style={{ width: '100vw', height: '80vh', display: 'flex', justifyContent: 'center' }}>
-        <Skeleton paragraph={{ rows: 8 }} />
-      </div>
-    }
+    // if (isLoading) {
+    //   <div style={{ width: '100vw', height: '80vh', display: 'flex', justifyContent: 'center' }}>
+    //     <Skeleton paragraph={{ rows: 8 }} />
+    //   </div>
+    // }
 
     return (
       <MainWrapper>
