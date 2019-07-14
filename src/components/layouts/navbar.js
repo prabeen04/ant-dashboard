@@ -22,7 +22,6 @@ const Charts = lazy(() => import('../../container/charts/charts'));
 const MyMap = lazy(() => import('../../container/map/map'));
 const Drag = lazy(() => import('../../container/drag/drag'));
 const SinglePost = lazy(() => import('../../container/post/singlePost'));
-const TreeSort = lazy(() => import('../../container/treesort/treeSort'));
 const CustomField = lazy(() => import('../../container/custom/customField'));
 const FullCalendar = lazy(() => import('../../container/FullCalendar/FullCalendar'));
 const Spring = lazy(() => import('../../container/Spring/Spring'))
@@ -103,7 +102,6 @@ export default function Navbar(props) {
                                 {/* </AppBoundary> */}
                                 <Route exact path='/map' component={MyMap} />
                                 <Route exact path='/drag' component={Drag} />
-                                <Route exact path='/tree' component={TreeSort} />
                                 <Route exact path='/custom' component={CustomField} />
                                 <Route exact path='/fullCalendar' component={FullCalendar} />
                                 <Route exact path='/spring' component={Spring} />

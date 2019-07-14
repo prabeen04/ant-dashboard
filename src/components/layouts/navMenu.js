@@ -19,7 +19,6 @@ export default function NavMenu(props) {
         { path: '/charts', key: '9', iconType: 'area-chart', title: 'Charts' },
         { path: '/map', key: '10', iconType: 'global', title: 'Map' },
         { path: '/drag', key: '11', iconType: 'edit', title: 'Drag n Change' },
-        { path: '/tree', key: '12', iconType: 'plus', title: 'Tree' },
         { path: '/custom', key: '13', iconType: 'plus', title: 'Custom Fields' },
         { path: '/fullCalendar', key: '14', iconType: 'calendar', title: 'Full calendar' },
         { path: '/spring', key: '15', iconType: 'gift', title: 'Spring' },
