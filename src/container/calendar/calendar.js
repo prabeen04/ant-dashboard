@@ -44,9 +44,7 @@ function Calendar(props) {
       <Icon type="loading" style={{ fontSize: 60, color: 'tomato' }} spin />
     </div>)
   }
-  // if (props.isError) {
-  //   return (<p>Some Error occoured...</p>)
-  // }
+  
   return (
     <React.Fragment>
       <ActionHeader

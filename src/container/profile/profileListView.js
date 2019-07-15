@@ -14,10 +14,13 @@ class ProfileListView extends Component {
     render() {
         const listClasses = classNames({
             'post-row': true,
+            'single-post': true,
             'activated-profile-listview': this.props.user.name === this.props.activatedProfile.name,
         });
         return (
-            <div className={listClasses} onClick={() => this.props.getSingleProfile(this.props.user)}>
+            <div className={listClasses}
+                style={{ display: 'flex', margin: '0.5rem' }}
+                onClick={() => this.props.getSingleProfile(this.props.user)}>
                 <div className="post-title">
                     <Icon type="idcard" className="post-icon" /> &nbsp;&nbsp;&nbsp;{this.props.user.name}
                 </div>
