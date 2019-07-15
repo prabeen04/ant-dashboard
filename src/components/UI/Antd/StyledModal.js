@@ -18,11 +18,11 @@ const StyledModal = styled(Modal)`
         color: ${props => props.theme.color};
    }
     .ant-modal-title{
-        color: ${props => '#fff'};
+        color: ${props => props.theme.color};
         font-size: 1.3rem;
    }
    .ant-modal-close-x{
-        color: ${props => '#fff'};
+        color: ${props => props.theme.color};
    }
 `
 export default StyledModal;

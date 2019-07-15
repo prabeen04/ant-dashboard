@@ -50,8 +50,8 @@ function Calendar(props) {
   return (
     <React.Fragment>
       <ActionHeader
-        leftComponent={<LeftActionHeader />}
-        rightComponent={<RightActionHeader />}
+        leftComponent={null}
+        rightComponent={null}
       />
 
       <div className="flex-container" style={{ height: '520px', margin: '0.5rem' }}>
