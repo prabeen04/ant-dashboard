@@ -23,10 +23,10 @@ const Settings = (props) => {
                     <ProfileSettings />
                 </TabPane>
                 <TabPane tab={<span><Icon type="calendar" />calendar</span>} key="3">
-                  Calendar 
+                    <ProgressLine />
                 </TabPane>
                 <TabPane tab={<span><Icon type="cloud-download" />Downloads</span>} key="4">
-                    <ColumnTransfer />
+                   Downloads
                 </TabPane>
                 <TabPane tab={<span><Icon type="desktop" />Theme</span>} key="5">
                     <Theme/>
