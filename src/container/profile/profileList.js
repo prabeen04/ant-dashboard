@@ -21,8 +21,27 @@ function ProfileList(props) {
         return (<h2>Some Error Occoured</h2>)
     }
 
+    console.log(props.profiles)
     let renderCard = props.profiles
-        .sort((a, b) => props.sortKey === 'ASC' ? a.name > b.name : a.name < b.name)
+        .sort((a, b) => {
+            console.log(props.sortKey)
+            console.log(a.name.toLowerCase() > b.name.toLowerCase())
+            if (props.sortKey.toLowerCase() === 'ASC') {
+                if (a.name.toLowerCase() > b.name.toLowerCase()) {
+                    return -1
+                } else {
+                    return 1
+                }
+
+            } else {
+
+                if (a.name.toLowerCase() < b.name.toLowerCase()) {
+                    return 1
+                } else {
+                    return -1
+                }
+            }
+        })
         .map(profile => {
             if (props.viewType === 'GRID') {
                 return <ProfileCard
