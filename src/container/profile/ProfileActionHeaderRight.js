@@ -15,11 +15,9 @@ function ProfileActionHeaderRight(props) {
                 onSearch={value => props.setFilterText(value)}
                 style={{ marginRight: '1rem' }}
                 onChange={(e) => {
-                    console.log(e.target.value)
                     props.setFilterText(e.target.value)
                 }}
             />
-            <SettingPopover />
         </div>
     )
 }

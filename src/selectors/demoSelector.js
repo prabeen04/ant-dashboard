@@ -1,7 +1,7 @@
 import { createSelector } from 'reselect';
 
-const getProfiles = (state) => state.profileReducer.profiles
-const filterText = (state, filterText) => filterText
+const getProfiles = (profileReducer) => profileReducer.profiles
+const filterText = (profileReducer, filterText) => filterText
 
 export const getProfilesState = createSelector(
     [getProfiles, filterText],

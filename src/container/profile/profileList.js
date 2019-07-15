@@ -13,7 +13,7 @@ import './profile.css';
 function ProfileList(props) {
     useEffect(() => {
         props.getProfiles()
-    },[])
+    }, [])
     if (props.isLoading) {
         return (<StyledCodeSkeleton />)
     }
@@ -48,12 +48,12 @@ function ProfileList(props) {
         </div>
     )
 }
-const mapStateToProps = state => ({
-    isLoading: state.profileReducer.isLoading,
-    isError: state.profileReducer.isError,
-    viewType: state.profileReducer.viewType,
-    sortKey: state.profileReducer.sortKey,
-    profiles: getProfilesState(state, state.profileReducer.filterText)
+const mapStateToProps = ({ profileReducer }) => ({
+    isLoading: profileReducer.isLoading,
+    isError: profileReducer.isError,
+    viewType: profileReducer.viewType,
+    sortKey: profileReducer.sortKey,
+    profiles: getProfilesState(profileReducer, profileReducer.filterText)
 })
 
 const mapDispatchToProps = dispatch => bindActionCreators({
