@@ -17,7 +17,7 @@ class SinglePost extends Component {
         <StyledActionHeader>
           <Button type="primary" icon="rollback"
             onClick={() => this.props.history.goBack()}
-          >Back to Posts</Button>
+          >Back </Button>
 
 
           <Button
