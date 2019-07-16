@@ -26,19 +26,17 @@ function ProfileList(props) {
         .sort((a, b) => {
             console.log(props.sortKey)
             console.log(a.name.toLowerCase() > b.name.toLowerCase())
-            if (props.sortKey.toLowerCase() === 'ASC') {
+            if (props.sortKey === 'ASC') {
                 if (a.name.toLowerCase() > b.name.toLowerCase()) {
                     return -1
                 } else {
                     return 1
                 }
-
             } else {
-
                 if (a.name.toLowerCase() < b.name.toLowerCase()) {
-                    return 1
-                } else {
                     return -1
+                } else {
+                    return 1
                 }
             }
         })
