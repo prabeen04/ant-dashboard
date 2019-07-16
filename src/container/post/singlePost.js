@@ -14,20 +14,17 @@ class SinglePost extends Component {
   render() {
     return (
       <div>
-        <StyledActionHeader
-          leftComponent={() => (
-            <Button type="primary" icon="rollback"
-              onClick={() => this.props.history.goBack()}
-            >Back to Posts</Button>
-          )}
+        <StyledActionHeader>
+          <Button type="primary" icon="rollback"
+            onClick={() => this.props.history.goBack()}
+          >Back to Posts</Button>
 
-          rightComponent={() => (
-            <Button
-              type="primary"
-              icon="edit">
-              Edit Post</Button>
-          )}
-        />
+
+          <Button
+            type="primary"
+            icon="edit">
+            Edit Post</Button>
+        </StyledActionHeader>
         <MainWrapper>
           <div className="single-post">
             <h3>{this.props.singlePost.title || this.props.location.state.post.title}</h3>
