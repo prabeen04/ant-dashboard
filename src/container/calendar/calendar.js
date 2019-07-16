@@ -21,15 +21,9 @@ function Calendar(props) {
   useEffect(() => {
     props.getEvents();
   }, [])
-  const success = () => {
-    message.success('Event Added', 10);
-  };
-  const handleOk = (slot) => {
-    props.setDate(slot)
-  }
-  const eventSelect = (event) => {
-    console.log(event)
-  }
+  const success = () => message.success('Event Added', 10);
+  const handleOk = slot => props.setDate(slot)
+
   const onSelectEvent = (event) => {
     setIsModalVisible(true)
     setSelectedEvent(event)
@@ -44,7 +38,7 @@ function Calendar(props) {
       <Icon type="loading" style={{ fontSize: 60, color: 'tomato' }} spin />
     </div>)
   }
-  
+
   return (
     <React.Fragment>
       <ActionHeader
