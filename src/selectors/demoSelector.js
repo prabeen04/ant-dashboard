@@ -6,10 +6,10 @@ const filterText = (profileReducer, filterText) => filterText
 export const getProfilesState = createSelector(
     [getProfiles, filterText],
     (profile, filterText) => {
-        return profile.filter((profile) => {
-            return profile.name && (profile.name).toLowerCase().includes(filterText.toLowerCase())
-                || profile.location && (profile.location).toLowerCase().includes(filterText.toLowerCase())
-                || profile.email && (profile.email).toLowerCase().includes(filterText.toLowerCase())
+        return profile.filter(({name, location, email}) => {
+            return name && name.toLowerCase().includes(filterText.toLowerCase())
+                || location && location.toLowerCase().includes(filterText.toLowerCase())
+                || email && email.toLowerCase().includes(filterText.toLowerCase())
         })
     }
 )
