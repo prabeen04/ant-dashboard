@@ -66,11 +66,8 @@ function Calendar(props) {
             onChange={(activeKey) => {
               setActiveTab(activeKey.toString())
             }}>
-            <TabPane tab={<span><Icon type="Apple" />Apple</span>} key="1">
+            <TabPane tab={<span><Icon type="Apple" />Event</span>} key="1">
               <EventForm />
-            </TabPane>
-            <TabPane tab={<span><Icon type="Android" />Android</span>} key="2">
-
             </TabPane>
           </StyledTabs>
         </MainWrapper>
