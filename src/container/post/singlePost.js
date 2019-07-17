@@ -6,38 +6,31 @@ import { Button, Icon } from 'antd'
 import { MainWrapper, StyledActionHeader } from '../../components/UI/Layout'
 import { getSinglePost } from '../../actions/post_actions'
 
-class SinglePost extends Component {
-  constructor(props) {
-    super(props)
-  }
+function SinglePost({ history, singlePost, location }) {
+  return (
+    <div>
+      <StyledActionHeader>
+        <Button
+          type="primary"
+          icon="rollback"
+          onClick={() => history.goBack()}>
+          Back </Button>
+        <Button
+          type="primary"
+          icon="edit">
+          Edit Post</Button>
+      </StyledActionHeader>
+      <MainWrapper>
+        <div className="single-post">
+          <h3>{singlePost.title || location.state.post.title}</h3>
+          <h3>{singlePost.author || location.state.post.author}</h3>
+          <h3>{singlePost.date || location.state.post.date}</h3>
+          <p>{singlePost.body || location.state.post.body}</p>
+        </div>
+      </MainWrapper>
+    </div>
 
-  render() {
-    return (
-      <div>
-        <StyledActionHeader>
-          <Button type="primary" icon="rollback"
-            onClick={() => this.props.history.goBack()}
-          >Back </Button>
-
-
-          <Button
-            type="primary"
-            icon="edit">
-            Edit Post</Button>
-        </StyledActionHeader>
-        <MainWrapper>
-          <div className="single-post">
-            <h3>{this.props.singlePost.title || this.props.location.state.post.title}</h3>
-            <h3>{this.props.singlePost.author || this.props.location.state.post.author}</h3>
-            <h3>{this.props.singlePost.date || this.props.location.state.post.date}</h3>
-            <p>{this.props.singlePost.body || this.props.location.state.post.body}</p>
-          </div>
-        </MainWrapper>
-      </div>
-
-    )
-  }
-
+  )
 }
 
 const mapStateToProps = (state) => {

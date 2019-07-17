@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { Field, reduxForm } from 'redux-form'
-import { Button, Icon, Card,  message } from 'antd';
+import { Button, Icon, Card, message } from 'antd';
 import { StyledUpload, StyledCard } from "../../components/UI/Antd";
 import { Input } from "../../components/UI/Elements";
 import './profile.css'
@@ -105,18 +105,12 @@ class AddProfile extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  return {
-
-  }
-}
-
 const mapDispatchToProps = (dispatch) => {
   return bindActionCreators({
     addProfile
   }, dispatch)
 }
-AddProfile = connect(mapStateToProps, mapDispatchToProps)(AddProfile)
+AddProfile = connect(null, mapDispatchToProps)(AddProfile)
 export default reduxForm({
   form: 'addProfileForm'
 })(AddProfile);
