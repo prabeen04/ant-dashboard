@@ -47,18 +47,14 @@ function Calendar(props) {
       />
 
       <div className="flex-container" style={{ height: '520px', margin: '0.5rem' }}>
-        {activeTab === '1'
-          ? <CalendarInstance
-            events={props.events}
-            defaultDate={new Date()}
-            selectable={true}
-            popup={true}
-            onSelectEvent={onSelectEvent}
-            onSelectSlot={handleOk}
-          />
-          : <p style={{ flexBasis: '70%' }}>Second tab Content</p>
-
-        }
+        <CalendarInstance
+          events={props.events}
+          defaultDate={new Date()}
+          selectable={true}
+          popup={true}
+          onSelectEvent={onSelectEvent}
+          onSelectSlot={handleOk}
+        />
 
         <MainWrapper className="event-form" >
           <StyledTabs
@@ -97,39 +93,3 @@ const mapDispatchToProps = dispatch => bindActionCreators({
 }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(Calendar);
-
-const LeftActionHeader = props => {
-  return (<React.Fragment>
-    <Tooltip title="Grid View">
-      <Icon
-        type="appstore-o"
-        style={{ fontSize: 25, cursor: 'pointer', marginRight: '0.5rem' }}
-      />
-    </Tooltip>
-    <Tooltip title="List View">
-      <Icon
-        type="profile"
-        style={{ fontSize: 25, cursor: 'pointer' }}
-      />
-    </Tooltip>
-  </React.Fragment>
-  )
-}
-
-const RightActionHeader = props => {
-  return (<React.Fragment>
-    <Tooltip title="Car">
-      <Icon
-        type="car"
-        style={{ fontSize: 25, cursor: 'pointer', marginRight: '0.5rem' }}
-      />
-    </Tooltip>
-    <Tooltip title="User">
-      <Icon
-        type="user"
-        style={{ fontSize: 25, cursor: 'pointer' }}
-      />
-    </Tooltip>
-  </React.Fragment>
-  )
-}
