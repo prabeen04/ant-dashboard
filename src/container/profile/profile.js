@@ -1,5 +1,5 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import { connect, useSelector } from 'react-redux';
 import ProfileList from './profileList';
 import AddProfile from './addProfile';
 import EditProfile from './editProfile';
@@ -11,6 +11,11 @@ import './profile.css';
 import { MainWrapper } from "../../components/UI/Layout";
 
 const Profile = (props) => {
+  const { showAddProfile, showEditProfile, showViewProfile } = useSelector(({ profileReducer }) => ({
+    showAddProfile: profileReducer.showAddProfile,
+    showEditProfile: profileReducer.showEditProfile,
+    showViewProfile: profileReducer.showViewProfile
+  }))
   console.log(props)
   return (
     <React.Fragment>
@@ -25,20 +30,13 @@ const Profile = (props) => {
           </MainWrapper>
         </div>
         <div className="profile-action">
-          {props.showAddProfile && <AddProfile />}
-          {props.showEditProfile && <EditProfile />}
-          {props.showViewProfile && <ProfileView />}
+          {showAddProfile && <AddProfile />}
+          {showEditProfile && <EditProfile />}
+          {showViewProfile && <ProfileView />}
         </div>
       </div>
     </React.Fragment>
 
   )
 }
-const mapStateToProps = ({ profileReducer }) => ({
-  isLoading: profileReducer.isLoading,
-  isError: profileReducer.isError,
-  showAddProfile: profileReducer.showAddProfile,
-  showEditProfile: profileReducer.showEditProfile,
-  showViewProfile: profileReducer.showViewProfile
-})
-export default connect(mapStateToProps)(Profile);
+export default Profile;
