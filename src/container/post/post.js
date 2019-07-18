@@ -14,7 +14,6 @@ class Post extends Component {
     this.state = {
       isModalOpen: false
     }
-    this.setIsModalOpen = this.setIsModalOpen.bind(this);
   }
   setIsModalOpen = bool => this.setState({ isModalOpen: false })
   render() {
