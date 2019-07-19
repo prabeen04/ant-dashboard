@@ -7,13 +7,6 @@ import { Input, Modal } from 'antd'
 const { TextArea } = Input
 
 class AddPost extends Component {
-  constructor(props) {
-    super(props)
-
-    this.renderInput = this.renderInput.bind(this);
-    this.renderTextarea = this.renderTextarea.bind(this);
-    this.onSubmit = this.onSubmit.bind(this);
-  }
   onSubmit = (values) => {
     console.log(values)
     this.props.addPost(values)
@@ -45,18 +38,18 @@ class AddPost extends Component {
     return (
       <div>
         <form>
-        <Modal
-          title="Speak your mind"
-          maskClosable={true}
-          wrapClassName="vertical-center-modal"
-          visible={this.props.isModalOpen}
-          okText="AddPost"
-          onOk={handleSubmit(this.onSubmit)}
-          onCancel={() => this.props.setIsModalOpen(false)}
+          <Modal
+            title="Speak your mind"
+            maskClosable={true}
+            wrapClassName="vertical-center-modal"
+            visible={this.props.isModalOpen}
+            okText="AddPost"
+            onOk={handleSubmit(this.onSubmit)}
+            onCancel={() => this.props.setIsModalOpen(false)}
           >
-          <Field name="title" label="Enter Post Title" component={this.renderInput} />
-          <Field name="author" label="Who are you" component={this.renderInput} />
-          <Field name="body" label="Post your story" component={this.renderTextarea} />
+            <Field name="title" label="Enter Post Title" component={this.renderInput} />
+            <Field name="author" label="Who are you" component={this.renderInput} />
+            <Field name="body" label="Post your story" component={this.renderTextarea} />
           </Modal>
         </form>
       </div>
