@@ -10,7 +10,6 @@ import './post.css'
 
 function Post() {
   const [isModalOpen, setIsModalOpen] = useState(false)
-  const setIsModalOpen = bool => setIsModalOpen(false)
   return (
     <div className="post-wrapper">
       <div className="post-actions">
