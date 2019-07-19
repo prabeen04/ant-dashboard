@@ -1,12 +1,11 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import { bindActionCreators } from 'redux'
+import { connect, useSelector } from 'react-redux'
 import { withRouter } from 'react-router-dom'
 import { Button, Icon } from 'antd'
 import { MainWrapper, StyledActionHeader } from '../../components/UI/Layout'
-import { getSinglePost } from '../../actions/post_actions'
 
-function SinglePost({ history, singlePost, location }) {
+function SinglePost({ history, location }) {
+  const singlePost = useSelector((state) => state.postReducer.singlePost)
   return (
     <div>
       <StyledActionHeader>
@@ -32,15 +31,4 @@ function SinglePost({ history, singlePost, location }) {
 
   )
 }
-
-const mapStateToProps = (state) => {
-  return {
-    singlePost: state.postReducer.singlePost
-  }
-}
-const mapDispatchToProps = (dispatch) => {
-  return bindActionCreators({
-    getSinglePost
-  }, dispatch)
-}
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(SinglePost));
+export default withRouter(SinglePost);
