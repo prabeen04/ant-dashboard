@@ -38,7 +38,7 @@ class PostList extends Component {
   }
   render() {
     let renderPost = this.props.posts.map(post => {
-      return <PostRow key={post._id}  onClick={() => this.getSinglePost(post)}>
+      return <PostRow key={post._id} onClick={() => this.getSinglePost(post)}>
         <div className="post-title">
           <Icon type="idcard" className="post-icon" /> &nbsp;&nbsp;&nbsp;{post.title}
         </div>
@@ -64,13 +64,11 @@ class PostList extends Component {
     )
   }
 }
-const mapStateToProps = (state) => {
-  return {
-    isLoading: state.postReducer.isLoading,
-    isError: state.postReducer.isError,
-    posts: state.postReducer.posts
-  }
-}
+const mapStateToProps = ({ postReducer }) => ({
+  isLoading: postReducer.isLoading,
+  isError: postReducer.isError,
+  posts: postReducer.posts
+})
 const mapDispatchToProps = (dispatch) => {
   return bindActionCreators({
     getPosts,
