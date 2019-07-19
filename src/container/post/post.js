@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
 import { bindActionCreators } from 'redux';
@@ -8,34 +8,28 @@ import { Button, Icon, Modal } from 'antd';
 import { addPost } from '../../actions/post_actions';
 import './post.css'
 
-class Post extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      isModalOpen: false
-    }
-  }
-  setIsModalOpen = bool => this.setState({ isModalOpen: false })
-  render() {
-    return (
-      <div className="post-wrapper">
-        <div className="post-actions">
-          <Button type="primary" icon="filter" >Filter</Button>
-          <Button
-            type="primary"
-            icon="plus"
-            onClick={() => this.setState({ isModalOpen: true })}>
-            Add Post</Button>
-        </div>
-
-        <AddPost
-          isModalOpen={this.state.isModalOpen}
-          setIsModalOpen={this.setIsModalOpen} />
-        <PostList />
+function Post() {
+  const [isModalOpen, setIsModalOpen] = useState(false)
+  const setIsModalOpen = bool => setIsModalOpen(false)
+  return (
+    <div className="post-wrapper">
+      <div className="post-actions">
+        <Button type="primary" icon="filter" >Filter</Button>
+        <Button
+          type="primary"
+          icon="plus"
+          onClick={() => setIsModalOpen(true)}>
+          Add Post</Button>
       </div>
-    )
-  }
+
+      <AddPost
+        isModalOpen={isModalOpen}
+        setIsModalOpen={setIsModalOpen} />
+      <PostList />
+    </div>
+  )
 }
+
 
 const mapDispatchToProps = (dispatch) => {
   return bindActionCreators({
