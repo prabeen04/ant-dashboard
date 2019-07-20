@@ -4,8 +4,8 @@ import { withRouter } from 'react-router-dom'
 import { Button, Icon } from 'antd'
 import { MainWrapper, StyledActionHeader } from '../../components/UI/Layout'
 
-function SinglePost({ history, location }) {
-  const singlePost = useSelector((state) => state.postReducer.singlePost)
+function SinglePost({ history }) {
+  const { title, author, date, body } = useSelector((state) => state.postReducer.singlePost)
   return (
     <div>
       <StyledActionHeader>
@@ -21,10 +21,10 @@ function SinglePost({ history, location }) {
       </StyledActionHeader>
       <MainWrapper>
         <div className="single-post">
-          <h3>{singlePost.title || location.state.post.title}</h3>
-          <h3>{singlePost.author || location.state.post.author}</h3>
-          <h3>{singlePost.date || location.state.post.date}</h3>
-          <p>{singlePost.body || location.state.post.body}</p>
+          <h3>{title}</h3>
+          <h3>{author}</h3>
+          <h3>{date}</h3>
+          <p>{body}</p>
         </div>
       </MainWrapper>
     </div>
