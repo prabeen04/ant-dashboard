@@ -31,12 +31,11 @@ class Forms extends Component {
           <FormArray />
           <Divider />
           <NewFormArray /> */}
-        {/* <ExampleForm /> */}
         {/* <FieldArraysForm /> */}
-        {/* <Divider /> */}
-        {/* <ReduxFormArray /> */}
-        {/* <SecondArrayForm /> */}
-        {/* <ThirdArrayForm /> */}
+        <Divider />
+        <ReduxFormArray />
+        <SecondArrayForm />
+        <ThirdArrayForm />
         <ReuseForm />
       </div>
     )
