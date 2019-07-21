@@ -16,7 +16,6 @@ const Profile = lazy(() => import('../../container/profile/profile'));
 const Post = lazy(() => import('../../container/post/post'));
 const DND = lazy(() => import('../../container/DND/DND'));
 const Forms = lazy(() => import('../../container/forms/forms'));
-const Tables = lazy(() => import('../../container/tables/tables'));
 const Settings = lazy(() => import('../../container/settings/settings'));
 const Charts = lazy(() => import('../../container/charts/charts'));
 const MyMap = lazy(() => import('../../container/map/map'));
@@ -94,7 +93,6 @@ export default function Navbar(props) {
                                 <Route exact path='/post' component={Post} />
                                 <Route exact path='/post/:id' component={SinglePost} />
                                 <Route exact path='/forms' component={Forms} />
-                                <Route exact path='/tables' component={Tables} />
                                 <Route exact path='/settings' component={Settings} />
                                 <Route exact path='/dnd' component={DND} />
                                 {/* <AppBoundary> */}

@@ -13,15 +13,14 @@ export default function NavMenu(props) {
         { path: '/profile', key: '3', iconType: 'profile', title: 'Profile' },
         { path: '/post', key: '4', iconType: 'medium', title: 'Post' },
         { path: '/forms', key: '5', iconType: 'edit', title: 'Forms' },
-        { path: '/tables', key: '6', iconType: 'table', title: 'Table' },
-        { path: '/settings', key: '7', iconType: 'setting', title: 'Setting' },
-        { path: '/dnd', key: '8', iconType: 'select', title: 'DND' },
-        { path: '/charts', key: '9', iconType: 'area-chart', title: 'Charts' },
-        { path: '/map', key: '10', iconType: 'global', title: 'Map' },
-        { path: '/drag', key: '11', iconType: 'edit', title: 'Drag n Change' },
-        { path: '/custom', key: '13', iconType: 'plus', title: 'Custom Fields' },
-        { path: '/fullCalendar', key: '14', iconType: 'calendar', title: 'Full calendar' },
-        { path: '/spring', key: '15', iconType: 'gift', title: 'Spring' },
+        { path: '/settings', key: '6', iconType: 'setting', title: 'Setting' },
+        { path: '/dnd', key: '7', iconType: 'select', title: 'DND' },
+        { path: '/charts', key: '8', iconType: 'area-chart', title: 'Charts' },
+        { path: '/map', key: '9', iconType: 'global', title: 'Map' },
+        { path: '/drag', key: '10', iconType: 'edit', title: 'Drag n Change' },
+        { path: '/custom', key: '11', iconType: 'plus', title: 'Custom Fields' },
+        { path: '/fullCalendar', key: '12', iconType: 'calendar', title: 'Full calendar' },
+        { path: '/spring', key: '13', iconType: 'gift', title: 'Spring' },
     ])
     return (
         <div>
