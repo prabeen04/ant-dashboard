@@ -9,15 +9,8 @@ function SinglePost({ history }) {
   return (
     <div>
       <StyledActionHeader>
-        <Button
-          type="primary"
-          icon="rollback"
-          onClick={() => history.goBack()}>
-          Back </Button>
-        <Button
-          type="primary"
-          icon="edit">
-          Edit Post</Button>
+        <Button type="primary" icon="rollback" onClick={() => history.goBack()}> Back </Button>
+        <Button type="primary" icon="edit"> Edit Post</Button>
       </StyledActionHeader>
       <MainWrapper>
         <div className="single-post">
