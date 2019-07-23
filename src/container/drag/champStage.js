@@ -42,10 +42,6 @@ class ChampStage extends Component {
     }
 }
 
-const mapDispatchToProps = dispatch => {
-    return bindActionCreators({
-        dragTeam
-    }, dispatch)
-}
+const mapDispatchToProps = dispatch => bindActionCreators({ dragTeam }, dispatch)
 ChampStage = DropTarget('stage', spec, collect)(ChampStage);
 export default connect(null, mapDispatchToProps)(ChampStage)
