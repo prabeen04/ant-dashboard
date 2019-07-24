@@ -1,5 +1,5 @@
 import React, { Component, useState } from 'react';
-import { connect } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { Button, Icon, Popover } from 'antd';
 import ActionHeader from "../../components/layouts/ActionHeader";
 import SettingPopover from '../../components/popover/settingPopover';
@@ -11,7 +11,7 @@ const ButtonGroup = Button.Group;
 
 function DashboardHeader(props) {
     const { fetchChartData } = props;
-    const dateRangeList = useSelector(({dashboardReducer}) => dashboardReducer.dateRangeList)
+    const dateRangeList = useSelector(({ dashboardReducer }) => dashboardReducer.dateRangeList)
     return (
         <ActionHeader
             leftComponent={<DashboardActionHeaderLeft
@@ -22,17 +22,15 @@ function DashboardHeader(props) {
         />
     )
 }
-const mapStateToProps = (state) => ({
-    dateRangeList: state.dashboardReducer.dateRangeList
-})
-export default connect(mapStateToProps)(DashboardHeader);
+
+export default DashboardHeader;
 
 
 function DashboardActionHeaderLeft(props) {
     return (
         <React.Fragment>
             <FlexContainer style={{ alignItems: 'center' }}>
-                <TimeInterval times={props.dateRangeList} handleClick={.props.fetchChartData} />
+                <TimeInterval times={props.dateRangeList} handleClick={props.fetchChartData} />
                 <StyledRangePicker style={{ marginLeft: 8 }} />
             </FlexContainer>
         </React.Fragment>
