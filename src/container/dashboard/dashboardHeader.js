@@ -9,19 +9,18 @@ import { FlexContainer } from "../../components/UI/Layout";
 import './dashboard.css';
 const ButtonGroup = Button.Group;
 
-class DashboardHeader extends Component {
-    render() {
-        const { dateRangeList, fetchChartData } = this.props;
-        return (
-            <ActionHeader
-                leftComponent={<DashboardActionHeaderLeft
-                    dateRangeList={dateRangeList}
-                    fetchChartData={fetchChartData}
-                />}
-                rightComponent={<DashboardActionHeaderRight />}
-            />
-        )
-    }
+function DashboardHeader(props) {
+    const { fetchChartData } = props;
+    const dateRangeList = useSelector(({dashboardReducer}) => dashboardReducer.dateRangeList)
+    return (
+        <ActionHeader
+            leftComponent={<DashboardActionHeaderLeft
+                dateRangeList={dateRangeList}
+                fetchChartData={fetchChartData}
+            />}
+            rightComponent={<DashboardActionHeaderRight />}
+        />
+    )
 }
 const mapStateToProps = (state) => ({
     dateRangeList: state.dashboardReducer.dateRangeList
@@ -33,7 +32,7 @@ function DashboardActionHeaderLeft(props) {
     return (
         <React.Fragment>
             <FlexContainer style={{ alignItems: 'center' }}>
-                <TimeInterval times={props.dateRangeList} handleClick={this.props.fetchChartData} />
+                <TimeInterval times={props.dateRangeList} handleClick={.props.fetchChartData} />
                 <StyledRangePicker style={{ marginLeft: 8 }} />
             </FlexContainer>
         </React.Fragment>
