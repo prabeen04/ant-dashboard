@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import { connect } from 'react-redux';
 import { Button, Icon, Popover } from 'antd';
 import ActionHeader from "../../components/layouts/ActionHeader";
@@ -33,38 +33,30 @@ function DashboardActionHeaderLeft(props) {
     return (
         <React.Fragment>
             <FlexContainer style={{ alignItems: 'center' }}>
-                <TimeInterval times={props.dateRangeList} handleClick={props.fetchChartData} />
+                <TimeInterval times={props.dateRangeList} handleClick={this.props.fetchChartData} />
                 <StyledRangePicker style={{ marginLeft: 8 }} />
             </FlexContainer>
         </React.Fragment>
     )
 }
 
-class DashboardActionHeaderRight extends Component {
-    constructor(props) {
-        super(props)
-
-        this.state = {
-            isPopover: localStorage.getItem('settingPopover') ? true : false
-        }
-    }
-    handleVisibleChange = () => {
+function DashboardActionHeaderRight(props) {
+    const [isPopover, setIsPopover] = useState(localStorage.getItem('settingPopover') ? true : false)
+    function handleVisibleChange() {
         localStorage.setItem('settingPopover', false)
-        this.setState({ isPopover: false })
+        setIsPopover(false)
     }
-    render() {
-        return (
-            <React.Fragment>
-                <Popover
-                    title="Message"
-                    content={<a onClick={this.handleVisibleChange}>OK, Got it!</a>}
-                    trigger="click"
-                    placement="topLeft"
-                    visible={this.state.isPopover}
-                    onVisibleChange={this.handleVisibleChange}
-                > <SettingPopover />
-                </Popover>
-            </React.Fragment>
-        )
-    }
+    return (
+        <React.Fragment>
+            <Popover
+                title="Message"
+                content={<a onClick={handleVisibleChange}>OK, Got it!</a>}
+                trigger="click"
+                placement="topLeft"
+                visible={isPopover}
+                onVisibleChange={handleVisibleChange}
+            > <SettingPopover />
+            </Popover>
+        </React.Fragment>
+    )
 }
