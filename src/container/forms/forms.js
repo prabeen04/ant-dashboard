@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Divider, PageHeader, Typography } from 'antd';
 import ComplexForm from "./complexForm";
-import ReduxForm from './reduxForm';
+import FormArray from './formArray';
 import ReduxFormArray from './reduxFormArray';
 import NewFormArray from './newFormArray';
 import FieldArraysForm from './fieldArraysForm';
@@ -25,10 +25,10 @@ class Forms extends Component {
           <Divider />
           <NewFormArray /> */}
         {/* <FieldArraysForm /> */}
-        <Divider />
-        <ReduxFormArray />
-        <SecondArrayForm />
-        <ThirdArrayForm />
+        {/* <Divider /> */}
+        {/* <ReduxFormArray /> */}
+        {/* <SecondArrayForm /> */}
+        {/* <ThirdArrayForm /> */}
         <ReuseForm />
       </div>
     )
