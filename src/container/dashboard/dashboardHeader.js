@@ -29,17 +29,15 @@ const mapStateToProps = (state) => ({
 export default connect(mapStateToProps)(DashboardHeader);
 
 
-class DashboardActionHeaderLeft extends Component {
-    render() {
-        return (
-            <React.Fragment>
-                <FlexContainer style={{ alignItems: 'center' }}>
-                    <TimeInterval times={this.props.dateRangeList} handleClick={this.props.fetchChartData} />
-                    <StyledRangePicker style={{ marginLeft: 8 }} />
-                </FlexContainer>
-            </React.Fragment>
-        )
-    }
+function DashboardActionHeaderLeft(props) {
+    return (
+        <React.Fragment>
+            <FlexContainer style={{ alignItems: 'center' }}>
+                <TimeInterval times={props.dateRangeList} handleClick={props.fetchChartData} />
+                <StyledRangePicker style={{ marginLeft: 8 }} />
+            </FlexContainer>
+        </React.Fragment>
+    )
 }
 
 class DashboardActionHeaderRight extends Component {
