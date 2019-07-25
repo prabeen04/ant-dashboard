@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
-import { BarChart, Bar, Brush, Cell, CartesianGrid, ReferenceLine, ReferenceDot,
-     XAxis, YAxis, Tooltip, Legend, ErrorBar, LabelList, Label } from 'recharts';
-import MixedBarChart from './MixedBarChart';     
+import {
+    BarChart, Bar, Brush, Cell, CartesianGrid, ReferenceLine, ReferenceDot,
+    XAxis, YAxis, Tooltip, Legend, ErrorBar, LabelList, Label
+} from 'recharts';
+import MixedBarChart from './MixedBarChart';
 const data = [
     { name: 'food', uv: 3300, pv: 2000, amt: 4500, time: 1, uvError: [100, 50], pvError: [110, 20] },
     { name: 'cosmetic', uv: 3300, pv: 2000, amt: 6500, time: 2, uvError: 120, pvError: 50 },
@@ -53,39 +55,22 @@ const data2 = [
 ];
 
 
-class BarChart1 extends Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            chartData: data1
-        }
-    }
-
-    componentDidMount() {
-        // setTimeout(() => {
-        //     this.setState({
-        //         chartData: data2
-        //     })
-        // }, 5000)
-
-    }
-    render() {
-        return (
-            <div style={{display: 'flex', margin: '0.2rem' }}>
-                <BarChart width={this.props.width} height={this.props.height} data={this.state.chartData}>
-                    <CartesianGrid strokeDasharray="3 3" />
-                    <XAxis dataKey="name">
-                        <Label value="Pages of my website" offset={0} position="insideBottom" />
-                    </XAxis>
-                    <YAxis />
-                    <Tooltip />
-                    <Legend />
-                    <Bar dataKey="amt" fill="#8884d8" barSize={20} />
-                    {/* <Bar dataKey="uv" fill="#82ca9d" barSize={20} /> */}
-                </BarChart>
-            </div>
-        )
-    }
+function BarChart1(props) {
+    return (
+        <div style={{ display: 'flex', margin: '0.2rem' }}>
+            <BarChart width={props.width} height={props.height} data={data1}>
+                <CartesianGrid strokeDasharray="3 3" />
+                <XAxis dataKey="name">
+                    <Label value="Pages of my website" offset={0} position="insideBottom" />
+                </XAxis>
+                <YAxis />
+                <Tooltip />
+                <Legend />
+                <Bar dataKey="amt" fill="#8884d8" barSize={20} />
+                {/* <Bar dataKey="uv" fill="#82ca9d" barSize={20} /> */}
+            </BarChart>
+        </div>
+    )
 }
 
 export default BarChart1
