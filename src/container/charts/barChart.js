@@ -4,15 +4,6 @@ import {
     XAxis, YAxis, Tooltip, Legend, ErrorBar, LabelList, Label
 } from 'recharts';
 import MixedBarChart from './MixedBarChart';
-const data = [
-    { name: 'food', uv: 3300, pv: 2000, amt: 4500, time: 1, uvError: [100, 50], pvError: [110, 20] },
-    { name: 'cosmetic', uv: 3300, pv: 2000, amt: 6500, time: 2, uvError: 120, pvError: 50 },
-    { name: 'storage', uv: 3200, pv: 1398, amt: 5000, time: 3, uvError: [120, 80], pvError: [200, 100] },
-    { name: 'async', uv: 3200, pv: 1398, amt: 5000, time: 3, uvError: [120, 80], pvError: [200, 100] },
-    { name: 'analog', uv: 3200, pv: 1398, amt: 5000, time: 3, uvError: [120, 80], pvError: [200, 100] },
-    { name: 'digital', uv: 2800, pv: 2800, amt: 4000, time: 4, uvError: 100, pvError: 30 },
-];
-
 const data1 = [
     { name: '1', amt: 4500 },
     { name: '2', amt: 6500 },
@@ -27,33 +18,8 @@ const data1 = [
     { name: '11', amt: 8744 },
     { name: '12', amt: 9800 },
     { name: '13', amt: 5410 },
-    { name: '14', amt: 5000 },
-    { name: '15', amt: 1222 },
     { name: '16', amt: 8744 },
-    { name: '17', amt: 9800 },
-    { name: '18', amt: 5410 },
-    { name: '19', amt: 5000 },
-    { name: '20', amt: 1222 },
-    { name: '21', amt: 8744 },
-    { name: '22', amt: 9800 },
-    { name: '23', amt: 5410 },
-    { name: '24', amt: 5000 },
-    { name: '25', amt: 1222 },
-    { name: '26', amt: 8744 },
-    { name: '27', amt: 9800 },
-    { name: '28', amt: 5410 },
-    { name: '29', amt: 5000 },
-    { name: '30', amt: 1222 },
 ];
-const data2 = [
-    { name: 'manutd', amt: 1222 },
-    { name: 'chelsea', amt: 9800 },
-    { name: 'arsenal', amt: 5410 },
-    { name: 'mancity', amt: 5000 },
-    { name: 'liverpool', amt: 1222 },
-    { name: 'spurs', amt: 8744 },
-];
-
 
 function BarChart1(props) {
     return (
