@@ -4,7 +4,8 @@ import { bindActionCreators } from 'redux';
 import { Modal, Button, Icon } from 'antd';
 import { StyledModal } from '../../components/UI/Antd';
 import { closeJumpstartModal } from '../../actions/dashboardAction'
-function JumpStartModal() {
+
+function JumpStartModal(props) {
   return (
     <div>
       <StyledModal
