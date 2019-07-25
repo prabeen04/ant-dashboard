@@ -4,33 +4,24 @@ import { bindActionCreators } from 'redux';
 import { Modal, Button, Icon } from 'antd';
 import { StyledModal } from '../../components/UI/Antd';
 import { closeJumpstartModal } from '../../actions/dashboardAction'
-class JumpStartModal extends Component {
-  render() {
-    return (
-      <div>
-        <StyledModal
-          title={this.props.jumpstartData.title}
-          visible={this.props.isModalOpen}
-          onOk={this.handleOk}
-          onCancel={this.props.closeJumpstartModal}
-        >
-          <p>{this.props.jumpstartData.title}</p>
-          <p>{this.props.jumpstartData.value}</p>
-        </StyledModal>
-      </div>
-    )
-  }
+function JumpStartModal() {
+  return (
+    <div>
+      <StyledModal
+        title={props.jumpstartData.title}
+        visible={props.isModalOpen}
+        onCancel={props.closeJumpstartModal}
+      >
+        <p>{props.jumpstartData.title}</p>
+        <p>{props.jumpstartData.value}</p>
+      </StyledModal>
+    </div>
+  )
 }
-const mapStateToProps = (state) => {
-    return{
-        isModalOpen: state.dashboardReducer.isModalOpen,
-        jumpstartData: state.dashboardReducer.jumpstartData
-    }
-}
+const mapStateToProps = ({ dashboardReducer }) => ({
+  isModalOpen: dashboardReducer.isModalOpen,
+  jumpstartData: dashboardReducer.jumpstartData
+})
 
-const mapDispatchToProps = (dispatch) => {
-    return bindActionCreators({
-        closeJumpstartModal
-    }, dispatch)
-}
+const mapDispatchToProps = (dispatch) => bindActionCreators({ closeJumpstartModal }, dispatch)
 export default connect(mapStateToProps, mapDispatchToProps)(JumpStartModal);
