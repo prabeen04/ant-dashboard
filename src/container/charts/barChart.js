@@ -3,7 +3,6 @@ import {
     BarChart, Bar, Brush, Cell, CartesianGrid, ReferenceLine, ReferenceDot,
     XAxis, YAxis, Tooltip, Legend, ErrorBar, LabelList, Label
 } from 'recharts';
-import MixedBarChart from './MixedBarChart';
 const data1 = [
     { name: '1', amt: 4500 },
     { name: '2', amt: 6500 },
@@ -21,10 +20,10 @@ const data1 = [
     { name: '16', amt: 8744 },
 ];
 
-function BarChart1(props) {
+function BarChart1({ width, height, data }) {
     return (
         <div style={{ display: 'flex', margin: '0.2rem' }}>
-            <BarChart width={props.width} height={props.height} data={data1}>
+            <BarChart width={width} height={height} data={data || data1}>
                 <CartesianGrid strokeDasharray="3 3" />
                 <XAxis dataKey="name">
                     <Label value="Pages of my website" offset={0} position="insideBottom" />
@@ -33,7 +32,6 @@ function BarChart1(props) {
                 <Tooltip />
                 <Legend />
                 <Bar dataKey="amt" fill="#8884d8" barSize={20} />
-                {/* <Bar dataKey="uv" fill="#82ca9d" barSize={20} /> */}
             </BarChart>
         </div>
     )
