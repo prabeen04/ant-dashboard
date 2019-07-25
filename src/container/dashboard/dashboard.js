@@ -20,7 +20,7 @@ function Dashboard() {
   function fetchChartData() {
     setIsFetching(true)
     setTimeout(() => {
-      setIsFetching(true)
+      setIsFetching(false)
     }, 300)
   }
   const antIcon = <Icon type="loading" style={{ fontSize: 60, color: 'tomato' }} spin />;
