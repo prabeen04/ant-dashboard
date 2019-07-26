@@ -14,7 +14,6 @@ export default function NavMenu(props) {
         { path: '/post', key: '4', iconType: 'medium', title: 'Post' },
         { path: '/forms', key: '5', iconType: 'edit', title: 'Forms' },
         { path: '/settings', key: '6', iconType: 'setting', title: 'Setting' },
-        { path: '/dnd', key: '7', iconType: 'select', title: 'DND' },
         { path: '/charts', key: '8', iconType: 'area-chart', title: 'Charts' },
         { path: '/map', key: '9', iconType: 'global', title: 'Map' },
         { path: '/drag', key: '10', iconType: 'edit', title: 'Drag n Change' },
