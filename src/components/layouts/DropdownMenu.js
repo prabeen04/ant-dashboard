@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from "react-router-dom";
 import { Menu, Icon, Avatar } from "antd";
 import { StyledDropdown, StyledMenu, StyledMenuItem } from "../UI/Antd";
 import { ApplicationWrapper, MainWrapper } from "../UI/Layout";
@@ -8,7 +9,7 @@ const menu = (
         <MainWrapper>
         <StyledMenu>
             <StyledMenuItem key="0">
-                <a href="#">Profile</a>
+                <Link to="/userProfile">Profile</Link>
             </StyledMenuItem>
             <StyledMenuItem key="1">
                 <a href="#">Settings</a>

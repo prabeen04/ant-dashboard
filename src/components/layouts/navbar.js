@@ -23,6 +23,7 @@ const SinglePost = lazy(() => import('../../container/post/singlePost'));
 const CustomField = lazy(() => import('../../container/custom/customField'));
 const FullCalendar = lazy(() => import('../../container/FullCalendar/FullCalendar'));
 const Spring = lazy(() => import('../../container/Spring/Spring'))
+const UserProfile = lazy(() => import('../../container/UserProfile/UserProfile'))
 const NotFound = lazy(() => import('../../container/notFound/notFound'));
 
 export default function Navbar(props) {
@@ -101,6 +102,7 @@ export default function Navbar(props) {
                                 <Route exact path='/custom' component={CustomField} />
                                 <Route exact path='/fullCalendar' component={FullCalendar} />
                                 <Route exact path='/spring' component={Spring} />
+                                <Route exact path='/userProfile' component={UserProfile} />
                                 <Route path='**' component={NotFound} />
                             </Switch>
                         </Suspense>
