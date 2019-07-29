@@ -57,12 +57,12 @@ class AdvancedBarChart extends Component {
                         <XAxis
                             dataKey="days"
                             tickFormatter={this.displayXTick}
-                            >
-                            <Label value="Pages of my website"position="insideBottom" />
+                        >
+                            <Label value="Pages of my website" position="insideBottom" />
                         </XAxis>
                         <YAxis />
                         <Tooltip />
-                        <Legend/>
+                        <Legend />
                         <Bar dataKey="value" fill="#8884d8" barSize={30} />
                     </BarChart>
                     <MixedBarChart />
@@ -76,20 +76,14 @@ class AdvancedBarChart extends Component {
     }
 }
 
-const mapStateToProps = (state) => {
-    return {
-        timeInterval: state.chartsReducer.timeInterval,
-        data: state.chartsReducer.data,
-        pieChartData: state.chartsReducer.pieChartData,
-        barChartData: advancedBarChartSelector(state, state.chartsReducer.viewType),
-        viewType: state.chartsReducer.viewType
-    }
-}
+const mapStateToProps = ({ chartsReducer }) => ({
+    timeInterval: chartsReducer.timeInterval,
+    data: chartsReducer.data,
+    pieChartData: chartsReducer.pieChartData,
+    barChartData: advancedBarChartSelector(chartsReducer.data, chartsReducer.viewType),
+    viewType: chartsReducer.viewType
+})
 
-const mapDispatchToProps = dispatch => {
-    return bindActionCreators({
-        setPieChartData,
-        setViewType,
-    }, dispatch)
-}
+
+const mapDispatchToProps = dispatch => bindActionCreators({ setPieChartData, setViewType }, dispatch)
 export default connect(mapStateToProps, mapDispatchToProps)(AdvancedBarChart);

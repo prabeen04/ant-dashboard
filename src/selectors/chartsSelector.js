@@ -1,6 +1,6 @@
 import { createSelector } from "reselect";
 import moment from 'moment';
-const getData = (state) => state.chartsReducer.data
+const getData = (data) => data
 const getViewType = (state) => state.chartsReducer.viewType
 
 export const advancedBarChartSelector = createSelector(
