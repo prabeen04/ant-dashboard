@@ -1,12 +1,17 @@
 import React, { Component } from 'react';
-import { connect } from "react-redux";
+import { useSelector } from "react-redux";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
 import { mixedBarChartSelector } from "../../selectors/chartsSelector";
 
-function MixedBarChart() {
+function MixedBarChart(props) {
+    const mixedData = useSelector(({ chartsReducer }) => ({
+        mixedBarChartData: mixedBarChartSelector(chartsReducer.data, chartsReducer.mixedBarChartData),
+        viewType: chartsReducer.viewType,
+        data: chartsReducer.data
+    }))
     return (
         <div>
-            <BarChart width={500} height={300} data={this.props.mixedBarChartData}
+            <BarChart width={500} height={300} data={mixedData.mixedBarChartData}
                 margin={{ top: 20, bottom: 5 }}>
                 <CartesianGrid strokeDasharray="3 3" />
                 <XAxis dataKey="days" />
@@ -20,9 +25,4 @@ function MixedBarChart() {
         </div>
     )
 }
-const mapStateToProps = ({ chartsReducer }) => ({
-    mixedBarChartData: mixedBarChartSelector(chartsReducer.data, chartsReducer.mixedBarChartData),
-    viewType: chartsReducer.viewType,
-    data: chartsReducer.data
-})
-export default connect(mapStateToProps, mapDispatchToProps)(MixedBarChart);
+export default MixedBarChart;
