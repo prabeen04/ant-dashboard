@@ -28,22 +28,16 @@ function collect(connect, monitor) {
         itemType: monitor.getItemType()
     };
 }
-class RelStage extends Component {
-    render() {
-        const { isOver, canDrop, connectDropTarget } = this.props;
-        const backgroundColor = canDrop ? 'tomato' : '#fff';
-        const opacity = canDrop ? 0.8 : 0;
-        return connectDropTarget(
-            <div className="champ-stage" style={{backgroundColor, opacity}}>
-                <h3>Relegated</h3>
-            </div>
-        )
-    }
+function RelStage(props) {
+    const { isOver, canDrop, connectDropTarget } = props;
+    const backgroundColor = canDrop ? 'tomato' : '#fff';
+    const opacity = canDrop ? 0.8 : 0;
+    return connectDropTarget(
+        <div className="champ-stage" style={{ backgroundColor, opacity }}>
+            <h3>Relegated</h3>
+        </div>
+    )
 }
-const mapDispatchToProps = dispatch => {
-    return bindActionCreators({
-        dragTeam
-    }, dispatch)
-}
+const mapDispatchToProps = dispatch => bindActionCreators({ dragTeam }, dispatch)
 RelStage = DropTarget('stage', spec, collect)(RelStage);
 export default connect(null, mapDispatchToProps)(RelStage)
