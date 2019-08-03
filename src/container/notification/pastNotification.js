@@ -1,15 +1,17 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
+import { useSelector } from 'react-redux';
 import { List, Button, Checkbox, Avatar } from 'antd';
 
 function PastNotification(props) {
+    const pastNotifications = useSelector(({ notificationReducer }) => ({
+        pastNotifications: notificationReducer.pastNotifications
+    }))
     return (
         <div>
             <List
                 size="small"
                 bordered
-                dataSource={props.pastNotifications}
+                dataSource={pastNotifications}
                 renderItem={item => (
                     <List.Item>
                         <List.Item.Meta
@@ -24,10 +26,4 @@ function PastNotification(props) {
     )
 }
 
-const mapStateToProps = ({ notificationReducer }) => ({
-    pastNotifications: notificationReducer.pastNotifications
-})
-const mapDispatchToProps = dispatch => bindActionCreators({
-
-}, dispatch)
-export default connect(mapStateToProps, mapDispatchToProps)(PastNotification);
+export default PastNotification;
