@@ -29,17 +29,15 @@ function collect(connect, monitor) {
         itemType: monitor.getItemType()
     };
 }
-class ChampStage extends Component {
-    render() {
-        const { isOver, canDrop, connectDropTarget } = this.props;
-        const backgroundColor = canDrop ? 'lightgreen' : '#fff';
-        const opacity = canDrop ? 0.8 : 0;
-        return connectDropTarget(
-            <div className="champ-stage" style={{backgroundColor, opacity}}>
-                <h3>Champion</h3>
-            </div>
-        )
-    }
+function ChampStage(props) {
+    const { isOver, canDrop, connectDropTarget } = props;
+    const backgroundColor = canDrop ? 'lightgreen' : '#fff';
+    const opacity = canDrop ? 0.8 : 0;
+    return connectDropTarget(
+        <div className="champ-stage" style={{ backgroundColor, opacity }}>
+            <h3>Champion</h3>
+        </div>
+    )
 }
 
 const mapDispatchToProps = dispatch => bindActionCreators({ dragTeam }, dispatch)
