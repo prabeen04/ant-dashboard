@@ -57,17 +57,12 @@ class AddPost extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  return {
-    isLoading: state.postReducer.isLoading,
-    isError: state.postReducer.isError
-  }
-}
-const mapDispatchToProps = (dispatch) => {
-  return bindActionCreators({
-    addPost
-  }, dispatch)
-}
+const mapStateToProps = ({ postReducer }) => ({
+  isLoading: postReducer.isLoading,
+  isError: postReducer.isError
+})
+
+const mapDispatchToProps = (dispatch) => bindActionCreators({ addPost }, dispatch)
 AddPost = connect(mapStateToProps, mapDispatchToProps)(AddPost)
 export default reduxForm({
   form: 'addPostForm'

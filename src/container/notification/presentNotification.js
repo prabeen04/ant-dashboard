@@ -37,8 +37,6 @@ const mapStateToProps = ({ notificationReducer }) => ({
   isFetching: notificationReducer.isFetching,
   presentNotifications: notificationReducer.presentNotifications,
 })
-const mapDispatchToProps = dispatch => bindActionCreators({
-  getPresentNotifications
-}, dispatch)
+const mapDispatchToProps = dispatch => bindActionCreators({ getPresentNotifications }, dispatch)
 
 export default connect(mapStateToProps, mapDispatchToProps)(PresentNotification);
