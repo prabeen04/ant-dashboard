@@ -25,31 +25,21 @@ function collect(connect, monitor) {
         itemType: monitor.getItemType()
     };
 }
-class TeamStage extends Component {
-    render() {
-        const { isOver, canDrop, connectDropTarget } = this.props;
-        const backgroundColor = isOver ?'#eee' :'#fff'
-        const renderTeams = this.props.teams
-            .filter((team) => team.stage === this.props.stage.stageId)
-            .map((team, index) => <TeamBox key={index} team={team} />)
+function TeamStage(props) {
+    const { isOver, canDrop, connectDropTarget } = props;
+    const backgroundColor = isOver ? '#eee' : '#fff'
+    const renderTeams = props.teams
+        .filter((team) => team.stage === props.stage.stageId)
+        .map((team, index) => <TeamBox key={index} team={team} />)
 
-        return connectDropTarget(
-            <div className="team-stage" style={{backgroundColor}}>
-                <div className="stage-header">{this.props.stage.name}</div>
-                {renderTeams}
-            </div>
-        )
-    }
+    return connectDropTarget(
+        <div className="team-stage" style={{ backgroundColor }}>
+            <div className="stage-header">{props.stage.name}</div>
+            {renderTeams}
+        </div>
+    )
 }
-const mapStateToProps = state => {
-    return {
-        teams: state.dragReducer.teams
-    }
-}
-const mapDispatchToProps = dispatch => {
-    return bindActionCreators({
-        dragTeam
-    }, dispatch)
-}
+const mapStateToProps = state => ({ teams: state.dragReducer.teams })
+const mapDispatchToProps = dispatch => bindActionCreators({ dragTeam }, dispatch)
 TeamStage = DropTarget('stage', spec, collect)(TeamStage)
 export default connect(mapStateToProps, mapDispatchToProps)(TeamStage);
