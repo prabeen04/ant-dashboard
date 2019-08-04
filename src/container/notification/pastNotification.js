@@ -3,9 +3,7 @@ import { useSelector } from 'react-redux';
 import { List, Button, Checkbox, Avatar } from 'antd';
 
 function PastNotification(props) {
-    const pastNotifications = useSelector(({ notificationReducer }) => ({
-        pastNotifications: notificationReducer.pastNotifications
-    }))
+    const pastNotifications = useSelector(({ notificationReducer }) => notificationReducer.pastNotifications)
     return (
         <div>
             <List
