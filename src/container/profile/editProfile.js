@@ -10,15 +10,16 @@ import './profile.css'
 
 class EditProfile extends Component {
 
-  renderInput = ({ input, label, type, meta: { touched, error }, ...custom }) => {
-    return <div>
+  renderInput = ({ input, label, type, meta: { touched, error }, ...custom }) => (
+    <div>
       <Input
         placeholder={label}
         {...input}
         {...custom}
       />
     </div>
-  }
+
+  )
   submitProfile = (values) => {
     console.log(values)
     this.props.updateProfile(values)
@@ -54,17 +55,10 @@ EditProfile = reduxForm({
   destroyOnUnmount: false
 })(EditProfile);
 
-const mapStateToProps = (state) => {
-  return {
-    initialValues: state.profileReducer.singleProfile,
-    isSubmitting: state.profileReducer.isSubmitting
-  }
-}
-
-const mapDispatchToProps = (dispatch) => {
-  return bindActionCreators({
-    updateProfile
-  }, dispatch)
-}
+const mapStateToProps = ({ profileReducer }) => ({
+  initialValues: profileReducer.singleProfile,
+  isSubmitting: profileReducer.isSubmitting
+})
+const mapDispatchToProps = dispatch => bindActionCreators({ updateProfile }, dispatch)
 
 export default connect(mapStateToProps, mapDispatchToProps)(EditProfile);
