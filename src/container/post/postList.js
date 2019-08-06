@@ -4,9 +4,9 @@ import styled from 'styled-components';
 import { bindActionCreators } from 'redux'
 import { withRouter } from 'react-router-dom'
 import { Icon, Card } from 'antd'
+import moment from 'moment'
 import { getPosts, getSinglePost } from '../../actions/post_actions'
 import './post.css'
-import moment from 'moment'
 
 const PostRow = styled.div`
   display: flex;
@@ -69,10 +69,5 @@ const mapStateToProps = ({ postReducer }) => ({
   isError: postReducer.isError,
   posts: postReducer.posts
 })
-const mapDispatchToProps = (dispatch) => {
-  return bindActionCreators({
-    getPosts,
-    getSinglePost
-  }, dispatch)
-}
+const mapDispatchToProps = dispatch => bindActionCreators({ getPosts, getSinglePost }, dispatch)
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(PostList));
