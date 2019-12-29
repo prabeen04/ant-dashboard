@@ -58,29 +58,14 @@ export default function Navbar(props) {
       <LayoutWrapper>
         <NavbarWrapper style={{ padding: 0, height: 50 }}>
           <Header>
-            <div
-              style={{
-                height: 45,
-                display: "flex",
-                alignSelf: "flex-start",
-                alignItems: "center"
-              }}
-            >
+            <div className="navHeaderLeft">
               <Icon
                 className="trigger"
                 type={collapsed ? "menu-unfold" : "menu-fold"}
                 onClick={toggle}
               />
             </div>
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                alignSelf: "flex-end",
-                marginRight: 50,
-                height: 45
-              }}
-            >
+            <div className="navbarHeaderRight">
               <span style={{ margin: 15 }}>
                 <Badge count={1}>
                   <Icon type="bell" />
