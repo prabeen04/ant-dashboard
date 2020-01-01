@@ -11,7 +11,7 @@ import Theme from "./Theme/Theme";
 import "./settings.css";
 const TabPane = Tabs.TabPane;
 
-export function Settings(props) {
+export default function Settings(props) {
   return (
     <TabsWrapper>
       <StyledTabs defaultActiveKey="2">
